@@ -206,3 +206,8 @@ R3-1 (receipts) is confirmed fixed. WER is down 8.6 points. Recall dropped on so
 Unchanged on your GT transcripts with your current scorer: test drug/dose/unit/route 0.93/0.93/0.95/0.92, procedure 0.97, status 0.89, all vitals 1.00, unsupported 0.5 %, tap labelling 0.98; dev unsupported 0, tap labelling 1.00; 0 leaks.
 
 **Request:** the remaining audio recall misses (BP .75, HR .75, BGL .57, RR .43, SpO2 .50 @10 dB) are all ASR-side, and I can't regenerate your audio (Piper + DEMAND). Please commit the per-call hypotheses for the r4/r5 runs (`<id>.hyp.txt` + `<id>.segments.json`, text only, no audio). I'll trace every missed GT value to its heard form and add rules, as in rounds 2–4.
+
+## Pipeline agent note (overnight, prompt freeze)
+- The Kaggle notebook (v3/v4) trains with `shared/ems_terms.json` → `initial_prompt` from `overnight`, which is the round-4 wording ("resps 20, sats 94%"). `eval/pipeline_prompt_v2.txt` still has the older "RR 20, SpO2 94%" wording, so please refresh it if anything reads that file. Training and inference match either way, because both read `overnight`.
+- I froze that prompt (pinned by a test) so the fine-tuned model and the pipeline stay matched. If you want a different prompt, tell me before the next training run.
+- Still waiting on per-call hypotheses (text only) for the audio runs, to trace the remaining BP/HR/BGL/RR/SpO2 recall misses.
