@@ -529,6 +529,8 @@ def main():
     ap.add_argument("--cache", default=os.path.join(os.path.dirname(__file__), ".dict_cache.json"))
     ap.add_argument("--nemsis-dir", default=None)
     ap.add_argument("--offline", action="store_true", help="use cache only")
+    ap.add_argument("--additions", default=os.path.join(os.path.dirname(__file__), "formulary_additions.json"),
+                    help="data agent's append-only additions (observed ASR variants, missing aliases, new drugs, home meds)")
     args = ap.parse_args()
 
     cache = {}
@@ -566,6 +568,38 @@ def main():
             "high_alert": bool(s.get("high_alert", False)),
         })
 
+    home_meds = []
+    if args.additions and os.path.exists(args.additions):
+        add = json.load(open(args.additions))
+        by = {d["generic"]: d for d in drugs}
+        common = {"now", "no", "know", "sugars", "sugar", "pain", "fine", "and", "the", "a", "on", "in", "it", "is", "go", "give",
+                  "got", "here", "there", "ok", "okay", "so", "say", "see", "seen", "fan", "fen", "mass", "officer", "doctor", "nurse", "patient"}
+        for g, vs in (add.get("asr_variants_observed") or {}).items():
+            if g in by:
+                for v in vs:
+                    w = v["variant"].lower().strip()
+                    # never add everyday words or tiny tokens as drug spellings
+                    if w in common or len(w) < 5 or (v.get("count", 1) < 2 and " " not in w and len(w) < 7):
+                        continue
+                    by[g]["asr_variants"] = sorted(set(by[g]["asr_variants"]) | {w})
+        for g, al in (add.get("aliases_missing") or {}).items():
+            if g in by:
+                by[g]["aliases"] = sorted(set(by[g]["aliases"]) | {a.lower() for a in al if a.lower() not in common})
+        for nd in add.get("new_drugs") or []:
+            if nd["generic"] in by:
+                continue
+            drugs.append({
+                "generic": nd["generic"], "class": nd.get("class", ""), "rxcui": rxnorm(nd["generic"], cache)[0],
+                "brands": nd.get("brands", []), "slang": [], "aliases": sorted({nd["generic"]} | {a.lower() for a in nd.get("aliases", [])}),
+                "asr_variants": nd.get("asr_variants", []),
+                "phonetic": sorted({phonetic_key(a) for a in [nd["generic"]] + nd.get("brands", []) if " " not in a}),
+                "typical_doses": [{"amount": t["amount"], "unit": t["unit"], "route": t.get("route", (nd.get("routes") or ["PO"])[0])} for t in nd.get("typical_doses", [])],
+                "routes": nd.get("routes", []), "label_routes_openfda": [], "high_alert": False,
+                "source": nd.get("source", "data agent"),
+            })
+        known = {d["generic"] for d in drugs}
+        home_meds = sorted({h.lower() for h in add.get("home_meds_missing") or []} - known)
+
     routes = {k: {"spoken": v[0], "nemsis_code": v[1], "nemsis_label": codes["routes"].get(v[1])} for k, v in ROUTES.items()}
     units = {k: {"spoken": v[0], "nemsis_code": v[1], "nemsis_label": codes["units"].get(v[1])} for k, v in UNITS.items()}
 
@@ -579,6 +613,9 @@ def main():
         "notes": "Typical doses are reference values from state protocols for plausibility checks ONLY. "
                  "Earshot never fills a dose it did not hear.",
         "drugs": drugs,
+        # Patient's own (home) medications that EMS does not give. Matched only
+        # in home-med context ("takes", "on", "prescribed") -> status kind home_med.
+        "home_meds": home_meds,
         "routes": routes,
         "units": units,
         "nemsis": {"routes": codes["routes"], "units": codes["units"]},

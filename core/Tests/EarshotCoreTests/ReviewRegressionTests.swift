@@ -162,3 +162,16 @@ final class ReviewRegressionTests: XCTestCase {
         XCTAssertNil(all("0 year old").first { $0.fields["kind"] == "patient" })
     }
 }
+
+final class FormularyAdditionsTests: XCTestCase {
+    func testHomeMedsOnlyInContext() {
+        XCTAssertEqual(extract("She takes lisinopril and Eliquis.").filter { $0.fields["kind"] == "home_med" }.compactMap { $0.fields["drug"] }, ["lisinopril", "eliquis"])
+        XCTAssertTrue(extract("lisinopril").isEmpty)
+    }
+    func testRiskyObservedVariantsNotAdded() {
+        let fent = TestEnv.dict.drug(named: "fentanyl")!
+        XCTAssertFalse(fent.asr_variants.contains("now"))
+        XCTAssertFalse(TestEnv.dict.drug(named: "metoprolol")!.asr_variants.contains("officer"))
+        XCTAssertNotNil(TestEnv.dict.drug(named: "furosemide"))
+    }
+}

@@ -103,6 +103,7 @@ public final class RulesExtractor {
         var used = Set<Int>()   // token indices consumed by vitals (so numbers aren't reused as doses)
         out += vitals(tt, &used)
         out += medications(tt, used: used)
+        out += homeMeds(tt)
         out += procedures(tt)
         out += statuses(tt)
         out += patientInfo(tt)
@@ -390,6 +391,22 @@ public final class RulesExtractor {
             out.append(Finding(type: type, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: a0), rawSpan: tt.seg.rawSpan,
                                quote: tt.seg.quote(span.lowerBound, span.upperBound), confidence: h.conf, flags: Array(Set(flags)).sorted(),
                                extractor: RulesExtractor.version + (h.how == "alias" ? "" : ":" + h.how)))
+        }
+        return out
+    }
+
+    /// Home medications that EMS does not carry (lisinopril, Eliquis…): only in
+    /// home-med context ("takes", "on", "prescribed", "home meds") in the same clause.
+    func homeMeds(_ tt: TokText) -> [Finding] {
+        let toks = tt.seg.tokens
+        var out: [Finding] = []
+        for (i, t) in toks.enumerated() where dict.homeMeds.contains(t.text) && dict.aliasIndex[t.text] == nil {
+            let before = toks[max(clauseStart(toks, i), i - 6)..<i].map(\.text)
+            let cue = before.contains { RulesExtractor.homeMedCues.contains($0) || ["on", "meds", "medications", "medication"].contains($0) }
+            guard cue else { continue }
+            out.append(Finding(type: .status, fields: ["kind": "home_med", "drug": t.text], receipts: ["drug": tt.receipt(i...i)],
+                               tMs: tt.seg.timeOf(token: i), rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(max(clauseStart(toks, i), i - 6), i),
+                               confidence: 0.8, flags: [], extractor: RulesExtractor.version))
         }
         return out
     }

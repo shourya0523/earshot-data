@@ -107,6 +107,7 @@
     "aspi-cor",
     "aspirin",
     "baby aspirin",
+    "bayer",
     "bayer aspirin",
     "bufferin",
     "chewable aspirin",
@@ -279,7 +280,11 @@
     "auvi-q",
     "cardiac epi",
     "epi",
+    "epi 1 to 1000",
+    "epi 1:10,000",
+    "epi 1:1000",
     "epi pen",
+    "epi pin",
     "epinephrine",
     "epipen",
     "neffy",
@@ -451,6 +456,8 @@
     "nalox",
     "naloxone",
     "narcan",
+    "nasal narcan",
+    "now loxone",
     "rextovy",
     "rezenopy",
     "zimhi"
@@ -544,6 +551,7 @@
    "aliases": [
     "albuterol",
     "albuterol neb",
+    "albuterol's",
     "breathing treatment",
     "neb",
     "proair",
@@ -605,9 +613,14 @@
     "duo neb"
    ],
    "aliases": [
+    "albuterol/ipratropium",
+    "atro vent",
     "atrovent",
+    "do neb",
+    "dual neb",
     "duo neb",
     "duoneb",
+    "ipratropeum",
     "ipratropium"
    ],
    "asr_variants": [
@@ -615,6 +628,7 @@
     "do a neb",
     "duo nab",
     "duownb",
+    "epitropium",
     "ipra tropium"
    ],
    "phonetic": [
@@ -652,8 +666,10 @@
    ],
    "aliases": [
     "glucose gel",
+    "glucose tube",
     "glutose",
     "insta glucose",
+    "oral glucos",
     "oral glucose",
     "oral glucose gel",
     "sugar gel"
@@ -711,12 +727,16 @@
    "aliases": [
     "amp of d50",
     "d10",
+    "d10w",
     "d25",
     "d50",
     "dex4",
+    "dextros",
     "dextrose",
     "dextrose 10",
+    "dextrose 10%",
     "dextrose 50",
+    "dextrose 50%",
     "enfamil glucose",
     "glucoburst",
     "glutose",
@@ -791,8 +811,10 @@
    ],
    "aliases": [
     "baqsimi",
+    "gluca gone",
     "glucagen",
     "glucagon",
+    "glucogon",
     "gvoke"
    ],
    "asr_variants": [
@@ -852,7 +874,9 @@
    "aliases": [
     "ondansetron",
     "zofran",
-    "zofran odt"
+    "zofran odt",
+    "zofran's",
+    "zofrin"
    ],
    "asr_variants": [
     "on dancetron",
@@ -923,7 +947,9 @@
     "abstral",
     "actiq",
     "fent",
+    "fenta nil",
     "fentanyl",
+    "fentenyl",
     "fentora",
     "ionsys",
     "sublimaze",
@@ -1010,6 +1036,7 @@
     "infumorph",
     "kadian",
     "mitigo",
+    "morphin",
     "morphine",
     "morphine sulfate",
     "ms",
@@ -1210,7 +1237,9 @@
    ],
    "aliases": [
     "midazolam",
+    "midazolom",
     "nayzilam",
+    "ver said",
     "versed"
    ],
    "asr_variants": [
@@ -1345,7 +1374,9 @@
     "ativan"
    ],
    "aliases": [
+    "adivan",
     "ativan",
+    "ativen",
     "lorazepam",
     "loreev"
    ],
@@ -1413,10 +1444,12 @@
    ],
    "aliases": [
     "banophen",
+    "bena dril",
     "benadryl",
     "compoz",
     "dermamycin",
     "diphedryl",
+    "diphen hydramine",
     "diphenhist",
     "diphenhydramine",
     "dormin",
@@ -1511,9 +1544,12 @@
     "hybrisil",
     "medrol",
     "methylprednisolone",
+    "sol you medrol",
     "solu medrol",
     "solu-medrol",
-    "solumedrol"
+    "solu-medrol's",
+    "solumedrol",
+    "soul medrol"
    ],
    "asr_variants": [
     "medral",
@@ -1695,6 +1731,7 @@
    "aliases": [
     "mag",
     "mag sulfate",
+    "mag sulphate",
     "magnesium",
     "magnesium sulfate",
     "mgso4"
@@ -1753,6 +1790,8 @@
    "aliases": [
     "amio",
     "amiodarone",
+    "amioderone",
+    "amy oderone",
     "cordarone",
     "nexterone",
     "pacerone"
@@ -1922,6 +1961,7 @@
     "adenocard"
    ],
    "aliases": [
+    "a denosine",
     "adenocard",
     "adenoscan",
     "adenosine"
@@ -1979,6 +2019,7 @@
     "atropine sulfate"
    ],
    "aliases": [
+    "a tropine",
     "atropen",
     "atropine",
     "atropine sulfate",
@@ -2050,8 +2091,10 @@
     "dilt"
    ],
    "aliases": [
+    "cardi zem",
     "cardizem",
     "cartia",
+    "dil tiazem",
     "dilt",
     "diltiazem",
     "diltzac",
@@ -2132,6 +2175,7 @@
     "lopresor",
     "loprezor",
     "low presser",
+    "metaprolol",
     "meto pro lol",
     "metoprallall",
     "metoprallol",
@@ -2264,6 +2308,7 @@
     "bicarb amp"
    ],
    "aliases": [
+    "amp of bicarb",
     "bicarb",
     "bicarb amp",
     "desempacho",
@@ -2327,6 +2372,7 @@
    ],
    "aliases": [
     "0.9 saline",
+    "0.9% sodium chloride",
     "bolus",
     "fluid bolus",
     "normal saline",
@@ -3309,6 +3355,8 @@
    ],
    "asr_variants": [
     "fa mo ti dean",
+    "famitating",
+    "famitidine",
     "famotideen",
     "famotiden",
     "famotidyne",
@@ -3614,6 +3662,7 @@
    ],
    "aliases": [
     "roc",
+    "rocc",
     "rocuronium",
     "zemuron"
    ],
@@ -3874,6 +3923,7 @@
    ],
    "aliases": [
     "brethine",
+    "terb",
     "terbutaline"
    ],
    "asr_variants": [
@@ -4063,6 +4113,7 @@
     "spritam"
    ],
    "asr_variants": [
+    "capra",
     "kepra",
     "lev a tear a see tam",
     "levetiracetum",
@@ -4649,7 +4700,103 @@
     "OPHTHALMIC"
    ],
    "high_alert": false
+  },
+  {
+   "generic": "furosemide",
+   "class": "loop diuretic",
+   "rxcui": "4603",
+   "brands": [
+    "Lasix"
+   ],
+   "slang": [],
+   "aliases": [
+    "furosemide",
+    "lasix"
+   ],
+   "asr_variants": [],
+   "phonetic": [
+    "FRSMT",
+    "LSKS"
+   ],
+   "typical_doses": [
+    {
+     "amount": "40",
+     "unit": "mg",
+     "route": "IV"
+    },
+    {
+     "amount": "20",
+     "unit": "mg",
+     "route": "IV"
+    }
+   ],
+   "routes": [
+    "IV",
+    "PO"
+   ],
+   "label_routes_openfda": [],
+   "high_alert": false,
+   "source": "data-agent seed (NASEMSO model guidelines drug list)"
   }
+ ],
+ "home_meds": [
+  "advair",
+  "alprazolam",
+  "amlodipine",
+  "apixaban",
+  "aricept",
+  "atorvastatin",
+  "buprenorphine",
+  "carvedilol",
+  "clonazepam",
+  "coumadin",
+  "depakote",
+  "digoxin",
+  "dilantin",
+  "donepezil",
+  "eliquis",
+  "entresto",
+  "fluoxetine",
+  "fluticasone",
+  "gabapentin",
+  "hctz",
+  "hydrochlorothiazide",
+  "hydrocodone",
+  "klonopin",
+  "lamictal",
+  "lamotrigine",
+  "lasix",
+  "levothyroxine",
+  "lipitor",
+  "lisinopril",
+  "losartan",
+  "metformin",
+  "methadone",
+  "montelukast",
+  "norco",
+  "omeprazole",
+  "oxycodone",
+  "pantoprazole",
+  "percocet",
+  "phenytoin",
+  "prednisone",
+  "prozac",
+  "rivaroxaban",
+  "sertraline",
+  "sildenafil",
+  "simvastatin",
+  "singulair",
+  "suboxone",
+  "symbicort",
+  "synthroid",
+  "tamsulosin",
+  "tramadol",
+  "valproic acid",
+  "viagra",
+  "warfarin",
+  "xanax",
+  "xarelto",
+  "zoloft"
  ],
  "routes": {
   "PO": {

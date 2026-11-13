@@ -26,6 +26,7 @@ public struct FormularyFile: Codable, Sendable {
     public var version: String
     public var context_required_aliases: [String]?
     public var drugs: [Drug]
+    public var home_meds: [String]?
     public var routes: [String: VocabEntry]
     public var units: [String: VocabEntry]
 }
@@ -56,6 +57,8 @@ public final class EMSDictionary: @unchecked Sendable {
     public private(set) var routeIndex: [String: String] = [:]
     public private(set) var termIndex: [String: EMSTerm] = [:]
     public private(set) var maxAliasTokens = 1
+    /// Patient home medications (not EMS-given), normalized.
+    public private(set) var homeMeds: Set<String> = []
 
     public init(formulary: FormularyFile, terms: EMSTermsFile) {
         self.formulary = formulary
@@ -78,6 +81,7 @@ public final class EMSDictionary: @unchecked Sendable {
             }
         }
         for k in phoneticIndex.keys { phoneticIndex[k] = Array(Set(phoneticIndex[k]!)).sorted() }
+        homeMeds = Set((formulary.home_meds ?? []).map(Text.normalizePhrase))
         contextRequired = Set((formulary.context_required_aliases ?? []).map(Text.normalizePhrase))
         for (u, e) in formulary.units.sorted(by: { $0.key < $1.key }) { for s in e.spoken where unitIndex[Text.normalizePhrase(s)] == nil { unitIndex[Text.normalizePhrase(s)] = u } }
         for (r, e) in formulary.routes.sorted(by: { $0.key < $1.key }) { for s in e.spoken where routeIndex[Text.normalizePhrase(s)] == nil { routeIndex[Text.normalizePhrase(s)] = r } }
