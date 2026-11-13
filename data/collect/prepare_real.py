@@ -63,7 +63,7 @@ for f in sorted((RAW / "eka").glob("test-*.parquet")):
         items.append(dict(id=uid, source="ekacare/eka-medical-asr-evaluation-dataset", type="real", subset="eka", split=sp, duration=d, pii=pii or "de-identified",
                           license="MIT", has_drugs=bool(drugs)))
 # PriMock57: mock GP consultations, split by consultation
-for r in pq.read_table(RAW / "primock57/test.parquet").to_pylist():
+for r in (x for f in sorted((RAW / "primock57").glob("*.parquet")) for x in pq.read_table(f).to_pylist()):
     if len(r["transcription"].split()) < 4:
         continue
     uid = "pm_" + r["id"]
@@ -85,6 +85,37 @@ if (mi / "overview.csv").exists():
         items.append(dict(id=uid, source="Medical Speech, Transcription and Intent", type="real", subset="medintent", split=split_of(r.get("speaker_id", uid), 30, 30),
                           duration=d, pii=pii or "no", license="unknown", intent=r.get("prompt")))
 
+# EMSAssist-2: human-read EMS condition/protocol phrases (speaker name in file name -> hashed speaker id; train/dev only)
+for f in sorted((RAW / "emsassist2").glob("*.parquet")):
+    for r in pq.read_table(f).to_pylist():
+        m = re.match(r"separate_([a-z]+)_(\d+)", pathlib.Path(r["audio"]["path"]).stem)
+        spk = hashlib.sha1((m.group(1) if m else "x").encode()).hexdigest()[:6]
+        uid = f"ea_{spk}_{m.group(2) if m else h(r['audio']['path'], 10**6)}"
+        sp = "dev" if h(spk + uid) < 10 else "train"
+        d = to_wav(r["audio"]["bytes"], AUD / "emsassist" / f"{uid}.wav")
+        pii = write_gt("emsassist", uid, r["transcript"])
+        items.append(dict(id=uid, source="saahith/EMSAssist-2", type="real", subset="emsassist", split=sp, duration=d, pii=pii or "no (speaker name removed)", license="unknown"))
+# External synthetic EMS speech (TTS voices made by others): training only
+for f in sorted((RAW / "ems_synth_saahith").glob("*.parquet")):
+    for r in pq.read_table(f).to_pylist():
+        uid = "es_" + pathlib.Path(r["audio"]["path"]).stem.replace("_synth", "") + ("v" if "validation" in f.name else "")
+        d = to_wav(r["audio"]["bytes"], AUD / "ems_synth_ext" / f"{uid}.wav")
+        write_gt("ems_synth_ext", uid, r["transcript"])
+        items.append(dict(id=uid, source="saahith/synthetic_with_val", type="synthetic_external", subset="ems_synth_ext", split="train", duration=d, pii="no", license="unknown"))
+import ast
+for r in pq.read_table(RAW / "dispatcher_ambulance/train.parquet").to_pylist():
+    turns = ast.literal_eval(r["dialog_dict"]); chunks = ast.literal_eval(r["chunks"])
+    # chunk files are named <Role>-<k>.wav, k = k-th turn of that role
+    cnt = {}
+    for t in turns:
+        role = t["role"]; cnt[role] = cnt.get(role, 0) + 1
+        col = f"{role.lower().replace(' ', '-')}-{cnt[role]}"
+        if col not in r or not r[col]: continue
+        uid = f"da_{r['id']}_{col}"
+        d = to_wav(r[col]["bytes"], AUD / "dispatch_synth_ext" / f"{uid}.wav")
+        pii = write_gt("dispatch_synth_ext", uid, t["content"])
+        items.append(dict(id=uid, source="ahmedelsayed/dispatcher-ambulance", type="synthetic_external", subset="dispatch_synth_ext", split="train", duration=d,
+                          pii=pii or "synthetic addresses", license="unknown"))
 (ROOT / "data/manifests").mkdir(parents=True, exist_ok=True)
 (ROOT / "data/manifests/real_items.jsonl").write_text("".join(json.dumps(i) + "\n" for i in items))
 import collections
