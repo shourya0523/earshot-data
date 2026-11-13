@@ -1,0 +1,16 @@
+WER 0.176  drugWER 0.346 (26 tok)  num acc 0.813  unit acc 0.818  jargon recall 0.812
+  dose           P=1.00 R=0.77 F1=0.87  (tp 17 / pred 17 / gt 22)
+  drug           P=0.95 R=0.82 F1=0.88  (tp 18 / pred 19 / gt 22)
+  procedure      P=0.75 R=0.86 F1=0.80  (tp 12 / pred 16 / gt 14)
+  route          P=1.00 R=0.68 F1=0.81  (tp 13 / pred 13 / gt 19)
+  status         P=0.75 R=0.56 F1=0.64  (tp 9 / pred 12 / gt 16)
+  unit           P=1.00 R=0.64 F1=0.78  (tp 7 / pred 7 / gt 11)
+  vital.bgl      P=1.00 R=0.71 F1=0.83  (tp 5 / pred 5 / gt 7)
+  vital.bp       P=0.91 R=0.62 F1=0.74  (tp 10 / pred 11 / gt 16)
+  vital.gcs      P=1.00 R=0.67 F1=0.80  (tp 2 / pred 2 / gt 3)
+  vital.hr       P=1.00 R=0.69 F1=0.81  (tp 11 / pred 11 / gt 16)
+  vital.pain     P=1.00 R=1.00 F1=1.00  (tp 2 / pred 2 / gt 2)
+  vital.rr       P=1.00 R=0.57 F1=0.73  (tp 4 / pred 4 / gt 7)
+  vital.spo2     P=1.00 R=0.64 F1=0.78  (tp 9 / pred 9 / gt 14)
+  unsupported-field rate 0.0387  ts err {'median': 0, 'p90': 5023, 'n': 61}  tap labelling {'labelled_correct': 25, 'labelled_total': 40, 'unlabelled_correct': 6, 'unlabelled_total': 10, 'accuracy': 0.62}
+  speed {'audio_s': 1418.312, 'wall_s': 569.914, 'rtf': 0.4018255503725556, 'stages_s': {'asr_total': 562.4870000000001, 'cleanup': 0.032, 'extract_rules': 0.055999999999999994, 'merge': 0.008, 'render': 0.033, 'total': 569.914, 'vad': 0.189}}
