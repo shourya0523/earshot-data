@@ -1,0 +1,34 @@
+@call c08 allergic_epi start=19:12:05
+@patient age=41 sex=female weight_kg=68 complaint="throat feels tight and hives after eating shrimp" allergies="shellfish" home_meds="none" history="seasonal allergies"
+@traps anaphylaxis
+RD: Medic 2, allergic reaction, forty-one year old female, at the restaurant.  >> dispatch:allergic reaction "allergic reaction"
+GAP 3
+M1: Medic 2 on scene.  >> time:eTimes.06 "on scene"
+GAP 2
+PT: I ate shrimp. My throat feels tight and I'm itching everywhere.
+M1: Hives on the chest and arms, lips are swelling. Any trouble swallowing?
+PT: A little.
+TAP knock +label
+M2: BP 88 over 54, heart rate 122, sat 93.  >> vital:bp=88/54 "BP 88 over 54"; vital:hr=122 "heart rate 122"; vital:spo2=93 "sat 93"
+GAP 2
+TAP button +label
+M1: Epi 0.5 milligrams IM, right thigh.  >> med:epinephrine,0.5,mg,IM "Epi 0.5 milligrams IM"
+GAP 4
+M2: Non-rebreather at 15 liters.  >> med:oxygen,15,L/min,NRB "Non-rebreather at 15 liters"
+GAP 12
+TAP button -
+GAP 12
+M2: Eighteen, left AC.  >> proc:IV access "Eighteen, left AC"
+TAP snap +label
+M1: Benadryl 50 IV.  >> med:diphenhydramine,50,,IV "Benadryl 50 IV"
+M1: And a liter of saline.  >> med:normal saline,1,L "a liter of saline"
+GAP 6
+M1: Transporting to Memorial.  >> time:eTimes.09 "Transporting"
+GAP 10
+M2: Recheck, 104 over 70, heart rate 108, sat 97.  >> vital:bp=104/70 "104 over 70"; vital:hr=108 "heart rate 108"; vital:spo2=97 "sat 97"
+PT: It's easier to breathe now.
+GAP 6
+TAP knock +label
+M1: Famotidine 20 IV.  >> med:famotidine,20,,IV "Famotidine 20 IV"
+GAP 10
+M1: Arrived at Memorial.  >> time:eTimes.11 "Arrived at Memorial"

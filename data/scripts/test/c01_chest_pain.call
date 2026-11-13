@@ -1,0 +1,42 @@
+@call c01 chest_pain start=14:02:10
+@patient age=62 sex=male weight_kg=95 complaint="chest pressure radiating to left arm" allergies=NKDA home_meds="lisinopril, atorvastatin" history="hypertension, high cholesterol"
+@traps STEMI
+RD: Medic 14, respond priority one, sixty-two year old male, chest pain.  >> dispatch:chest pain "chest pain"
+GAP 3
+M1: Medic 14 on scene.  >> time:eTimes.06 "on scene"
+GAP 4
+M1: Sir, I'm Dana with the ambulance. What's going on today?
+PT: It's like an elephant on my chest. Started about forty minutes ago, goes down my left arm.
+M1: Any allergies to medications?
+PT: No, none.
+M1: What do you take at home?
+PT: Lisinopril and, uh, atorvastatin.
+TAP knock +label
+M2: First set, BP 158 over 94, pulse 104, sat 95 on room air.  >> vital:bp=158/94 "BP 158 over 94"; vital:hr=104 "pulse 104"; vital:spo2=95 "sat 95"
+GAP 3
+M1: Let's get a 12 lead on him.  >> proc:12-lead ECG "12 lead"
+GAP 8
+TAP button +label
+M1: Giving 324 of aspirin, chewed.  >> med:aspirin,324,,PO "324 of aspirin, chewed"
+GAP 5
+M2: Twelve lead shows elevation in two, three and aVF. Looks like a STEMI, I'm transmitting.
+GAP 4
+TAP snap +label
+M1: Nitro 0.4 sublingual, his pressure can take it.  >> med:nitroglycerin,0.4,,SL "Nitro 0.4 sublingual"
+GAP 12
+TAP button -
+GAP 12
+M2: Got an 18 in the left AC.  >> proc:IV access "18 in the left AC"
+GAP 4
+M2: Repeat, 142 over 88, heart rate 98, pain's down to a 6 out of 10.  >> vital:bp=142/88 "142 over 88"; vital:hr=98 "heart rate 98"; vital:pain=6 "6 out of 10"
+GAP 3
+M1: We're transporting to Mercy, cath lab activated.  >> time:eTimes.09 "We're transporting"
+GAP 6
+TAP knock +label
+M1: Second nitro, 0.4 under the tongue.  >> med:nitroglycerin,0.4,,SL "Second nitro, 0.4 under the tongue"
+GAP 10
+M1: Arrived at Mercy.  >> time:eTimes.11 "Arrived at Mercy"
+GAP 14
+TAP button +label
+M1: Giving report to the charge nurse now, transfer of care.  >> time:eTimes.12 "transfer of care"
+KNOCK3

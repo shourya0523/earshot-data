@@ -1,0 +1,27 @@
+@call c10 refusal start=10:58:40
+@patient age=45 sex=male weight_kg=84 complaint="minor car accident, mild neck soreness" allergies=NKDA home_meds=none history=none
+@traps whiplash
+RD: Medic 4, two car MVC, minor damage, one patient complaining of neck pain.  >> dispatch:two car MVC, neck pain "two car MVC"
+GAP 3
+M1: Medic 4 on scene.  >> time:eTimes.06 "on scene"
+GAP 2
+M1: Found him standing outside his car, airbags didn't deploy.  >> found:standing outside vehicle, ambulatory "Found him standing outside his car"
+PT: I'm fine, really. My neck's a little sore, that's all.
+M1: Were you wearing your seatbelt? Did you hit your head?
+PT: Yes, seatbelt. No, I didn't hit anything.
+TAP knock +label
+M2: BP 136 over 84, pulse 82, sat 99.  >> vital:bp=136/84 "BP 136 over 84"; vital:hr=82 "pulse 82"; vital:spo2=99 "sat 99"
+GAP 3
+M1: He's A and O times four, no midline tenderness, moves everything.  >> status:A&O×4 "A and O times four"
+GAP 12
+TAP button -
+GAP 12
+M1: Sir, we recommend you get checked at the hospital. Neck injuries can get worse.
+PT: No, I've got to pick up my kids. I'm not going.
+TAP snap +label
+M2: Second set, 132 over 80, pulse 78.  >> vital:bp=132/80 "132 over 80"; vital:hr=78 "pulse 78"
+GAP 4
+M1: Okay. If anything changes, numbness, worse pain, call 911 right away. Sign here for the refusal.  >> proc:refusal "Sign here for the refusal"
+GAP 6
+TAP button +label
+M1: Patient signed refusal against medical advice. Medic 4 back in service.  >> time:eTimes.13 "back in service"

@@ -1,0 +1,39 @@
+@call c07 trauma start=02:31:40
+@patient age=34 sex=male weight_kg=90 complaint="motorcycle crash, left leg pain and bleeding" allergies=NKDA home_meds=none history=none
+@traps femur fracture; hemorrhagic shock
+RD: Medic 11, motor vehicle collision, motorcycle versus car, rider down.  >> dispatch:motorcycle versus car "motorcycle versus car"
+GAP 3
+M1: Medic 11 on scene.  >> time:eTimes.06 "on scene"
+GAP 2
+M1: Helmet on, he's talking. Big bleed, left thigh.  >> found:helmeted rider, bleeding left thigh "Big bleed, left thigh"
+TAP button +label
+M2: Tourniquet high and tight, left thigh.  >> proc:tourniquet "Tourniquet high and tight"
+GAP 3
+PT: My leg! Oh God, my leg.
+M1: Stay still for me. Any other pain? Neck, back?
+PT: No, just the leg.
+TAP knock +label
+M2: BP 98 over 60, heart rate 124, resps 24, sat 97.  >> vital:bp=98/60 "BP 98 over 60"; vital:hr=124 "heart rate 124"; vital:rr=24 "resps 24"; vital:spo2=97 "sat 97"
+M1: He's compensating. Pale, cool skin.  >> status:compensating "He's compensating"
+GAP 3
+M1: Traction splint, then load.  >> proc:splinting "Traction splint"
+GAP 10
+TAP snap -
+GAP 12
+M1: Transporting to the trauma center.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: Fourteen in the right AC.  >> proc:IV access "Fourteen in the right AC"
+GAP 2
+TAP snap +label
+M1: TXA, one gram IV over ten.  >> med:tranexamic acid,1,g,IV "TXA, one gram IV"
+GAP 6
+TAP button +label
+M1: Fentanyl 50 micrograms IV for pain.  >> med:fentanyl,50,mcg,IV "Fentanyl 50 micrograms IV"
+GAP 8
+M2: Repeat, 102 over 64, rate 116. Pain's an 8 out of 10.  >> vital:bp=102/64 "102 over 64"; vital:hr=116 "rate 116"; vital:pain=8 "8 out of 10"
+GAP 6
+M1: Tourniquet time oh two thirty four.  >> status:tourniquet time 02:34 "Tourniquet time oh two thirty four"
+GAP 8
+M1: At the trauma center.  >> time:eTimes.11 "At the trauma center"
+GAP 4
+M1: Transfer of care to trauma bay two.  >> time:eTimes.12 "Transfer of care"
