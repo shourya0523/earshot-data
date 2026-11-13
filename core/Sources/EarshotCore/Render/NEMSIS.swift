@@ -97,12 +97,19 @@ public enum NEMSISExport {
         el(4, "eTimes.01", nil)
         el(4, "eTimes.03", callStart, "PLACEHOLDER: call start on the iPad, not the dispatch notification time")
         crewEntry.append("eTimes.03 unit notified by dispatch")
-        for k in ["05", "06", "07", "09"] { el(4, "eTimes.\(k)", nil) }
+        el(4, "eTimes.05", nil)
+        el(4, "eTimes.06", m.onScene?.time, m.onScene.map { "\($0.id): on scene (heard)" })
+        el(4, "eTimes.07", nil)
+        el(4, "eTimes.09", m.departed?.time, m.departed.map { "\($0.id): left scene / transporting (heard)" })
         el(4, "eTimes.11", m.arrival?.time, m.arrival.map { "\($0.id): arrival, \($0.fields["method"] ?? "")" })
         el(4, "eTimes.12", m.handoff?.time, m.handoff.map { "\($0.id): transfer of care, \($0.fields["method"] ?? "")" })
         if let w = m.wallTimeMs { x.append("        <!-- wall time = eTimes.12 - eTimes.11 = \(w / 1000) s -->") }
-        el(4, "eTimes.13", m.handoff?.time ?? m.clock.iso(lastT), "PLACEHOLDER: unit back in service not recorded; using \(m.handoff == nil ? "last event" : "transfer of care") time")
-        crewEntry.append("eTimes.13 unit back in service")
+        if let b = m.backInService {
+            el(4, "eTimes.13", b.time, "\(b.id): back in service (heard)")
+        } else {
+            el(4, "eTimes.13", m.handoff?.time ?? m.clock.iso(lastT), "PLACEHOLDER: unit back in service not recorded; using \(m.handoff == nil ? "last event" : "transfer of care") time")
+            crewEntry.append("eTimes.13 unit back in service")
+        }
         close(3, "eTimes")
         // ePatient
         open(3, "ePatient")

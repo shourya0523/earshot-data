@@ -41,6 +41,10 @@ public struct ChartModel: Sendable {
     public var ecg: [Sourced] = []
     public var transport: [EarshotEvent] = []
     public var arrival: EarshotEvent?
+    public var onScene: EarshotEvent?        // eTimes.06, heard
+    public var departed: EarshotEvent?       // eTimes.09, heard
+    public var backInService: EarshotEvent?  // eTimes.13, heard
+    public var findings: [Sourced] = []
     public var handoff: EarshotEvent?
     public var consent: EarshotEvent?
     public var unlabeledTaps: [EarshotEvent] = []
@@ -72,9 +76,15 @@ public struct ChartModel: Sendable {
                 if let r = e.fields["ecg"] { ecg.append(s(r)) }
             case .medication: meds.append(e)
             case .procedure: procedures.append(e)
-            case .transport: transport.append(e)
+            case .transport:
+                switch e.fields["kind"] {
+                case "on_scene": if onScene == nil { onScene = e }
+                case "departed": if departed == nil { departed = e }
+                case "back_in_service": if backInService == nil { backInService = e }
+                default: transport.append(e)
+                }
             case .arrival: if arrival == nil || e.source == .tablet { arrival = e }
-            case .handoff: if handoff == nil { handoff = e }
+            case .handoff: if handoff == nil || e.source == .tablet { handoff = e }
             case .consent: if consent == nil { consent = e }
             case .audioGap: gaps.append(e)
             case .tap: if e.isUnlabeledTap { unlabeledTaps.append(e) }
@@ -102,6 +112,7 @@ public struct ChartModel: Sendable {
                     ptaMeds.append(s([e.fields["drug"], e.fields["dose"], e.fields["unit"]].compactMap { $0 }.joined(separator: " ")))
                 case "med_not_given": medsNotGiven.append(s(e.fields["drug"] ?? ""))
                 case "not_done": notDone.append(s(e.fields["procedure"] ?? ""))
+                case "finding": findings.append(s((neg ? "no " : "") + (e.fields["term"] ?? "")))
                 case "condition": conditions.append(s((neg ? "not " : "") + (e.fields["condition"] ?? "")))
                 default: break
                 }

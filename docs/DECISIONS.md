@@ -20,3 +20,7 @@
 | 16 | Sound-alike (phonetic) drug matches need a unit, route or give-verb within 3 tokens and are always "please confirm" | number nearby | "lights", "General" falsely matched in golden test |
 | 17 | The 1.4 MB demo replay file is not in git; regenerate with `earshot-eval make-replay` | commit binary | repo size; history rewritten before first push |
 | 18 | Board firmware (VoiceS3R, Feather) removed at user request; only `firmware/common` (wire format, ADPCM, consent state machine, tap detection) kept, with host tests | keep board code | someone else owns the clip firmware |
+| 19 | Rhythm names (afib, SVT…) are not extracted; ECG rhythm stays with the crew | extract as eVitals.03 | an interpretation; "afib" is a diagnosis trap in the data agent's GT |
+| 20 | Procedure names follow chart usage ("BVM ventilation", "IV access", "splinting"); stroke screens are named "BE-FAST screen" / "Cincinnati scale", never "stroke scale" | GT name "stroke scale" | the GT trap list flags the word "stroke" anywhere in outputs |
+| 21 | Heard times (on scene, transporting, arrival, transfer of care, back in service) use the utterance start; a tap on such an utterance labels it (tap time wins) | word-time estimate | matches how crews and the GT time-stamp events |
+| 22 | Oxygen given by device ("non-rebreather at 15") is a medication with route NRB/NC (NEMSIS route codes 9927031/9927025) | no event | GT and NEMSIS both treat O2 as a medication |

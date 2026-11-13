@@ -830,13 +830,42 @@
   },
   {
     "call_id" : "c1",
+    "confidence" : 0.75,
+    "fields" : {
+      "etime" : "eTimes.09",
+      "kind" : "departed"
+    },
+    "id" : "e24",
+    "models" : {
+      "asr" : "whisper.cpp small.en",
+      "extract" : "rules-v1"
+    },
+    "quote" : "Transporting",
+    "raw_span" : "s13",
+    "receipts" : {
+      "kind" : {
+        "quote" : "Transporting",
+        "raw_range" : [
+          0,
+          12
+        ],
+        "raw_span" : "s13"
+      }
+    },
+    "source" : "heard",
+    "t_ms" : 146000,
+    "time" : "2026-11-15T14:02:26-05:00",
+    "type" : "transport"
+  },
+  {
+    "call_id" : "c1",
     "confidence" : 0.8,
     "fields" : {
       "destination" : "Mass General",
       "eta_min" : "12",
       "mode" : "lights and sirens"
     },
-    "id" : "e24",
+    "id" : "e25",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -879,12 +908,13 @@
     "confidence" : 0.6,
     "fields" : {
       "destination" : "E D",
+      "etime" : "eTimes.11",
       "kind" : "arrived_heard"
     },
     "flags" : [
       "confirm"
     ],
-    "id" : "e25",
+    "id" : "e26",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -902,7 +932,7 @@
       }
     },
     "source" : "heard",
-    "t_ms" : 158412,
+    "t_ms" : 158000,
     "time" : "2026-11-15T14:02:38-05:00",
     "type" : "transport"
   },
@@ -913,7 +943,7 @@
       "method" : "tap",
       "nemsis" : "eTimes.11"
     },
-    "id" : "e26",
+    "id" : "e27",
     "models" : {
       "asr" : "none",
       "extract" : "none"
@@ -932,7 +962,7 @@
       "method" : "nurse accept",
       "nemsis" : "eTimes.12"
     },
-    "id" : "e27",
+    "id" : "e28",
     "models" : {
       "asr" : "none",
       "extract" : "none"

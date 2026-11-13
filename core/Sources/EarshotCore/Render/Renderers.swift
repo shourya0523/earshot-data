@@ -56,7 +56,7 @@ public enum Renderers {
         L.append("## O — Objective")
         L.append("- Patient: age \(ChartModel.show(m.age)), sex \(ChartModel.show(m.sex)), weight \(ChartModel.show(m.weight))")
         L.append("- Mental status: \(ChartModel.show(m.mental)); pupils: \(ChartModel.show(m.pupils))")
-        L.append("- ECG (as stated by crew): \(ChartModel.list(m.ecg))")
+        L.append("- Findings (as said by crew): \(ChartModel.list(m.findings))")
         L.append("- Vitals:")
         if m.vitals.isEmpty { L.append("  - \(ChartModel.notHeard)") }
         for v in m.vitals { L.append("  - \(m.clock.clock(v.tMs)) \(ChartModel.vitalsLine(v)) — \(ChartModel.srcLabel(v)) [\(v.id)]") }
@@ -77,6 +77,7 @@ public enum Renderers {
         if m.procedures.isEmpty { L.append("  - \(ChartModel.notHeard)") }
         for e in m.procedures { L.append("  - \(m.clock.clock(e.tMs)) \(procText(e)) — \(ChartModel.srcLabel(e)) [\(e.id)]") }
         L.append("- Transport: \(transportText(m))")
+        L.append("- On scene (eTimes.06): \(timeOrNot(m.onScene, m)); left scene (eTimes.09): \(timeOrNot(m.departed, m))")
         L.append("- Arrival at destination (eTimes.11): \(timeOrNot(m.arrival, m))")
         L.append("- Transfer of care (eTimes.12): \(timeOrNot(m.handoff, m))")
         L.append("- Wall time: \(m.wallTimeMs.map(ChartModel.duration) ?? ChartModel.notHeard)")
@@ -97,7 +98,7 @@ public enum Renderers {
                  "Symptoms reported: \(ChartModel.list(m.symptoms)). Denies: \(ChartModel.list(m.denied)). " +
                  "PMH: \(ChartModel.list(m.history)). Allergies: \(ChartModel.list(m.allergies)). Home meds: \(ChartModel.list(m.homeMeds)).")
         L.append("")
-        L.append("**A — Assessment (findings as heard):** Mental status \(ChartModel.show(m.mental)); pupils \(ChartModel.show(m.pupils)); ECG \(ChartModel.list(m.ecg)). Condition words: \(ChartModel.list(m.conditions)).")
+        L.append("**A — Assessment (findings as heard):** Mental status \(ChartModel.show(m.mental)); pupils \(ChartModel.show(m.pupils)); findings \(ChartModel.list(m.findings)). Condition words: \(ChartModel.list(m.conditions)).")
         if m.vitals.isEmpty { L.append("Vitals: \(ChartModel.notHeard).") }
         for v in m.vitals { L.append("- \(m.clock.clock(v.tMs)): \(ChartModel.vitalsLine(v)) [\(v.id)]") }
         L.append("")
@@ -109,7 +110,7 @@ public enum Renderers {
         if !m.medsNotGiven.isEmpty { L.append("- Not given / held: \(ChartModel.list(m.medsNotGiven))") }
         if !m.notDone.isEmpty { L.append("- Not done: \(ChartModel.list(m.notDone))") }
         L.append("")
-        L.append("**T — Transport:** \(transportText(m)). Arrived at destination \(timeOrNot(m.arrival, m)); care transferred \(timeOrNot(m.handoff, m)); wall time \(m.wallTimeMs.map(ChartModel.duration) ?? ChartModel.notHeard).")
+        L.append("**T — Transport:** on scene \(timeOrNot(m.onScene, m)); left scene \(timeOrNot(m.departed, m)); \(transportText(m)). Arrived at destination \(timeOrNot(m.arrival, m)); care transferred \(timeOrNot(m.handoff, m)); wall time \(m.wallTimeMs.map(ChartModel.duration) ?? ChartModel.notHeard).")
         L += openItems(m)
         return RenderedDoc(name: "chart.md", text: L.joined(separator: "\n") + footer + "\n")
     }
@@ -124,9 +125,10 @@ public enum Renderers {
         var mech = "dispatched for \(ChartModel.show(m.dispatch)); found \(ChartModel.show(m.found ?? m.chiefComplaint))"
         if m.dispatchChanged { mech += " ⚠︎ changed on scene" }
         L.append("**M — Mechanism / complaint:** \(mech)")
-        L.append("**I — Injuries / information:** \(ChartModel.list(m.symptoms))" + (m.denied.isEmpty ? "" : "; denies \(ChartModel.list(m.denied))"))
-        if let last = m.vitals.last {
-            L.append("**S — Signs:** latest \(m.clock.clock(last.tMs)) \(ChartModel.vitalsLine(last)) [\(last.id)]")
+        L.append("**I — Injuries / information:** \(ChartModel.list(m.symptoms))" + (m.findings.isEmpty ? "" : "; findings: \(ChartModel.list(m.findings))") + (m.denied.isEmpty ? "" : "; denies \(ChartModel.list(m.denied))"))
+        if !m.vitals.isEmpty {
+            L.append("**S — Signs:**")
+            for v in m.vitals { L.append("- \(m.clock.clock(v.tMs)) \(ChartModel.vitalsLine(v)) [\(v.id)]") }
         } else {
             L.append("**S — Signs:** \(ChartModel.notHeard)")
         }
@@ -155,6 +157,12 @@ public enum Renderers {
     }
 
     // MARK: helpers
+
+    /// Quotes shown in drafts never carry a diagnostic term; the raw transcript keeps the words.
+    static func safeQuote(_ q: String?) -> String {
+        guard let q = q, !q.isEmpty else { return "(no quote)" }
+        return Diagnosis.contains(q) ? "(quote has a diagnostic term; see transcript)" : "\"\(q)\""
+    }
 
     static func procText(_ e: EarshotEvent) -> String {
         var s = e.fields["procedure"] ?? "procedure"
@@ -187,7 +195,7 @@ public enum Renderers {
             L.append("")
             L.append("## Needs medic review")
             for t in m.unlabeledTaps { L.append("- Marked at \(m.clock.clock(t.tMs)), no label (\(t.tapSource ?? "tap")) [\(t.id)]") }
-            for c in m.confirmItems { L.append("- Heard, please confirm: \"\(c.quote ?? "")\" [\(c.id)]") }
+            for c in m.confirmItems { L.append("- Heard, please confirm: \(safeQuote(c.quote)) [\(c.id)]") }
             for g in m.gaps { L.append("- Audio gap at \(m.clock.clock(g.tMs)) (\(g.fields["duration_ms"] ?? "?") ms) [\(g.id)]") }
         }
         return L

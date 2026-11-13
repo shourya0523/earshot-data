@@ -62,27 +62,54 @@ public final class RulesExtractor {
         for t in dict.terms.terms {
             let k = Text.normalizePhrase(t.term)
             switch t.category {
-            case "procedure" where !RulesExtractor.ambiguousProcedures.contains(k): p[k] = (t.expansion, t.term)
-            case "status" where !["priority one", "priority 1", "code"].contains(k): s[k] = (t.term, "condition")   // keep the medic's own word, never a definition
+            case "procedure" where !RulesExtractor.ambiguousProcedures.contains(k): p[k] = (RulesExtractor.procName[t.expansion] ?? t.expansion, t.term)
+            case "status" where !["priority one", "priority 1", "code", "postictal", "seizing", "unresponsive", "combative"].contains(k): s[k] = (t.term, "condition")   // keep the medic's own word, never a definition
             case "symptom": s[k] = (t.expansion, "symptom")
             default: break
             }
         }
         // extra procedure phrasings not in the term list
-        for (k, v) in [("started an iv", "intravenous access"), ("got an iv", "intravenous access"), ("iv in", "intravenous access"),
+        for (k, v) in [("bagging", "BVM ventilation"), ("start bagging", "BVM ventilation"), ("bag him", "BVM ventilation"), ("bag her", "BVM ventilation"),
+                       ("monitor on", "cardiac monitor"), ("on the monitor", "cardiac monitor"), ("hooked up to the monitor", "cardiac monitor"),
+                       ("checking a sugar", "glucose check"), ("check her sugar", "glucose check"), ("check his sugar", "glucose check"),
+                       ("check sugar", "glucose check"), ("check a glucose", "glucose check"), ("checking her glucose", "glucose check"),
+                       ("saline lock", "intravenous access"), ("hep lock", "intravenous access"), ("put her on the monitor", "cardiac monitor"),
+                       ("put him on the monitor", "cardiac monitor"), ("check a sugar", "glucose check"), ("checking her sugar", "glucose check"),
+                       ("checking his sugar", "glucose check"), ("d stick", "glucose check"), ("finger stick", "glucose check"), ("dextro", "glucose check"),
+                       ("neb going", "nebulizer"), ("starting a neb", "nebulizer"), ("breathing treatment", "nebulizer"), ("duoneb going", "nebulizer"),
+                       ("vagal", "vagal maneuver"), ("vagal maneuver", "vagal maneuver"), ("modified valsalva", "vagal maneuver"), ("bear down", "vagal maneuver"),
+                       ("be fast", "BE-FAST screen"), ("cincinnati", "Cincinnati scale"), ("stroke scale", "neuro screen"), ("lams", "LAMS score"),
+                       ("signed the refusal", "refusal"), ("signed refusal", "refusal"), ("for the refusal", "refusal"), ("refusal against medical advice", "refusal"),
+                       ("traction splint", "splinting"), ("refusal form", "refusal"), ("refusing transport", "refusal"), ("signed a refusal", "refusal"),
+                       ("splinted", "splinting"), ("splint", "splinting"), ("suction", "suction"), ("suctioning", "suction"), ("cpr", "CPR"),
+                       ("tourniquet on", "tourniquet"), ("npa", "NPA"),
+                       ("started an iv", "intravenous access"), ("got an iv", "intravenous access"), ("iv in", "intravenous access"),
                        ("line in", "intravenous access"), ("got a line", "intravenous access"), ("shock delivered", "defibrillation"),
                        ("shocking", "defibrillation"), ("delivered a shock", "defibrillation"), ("starting compressions", "chest compressions"),
                        ("start compressions", "chest compressions"), ("12 lead", "12-lead ECG"), ("pads on", "defibrillation pads applied"),
                        ("on the monitor", "cardiac monitoring"), ("tube is in", "endotracheal intubation"), ("igel", "i-gel supraglottic airway"),
                        ("c collar", "cervical collar"), ("on cpap", "continuous positive airway pressure")] {
-            p[k] = (v, k)
+            p[Text.normalizePhrase(k)] = (RulesExtractor.procName[v] ?? v, k)
         }
         procLex = p; statusLex = s
         maxProcTokens = (p.keys.map { $0.split(separator: " ").count } + [1]).max()!
         maxStatusTokens = (s.keys.map { $0.split(separator: " ").count } + [1]).max()!
     }
 
-    static let ambiguousProcedures: Set<String> = ["shock", "suction", "splint", "cpr", "tq", "pacing", "bagging"]
+    static let ambiguousProcedures: Set<String> = ["shock", "pacing", "tq"]
+    /// Common EMS names for procedures (what a medic writes on the chart).
+    static let procName: [String: String] = [
+        "bag-valve-mask ventilation": "BVM ventilation", "intravenous access": "IV access", "intravenous access established": "IV access",
+        "intraosseous access": "IO access", "EZ-IO intraosseous device": "IO access", "cardiopulmonary resuscitation": "CPR",
+        "chest compressions": "CPR", "airway suctioning": "suction", "airway suctioned": "suction", "splint applied": "splinting",
+        "tourniquet applied": "tourniquet", "tourniquet": "tourniquet", "nasopharyngeal airway": "NPA", "oropharyngeal airway": "OPA",
+        "continuous positive airway pressure": "CPAP", "cervical collar": "cervical collar", "cervical collar applied": "cervical collar",
+        "cardiac monitoring": "cardiac monitor", "electrocardiogram": "12-lead ECG", "12-lead ECG": "12-lead ECG",
+        "endotracheal intubation": "intubation", "i-gel supraglottic airway": "supraglottic airway", "King LT supraglottic airway": "supraglottic airway",
+        "supraglottic airway": "supraglottic airway", "needle chest decompression": "needle decompression", "defibrillation pads applied": "defibrillation pads",
+        "transcutaneous pacing": "pacing", "synchronized cardioversion": "cardioversion", "synchronized cardioversion delivered": "cardioversion",
+        "defibrillation delivered": "defibrillation", "oxygen applied": "oxygen", "spinal motion restriction": "spinal motion restriction",
+    ]
     let procLex: [String: (String, String)]
     let statusLex: [String: (String, String)]
     let maxProcTokens: Int
@@ -104,9 +131,11 @@ public final class RulesExtractor {
         out += vitals(tt, &used)
         out += medications(tt, used: used)
         out += homeMeds(tt)
+        if !out.contains(where: { $0.type == .medication && $0.fields["drug"] == "oxygen" }) { out += oxygenDevice(tt) }
         out += procedures(tt)
         out += statuses(tt)
         out += patientInfo(tt)
+        out += assessmentFindings(tt)
         out += dispatch(tt)
         out += transport(tt)
         return out.sorted { ($0.tMs, $0.type.rawValue) < ($1.tMs, $1.type.rawValue) }
@@ -114,16 +143,26 @@ public final class RulesExtractor {
 
     // MARK: vitals
 
-    struct VitalRule { let fields: [String]; let rx: Rx; let ranges: [ClosedRange<Double>]; let conf: Double }
+    struct VitalRule {
+        let fields: [String]; let rx: Rx; let ranges: [ClosedRange<Double>]; let conf: Double
+        var groupOnly = false   // context may overlap an earlier vital ("104/66, rate 132"); only the value must be new
+    }
     static let N = #"(?:is |of |was |at |now |about |around |reading |reads )?"#
+    /// Up to 4 filler words between a vital name and its value ("sat's coming up, 95", "rate's down to 132").
+    static let NF = #"(?:(?:is|are|was|of|at|now|about|around|reading|reads|coming|up|down|to|still|only|;)\s+){0,4}"#
     static let vitalRules: [VitalRule] = [
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure|bps)\s+"# + N + #"(\d{2,3})/(\d{2,3})\b"#), ranges: [40...300, 20...200], conf: 0.92),
         VitalRule(fields: ["bp_systolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure)\s+"# + N + #"(\d{2,3})\s+(?:by\s+)?palp"#), ranges: [40...300], conf: 0.88),
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"(?<![\w/])(\d{2,3})/(\d{2,3})(?![\w/])"#), ranges: [60...260, 30...160], conf: 0.7),
         VitalRule(fields: ["resp_rate"], rx: Rx(#"\b(?:rr|resps|resp|respirations|respiratory rate|resp rate|breathing|breathing at|respiration)\s+"# + #"(?:are |is |of |at |about |around )?(\d{1,2})\b"#), ranges: [2...70], conf: 0.88),
-        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:hr|heart rate|pulse|pulse rate|pulses|heart rates)\s+"# + N + #"(\d{2,3})\b"#), ranges: [20...260], conf: 0.9),
+        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:hr|heart rate|pulse|pulse rate|pulses|heart rates)\s+"# + NF + #"(\d{2,3})\b"#), ranges: [20...260], conf: 0.9),
+        // bare "rate N" right after a BP or sat reading ("Recheck, 104 over 66, rate 132"): heart rate when N > 40
+        VitalRule(fields: ["heart_rate"], rx: Rx(#"(?:\d{2,3}/\d{2,3}|sats?\s+\d{2,3})\s*;?\s+(?:heart\s+)?rate\s+"# + NF + #"(\d{2,3})\b"#), ranges: [41...260], conf: 0.8, groupOnly: true),
+        VitalRule(fields: ["heart_rate"], rx: Rx(#"(?<!resp |respiratory |breathing |drip |flow |infusion |pump )\brate\s+(?:is |at |of |now |down to |up to )?(\d{2,3})\b"#), ranges: [41...260], conf: 0.75),
+        // "breathing, rate 14": respiratory rate when the sentence is about breathing and N <= 40
+        VitalRule(fields: ["resp_rate"], rx: Rx(#"\bbreathing\s*;?\s+(?:rate|at)\s+"# + NF + #"(\d{1,2})\b"#), ranges: [2...40], conf: 0.8),
         VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:tachy|tachycardic|brady|bradycardic|sinus tach|sinus brady|sinus|afib|tachycardia|bradycardia)\s+(?:at|in the|of)\s+(?:about\s+)?(\d{2,3})s?\b"#), ranges: [20...260], conf: 0.85),
-        VitalRule(fields: ["spo2"], rx: Rx(#"\b(?:spo2|sats|sat|o2 sat|o2 sats|pulse ox|satting|sating|saturation|saturating|sats are|o2 saturation)\s+"# + N + #"(\d{2,3})\b(?!\s*(?:lpm|l|liters))"#), ranges: [40...100], conf: 0.9),
+        VitalRule(fields: ["spo2"], rx: Rx(#"\b(?:spo2|sats|sat|o2 sat|o2 sats|pulse ox|satting|sating|saturation|saturating|sats are|o2 saturation)\s+"# + NF + #"(\d{2,3})\b(?!\s*(?:lpm|l|liters))"#), ranges: [40...100], conf: 0.9),
         VitalRule(fields: ["spo2"], rx: Rx(#"\b(\d{2,3})\s*(?:%)\s+(?:on\s+)?(?:room air|ra|\d+\s*lpm|nrb|nc|non rebreather|nasal cannula)"#), ranges: [40...100], conf: 0.85),
         VitalRule(fields: ["glucose"], rx: Rx(#"\b(?:bgl|cbg|glucose|sugar|blood sugar|blood glucose|d stick|dextro|accucheck|accu check|sugars)\s+"# + N + #"(\d{2,3}|high|hi|low|lo)\b"#), ranges: [10...700], conf: 0.88),
         VitalRule(fields: ["gcs"], rx: Rx(#"\bgcs\s+(?:is |of |was |a |at )?(\d{1,2})\b"#), ranges: [3...15], conf: 0.92),
@@ -144,7 +183,8 @@ public final class RulesExtractor {
         var hits: [Hit] = []
         for rule in RulesExtractor.vitalRules {
             for m in rule.rx.all(tt.text) {
-                guard let tr = tt.tokens(m.range) else { continue }
+                guard var tr = tt.tokens(m.range) else { continue }
+                if rule.groupOnly, let gr = tt.tokens(m.range(at: 1)) { tr = gr }
                 if tr.contains(where: { used.contains($0) }) { continue }
                 var vals: [String] = []
                 var ok = true
@@ -166,9 +206,8 @@ public final class RulesExtractor {
                 hits.append(Hit(fields: [field], vals: [map(tt.sub(m.range(at: 1)))], tr: tr, conf: 0.9, extra: [:]))
             }
         }
-        simple(RulesExtractor.aoRx, "mental_status") { "A&Ox\($0)" }
+        simple(RulesExtractor.aoRx, "mental_status") { "A&O×\($0)" }
         simple(RulesExtractor.perrlRx, "pupils") { _ in "PERRL" }
-        simple(RulesExtractor.rhythmRx, "ecg") { $0.uppercased() == $0 ? $0 : $0.lowercased() }
         let hasCore = !hits.isEmpty
         if hasCore { simple(RulesExtractor.o2onRx, "o2_on") { $0 } }
         hits.sort { $0.tr.lowerBound < $1.tr.lowerBound }
@@ -356,6 +395,9 @@ public final class RulesExtractor {
                     amount = (toks[j - 1].text, (j - 1)...(j - 1)); unit = (u, j...j)
                 } else if j >= lo, isNumber(toks[j].text), !used.contains(j), a0 >= 1, toks[a0 - 1].text == "of" {
                     amount = (toks[j].text, j...j)
+                } else if a0 >= 1, a0 - 1 >= sStart, isNumber(toks[a0 - 1].text), !used.contains(a0 - 1), toks[a0 - 1].punct == nil,
+                          !(a0 >= 2 && RulesExtractor.notDoseBefore.contains(toks[a0 - 2].text)) {
+                    amount = (toks[a0 - 1].text, (a0 - 1)...(a0 - 1))   // "10 Valium rectal"
                 }
             }
             if let a = amount {
@@ -370,7 +412,11 @@ public final class RulesExtractor {
                 }
             }
             // route (same sentence; may cross a comma: "324 of aspirin, chewed")
-            if let (r, rr, heard) = route(toks, lo, hiW, drug: d) {
+            var routeHit = route(toks, lo, hiW, drug: d)
+            if routeHit == nil, hi + 1 < hits.count, hiW + 1 < toks.count, toks[(b0 + 1)...max(b0 + 1, min(hiW + 1, toks.count - 1))].contains(where: { $0.text == "and" }) {
+                routeHit = route(toks, hits[hi + 1].range.upperBound + 1, sEnd, drug: d)   // route said once for both drugs
+            }
+            if let (r, rr, heard) = routeHit {
                 fields["route"] = r; rec["route"] = tt.receipt(rr); span = min(span.lowerBound, rr.lowerBound)...max(span.upperBound, rr.upperBound)
                 if let w = heard { fields["route_as_heard"] = w }
             }
@@ -393,6 +439,39 @@ public final class RulesExtractor {
                                extractor: RulesExtractor.version + (h.how == "alias" ? "" : ":" + h.how)))
         }
         return out
+    }
+
+    /// Oxygen named by its device: "non-rebreather at 15 liters", "2 liters nasal cannula".
+    static let o2Devices: [(String, String)] = [("non rebreather", "NRB"), ("nrb", "NRB"), ("nasal cannula", "NC"), ("nasal canula", "NC"), ("blow by", "BLOWBY")]
+    func oxygenDevice(_ tt: TokText) -> [Finding] {
+        let toks = tt.seg.tokens
+        let texts = toks.map(\.text)
+        guard let d = dict.drug(named: "oxygen") else { return [] }
+        for (phrase, route) in RulesExtractor.o2Devices {
+            let w = phrase.split(separator: " ").map(String.init)
+            guard w.count <= texts.count else { continue }
+            for i in 0...(texts.count - w.count) where Array(texts[i..<(i + w.count)]) == w {
+                if i > 0 && texts[i - 1] == "on" && i > 1 && ["room", "sats", "sat"].contains(texts[i - 2]) { continue }
+                let r = i...(i + w.count - 1)
+                var fields = ["drug": d.generic, "route": route, "route_as_heard": tt.seg.quote(r.lowerBound, r.upperBound)]
+                var rec: [String: FieldReceipt] = ["drug": tt.receipt(r), "route": tt.receipt(r)]
+                var span = r
+                let lo = max(clauseStart(toks, i), i - 4), hi = min(sentenceEnd(toks, r.upperBound), r.upperBound + 4)
+                for k in lo...hi where !r.contains(k) && isNumber(texts[k]) {
+                    if let v = Double(texts[k]), v >= 0.5, v <= 25 {
+                        fields["dose"] = texts[k]; rec["dose"] = tt.receipt(k...k)
+                        if k + 1 < texts.count, let u = unitOf(texts[k + 1]) ?? (["liters", "l", "lpm", "liter"].contains(texts[k + 1]) ? "lpm" : nil) {
+                            fields["unit"] = u == "l" ? "lpm" : u; rec["unit"] = tt.receipt((k + 1)...(k + 1))
+                            span = min(span.lowerBound, k)...max(span.upperBound, k + 1)
+                        } else { span = min(span.lowerBound, k)...max(span.upperBound, k) }
+                        break
+                    }
+                }
+                return [Finding(type: .medication, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: i), rawSpan: tt.seg.rawSpan,
+                                quote: tt.seg.quote(span.lowerBound, span.upperBound), confidence: 0.85, flags: [], extractor: RulesExtractor.version + ":o2device")]
+            }
+        }
+        return []
     }
 
     /// Home medications that EMS does not carry (lisinopril, Eliquis…): only in
@@ -419,14 +498,15 @@ public final class RulesExtractor {
 
     static let routeWords: [String: String] = ["chewed": "PO", "chew": "PO", "chewable": "PO", "swallow": "PO", "push": "IV", "pushed": "IV",
                                                "ivp": "IV", "drip": "IV", "spray": "IN", "atomized": "IN", "nostril": "IN", "nose": "IN",
-                                               "thigh": "IM", "deltoid": "IM", "tongue": "SL", "neb": "NEB", "nebulizer": "NEB", "patch": "TD"]
+                                               "thigh": "IM", "deltoid": "IM", "tongue": "SL", "neb": "NEB", "nebulizer": "NEB", "patch": "TD", "rectal": "PR", "rectally": "PR"]
+    static let routePhrasesExtra: [String: String] = ["through the line": "IV", "in the line": "IV", "via the line": "IV", "down the line": "IV", "into the line": "IV"]
     func route(_ toks: [CleanToken], _ lo: Int, _ hi: Int, drug: Drug) -> (String, ClosedRange<Int>, String?)? {
         guard lo <= hi else { return nil }
         for k in lo...hi {
             for n in stride(from: min(4, hi - k + 1), through: 1, by: -1) {
                 let phrase = toks[k..<(k + n)].map(\.text).joined(separator: " ")
-                if phrase == "in" || phrase == "et" { continue }  // too ambiguous alone
-                if let r = dict.routeIndex[phrase] ?? (n == 1 ? RulesExtractor.routeWords[phrase] : nil) {
+                if (phrase == "in" || phrase == "et") && toks[k].rule != "route:normalize" { continue }  // ambiguous unless cleanup normalized it
+                if let r = dict.routeIndex[phrase] ?? RulesExtractor.routePhrasesExtra[phrase] ?? (n == 1 ? RulesExtractor.routeWords[phrase] : nil) {
                     if r == "IV" && (phrase == "push" || phrase == "pushed") && !drug.routes.contains("IV") { continue }
                     let heard: String? = phrase == r.lowercased() ? nil : phrase   // e.g. "chewed" -> PO is shown as heard
                     return (r, k...(k + n - 1), heard)
@@ -439,14 +519,15 @@ public final class RulesExtractor {
     // MARK: procedures
 
     static let ivRx = Rx(#"\b(1[4-9]|2[0-4])\s*(?:gauge)\b(?:\s+(?:iv|in the|in))?(?:\s+(?:the\s+)?(left|right|l|r))?\s*(ac|antecubital|hand|forearm|wrist|ej|external jugular|arm)?"#)
+    static let ivSiteRx = Rx(#"\b(1[4-9]|2[0-4])\s+(?:gauge\s+)?(?:iv\s+)?(?:;\s+)?(?:in the\s+|in\s+)?(left|right)\s+(ac|antecubital|hand|forearm|wrist|ej|external jugular|arm)\b"#)
     static let joulesRx = Rx(#"\b(?:shock(?:ed|ing)?|defib(?:rillated)?|cardioverted|cardiovert)\s+(?:at\s+)?(\d{2,3})\s*(?:joules|j)\b"#)
 
     func procedures(_ tt: TokText) -> [Finding] {
         let toks = tt.seg.tokens
         var out: [Finding] = []
         var taken = Set<Int>()
-        for m in RulesExtractor.ivRx.all(tt.text) {
-            guard let tr = tt.tokens(m.range) else { continue }
+        for m in RulesExtractor.ivSiteRx.all(tt.text) + RulesExtractor.ivRx.all(tt.text) {
+            guard let tr = tt.tokens(m.range), !tr.contains(where: { taken.contains($0) }) else { continue }
             var f: [String: String] = ["procedure": "IV access", "gauge": tt.sub(m.range(at: 1))]
             if m.range(at: 2).location != NSNotFound || m.range(at: 3).location != NSNotFound {
                 let side = m.range(at: 2).location != NSNotFound ? tt.sub(m.range(at: 2)) : ""
@@ -475,6 +556,7 @@ public final class RulesExtractor {
                 for n in stride(from: min(maxProcTokens, toks.count - i), through: 1, by: -1) {
                     let phrase = toks[i..<(i + n)].map(\.text).joined(separator: " ")
                     if let (canon, _) = procLex[phrase] {
+                        if i + n < toks.count && toks[i + n].text == "time" { adv = n; break }   // "tourniquet time 02:34" is a finding
                         let before = toks[max(clauseStart(toks, i), i - 3)..<i].map(\.text)
                         let neg = before.contains { RulesExtractor.negCues.contains($0) }
                         if !seen.contains(canon) {
@@ -526,6 +608,67 @@ public final class RulesExtractor {
                 adv = n; break
             }
             i += adv
+        }
+        return out
+    }
+
+    // MARK: assessment findings (what the crew observed, in their words)
+
+    static let findingLex: [(String, String)] = [
+        ("slurred speech", "slurred speech"), ("facial droop", "facial droop"), ("arm drift", "arm drift"), ("pinpoint pupils", "pinpoint pupils"),
+        ("pupils pinpoint", "pinpoint pupils"), ("pupils are pinpoint", "pinpoint pupils"), ("tripoding", "tripoding"), ("tripod", "tripoding"),
+        ("wheezes", "wheezes"), ("wheezing", "wheezes"), ("actively seizing", "actively seizing"), ("still seizing", "actively seizing"),
+        ("postictal", "postictal"), ("post ictal", "postictal"), ("rales", "rales"), ("crackles", "crackles"), ("stridor", "stridor"),
+        ("diminished breath sounds", "diminished breath sounds"), ("accessory muscle use", "accessory muscle use"), ("retractions", "retractions"),
+        ("jvd", "JVD"), ("pedal edema", "pedal edema"), ("cyanotic", "cyanotic"), ("mottled", "mottled"), ("unresponsive", "unresponsive"),
+        ("combative", "combative"), ("pale cool and diaphoretic", "pale, cool and diaphoretic"), ("pale cool and sweaty", "pale, cool and diaphoretic"), ("pale cool diaphoretic", "pale, cool and diaphoretic"),
+        ("pale cool and clammy", "pale, cool and clammy"), ("pale cool clammy", "pale, cool and clammy"), ("diaphoretic", "diaphoretic"),
+        ("pink warm and dry", "pink, warm and dry"), ("pink warm dry", "pink, warm and dry"),
+    ]
+    static let clockTime = #"((?:0\s+)?\d{1,2}(?:[:\s]\d{2})?|\d{3,4})"#
+    static let lkwRx = Rx(#"\b(?:last known well|lkw|last seen normal)\s+(?:at\s+|was\s+|is\s+|around\s+)?(?:oh\s+)?"# + clockTime + #"\b"#)
+    static let tqTimeRx = Rx(#"\btourniquet\s+(?:time\s+|on at\s+|on\s+|at\s+|applied at\s+)(?:oh\s+)?"# + clockTime + #"\b"#)
+
+    func hhmm(_ s: String) -> String {
+        let digits = s.filter(\.isNumber)
+        guard digits.count >= 3 else { return digits.count <= 2 ? String(format: "%02d:00", Int(digits) ?? 0) : s }
+        let h = String(digits.dropLast(2)), m = String(digits.suffix(2))
+        return String(format: "%02d:%@", Int(h) ?? 0, m)
+    }
+
+    func assessmentFindings(_ tt: TokText) -> [Finding] {
+        let toks = tt.seg.tokens
+        let texts = toks.map(\.text)
+        var out: [Finding] = []
+        var seen = Set<String>()
+        func add(_ term: String, _ r: ClosedRange<Int>, negated: Bool = false) {
+            guard !seen.contains(term) else { return }
+            seen.insert(term)
+            var f = ["kind": "finding", "term": term]
+            if negated { f["negated"] = "true" }
+            out.append(Finding(type: .status, fields: f, receipts: ["term": tt.receipt(r)], tMs: tt.seg.timeOf(token: r.lowerBound),
+                               rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(r.lowerBound, r.upperBound), confidence: 0.8, flags: [], extractor: RulesExtractor.version))
+        }
+        var consumed = Set<Int>()
+        for (phrase, term) in RulesExtractor.findingLex.sorted(by: { $0.0.count > $1.0.count }) {
+            let w = phrase.split(separator: " ").map(String.init)
+            var i = 0
+            while i + w.count <= texts.count {
+                if Array(texts[i..<(i + w.count)]) == w && !(i..<(i + w.count)).contains(where: { consumed.contains($0) }) {
+                    for k in i..<(i + w.count) { consumed.insert(k) }
+                    let before = texts[max(clauseStart(toks, i), i - 3)..<i]
+                    add(term, i...(i + w.count - 1), negated: before.contains { RulesExtractor.negCues.contains($0) })
+                    i += w.count
+                } else { i += 1 }
+            }
+        }
+        for m in RulesExtractor.lkwRx.all(tt.text) {
+            guard let tr = tt.tokens(m.range) else { continue }
+            add("last known well " + hhmm(tt.sub(m.range(at: 1))), tr)
+        }
+        for m in RulesExtractor.tqTimeRx.all(tt.text) {
+            guard let tr = tt.tokens(m.range) else { continue }
+            add("tourniquet time " + hhmm(tt.sub(m.range(at: 1))), tr)
         }
         return out
     }
@@ -657,6 +800,14 @@ public final class RulesExtractor {
     static let modeRx = Rx(#"\b(lights and sirens|code 3|code three|emergent|non emergent|non-emergent|code 2|code two|no lights)\b"#)
     static let alertRx = Rx(#"\b(stemi alert|stroke alert|trauma alert|sepsis alert|cath lab|trauma team|code stroke|code stemi|activate|activated|pre-?alert|notify|notified)\b"#)
     static let etaRx = Rx(#"\beta\s+(?:is\s+|of\s+|about\s+|in\s+)*(\d{1,3})\s*(?:minutes|minute|mins|min)\b"#)
+    static let onSceneRx = Rx(#"\b(?:on scene|on-scene|arriving on scene|arrived on scene|we're on location|on location)\b"#)
+    static let departRx = Rx(#"\b(?:we're transporting|we are transporting|transporting|leaving (?:the )?scene|leaving now|en route to (?:the )?(?:hospital|ed|er)|heading in|departing)\b"#)
+    static let handoffRx = Rx(#"\b(?:transfer of care|handing off|handed off|giving report|report given|gave report|patient handed over)\b"#)
+    static let inServiceRx = Rx(#"\b(?:back in service|back available|clear(?:ing)? (?:the )?(?:scene|hospital)|we're clear)\b"#)
+    static let weAreHereRx = Rx(#"(?:^|\|\s+|;\s+)(?:okay\s+;?\s*)?(?:we're here|we are here|here we are|we made it)\b"#)
+    /// Sentence-initial "At the trauma center." (needs a facility word, checked by looksLikePlace + facilityOnly)
+    static let atPlaceRx = Rx(#"(?:^|\|\s+)at\s+(?:the\s+)?((?:[^\s|;]+\s+){0,3}(?:hospital|ed|er|center|general|memorial|regional|medical|emergency|bay|mercy|children's))\b"#)
+    static let atPlaceNowRx = Rx(#"(?:^|\|\s+|;\s+)\s*(?:we're\s+|we are\s+)?at\s+(?:the\s+)?"# + phrase + #"\s+now\b"#)
     static let arrivedRx = Rx(#"\b(?:we're at|we are at|arrived at|arriving at|arrive at|arrive that|arrived that|pulling into|pulling in to|we're here at|here at)\s+(?:the\s+)?"# + phrase + #"(?=\s+[|;]|\s+(?:now|and|with)\b|\s*$)"#)
     /// A destination must look like a place: a facility word, or a capitalized name (not a number, not a verb phrase).
     static let facilityWords: Set<String> = ["hospital", "ed", "er", "emergency", "medical", "center", "general", "memorial", "mercy", "regional",
@@ -695,13 +846,35 @@ public final class RulesExtractor {
             out.append(Finding(type: .transport, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: lo), rawSpan: tt.seg.rawSpan,
                                quote: tt.seg.quote(lo, hi), confidence: 0.8, flags: [], extractor: RulesExtractor.version))
         }
-        for m in RulesExtractor.arrivedRx.all(tt.text) {
+        func timeEvent(_ kind: String, _ etime: String, _ rx: Rx, conf: Double, flags: [String] = []) {
+            for m in rx.all(tt.text) {
+                guard let tr = tt.tokens(m.range) else { continue }
+                out.append(Finding(type: .transport, fields: ["kind": kind, "etime": etime], receipts: ["kind": tt.receipt(tr)],
+                                   tMs: tt.seg.startMs,   // a time stamp is when the utterance began
+                                   rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound),
+                                   confidence: conf, flags: flags, extractor: RulesExtractor.version))
+                return
+            }
+        }
+        timeEvent("on_scene", "eTimes.06", RulesExtractor.onSceneRx, conf: 0.8)
+        timeEvent("departed", "eTimes.09", RulesExtractor.departRx, conf: 0.75)
+        timeEvent("handoff_heard", "eTimes.12", RulesExtractor.handoffRx, conf: 0.7, flags: ["confirm"])
+        timeEvent("back_in_service", "eTimes.13", RulesExtractor.inServiceRx, conf: 0.75)
+        for m in RulesExtractor.weAreHereRx.all(tt.text) {
+            guard let tr = tt.tokens(m.range) else { continue }
+            out.append(Finding(type: .transport, fields: ["kind": "arrived_heard", "etime": "eTimes.11"], receipts: ["kind": tt.receipt(tr)],
+                               tMs: tt.seg.startMs, rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound),
+                               confidence: 0.55, flags: ["confirm"], extractor: RulesExtractor.version))
+            break
+        }
+        for m in RulesExtractor.arrivedRx.all(tt.text) + RulesExtractor.atPlaceNowRx.all(tt.text) + RulesExtractor.atPlaceRx.all(tt.text) {
             guard let tr = tt.tokens(m.range), m.range(at: 1).location != NSNotFound, m.range(at: 1).length > 0,
                   let vr = tt.tokens(m.range(at: 1)) else { continue }
             let dest = tt.seg.quote(vr.lowerBound, vr.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))
             guard looksLikePlace(dest) else { continue }   // "sats, we're at 92" is not an arrival
-            out.append(Finding(type: .transport, fields: ["kind": "arrived_heard", "destination": dest], receipts: ["kind": tt.receipt(tr)],
-                               tMs: tt.seg.timeOf(token: tr.lowerBound), rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound),
+            if out.contains(where: { $0.fields["kind"] == "arrived_heard" }) { continue }
+            out.append(Finding(type: .transport, fields: ["kind": "arrived_heard", "destination": dest, "etime": "eTimes.11"], receipts: ["kind": tt.receipt(tr)],
+                               tMs: tt.seg.startMs, rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound),
                                confidence: 0.6, flags: ["confirm"], extractor: RulesExtractor.version))
         }
         return out

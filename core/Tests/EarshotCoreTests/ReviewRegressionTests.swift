@@ -175,3 +175,49 @@ final class FormularyAdditionsTests: XCTestCase {
         XCTAssertNotNil(TestEnv.dict.drug(named: "furosemide"))
     }
 }
+
+/// Round 2: misses found by scoring against the data agent's ground truth (test + dev calls).
+final class GroundTruthRound2Tests: XCTestCase {
+    func v(_ t: String) -> [String: String] { extract(t).filter { $0.type == .vitals }.reduce(into: [:]) { $0.merge($1.fields) { a, _ in a } } }
+    func meds(_ t: String) -> [Finding] { extract(t).filter { $0.type == .medication } }
+    func procs(_ t: String) -> [String] { extract(t).filter { $0.type == .procedure }.compactMap { $0.fields["procedure"] } }
+
+    func testHeartRateForms() {
+        XCTAssertEqual(v("Recheck, 104 over 66, rate 132.")["heart_rate"], "132")
+        XCTAssertEqual(v("rate's 140")["heart_rate"], "140")
+        XCTAssertEqual(v("Sat's coming up, 95.")["spo2"], "95")
+        XCTAssertEqual(v("He's breathing, rate 14 now, sat 96.")["resp_rate"], "14")
+        XCTAssertNil(v("drip rate of 125")["heart_rate"])
+    }
+    func testRoutes() {
+        XCTAssertEqual(meds("Narcan 4 milligrams intranasal").first?.fields["route"], "IN")
+        XCTAssertEqual(meds("0.3 ket through the line").first?.fields["route"], "IV")
+        XCTAssertEqual(meds("Starting a DuoNeb, albuterol 2.5 and ipratropium 0.5 by nebulizer.").first { $0.fields["drug"] == "albuterol" }?.fields["route"], "NEB")
+        XCTAssertEqual(meds("Second albuterol, 5 milligrams, neb.").first?.fields["route"], "NEB")
+        let o2 = meds("Non-rebreather at 15 liters.").first!
+        XCTAssertEqual(o2.fields["drug"], "oxygen"); XCTAssertEqual(o2.fields["route"], "NRB"); XCTAssertEqual(o2.fields["dose"], "15")
+        XCTAssertEqual(meds("10 Valium rectal").first?.fields["dose"], "10")
+    }
+    func testProceduresAndFindings() {
+        XCTAssertEqual(procs("Eighteen in the left AC."), ["IV access"])
+        XCTAssertEqual(procs("Start bagging him."), ["BVM ventilation"])
+        XCTAssertEqual(procs("Patient signed refusal against medical advice."), ["refusal"])
+        XCTAssertEqual(procs("Traction splint, then load."), ["splinting"])
+        XCTAssertEqual(procs("Tourniquet time oh two thirty four."), [])
+        let f = extract("Tourniquet time oh two thirty four. Last known well sixteen fifteen. Pale, cool and diaphoretic.")
+            .filter { $0.fields["kind"] == "finding" }.compactMap { $0.fields["term"] }
+        XCTAssertEqual(Set(f), ["tourniquet time 02:34", "last known well 16:15", "pale, cool and diaphoretic"])
+        XCTAssertFalse(procs("BE-FAST positive").joined().lowercased().contains("stroke"), "procedure names never carry a diagnosis word")
+    }
+    func testHeardTimesAtUtteranceStart() {
+        let f = RulesExtractor(dict: TestEnv.dict).extract(Cleanup(dict: TestEnv.dict).clean(seg("Medic 14 on scene.", start: 9430, end: 10790)).0)
+        XCTAssertEqual(f.first { $0.fields["kind"] == "on_scene" }?.tMs, 9430)
+        XCTAssertNotNil(extract("We're here.").first { $0.fields["kind"] == "arrived_heard" })
+        XCTAssertNotNil(extract("At the trauma center.").first { $0.fields["kind"] == "arrived_heard" })
+        XCTAssertNotNil(extract("Transfer of care complete.").first { $0.fields["kind"] == "handoff_heard" })
+    }
+    func testRhythmNamesNotExtracted() {
+        XCTAssertNil(v("Heart rate's 148 and irregular, afib with RVR")["ecg"])
+        XCTAssertEqual(v("Heart rate's 148 and irregular")["heart_rate"], "148")
+    }
+}

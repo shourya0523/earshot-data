@@ -39,7 +39,9 @@ public struct TapMerger {
                                                     "patient", "allergy", "history", "home_med"]
     static let typePriority: [EventType: Int] = [.medication: 0, .procedure: 1, .vitals: 2, .status: 3]
 
+    static let labelableTimeKinds: Set<String> = ["on_scene", "departed", "arrived_heard", "handoff_heard", "back_in_service"]
     func isLabelable(_ f: Finding) -> Bool {
+        if f.type == .transport { return TapMerger.labelableTimeKinds.contains(f.fields["kind"] ?? "") }
         guard TapMerger.labelable.contains(f.type) else { return false }
         if f.type == .status { return TapMerger.labelableStatusKinds.contains(f.fields["kind"] ?? "") }
         return true
@@ -91,16 +93,45 @@ public struct TapMerger {
         for (ti, tap) in marks.enumerated() {
             if let fi = tapLabel[ti] {
                 let f = findings[fi]
-                var e = make(f.type, tap.tMs, f.fields, .tapHeard, f.quote, f.rawSpan, f.confidence, tap: tap, receipts: f.receipts,
-                             flags: f.flags, extractor: f.extractor)
+                // a tap on a heard time becomes that time (arrival / transfer of care) at the tap moment
+                var type = f.type
+                var fields = f.fields
+                if f.type == .transport && f.fields["kind"] == "arrived_heard" && !arrivalFromTablet {
+                    type = .arrival; fields = ["method": "tap + heard", "nemsis": "eTimes.11"]; if let d = f.fields["destination"] { fields["destination"] = d }
+                    arrivalFromTablet = true
+                } else if f.type == .transport && f.fields["kind"] == "handoff_heard" && !taps.contains(where: { $0.gesture == "handoff" }) {
+                    type = .handoff; fields = ["method": "tap + heard", "nemsis": "eTimes.12"]
+                }
+                var e = make(type, tap.tMs, fields, .tapHeard, f.quote, f.rawSpan, f.confidence, tap: tap, receipts: f.receipts,
+                             flags: f.flags.filter { $0 != "confirm" || type == f.type }, extractor: f.extractor)
                 e.fields["heard_at"] = clock.clock(f.tMs)
                 out.append(e)
             } else {
                 out.append(make(.tap, tap.tMs, ["label": "no label"], .tap, nil, nil, 1.0, tap: tap, flags: ["unlabeled"]))
             }
         }
-        var arrivalHeardUsed = arrivalFromTablet
+        var arrivalHeardUsed = arrivalFromTablet || out.contains { $0.type == .arrival }
+        let extraHasHandoff = taps.contains { $0.gesture == "handoff" } || extra.contains { $0.type == .handoff }
+        var handoffHeardUsed = false
+        var lastProc: [String: Int64] = [:]
+        for (i, f) in findings.enumerated() where f.type == .procedure {
+            let name = (f.fields["procedure"] ?? "") + "|" + (f.fields["site"] ?? "")
+            if claimed.contains(i) { lastProc[name] = f.tMs; continue }
+            if let t = lastProc[name], f.tMs - t < 120_000, f.fields["procedure"] != "IV access" || f.fields["site"] == nil {
+                claimed.insert(i)   // same procedure said again ("get a 12 lead" ... "12 lead shows"): one event
+                continue
+            }
+            lastProc[name] = f.tMs
+        }
         for (i, f) in findings.enumerated() where !claimed.contains(i) {
+            if f.type == .transport && f.fields["kind"] == "handoff_heard" {
+                if !handoffHeardUsed && !extraHasHandoff && !out.contains(where: { $0.type == .handoff }) {
+                    handoffHeardUsed = true
+                    out.append(make(.handoff, f.tMs, ["method": "heard", "nemsis": "eTimes.12"], .heard, f.quote, f.rawSpan, f.confidence,
+                                    receipts: f.receipts, flags: ["confirm"], extractor: f.extractor))
+                }
+                continue
+            }
             if f.type == .transport && f.fields["kind"] == "arrived_heard" && !arrivalHeardUsed {
                 arrivalHeardUsed = true
                 var flds = ["method": "heard", "nemsis": "eTimes.11"]

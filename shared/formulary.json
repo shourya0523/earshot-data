@@ -545,7 +545,6 @@
     "albuterol neb",
     "proventil",
     "ventolin",
-    "neb",
     "breathing treatment"
    ],
    "aliases": [
@@ -553,7 +552,6 @@
     "albuterol neb",
     "albuterol's",
     "breathing treatment",
-    "neb",
     "proair",
     "proventil",
     "ventolin"
@@ -574,7 +572,6 @@
    "phonetic": [
     "ALBTRL",
     "FNTLN",
-    "NB",
     "PRFNTL",
     "PRR"
    ],
@@ -2493,32 +2490,18 @@
    "slang": [
     "o2",
     "high flow",
-    "nasal cannula",
-    "nc",
-    "non rebreather",
-    "nrb",
-    "blow by",
-    "cpap",
-    "bvm"
+    "high flow oxygen",
+    "supplemental oxygen"
    ],
    "aliases": [
-    "blow by",
-    "bvm",
-    "cpap",
     "high flow",
-    "nasal cannula",
-    "nc",
-    "non rebreather",
-    "nrb",
+    "high flow oxygen",
     "o2",
-    "oxygen"
+    "oxygen",
+    "supplemental oxygen"
    ],
    "asr_variants": [
-    "canula",
-    "kannula",
-    "kanula",
     "nasal canula",
-    "nazal",
     "non re breather",
     "o two",
     "ocsygen",
@@ -2529,10 +2512,6 @@
     "oxigen"
    ],
    "phonetic": [
-    "BFM",
-    "KPP",
-    "NK",
-    "NRB",
     "O",
     "OKSJN"
    ],
@@ -2540,25 +2519,30 @@
     {
      "amount": "2",
      "unit": "lpm",
-     "route": "INH"
+     "route": "NC"
     },
     {
      "amount": "4",
      "unit": "lpm",
-     "route": "INH"
+     "route": "NC"
     },
     {
      "amount": "15",
      "unit": "lpm",
-     "route": "INH"
+     "route": "NRB"
     },
     {
      "amount": "10",
      "unit": "lpm",
-     "route": "INH"
+     "route": "NRB"
     }
    ],
    "routes": [
+    "NC",
+    "NRB",
+    "BVM",
+    "CPAP",
+    "BLOWBY",
     "INH"
    ],
    "label_routes_openfda": [
@@ -4894,21 +4878,66 @@
     "nebulizer",
     "via neb",
     "hand held neb",
-    "inline neb"
+    "inline neb",
+    "by nebulizer"
    ],
    "nemsis_code": "9927071",
    "nemsis_label": "Nebulizer"
+  },
+  "NRB": {
+   "spoken": [
+    "non rebreather",
+    "non-rebreather",
+    "nrb",
+    "via nrb",
+    "via non rebreather"
+   ],
+   "nemsis_code": "9927031",
+   "nemsis_label": "Non-Rebreather Mask"
+  },
+  "NC": {
+   "spoken": [
+    "nasal cannula",
+    "nasal canula",
+    "via nasal cannula",
+    "via nc",
+    "cannula"
+   ],
+   "nemsis_code": "9927025",
+   "nemsis_label": "Nasal Cannula"
+  },
+  "BVM": {
+   "spoken": [
+    "bvm",
+    "bag valve mask",
+    "via bvm"
+   ],
+   "nemsis_code": "9927065",
+   "nemsis_label": "BVM"
+  },
+  "CPAP": {
+   "spoken": [
+    "cpap",
+    "on cpap",
+    "via cpap"
+   ],
+   "nemsis_code": "9927067",
+   "nemsis_label": "CPAP"
+  },
+  "BLOWBY": {
+   "spoken": [
+    "blow by",
+    "blowby"
+   ],
+   "nemsis_code": "9927001",
+   "nemsis_label": "Blow-By"
   },
   "INH": {
    "spoken": [
     "inhaled",
     "inhalation",
     "mdi",
-    "inhaler",
-    "via nasal cannula",
-    "via non rebreather",
-    "via nrb",
-    "via nc"
+    "inhaler"
    ],
    "nemsis_code": "9927009",
    "nemsis_label": "Inhalation"

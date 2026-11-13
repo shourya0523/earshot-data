@@ -12,6 +12,8 @@ public enum Diagnosis {
         "fracture", "broken", "concussion", "tbi", "pneumothorax", "tension pneumo", "chf exacerbation", "copd exacerbation",
         "asthma attack", "hypoglycemia", "hyperglycemia", "ectopic", "eclampsia", "preeclampsia", "status epilepticus",
         "cardiac arrest", "arrhythmia", "dvt", "gi bleed", "ich", "sah", "cardiac tamponade", "hypovolemic shock", "septic shock", "shock",
+        "hemorrhagic shock", "exacerbation", "whiplash", "atrial fibrillation", "afib", "a fib", "rvr", "svt", "vtach", "v tach", "vfib", "v fib",
+        "opioid overdose", "hypoglycemic", "hyperglycemic", "sprain", "dislocation", "seizure disorder", "epilepsy",
     ]
     static let rx: NSRegularExpression = {
         let alts = terms.sorted { $0.count > $1.count }.map { NSRegularExpression.escapedPattern(for: $0) }.joined(separator: "|")

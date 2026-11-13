@@ -17,7 +17,7 @@ final class ExtractionTests: XCTestCase {
     func testVitalsMisrecognizedASR() {
         XCTAssertEqual(vit("s p o two ninety one")["spo2"], "91")
         XCTAssertEqual(vit("g c s fifteen, a and o times four, pearl")["gcs"], "15")
-        XCTAssertEqual(vit("g c s fifteen, a and o times four, pearl")["mental_status"], "A&Ox4")
+        XCTAssertEqual(vit("g c s fifteen, a and o times four, pearl")["mental_status"], "A&O×4")
         XCTAssertEqual(vit("g c s fifteen, a and o times four, pearl")["pupils"], "PERRL")
         XCTAssertEqual(vit("sugar is 54")["glucose"], "54")
         XCTAssertEqual(vit("e t c o 2 is 38")["etco2"], "38")
