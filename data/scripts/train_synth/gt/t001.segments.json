@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6023,
+  "speaker": "RD",
+  "text": "Medic 17, priority one, difficulty breathing, 33 year old female."
+ },
+ {
+  "start_ms": 8698,
+  "end_ms": 11005,
+  "speaker": "M2",
+  "text": "Medic 17 arriving on scene."
+ },
+ {
+  "start_ms": 11790,
+  "end_ms": 14979,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 15780,
+  "end_ms": 17321,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 23863,
+  "end_ms": 25379,
+  "speaker": "PT",
+  "text": "My breathing's bad today."
+ },
+ {
+  "start_ms": 29245,
+  "end_ms": 32197,
+  "speaker": "M2",
+  "text": "Repeat, pain is 6 out of 10."
+ },
+ {
+  "start_ms": 38963,
+  "end_ms": 40172,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 40935,
+  "end_ms": 42486,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 50700,
+  "end_ms": 54778,
+  "speaker": "M2",
+  "text": "SpO2 at 95, GCS at 10."
+ },
+ {
+  "start_ms": 58021,
+  "end_ms": 60308,
+  "speaker": "M2",
+  "text": "Giving 4 liters of non-rebreather."
+ },
+ {
+  "start_ms": 66742,
+  "end_ms": 68888,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 117060,
+  "end_ms": 119053,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 123691,
+  "end_ms": 127499,
+  "speaker": "M1",
+  "text": "I gave methylprednisolone 125 IV push."
+ },
+ {
+  "start_ms": 132110,
+  "end_ms": 133609,
+  "speaker": "M1",
+  "text": "We're transporting to Mercy."
+ },
+ {
+  "start_ms": 137322,
+  "end_ms": 138286,
+  "speaker": "M1",
+  "text": "Got c pap."
+ },
+ {
+  "start_ms": 143164,
+  "end_ms": 143954,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 144585,
+  "end_ms": 145524,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 152195,
+  "end_ms": 158023,
+  "speaker": "M1",
+  "text": "Second set, GCS's 10, SpO2's 84, BGL's 204."
+ },
+ {
+  "start_ms": 166598,
+  "end_ms": 167778,
+  "speaker": "M1",
+  "text": "Arrived at Valley."
+ },
+ {
+  "start_ms": 180067,
+  "end_ms": 181379,
+  "speaker": "M1",
+  "text": "Transfer of care now."
+ }
+]

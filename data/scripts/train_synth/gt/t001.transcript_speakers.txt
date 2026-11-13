@@ -1,0 +1,20 @@
+RD: Medic 17, priority one, difficulty breathing, 33 year old female.
+M2: Medic 17 arriving on scene.
+M2: How long has this been going on?
+PT: Can somebody call my wife?
+PT: My breathing's bad today.
+M2: Repeat, pain is 6 out of 10.
+M2: Any allergies?
+BY: Can somebody call my wife?
+M2: SpO2 at 95, GCS at 10.
+M2: Giving 4 liters of non-rebreather.
+M1: I'm going to put some stickers on your chest.
+BY: I had something like this last year.
+M1: I gave methylprednisolone 125 IV push.
+M1: We're transporting to Mercy.
+M1: Got c pap.
+M1: Get the cot.
+PT: I feel sick.
+M1: Second set, GCS's 10, SpO2's 84, BGL's 204.
+M1: Arrived at Valley.
+M1: Transfer of care now.

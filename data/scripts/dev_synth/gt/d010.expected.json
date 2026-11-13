@@ -1,0 +1,132 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "89",
+  "sex": "female",
+  "weight_kg": "68",
+  "complaint": "sick person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "sick person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "84",
+    "hr": "79",
+    "rr": "27",
+    "bp": "185/145"
+   },
+   "last_vitals": {
+    "spo2": "84",
+    "hr": "79",
+    "rr": "27",
+    "bp": "185/145"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "sepsis",
+    "pneumonia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "lactated Ringer's 500 IV",
+    "normal saline 1000 mL",
+    "acetaminophen 1000 mg PO"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "89",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "sick person",
+  "I_injuries_or_information": "sick person",
+  "S_signs": {
+   "spo2": "84",
+   "hr": "79",
+   "rr": "27",
+   "bp": "185/145"
+  },
+  "T_treatment": [
+   "lactated Ringer's 500 IV",
+   "normal saline 1000 mL",
+   "acetaminophen 1000 mg PO",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "04:06:13",
+  "eTimes.09": "04:07:54",
+  "eTimes.11": "04:08:26"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "sick person",
+ "medications": [
+  {
+   "drug": "lactated Ringer's",
+   "dose": "500",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "1000",
+   "unit": "mL"
+  },
+  {
+   "drug": "acetaminophen",
+   "dose": "1000",
+   "unit": "mg",
+   "route": "PO"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "84",
+   "time": "04:06:41"
+  },
+  {
+   "name": "hr",
+   "value": "79",
+   "time": "04:06:54"
+  },
+  {
+   "name": "rr",
+   "value": "27",
+   "time": "04:06:54"
+  },
+  {
+   "name": "bp",
+   "value": "185/145",
+   "time": "04:06:54"
+  }
+ ],
+ "diagnosis_traps": [
+  "sepsis",
+  "pneumonia"
+ ]
+}

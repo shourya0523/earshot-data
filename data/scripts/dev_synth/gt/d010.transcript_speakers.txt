@@ -1,0 +1,19 @@
+RD: Rescue 12, you have a sick person, 89 year old female.
+M1: Rescue 12 arriving on scene.
+M2: When did you last eat?
+PT: No allergies.
+PT: I've had a fever for three days.
+M1: Pushing lactated ringers, 500 IV.
+M2: Second set, pulse ox's 84 percent.
+M1: Pushing normal saline, 1000 mils.
+M1: Repeat, pulse 79, resps's 27, BP at 185 over 145.
+M1: Did you pass out at all?
+M1: Doing 12 lead.
+M1: Watch the step.
+BY: Can somebody call my wife?
+M1: We're transporting to General.
+M1: Any allergies?
+PT: I feel sick.
+M1: Tylenol 1000 migs chewed.
+M2: Get the cot.
+M1: Arrived at University.

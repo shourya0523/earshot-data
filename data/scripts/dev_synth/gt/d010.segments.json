@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4250,
+  "speaker": "RD",
+  "text": "Rescue 12, you have a sick person, 89 year old female."
+ },
+ {
+  "start_ms": 6928,
+  "end_ms": 8612,
+  "speaker": "M1",
+  "text": "Rescue 12 arriving on scene."
+ },
+ {
+  "start_ms": 9369,
+  "end_ms": 10609,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 11423,
+  "end_ms": 12681,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 19019,
+  "end_ms": 21201,
+  "speaker": "PT",
+  "text": "I've had a fever for three days."
+ },
+ {
+  "start_ms": 25451,
+  "end_ms": 28075,
+  "speaker": "M1",
+  "text": "Pushing lactated ringers, 500 IV."
+ },
+ {
+  "start_ms": 34509,
+  "end_ms": 37363,
+  "speaker": "M2",
+  "text": "Second set, pulse ox's 84 percent."
+ },
+ {
+  "start_ms": 43881,
+  "end_ms": 46134,
+  "speaker": "M1",
+  "text": "Pushing normal saline, 1000 mils."
+ },
+ {
+  "start_ms": 49323,
+  "end_ms": 55562,
+  "speaker": "M1",
+  "text": "Repeat, pulse 79, resps's 27, BP at 185 over 145."
+ },
+ {
+  "start_ms": 58903,
+  "end_ms": 60203,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 90358,
+  "end_ms": 91333,
+  "speaker": "M1",
+  "text": "Doing 12 lead."
+ },
+ {
+  "start_ms": 100103,
+  "end_ms": 101108,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 101937,
+  "end_ms": 103592,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 107371,
+  "end_ms": 108764,
+  "speaker": "M1",
+  "text": "We're transporting to General."
+ },
+ {
+  "start_ms": 112516,
+  "end_ms": 113401,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 114013,
+  "end_ms": 115049,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 121315,
+  "end_ms": 123022,
+  "speaker": "M1",
+  "text": "Tylenol 1000 migs chewed."
+ },
+ {
+  "start_ms": 131778,
+  "end_ms": 132561,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 139164,
+  "end_ms": 140436,
+  "speaker": "M1",
+  "text": "Arrived at University."
+ }
+]

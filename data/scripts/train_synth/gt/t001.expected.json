@@ -1,0 +1,133 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "33",
+  "sex": "female",
+  "weight_kg": "93",
+  "complaint": "difficulty breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "difficulty breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "6",
+    "spo2": "95",
+    "gcs": "10",
+    "bgl": "204"
+   },
+   "last_vitals": {
+    "pain": "6",
+    "spo2": "84",
+    "gcs": "10",
+    "bgl": "204"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "COPD exacerbation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 4 L/min",
+    "methylprednisolone 125 IV"
+   ],
+   "procedures": [
+    "CPAP"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "33",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "difficulty breathing",
+  "I_injuries_or_information": "difficulty breathing",
+  "S_signs": {
+   "pain": "6",
+   "spo2": "95",
+   "gcs": "10",
+   "bgl": "204"
+  },
+  "T_treatment": [
+   "oxygen 4 L/min",
+   "methylprednisolone 125 IV",
+   "CPAP"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "14:30:49",
+  "eTimes.09": "14:32:53",
+  "eTimes.11": "14:33:27",
+  "eTimes.12": "14:33:40"
+ },
+ "wall_time_seconds": 13,
+ "dispatch_reason": "difficulty breathing",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "4",
+   "unit": "L/min"
+  },
+  {
+   "drug": "methylprednisolone",
+   "dose": "125",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "14:31:09"
+  },
+  {
+   "name": "spo2",
+   "value": "95",
+   "time": "14:31:30"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "14:31:30"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "14:33:13"
+  },
+  {
+   "name": "spo2",
+   "value": "84",
+   "time": "14:33:13"
+  },
+  {
+   "name": "bgl",
+   "value": "204",
+   "time": "14:33:13"
+  }
+ ],
+ "diagnosis_traps": [
+  "COPD exacerbation"
+ ]
+}
