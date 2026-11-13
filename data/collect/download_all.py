@@ -214,7 +214,7 @@ def youtube_captions():
         subprocess.run(["yt-dlp", "--skip-download", "--write-subs", "--write-auto-subs", "--sub-langs", "en.*,en", "--sub-format", "vtt",
                         "--write-info-json", "-o", str(d / "%(id)s.%(ext)s"), f"https://www.youtube.com/watch?v={vid}"],
                        capture_output=True, timeout=180)
-        time.sleep(3)
+        time.sleep(25)
     for p in d.glob("*.vtt"):
         rec("YouTube captions (text only)", f"https://www.youtube.com/watch?v={p.name.split('.')[0]}", p,
             "YouTube standard license (captions used for vocabulary/tagger text only; not redistributed)", "possible (names in bodycam/ride-along)", "yt-dlp --skip-download")
