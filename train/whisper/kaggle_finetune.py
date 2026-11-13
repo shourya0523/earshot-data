@@ -18,13 +18,13 @@ except Exception:
 
 # 1) code
 repo = f"https://{GH + '@' if GH else ''}github.com/shourya0523/earshot-data.git"
-sh(f"git clone --depth 1 -b claude/eager-volta-za1pmi {repo} /kaggle/working/earshot")
-sh("git clone --depth 1 -b overnight " + repo + " /kaggle/working/pipeline")   # shared/formulary.json lives on the pipeline branch
-os.chdir("/kaggle/working/earshot")
+sh(f"git clone --depth 1 -b claude/eager-volta-za1pmi {repo} /tmp/earshot")   # /tmp: big local disk; /kaggle/working is ~20 GB
+sh("git clone --depth 1 -b overnight " + repo + " /tmp/pipeline")   # shared/formulary.json lives on the pipeline branch
+os.chdir("/tmp/earshot")
 sh("pip -q install piper-tts==1.8.0 jiwer soundfile librosa peft 'transformers>=4.45' accelerate huggingface_hub")
 sh("apt-get -qq install -y ffmpeg > /dev/null || true")
 # point the scripts at the pipeline checkout's formulary
-sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/kaggle/working/pipeline/shared/formulary.json#' train/whisper/prepare_data.py")
+sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/tmp/pipeline/shared/formulary.json#' train/whisper/prepare_data.py")
 
 # 2) data (same scripts and splits as the overnight run; test sets are never used for training)
 sh("python3 -I data/collect/download_all.py --only piper,real,more,round2,round3,fsd,zenodo,ev --skip-big")
@@ -71,7 +71,7 @@ def collate(b):
         di[k, :len(x["decoder_input_ids"])] = torch.tensor(x["decoder_input_ids"]); lab[k, :len(x["labels"])] = torch.tensor(x["labels"])
     return dict(input_features=torch.tensor(np.stack([x["input_features"] for x in b])), decoder_input_ids=di, labels=lab)
 
-args = Seq2SeqTrainingArguments(output_dir="/kaggle/working/ft", per_device_train_batch_size=8, gradient_accumulation_steps=2, learning_rate=1e-5,
+args = Seq2SeqTrainingArguments(output_dir="/tmp/ft", per_device_train_batch_size=8, gradient_accumulation_steps=2, learning_rate=1e-5,
                                 warmup_steps=50, num_train_epochs=3, fp16=True, eval_strategy="epoch", save_strategy="epoch", save_total_limit=1,
                                 load_best_model_at_end=True, metric_for_best_model="eval_loss", logging_steps=25, report_to=[], dataloader_num_workers=2,
                                 remove_unused_columns=False, gradient_checkpointing=True)
@@ -88,3 +88,4 @@ model.save_pretrained("/kaggle/working/out", safe_serialization=True); proc.save
 open("/kaggle/working/out/train_mix.json", "w").write(open("train/whisper/data/mix.json").read())
 api.upload_folder(folder_path="/kaggle/working/out", repo_id=rid)
 print("PUSHED", rid)
+print(open("train/whisper/data/mix.json").read())

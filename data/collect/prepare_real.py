@@ -86,7 +86,7 @@ if (mi / "overview.csv").exists():
                           duration=d, pii=pii or "no", license="unknown", intent=r.get("prompt")))
 
 # EMSAssist-2: human-read EMS condition/protocol phrases (speaker name in file name -> hashed speaker id; train/dev only)
-for f in sorted((RAW / "emsassist2").glob("*.parquet")):
+for f in [RAW / "emsassist2/train-0.parquet"]:   # other shards are handled by prepare_extra_human.py
     for r in pq.read_table(f).to_pylist():
         m = re.match(r"separate_([a-z]+)_(\d+)", pathlib.Path(r["audio"]["path"]).stem)
         spk = hashlib.sha1((m.group(1) if m else "x").encode()).hexdigest()[:6]
