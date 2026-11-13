@@ -1,0 +1,24 @@
+{
+ "stock_small/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.043668122270742356,
+  "drug_wer": 0.1111111111111111,
+  "drug_tokens": 9,
+  "number_acc": 0.9777777777777777,
+  "jargon_recall": 0.9047619047619048,
+  "false_drug_per_1k": 0.0,
+  "rtf": 1.075403566905309,
+  "audio_min": 4.606642708333334
+ },
+ "stock_small/real_test_eka": {
+  "n": 90,
+  "wer": 0.27136752136752135,
+  "drug_wer": 0.40268456375838924,
+  "drug_tokens": 149,
+  "number_acc": 0.825,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 3.0403728213600116,
+  "audio_min": 7.17680625
+ }
+}
