@@ -35,6 +35,9 @@ def main():
         items += [tuple(l.split("\t")[:2]) for l in open(a.list).read().splitlines() if l.strip()]
     pr = prompt_text(a.prompt)
     tim = open(out / "timing.jsonl", "a")
+    todo = [(u, w) for u, w in items if not (out / f"{u}.hyp.txt").exists()]
+    if a.list and len(todo) > 1:   # many short clips: one whisper-cli call per batch (model loaded once)
+        batch_run(a, out, todo, pr, tim); return
     for uid, wav in items:
         if (out / f"{uid}.hyp.txt").exists():
             continue
@@ -54,6 +57,33 @@ def main():
         tim.write(json.dumps(dict(id=uid, audio_s=info.duration, wall_s=round(el, 2), rtf=round(el / max(info.duration, 1e-3), 3),
                                   model=pathlib.Path(a.model).name, prompt=a.prompt)) + "\n"); tim.flush()
         print(uid, f"{info.duration:.1f}s audio in {el:.1f}s", flush=True)
+
+
+def batch_run(a, out, todo, pr, tim, B=40):
+    for i in range(0, len(todo), B):
+        chunk = todo[i:i + B]; links = []
+        for uid, wav in chunk:
+            l = out / f"{uid}.wav"
+            if l.exists() or l.is_symlink(): l.unlink()
+            l.symlink_to(pathlib.Path(wav).resolve()); links.append(l)
+        cmd = [a.cli, "-m", a.model, "-t", str(a.threads), "-bs", str(a.beam), "-oj", "-np"] + (["--prompt", pr] if pr else [])
+        for l in links: cmd += ["-f", str(l)]
+        t = time.time(); r = subprocess.run(cmd, capture_output=True, text=True); el = time.time() - t
+        dur = 0.0
+        for (uid, wav), l in zip(chunk, links):
+            jp = pathlib.Path(str(l) + ".json")
+            if jp.exists():
+                j = json.load(open(jp)); jp.rename(out / f"{uid}.whisper.json")
+                segs = [dict(start_ms=s["offsets"]["from"], end_ms=s["offsets"]["to"], text=s["text"].strip()) for s in j["transcription"]]
+                (out / f"{uid}.segments.json").write_text(json.dumps(segs, indent=0))
+                (out / f"{uid}.hyp.txt").write_text(" ".join(s["text"] for s in segs).strip() + "\n")
+                dur += sf.info(wav).duration
+            else:
+                print("FAIL", uid, r.stderr[-300:], file=sys.stderr)
+            l.unlink()
+        tim.write(json.dumps(dict(id=f"batch{i//B}", n=len(chunk), audio_s=dur, wall_s=round(el, 2), rtf=round(el / max(dur, 1e-3), 3),
+                                  model=pathlib.Path(a.model).name, prompt=a.prompt, batched=True)) + "\n"); tim.flush()
+        print(f"batch {i//B}: {len(chunk)} clips, {dur:.0f}s audio in {el:.0f}s", flush=True)
 
 
 if __name__ == "__main__":
