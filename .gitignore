@@ -1,0 +1,13 @@
+.build/
+*.xcuserstate
+xcuserdata/
+DerivedData/
+__pycache__/
+.pio/
+/out/
+/core/out/
+*.wav
+!mocks/**/*.wav
+models/*.bin
+!models/README.md
+.DS_Store
