@@ -265,7 +265,33 @@ def more_speech():
     medspeech_wavs(1800)
 
 
-STEPS = dict(more=more_speech, real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
+def round2():
+    """Second expansion round, from the model/dataset search (data/MODEL_SEARCH.md)."""
+    import urllib.request as U
+    for i in (0, 1):
+        f = f"data/train-0000{i}-of-00033.parquet"
+        hf_file("Shamus/United-Syn-Med", f, RAW / "united_syn_med" / pathlib.Path(f).name, "United-Syn-Med (mirror of united-we-care/United-Syn-Med; drug-name TTS)", "CC-BY-SA-4.0 (original)", "no")
+    hf_file("Trelis/medical-terms-2025", "data/test-00000-of-00001.parquet", RAW / "trelis_terms/test.parquet", "Trelis/medical-terms-2025", "MIT", "no")
+    hf_file("Xueren/EMS-Knowledge", "data/train-00000-of-00001-7c3bec9885223866.parquet", RAW / "ems_knowledge/train.parquet", "Xueren/EMS-Knowledge", "MIT", "no")
+    api = json.load(U.urlopen(f"{HF}/api/datasets/Xueren/EMSDialogue-Datasets/tree/main?recursive=1", timeout=120))
+    for x in api:
+        if x["type"] == "file" and x["path"].endswith(".json"):
+            dest = RAW / "emsdialog" / x["path"]
+            try:
+                fetch(f"{HF}/datasets/Xueren/EMSDialogue-Datasets/resolve/main/{x['path']}", dest)
+            except Exception as e:
+                print("emsdialog", x["path"], e)
+    rec("Xueren/EMSDialogue-Datasets (4.4k synthetic + 149 real de-identified EMS dialogues)", f"{HF}/datasets/Xueren/EMSDialogue-Datasets", next((RAW / "emsdialog").rglob("*.json")),
+        "CC-BY-NC-4.0", "de-identified")
+    hf_file("xxbubziexx/police-radio-punctuated-dataset", "metadata.csv", RAW / "police_radio/metadata.csv", "police-radio-punctuated-dataset", "MIT", "yes (real radio)")
+    hf_file("xxbubziexx/police-radio-punctuated-dataset", "data.tar.gz", RAW / "police_radio/data.tar.gz", "police-radio-punctuated-dataset", "MIT", "yes (real radio)")
+    for repo in ("saahith/whisper-small.en-EMSAssist-v2", "saahith/whisper-base.en-EMSAssist-v3"):
+        for f in ("config.json", "pytorch_model.bin", "vocab.json", "merges.txt", "added_tokens.json", "tokenizer_config.json", "special_tokens_map.json", "preprocessor_config.json", "normalizer.json"):
+            hf_file(repo, f, RAW / "models" / repo.split("/")[1] / f, f"{repo} (EMS-trained Whisper)", "none stated", "no", kind="models")
+    hf_file("droytel/whisper-medical-v1-ggml", "ggml-whisper-medical-v1.bin", RAW / "models/ggml-whisper-medical-v1.bin", "droytel/whisper-medical-v1-ggml (Crystalcareai/Whisper-Medicalv1, distil-large-v3)", "MIT", "no", kind="models")
+
+
+STEPS = dict(round2=round2, more=more_speech, real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
              dispatch=dispatch_radio, text=text, yt=youtube_captions, piper=piper_voices, whisper=whisper_models)
 
 if __name__ == "__main__":
