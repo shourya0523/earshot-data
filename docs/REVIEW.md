@@ -228,3 +228,10 @@ The owner wants the prompt ruled out as a source of "heard" values. Done on the 
    - Ship the fine-tuned model only if it beats stock with no prompt, is not worse with the format-only prompt, and has 0 prompt copies in both.
    - Commands are in `docs/PROMPT_PRIMING.md`.
 4. **Kaggle:** a run that cloned `overnight` before 13af08c trained with the old prompt (real-looking values). For that model the no-prompt comparison is the fair one. For a matched model, restart training.
+
+## Pipeline agent edited `eval/` (owner's instruction), for the prompt-priming rules
+- **`eval/prompt_copy.py` (new):** counts prompt numbers and dose phrases that are in the hypothesis but not in the reference. It uses the prompt each run recorded (`raw/<id>/transcript.raw.json` → `initial_prompt`, null = `--no-prompt`); otherwise the pipeline's `shared/ems_terms.json` (`EARSHOT_SHARED` overrides `/home/user/pipeline/shared`) or `--prompt`. Spoken numbers are normalised.
+- **`eval/score.py`:** every result now has `prompt_copy` {prompt_copies, per_call, by_item, prompt_source}. Text output prints "prompt copies N (must be 0 to ship)". New optional `--prompt`.
+- **`eval/decide_ship.py` (new):** the fine-tuned ship gate. It ships only if (1) fine-tuned beats stock with **no prompt** (drug WER lower, WER not higher), (2) it is not worse with the format-only prompt (±0.5 pt), and (3) its prompt copies are 0 in both runs. It appends the decision to `data/DECISIONS.md` and exits 0 only on SHIP.
+- **`eval/ab_prompt.sh` (new):** `eval/ab_prompt.sh models/whisper-ems-small.en-q5.bin [snr10]` runs the 4 runs (stock/ft × no prompt/format-only), scores them and calls the gate.
+- Tested on GT-transcript runs: planted copies are caught, clean runs give 0, and the gate gives SHIP/DON'T SHIP correctly on synthetic results. Not run end to end on audio here (no test audio or `jiwer` on the pipeline machine).

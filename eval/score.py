@@ -17,6 +17,7 @@ import argparse, collections, json, pathlib, re, statistics, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import textnorm as tn
 import jiwer
+import prompt_copy
 
 DRUGS = tn.drug_terms()
 JARGON = tn.jargon_terms()
@@ -396,13 +397,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--gt", required=True); ap.add_argument("--run", required=True)
     ap.add_argument("--noise-run"); ap.add_argument("--json"); ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--prompt", help="prompt to check copies against when the run doesn't record one (default: pipeline shared/ems_terms.json)")
     a = ap.parse_args()
     global GT_DIR
     gt, run = pathlib.Path(a.gt), pathlib.Path(a.run); GT_DIR = gt
     ids = sorted({p.name.split(".hyp.txt")[0] for p in run.glob("*.hyp.txt")} | {p.name.split(".events.jsonl")[0] for p in run.glob("*.events.jsonl")})
     ids = [i for i in ids if (gt / f"{gt_id(i)}.transcript.txt").exists()]
     res = dict(run=str(run), gt=str(gt), n=len(ids), transcription=transcription(gt, run, ids), extraction=extraction(gt, run, ids),
-               taps=taps(gt, run, ids), outputs=outputs(gt, run, ids), speed=speed(run))
+               taps=taps(gt, run, ids), outputs=outputs(gt, run, ids), speed=speed(run),
+               prompt_copy=prompt_copy.score(run, gt, ids, gt_id=gt_id, prompt=a.prompt))
     if a.noise_run:
         res["noise_false_taps"] = noise_false_taps(a.noise_run)
     if a.json:
@@ -419,6 +422,8 @@ def main():
             print("  unsupported-field rate", round(e["unsupported_field_rate"], 4), " ts err", e["timestamp_error_ms"], " tap labelling", e["tap_labelling"])
         if res["taps"]: print("  taps", res["taps"])
         if res["speed"]: print("  speed", res["speed"])
+        pc = res["prompt_copy"]
+        print(f"  prompt copies {pc['prompt_copies']}" + (f"  {pc['by_item']}" if pc["prompt_copies"] else "") + "  (must be 0 to ship)")
     return res
 
 
