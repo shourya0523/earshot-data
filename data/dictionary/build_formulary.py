@@ -130,6 +130,6 @@ out = dict(version="0.1-data-agent-seed", note="Seed EMS dictionary from the dat
   "jargon[], initial_prompt (≤ ~200 tokens, for whisper.cpp --prompt).",
   drugs=drugs, home_meds=home_meds, routes=routes, units=units, vitals=vitals, procedures=procedures, status_terms=status_terms,
   dispatch_terms=dispatch_terms, time_events=time_events, jargon=jargon, initial_prompt=prompt)
-p = pathlib.Path(__file__).resolve().parents[2] / "shared" / "formulary.json"
-p.parent.mkdir(exist_ok=True); p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+p = pathlib.Path(__file__).resolve().parent / "ems_seed.json"
+p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
 print(p, len(drugs), "drugs")

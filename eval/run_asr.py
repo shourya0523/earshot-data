@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 def prompt_text(kind):
     if kind == "none":
         return None
-    d = json.loads((ROOT / "shared" / "formulary.json").read_text())
+    d = json.loads((ROOT / "data" / "dictionary" / "ems_seed.json").read_text())
     return d.get("initial_prompt") or d.get("prompt")
 
 

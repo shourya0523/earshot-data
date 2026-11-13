@@ -7,7 +7,7 @@ data/synth/leakage_check.py verifies there is no n-gram overlap with the test sc
 import argparse, json, pathlib, random
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-F = json.loads((ROOT / "shared/formulary.json").read_text())
+F = json.loads((ROOT / "data/dictionary/ems_seed.json").read_text())
 DRUG = {d["name"]: d for d in F["drugs"]}
 UNIT_WORD = {"mg": ["milligrams", "mg", "migs", ""], "mcg": ["micrograms", "mics", "mcg"], "g": ["grams", "gram"], "mL": ["mLs", "cc's", "mils"],
              "L": ["liter", "liters"], "L/min": ["liters", "L"], "units": ["units"], "mEq": ["milliequivalents", "mEq"], "puffs": ["puffs"]}

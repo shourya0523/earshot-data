@@ -76,7 +76,7 @@ _DICT = None
 def dictionary():
     global _DICT
     if _DICT is None:
-        _DICT = json.loads((ROOT / "shared" / "formulary.json").read_text())
+        _DICT = json.loads((ROOT / "data" / "dictionary" / "ems_seed.json").read_text())
     return _DICT
 
 
