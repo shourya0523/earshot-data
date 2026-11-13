@@ -46,6 +46,7 @@ def words_to_digits(tokens):
 
 
 def normalize(s):
+    s = re.sub(r"\[[^\]]*\]|\([^)]*\)|\*[^*]*\*", " ", s)   # whisper non-speech tags: [beep] (siren) *clap*
     s = s.lower().replace("×", " times ").replace("&", " and ")
     s = re.sub(r"(\d)\s*/\s*(\d)", r"\1 over \2", s)
     s = re.sub(r"(\d)%", r"\1 percent", s).replace("%", " percent")
