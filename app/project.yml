@@ -1,0 +1,51 @@
+# Generate the Xcode project:  brew install xcodegen && cd app && xcodegen
+name: Earshot
+options:
+  bundleIdPrefix: org.earshot
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+packages:
+  EarshotCore:
+    path: ../core
+targets:
+  Earshot:
+    type: application
+    platform: iOS
+    sources:
+      - path: Earshot
+      - path: ../core/Sources/EarshotWhisper/WhisperTranscriber.swift
+        group: Earshot/Whisper
+      - path: ../shared/formulary.json
+        buildPhase: resources
+      - path: ../shared/ems_terms.json
+        buildPhase: resources
+      - path: ../mocks/demo_call/demo_call.replay
+        buildPhase: resources
+      - path: Models
+        type: folder
+        buildPhase: resources
+        optional: true
+    dependencies:
+      - package: EarshotCore
+        product: EarshotCore
+      - framework: Frameworks/whisper.xcframework
+        embed: true
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "2"
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: minimal
+        DEVELOPMENT_TEAM: ""          # set your free personal team in Xcode > Signing
+        CODE_SIGN_STYLE: Automatic
+        PRODUCT_BUNDLE_IDENTIFIER: org.earshot.app
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Earshot
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown"
+        INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription: "Earshot connects to the Earshot clip over Bluetooth to receive taps and speech for the call record. Audio stays on this iPad."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Lets you dictate labels for marked moments on the recall screen. Audio stays on this iPad."
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Records when you arrive at the hospital (eTimes.11) so wall time is accurate."
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: "Connects to the Earshot clip's own Wi-Fi when Bluetooth is unavailable."
+        INFOPLIST_KEY_UIFileSharingEnabled: YES
+        INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace: YES
