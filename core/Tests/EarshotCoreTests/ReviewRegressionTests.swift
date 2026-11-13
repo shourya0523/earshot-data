@@ -257,6 +257,14 @@ final class Round3Tests: XCTestCase {
         XCTAssertTrue(e.contains { $0.isUnlabeledTap })
     }
 
+    /// Format-only prompt: if Whisper copied the prompt verbatim, no vital or dose could come out of it.
+    func testPromptValuesCannotBecomeFields() {
+        let f = extract(TestEnv.dict.initialPrompt())
+        XCTAssertTrue(f.filter { $0.type == .vitals }.allSatisfy { v in !v.fields.keys.contains { ["bp_systolic", "heart_rate", "resp_rate", "spo2", "glucose", "etco2", "gcs"].contains($0) } },
+                      "\(f.filter { $0.type == .vitals }.map(\.fields))")
+        XCTAssertTrue(f.filter { $0.type == .medication }.allSatisfy { $0.fields["dose"] == nil })
+    }
+
     func test_R3_5_sentencePromptIsDefault() {
         XCTAssertTrue(TestEnv.dict.initialPrompt().hasPrefix("EMS call."))
     }
@@ -273,7 +281,7 @@ final class Round4Tests: XCTestCase {
         XCTAssertEqual(spo2("Pulse 104, set 95 when we're in air."), ["95"])
         XCTAssertEqual(spo2("We need to set 30 minutes aside."), [], "'set' only reads as sats where a sat reading belongs")
         XCTAssertEqual(spo2("I set 90 of them out."), [])
-        XCTAssertTrue(TestEnv.dict.initialPrompt().contains("sats 94"))
+        XCTAssertTrue(TestEnv.dict.initialPrompt().contains("sats "))
     }
 
     func test_R4_2_musicNotesAreNotSpeech() {
@@ -296,6 +304,6 @@ final class Round4Tests: XCTestCase {
 /// this branch). Changing it breaks the train/inference match: coordinate with the data agent first.
 final class PromptFreezeTests: XCTestCase {
     func testPromptIsFrozen() {
-        XCTAssertEqual(TestEnv.dict.initialPrompt(), "EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, resps 20, sats 94%, BGL 42, ETCO2 35. Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
+        XCTAssertEqual(TestEnv.dict.initialPrompt(), "EMS call. Patient A&O, GCS. BP 61/127, HR 913, resps 113, sats 113%, BGL 913, ETCO2 213. Aspirin mg PO, nitro mg SL, Narcan mg IN, D10, glucagon, albuterol, DuoNeb, epi mg IM, Benadryl, Solu-Medrol, Zofran mg IV, fentanyl mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
     }
 }
