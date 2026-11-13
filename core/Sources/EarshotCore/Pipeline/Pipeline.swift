@@ -59,7 +59,7 @@ public struct PipelineConfig: Codable, Sendable {
     public var agency = NEMSISAgency()
     public var piiScrub: Bool = false   // PII kept by default (ePCR needs it); scrub is opt-in
     public init() {}
-    enum CodingKeys: String, CodingKey { case callId = "call_id", startTime = "start_time", asr, tagger, vad, merge, piiScrub = "pii_scrub" }
+    enum CodingKeys: String, CodingKey { case callId = "call_id", startTime = "start_time", asr, tagger, vad, merge, piiScrub = "pii_scrub", agency }
     public init(from d: Decoder) throws {
         let c = try d.container(keyedBy: CodingKeys.self)
         callId = try c.decodeIfPresent(String.self, forKey: .callId) ?? "c1"
