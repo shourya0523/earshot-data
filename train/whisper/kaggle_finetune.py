@@ -27,8 +27,10 @@ sh("apt-get -qq install -y ffmpeg > /dev/null || true")
 sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/kaggle/working/pipeline/shared/formulary.json#' train/whisper/prepare_data.py")
 
 # 2) data (same scripts and splits as the overnight run; test sets are never used for training)
-sh("python3 -I data/collect/download_all.py --only piper,real,more,round2,fsd,zenodo,ev --skip-big")
+sh("python3 -I data/collect/download_all.py --only piper,real,more,round2,round3,fsd,zenodo,ev --skip-big")
 sh("python3 data/collect/prepare_real.py")
+sh("python3 data/collect/prepare_extra_human.py --delete-parquet")
+os.environ["EARSHOT_NO_CAPS"] = "1"   # GPU: use every real training clip
 sh("python3 data/synth/gen_calls.py --n 80 --split train --seed 1 && python3 data/synth/gen_calls.py --n 10 --split dev --seed 2")
 sh("python3 data/synth/build_synth_set.py train && python3 data/synth/build_synth_set.py dev")
 sh("python3 train/whisper/prepare_data.py")

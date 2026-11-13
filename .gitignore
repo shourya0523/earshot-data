@@ -18,3 +18,4 @@ data/scripts/real/gt/
 eval/runs/
 models/**/*.bin
 models/**/*.safetensors
+.extra_human_done

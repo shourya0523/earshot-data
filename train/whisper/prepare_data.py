@@ -13,10 +13,14 @@ sys.path.insert(0, str(ROOT / "data/synth")); sys.path.insert(0, str(ROOT / "eva
 import calldsl, render, gen_calls, textnorm as tn
 
 OUT = ROOT / "train/whisper/data"; OUT.mkdir(parents=True, exist_ok=True)
-N_DRUG_UTT = 450
+N_DRUG_UTT = 250
 # per-subset caps (items) for the training mix; real subsets are drug/EMS-focused first
-CAPS = dict(emsctx=999, emsassist=999, eka=420, primock=180, medintent=80, train_synth_call=200, drug_utt=N_DRUG_UTT, united_syn_med=250,
-            ems_synth_ext=120, dispatch_synth_ext=40)
+# CPU run: ~3k items, >= 75% real (owner: more human speech). The Kaggle GPU notebook uses no caps on real subsets.
+CAPS = dict(emsctx=999, emsassist=600, eka=550, primock=350, medintent=120, afrispeech=500, multimed=250, radio=250,
+            train_synth_call=150, drug_utt=250, united_syn_med=150, ems_synth_ext=60, dispatch_synth_ext=20)
+import os
+if os.environ.get("EARSHOT_NO_CAPS"):
+    CAPS = {k: (10**9 if k in ("emsctx", "emsassist", "eka", "primock", "medintent", "afrispeech", "multimed", "radio") else v) for k, v in CAPS.items()}
 rng = random.Random(42)
 
 
@@ -137,12 +141,15 @@ def real_rows(split):
 
 
 if __name__ == "__main__":
-    real_tr = real_rows("train"); syn_calls = call_chunks("train")
+    dev_real = real_rows("dev"); rng.shuffle(dev_real)
+    dev_keep = [r for r in dev_real if r["type"] == "real"][:90]
+    keep_ids = {r["id"] for r in dev_keep}
+    # dev-split sessions never overlap test sessions, so dev items not used for dev loss can train
+    real_tr = real_rows("train") + [r for r in dev_real if r["id"] not in keep_ids]; syn_calls = call_chunks("train")
     utt = drug_utterances(N_DRUG_UTT); usm = united_syn_med(CAPS["united_syn_med"])
     train = cap(real_tr + syn_calls + utt + usm)
     rng.shuffle(train)
-    dev_real = real_rows("dev"); rng.shuffle(dev_real)
-    dev = call_chunks("dev")[:60] + [r for r in dev_real if r["type"] == "real"][:90]
+    dev = call_chunks("dev")[:60] + dev_keep
     for name, rows in [("train", train), ("dev", dev)]:
         (OUT / f"{name}.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
     def stats(rows):

@@ -2,8 +2,9 @@
 # One command: data -> encoder cache -> LoRA train -> export q5 -> benchmark. Usage: train/whisper/run_all.sh [tag rank lr epochs]
 cd "$(dirname "$0")/../.."
 TAG=${1:-r16}; RANK=${2:-16}; LR=${3:-3e-4}; EP=${4:-2}
+until [ -f data/manifests/.extra_human_done ]; do sleep 30; done   # wait for prepare_extra_human.py
 [ -f train/whisper/data/train.jsonl ] || python3 train/whisper/prepare_data.py
-[ "$(cat train/out/enc_train.done 2>/dev/null)" = "$(wc -l < train/whisper/data/train.jsonl)" ] || python3 train/whisper/train_lora.py --stage cache
+# encoder outputs are computed on the fly (disk allowance too small to cache ~3k clips x 2.3 MB); run --stage cache first to cache instead
 python3 train/whisper/train_lora.py --stage train --tag $TAG --rank $RANK --lr $LR --epochs $EP
 python3 train/whisper/train_lora.py --stage export --tag $TAG
 M=models/whisper-ems-small.en-$TAG-q5.bin

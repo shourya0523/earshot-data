@@ -76,6 +76,17 @@ def lora_model(rank, alpha, dropout):
     return m
 
 
+class OnTheFly:
+    """Frozen-encoder outputs computed per batch (no disk cache). Indexable like the memmap: enc[list_of_idx]."""
+    def __init__(self, rows, encoder):
+        from transformers import WhisperFeatureExtractor
+        self.rows, self.enc, self.fe = rows, encoder, WhisperFeatureExtractor.from_pretrained(BASE)
+    def __getitem__(self, idx):
+        feats = self.fe([audio(self.rows[i]) for i in idx], sampling_rate=16000, return_tensors="pt").input_features
+        with torch.no_grad():
+            return self.enc(feats).last_hidden_state.numpy()
+
+
 def batches(items, enc, bs, shuffle, seed):
     idx = list(range(len(items)))
     if shuffle: random.Random(seed).shuffle(idx)
@@ -100,10 +111,14 @@ def stage_train(a):
     prompt = (ROOT / "eval/pipeline_prompt.txt").read_text().strip()
     prompt_ids = [tok.convert_tokens_to_ids("<|startofprev|>")] + tok(" " + prompt, add_special_tokens=False).input_ids[-223:]
     tr_rows, dv_rows = load_rows("train"), load_rows("dev")
-    enc_tr = np.memmap(OUT / "enc_train.f16", dtype=np.float16, mode="r", shape=(len(tr_rows), 1500, 768))
-    enc_dv = np.memmap(OUT / "enc_dev.f16", dtype=np.float16, mode="r", shape=(len(dv_rows), 1500, 768))
     tr = build_targets(tok, tr_rows, prompt_ids, 0.7, 1); dv = build_targets(tok, dv_rows, prompt_ids, 1.0, 2)
     model = lora_model(a.rank, 2 * a.rank, 0.05)
+    if (OUT / "enc_train.done").exists() and int((OUT / "enc_train.done").read_text()) == len(tr_rows):
+        enc_tr = np.memmap(OUT / "enc_train.f16", dtype=np.float16, mode="r", shape=(len(tr_rows), 1500, 768))
+        enc_dv = np.memmap(OUT / "enc_dev.f16", dtype=np.float16, mode="r", shape=(len(dv_rows), 1500, 768))
+    else:   # no cache on disk: compute the frozen encoder per batch (LoRA only touches the decoder, so this is identical)
+        encoder = model.base_model.model.model.encoder.eval()
+        enc_tr, enc_dv = OnTheFly(tr_rows, encoder), OnTheFly(dv_rows, encoder)
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=a.lr, weight_decay=0.01)
     steps = a.epochs * math.ceil(len(tr) / a.bs); warm = max(10, steps // 20)
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1, (s + 1) / warm) * max(0.05, 1 - s / steps))

@@ -291,7 +291,17 @@ def round2():
     hf_file("droytel/whisper-medical-v1-ggml", "ggml-whisper-medical-v1.bin", RAW / "models/ggml-whisper-medical-v1.bin", "droytel/whisper-medical-v1-ggml (Crystalcareai/Whisper-Medicalv1, distil-large-v3)", "MIT", "no", kind="models")
 
 
-STEPS = dict(round2=round2, more=more_speech, real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
+def round3():
+    """More HUMAN speech for fine-tuning (owner: the mix had too little real speech)."""
+    for acc in ["swahili", "afrikaans", "zulu", "setswana", "twi"]:
+        hf_file("Professor/afrispeech-200-16khz", f"data/train-{acc}.parquet", RAW / "afrispeech" / f"train-{acc}.parquet",
+                "AfriSpeech-200 (mirror of intronhealth/afrispeech-200; human read clinical/general English, African accents)", "CC-BY-NC-SA-4.0", "no (read text)")
+    hf_file("leduckhai/MultiMed", "English/train-00000-of-00006.parquet", RAW / "multimed/train-0.parquet", "MultiMed English (human, medical YouTube talks)", "MIT", "possible (public talks)")
+    for f in ["data/train-00001-of-00002-92af0b1520b1242e.parquet", "data/test-00000-of-00003-7687ba1f27bb9906.parquet"]:
+        hf_file("saahith/EMSAssist-2", f, RAW / "emsassist2" / ("train-1.parquet" if "train" in f else "test-0.parquet"), "saahith/EMSAssist-2 (EMS condition phrases, human read)", "unknown (no card)", "no")
+
+
+STEPS = dict(round3=round3, round2=round2, more=more_speech, real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
              dispatch=dispatch_radio, text=text, yt=youtube_captions, piper=piper_voices, whisper=whisper_models)
 
 if __name__ == "__main__":
