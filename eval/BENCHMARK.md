@@ -9,7 +9,7 @@ RTF = processing time / audio duration on 4 x86 CPU threads in this container. R
 
 | Model | Size | Files | WER | Drug-name WER (tokens) | Number acc | Jargon recall | False drugs /1k words | RTF |
 |---|---|---|---|---|---|---|---|---|
-| whisper small.en (stock) | 244M | (not run) | | | | | | |
+| whisper small.en (stock) | 244M | 10 | 15.0% | 38.5% (26) | 85.5% | 78.3% | 0.0 | 0.33 |
 | EMSAssist small.en v2 | 244M | (not run) | | | | | | |
 | EMSAssist base.en v3 | 74M | (not run) | | | | | | |
 | whisper base.en (stock) | 74M | (not run) | | | | | | |
@@ -29,7 +29,7 @@ RTF = processing time / audio duration on 4 x86 CPU threads in this container. R
 
 | Model | Size | Files | WER | Drug-name WER (tokens) | Number acc | Jargon recall | False drugs /1k words | RTF |
 |---|---|---|---|---|---|---|---|---|
-| whisper small.en (stock) | 244M | 90 | 27.1% | 40.3% (149) | 82.5% | 100.0% | 0.0 | 3.04 |
+| whisper small.en (stock) | 244M | 116 | 27.4% | 41.3% (179) | 83.0% | 100.0% | 3.3 | 2.65 |
 | EMSAssist small.en v2 | 244M | (not run) | | | | | | |
 | EMSAssist base.en v3 | 74M | (not run) | | | | | | |
 | whisper base.en (stock) | 74M | (not run) | | | | | | |
@@ -59,4 +59,4 @@ RTF = processing time / audio duration on 4 x86 CPU threads in this container. R
 
 | Model | WER (mean of sets) | Drug-name WER (mean of sets with ≥10 drug tokens) |
 |---|---|---|
-| whisper small.en (stock) | 15.8% | 40.3% |
+| whisper small.en (stock) | 15.9% | 41.3% |

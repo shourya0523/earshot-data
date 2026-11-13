@@ -1,4 +1,15 @@
 {
+ "stock_small/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.14988290398126464,
+  "drug_wer": 0.38461538461538464,
+  "drug_tokens": 26,
+  "number_acc": 0.8554216867469879,
+  "jargon_recall": 0.782608695652174,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.3347147877194863,
+  "audio_min": 23.63853333333333
+ },
  "stock_small/real_test_emsctx": {
   "n": 30,
   "wer": 0.043668122270742356,
@@ -11,14 +22,14 @@
   "audio_min": 4.606642708333334
  },
  "stock_small/real_test_eka": {
-  "n": 90,
-  "wer": 0.27136752136752135,
-  "drug_wer": 0.40268456375838924,
-  "drug_tokens": 149,
-  "number_acc": 0.825,
+  "n": 116,
+  "wer": 0.27408637873754155,
+  "drug_wer": 0.4134078212290503,
+  "drug_tokens": 179,
+  "number_acc": 0.8301886792452831,
   "jargon_recall": 1.0,
-  "false_drug_per_1k": 0.0,
-  "rtf": 3.0403728213600116,
-  "audio_min": 7.17680625
+  "false_drug_per_1k": 3.3222591362126246,
+  "rtf": 2.648045673014636,
+  "audio_min": 9.165879166666667
  }
 }
