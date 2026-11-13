@@ -1488,6 +1488,251 @@
    "category": "time"
   },
   {
+   "term": "chest pain",
+   "expansion": "chest pain",
+   "category": "symptom"
+  },
+  {
+   "term": "chest pressure",
+   "expansion": "chest pressure",
+   "category": "symptom"
+  },
+  {
+   "term": "chest tightness",
+   "expansion": "chest tightness",
+   "category": "symptom"
+  },
+  {
+   "term": "shortness of breath",
+   "expansion": "shortness of breath",
+   "category": "symptom"
+  },
+  {
+   "term": "short of breath",
+   "expansion": "shortness of breath",
+   "category": "symptom"
+  },
+  {
+   "term": "difficulty breathing",
+   "expansion": "difficulty breathing",
+   "category": "symptom"
+  },
+  {
+   "term": "trouble breathing",
+   "expansion": "difficulty breathing",
+   "category": "symptom"
+  },
+  {
+   "term": "can't breathe",
+   "expansion": "difficulty breathing",
+   "category": "symptom"
+  },
+  {
+   "term": "nausea",
+   "expansion": "nausea",
+   "category": "symptom"
+  },
+  {
+   "term": "nauseous",
+   "expansion": "nausea",
+   "category": "symptom"
+  },
+  {
+   "term": "vomiting",
+   "expansion": "vomiting",
+   "category": "symptom"
+  },
+  {
+   "term": "threw up",
+   "expansion": "vomiting",
+   "category": "symptom"
+  },
+  {
+   "term": "dizzy",
+   "expansion": "dizziness",
+   "category": "symptom"
+  },
+  {
+   "term": "dizziness",
+   "expansion": "dizziness",
+   "category": "symptom"
+  },
+  {
+   "term": "lightheaded",
+   "expansion": "lightheadedness",
+   "category": "symptom"
+  },
+  {
+   "term": "headache",
+   "expansion": "headache",
+   "category": "symptom"
+  },
+  {
+   "term": "abdominal pain",
+   "expansion": "abdominal pain",
+   "category": "symptom"
+  },
+  {
+   "term": "belly pain",
+   "expansion": "abdominal pain",
+   "category": "symptom"
+  },
+  {
+   "term": "stomach pain",
+   "expansion": "abdominal pain",
+   "category": "symptom"
+  },
+  {
+   "term": "back pain",
+   "expansion": "back pain",
+   "category": "symptom"
+  },
+  {
+   "term": "neck pain",
+   "expansion": "neck pain",
+   "category": "symptom"
+  },
+  {
+   "term": "weakness",
+   "expansion": "weakness",
+   "category": "symptom"
+  },
+  {
+   "term": "numbness",
+   "expansion": "numbness",
+   "category": "symptom"
+  },
+  {
+   "term": "tingling",
+   "expansion": "tingling",
+   "category": "symptom"
+  },
+  {
+   "term": "palpitations",
+   "expansion": "palpitations",
+   "category": "symptom"
+  },
+  {
+   "term": "fever",
+   "expansion": "fever",
+   "category": "symptom"
+  },
+  {
+   "term": "chills",
+   "expansion": "chills",
+   "category": "symptom"
+  },
+  {
+   "term": "passed out",
+   "expansion": "syncope (reported)",
+   "category": "symptom"
+  },
+  {
+   "term": "fainted",
+   "expansion": "syncope (reported)",
+   "category": "symptom"
+  },
+  {
+   "term": "blacked out",
+   "expansion": "syncope (reported)",
+   "category": "symptom"
+  },
+  {
+   "term": "seizure",
+   "expansion": "seizure",
+   "category": "symptom"
+  },
+  {
+   "term": "bleeding",
+   "expansion": "bleeding",
+   "category": "symptom"
+  },
+  {
+   "term": "confusion",
+   "expansion": "confusion",
+   "category": "symptom"
+  },
+  {
+   "term": "confused",
+   "expansion": "confusion",
+   "category": "symptom"
+  },
+  {
+   "term": "radiating",
+   "expansion": "radiating pain",
+   "category": "symptom"
+  },
+  {
+   "term": "radiates",
+   "expansion": "radiating pain",
+   "category": "symptom"
+  },
+  {
+   "term": "jaw pain",
+   "expansion": "jaw pain",
+   "category": "symptom"
+  },
+  {
+   "term": "arm pain",
+   "expansion": "arm pain",
+   "category": "symptom"
+  },
+  {
+   "term": "hip pain",
+   "expansion": "hip pain",
+   "category": "symptom"
+  },
+  {
+   "term": "leg pain",
+   "expansion": "leg pain",
+   "category": "symptom"
+  },
+  {
+   "term": "swelling",
+   "expansion": "swelling",
+   "category": "symptom"
+  },
+  {
+   "term": "itching",
+   "expansion": "itching",
+   "category": "symptom"
+  },
+  {
+   "term": "hives",
+   "expansion": "hives",
+   "category": "symptom"
+  },
+  {
+   "term": "rash",
+   "expansion": "rash",
+   "category": "symptom"
+  },
+  {
+   "term": "throat tightness",
+   "expansion": "throat tightness",
+   "category": "symptom"
+  },
+  {
+   "term": "blurred vision",
+   "expansion": "blurred vision",
+   "category": "symptom"
+  },
+  {
+   "term": "anxious",
+   "expansion": "anxiety",
+   "category": "symptom"
+  },
+  {
+   "term": "sweaty",
+   "expansion": "diaphoresis",
+   "category": "symptom"
+  },
+  {
+   "term": "cough",
+   "expansion": "cough",
+   "category": "symptom"
+  },
+  {
    "term": "administered",
    "expansion": "administered",
    "category": "med_admin"
