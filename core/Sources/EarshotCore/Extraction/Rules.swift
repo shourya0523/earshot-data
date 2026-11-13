@@ -202,10 +202,18 @@ public final class RulesExtractor {
                     break
                 }
             }
-            if found == nil, toks[i].text.count >= 5, toks[i].text.allSatisfy({ $0.isLetter }), dict.termIndex[toks[i].text] == nil {
+            if found == nil, toks[i].text.count >= 5, toks[i].text.allSatisfy({ $0.isLetter }), dict.termIndex[toks[i].text] == nil,
+               hasMedContext(toks, i, i) {
                 let key = Phonetic.key(toks[i].text)
-                if let ds = dict.phoneticIndex[key], ds.count == 1, hasMedContext(toks, i, i) {
+                if let ds = dict.phoneticIndex[key], ds.count == 1 {
                     found = DrugHit(drug: ds[0], range: i...i, conf: 0.55, how: "phonetic")
+                } else if key.count >= 4 {
+                    // near-phonetic: keys within edit distance 1 (e.g. "Safranib" SFRNB ~ Zofran SFRN). Always "please confirm".
+                    var cands = Set<Int>()
+                    for (k, ds) in dict.phoneticIndex where abs(k.count - key.count) <= 1 && k.count >= 4 && Text.levenshtein(k, key) <= 1 {
+                        cands.formUnion(ds)
+                    }
+                    if cands.count == 1 { found = DrugHit(drug: cands.first!, range: i...i, conf: 0.45, how: "phonetic~") }
                 }
             }
             if let f = found { hits.append(f); i = f.range.upperBound + 1 } else { i += 1 }
