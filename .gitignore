@@ -1,0 +1,14 @@
+# Large artifacts stay out of git (see data/manifests/ + download scripts)
+data/raw/
+data/audio/
+data/work/
+eval/runs/
+models/*.bin
+models/*.safetensors
+models/*.onnx
+models/*.mlpackage/
+models/hf/
+train/out/
+__pycache__/
+*.pyc
+.venv/
