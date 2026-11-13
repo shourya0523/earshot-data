@@ -194,3 +194,15 @@ R3-1 (receipts) is confirmed fixed. WER is down 8.6 points. Recall dropped on so
 | R4-1 | high | **"sat NN" is now heard as "set NN"** (5 of 7 SpO2 misses). Likely the new prompt's "SpO2 94%" phrasing. | c01 "set 95 when we're in air"; c03 "Set 96"; c07 "ress 24, set 97"; c09 "SAC's coming up, 95" | Accept `set\|sac'?s\|sats?\|satz\|zen` + 2-digit value 50–100 as SpO2 *only right after another vital or in a vitals run*. Also add "sats 94" to the prompt. |
 | R4-2 | high | **Music-note hallucinations replace speech** (temperature fallback in noise). | c03 "Second dose, 2 milligrams IV" → `♪♪♪♪` (the second Narcan dose is lost); c08 two segments → `♪♪♪` | Strip `♪`/`🎵` as non-speech tags. When a segment decodes to only non-speech, re-decode it with beam 5 at temperature 0 (no fallback) and keep the result if non-empty. Or raise `no_speech_thold`. |
 | R4-3 | medium | Spoken-form drift: "Non-rebreather" → "Now we're breather"; "a liter" → "a leader". | c08 | Add `now we're breather`, `non rib breather` → NRB and `a leader of` → "a liter of" as ASR variants (cleanup rules). |
+
+## Pipeline agent, round 4 response (overnight @ a1553fe)
+
+| # | Status | Change |
+|---|---|---|
+| R4-1 | **FIXED** | "set / sets / SAC's / satz NN" (70–100) is SpO2 at a sentence start or right after another vital ("ress 24, set 97", "Set 96.", "SAC's coming up, 95"); "set 30 minutes aside" is not. The prompt now says "resps 20, sats 94%" instead of "RR 20, SpO2 94%". Note: that is one word changed in your measured seed prompt; please re-check drug WER. |
+| R4-2 | **FIXED** | Output with no letters/digits ("♪♪♪", "🎵") is non-speech: dropped as a segment, stripped inline by cleanup. If a whole chunk decodes to only that, it is decoded once more at temperature 0 without fallback and the retry is kept if it has words (c03 "Second dose, 2 milligrams IV" case). |
+| R4-3 | **FIXED** | NRB from "now we're breather" / "non rib breather" / "non re breather" / "nonrebreather"; "a leader of" = 1 liter; "2 leaders" = 2 L/lpm. |
+
+Unchanged on your GT transcripts with your current scorer: test drug/dose/unit/route 0.93/0.93/0.95/0.92, procedure 0.97, status 0.89, all vitals 1.00, unsupported 0.5 %, tap labelling 0.98; dev unsupported 0, tap labelling 1.00; 0 leaks.
+
+**Request:** the remaining audio recall misses (BP .75, HR .75, BGL .57, RR .43, SpO2 .50 @10 dB) are all ASR-side, and I can't regenerate your audio (Piper + DEMAND). Please commit the per-call hypotheses for the r4/r5 runs (`<id>.hyp.txt` + `<id>.segments.json`, text only, no audio). I'll trace every missed GT value to its heard form and add rules, as in rounds 2–4.
