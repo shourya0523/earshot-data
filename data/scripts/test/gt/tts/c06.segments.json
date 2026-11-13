@@ -1,0 +1,98 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4230,
+  "speaker": "RD",
+  "text": "Medic 5, difficulty breathing, nineteen year old female."
+ },
+ {
+  "start_ms": 7650,
+  "end_ms": 9448,
+  "speaker": "M1",
+  "text": "Medic 5 on scene."
+ },
+ {
+  "start_ms": 11907,
+  "end_ms": 15668,
+  "speaker": "PT",
+  "text": "I can't... I can't catch my breath. Used my inhaler... four times."
+ },
+ {
+  "start_ms": 16272,
+  "end_ms": 22308,
+  "speaker": "M1",
+  "text": "Okay, don't talk, just nod. She's tripoding, speaking in two-word sentences."
+ },
+ {
+  "start_ms": 24780,
+  "end_ms": 28851,
+  "speaker": "M2",
+  "text": "Sat's 88, resps 32, heart rate 126."
+ },
+ {
+  "start_ms": 29703,
+  "end_ms": 32726,
+  "speaker": "M1",
+  "text": "Wheezes in all fields, diminished in the bases."
+ },
+ {
+  "start_ms": 36793,
+  "end_ms": 42937,
+  "speaker": "M1",
+  "text": "Starting a DuoNeb, albuterol 2.5 and ipratropium 0.5 by nebulizer."
+ },
+ {
+  "start_ms": 69487,
+  "end_ms": 73302,
+  "speaker": "M2",
+  "text": "Peak flow wouldn't register. BP 138 over 84."
+ },
+ {
+  "start_ms": 80128,
+  "end_ms": 83040,
+  "speaker": "M1",
+  "text": "Solu-Medrol 125 IV."
+ },
+ {
+  "start_ms": 89692,
+  "end_ms": 92209,
+  "speaker": "M1",
+  "text": "Transporting to Children's West."
+ },
+ {
+  "start_ms": 100650,
+  "end_ms": 104418,
+  "speaker": "M2",
+  "text": "She's moving more air. Sat 94 on the neb, resps 24."
+ },
+ {
+  "start_ms": 111077,
+  "end_ms": 114112,
+  "speaker": "M1",
+  "text": "Second albuterol, 5 milligrams, neb."
+ },
+ {
+  "start_ms": 122426,
+  "end_ms": 125744,
+  "speaker": "M1",
+  "text": "Magnesium 2 grams IV over ten minutes."
+ },
+ {
+  "start_ms": 136493,
+  "end_ms": 137645,
+  "speaker": "PT",
+  "text": "It's getting easier."
+ },
+ {
+  "start_ms": 138196,
+  "end_ms": 141199,
+  "speaker": "M2",
+  "text": "Heart rate 118, sat 96."
+ },
+ {
+  "start_ms": 147528,
+  "end_ms": 149457,
+  "speaker": "M1",
+  "text": "We're here, Children's West."
+ }
+]

@@ -1,0 +1,92 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3599,
+  "speaker": "RD",
+  "text": "Medic 8, seizure, twenty-three year old male, at the gym."
+ },
+ {
+  "start_ms": 6973,
+  "end_ms": 8594,
+  "speaker": "M1",
+  "text": "Medic 8 on scene."
+ },
+ {
+  "start_ms": 11494,
+  "end_ms": 17749,
+  "speaker": "BY",
+  "text": "He's been shaking for like five minutes. He has epilepsy, he takes Keppra, but he said he ran out."
+ },
+ {
+  "start_ms": 18187,
+  "end_ms": 22819,
+  "speaker": "M1",
+  "text": "Still seizing. Protect his head. Get him on his side."
+ },
+ {
+  "start_ms": 25222,
+  "end_ms": 28231,
+  "speaker": "M2",
+  "text": "Sat's 86, heart rate 132."
+ },
+ {
+  "start_ms": 28943,
+  "end_ms": 31853,
+  "speaker": "M1",
+  "text": "Nasal cannula... no, non-rebreather, 15."
+ },
+ {
+  "start_ms": 35933,
+  "end_ms": 38963,
+  "speaker": "M1",
+  "text": "Versed 10 milligrams IM, left deltoid."
+ },
+ {
+  "start_ms": 65382,
+  "end_ms": 69286,
+  "speaker": "M2",
+  "text": "Seizure stopped. He's postictal, snoring respirations."
+ },
+ {
+  "start_ms": 70148,
+  "end_ms": 71471,
+  "speaker": "M1",
+  "text": "NPA, right nare."
+ },
+ {
+  "start_ms": 77767,
+  "end_ms": 83694,
+  "speaker": "M2",
+  "text": "Sugar 104. BP 146 over 90, resps 16."
+ },
+ {
+  "start_ms": 90106,
+  "end_ms": 92278,
+  "speaker": "M2",
+  "text": "Sat's coming up, 95."
+ },
+ {
+  "start_ms": 97852,
+  "end_ms": 99442,
+  "speaker": "M1",
+  "text": "Transporting to County."
+ },
+ {
+  "start_ms": 110055,
+  "end_ms": 113405,
+  "speaker": "M2",
+  "text": "GCS is 10. Eyes open to voice."
+ },
+ {
+  "start_ms": 122100,
+  "end_ms": 123405,
+  "speaker": "M1",
+  "text": "Arrived at County."
+ },
+ {
+  "start_ms": 138166,
+  "end_ms": 140677,
+  "speaker": "M1",
+  "text": "Report given, transfer of care."
+ }
+]

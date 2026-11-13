@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6125,
+  "speaker": "RD",
+  "text": "Medic 7, fall, seventy-eight year old female, lift assist requested."
+ },
+ {
+  "start_ms": 9444,
+  "end_ms": 11301,
+  "speaker": "M2",
+  "text": "On scene, Medic 7."
+ },
+ {
+  "start_ms": 15072,
+  "end_ms": 17924,
+  "speaker": "BY",
+  "text": "She's in the kitchen, she went down about twenty minutes ago."
+ },
+ {
+  "start_ms": 18689,
+  "end_ms": 21576,
+  "speaker": "M1",
+  "text": "Ma'am, did you trip, or did you feel funny before you fell?"
+ },
+ {
+  "start_ms": 21897,
+  "end_ms": 26207,
+  "speaker": "PT",
+  "text": "I got dizzy, my heart was going so fast, and then I was on the floor."
+ },
+ {
+  "start_ms": 26722,
+  "end_ms": 28934,
+  "speaker": "M1",
+  "text": "Did you hit your head? Are you on blood thinners?"
+ },
+ {
+  "start_ms": 29790,
+  "end_ms": 35153,
+  "speaker": "PT",
+  "text": "I don't think so. I take Eliquis and metoprolol. I'm allergic to penicillin."
+ },
+ {
+  "start_ms": 35681,
+  "end_ms": 40254,
+  "speaker": "M1",
+  "text": "Okay. Found her on the floor, alert, no obvious injury, but this isn't just a fall."
+ },
+ {
+  "start_ms": 42485,
+  "end_ms": 49428,
+  "speaker": "M2",
+  "text": "Heart rate's 148 and irregular, BP 96 over 60, sat 93."
+ },
+ {
+  "start_ms": 54303,
+  "end_ms": 56165,
+  "speaker": "M1",
+  "text": "Get the monitor on her and a twelve lead."
+ },
+ {
+  "start_ms": 80090,
+  "end_ms": 83596,
+  "speaker": "M2",
+  "text": "She's a GCS 15, A and O times four."
+ },
+ {
+  "start_ms": 88865,
+  "end_ms": 90292,
+  "speaker": "M2",
+  "text": "Twenty in the right hand."
+ },
+ {
+  "start_ms": 90728,
+  "end_ms": 93070,
+  "speaker": "M1",
+  "text": "Start 500 of saline, wide open."
+ },
+ {
+  "start_ms": 99629,
+  "end_ms": 101370,
+  "speaker": "M1",
+  "text": "Blood sugar's 112."
+ },
+ {
+  "start_ms": 106803,
+  "end_ms": 109043,
+  "speaker": "M1",
+  "text": "Let's go, we're transporting to General."
+ },
+ {
+  "start_ms": 119166,
+  "end_ms": 122907,
+  "speaker": "M2",
+  "text": "Recheck, 104 over 66, rate 132."
+ },
+ {
+  "start_ms": 135489,
+  "end_ms": 136461,
+  "speaker": "M1",
+  "text": "At General now."
+ },
+ {
+  "start_ms": 145002,
+  "end_ms": 147345,
+  "speaker": "M1",
+  "text": "Report's given, transfer of care complete."
+ }
+]

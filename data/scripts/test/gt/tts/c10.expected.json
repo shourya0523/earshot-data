@@ -1,0 +1,107 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "complaint"
+ ],
+ "patient": {
+  "age": "45",
+  "sex": "male",
+  "weight_kg": "84",
+  "complaint": "minor car accident, mild neck soreness",
+  "allergies": "NKDA",
+  "home_meds": "none",
+  "history": "none"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "minor car accident, mild neck soreness",
+   "allergies": "NKDA",
+   "medications": "none",
+   "history": "none"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "136/84",
+    "hr": "82",
+    "spo2": "99"
+   },
+   "last_vitals": {
+    "bp": "132/80",
+    "hr": "78",
+    "spo2": "99"
+   },
+   "status": [
+    "A&O\u00d74"
+   ],
+   "found": "standing outside vehicle, ambulatory"
+  },
+  "A": {
+   "must_not_contain": [
+    "whiplash"
+   ]
+  },
+  "P": {
+   "medications": [],
+   "procedures": [
+    "refusal"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "45",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "two car MVC, neck pain",
+  "I_injuries_or_information": "standing outside vehicle, ambulatory",
+  "S_signs": {
+   "bp": "136/84",
+   "hr": "82",
+   "spo2": "99"
+  },
+  "T_treatment": [
+   "refusal"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "none",
+  "B_background": "none",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "10:58:49",
+  "eTimes.13": "11:00:23"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "two car MVC, neck pain",
+ "medications": [],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "136/84",
+   "time": "10:59:10"
+  },
+  {
+   "name": "hr",
+   "value": "82",
+   "time": "10:59:10"
+  },
+  {
+   "name": "spo2",
+   "value": "99",
+   "time": "10:59:10"
+  },
+  {
+   "name": "bp",
+   "value": "132/80",
+   "time": "10:59:58"
+  },
+  {
+   "name": "hr",
+   "value": "78",
+   "time": "10:59:58"
+  }
+ ],
+ "diagnosis_traps": [
+  "whiplash"
+ ]
+}

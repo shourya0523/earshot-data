@@ -1,0 +1,1 @@
+Inform if fever more than 72 hours

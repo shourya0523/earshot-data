@@ -1,0 +1,92 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3814,
+  "speaker": "RD",
+  "text": "Medic 9, possible stroke, seventy-one year old male."
+ },
+ {
+  "start_ms": 7567,
+  "end_ms": 9105,
+  "speaker": "M1",
+  "text": "Medic 9 on scene."
+ },
+ {
+  "start_ms": 12901,
+  "end_ms": 17403,
+  "speaker": "BY",
+  "text": "He was fine at lunch, then at four fifteen he dropped his coffee and his face went funny."
+ },
+ {
+  "start_ms": 17881,
+  "end_ms": 20020,
+  "speaker": "M1",
+  "text": "Last known well sixteen fifteen."
+ },
+ {
+  "start_ms": 20738,
+  "end_ms": 27098,
+  "speaker": "M1",
+  "text": "Sir, smile for me. Squeeze my hands. Right side facial droop, right arm drift, slurred speech."
+ },
+ {
+  "start_ms": 29551,
+  "end_ms": 34748,
+  "speaker": "M2",
+  "text": "BP 188 over 102, heart rate 84, sat 97."
+ },
+ {
+  "start_ms": 39437,
+  "end_ms": 41395,
+  "speaker": "M2",
+  "text": "Sugar's 136."
+ },
+ {
+  "start_ms": 42244,
+  "end_ms": 46059,
+  "speaker": "M1",
+  "text": "BE-FAST positive. Calling a stroke alert, let's load and go."
+ },
+ {
+  "start_ms": 50649,
+  "end_ms": 52119,
+  "speaker": "M1",
+  "text": "Transporting to Regional."
+ },
+ {
+  "start_ms": 76011,
+  "end_ms": 77679,
+  "speaker": "M2",
+  "text": "Eighteen in the left AC."
+ },
+ {
+  "start_ms": 84763,
+  "end_ms": 87638,
+  "speaker": "M2",
+  "text": "GCS is 14, he's confused on verbal."
+ },
+ {
+  "start_ms": 94505,
+  "end_ms": 97955,
+  "speaker": "M1",
+  "text": "Don't give him anything by mouth. Keep the head of the bed up thirty."
+ },
+ {
+  "start_ms": 106524,
+  "end_ms": 109608,
+  "speaker": "M2",
+  "text": "Repeat pressure 182 over 98."
+ },
+ {
+  "start_ms": 119972,
+  "end_ms": 122279,
+  "speaker": "M1",
+  "text": "Arrived at Regional, straight to CT."
+ },
+ {
+  "start_ms": 126668,
+  "end_ms": 128451,
+  "speaker": "M1",
+  "text": "Handing off to the stroke team."
+ }
+]

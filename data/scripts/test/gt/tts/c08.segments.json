@@ -1,0 +1,98 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4808,
+  "speaker": "RD",
+  "text": "Medic 2, allergic reaction, forty-one year old female, at the restaurant."
+ },
+ {
+  "start_ms": 8133,
+  "end_ms": 9977,
+  "speaker": "M1",
+  "text": "Medic 2 on scene."
+ },
+ {
+  "start_ms": 12342,
+  "end_ms": 16355,
+  "speaker": "PT",
+  "text": "I ate shrimp. My throat feels tight and I'm itching everywhere."
+ },
+ {
+  "start_ms": 16688,
+  "end_ms": 21938,
+  "speaker": "M1",
+  "text": "Hives on the chest and arms, lips are swelling. Any trouble swallowing?"
+ },
+ {
+  "start_ms": 22441,
+  "end_ms": 23226,
+  "speaker": "PT",
+  "text": "A little."
+ },
+ {
+  "start_ms": 25450,
+  "end_ms": 29985,
+  "speaker": "M2",
+  "text": "BP 88 over 54, heart rate 122, sat 93."
+ },
+ {
+  "start_ms": 34243,
+  "end_ms": 37763,
+  "speaker": "M1",
+  "text": "Epi 0.5 milligrams IM, right thigh."
+ },
+ {
+  "start_ms": 42294,
+  "end_ms": 44616,
+  "speaker": "M2",
+  "text": "Non-rebreather at 15 liters."
+ },
+ {
+  "start_ms": 70688,
+  "end_ms": 73246,
+  "speaker": "M2",
+  "text": "Eighteen, left AC."
+ },
+ {
+  "start_ms": 75696,
+  "end_ms": 77870,
+  "speaker": "M1",
+  "text": "Benadryl 50 IV."
+ },
+ {
+  "start_ms": 78562,
+  "end_ms": 80880,
+  "speaker": "M1",
+  "text": "And a liter of saline."
+ },
+ {
+  "start_ms": 87523,
+  "end_ms": 89343,
+  "speaker": "M1",
+  "text": "Transporting to Memorial."
+ },
+ {
+  "start_ms": 99841,
+  "end_ms": 104349,
+  "speaker": "M2",
+  "text": "Recheck, 104 over 70, heart rate 108, sat 97."
+ },
+ {
+  "start_ms": 104878,
+  "end_ms": 106963,
+  "speaker": "PT",
+  "text": "It's easier to breathe now."
+ },
+ {
+  "start_ms": 115392,
+  "end_ms": 117295,
+  "speaker": "M1",
+  "text": "Famotidine 20 IV."
+ },
+ {
+  "start_ms": 128186,
+  "end_ms": 130204,
+  "speaker": "M1",
+  "text": "Arrived at Memorial."
+ }
+]

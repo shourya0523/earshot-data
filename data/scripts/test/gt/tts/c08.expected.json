@@ -1,0 +1,152 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "41",
+  "sex": "female",
+  "weight_kg": "68",
+  "complaint": "throat feels tight and hives after eating shrimp",
+  "allergies": "shellfish",
+  "home_meds": "none",
+  "history": "seasonal allergies"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "throat feels tight and hives after eating shrimp",
+   "allergies": "shellfish",
+   "medications": "none",
+   "history": "seasonal allergies"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "88/54",
+    "hr": "122",
+    "spo2": "93"
+   },
+   "last_vitals": {
+    "bp": "104/70",
+    "hr": "108",
+    "spo2": "97"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "anaphylaxis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "epinephrine 0.5 mg IM",
+    "oxygen 15 L/min NRB",
+    "diphenhydramine 50 IV",
+    "normal saline 1 L",
+    "famotidine 20 IV"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "41",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "allergic reaction",
+  "I_injuries_or_information": "throat feels tight and hives after eating shrimp",
+  "S_signs": {
+   "bp": "88/54",
+   "hr": "122",
+   "spo2": "93"
+  },
+  "T_treatment": [
+   "epinephrine 0.5 mg IM",
+   "oxygen 15 L/min NRB",
+   "diphenhydramine 50 IV",
+   "normal saline 1 L",
+   "famotidine 20 IV",
+   "IV access"
+  ],
+  "A_allergies": "shellfish",
+  "M_medications": "none",
+  "B_background": "seasonal allergies",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "19:12:13",
+  "eTimes.09": "19:13:32",
+  "eTimes.11": "19:14:13"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "allergic reaction",
+ "medications": [
+  {
+   "drug": "epinephrine",
+   "dose": "0.5",
+   "unit": "mg",
+   "route": "IM"
+  },
+  {
+   "drug": "oxygen",
+   "dose": "15",
+   "unit": "L/min",
+   "route": "NRB"
+  },
+  {
+   "drug": "diphenhydramine",
+   "dose": "50",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "1",
+   "unit": "L"
+  },
+  {
+   "drug": "famotidine",
+   "dose": "20",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "88/54",
+   "time": "19:12:29"
+  },
+  {
+   "name": "hr",
+   "value": "122",
+   "time": "19:12:29"
+  },
+  {
+   "name": "spo2",
+   "value": "93",
+   "time": "19:12:29"
+  },
+  {
+   "name": "bp",
+   "value": "104/70",
+   "time": "19:13:44"
+  },
+  {
+   "name": "hr",
+   "value": "108",
+   "time": "19:13:44"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "19:13:44"
+  }
+ ],
+ "diagnosis_traps": [
+  "anaphylaxis"
+ ]
+}

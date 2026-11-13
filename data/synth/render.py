@@ -184,9 +184,9 @@ def monitor_beeps(n, rng):
 def noise_bed(n, which, rng, kinds=("cab", "road", "siren", "monitor")):
     bed = np.zeros(n, np.float32)
     for kind in kinds:
-        if kind == "monitor" and rng.random() < 0.5:
-            bed += monitor_beeps(n, rng); continue
         files = [f for f in NOISE_KINDS[kind]() if bank_of(f) == which]
+        if kind == "monitor" and (rng.random() < 0.5 or not files):
+            bed += monitor_beeps(n, rng); continue
         if not files:
             continue
         seg = np.zeros(n, np.float32); pos = 0
@@ -343,7 +343,7 @@ def expected_fields(call, events, start):
     for e in vit:
         last[e["fields"]["name"]] = e["fields"]["value"]
     def med_str(m):
-        return " ".join(x for x in [m["drug"], m["dose"], m["unit"], m.get("route", "")] if x).strip()
+        return " ".join(x for x in [m["drug"], m.get("dose", ""), m.get("unit", ""), m.get("route", "")] if x).strip()
     heard_pt = {k: p.get(k) for k in ["age", "sex", "weight_kg", "complaint", "allergies", "home_meds", "history"]}
     wall = None
     if "eTimes.11" in etimes and "eTimes.12" in etimes:

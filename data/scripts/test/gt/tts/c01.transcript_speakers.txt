@@ -1,0 +1,19 @@
+RD: Medic 14, respond priority one, sixty-two year old male, chest pain.
+M1: Medic 14 on scene.
+M1: Sir, I'm Dana with the ambulance. What's going on today?
+PT: It's like an elephant on my chest. Started about forty minutes ago, goes down my left arm.
+M1: Any allergies to medications?
+PT: No, none.
+M1: What do you take at home?
+PT: Lisinopril and, uh, atorvastatin.
+M2: First set, BP 158 over 94, pulse 104, sat 95 on room air.
+M1: Let's get a 12 lead on him.
+M1: Giving 324 of aspirin, chewed.
+M2: Twelve lead shows elevation in two, three and aVF. Looks like a STEMI, I'm transmitting.
+M1: Nitro 0.4 sublingual, his pressure can take it.
+M2: Got an 18 in the left AC.
+M2: Repeat, 142 over 88, heart rate 98, pain's down to a 6 out of 10.
+M1: We're transporting to Mercy, cath lab activated.
+M1: Second nitro, 0.4 under the tongue.
+M1: Arrived at Mercy.
+M1: Giving report to the charge nurse now, transfer of care.

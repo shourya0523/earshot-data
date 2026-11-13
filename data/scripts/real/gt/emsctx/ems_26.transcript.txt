@@ -1,0 +1,1 @@
+BP 120 over 80, Pulse Rate 90, Respiratory Rate 14, temperature 38 degrees Celsius SPO2 100, ETCO2 27, GCS 15, blood glucose 5

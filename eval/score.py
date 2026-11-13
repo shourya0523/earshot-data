@@ -274,7 +274,7 @@ def outputs(gt, run, ids):
             nt = tn.normalize(t)
             keys = []
             for m in ex["medications"]:
-                keys.append(tn.normalize(m["drug"]).split()[0]); keys.append(tn.normalize(m["dose"]))
+                keys.append(tn.normalize(m["drug"]).split()[0]); keys.append(tn.normalize(m.get("dose", "")))
             for v in ex["vitals"]:
                 keys += [tn.normalize(x) for x in str(v["value"]).split("/")]
             if fmt == "nemsis":

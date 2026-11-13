@@ -1,0 +1,141 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint",
+  "allergies",
+  "home_meds"
+ ],
+ "patient": {
+  "age": "78",
+  "sex": "female",
+  "weight_kg": "60",
+  "complaint": "fall, felt lightheaded and heart racing before falling",
+  "allergies": "penicillin",
+  "home_meds": "Eliquis, metoprolol",
+  "history": "atrial fibrillation"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "fall, felt lightheaded and heart racing before falling",
+   "allergies": "penicillin",
+   "medications": "Eliquis, metoprolol",
+   "history": "atrial fibrillation"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "148",
+    "bp": "96/60",
+    "spo2": "93",
+    "gcs": "15",
+    "bgl": "112"
+   },
+   "last_vitals": {
+    "hr": "132",
+    "bp": "104/66",
+    "spo2": "93",
+    "gcs": "15",
+    "bgl": "112"
+   },
+   "status": [
+    "A&O\u00d74"
+   ],
+   "found": "on the floor, lightheaded, palpitations"
+  },
+  "A": {
+   "must_not_contain": [
+    "atrial fibrillation with RVR",
+    "afib"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 500"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "78",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fall, lift assist",
+  "I_injuries_or_information": "on the floor, lightheaded, palpitations",
+  "S_signs": {
+   "hr": "148",
+   "bp": "96/60",
+   "spo2": "93",
+   "gcs": "15",
+   "bgl": "112"
+  },
+  "T_treatment": [
+   "normal saline 500",
+   "12-lead ECG",
+   "IV access"
+  ],
+  "A_allergies": "penicillin",
+  "M_medications": "Eliquis, metoprolol",
+  "B_background": "atrial fibrillation",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "09:41:39",
+  "eTimes.09": "09:43:16",
+  "eTimes.11": "09:43:45",
+  "eTimes.12": "09:43:53"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "fall, lift assist",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "500"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "148",
+   "time": "09:42:11"
+  },
+  {
+   "name": "bp",
+   "value": "96/60",
+   "time": "09:42:11"
+  },
+  {
+   "name": "spo2",
+   "value": "93",
+   "time": "09:42:11"
+  },
+  {
+   "name": "gcs",
+   "value": "15",
+   "time": "09:42:50"
+  },
+  {
+   "name": "bgl",
+   "value": "112",
+   "time": "09:43:09"
+  },
+  {
+   "name": "bp",
+   "value": "104/66",
+   "time": "09:43:28"
+  },
+  {
+   "name": "hr",
+   "value": "132",
+   "time": "09:43:28"
+  }
+ ],
+ "diagnosis_traps": [
+  "atrial fibrillation with RVR",
+  "afib"
+ ]
+}

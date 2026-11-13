@@ -1,0 +1,143 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint",
+  "home_meds"
+ ],
+ "patient": {
+  "age": "62",
+  "sex": "male",
+  "weight_kg": "95",
+  "complaint": "chest pressure radiating to left arm",
+  "allergies": "NKDA",
+  "home_meds": "lisinopril, atorvastatin",
+  "history": "hypertension, high cholesterol"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest pressure radiating to left arm",
+   "allergies": "NKDA",
+   "medications": "lisinopril, atorvastatin",
+   "history": "hypertension, high cholesterol"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "158/94",
+    "hr": "104",
+    "spo2": "95",
+    "pain": "6"
+   },
+   "last_vitals": {
+    "bp": "142/88",
+    "hr": "98",
+    "spo2": "95",
+    "pain": "6"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "STEMI"
+   ]
+  },
+  "P": {
+   "medications": [
+    "aspirin 324 PO",
+    "nitroglycerin 0.4 SL",
+    "nitroglycerin 0.4 SL"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "62",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "chest pain",
+  "I_injuries_or_information": "chest pressure radiating to left arm",
+  "S_signs": {
+   "bp": "158/94",
+   "hr": "104",
+   "spo2": "95",
+   "pain": "6"
+  },
+  "T_treatment": [
+   "aspirin 324 PO",
+   "nitroglycerin 0.4 SL",
+   "nitroglycerin 0.4 SL",
+   "12-lead ECG",
+   "IV access"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "lisinopril, atorvastatin",
+  "B_background": "hypertension, high cholesterol",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "14:02:19",
+  "eTimes.09": "14:04:13",
+  "eTimes.11": "14:04:38",
+  "eTimes.12": "14:04:54"
+ },
+ "wall_time_seconds": 16,
+ "dispatch_reason": "chest pain",
+ "medications": [
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "route": "PO"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "158/94",
+   "time": "14:02:44"
+  },
+  {
+   "name": "hr",
+   "value": "104",
+   "time": "14:02:44"
+  },
+  {
+   "name": "spo2",
+   "value": "95",
+   "time": "14:02:44"
+  },
+  {
+   "name": "bp",
+   "value": "142/88",
+   "time": "14:04:04"
+  },
+  {
+   "name": "hr",
+   "value": "98",
+   "time": "14:04:04"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "14:04:04"
+  }
+ ],
+ "diagnosis_traps": [
+  "STEMI"
+ ]
+}

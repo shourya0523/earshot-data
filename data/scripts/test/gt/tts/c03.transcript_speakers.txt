@@ -1,0 +1,17 @@
+RD: Medic 3, unconscious person, possible overdose, in the parking garage.
+M1: Medic 3 on scene.
+BY: He was in his car, he's barely breathing, I didn't touch anything.
+M1: Sir! Sir, can you hear me? Nothing. Pinpoint pupils.
+M2: Resps are 6, shallow, sat's 82.
+M1: Start bagging him.
+M1: Narcan 4 milligrams intranasal, in.
+M2: Pulse is 58, pressure 100 over 62.
+M1: No change. Second dose, 2 milligrams IV.
+M2: He's breathing, rate 14 now, sat 96.
+PT: What... what happened? Where am I?
+M1: You stopped breathing, buddy. We gave you some Narcan. Did you take anything?
+PT: Just a little. I'm fine. My head hurts.
+M2: Blood sugar 98.
+M1: Transporting to St. Luke's.
+M2: He's A and O times three now.
+M1: Arriving at St. Luke's.

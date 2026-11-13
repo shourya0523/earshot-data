@@ -1,0 +1,182 @@
+[
+ {
+  "call_id": "c01",
+  "seconds": 173.549,
+  "voices": {
+   "M1": "en_GB-northern_english_male-medium",
+   "M2": "en_US-joe-medium",
+   "PT": "en_US-hfc_male-medium",
+   "BY": "en_US-amy-medium",
+   "RD": "en_US-hfc_female-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 6,
+  "n_events": 17
+ },
+ {
+  "call_id": "c02",
+  "seconds": 148.9644375,
+  "voices": {
+   "M1": "en_GB-northern_english_male-medium",
+   "M2": "en_US-norman-medium",
+   "PT": "en_US-joe-medium",
+   "BY": "en_US-ryan-medium",
+   "RD": "en_US-john-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 18
+ },
+ {
+  "call_id": "c03",
+  "seconds": 140.488,
+  "voices": {
+   "M1": "en_US-norman-medium",
+   "M2": "en_US-hfc_female-medium",
+   "PT": "en_US-amy-medium",
+   "BY": "en_US-john-medium",
+   "RD": "en_US-ryan-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 17
+ },
+ {
+  "call_id": "c04",
+  "seconds": 147.8073125,
+  "voices": {
+   "M1": "en_GB-alan-medium",
+   "M2": "en_US-kristin-medium",
+   "PT": "en_US-lessac-medium",
+   "BY": "en_US-joe-medium",
+   "RD": "en_GB-northern_english_male-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 15
+ },
+ {
+  "call_id": "c05",
+  "seconds": 129.84825,
+  "voices": {
+   "M1": "en_US-hfc_male-medium",
+   "M2": "en_US-ryan-medium",
+   "PT": "en_US-kristin-medium",
+   "BY": "en_GB-northern_english_male-medium",
+   "RD": "en_US-norman-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 18
+ },
+ {
+  "call_id": "c06",
+  "seconds": 151.228,
+  "voices": {
+   "M1": "en_US-amy-medium",
+   "M2": "en_US-ryan-medium",
+   "PT": "en_GB-northern_english_male-medium",
+   "BY": "en_US-kristin-medium",
+   "RD": "en_US-hfc_male-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 20
+ },
+ {
+  "call_id": "c07",
+  "seconds": 139.1635,
+  "voices": {
+   "M1": "en_US-joe-medium",
+   "M2": "en_US-hfc_female-medium",
+   "PT": "en_US-amy-medium",
+   "BY": "en_US-norman-medium",
+   "RD": "en_GB-alan-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 21
+ },
+ {
+  "call_id": "c08",
+  "seconds": 131.9230625,
+  "voices": {
+   "M1": "en_US-amy-medium",
+   "M2": "en_US-john-medium",
+   "PT": "en_US-hfc_female-medium",
+   "BY": "en_US-ryan-medium",
+   "RD": "en_US-joe-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 17
+ },
+ {
+  "call_id": "c09",
+  "seconds": 145.2993125,
+  "voices": {
+   "M1": "en_US-amy-medium",
+   "M2": "en_US-joe-medium",
+   "PT": "en_GB-northern_english_male-medium",
+   "BY": "en_US-kristin-medium",
+   "RD": "en_US-ryan-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 5,
+  "n_events": 18
+ },
+ {
+  "call_id": "c10",
+  "seconds": 110.041125,
+  "voices": {
+   "M1": "en_US-lessac-medium",
+   "M2": "en_US-ryan-medium",
+   "PT": "en_US-kristin-medium",
+   "BY": "en_US-joe-medium",
+   "RD": "en_GB-alan-medium"
+  },
+  "snrs": [
+   15,
+   10,
+   5
+  ],
+  "n_taps": 4,
+  "n_events": 12
+ }
+]

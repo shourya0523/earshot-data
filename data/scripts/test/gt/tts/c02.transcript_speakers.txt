@@ -1,0 +1,18 @@
+RD: Medic 7, fall, seventy-eight year old female, lift assist requested.
+M2: On scene, Medic 7.
+BY: She's in the kitchen, she went down about twenty minutes ago.
+M1: Ma'am, did you trip, or did you feel funny before you fell?
+PT: I got dizzy, my heart was going so fast, and then I was on the floor.
+M1: Did you hit your head? Are you on blood thinners?
+PT: I don't think so. I take Eliquis and metoprolol. I'm allergic to penicillin.
+M1: Okay. Found her on the floor, alert, no obvious injury, but this isn't just a fall.
+M2: Heart rate's 148 and irregular, BP 96 over 60, sat 93.
+M1: Get the monitor on her and a twelve lead.
+M2: She's a GCS 15, A and O times four.
+M2: Twenty in the right hand.
+M1: Start 500 of saline, wide open.
+M1: Blood sugar's 112.
+M1: Let's go, we're transporting to General.
+M2: Recheck, 104 over 66, rate 132.
+M1: At General now.
+M1: Report's given, transfer of care complete.

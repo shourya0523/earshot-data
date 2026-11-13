@@ -1,0 +1,19 @@
+RD: Medic 21, altered mental status, fifty-four year old female, known diabetic.
+M1: Medic 21 on scene.
+BY: She took her insulin this morning but she didn't eat. Now she's not making sense.
+M1: Ma'am, can you tell me your name? She's confused, pale, cool and diaphoretic.
+M2: BGL 42.
+M1: Okay, can she swallow? No, she's too altered. Get me a line.
+M2: Twenty gauge, left forearm.
+M1: D10, 100 mLs IV.
+M2: Vitals, BP 134 over 78, heart rate 96, resps 18.
+M2: Recheck sugar is 68.
+M1: Hang another 100 of D10.
+PT: Oh. Oh no. Did I go low again?
+M1: You did. Sugar's coming up. Any allergies?
+PT: Sulfa.
+M2: Sugar's 124 now, she's A and O times four.
+PT: I don't want to go to the hospital, I feel fine now.
+M1: Your sugar was really low. With the insulin, it could drop again. We'd like to take you in.
+PT: Okay. Okay, fine.
+M1: Transporting to University.

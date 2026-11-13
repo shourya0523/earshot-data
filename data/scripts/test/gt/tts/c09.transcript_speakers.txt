@@ -1,0 +1,15 @@
+RD: Medic 8, seizure, twenty-three year old male, at the gym.
+M1: Medic 8 on scene.
+BY: He's been shaking for like five minutes. He has epilepsy, he takes Keppra, but he said he ran out.
+M1: Still seizing. Protect his head. Get him on his side.
+M2: Sat's 86, heart rate 132.
+M1: Nasal cannula... no, non-rebreather, 15.
+M1: Versed 10 milligrams IM, left deltoid.
+M2: Seizure stopped. He's postictal, snoring respirations.
+M1: NPA, right nare.
+M2: Sugar 104. BP 146 over 90, resps 16.
+M2: Sat's coming up, 95.
+M1: Transporting to County.
+M2: GCS is 10. Eyes open to voice.
+M1: Arrived at County.
+M1: Report given, transfer of care.

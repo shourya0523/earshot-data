@@ -1,0 +1,18 @@
+RD: Medic 11, motor vehicle collision, motorcycle versus car, rider down.
+M1: Medic 11 on scene.
+M1: Helmet on, he's talking. Big bleed, left thigh.
+M2: Tourniquet high and tight, left thigh.
+PT: My leg! Oh God, my leg.
+M1: Stay still for me. Any other pain? Neck, back?
+PT: No, just the leg.
+M2: BP 98 over 60, heart rate 124, resps 24, sat 97.
+M1: He's compensating. Pale, cool skin.
+M1: Traction splint, then load.
+M1: Transporting to the trauma center.
+M2: Fourteen in the right AC.
+M1: TXA, one gram IV over ten.
+M1: Fentanyl 50 micrograms IV for pain.
+M2: Repeat, 102 over 64, rate 116. Pain's an 8 out of 10.
+M1: Tourniquet time oh two thirty four.
+M1: At the trauma center.
+M1: Transfer of care to trauma bay two.

@@ -1,0 +1,42 @@
+{
+ "taps": [
+  {
+   "clip_ms": 17571,
+   "source": "button",
+   "id": "t1",
+   "labelled": true
+  },
+  {
+   "clip_ms": 34792,
+   "source": "knock",
+   "id": "t2",
+   "labelled": true
+  },
+  {
+   "clip_ms": 61884,
+   "source": "snap",
+   "id": "t3",
+   "labelled": false
+  },
+  {
+   "clip_ms": 85012,
+   "source": "snap",
+   "id": "t4",
+   "labelled": true
+  },
+  {
+   "clip_ms": 95580,
+   "source": "button",
+   "id": "t5",
+   "labelled": true
+  }
+ ],
+ "ignored": [
+  {
+   "clip_ms": 68333,
+   "source": "knock",
+   "kind": "single_ignored"
+  }
+ ],
+ "start": "02:31:40"
+}

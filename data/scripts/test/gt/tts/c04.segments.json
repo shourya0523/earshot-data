@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4596,
+  "speaker": "RD",
+  "text": "Medic 21, altered mental status, fifty-four year old female, known diabetic."
+ },
+ {
+  "start_ms": 8472,
+  "end_ms": 10515,
+  "speaker": "M1",
+  "text": "Medic 21 on scene."
+ },
+ {
+  "start_ms": 14001,
+  "end_ms": 18757,
+  "speaker": "BY",
+  "text": "She took her insulin this morning but she didn't eat. Now she's not making sense."
+ },
+ {
+  "start_ms": 19435,
+  "end_ms": 24636,
+  "speaker": "M1",
+  "text": "Ma'am, can you tell me your name? She's confused, pale, cool and diaphoretic."
+ },
+ {
+  "start_ms": 26925,
+  "end_ms": 28824,
+  "speaker": "M2",
+  "text": "BGL 42."
+ },
+ {
+  "start_ms": 29260,
+  "end_ms": 33860,
+  "speaker": "M1",
+  "text": "Okay, can she swallow? No, she's too altered. Get me a line."
+ },
+ {
+  "start_ms": 42197,
+  "end_ms": 44186,
+  "speaker": "M2",
+  "text": "Twenty gauge, left forearm."
+ },
+ {
+  "start_ms": 49020,
+  "end_ms": 51831,
+  "speaker": "M1",
+  "text": "D10, 100 mLs IV."
+ },
+ {
+  "start_ms": 78077,
+  "end_ms": 85202,
+  "speaker": "M2",
+  "text": "Vitals, BP 134 over 78, heart rate 96, resps 18."
+ },
+ {
+  "start_ms": 93572,
+  "end_ms": 95523,
+  "speaker": "M2",
+  "text": "Recheck sugar is 68."
+ },
+ {
+  "start_ms": 100232,
+  "end_ms": 102700,
+  "speaker": "M1",
+  "text": "Hang another 100 of D10."
+ },
+ {
+  "start_ms": 113114,
+  "end_ms": 115632,
+  "speaker": "PT",
+  "text": "Oh. Oh no. Did I go low again?"
+ },
+ {
+  "start_ms": 115941,
+  "end_ms": 119224,
+  "speaker": "M1",
+  "text": "You did. Sugar's coming up. Any allergies?"
+ },
+ {
+  "start_ms": 119784,
+  "end_ms": 120444,
+  "speaker": "PT",
+  "text": "Sulfa."
+ },
+ {
+  "start_ms": 121227,
+  "end_ms": 125518,
+  "speaker": "M2",
+  "text": "Sugar's 124 now, she's A and O times four."
+ },
+ {
+  "start_ms": 131330,
+  "end_ms": 134314,
+  "speaker": "PT",
+  "text": "I don't want to go to the hospital, I feel fine now."
+ },
+ {
+  "start_ms": 134889,
+  "end_ms": 140799,
+  "speaker": "M1",
+  "text": "Your sugar was really low. With the insulin, it could drop again. We'd like to take you in."
+ },
+ {
+  "start_ms": 141534,
+  "end_ms": 143402,
+  "speaker": "PT",
+  "text": "Okay. Okay, fine."
+ },
+ {
+  "start_ms": 144057,
+  "end_ms": 145963,
+  "speaker": "M1",
+  "text": "Transporting to University."
+ }
+]
