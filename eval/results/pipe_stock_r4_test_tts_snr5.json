@@ -1,0 +1,340 @@
+{
+ "run": "eval/runs/pipe_stock_r4/test_tts_snr5",
+ "gt": "data/scripts/test/gt/tts",
+ "n": 10,
+ "transcription": {
+  "n_files": 10,
+  "wer": 0.20843091334894615,
+  "drug_wer": 0.38461538461538464,
+  "drug_tokens": 26,
+  "number_acc": 0.8734939759036144,
+  "number_tokens": 166,
+  "unit_acc": 0.9090909090909091,
+  "jargon_recall": 0.7681159420289855,
+  "jargon_terms": 69,
+  "per_file": [
+   {
+    "id": "c01",
+    "ref_words": 157,
+    "errors": 30,
+    "wer": 0.1910828025477707,
+    "drug_n": 5,
+    "drug_err": 2,
+    "num_n": 22,
+    "num_err": 2,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 4,
+    "drug_misses": [
+     "lisinopril and atorvastatin -> up roland adorvastogen"
+    ]
+   },
+   {
+    "id": "c02",
+    "ref_words": 162,
+    "errors": 35,
+    "wer": 0.21604938271604937,
+    "drug_n": 2,
+    "drug_err": 2,
+    "num_n": 17,
+    "num_err": 3,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 8,
+    "jargon_hit": 7,
+    "drug_misses": [
+     "eliquis and metoprolol im allergic to -> a look at this meta problem"
+    ]
+   },
+   {
+    "id": "c03",
+    "ref_words": 121,
+    "errors": 23,
+    "wer": 0.19008264462809918,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 13,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 7,
+    "jargon_hit": 4,
+    "drug_misses": [
+     "narcan -> c"
+    ]
+   },
+   {
+    "id": "c04",
+    "ref_words": 151,
+    "errors": 41,
+    "wer": 0.271523178807947,
+    "drug_n": 4,
+    "drug_err": 1,
+    "num_n": 14,
+    "num_err": 1,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 11,
+    "jargon_hit": 8,
+    "drug_misses": [
+     "she took her insulin this -> keep the percents alon mam"
+    ]
+   },
+   {
+    "id": "c05",
+    "ref_words": 121,
+    "errors": 23,
+    "wer": 0.19008264462809918,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 17,
+    "num_err": 3,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 12,
+    "jargon_hit": 11,
+    "drug_misses": []
+   },
+   {
+    "id": "c06",
+    "ref_words": 117,
+    "errors": 13,
+    "wer": 0.1111111111111111,
+    "drug_n": 6,
+    "drug_err": 1,
+    "num_n": 20,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 4,
+    "drug_misses": [
+     "ipratropium -> epitropium"
+    ]
+   },
+   {
+    "id": "c07",
+    "ref_words": 120,
+    "errors": 19,
+    "wer": 0.15833333333333333,
+    "drug_n": 2,
+    "drug_err": 0,
+    "num_n": 19,
+    "num_err": 4,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": []
+   },
+   {
+    "id": "c08",
+    "ref_words": 95,
+    "errors": 33,
+    "wer": 0.3473684210526316,
+    "drug_n": 3,
+    "drug_err": 2,
+    "num_n": 16,
+    "num_err": 7,
+    "unit_n": 3,
+    "unit_err": 1,
+    "jargon_n": 3,
+    "jargon_hit": 2,
+    "drug_misses": [
+     "benadryl -> benadril",
+     "famotidine -> fametidin"
+    ]
+   },
+   {
+    "id": "c09",
+    "ref_words": 103,
+    "errors": 37,
+    "wer": 0.3592233009708738,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 14,
+    "num_err": 1,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 3,
+    "drug_misses": [
+     "keppra -> capra"
+    ]
+   },
+   {
+    "id": "c10",
+    "ref_words": 134,
+    "errors": 13,
+    "wer": 0.09701492537313433,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 0,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 4,
+    "jargon_hit": 4,
+    "drug_misses": []
+   }
+  ]
+ },
+ "extraction": {
+  "fields": {
+   "dose": {
+    "tp": 17,
+    "pred": 17,
+    "gt": 22,
+    "precision": 1.0,
+    "recall": 0.7727272727272727,
+    "f1": 0.8717948717948718
+   },
+   "drug": {
+    "tp": 18,
+    "pred": 19,
+    "gt": 22,
+    "precision": 0.9473684210526315,
+    "recall": 0.8181818181818182,
+    "f1": 0.8780487804878049
+   },
+   "procedure": {
+    "tp": 11,
+    "pred": 15,
+    "gt": 14,
+    "precision": 0.7333333333333333,
+    "recall": 0.7857142857142857,
+    "f1": 0.7586206896551724
+   },
+   "route": {
+    "tp": 12,
+    "pred": 12,
+    "gt": 19,
+    "precision": 1.0,
+    "recall": 0.631578947368421,
+    "f1": 0.7741935483870968
+   },
+   "status": {
+    "tp": 6,
+    "pred": 10,
+    "gt": 16,
+    "precision": 0.6,
+    "recall": 0.375,
+    "f1": 0.4615384615384615
+   },
+   "unit": {
+    "tp": 8,
+    "pred": 8,
+    "gt": 11,
+    "precision": 1.0,
+    "recall": 0.7272727272727273,
+    "f1": 0.8421052631578948
+   },
+   "vital.bgl": {
+    "tp": 5,
+    "pred": 5,
+    "gt": 7,
+    "precision": 1.0,
+    "recall": 0.7142857142857143,
+    "f1": 0.8333333333333333
+   },
+   "vital.bp": {
+    "tp": 11,
+    "pred": 12,
+    "gt": 16,
+    "precision": 0.9166666666666666,
+    "recall": 0.6875,
+    "f1": 0.7857142857142857
+   },
+   "vital.gcs": {
+    "tp": 3,
+    "pred": 3,
+    "gt": 3,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "vital.hr": {
+    "tp": 9,
+    "pred": 9,
+    "gt": 16,
+    "precision": 1.0,
+    "recall": 0.5625,
+    "f1": 0.72
+   },
+   "vital.pain": {
+    "tp": 2,
+    "pred": 2,
+    "gt": 2,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "vital.rr": {
+    "tp": 2,
+    "pred": 2,
+    "gt": 7,
+    "precision": 1.0,
+    "recall": 0.2857142857142857,
+    "f1": 0.4444444444444445
+   },
+   "vital.spo2": {
+    "tp": 8,
+    "pred": 8,
+    "gt": 14,
+    "precision": 1.0,
+    "recall": 0.5714285714285714,
+    "f1": 0.7272727272727273
+   }
+  },
+  "unsupported_field_rate": 0.006329113924050633,
+  "unsupported": 1,
+  "pred_fields": 158,
+  "unsupported_examples": [
+   [
+    "c08",
+    "e15",
+    "drug=famotidine quote='fametidin 20 IV.'"
+   ]
+  ],
+  "unsupported_inferred": 0,
+  "unsupported_field_rate_excl_flagged_inferred": 0.006329113924050633,
+  "timestamp_error_ms": {
+   "median": 0.0,
+   "p90": 4875,
+   "n": 58
+  },
+  "tap_labelling": {
+   "labelled_correct": 28,
+   "labelled_total": 40,
+   "unlabelled_correct": 8,
+   "unlabelled_total": 10,
+   "accuracy": 0.72
+  }
+ },
+ "taps": null,
+ "outputs": {
+  "key_field_match": {
+   "soap": 0.744,
+   "chart": 0.744,
+   "imist": 0.736,
+   "nemsis": 0.6962025316455697
+  },
+  "nemsis_schema_valid": "10/10",
+  "diagnosis_leaks": []
+ },
+ "speed": {
+  "audio_s": 1418.312,
+  "wall_s": 1021.628,
+  "rtf": 0.7203125969462291,
+  "stages_s": {
+   "asr_total": 1016.7829999999999,
+   "cleanup": 0.03900000000000001,
+   "extract_rules": 0.057999999999999996,
+   "merge": 0.006,
+   "render": 0.033999999999999996,
+   "total": 1021.6279999999999,
+   "vad": 0.18900000000000003
+  }
+ }
+}
