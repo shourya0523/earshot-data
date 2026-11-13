@@ -15,7 +15,7 @@ def main():
     ap.add_argument("--model", default=str(ROOT / "data/raw/models/ggml-small.en.bin"))
     ap.add_argument("--out", required=True); ap.add_argument("--items", default=str(ROOT / "data/manifests/real_items.jsonl"))
     ap.add_argument("--split", default="dev"); ap.add_argument("--cap", type=int, default=150); ap.add_argument("--subsets", default="emsctx,eka,primock,medintent")
-    ap.add_argument("--prompt", default="ems", choices=["ems", "none"]); ap.add_argument("--beam", type=int, default=5); ap.add_argument("--threads", type=int, default=4)
+    ap.add_argument("--prompt", default="ems", choices=["ems", "none", "pipeline"]); ap.add_argument("--beam", type=int, default=5); ap.add_argument("--threads", type=int, default=4)
     a = ap.parse_args()
     from pywhispercpp.model import Model
     kw = dict(n_threads=a.threads, print_progress=False, print_realtime=False, no_context=True, suppress_non_speech_tokens=False)

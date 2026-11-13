@@ -12,6 +12,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 def prompt_text(kind):
     if kind == "none":
         return None
+    if kind == "pipeline":   # exact prompt earshot-eval builds from shared/ (captured from transcript.raw.json)
+        return (ROOT / "eval" / "pipeline_prompt.txt").read_text().strip()
     d = json.loads((ROOT / "data" / "dictionary" / "ems_seed.json").read_text())
     return d.get("initial_prompt") or d.get("prompt")
 
@@ -23,7 +25,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--wav", nargs="*", default=[])
     ap.add_argument("--list")
-    ap.add_argument("--prompt", default="ems", choices=["ems", "none"])
+    ap.add_argument("--prompt", default="ems", choices=["ems", "none", "pipeline"])
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--beam", type=int, default=5)
     a = ap.parse_args()
