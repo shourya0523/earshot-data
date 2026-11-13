@@ -28,14 +28,14 @@
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
     },
-    "quote" : "We got called for a fall",
+    "quote" : "We got called for a fall,",
     "raw_span" : "s1",
     "receipts" : {
       "dispatch_reason" : {
-        "quote" : "We got called for a fall",
+        "quote" : "We got called for a fall,",
         "raw_range" : [
           0,
-          24
+          25
         ],
         "raw_span" : "s1"
       }
@@ -115,22 +115,22 @@
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
     },
-    "quote" : "sixty seven year old female",
+    "quote" : "sixty seven year old female,",
     "raw_span" : "s2",
     "receipts" : {
       "age" : {
-        "quote" : "sixty seven year old female",
+        "quote" : "sixty seven year old female,",
         "raw_range" : [
           9,
-          36
+          37
         ],
         "raw_span" : "s2"
       },
       "sex" : {
-        "quote" : "sixty seven year old female",
+        "quote" : "sixty seven year old female,",
         "raw_range" : [
           9,
-          36
+          37
         ],
         "raw_span" : "s2"
       }
@@ -338,34 +338,34 @@
     "raw_span" : "s5",
     "receipts" : {
       "bp_diastolic" : {
-        "quote" : "B P one fifty eight over ninety two",
+        "quote" : "B P one fifty eight over ninety two,",
         "raw_range" : [
           0,
-          35
+          36
         ],
         "raw_span" : "s5"
       },
       "bp_systolic" : {
-        "quote" : "B P one fifty eight over ninety two",
+        "quote" : "B P one fifty eight over ninety two,",
         "raw_range" : [
           0,
-          35
+          36
         ],
         "raw_span" : "s5"
       },
       "heart_rate" : {
-        "quote" : "heart rate one ten",
+        "quote" : "heart rate one ten,",
         "raw_range" : [
           37,
-          55
+          56
         ],
         "raw_span" : "s5"
       },
       "o2_on" : {
-        "quote" : "on room air",
+        "quote" : "on room air,",
         "raw_range" : [
           82,
-          93
+          94
         ],
         "raw_span" : "s5"
       },
@@ -399,6 +399,7 @@
       "drug" : "aspirin",
       "heard_at" : "14:00:53",
       "route" : "PO",
+      "route_as_heard" : "chewed",
       "unit_suggested" : "mg"
     },
     "id" : "e13",
@@ -418,10 +419,10 @@
         "raw_span" : "s6"
       },
       "drug" : {
-        "quote" : "aspirin",
+        "quote" : "aspirin,",
         "raw_range" : [
           21,
-          28
+          29
         ],
         "raw_span" : "s6"
       },
@@ -471,39 +472,11 @@
   },
   {
     "call_id" : "c1",
-    "confidence" : 0.9,
-    "fields" : {
-      "ecg" : "st elevation"
-    },
-    "id" : "e15",
-    "models" : {
-      "asr" : "whisper.cpp small.en",
-      "extract" : "rules-v1"
-    },
-    "quote" : "S T elevation.",
-    "raw_span" : "s7",
-    "receipts" : {
-      "ecg" : {
-        "quote" : "S T elevation.",
-        "raw_range" : [
-          18,
-          32
-        ],
-        "raw_span" : "s7"
-      }
-    },
-    "source" : "heard",
-    "t_ms" : 63451,
-    "time" : "2026-11-15T14:01:03-05:00",
-    "type" : "vitals"
-  },
-  {
-    "call_id" : "c1",
     "confidence" : 0.8,
     "fields" : {
-      "alert" : "stemi alert"
+      "alert" : "hospital pre-alert given (as said)"
     },
-    "id" : "e16",
+    "id" : "e15",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -534,7 +507,7 @@
       "procedure" : "IV access",
       "site" : "left AC"
     },
-    "id" : "e17",
+    "id" : "e16",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -585,7 +558,7 @@
       "route" : "SL",
       "unit_suggested" : "mg"
     },
-    "id" : "e18",
+    "id" : "e17",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -634,7 +607,7 @@
     "flags" : [
       "unlabeled"
     ],
-    "id" : "e19",
+    "id" : "e18",
     "models" : {
       "asr" : "none",
       "extract" : "none"
@@ -652,7 +625,7 @@
     "fields" : {
       "pain" : "6"
     },
-    "id" : "e20",
+    "id" : "e19",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -681,7 +654,7 @@
       "condition" : "compensating",
       "kind" : "condition"
     },
-    "id" : "e21",
+    "id" : "e20",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -713,7 +686,7 @@
       "o2_on" : "2 l",
       "spo2" : "97"
     },
-    "id" : "e22",
+    "id" : "e21",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -722,26 +695,26 @@
     "raw_span" : "s11",
     "receipts" : {
       "bp_diastolic" : {
-        "quote" : "B P one thirty eight over eighty four",
+        "quote" : "B P one thirty eight over eighty four,",
         "raw_range" : [
           0,
-          37
+          38
         ],
         "raw_span" : "s11"
       },
       "bp_systolic" : {
-        "quote" : "B P one thirty eight over eighty four",
+        "quote" : "B P one thirty eight over eighty four,",
         "raw_range" : [
           0,
-          37
+          38
         ],
         "raw_span" : "s11"
       },
       "heart_rate" : {
-        "quote" : "pulse ninety six",
+        "quote" : "pulse ninety six,",
         "raw_range" : [
           39,
-          55
+          56
         ],
         "raw_span" : "s11"
       },
@@ -778,7 +751,7 @@
       "route" : "IV",
       "unit" : "mg"
     },
-    "id" : "e23",
+    "id" : "e22",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -833,7 +806,7 @@
       "kind" : "symptom",
       "symptom" : "nausea"
     },
-    "id" : "e24",
+    "id" : "e23",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -863,7 +836,7 @@
       "eta_min" : "12",
       "mode" : "lights and sirens"
     },
-    "id" : "e25",
+    "id" : "e24",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -872,10 +845,10 @@
     "raw_span" : "s13",
     "receipts" : {
       "destination" : {
-        "quote" : "Transporting to Mass General",
+        "quote" : "Transporting to Mass General,",
         "raw_range" : [
           0,
-          28
+          29
         ],
         "raw_span" : "s13"
       },
@@ -888,10 +861,10 @@
         "raw_span" : "s13"
       },
       "mode" : {
-        "quote" : "lights and sirens",
+        "quote" : "lights and sirens,",
         "raw_range" : [
           30,
-          47
+          48
         ],
         "raw_span" : "s13"
       }
@@ -911,7 +884,7 @@
     "flags" : [
       "confirm"
     ],
-    "id" : "e26",
+    "id" : "e25",
     "models" : {
       "asr" : "whisper.cpp small.en",
       "extract" : "rules-v1"
@@ -940,7 +913,7 @@
       "method" : "tap",
       "nemsis" : "eTimes.11"
     },
-    "id" : "e27",
+    "id" : "e26",
     "models" : {
       "asr" : "none",
       "extract" : "none"
@@ -959,7 +932,7 @@
       "method" : "nurse accept",
       "nemsis" : "eTimes.12"
     },
-    "id" : "e28",
+    "id" : "e27",
     "models" : {
       "asr" : "none",
       "extract" : "none"

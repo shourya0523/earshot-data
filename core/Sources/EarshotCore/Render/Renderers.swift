@@ -72,6 +72,7 @@ public enum Renderers {
         if m.meds.isEmpty { L.append("  - \(ChartModel.notHeard)") }
         for e in m.meds { L.append("  - " + ChartModel.medLine(e, clock: m.clock)) }
         if !m.medsNotGiven.isEmpty { L.append("- Not given / held: \(ChartModel.list(m.medsNotGiven))") }
+        if !m.notDone.isEmpty { L.append("- Not done: \(ChartModel.list(m.notDone))") }
         L.append("- Procedures:")
         if m.procedures.isEmpty { L.append("  - \(ChartModel.notHeard)") }
         for e in m.procedures { L.append("  - \(m.clock.clock(e.tMs)) \(procText(e)) — \(ChartModel.srcLabel(e)) [\(e.id)]") }
@@ -105,6 +106,8 @@ public enum Renderers {
         var rx: [(Int64, String)] = m.meds.map { ($0.tMs, "- " + ChartModel.medLine($0, clock: m.clock)) }
         rx += m.procedures.map { ($0.tMs, "- \(m.clock.clock($0.tMs)) \(procText($0)) — \(ChartModel.srcLabel($0)) [\($0.id)]") }
         L += rx.sorted { $0.0 < $1.0 }.map(\.1)
+        if !m.medsNotGiven.isEmpty { L.append("- Not given / held: \(ChartModel.list(m.medsNotGiven))") }
+        if !m.notDone.isEmpty { L.append("- Not done: \(ChartModel.list(m.notDone))") }
         L.append("")
         L.append("**T — Transport:** \(transportText(m)). Arrived at destination \(timeOrNot(m.arrival, m)); care transferred \(timeOrNot(m.handoff, m)); wall time \(m.wallTimeMs.map(ChartModel.duration) ?? ChartModel.notHeard).")
         L += openItems(m)
@@ -133,6 +136,8 @@ public enum Renderers {
         for (k, label) in [("heart_rate", "HR"), ("spo2", "SpO2"), ("bp_systolic", "SBP"), ("pain", "Pain")] {
             if let (a, b, ids) = m.trend(k) { tr.append("\(label) \(a) → \(b)\(ChartModel.receipt(ids))") }
         }
+        if !m.medsNotGiven.isEmpty { tr.append("Not given / held: \(ChartModel.list(m.medsNotGiven))") }
+        if !m.notDone.isEmpty { tr.append("Not done: \(ChartModel.list(m.notDone))") }
         L.append("**T — Treatment & trends:**" + (tr.isEmpty ? " \(ChartModel.notHeard)" : ""))
         for t in tr { L.append("- \(t)") }
         L.append("**A — Allergies:** \(ChartModel.list(m.allergies))")

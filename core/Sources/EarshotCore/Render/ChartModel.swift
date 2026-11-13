@@ -33,6 +33,7 @@ public struct ChartModel: Sendable {
     public var vitals: [EarshotEvent] = []
     public var meds: [EarshotEvent] = []
     public var medsNotGiven: [Sourced] = []
+    public var notDone: [Sourced] = []
     public var procedures: [EarshotEvent] = []
     public var conditions: [Sourced] = []
     public var mental: Sourced?
@@ -100,6 +101,7 @@ public struct ChartModel: Sendable {
                 case "prior_to_arrival_med":
                     ptaMeds.append(s([e.fields["drug"], e.fields["dose"], e.fields["unit"]].compactMap { $0 }.joined(separator: " ")))
                 case "med_not_given": medsNotGiven.append(s(e.fields["drug"] ?? ""))
+                case "not_done": notDone.append(s(e.fields["procedure"] ?? ""))
                 case "condition": conditions.append(s((neg ? "not " : "") + (e.fields["condition"] ?? "")))
                 default: break
                 }
@@ -141,7 +143,7 @@ public struct ChartModel: Sendable {
         let f = e.fields
         for (k, label) in vitalOrder {
             if k == "bp" {
-                if let s = f["bp_systolic"] { parts.append("BP \(s)/\(f["bp_diastolic"] ?? (f["bp_method"] == "palpation" ? "palp" : "?"))") }
+                if let s = f["bp_systolic"] { parts.append("BP \(s)/\(f["bp_diastolic"] ?? (f["bp_method"] == "palpation" ? "palp" : "diastolic not heard"))") }
             } else if let v = f[k] {
                 parts.append("\(label) \(v)\(k == "spo2" ? "%" : k == "pain" ? "/10" : "")")
             }

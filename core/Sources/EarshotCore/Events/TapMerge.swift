@@ -34,7 +34,9 @@ public struct TapMerger {
     }
 
     static let labelable: Set<EventType> = [.vitals, .medication, .procedure, .status]
-    static let labelableStatusKinds: Set<String> = ["condition", "symptom", "drug_mention", "med_not_given", "not_done", "prior_to_arrival_med"]
+    /// Every status kind is rendered somewhere, so any of them may label a tap.
+    static let labelableStatusKinds: Set<String> = ["condition", "symptom", "drug_mention", "med_not_given", "not_done", "prior_to_arrival_med",
+                                                    "patient", "allergy", "history", "home_med"]
     static let typePriority: [EventType: Int] = [.medication: 0, .procedure: 1, .vitals: 2, .status: 3]
 
     func isLabelable(_ f: Finding) -> Bool {
@@ -48,44 +50,47 @@ public struct TapMerger {
         var out: [EarshotEvent] = []
         var claimed = Set<Int>()
         let sortedTaps = taps.sorted { ($0.tMs, $0.source) < ($1.tMs, $1.source) }
-        func dist(_ f: Finding, _ t: Int64) -> Int64 {
-            let (s, e) = segments[f.rawSpan] ?? (f.tMs, f.tMs)
-            if t >= s && t <= e { return 0 }
-            return t < s ? s - t : t - e
-        }
         var arrivalFromTablet = extra.contains { $0.type == .arrival }
+        // 1. non-mark gestures
+        var marks: [PlacedTap] = []
         for tap in sortedTaps {
             switch tap.gesture {
             case "yes", "no":
                 out.append(make(.consent, tap.tMs, ["consent": tap.gesture == "yes" ? "yes" : "no (refused, nothing recorded)"],
                                 .tap, nil, nil, 1.0, tap: tap))
-                continue
             case "arrival":
                 out.append(make(.arrival, tap.tMs, ["method": "tap", "nemsis": "eTimes.11"], .tablet, nil, nil, 1.0, tap: tap))
                 arrivalFromTablet = true
-                continue
             case "handoff":
                 out.append(make(.handoff, tap.tMs, ["method": "nurse accept", "nemsis": "eTimes.12"], .tablet, nil, nil, 1.0, tap: tap))
-                continue
             case "start", "stop":
-                continue
-            default: break
+                break
+            default:
+                marks.append(tap)
             }
-            // mark: find nearest labelable finding
-            var best: (Int, Int64, Int)? = nil
-            for (i, f) in findings.enumerated() where !claimed.contains(i) && isLabelable(f) {
-                let d = dist(f, tap.tMs)
-                let inWindow = d <= cfg.windowMs
-                let inExtended = !inWindow && (segments[f.rawSpan]?.0 ?? f.tMs) > tap.tMs && d <= cfg.extendedMs
-                guard inWindow || inExtended else { continue }
-                // in-window candidates always beat extended ones
-                let score = inWindow ? d : cfg.windowMs + d
-                let pri = TapMerger.typePriority[f.type] ?? 9
-                if best == nil || score < best!.1 || (score == best!.1 && pri < best!.2) { best = (i, score, pri) }
+        }
+        // 2. label marks: distance is from the tap to the finding's own word time.
+        //    In-window (±3 s) pairs beat forward-extended (+10 s) pairs; pairs are
+        //    assigned globally, closest first, one finding per tap and vice versa.
+        struct Pair { var tap: Int; var finding: Int; var score: Int64; var pri: Int }
+        var pairs: [Pair] = []
+        for (ti, tap) in marks.enumerated() {
+            for (fi, f) in findings.enumerated() where isLabelable(f) {
+                let d = abs(f.tMs - tap.tMs)
+                if d <= cfg.windowMs { pairs.append(Pair(tap: ti, finding: fi, score: d, pri: TapMerger.typePriority[f.type] ?? 9)) }
+                else if f.tMs > tap.tMs && f.tMs - tap.tMs <= cfg.extendedMs {
+                    pairs.append(Pair(tap: ti, finding: fi, score: cfg.windowMs + d, pri: TapMerger.typePriority[f.type] ?? 9))
+                }
             }
-            if let (i, _, _) = best {
-                claimed.insert(i)
-                let f = findings[i]
+        }
+        pairs.sort { ($0.score, $0.pri, $0.tap, $0.finding) < ($1.score, $1.pri, $1.tap, $1.finding) }
+        var tapLabel: [Int: Int] = [:]
+        for p in pairs where tapLabel[p.tap] == nil && !claimed.contains(p.finding) {
+            tapLabel[p.tap] = p.finding; claimed.insert(p.finding)
+        }
+        for (ti, tap) in marks.enumerated() {
+            if let fi = tapLabel[ti] {
+                let f = findings[fi]
                 var e = make(f.type, tap.tMs, f.fields, .tapHeard, f.quote, f.rawSpan, f.confidence, tap: tap, receipts: f.receipts,
                              flags: f.flags, extractor: f.extractor)
                 e.fields["heard_at"] = clock.clock(f.tMs)
@@ -114,10 +119,16 @@ public struct TapMerger {
         out.sort { a, b in
             if a.tMs != b.tMs { return a.tMs < b.tMs }
             if a.type != b.type { return order[a.type]! < order[b.type]! }
-            return (a.rawSpan ?? "", a.quote ?? "", a.fields.description) < (b.rawSpan ?? "", b.quote ?? "", b.fields.description)
+            let ka: String = TapMerger.sortKey(a), kb: String = TapMerger.sortKey(b)
+            return ka < kb
         }
         for k in out.indices { out[k].id = "e\(k + 1)" }
         return out
+    }
+
+    static func sortKey(_ e: EarshotEvent) -> String {
+        let f: String = e.fields.keys.sorted().map { k in k + "=" + (e.fields[k] ?? "") }.joined(separator: "|")
+        return (e.rawSpan ?? "") + "\u{1}" + (e.quote ?? "") + "\u{1}" + f
     }
 
     func make(_ type: EventType, _ t: Int64, _ fields: [String: String], _ source: EventSource, _ quote: String?, _ span: String?,

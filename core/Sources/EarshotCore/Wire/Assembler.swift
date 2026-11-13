@@ -126,11 +126,15 @@ public enum ReplayFile {
         var d = StreamDeframer()
         return d.push([UInt8](data))
     }
+    #if !os(iOS)
+    /// Eval tooling only (earshot-eval make-replay). Not compiled into the iPad app,
+    /// which never writes audio to disk.
     public static func write(_ packets: [Packet], to url: URL) throws {
         var out: [UInt8] = []
         for p in packets { out.append(contentsOf: Wire.frame(p)) }
         try Data(out).write(to: url)
     }
+    #endif
     /// Build a replay stream from PCM + taps (used by tests and mock generation).
     public static func packets(fromPCM pcm: [Int16], taps: [TapInput] = [], startClipMs: UInt32 = 1000) -> [Packet] {
         var out: [Packet] = []
@@ -153,6 +157,12 @@ public enum ReplayFile {
             out.append(.audio(PacketHeader(type: .audio, seq: seq, clipMs: clip), adpcm: block))
             seq &+= 1
             i += Wire.samplesPerFrame
+        }
+        for t in pendingTaps {   // taps after the last audio frame
+            let g = TapGesture(name: t.gesture) ?? .mark
+            let s = TapSource(name: t.source) ?? .button
+            out.append(.tap(PacketHeader(type: .tap, seq: tapSeq, clipMs: UInt32(t.clipMs)), TapPayload(gesture: g, source: s, pressClipMs: UInt32(t.clipMs))))
+            tapSeq &+= 1
         }
         return out
     }

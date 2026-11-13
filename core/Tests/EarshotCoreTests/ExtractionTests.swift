@@ -87,10 +87,10 @@ final class ExtractionTests: XCTestCase {
     }
 
     func testCleanupCorrectionsLinkToRaw() {
-        let (c, corr) = Cleanup(dict: TestEnv.dict).clean(seg("gave four of so fran [beep] I V"))
+        let (c, corr) = Cleanup(dict: TestEnv.dict).clean(seg("gave 4 mg of so fran [beep] IV"))
         XCTAssertTrue(c.text.contains("ondansetron"))
         XCTAssertFalse(c.text.contains("beep"))
-        for k in corr { XCTAssertEqual(k.rawSpan, "s1"); XCTAssertEqual(Array("gave four of so fran [beep] I V")[k.rawRange[0]..<k.rawRange[1]].count, k.original.count) }
+        for k in corr { XCTAssertEqual(k.rawSpan, "s1"); XCTAssertEqual(Array("gave 4 mg of so fran [beep] IV")[k.rawRange[0]..<k.rawRange[1]].count, k.original.count) }
         XCTAssertTrue(corr.contains { $0.rule == "asr:non_speech_tag" })
     }
 

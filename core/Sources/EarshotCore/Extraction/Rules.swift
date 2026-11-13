@@ -63,9 +63,8 @@ public final class RulesExtractor {
             let k = Text.normalizePhrase(t.term)
             switch t.category {
             case "procedure" where !RulesExtractor.ambiguousProcedures.contains(k): p[k] = (t.expansion, t.term)
-            case "status": s[k] = (t.term, "condition")   // keep the medic's own word, never a definition
+            case "status" where !["priority one", "priority 1", "code"].contains(k): s[k] = (t.term, "condition")   // keep the medic's own word, never a definition
             case "symptom": s[k] = (t.expansion, "symptom")
-            case "history": if k.count >= 3 && !["meds", "hx"].contains(k) { s[k] = (t.expansion, "history") }
             default: break
             }
         }
@@ -102,7 +101,7 @@ public final class RulesExtractor {
         let tt = TokText(seg)
         var out: [Finding] = []
         var used = Set<Int>()   // token indices consumed by vitals (so numbers aren't reused as doses)
-        if let v = vitals(tt, &used) { out.append(v) }
+        out += vitals(tt, &used)
         out += medications(tt, used: used)
         out += procedures(tt)
         out += statuses(tt)
@@ -120,9 +119,9 @@ public final class RulesExtractor {
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure|bps)\s+"# + N + #"(\d{2,3})/(\d{2,3})\b"#), ranges: [40...300, 20...200], conf: 0.92),
         VitalRule(fields: ["bp_systolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure)\s+"# + N + #"(\d{2,3})\s+(?:by\s+)?palp"#), ranges: [40...300], conf: 0.88),
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"(?<![\w/])(\d{2,3})/(\d{2,3})(?![\w/])"#), ranges: [60...260, 30...160], conf: 0.7),
-        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:hr|heart rate|pulse|pulse rate|pulses|heart rates|rate)\s+"# + N + #"(\d{2,3})\b"#), ranges: [20...260], conf: 0.9),
-        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:tachy|tachycardic|brady|bradycardic|sinus tach|sinus brady|sinus|afib|tachycardia|bradycardia)\s+(?:at|in the|of)\s+(?:about\s+)?(\d{2,3})s?\b"#), ranges: [20...260], conf: 0.85),
         VitalRule(fields: ["resp_rate"], rx: Rx(#"\b(?:rr|resps|resp|respirations|respiratory rate|resp rate|breathing|breathing at|respiration)\s+"# + #"(?:are |is |of |at |about |around )?(\d{1,2})\b"#), ranges: [2...70], conf: 0.88),
+        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:hr|heart rate|pulse|pulse rate|pulses|heart rates)\s+"# + N + #"(\d{2,3})\b"#), ranges: [20...260], conf: 0.9),
+        VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:tachy|tachycardic|brady|bradycardic|sinus tach|sinus brady|sinus|afib|tachycardia|bradycardia)\s+(?:at|in the|of)\s+(?:about\s+)?(\d{2,3})s?\b"#), ranges: [20...260], conf: 0.85),
         VitalRule(fields: ["spo2"], rx: Rx(#"\b(?:spo2|sats|sat|o2 sat|o2 sats|pulse ox|satting|sating|saturation|saturating|sats are|o2 saturation)\s+"# + N + #"(\d{2,3})\b(?!\s*(?:lpm|l|liters))"#), ranges: [40...100], conf: 0.9),
         VitalRule(fields: ["spo2"], rx: Rx(#"\b(\d{2,3})\s*(?:%)\s+(?:on\s+)?(?:room air|ra|\d+\s*lpm|nrb|nc|non rebreather|nasal cannula)"#), ranges: [40...100], conf: 0.85),
         VitalRule(fields: ["glucose"], rx: Rx(#"\b(?:bgl|cbg|glucose|sugar|blood sugar|blood glucose|d stick|dextro|accucheck|accu check|sugars)\s+"# + N + #"(\d{2,3}|high|hi|low|lo)\b"#), ranges: [10...700], conf: 0.88),
@@ -134,76 +133,96 @@ public final class RulesExtractor {
     ]
     static let aoRx = Rx(#"\ba&ox([1-4])\b"#)
     static let perrlRx = Rx(#"\b(perrla?|pupils equal(?: round)?(?: and)? reactive)\b"#)
-    static let rhythmRx = Rx(#"\b(normal sinus rhythm|nsr|sinus rhythm|sinus tach(?:ycardia)?|sinus brady(?:cardia)?|afib(?: with rvr)?|atrial fibrillation|vfib|v fib|vtach|v tach|svt|pea|asystole|st elevation|stemi)\b"#)
+    static let rhythmRx = Rx(#"\b(normal sinus rhythm|nsr|sinus rhythm|sinus tach(?:ycardia)?|sinus brady(?:cardia)?|afib(?: with rvr)?|atrial fibrillation|vfib|v fib|vtach|v tach|svt|pea|asystole)\b"#)
     static let o2onRx = Rx(#"\bon\s+(room air|ra|\d+\s*(?:lpm|l)(?:\s+(?:nrb|nc|non rebreather|nasal cannula|via nrb|via nc))?|nrb|non rebreather|nasal cannula|cpap)\b"#)
 
-    func vitals(_ tt: TokText, _ used: inout Set<Int>) -> Finding? {
-        var fields: [String: String] = [:]
-        var rec: [String: FieldReceipt] = [:]
-        var firstTok = Int.max
-        var allToks: [ClosedRange<Int>] = []
-        var conf = 1.0
+    /// All vitals in a segment. A field that repeats ("BP 120/80 … repeat BP
+    /// 110/70") starts a new vitals event, so every reading is kept.
+    func vitals(_ tt: TokText, _ used: inout Set<Int>) -> [Finding] {
+        struct Hit { var fields: [String]; var vals: [String]; var tr: ClosedRange<Int>; var conf: Double; var extra: [String: String] }
+        var hits: [Hit] = []
         for rule in RulesExtractor.vitalRules {
             for m in rule.rx.all(tt.text) {
                 guard let tr = tt.tokens(m.range) else { continue }
                 if tr.contains(where: { used.contains($0) }) { continue }
                 var vals: [String] = []
                 var ok = true
-                for (gi, f) in rule.fields.enumerated() {
+                for (gi, _) in rule.fields.enumerated() {
                     let v = tt.sub(m.range(at: gi + 1))
-                    if fields[f] != nil { ok = false; break }      // first mention wins within a segment
                     if let d = Double(v), !rule.ranges[gi].contains(d) { ok = false; break }
                     vals.append(v)
                 }
                 if rule.fields.count == 2, let s = Double(vals.first ?? ""), let d = Double(vals.last ?? ""), s <= d { ok = false }
                 guard ok, vals.count == rule.fields.count else { continue }
-                for (gi, f) in rule.fields.enumerated() {
-                    fields[f] = vals[gi]; rec[f] = tt.receipt(tr)
-                }
-                if rule.fields == ["bp_systolic"] { fields["bp_method"] = "palpation"; rec["bp_method"] = tt.receipt(tr) }
                 for k in tr { used.insert(k) }
-                firstTok = min(firstTok, tr.lowerBound); allToks.append(tr); conf = min(conf, rule.conf)
+                hits.append(Hit(fields: rule.fields, vals: vals, tr: tr, conf: rule.conf,
+                                extra: rule.fields == ["bp_systolic"] ? ["bp_method": "palpation"] : [:]))
             }
         }
         func simple(_ rx: Rx, _ field: String, _ map: (String) -> String) {
-            for m in rx.all(tt.text) where fields[field] == nil {
+            for m in rx.all(tt.text) {
                 guard let tr = tt.tokens(m.range) else { continue }
-                fields[field] = map(tt.sub(m.range(at: 1))); rec[field] = tt.receipt(tr)
-                firstTok = min(firstTok, tr.lowerBound); allToks.append(tr); conf = min(conf, 0.9)
+                hits.append(Hit(fields: [field], vals: [map(tt.sub(m.range(at: 1)))], tr: tr, conf: 0.9, extra: [:]))
             }
         }
         simple(RulesExtractor.aoRx, "mental_status") { "A&Ox\($0)" }
         simple(RulesExtractor.perrlRx, "pupils") { _ in "PERRL" }
         simple(RulesExtractor.rhythmRx, "ecg") { $0.uppercased() == $0 ? $0 : $0.lowercased() }
-        if !fields.isEmpty { simple(RulesExtractor.o2onRx, "o2_on") { $0 } }
-        guard !fields.isEmpty else { return nil }
-        let lo = allToks.map(\.lowerBound).min()!, hi = allToks.map(\.upperBound).max()!
-        return Finding(type: .vitals, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: firstTok), rawSpan: tt.seg.rawSpan,
-                       quote: tt.seg.quote(lo, hi), confidence: conf, flags: [], extractor: RulesExtractor.version)
+        let hasCore = !hits.isEmpty
+        if hasCore { simple(RulesExtractor.o2onRx, "o2_on") { $0 } }
+        hits.sort { $0.tr.lowerBound < $1.tr.lowerBound }
+        // group in speaking order; a repeated field opens a new group
+        var groups: [[Hit]] = []
+        for h in hits {
+            if groups.isEmpty || groups[groups.count - 1].contains(where: { g in g.fields.contains { h.fields.contains($0) } }) {
+                if h.fields == ["o2_on"], !groups.isEmpty { groups[groups.count - 1].append(h); continue }
+                groups.append([h])
+            } else { groups[groups.count - 1].append(h) }
+        }
+        return groups.compactMap { g in
+            var fields: [String: String] = [:]
+            var rec: [String: FieldReceipt] = [:]
+            for h in g {
+                for (i, f) in h.fields.enumerated() { fields[f] = h.vals[i]; rec[f] = tt.receipt(h.tr) }
+                for (k, v) in h.extra { fields[k] = v; rec[k] = tt.receipt(h.tr) }
+            }
+            if fields.keys.allSatisfy({ $0 == "o2_on" }) { return nil }
+            let lo = g.map(\.tr.lowerBound).min()!, hi = g.map(\.tr.upperBound).max()!
+            return Finding(type: .vitals, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: lo), rawSpan: tt.seg.rawSpan,
+                           quote: tt.seg.quote(lo, hi), confidence: g.map(\.conf).min()!, flags: [], extractor: RulesExtractor.version)
+        }
     }
 
     // MARK: medications
 
     struct DrugHit { let drug: Int; let range: ClosedRange<Int>; let conf: Double; let how: String }
 
-    func drugHits(_ tt: TokText) -> [DrugHit] {
+    static let callSignWords: Set<String> = ["medic", "rescue", "engine", "ambulance", "ladder", "squad", "unit", "car", "truck", "battalion", "station", "md"]
+
+    func drugHits(_ tt: TokText, used: Set<Int> = []) -> [DrugHit] {
         let toks = tt.seg.tokens
         var hits: [DrugHit] = []
         var i = 0
         while i < toks.count {
             var found: DrugHit? = nil
+            // never a drug: tokens already read as a vital, or a unit call sign ("Medic 14")
+            if used.contains(i) || (RulesExtractor.callSignWords.contains(toks[i].text) && i + 1 < toks.count && isNumber(toks[i + 1].text)) {
+                i += 1; continue
+            }
             for n in stride(from: min(dict.maxAliasTokens, toks.count - i), through: 1, by: -1) {
                 let phrase = toks[i..<(i + n)].map(\.text).joined(separator: " ")
                 if let di = dict.aliasIndex[phrase] {
                     let rule = toks[i].rule
                     let conf = rule == "formulary:asr_variant" ? 0.75 : rule == "formulary:fuzzy" ? 0.65 : 0.9
                     if dict.contextRequired.contains(phrase) && !hasMedContext(toks, i, i + n - 1) { break }
+                    // spelling corrections from cleanup need real medication context nearby
+                    if (rule == "formulary:asr_variant" || rule == "formulary:fuzzy") && !RulesExtractor.hasDoseOrRoute(toks.map(\.text), i, dict) { break }
                     found = DrugHit(drug: di, range: i...(i + n - 1), conf: conf, how: rule ?? "alias")
                     break
                 }
             }
             if found == nil, toks[i].text.count >= 5, toks[i].text.allSatisfy({ $0.isLetter }), dict.termIndex[toks[i].text] == nil,
-               hasStrongMedContext(toks, i) {
+               RulesExtractor.hasDoseOrRoute(toks.map(\.text), i, dict) {
                 let key = Phonetic.key(toks[i].text)
                 if let ds = dict.phoneticIndex[key], ds.count == 1 {
                     found = DrugHit(drug: ds[0], range: i...i, conf: 0.55, how: "phonetic")
@@ -234,6 +253,20 @@ public final class RulesExtractor {
         return false
     }
 
+    /// For anything that is not an exact drug name (ASR variant, fuzzy, sound-alike):
+    /// a dose unit, a route, or a number followed by a unit within 4 tokens.
+    /// An administration verb alone is not enough ("give me 2 seconds").
+    static func hasDoseOrRoute(_ t: [String], _ i: Int, _ dict: EMSDictionary) -> Bool {
+        let lo = max(0, i - 4), hi = min(t.count - 1, i + 4)
+        guard lo <= hi else { return false }
+        let routes: Set<String> = ["po", "sl", "iv", "io", "im", "sq", "neb", "in", "ivp", "sublingual", "intranasal", "intravenous", "intramuscular", "chewed", "nebulized"]
+        for k in lo...hi where k != i {
+            if dict.formulary.units[t[k]] != nil || routes.contains(t[k]) { return true }
+            if Double(t[k]) != nil, k + 1 <= hi, dict.unitIndex[t[k + 1]] != nil, !["l", "u", "in"].contains(t[k + 1]) { return true }
+        }
+        return false
+    }
+
     func hasMedContext(_ toks: [CleanToken], _ a: Int, _ b: Int) -> Bool {
         let lo = max(0, a - 5), hi = min(toks.count - 1, b + 5)
         for k in lo...hi where k < a || k > b {
@@ -243,47 +276,84 @@ public final class RulesExtractor {
         return false
     }
 
+    // Clause helpers: a token's `punct` marks a boundary after it.
+    func sentenceEnd(_ toks: [CleanToken], _ i: Int) -> Int {
+        var k = i; while k < toks.count - 1 { if let p = toks[k].punct, ".?!".contains(p) { return k }; k += 1 }; return toks.count - 1
+    }
+    func sentenceStart(_ toks: [CleanToken], _ i: Int) -> Int {
+        var k = i - 1; while k >= 0 { if let p = toks[k].punct, ".?!".contains(p) { return k + 1 }; k -= 1 }; return 0
+    }
+    func clauseStart(_ toks: [CleanToken], _ i: Int) -> Int {
+        var k = i - 1; while k >= 0 { if toks[k].punct != nil { return k + 1 }; k -= 1 }; return 0
+    }
+    func clauseEnd(_ toks: [CleanToken], _ i: Int) -> Int {
+        var k = i; while k < toks.count - 1 { if toks[k].punct != nil { return k }; k += 1 }; return toks.count - 1
+    }
+
+    static let notDoseBefore: Set<String> = ["times", "x", "by", "every", "q", "times", "over", "for"]
+    static let notDoseAfter: Set<String> = ["year", "years", "yo", "minutes", "minute", "min", "mins", "seconds", "hours", "hour", "times", "%",
+                                            "percent", "kilos", "kg", "pounds", "lbs", "days", "weeks", "months", "beats", "bpm", "liters"]
+    static let postNeg: Set<String> = ["held", "withheld", "refused", "declined", "hold", "holding", "contraindicated", "deferred"]
+
     func medications(_ tt: TokText, used: Set<Int>) -> [Finding] {
         let toks = tt.seg.tokens
-        let hits = drugHits(tt)
+        let hits = drugHits(tt, used: used)
         var out: [Finding] = []
         for (hi, h) in hits.enumerated() {
             let d = dict.drug(h.drug)
+            let a0 = h.range.lowerBound, b0 = h.range.upperBound
             let prevEnd = hi > 0 ? hits[hi - 1].range.upperBound + 1 : 0
             let nextStart = hi + 1 < hits.count ? hits[hi + 1].range.lowerBound - 1 : toks.count - 1
-            let lo = max(prevEnd, h.range.lowerBound - 5), hiW = min(nextStart, h.range.upperBound + 7)
+            let sStart = sentenceStart(toks, a0), sEnd = sentenceEnd(toks, b0)
+            let cStart = clauseStart(toks, a0), cEnd = clauseEnd(toks, b0)
+            let lo = max(prevEnd, sStart, a0 - 5), hiW = min(nextStart, sEnd, b0 + 7)
             var fields: [String: String] = ["drug": d.generic]
             var rec: [String: FieldReceipt] = ["drug": tt.receipt(h.range)]
             var flags: [String] = []
             var span = h.range
+            if h.how != "alias" { flags.append("confirm") }   // sound-alike / misspelling / fuzzy: always confirm
             if h.conf < 0.7 { flags.append("confirm") }
-            if Text.normalizePhrase(d.generic) != toks[h.range.lowerBound].text || h.range.count > 1 {
-                fields["drug_as_heard"] = tt.seg.quote(h.range.lowerBound, h.range.upperBound)
+            if Text.normalizePhrase(d.generic) != toks[a0].text || h.range.count > 1 || h.how != "alias" {
+                fields["drug_as_heard"] = tt.seg.quote(a0, b0)
             }
-            // context words before the drug
-            let before = toks[max(0, h.range.lowerBound - 4)..<h.range.lowerBound].map(\.text)
+            // cues before the drug, inside its own clause only
+            let beforeIdx = Array(max(cStart, a0 - 4)..<a0)
+            let before = beforeIdx.map { toks[$0].text }
+            let postEnd = min(cEnd, b0 + 4)
+            let after: [String] = postEnd > b0 ? toks[(b0 + 1)...postEnd].map(\.text) : []
             let negated = before.suffix(3).contains { RulesExtractor.negCues.contains($0) }
-            let allergy = before.contains { $0.hasPrefix("allerg") }
-            let homeMed = before.contains { RulesExtractor.homeMedCues.contains($0) } || before.suffix(2) == ["is", "on"] || before.suffix(2) == ["she's", "on"] || before.suffix(2) == ["he's", "on"]
-            let pta = before.contains { RulesExtractor.ptaCues.contains($0) }
-            // dose: number (+ unit) after the drug, or "<n> <unit> of <drug>" / "<n> of <drug>" before it
+                || after.contains { RulesExtractor.postNeg.contains($0) }
+                || (after.count >= 2 && after[0] == "not" && ["given", "administered", "indicated"].contains(after[1]))
+            // allergy only when "allergic to X" / "allergy to X" / "allergies to X" sits right before the drug
+            let allergy = before.count >= 2 && before.last == "to" && before[before.count - 2].hasPrefix("allerg")
+            func cueBeforeWithoutAdmin(_ cues: (String) -> Bool) -> Bool {
+                guard let ci = beforeIdx.lastIndex(where: { cues(toks[$0].text) }) else { return false }
+                return !toks[(ci + 1)..<a0].contains { RulesExtractor.adminVerbs.contains($0.text) }
+            }
+            let homeMed = cueBeforeWithoutAdmin { RulesExtractor.homeMedCues.contains($0) }
+                || before.suffix(2) == ["is", "on"] || before.suffix(2) == ["she's", "on"] || before.suffix(2) == ["he's", "on"] || before.suffix(1) == ["on"] && before.count >= 2 && ["she", "he", "they", "patient", "pt"].contains(before[before.count - 2])
+            let pta = cueBeforeWithoutAdmin { RulesExtractor.ptaCues.contains($0) }
+            // dose: number (+ unit) after the drug within the sentence, or "<n> <unit> of <drug>" / "<n> of <drug>"
             var amount: (String, ClosedRange<Int>)? = nil
             var unit: (String, ClosedRange<Int>)? = nil
-            var k = h.range.upperBound + 1
+            var k = b0 + 1
             while k <= hiW {
-                if !used.contains(k), isNumber(toks[k].text) {
+                if !used.contains(k), isNumber(toks[k].text),
+                   !(k > 0 && RulesExtractor.notDoseBefore.contains(toks[k - 1].text)),
+                   !(k + 1 < toks.count && RulesExtractor.notDoseAfter.contains(toks[k + 1].text)) {
                     amount = (toks[k].text, k...k)
                     if k + 1 <= hiW, let u = unitOf(toks[k + 1].text) { unit = (u, (k + 1)...(k + 1)) }
                     break
                 }
+                if toks[k].punct != nil && k > b0 + 1 { break }   // dose stays in the drug's clause (allow "aspirin, 324")
                 k += 1
             }
             if amount == nil {
-                var j = h.range.lowerBound - 1
+                var j = a0 - 1
                 if j >= lo && toks[j].text == "of" { j -= 1 }
                 if j >= lo, let u = unitOf(toks[j].text), j - 1 >= lo, isNumber(toks[j - 1].text), !used.contains(j - 1) {
                     amount = (toks[j - 1].text, (j - 1)...(j - 1)); unit = (u, j...j)
-                } else if j >= lo, isNumber(toks[j].text), !used.contains(j), toks[h.range.lowerBound - 1].text == "of" {
+                } else if j >= lo, isNumber(toks[j].text), !used.contains(j), a0 >= 1, toks[a0 - 1].text == "of" {
                     amount = (toks[j].text, j...j)
                 }
             }
@@ -297,11 +367,11 @@ public final class RulesExtractor {
                     let units = Set(d.typical_doses.filter { $0.amount == a.0 }.map(\.unit))
                     if units.count == 1, let u = units.first { fields["unit_suggested"] = u }
                 }
-                if let u = fields["unit"], u.hasSuffix("/kg") || u.hasSuffix("/min") || u.hasSuffix("/hr") { /* rate/weight dose stays as heard */ }
             }
-            // route
-            if let (r, rr) = route(toks, lo, hiW, drug: d) {
+            // route (same sentence; may cross a comma: "324 of aspirin, chewed")
+            if let (r, rr, heard) = route(toks, lo, hiW, drug: d) {
                 fields["route"] = r; rec["route"] = tt.receipt(rr); span = min(span.lowerBound, rr.lowerBound)...max(span.upperBound, rr.upperBound)
+                if let w = heard { fields["route_as_heard"] = w }
             }
             let admin = toks[lo...hiW].contains { RulesExtractor.adminVerbs.contains($0.text) }
             var type = EventType.medication
@@ -316,8 +386,8 @@ public final class RulesExtractor {
             } else if amount == nil && !admin {
                 type = .status; fields["kind"] = "drug_mention"; flags.append("confirm")
             }
-            if d.high_alert && type == .medication && !flags.contains("confirm") && fields["dose"] == nil { flags.append("confirm") }
-            out.append(Finding(type: type, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: h.range.lowerBound), rawSpan: tt.seg.rawSpan,
+            if d.high_alert && type == .medication && fields["dose"] == nil { flags.append("confirm") }
+            out.append(Finding(type: type, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: a0), rawSpan: tt.seg.rawSpan,
                                quote: tt.seg.quote(span.lowerBound, span.upperBound), confidence: h.conf, flags: Array(Set(flags)).sorted(),
                                extractor: RulesExtractor.version + (h.how == "alias" ? "" : ":" + h.how)))
         }
@@ -333,7 +403,7 @@ public final class RulesExtractor {
     static let routeWords: [String: String] = ["chewed": "PO", "chew": "PO", "chewable": "PO", "swallow": "PO", "push": "IV", "pushed": "IV",
                                                "ivp": "IV", "drip": "IV", "spray": "IN", "atomized": "IN", "nostril": "IN", "nose": "IN",
                                                "thigh": "IM", "deltoid": "IM", "tongue": "SL", "neb": "NEB", "nebulizer": "NEB", "patch": "TD"]
-    func route(_ toks: [CleanToken], _ lo: Int, _ hi: Int, drug: Drug) -> (String, ClosedRange<Int>)? {
+    func route(_ toks: [CleanToken], _ lo: Int, _ hi: Int, drug: Drug) -> (String, ClosedRange<Int>, String?)? {
         guard lo <= hi else { return nil }
         for k in lo...hi {
             for n in stride(from: min(4, hi - k + 1), through: 1, by: -1) {
@@ -341,7 +411,8 @@ public final class RulesExtractor {
                 if phrase == "in" || phrase == "et" { continue }  // too ambiguous alone
                 if let r = dict.routeIndex[phrase] ?? (n == 1 ? RulesExtractor.routeWords[phrase] : nil) {
                     if r == "IV" && (phrase == "push" || phrase == "pushed") && !drug.routes.contains("IV") { continue }
-                    return (r, k...(k + n - 1))
+                    let heard: String? = phrase == r.lowercased() ? nil : phrase   // e.g. "chewed" -> PO is shown as heard
+                    return (r, k...(k + n - 1), heard)
                 }
             }
         }
@@ -350,7 +421,7 @@ public final class RulesExtractor {
 
     // MARK: procedures
 
-    static let ivRx = Rx(#"\b(\d{2})\s*(?:gauge|g)\b(?:\s+(?:iv|in the|in))?(?:\s+(?:the\s+)?(left|right|l|r))?\s*(ac|antecubital|hand|forearm|wrist|ej|external jugular|arm)?"#)
+    static let ivRx = Rx(#"\b(1[4-9]|2[0-4])\s*(?:gauge)\b(?:\s+(?:iv|in the|in))?(?:\s+(?:the\s+)?(left|right|l|r))?\s*(ac|antecubital|hand|forearm|wrist|ej|external jugular|arm)?"#)
     static let joulesRx = Rx(#"\b(?:shock(?:ed|ing)?|defib(?:rillated)?|cardioverted|cardiovert)\s+(?:at\s+)?(\d{2,3})\s*(?:joules|j)\b"#)
 
     func procedures(_ tt: TokText) -> [Finding] {
@@ -387,7 +458,7 @@ public final class RulesExtractor {
                 for n in stride(from: min(maxProcTokens, toks.count - i), through: 1, by: -1) {
                     let phrase = toks[i..<(i + n)].map(\.text).joined(separator: " ")
                     if let (canon, _) = procLex[phrase] {
-                        let before = toks[max(0, i - 3)..<i].map(\.text)
+                        let before = toks[max(clauseStart(toks, i), i - 3)..<i].map(\.text)
                         let neg = before.contains { RulesExtractor.negCues.contains($0) }
                         if !seen.contains(canon) {
                             seen.insert(canon)
@@ -422,7 +493,7 @@ public final class RulesExtractor {
                 // "code" / "stable" etc. are common words; require them not to be part of a bigger phrase handled elsewhere
                 if phrase == "code" && i + 1 < toks.count && ["3", "2", "1", "blue", "status"].contains(toks[i + 1].text) { break }
                 if phrase == "stable" && i > 0 && ["hemodynamically"].contains(toks[i - 1].text) == false && i + 1 < toks.count && toks[i + 1].text == "angina" { break }
-                let before = toks[max(0, i - 3)..<i].map(\.text)
+                let before = toks[max(clauseStart(toks, i), i - 3)..<i].map(\.text)
                 let neg = before.contains { RulesExtractor.negCues.contains($0) } || (before.last == "longer")
                 let key = kind + ":" + exp + (neg ? ":neg" : "")
                 if !seen.contains(key) {
@@ -446,6 +517,7 @@ public final class RulesExtractor {
 
     static let ageRx = Rx(#"\b(\d{1,3})\s*(?:year|yr|years|yrs)\s*old\b(?:\s+(male|female|man|woman|boy|girl|gentleman|lady))?"#)
     static let ageShortRx = Rx(#"\b(\d{1,3})\s*(yom|yof|yo m|yo f|y o m|y o f)\b"#)
+    static let ageMonthsRx = Rx(#"\b(\d{1,2})\s*(?:month|months|mo)\s*old\b"#)
     static let sexRx = Rx(#"\b(male|female)\s+(?:patient|pt)\b"#)
     static let weightRx = Rx(#"\b(?:weighs|weight|weighing|weight is|weight of)?\s*(about|around|approximately|approx|maybe|roughly|like|estimated|probably)?\s*(\d{2,3})\s*(kg|kilos|kilograms|kilo|pounds|lbs|lb)\b"#)
     static let allergyRx = Rx(#"\b(?:allergic to|allergies to|allergy to|allergies are|allergies include|allergic|allergies)\s+([a-z]+(?:\s+(?:and\s+)?[a-z]+){0,3}?)(?=\s+[|;]|\s+(?:she|he|they|takes|and no|no)\b|\s*$)"#)
@@ -460,7 +532,7 @@ public final class RulesExtractor {
                                extractor: RulesExtractor.version))
         }
         for m in RulesExtractor.ageRx.all(tt.text) {
-            guard let tr = tt.tokens(m.range), let age = Int(tt.sub(m.range(at: 1))), age <= 120 else { continue }
+            guard let tr = tt.tokens(m.range), let age = Int(tt.sub(m.range(at: 1))), (1...120).contains(age) else { continue }
             var f = ["kind": "patient", "age": String(age)]
             if m.range(at: 2).location != NSNotFound { f["sex"] = sexWord(tt.sub(m.range(at: 2))) }
             out.append(Finding(type: .status, fields: f, receipts: Dictionary(uniqueKeysWithValues: f.keys.filter { $0 != "kind" }.map { ($0, tt.receipt(tr)) }),
@@ -468,10 +540,14 @@ public final class RulesExtractor {
                                confidence: 0.9, flags: [], extractor: RulesExtractor.version))
         }
         for m in RulesExtractor.ageShortRx.all(tt.text) {
-            guard let tr = tt.tokens(m.range), let age = Int(tt.sub(m.range(at: 1))), age <= 120 else { continue }
+            guard let tr = tt.tokens(m.range), let age = Int(tt.sub(m.range(at: 1))), (1...120).contains(age) else { continue }
             let f = ["kind": "patient", "age": String(age), "sex": tt.sub(m.range(at: 2)).hasSuffix("m") ? "male" : "female"]
             out.append(Finding(type: .status, fields: f, receipts: ["age": tt.receipt(tr), "sex": tt.receipt(tr)], tMs: tt.seg.timeOf(token: tr.lowerBound),
                                rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound), confidence: 0.85, flags: [], extractor: RulesExtractor.version))
+        }
+        for m in RulesExtractor.ageMonthsRx.all(tt.text) {
+            guard let tr = tt.tokens(m.range), let n = Int(tt.sub(m.range(at: 1))), (1...36).contains(n) else { continue }
+            add(["kind": "patient", "age": String(n), "age_units": "months"], "age", tr, 0.85)
         }
         for m in RulesExtractor.sexRx.all(tt.text) {
             guard let tr = tt.tokens(m.range) else { continue }
@@ -500,7 +576,8 @@ public final class RulesExtractor {
         }
         for m in RulesExtractor.historyRx.all(tt.text) {
             guard let tr = tt.tokens(m.range) else { continue }
-            add(["kind": "history", "history": tt.sub(m.range(at: 1))], "history", tr, 0.75)
+            guard let vr = tt.tokens(m.range(at: 1)) else { continue }
+            add(["kind": "history", "history": tt.seg.quote(vr.lowerBound, vr.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))], "history", tr, 0.75)
         }
         return out
     }
@@ -518,15 +595,40 @@ public final class RulesExtractor {
     static let foundRx = Rx(#"\b(?:turned out to be|turns out to be|turns out it's|turned out it was|it's actually|it is actually|is actually|was actually|actually an?|found to be|looks more like|more like an?)\s+(?:an?\s+|the\s+)?"# + phrase + stop)
     static let ccRx = Rx(#"\b(?:complaining of|complains of|c/o|chief complaint is|chief complaint of|chief complaint|cc is|presenting with|presents with)\s+"# + phrase + stop)
 
+    /// Radio dispatch: "Medic 14, respond priority one to 42 Elm for a 62 year old male, chest pain"
+    static let radioRx = Rx(#"\b(?:respond|responding|dispatch|priority (?:one|two|three|1|2|3)|toned out|be advised)\b"#)
+    static let dispatchComplaints: [String] = ["chest pain", "difficulty breathing", "trouble breathing", "shortness of breath", "fall", "fallen",
+        "unresponsive", "unconscious", "seizure", "seizures", "mvc", "mva", "motor vehicle", "syncope", "fainted", "passed out", "abdominal pain",
+        "back pain", "bleeding", "hemorrhage", "allergic reaction", "diabetic", "sick person", "lift assist", "assault", "burn", "burns",
+        "headache", "altered mental status", "ams", "weakness", "dizziness", "nausea", "vomiting", "fever", "pregnancy", "labor",
+        "psychiatric", "behavioral", "cardiac", "breathing problem", "breathing problems", "injury", "injured", "pain"]
+
     func dispatch(_ tt: TokText) -> [Finding] {
         var out: [Finding] = []
         for (rx, field, conf) in [(RulesExtractor.dispatchRx, "dispatch_reason", 0.85), (RulesExtractor.foundRx, "found", 0.75), (RulesExtractor.ccRx, "chief_complaint", 0.8)] {
             for m in rx.all(tt.text) {
                 guard let tr = tt.tokens(m.range), let vr = tt.tokens(m.range(at: 1)) else { continue }
                 let val = tt.seg.quote(vr.lowerBound, vr.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))
+                if Diagnosis.contains(val) { continue }   // never turn a spoken diagnosis into a field
                 out.append(Finding(type: .dispatch, fields: [field: val], receipts: [field: tt.receipt(tr)], tMs: tt.seg.timeOf(token: tr.lowerBound),
                                    rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound), confidence: conf, flags: [],
                                    extractor: RulesExtractor.version))
+            }
+        }
+        // radio-style dispatch with no "dispatched for": take the complaint words from the same segment
+        if !out.contains(where: { $0.fields["dispatch_reason"] != nil }), RulesExtractor.radioRx.all(tt.text).first != nil {
+            let toks = tt.seg.tokens
+            var best: ClosedRange<Int>? = nil
+            for c in RulesExtractor.dispatchComplaints.sorted(by: { $0.count > $1.count }) {
+                let words = c.split(separator: " ").map(String.init)
+                for i in 0..<max(0, toks.count - words.count + 1) where toks[i..<(i + words.count)].map(\.text) == words {
+                    if best == nil || i < best!.lowerBound { best = i...(i + words.count - 1) }
+                }
+            }
+            if let r = best {
+                out.append(Finding(type: .dispatch, fields: ["dispatch_reason": tt.seg.quote(r.lowerBound, r.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))],
+                                   receipts: ["dispatch_reason": tt.receipt(r)], tMs: tt.seg.timeOf(token: r.lowerBound), rawSpan: tt.seg.rawSpan,
+                                   quote: tt.seg.quote(0, toks.count - 1), confidence: 0.7, flags: [], extractor: RulesExtractor.version))
             }
         }
         return out
@@ -536,27 +638,39 @@ public final class RulesExtractor {
 
     static let destRx = Rx(#"\b(?:transporting to|transport to|transporting him to|transporting her to|headed to|heading to|en route to|going to|taking (?:him|her|them|the patient|pt) to|we're going to|we are going to|transporting)\s+(?:the\s+)?"# + phrase + #"(?=\s+[|;]|\s+(?:eta|with|priority|code|lights|and|now|in|for)\b|\s*$)"#)
     static let modeRx = Rx(#"\b(lights and sirens|code 3|code three|emergent|non emergent|non-emergent|code 2|code two|no lights)\b"#)
-    static let alertRx = Rx(#"\b(stemi alert|stroke alert|trauma alert|sepsis alert|cath lab|trauma team|code stroke|code stemi)\b"#)
+    static let alertRx = Rx(#"\b(stemi alert|stroke alert|trauma alert|sepsis alert|cath lab|trauma team|code stroke|code stemi|activate|activated|pre-?alert|notify|notified)\b"#)
     static let etaRx = Rx(#"\beta\s+(?:is\s+|of\s+|about\s+|in\s+)*(\d{1,3})\s*(?:minutes|minute|mins|min)\b"#)
-    static let arrivedRx = Rx(#"\b(?:we're at|we are at|arrived at|arriving at|pulling into|pulling in to|we're here at)\s+(?:the\s+)?"# + phrase + #"(?=\s+[|;]|\s+(?:now|and|with)\b|\s*$)"#)
+    static let arrivedRx = Rx(#"\b(?:we're at|we are at|arrived at|arriving at|arrive at|arrive that|arrived that|pulling into|pulling in to|we're here at|here at)\s+(?:the\s+)?"# + phrase + #"(?=\s+[|;]|\s+(?:now|and|with)\b|\s*$)"#)
+    /// A destination must look like a place: a facility word, or a capitalized name (not a number, not a verb phrase).
+    static let facilityWords: Set<String> = ["hospital", "ed", "er", "emergency", "medical", "center", "general", "memorial", "mercy", "regional",
+        "university", "children's", "childrens", "st", "saint", "health", "clinic", "trauma", "ambulance", "bay", "mass", "mgh", "bmc", "brigham",
+        "beth", "israel", "deaconess", "tufts", "county", "community", "valley", "baptist", "methodist", "presbyterian", "kaiser", "va"]
+    func looksLikePlace(_ raw: String) -> Bool {
+        let words = raw.split(separator: " ").map { String($0).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;")) }
+        guard let first = words.first, !first.isEmpty, Double(first) == nil else { return false }
+        if words.contains(where: { RulesExtractor.facilityWords.contains($0.lowercased()) }) { return true }
+        return words.allSatisfy { $0.first?.isUppercase ?? false }
+    }
 
     func transport(_ tt: TokText) -> [Finding] {
         var fields: [String: String] = [:]
         var rec: [String: FieldReceipt] = [:]
         var trs: [ClosedRange<Int>] = []
-        func grab(_ rx: Rx, _ field: String, group: Int = 1, clean: Bool = false, _ map: (String) -> String = { $0 }) {
+        func grab(_ rx: Rx, _ field: String, group: Int = 1, clean: Bool = false, accept: (String) -> Bool = { _ in true }, _ map: (String) -> String = { $0 }) {
             for m in rx.all(tt.text) where fields[field] == nil {
                 guard let tr = tt.tokens(m.range) else { continue }
                 let r = m.range(at: group)
                 guard r.location != NSNotFound, let vr = tt.tokens(r) else { continue }
-                let v = clean ? tt.sub(r) : tt.seg.quote(vr.lowerBound, vr.upperBound)
-                fields[field] = map(v.trimmingCharacters(in: CharacterSet(charactersIn: " ,.;")))
+                let v = (clean ? tt.sub(r) : tt.seg.quote(vr.lowerBound, vr.upperBound)).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))
+                guard accept(v) else { continue }
+                fields[field] = map(v)
                 rec[field] = tt.receipt(tr); trs.append(tr)
             }
         }
-        grab(RulesExtractor.destRx, "destination")
+        grab(RulesExtractor.destRx, "destination", accept: looksLikePlace)
         grab(RulesExtractor.modeRx, "mode") { $0.lowercased() }
-        grab(RulesExtractor.alertRx, "alert") { $0.lowercased() }
+        // the alert's type is often a diagnosis ("STEMI alert"): record only that a pre-alert was given
+        grab(RulesExtractor.alertRx, "alert") { _ in "hospital pre-alert given (as said)" }
         grab(RulesExtractor.etaRx, "eta_min", clean: true)
         var out: [Finding] = []
         if !fields.isEmpty {
@@ -565,14 +679,13 @@ public final class RulesExtractor {
                                quote: tt.seg.quote(lo, hi), confidence: 0.8, flags: [], extractor: RulesExtractor.version))
         }
         for m in RulesExtractor.arrivedRx.all(tt.text) {
-            guard let tr = tt.tokens(m.range) else { continue }
-            var f = ["kind": "arrived_heard"]
-            if m.range(at: 1).location != NSNotFound, m.range(at: 1).length > 0, let vr = tt.tokens(m.range(at: 1)) {
-                f["destination"] = tt.seg.quote(vr.lowerBound, vr.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))
-            }
-            out.append(Finding(type: .transport, fields: f, receipts: ["kind": tt.receipt(tr)], tMs: tt.seg.timeOf(token: tr.lowerBound),
-                               rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound), confidence: 0.6, flags: ["confirm"],
-                               extractor: RulesExtractor.version))
+            guard let tr = tt.tokens(m.range), m.range(at: 1).location != NSNotFound, m.range(at: 1).length > 0,
+                  let vr = tt.tokens(m.range(at: 1)) else { continue }
+            let dest = tt.seg.quote(vr.lowerBound, vr.upperBound).trimmingCharacters(in: CharacterSet(charactersIn: " ,.;"))
+            guard looksLikePlace(dest) else { continue }   // "sats, we're at 92" is not an arrival
+            out.append(Finding(type: .transport, fields: ["kind": "arrived_heard", "destination": dest], receipts: ["kind": tt.receipt(tr)],
+                               tMs: tt.seg.timeOf(token: tr.lowerBound), rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(tr.lowerBound, tr.upperBound),
+                               confidence: 0.6, flags: ["confirm"], extractor: RulesExtractor.version))
         }
         return out
     }

@@ -99,7 +99,8 @@ public final class Cleanup {
             // 2. drug ASR variants (multi-token first)
             for n in stride(from: min(dict.maxAliasTokens, toks.count - i), through: 1, by: -1) {
                 let phrase = toks[i..<(i + n)].map(\.norm).joined(separator: " ")
-                if dict.aliasIndex[phrase] == nil, let di = dict.variantIndex[phrase] {
+                if dict.aliasIndex[phrase] == nil, let di = dict.variantIndex[phrase],
+                   RulesExtractor.hasDoseOrRoute(toks.map(\.norm), i, dict) {   // "this sucks, give me 2 seconds" stays as said
                     emit(dict.drug(di).generic, i, i + n, rule: "formulary:asr_variant"); i += n; matched = true; break
                 }
             }
@@ -138,7 +139,7 @@ public final class Cleanup {
                 if t == "percent" { emit("%", i, i + 1, rule: "unit:normalize"); i += 1; continue }
             }
             // 7. fuzzy drug spelling (long single words only)
-            if t.count >= 6, dict.aliasIndex[t] == nil, dict.termIndex[t] == nil, let g = fuzzyDrug(t) {
+            if t.count >= 6, dict.aliasIndex[t] == nil, dict.termIndex[t] == nil, RulesExtractor.hasDoseOrRoute(toks.map(\.norm), i, dict), let g = fuzzyDrug(t) {
                 emit(g, i, i + 1, rule: "formulary:fuzzy"); i += 1; continue
             }
             emit(t, i, i + 1, rule: nil)
@@ -208,6 +209,9 @@ public final class Cleanup {
             return (s, k - i)
         }
         if first == "a", w(i + 1) == "hundred" { value = 100; used = 2 }
+        else if first == "a" || first == "an", let nx = w(i + 1), ["liter", "gram", "milligram", "unit", "amp", "half"].contains(nx) {
+            return (nx == "half" ? "0.5" : "1", nx == "half" ? 2 : 1)   // "a liter of saline" -> "1 liter"; "a half" -> 0.5
+        }
         else if let (v, n) = small(i) {
             value = Double(v); used = n
             if w(i + used) == "hundred" {

@@ -50,64 +50,101 @@ public struct SpeechChunk: Equatable, Sendable {
 }
 
 public struct VADConfig: Codable, Equatable, Sendable {
+    /// "energy": adaptive energy VAD (default). "fixed": no VAD, cut the audio
+    /// into windows of maxSegmentMs at the quietest frame (Whisper handles silence).
+    public var mode: String = "energy"
     public var frameMs: Int = 20
-    public var startRatio: Double = 3.0       // speech if rms > floor * ratio
-    public var minRMS: Double = 250           // absolute floor (Int16 units)
-    public var hangoverMs: Int = 500
-    public var minSpeechMs: Int = 250
-    public var maxSegmentMs: Int = 15000
-    public var preRollMs: Int = 200
+    public var startDb: Double = 6.0           // speech if frame energy is this far above the noise floor
+    public var minRMS: Double = 120            // absolute floor (Int16 units)
+    public var floorWindowMs: Int = 3000       // noise floor = 15th percentile of frame RMS over this window
+    public var hangoverMs: Int = 700
+    public var minSpeechMs: Int = 200
+    public var maxSegmentMs: Int = 25000
+    public var preRollMs: Int = 300
     public init() {}
+    enum CodingKeys: String, CodingKey { case mode, frameMs, startDb, minRMS, floorWindowMs, hangoverMs, minSpeechMs, maxSegmentMs, preRollMs }
+    public init(from d: Decoder) throws {
+        let c = try d.container(keyedBy: CodingKeys.self); let z = VADConfig()
+        mode = try c.decodeIfPresent(String.self, forKey: .mode) ?? z.mode
+        frameMs = try c.decodeIfPresent(Int.self, forKey: .frameMs) ?? z.frameMs
+        startDb = try c.decodeIfPresent(Double.self, forKey: .startDb) ?? z.startDb
+        minRMS = try c.decodeIfPresent(Double.self, forKey: .minRMS) ?? z.minRMS
+        floorWindowMs = try c.decodeIfPresent(Int.self, forKey: .floorWindowMs) ?? z.floorWindowMs
+        hangoverMs = try c.decodeIfPresent(Int.self, forKey: .hangoverMs) ?? z.hangoverMs
+        minSpeechMs = try c.decodeIfPresent(Int.self, forKey: .minSpeechMs) ?? z.minSpeechMs
+        maxSegmentMs = try c.decodeIfPresent(Int.self, forKey: .maxSegmentMs) ?? z.maxSegmentMs
+        preRollMs = try c.decodeIfPresent(Int.self, forKey: .preRollMs) ?? z.preRollMs
+    }
 }
 
-/// Energy-based VAD with an adaptive noise floor. Streaming: feed PCM, get
-/// finished chunks. Deterministic for a given input.
+/// Energy VAD with a noise floor that keeps adapting (low percentile of the
+/// last few seconds), so steady cab/road/monitor noise raises the floor
+/// instead of reading as one endless utterance. Streaming and deterministic.
+/// Long speech is cut at the quietest frame near the max length.
 public final class EnergyVAD {
     public let cfg: VADConfig
-    private var floor: Double = 200
+    private var history: [Double] = []      // recent frame RMS (ring)
+    private var hIdx = 0
     private var inSpeech = false
     private var segStart: Int64 = 0
     private var lastVoice: Int64 = 0
     private var voicedMs = 0
     private var pos: Int64 = 0
     private var carry: [Int16] = []
+    private var frameRMS: [(Int64, Double)] = []   // frames of the open segment (for quiet-point cuts)
     public init(_ cfg: VADConfig = VADConfig()) { self.cfg = cfg }
 
     var frameLen: Int { cfg.frameMs * Wire.sampleRate / 1000 }
+    var samplesPerMs: Int64 { Int64(Wire.sampleRate / 1000) }
+
+    func noiseFloor() -> Double {
+        guard history.count >= 10 else { return cfg.minRMS }
+        let s = history.sorted()
+        return s[Int(Double(s.count - 1) * 0.15)]
+    }
 
     public func push(_ pcm: [Int16]) -> [SpeechChunk] {
         var out: [SpeechChunk] = []
         carry.append(contentsOf: pcm)
         var i = 0
         let fl = frameLen
+        let histMax = max(10, cfg.floorWindowMs / cfg.frameMs)
         while i + fl <= carry.count {
             var acc = 0.0
             for k in i..<(i + fl) { let v = Double(carry[k]); acc += v * v }
             let rms = (acc / Double(fl)).squareRoot()
             let frameStart = pos
             pos += Int64(fl)
-            let voiced = rms > max(cfg.minRMS, floor * cfg.startRatio)
-            if !voiced {
-                // adapt floor slowly toward quiet frames
-                floor = floor * 0.95 + rms * 0.05
+            if history.count < histMax { history.append(rms) } else { history[hIdx] = rms; hIdx = (hIdx + 1) % histMax }
+            if cfg.mode == "fixed" {
+                if !inSpeech { inSpeech = true; segStart = frameStart; frameRMS.removeAll() }
+                frameRMS.append((frameStart, rms))
+                if (pos - segStart) / samplesPerMs >= Int64(cfg.maxSegmentMs) { out.append(cutAtQuietPoint()) }
+                i += fl; continue
             }
+            let floor = noiseFloor()
+            let thr = max(cfg.minRMS, floor * pow(10, cfg.startDb / 20))
+            let voiced = rms > thr
             if voiced {
                 if !inSpeech {
                     inSpeech = true
-                    segStart = max(0, frameStart - Int64(cfg.preRollMs * Wire.sampleRate / 1000))
-                    voicedMs = 0
+                    segStart = max(0, frameStart - Int64(cfg.preRollMs) * samplesPerMs)
+                    voicedMs = 0; frameRMS.removeAll()
                 }
                 lastVoice = pos
                 voicedMs += cfg.frameMs
             }
             if inSpeech {
-                let silentMs = Int((pos - lastVoice) * 1000 / Int64(Wire.sampleRate))
-                let lenMs = Int((pos - segStart) * 1000 / Int64(Wire.sampleRate))
-                if silentMs >= cfg.hangoverMs || lenMs >= cfg.maxSegmentMs {
+                frameRMS.append((frameStart, rms))
+                let silentMs = (pos - lastVoice) / samplesPerMs
+                let lenMs = (pos - segStart) / samplesPerMs
+                if silentMs >= Int64(cfg.hangoverMs) {
                     if voicedMs >= cfg.minSpeechMs {
-                        out.append(SpeechChunk(startSample: segStart, endSample: lenMs >= cfg.maxSegmentMs ? pos : min(pos, lastVoice + Int64(cfg.hangoverMs / 2 * Wire.sampleRate / 1000))))
+                        out.append(SpeechChunk(startSample: segStart, endSample: min(pos, lastVoice + Int64(cfg.hangoverMs / 2) * samplesPerMs)))
                     }
                     inSpeech = false
+                } else if lenMs >= Int64(cfg.maxSegmentMs) {
+                    out.append(cutAtQuietPoint())
                 }
             }
             i += fl
@@ -116,9 +153,21 @@ public final class EnergyVAD {
         return out
     }
 
+    /// Close the open segment at the quietest frame in its last third and
+    /// continue a new one from there (no audio is lost between chunks).
+    private func cutAtQuietPoint() -> SpeechChunk {
+        let tail = frameRMS.suffix(max(1, frameRMS.count / 3))
+        let cut = tail.min { $0.1 < $1.1 }!.0
+        let c = SpeechChunk(startSample: segStart, endSample: cut)
+        segStart = cut
+        frameRMS.removeAll { $0.0 < cut }
+        voicedMs = cfg.minSpeechMs   // the continuation is speech by construction
+        return c
+    }
+
     public func finish() -> [SpeechChunk] {
         defer { inSpeech = false }
-        if inSpeech && voicedMs >= cfg.minSpeechMs { return [SpeechChunk(startSample: segStart, endSample: pos)] }
+        if inSpeech && (cfg.mode == "fixed" || voicedMs >= cfg.minSpeechMs) && pos > segStart { return [SpeechChunk(startSample: segStart, endSample: pos)] }
         return []
     }
 }

@@ -50,7 +50,8 @@ public struct PipelineConfig: Codable, Sendable {
         }
     }
     public var callId: String = "c1"
-    public var startTime: String = "2026-11-15T14:00:00-05:00"
+    public var startTime: String? = nil   // nil: use clip clock sync, else an assumed start (flagged in outputs)
+    public static let assumedStart = "2026-11-15T14:00:00-05:00"
     public var asr = ASR()
     public var tagger: String? = nil
     public var vad = VADConfig()
@@ -61,7 +62,7 @@ public struct PipelineConfig: Codable, Sendable {
     public init(from d: Decoder) throws {
         let c = try d.container(keyedBy: CodingKeys.self)
         callId = try c.decodeIfPresent(String.self, forKey: .callId) ?? "c1"
-        startTime = try c.decodeIfPresent(String.self, forKey: .startTime) ?? "2026-11-15T14:00:00-05:00"
+        startTime = try c.decodeIfPresent(String.self, forKey: .startTime)
         asr = try c.decodeIfPresent(ASR.self, forKey: .asr) ?? ASR()
         tagger = try c.decodeIfPresent(String.self, forKey: .tagger)
         vad = try c.decodeIfPresent(VADConfig.self, forKey: .vad) ?? VADConfig()
@@ -86,6 +87,7 @@ public struct PipelineResult {
     public var docs: [RenderedDoc]
     public var timing: [String: Double]
     public var stats: [String: Int]
+    public var notes: [String] = []
 }
 
 public enum PipelineError: Error, CustomStringConvertible {
@@ -111,13 +113,19 @@ public final class EarshotPipeline {
     }
 
     public func run(_ input: PipelineInput) throws -> PipelineResult {
-        guard let clock = CallClock(iso: config.startTime) else { throw PipelineError.badStartTime(config.startTime) }
+        var clock: CallClock
+        var clockSource = "explicit"
+        if let st = config.startTime {
+            guard let c = CallClock(iso: st) else { throw PipelineError.badStartTime(st) }
+            clock = c
+        } else { clock = CallClock(iso: PipelineConfig.assumedStart)!; clockSource = "assumed" }
         var timing: [String: Double] = [:]
         var stats: [String: Int] = [:]
         func timed<T>(_ k: String, _ f: () throws -> T) rethrows -> T {
             let t0 = Date(); defer { timing[k, default: 0] += Date().timeIntervalSince(t0) }
             return try f()
         }
+        var notes: [String] = []
         var taps: [PlacedTap] = []
         var gaps: [(Int64, Int64, Int)] = []
         var raw: RawTranscript
@@ -125,10 +133,14 @@ public final class EarshotPipeline {
 
         switch input {
         case .transcript(let t, let tp):
+            taps = tp.map { PlacedTap(tMs: $0.clipMs, source: $0.source, gesture: $0.gesture, clipMs: $0.clipMs) }
+            let windows = Consent.windows(taps, endMs: Int64.max)
             raw = t
+            raw.segments = t.segments.filter { s in windows.contains { s.startMs >= $0.0 && s.startMs < $0.1 } }
+            stats["segments_outside_consent"] = t.segments.count - raw.segments.count
+        case .pcm(var pcm, let tp):
             taps = tp.map { PlacedTap(tMs: $0.clipMs, source: $0.source, gesture: $0.gesture, clipMs: $0.clipMs) }
-        case .pcm(let pcm, let tp):
-            taps = tp.map { PlacedTap(tMs: $0.clipMs, source: $0.source, gesture: $0.gesture, clipMs: $0.clipMs) }
+            Consent.gate(&pcm, taps: taps)
             raw = try timed("asr_total") { try transcribeAll(pcm, &timing, &stats, asrName) }
         case .packets(let packets, let extra):
             let asm = AudioAssembler(reorderDepth: Int.max)
@@ -144,6 +156,12 @@ public final class EarshotPipeline {
             }
             gaps = asm.gaps.map { ($0.startClipMs - base, $0.endClipMs - base, $0.missingFrames) }
             stats["frames"] = asm.framesReceived; stats["duplicates"] = asm.duplicates; stats["gaps"] = asm.gaps.count
+            // wall clock from the iPad's clock-sync packet: epoch at clip time c -> call start = epoch - (c - base)
+            if config.startTime == nil, let c = asm.clockOffsets.first {
+                clock = CallClock(startEpochMs: c.epochMs - (c.clipMs - base), tzOffsetSeconds: clock.tzOffsetSeconds)
+                clockSource = "clip clock sync"
+            }
+            Consent.gate(&pcm, taps: taps)
             raw = try timed("asr_total") { try transcribeAll(pcm, &timing, &stats, asrName) }
             pcm.removeAll() // drop audio as soon as it is transcribed
         }
@@ -186,10 +204,15 @@ public final class EarshotPipeline {
             let m = ChartModel(events: events, callId: config.callId, clock: clock)
             docs = [Renderers.soap(m), Renderers.chart(m), Renderers.imistAmbo(m), NEMSISExport.render(m, events: events, dict: dict)]
         }
+        if clockSource == "assumed" {
+            let note = "> Clock: no start time given and no clip clock sync, so wall-clock times assume a start of \(PipelineConfig.assumedStart). Elapsed times are real.\n\n"
+            docs = docs.map { $0.name.hasSuffix(".md") ? RenderedDoc(name: $0.name, text: note + $0.text) : RenderedDoc(name: $0.name, text: $0.text.replacingOccurrences(of: "<!-- Every element", with: "<!-- CLOCK ASSUMED: times are relative to an assumed start. -->\n<!-- Every element")) }
+        }
+        notes.append("clock: \(clockSource)")
         stats["segments"] = raw.segments.count; stats["events"] = events.count; stats["corrections"] = corrections.count
         stats["taps"] = taps.count
         let clean = CleanTranscript(segments: cleanSegs.map { .init(rawSpan: $0.rawSpan, text: $0.text) }, corrections: corrections)
-        return PipelineResult(raw: raw, clean: clean, events: events, docs: docs, timing: timing, stats: stats)
+        return PipelineResult(raw: raw, clean: clean, events: events, docs: docs, timing: timing, stats: stats, notes: notes)
     }
 
     func transcribeAll(_ pcm: [Int16], _ timing: inout [String: Double], _ stats: inout [String: Int], _ asrName: String) throws -> RawTranscript {
@@ -226,14 +249,50 @@ public final class EarshotPipeline {
 
 /// Drops well-known Whisper non-speech hallucinations.
 public enum ASRFilter {
-    static let junk: Set<String> = ["[blank_audio]", "[music]", "(music)", "[silence]", "you", "thank you.", "thanks for watching!",
-                                    "[inaudible]", "(inaudible)", "[ sound ]", "[noise]", "(siren)", "[siren]", "."]
+    static let junk: Set<String> = ["you", "thank you.", "thank you", "thanks for watching!", "."]
+    static let tagRx = try! NSRegularExpression(pattern: #"\[[^\]]*\]|\([^)]*\)|\*[^*]*\*"#)
+    /// Text with Whisper's non-speech tags removed ("[beep]", "(siren)", "*cough*").
+    public static func stripTags(_ s: String) -> String {
+        tagRx.stringByReplacingMatches(in: s, range: NSRange(location: 0, length: (s as NSString).length), withTemplate: " ")
+            .split(separator: " ").joined(separator: " ")
+    }
+    /// True when a segment holds no speech once tags are removed. A segment
+    /// that keeps real words is kept whole (raw stays raw; cleanup drops the tags).
     public static func isHallucination(_ s: String) -> Bool {
-        let l = s.lowercased().trimmingCharacters(in: .whitespaces)
-        if junk.contains(l) { return true }
-        if l.hasPrefix("[") && l.hasSuffix("]") { return true }
-        if l.hasPrefix("(") && l.hasSuffix(")") { return true }
-        return false
+        let rest = stripTags(s).trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return rest.isEmpty || junk.contains(rest) || rest.allSatisfy { $0.isPunctuation || $0.isWhitespace }
+    }
+}
+
+/// Consent windows from the clip's gestures. With no consent gestures at all
+/// (plain eval audio) everything counts. Otherwise audio counts only from a
+/// "yes" until the next "stop" (or the end); a "no" captures nothing.
+public enum Consent {
+    public static func windows(_ taps: [PlacedTap], endMs: Int64) -> [(Int64, Int64)] {
+        let g = taps.filter { ["yes", "no", "stop"].contains($0.gesture) }.sorted { $0.tMs < $1.tMs }
+        guard !g.isEmpty else { return [(Int64.min, Int64.max)] }
+        var out: [(Int64, Int64)] = []
+        var open: Int64? = nil
+        for t in g {
+            switch t.gesture {
+            case "yes": if open == nil { open = t.tMs }
+            case "stop", "no": if let o = open { out.append((o, t.tMs)); open = nil }
+            default: break
+            }
+        }
+        if let o = open { out.append((o, endMs)) }
+        return out
+    }
+    /// Zero audio outside consent windows (in memory) so it is never transcribed.
+    public static func gate(_ pcm: inout [Int16], taps: [PlacedTap]) {
+        let w = windows(taps, endMs: Int64(pcm.count) / 16)
+        if w.count == 1 && w[0].0 == Int64.min { return }
+        var keep = [Bool](repeating: false, count: pcm.count)
+        for (a, b) in w {
+            let s = Int(max(0, a) * 16), e = Int(min(Int64(pcm.count), b * 16))
+            if e > s { for i in s..<e { keep[i] = true } }
+        }
+        for i in pcm.indices where !keep[i] { pcm[i] = 0 }
     }
 }
 

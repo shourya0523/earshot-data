@@ -29,7 +29,7 @@ OPTIONS
   --dict <dir>            folder with formulary.json + ems_terms.json (default: find ../shared)
   --threads <n>           whisper threads (default 4; keep fixed for repeatable output)
   --call-id <id>          default c1
-  --start <iso8601>       call start wall time (default 2026-11-15T14:00:00-05:00)
+  --start <iso8601>       call start wall time. Without it: replay clock-sync packet, else an assumed start that is flagged in every output
   --no-prompt             disable the EMS initial prompt for whisper
   --pii-scrub             replace names/DOB/addresses/phones in quotes and fields with tokens (off by default)
 """
@@ -85,8 +85,12 @@ case "make-replay":
     let pcm = try WAVReader.read(URL(fileURLWithPath: args[0]))
     var taps: [TapInput] = []
     if let t = tapsPath { taps = try JSONDecoder().decode([TapInput].self, from: Data(contentsOf: URL(fileURLWithPath: t))) }
-    // tap file clip_ms are relative to audio start; the replay stream starts at clip 1000 ms
-    let shifted = taps.map { TapInput(clipMs: $0.clipMs + 1000, source: $0.source, gesture: $0.gesture) }
+    // tap file clip_ms are relative to audio start; the replay stream starts at clip 1000 ms.
+    // Only clip gestures travel on the wire; tablet gestures (arrival/handoff) stay in the tap file.
+    let wire = taps.filter { TapGesture(name: $0.gesture) != nil }
+    let tablet = taps.filter { TapGesture(name: $0.gesture) == nil }
+    if !tablet.isEmpty { print("note: \(tablet.count) tablet tap(s) (arrival/handoff) are not clip packets; pass them with --taps when running the replay (clip_ms + 1000)") }
+    let shifted = wire.map { TapInput(clipMs: $0.clipMs + 1000, source: $0.source, gesture: $0.gesture) }
     let packets = ReplayFile.packets(fromPCM: pcm, taps: shifted, startClipMs: 1000)
     try ReplayFile.write(packets, to: URL(fileURLWithPath: args[1]))
     print("wrote \(packets.count) packets (\(pcm.count / 16000) s audio, \(taps.count) taps) to \(args[1])")
@@ -186,6 +190,7 @@ struct Timing: Encodable {
     var threads: Int
     var notes: [String]
 }
+notes += result.notes
 var secs = result.timing.mapValues { ($0 * 1000).rounded() / 1000 }
 secs["total"] = ((Date().timeIntervalSince(t0)) * 1000).rounded() / 1000
 try writeJSON(Timing(seconds: secs, stats: result.stats, model_load_s: (loadSecs * 1000).rounded() / 1000,

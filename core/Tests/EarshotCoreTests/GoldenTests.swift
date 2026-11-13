@@ -10,7 +10,8 @@ final class GoldenTests: XCTestCase {
         let segs = try JSONDecoder().decode([S].self, from: Data(contentsOf: demo.appendingPathComponent("transcript.truth.json")))
         let raw = RawTranscript(callId: "c1", asrModel: "ground truth", segments: segs.map { RawSegment(id: $0.id, startMs: $0.start_ms, endMs: $0.end_ms, text: $0.text) })
         let taps = try JSONDecoder().decode([TapInput].self, from: Data(contentsOf: demo.appendingPathComponent("taps.json")))
-        let r = try EarshotPipeline(dict: TestEnv.dict, config: PipelineConfig(), transcriber: nil).run(.transcript(raw, taps: taps))
+        var cfg = PipelineConfig(); cfg.startTime = "2026-11-15T14:00:00-05:00"
+        let r = try EarshotPipeline(dict: TestEnv.dict, config: cfg, transcriber: nil).run(.transcript(raw, taps: taps))
         let enc = JSONEncoder(); enc.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         var files = Dictionary(uniqueKeysWithValues: r.docs.map { ($0.name, $0.text) })
         files["events.json"] = String(data: try enc.encode(r.events), encoding: .utf8)! + "\n"
@@ -24,7 +25,7 @@ final class GoldenTests: XCTestCase {
             XCTAssertEqual(text, expected, "\(name) differs from golden; run UPDATE_GOLDEN=1 swift test --filter GoldenTests if intended")
         }
         // determinism: a second run is identical
-        let r2 = try EarshotPipeline(dict: TestEnv.dict, config: PipelineConfig(), transcriber: nil).run(.transcript(raw, taps: taps))
+        let r2 = try EarshotPipeline(dict: TestEnv.dict, config: cfg, transcriber: nil).run(.transcript(raw, taps: taps))
         XCTAssertEqual(r.events, r2.events)
         // principle checks on every output
         for d in r.docs where d.name.hasSuffix(".md") {

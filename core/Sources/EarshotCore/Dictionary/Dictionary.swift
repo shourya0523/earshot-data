@@ -146,18 +146,24 @@ public enum Text {
             let start = i
             while i < chars.count && !chars[i].isWhitespace && !isSplitter(chars, i) { i += 1 }
             if i > start {
+                // a clause comma/semicolon right after the word belongs to it (so cleanup sees the boundary)
+                if i < chars.count && (chars[i] == "," || chars[i] == ";") { i += 1 }
                 let raw = String(chars[start..<i])
                 var norm = raw.lowercased()
                 // strip edge punctuation
                 let edge: Set<Character> = [",", ".", "?", "!", ";", ":", "\"", "'", "(", ")", "[", "]", "…", "“", "”", "‘", "’"]
                 while let f = norm.first, edge.contains(f) { norm.removeFirst() }
                 while let l = norm.last, edge.contains(l) { norm.removeLast() }
-                if norm.hasSuffix("'s") && norm.count > 3 { norm.removeLast(2) }
+                norm = norm.replacingOccurrences(of: "’", with: "'")
+                // possessive 's is dropped ("zofran's"), contractions are kept ("she's on", "it's actually")
+                if norm.hasSuffix("'s") && norm.count > 3 && !Text.contractions.contains(norm) { norm.removeLast(2) }
                 if !norm.isEmpty { out.append(Token(raw: raw, norm: norm, range: start..<i)) }
             }
         }
         return out
     }
+
+    static let contractions: Set<String> = ["she's", "he's", "it's", "that's", "what's", "there's", "who's", "let's", "where's", "here's"]
 
     private static func isSplitter(_ c: [Character], _ i: Int) -> Bool {
         let ch = c[i]
