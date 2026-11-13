@@ -2,7 +2,8 @@
 # Paste into a Kaggle notebook cell (or upload train/whisper/kaggle_finetune.ipynb) with: Accelerator = GPU, Internet = On.
 # Kaggle Secrets needed: HF_TOKEN (write access, to push the model), GITHUB_TOKEN (read access to shourya0523/earshot-data, if private).
 # Output: a private HF model repo <HF_USER>/whisper-ems-small.en-ft (HF format). The data agent converts it to ggml + q5 and evaluates it.
-# Runtime: ~45-60 min data rebuild (downloads + TTS) + ~40-60 min training.
+# Runtime: ~60 min data rebuild (downloads + TTS) + ~60-90 min training (all real clips, 3 epochs).
+# Version: 2026-11-13 v3 (round3 human speech, no caps, /tmp data, pipeline's current prompt).
 import os, subprocess, sys, json, pathlib
 
 def sh(c):
@@ -42,7 +43,10 @@ BASE = "openai/whisper-small.en"
 proc = WhisperProcessor.from_pretrained(BASE)
 model = WhisperForConditionalGeneration.from_pretrained(BASE)
 model.config.forced_decoder_ids = None; model.generation_config.forced_decoder_ids = None
-prompt = open("eval/pipeline_prompt.txt").read().strip()
+# train with the prompt the pipeline actually uses at inference (shared/ems_terms.json -> initial_prompt on the pipeline branch)
+_t = json.load(open("/tmp/pipeline/shared/ems_terms.json"))
+prompt = (_t.get("initial_prompt") or ", ".join(_t.get("initial_prompt_core", [])) or open("eval/pipeline_prompt.txt").read()).strip()
+print("training prompt:", prompt[:120], "...")
 tok = proc.tokenizer
 prompt_ids = [tok.convert_tokens_to_ids("<|startofprev|>")] + tok(" " + prompt, add_special_tokens=False).input_ids[-223:]
 sot, nots, eot = tok.convert_tokens_to_ids("<|startoftranscript|>"), tok.convert_tokens_to_ids("<|notimestamps|>"), tok.eos_token_id
