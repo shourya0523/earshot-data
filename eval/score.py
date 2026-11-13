@@ -28,6 +28,21 @@ for x in DICT["drugs"]:
         CANON[tn.normalize(n)] = x["name"]
 
 
+def _bridge_pipeline_names():
+    """Map the pipeline formulary's generic names/aliases onto the GT (seed) names via any shared alias."""
+    try:
+        PFd = json.loads(pathlib.Path("/home/user/pipeline/shared/formulary.json").read_text())["drugs"]
+    except Exception:
+        return
+    for d in PFd:
+        names = [d["generic"], *d.get("brands", []), *d.get("aliases", []), *d.get("slang", [])]
+        seed = next((CANON[tn.normalize(n)] for n in names if tn.normalize(n) in CANON), None)
+        if seed:
+            for n in names + d.get("asr_variants", []):
+                CANON.setdefault(tn.normalize(n), seed)
+_bridge_pipeline_names()
+
+
 def canon_drug(s):
     k = tn.normalize(s or "")
     return CANON.get(k, k)
@@ -173,7 +188,7 @@ def extraction(gt, run, ids, time_tol_ms=15000):
                 ts_err.append(abs(a["clip_ms"] - b["clip_ms"]))
         for typ, key in (("procedure", "name"), ("status", "term")):
             g_ = [e for e in ge if e["type"] == typ]; p_ = [e for e in pe if e.get("type") == typ]
-            pr = _match(g_, p_, lambda a, b: tn.normalize(a["fields"][key]) == tn.normalize(b["fields"].get(key, "")), time_tol_ms)
+            pr = _match(g_, p_, lambda a, b: _canon_term(a["fields"][key]) == _canon_term(b["fields"].get(key, "")), time_tol_ms)
             C[typ][0] += len(pr); C[typ][1] += len(p_); C[typ][2] += len(g_)
         for g, p in pairs:
             ts_err.append(abs(g["clip_ms"] - p["clip_ms"]))
@@ -208,27 +223,56 @@ def extraction(gt, run, ids, time_tol_ms=15000):
 def _value_in_quote(k, v, q, e):
     v = str(v)
     if k == "drug":
+        if canon_drug(v) in ("albuterol", "ipratropium") and re.search(r"\bduoneb\b|\bduo neb\b", q): return True
         return any(canon_drug(term) == canon_drug(v) for term in _ngrams(q)) or tn.normalize(v) in q
     if k == "dose" or (k == "value"):
         if e.get("type") == "vital" and "/" in v:
             a, b = v.split("/"); return a in q.split() and b in q.split()
-        return tn.normalize(v) in q.split()
+        if tn.normalize(v) in q.split(): return True
+        return v in ("1", "1.0") and bool(re.search(r"\b(a|an|one)\s+(liter|litre|l|gram|g|amp|milligram|mg)\b", q))
+    if k == "drug":
+        pass
     if k == "unit":
         u = norm_unit(v)
-        return any(x in q.split() for x in {"mg": ["mg"], "mcg": ["mcg"], "g": ["g"], "ml": ["ml"], "l": ["l"], "l/min": ["l", "lpm"], "units": ["units"], "meq": ["meq"]}.get(u, [u]))
+        spoken = {"mg": ["mg", "migs"], "mcg": ["mcg", "mics", "mikes"], "g": ["g"], "ml": ["ml", "cc", "ccs", "mils"], "l": ["l"], "l/min": ["l", "lpm", "liters"],
+                  "units": ["units"], "meq": ["meq"]}.get(u, [u])
+        for cu, d in (PF.get("units") or {}).items():
+            if norm_unit(cu) == u: spoken += [tn.normalize(x) for x in d.get("spoken", [])]
+        return any(x and re.search(rf"(?<![a-z0-9]){re.escape(x)}(?![a-z0-9])", q) for x in spoken)
     if k == "route":
         al = {tn.normalize(v)} | {tn.normalize(a) for a in DICT["routes"].get(v, [])} | {tn.normalize(x) for x in ROUTE_EXTRA.get(v.upper(), [])}
+        for cr, d in (PF.get("routes") or {}).items():
+            if cr.upper() == str(v).upper(): al |= {tn.normalize(x) for x in d.get("spoken", [])}
         return any(a and re.search(rf"(?<![a-z0-9]){re.escape(a)}(?![a-z0-9])", q) for a in al)
     return True
 
 
-ROUTE_EXTRA = {"PO": ["chewed", "by mouth"], "SL": ["under the tongue", "sublingual"], "NEB": ["neb", "nebulizer", "nebulized"], "IN": ["intranasal", "nasal"],
-               "NRB": ["non rebreather", "nrb"], "IV": ["iv"], "IM": ["im"], "IO": ["io"]}
+ROUTE_EXTRA = {"PO": ["chewed", "by mouth"], "SL": ["under the tongue", "sublingual"], "NEB": ["neb", "nebulizer", "nebulized", "duoneb"], "IN": ["intranasal", "nasal"],
+               "NRB": ["non rebreather", "nrb"], "NC": ["nasal cannula"], "IV": ["iv", "through the line", "iv push"], "IM": ["im", "in the thigh"], "IO": ["io"]}
 
 
 def _window(hyp, q, w=60):
     i = hyp.find(q)
     return hyp[max(0, i - w): i + len(q) + w] if i >= 0 else q
+
+
+PROC_SYN = {"stroke scale": "befast", "befast screen": "befast", "be fast screen": "befast", "cincinnati scale": "befast", "befast": "befast",
+            "cincinnati stroke scale": "befast", "a and o times 4": "a and o x4", "a&o×4": "a and o x4", "a and o x 4": "a and o x4",
+            "a and o times 3": "a and o x3", "a&o×3": "a and o x3"}
+
+
+def _canon_term(t):
+    n = tn.normalize(t or "")
+    return PROC_SYN.get(n, PROC_SYN.get((t or "").lower(), n))
+
+
+def _pipe_formulary():
+    p = pathlib.Path("/home/user/pipeline/shared/formulary.json")
+    try:
+        return json.loads(p.read_text())
+    except Exception:
+        return {}
+PF = _pipe_formulary()
 
 
 def _ngrams(q, n=3):

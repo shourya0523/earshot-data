@@ -48,12 +48,25 @@ def convert(uid, raw_dir, out, gt_dir):
         elif t == "procedure":
             conv.append({**base, "type": "procedure", "fields": dict(name=str(f.get("name") or f.get("procedure") or "")), "raw_fields": f})
         elif t == "status":
-            term = f.get("condition") or f.get("term") or f.get("symptom") or f.get("value") or ""
-            conv.append({**base, "type": "status", "fields": dict(term=str(term)), "raw_fields": f})
-        elif t in TIME_TYPES:
+            kind = f.get("kind")
+            if kind == "finding" and f.get("term"):
+                conv.append({**base, "type": "status", "fields": dict(term=str(f["term"])), "raw_fields": f})
+            elif kind == "condition" and f.get("condition"):
+                conv.append({**base, "type": "status", "fields": dict(term=str(f["condition"])), "raw_fields": f})
+            else:   # patient / allergy / home_med / drug_mention / symptom / history: not scored as status
+                conv.append({**base, "type": f"status_{kind}", "fields": {k: str(v) for k, v in f.items() if k != "kind"}, "raw_fields": f})
+        elif t in ("arrival", "handoff"):
             conv.append({**base, "type": "time", "fields": dict(etime=TIME_TYPES[t]), "raw_fields": f})
+        elif t == "transport":
+            if f.get("etime"):
+                conv.append({**base, "type": "time", "fields": dict(etime=str(f["etime"])), "raw_fields": f})
+            else:   # destination / mode: not an eTime
+                conv.append({**base, "type": "transport_info", "fields": {k: str(v) for k, v in f.items()}, "raw_fields": f})
         elif t == "dispatch":
-            conv.append({**base, "type": "dispatch", "fields": dict(text=str(f.get("text") or f.get("reason") or "")), "raw_fields": f})
+            if f.get("dispatch_reason"):
+                conv.append({**base, "type": "dispatch", "fields": dict(text=str(f["dispatch_reason"])), "raw_fields": f})
+            if f.get("found") or f.get("chief_complaint"):
+                conv.append({**base, "type": "found", "fields": dict(text=str(f.get("found") or f.get("chief_complaint"))), "raw_fields": f})
         elif t == "tap":
             conv.append({**base, "type": "marker", "fields": {}, "label": (f.get("label"))})
         else:
