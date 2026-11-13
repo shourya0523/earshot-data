@@ -1,0 +1,333 @@
+{
+ "run": "eval/runs/stock_small/test_tts_snr10",
+ "gt": "data/scripts/test/gt/tts",
+ "n": 10,
+ "transcription": {
+  "n_files": 10,
+  "wer": 0.12412177985948478,
+  "drug_wer": 0.2692307692307692,
+  "drug_tokens": 26,
+  "number_acc": 0.891566265060241,
+  "number_tokens": 166,
+  "unit_acc": 1.0,
+  "jargon_recall": 0.8260869565217391,
+  "jargon_terms": 69,
+  "per_file": [
+   {
+    "id": "c01",
+    "ref_words": 157,
+    "errors": 20,
+    "wer": 0.12738853503184713,
+    "drug_n": 5,
+    "drug_err": 2,
+    "num_n": 22,
+    "num_err": 1,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "lisinopril and atorvastatin -> up roland adorvastatin"
+    ]
+   },
+   {
+    "id": "c02",
+    "ref_words": 162,
+    "errors": 34,
+    "wer": 0.20987654320987653,
+    "drug_n": 2,
+    "drug_err": 2,
+    "num_n": 17,
+    "num_err": 2,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 8,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "eliquis and metoprolol -> at using metaprolol"
+    ]
+   },
+   {
+    "id": "c03",
+    "ref_words": 121,
+    "errors": 9,
+    "wer": 0.0743801652892562,
+    "drug_n": 2,
+    "drug_err": 0,
+    "num_n": 13,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 7,
+    "jargon_hit": 6,
+    "drug_misses": []
+   },
+   {
+    "id": "c04",
+    "ref_words": 151,
+    "errors": 16,
+    "wer": 0.10596026490066225,
+    "drug_n": 4,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 2,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 11,
+    "jargon_hit": 8,
+    "drug_misses": []
+   },
+   {
+    "id": "c05",
+    "ref_words": 121,
+    "errors": 8,
+    "wer": 0.06611570247933884,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 17,
+    "num_err": 4,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 12,
+    "jargon_hit": 12,
+    "drug_misses": []
+   },
+   {
+    "id": "c06",
+    "ref_words": 117,
+    "errors": 11,
+    "wer": 0.09401709401709402,
+    "drug_n": 6,
+    "drug_err": 1,
+    "num_n": 20,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 5,
+    "drug_misses": [
+     "ipratropium -> epitropium"
+    ]
+   },
+   {
+    "id": "c07",
+    "ref_words": 120,
+    "errors": 12,
+    "wer": 0.1,
+    "drug_n": 2,
+    "drug_err": 0,
+    "num_n": 19,
+    "num_err": 3,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": []
+   },
+   {
+    "id": "c08",
+    "ref_words": 95,
+    "errors": 21,
+    "wer": 0.22105263157894736,
+    "drug_n": 3,
+    "drug_err": 1,
+    "num_n": 16,
+    "num_err": 5,
+    "unit_n": 3,
+    "unit_err": 0,
+    "jargon_n": 3,
+    "jargon_hit": 2,
+    "drug_misses": [
+     "famotidine -> famitating"
+    ]
+   },
+   {
+    "id": "c09",
+    "ref_words": 103,
+    "errors": 20,
+    "wer": 0.1941747572815534,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 14,
+    "num_err": 1,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 3,
+    "drug_misses": [
+     "keppra -> capra"
+    ]
+   },
+   {
+    "id": "c10",
+    "ref_words": 134,
+    "errors": 8,
+    "wer": 0.05970149253731343,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 0,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 4,
+    "jargon_hit": 3,
+    "drug_misses": []
+   }
+  ]
+ },
+ "extraction": {
+  "fields": {
+   "dose": {
+    "tp": 16,
+    "pred": 16,
+    "gt": 22,
+    "precision": 1.0,
+    "recall": 0.7272727272727273,
+    "f1": 0.8421052631578948
+   },
+   "drug": {
+    "tp": 17,
+    "pred": 19,
+    "gt": 22,
+    "precision": 0.8947368421052632,
+    "recall": 0.7727272727272727,
+    "f1": 0.8292682926829269
+   },
+   "procedure": {
+    "tp": 12,
+    "pred": 14,
+    "gt": 14,
+    "precision": 0.8571428571428571,
+    "recall": 0.8571428571428571,
+    "f1": 0.8571428571428571
+   },
+   "route": {
+    "tp": 14,
+    "pred": 15,
+    "gt": 19,
+    "precision": 0.9333333333333333,
+    "recall": 0.7368421052631579,
+    "f1": 0.8235294117647058
+   },
+   "status": {
+    "tp": 9,
+    "pred": 24,
+    "gt": 16,
+    "precision": 0.375,
+    "recall": 0.5625,
+    "f1": 0.45
+   },
+   "unit": {
+    "tp": 8,
+    "pred": 8,
+    "gt": 11,
+    "precision": 1.0,
+    "recall": 0.7272727272727273,
+    "f1": 0.8421052631578948
+   },
+   "vital.bgl": {
+    "tp": 4,
+    "pred": 4,
+    "gt": 7,
+    "precision": 1.0,
+    "recall": 0.5714285714285714,
+    "f1": 0.7272727272727273
+   },
+   "vital.bp": {
+    "tp": 12,
+    "pred": 14,
+    "gt": 16,
+    "precision": 0.8571428571428571,
+    "recall": 0.75,
+    "f1": 0.7999999999999999
+   },
+   "vital.gcs": {
+    "tp": 3,
+    "pred": 4,
+    "gt": 3,
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1": 0.8571428571428571
+   },
+   "vital.hr": {
+    "tp": 10,
+    "pred": 13,
+    "gt": 16,
+    "precision": 0.7692307692307693,
+    "recall": 0.625,
+    "f1": 0.6896551724137931
+   },
+   "vital.pain": {
+    "tp": 2,
+    "pred": 2,
+    "gt": 2,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "vital.rr": {
+    "tp": 3,
+    "pred": 4,
+    "gt": 7,
+    "precision": 0.75,
+    "recall": 0.42857142857142855,
+    "f1": 0.5454545454545454
+   },
+   "vital.spo2": {
+    "tp": 5,
+    "pred": 6,
+    "gt": 14,
+    "precision": 0.8333333333333334,
+    "recall": 0.35714285714285715,
+    "f1": 0.5
+   }
+  },
+  "unsupported_field_rate": 0.027972027972027972,
+  "unsupported": 4,
+  "pred_fields": 143,
+  "unsupported_examples": [
+   [
+    "c01",
+    "p6",
+    "dose=324 quote='aspirin'"
+   ],
+   [
+    "c02",
+    "p13",
+    "dose=500 quote='saline'"
+   ],
+   [
+    "c03",
+    "p2",
+    "term=pinpoint pupils quote='pin. pupils'"
+   ],
+   [
+    "c04",
+    "p12",
+    "dose=100 quote='d10'"
+   ]
+  ],
+  "unsupported_inferred": 0,
+  "unsupported_field_rate_excl_flagged_inferred": 0.027972027972027972,
+  "timestamp_error_ms": {
+   "median": 0.0,
+   "p90": 3434,
+   "n": 56
+  },
+  "tap_labelling": {
+   "labelled_correct": 33,
+   "labelled_total": 40,
+   "unlabelled_correct": 7,
+   "unlabelled_total": 10,
+   "accuracy": 0.8
+  }
+ },
+ "taps": null,
+ "outputs": null,
+ "speed": {
+  "audio_s": 1418.312,
+  "wall_s": 754.74,
+  "rtf": 0.5321396138508312,
+  "stages_s": null
+ }
+}
