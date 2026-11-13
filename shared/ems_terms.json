@@ -1809,16 +1809,16 @@
   "SpO2",
   "sats",
   "resps",
-  "GCS 15",
-  "A and O times four",
+  "GCS",
+  "A and O",
   "PERRL",
   "BGL",
   "EtCO2",
   "12-lead",
   "STEMI",
   "compensating",
-  "aspirin 324",
-  "nitro 0.4 sublingual",
+  "aspirin",
+  "nitro sublingual",
   "Narcan",
   "Zofran",
   "fentanyl",
@@ -1837,7 +1837,7 @@
   "IO",
   "IM",
   "intranasal",
-  "18 gauge left AC",
+  "gauge left AC",
   "non-rebreather",
   "nasal cannula",
   "CPAP",
@@ -1855,5 +1855,5 @@
   "LKW",
   "dispatched for"
  ],
- "initial_prompt": "EMS call. Patient A&O\u00d74, GCS 15. BP 142/88, HR 110, resps 20, sats 94%, BGL 42, ETCO2 35. Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar."
+ "initial_prompt": "EMS call. Patient A&O, GCS. BP 61/127, HR 913, resps 113, sats 113%, BGL 913, ETCO2 213. Aspirin mg PO, nitro mg SL, Narcan mg IN, D10, glucagon, albuterol, DuoNeb, epi mg IM, Benadryl, Solu-Medrol, Zofran mg IV, fentanyl mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar."
 }

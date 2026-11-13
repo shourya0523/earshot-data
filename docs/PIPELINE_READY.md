@@ -56,7 +56,7 @@ Types: vitals, medication, procedure, status, dispatch, transport, tap, consent,
 - Dispatch: `fields.dispatch_reason`, `fields.found`, `fields.chief_complaint` (not `text`).
 Vitals field names: `bp_systolic bp_diastolic bp_method heart_rate resp_rate spo2 etco2 glucose gcs temp pain mental_status pupils o2_on` (`mental_status` = "A&O×4"; rhythm names are not extracted: they are interpretations, and "afib" is a diagnosis trap). Medication: routes include device routes for oxygen (`NRB`, `NC`, `BVM`, `CPAP`, `BLOWBY`). `drug`(generic) `dose unit route drug_as_heard unit_suggested` — `unit` only when spoken; `unit_suggested` is the protocol unit when unspoken (not a heard value, don't score it as one).
 
-**Prompt is frozen:** the Kaggle fine-tune trains with `shared/ems_terms.json` → `initial_prompt` from this branch, so it must not change without retraining (pinned by `PromptFreezeTests`).
+**Prompt is format-only and frozen** (see `docs/PROMPT_PRIMING.md`): vocabulary and style, no realistic values. The Kaggle fine-tune trains with it, so it must not change without retraining (pinned by `PromptFreezeTests`). Check outputs for copied prompt values with `core/tools/prompt_copy_check.py`; compare models with `--no-prompt` as well.
 
 Determinism: same input + config + threads ⇒ same files, except `timing.json`.
 

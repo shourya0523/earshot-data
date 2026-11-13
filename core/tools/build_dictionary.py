@@ -397,10 +397,10 @@ TERMS = [
 
 # Base initial-prompt (Whisper is primed with these words most).
 PROMPT_CORE = [
-    "BP", "heart rate", "SpO2", "sats", "resps", "GCS 15", "A and O times four", "PERRL", "BGL", "EtCO2", "12-lead",
-    "STEMI", "compensating", "aspirin 324", "nitro 0.4 sublingual", "Narcan", "Zofran", "fentanyl", "Versed",
+    "BP", "heart rate", "SpO2", "sats", "resps", "GCS", "A and O", "PERRL", "BGL", "EtCO2", "12-lead",
+    "STEMI", "compensating", "aspirin", "nitro sublingual", "Narcan", "Zofran", "fentanyl", "Versed",
     "ketamine", "epi", "albuterol", "DuoNeb", "D10", "glucagon", "amiodarone", "Solu-Medrol", "Benadryl", "normal saline",
-    "IV", "IO", "IM", "intranasal", "18 gauge left AC", "non-rebreather", "nasal cannula", "CPAP", "BVM", "i-gel",
+    "IV", "IO", "IM", "intranasal", "gauge left AC", "non-rebreather", "nasal cannula", "CPAP", "BVM", "i-gel",
     "C-collar", "tourniquet", "ROSC", "afib", "sinus tach", "NKDA", "PMH", "CHF", "COPD", "LKW", "dispatched for",
 ]
 
@@ -414,9 +414,14 @@ CONTEXT_REQUIRED = sorted({
     "valley um", "at a van", "card is em", "low presser", "leave a fed", "by carb", "bi carb", "kepra", "play vix",
 })
 
-INITIAL_PROMPT = ("EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, resps 20, sats 94%, BGL 42, ETCO2 35. "
-                  "Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, "
-                  "Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. "
+# FORMAT-ONLY prompt: vocabulary and abbreviation style, no realistic values.
+# Every number is physically impossible (diastolic > systolic, SpO2 > 100, HR 913…), never appears
+# in any test/dev call (digits or words), and falls outside the extractor's plausibility ranges, so
+# a value Whisper copies from the prompt can never become a field. Doses carry units, not amounts.
+# Check copies with core/tools/prompt_copy_check.py.
+INITIAL_PROMPT = ("EMS call. Patient A&O, GCS. BP 61/127, HR 913, resps 113, sats 113%, BGL 913, ETCO2 213. "
+                  "Aspirin mg PO, nitro mg SL, Narcan mg IN, D10, glucagon, albuterol, DuoNeb, epi mg IM, "
+                  "Benadryl, Solu-Medrol, Zofran mg IV, fentanyl mcg, Versed, Ativan, amiodarone, adenosine, TXA. "
                   "12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
 
 HTTP_HEADERS = {"User-Agent": "earshot-dictionary-builder/1.0"}
@@ -642,9 +647,9 @@ def main():
         "generated_by": "core/tools/build_dictionary.py",
         "terms": terms,
         "initial_prompt_core": PROMPT_CORE,
-        # Sentence-style prompt (dose + route phrases). "sats"/"resps" instead of "SpO2"/"RR" so Whisper
-        # keeps the spoken words (review R4-1: "sat 95" was heard as "set 95"). Measured by the data agent: stock small.en
-        # drug-name WER 26.9% vs 38.5% for the bare comma list (eval/BENCHMARK.md, REVIEW round 2).
+        # Format-only sentence-style prompt (see INITIAL_PROMPT). Sentence style came from the data agent's
+        # seed prompt (drug-name WER 26.9% vs 38.5% for a bare comma list); "sats"/"resps" keep the spoken
+        # words (review R4-1). Its realistic values were replaced to rule out priming; re-measure WER.
         "initial_prompt": INITIAL_PROMPT,
     }
     os.makedirs(args.out, exist_ok=True)
