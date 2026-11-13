@@ -22,8 +22,11 @@ $B run call.wav --taps taps.json --asr-model models/whisper-ems-small.en-q5.bin 
 $B run transcript.json --taps taps.json --out out/text_only    # skip ASR: test extraction alone
 $B make-replay call.wav call.replay --taps taps.json           # wav -> replay packet file
 $B run call.replay --asr-model models/ggml-small.en.bin        # replay input (packets, taps inside)
+$B check-stream capture.replay                                 # clip capture vs docs/FIRMWARE_CONTRACT.md (exit 1 on failure)
+$B fake-clip --port 7070 --wav call.wav --taps taps.json       # reference clip over TCP (Wi-Fi framing) for app/bring-up tests
 ```
-Demo: `$B run mocks/demo_call/transcript.truth.json --taps mocks/demo_call/taps.json --out out/demo`.
+Demo: `$B run mocks/demo_call/transcript.truth.json --taps mocks/demo_call/taps.json --start 2026-11-15T14:00:00-05:00 --out out/demo`.
+Demo replay (contract-conformant stream; arrival/handoff are tablet taps): `$B run mocks/demo_call/demo_call.replay --taps mocks/demo_call/tablet_taps.json --start 2026-11-15T14:00:00-05:00 --asr-model models/ggml-small.en.bin`.
 
 ## Inputs
 | Input | Format |
@@ -62,7 +65,7 @@ Changes since first hand-off (review fixes): unit never filled when unspoken (`u
 - Word times inside a segment are proportional estimates (no token timestamps yet).
 - Free-text fields (dispatch, chief complaint, destination, allergy, history) are raw quotes ≤5 words.
 - Procedures have no SNOMED codes (eProcedures.03 = Not Recorded). NEMSIS passes the XSD, not Schematron/state rules.
-- `mocks/demo_call/demo_call.replay` is not in git (binary); regenerate: `python3 core/tools/make_demo_call.py /tmp/demo.wav mocks/demo_call && $B make-replay /tmp/demo.wav mocks/demo_call/demo_call.replay --taps mocks/demo_call/taps.json` (needs espeak-ng, ffmpeg).
+- `mocks/demo_call/demo_call.replay` is committed; to regenerate: `python3 core/tools/make_demo_call.py /tmp/demo.wav mocks/demo_call && $B make-replay /tmp/demo.wav mocks/demo_call/demo_call.replay --taps mocks/demo_call/taps.json` (needs espeak-ng, ffmpeg).
 - Performance: 166 s demo audio → 51 s ASR on 4 x86 threads (small.en, CPU).
 
 Report bugs in `docs/REVIEW.md`.
