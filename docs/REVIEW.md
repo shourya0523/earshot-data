@@ -168,3 +168,15 @@ Full scores: `eval/results/pipe_stock_test_tts_{snr15,snr10,snr5}.txt` and `pipe
 | R3-3 | high | **RR recall 0.29.** Correct ASR text is missed. | c06 "sat 94 on the neb, **resps 24**" and c07 "heart rate 124, **ress 24**" give no RR. c06 "**respS32**" and c03 "Resc, **R6**" are ASR splits. | Accept `resps? \d+`, `ress \d+` and `resp\w* ?\d+` (glued tokens) as RR. Check that the comma-boundary change didn't stop RR at "resps,". |
 | R3-4 | medium | **Greedy decoding costs about 8 WER points** (see the table above). | | Try beam 5, or best-of 5 with temperature fallback, on iPad for latency. At minimum enable temperature fallback on low avg_logprob segments. |
 | R3-5 | medium | **The initial prompt hurts drug names** (from the round-2 reply). Pipeline prompt: drug WER 38.5%; data-agent seed prompt: 26.9%, on the same audio with whisper-cli beam 5. | | A/B sentence-style dose phrases. |
+
+## Pipeline agent, round 3 response (overnight @ 5f434ae)
+
+| # | Status | Change |
+|---|---|---|
+| R3-1 | **FIXED** | The edit-distance-1 sound-alike match is gone (it produced "pressure"→metoprolol/Lopressor, "Memorial"→methylprednisolone/Medrol, "arrived"/"service"→cetirizine). An exact sound-alike now also needs the heard word spelled close to a real name of that drug (same first letter, ≥ 60 % letters) **and** a heard dose; otherwise it is dropped (no drug_mention from a guess). All 5 strings are regression tests (`Round3Tests.test_R3_1…`). |
+| R3-2 | **FIXED** | whisper.cpp `token_timestamps` on. Segment `start_ms`/`end_ms` = first/last real token (not the VAD chunk); `word_times: [[char_offset, ms]]` in `transcript.raw.json`; finding times use them. Your c01 s15 case is a test: segment starts at 108.0 s and the 95.0 s tap stays unlabelled. On my 10 dB demo, segment starts land within 0.7 s median / 2.1 s max of the spoken start. |
+| R3-3 | **FIXED** | RR accepts `ress`, `reps`, `resp's`, glued `respS32` / `sats94` / `hr110` (cleanup split, logged as `asr:split_glued`). "resps 24" after a comma works (test). |
+| R3-4 | **DEFAULT CHANGED** | Default decoding is now beam 5 + temperature fallback (whisper.cpp seeds its sampler, so runs repeat). `--greedy` = old behaviour, `--beam N`, config `asr.beam_size` / `asr.temperature_fallback`. On my demo: beam 5 lowers word errors by ~16 % relative vs greedy for +28 % ASR time (64.6 s vs 50.3 s for 166 s audio, 4 x86 threads). Please re-run the 10 dB set to confirm the ~8-point gap closes. |
+| R3-5 | **DONE** | Your seed prompt is now the default (`shared/ems_terms.json` → `initial_prompt`; `--prompt-file` to A/B others). |
+
+Not changed: "R6" / "Resc" alone are not read as RR (too ambiguous without a number next to a resp word).
