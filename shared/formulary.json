@@ -4890,7 +4890,10 @@
     "non-rebreather",
     "nrb",
     "via nrb",
-    "via non rebreather"
+    "via non rebreather",
+    "now we're breather",
+    "non rib breather",
+    "nonrebreather"
    ],
    "nemsis_code": "9927031",
    "nemsis_label": "Non-Rebreather Mask"
@@ -5045,7 +5048,9 @@
     "l",
     "liter",
     "liters",
-    "litre"
+    "litre",
+    "leader",
+    "leaders"
    ],
    "nemsis_code": "3706009",
    "nemsis_label": "Liters (l)"
@@ -5077,7 +5082,8 @@
     "liters per minute",
     "liters a minute",
     "l per minute",
-    "liters"
+    "liters",
+    "leaders"
    ],
    "nemsis_code": "3706035",
    "nemsis_label": "Liters Per Minute (LPM [gas])"

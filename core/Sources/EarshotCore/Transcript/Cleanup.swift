@@ -177,6 +177,7 @@ public final class Cleanup {
 
     /// If tokens starting at i form a bracketed tag ([...] or (...)), return the index after it.
     static func nonSpeechSpan(_ t: [Text.Token], _ i: Int) -> Int? {
+        if !t[i].raw.contains(where: { $0.isLetter || $0.isNumber }) { return i + 1 }   // "♪♪♪", "🎵"
         guard let open = t[i].raw.first, open == "[" || open == "(" else { return nil }
         let close: Character = open == "[" ? "]" : ")"
         for j in i..<min(t.count, i + 5) {
@@ -222,7 +223,7 @@ public final class Cleanup {
             return (s, k - i)
         }
         if first == "a", w(i + 1) == "hundred" { value = 100; used = 2 }
-        else if first == "a" || first == "an", let nx = w(i + 1), ["liter", "gram", "milligram", "unit", "amp", "half"].contains(nx) {
+        else if first == "a" || first == "an", let nx = w(i + 1), ["liter", "leader", "gram", "milligram", "unit", "amp", "half"].contains(nx) {
             return (nx == "half" ? "0.5" : "1", nx == "half" ? 2 : 1)   // "a liter of saline" -> "1 liter"; "a half" -> 0.5
         }
         else if let (v, n) = small(i) {

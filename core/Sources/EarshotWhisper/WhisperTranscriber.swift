@@ -33,7 +33,17 @@ public final class WhisperTranscriber: Transcriber {
 
     deinit { whisper_free(ctx) }
 
+    /// Decodes a chunk. If the result has no speech at all (Whisper's "♪♪♪" in noise,
+    /// often from temperature fallback), the chunk is decoded once more at
+    /// temperature 0 with no fallback, and that result is kept when it has words.
     public func transcribe(_ pcm: [Float], prompt: String?) throws -> [ASRPiece] {
+        let first = try decode(pcm, prompt: prompt, fallback: temperatureFallback)
+        guard temperatureFallback, !first.isEmpty, first.allSatisfy({ ASRFilter.isHallucination($0.text) }) else { return first }
+        let retry = try decode(pcm, prompt: prompt, fallback: false)
+        return retry.contains(where: { !ASRFilter.isHallucination($0.text) }) ? retry : first
+    }
+
+    private func decode(_ pcm: [Float], prompt: String?, fallback: Bool) throws -> [ASRPiece] {
         // whisper needs >= 1 s of audio; pad short chunks with silence
         var audio = pcm
         if audio.count < 16000 + 1600 { audio += [Float](repeating: 0, count: 16000 + 1600 - audio.count) }
@@ -48,7 +58,7 @@ public final class WhisperTranscriber: Transcriber {
         p.no_context = true
         p.single_segment = false
         p.temperature = 0
-        p.temperature_inc = temperatureFallback ? 0.2 : 0   // fallback re-decodes low-confidence windows; whisper.cpp seeds its RNG, so runs repeat
+        p.temperature_inc = fallback ? 0.2 : 0   // fallback re-decodes low-confidence windows; whisper.cpp seeds its RNG, so runs repeat
         p.token_timestamps = true
         p.suppress_blank = true
         p.suppress_nst = true

@@ -261,3 +261,33 @@ final class Round3Tests: XCTestCase {
         XCTAssertTrue(TestEnv.dict.initialPrompt().hasPrefix("EMS call."))
     }
 }
+
+/// Round 4 (data agent re-ran on audio @ 5f434ae).
+final class Round4Tests: XCTestCase {
+    func spo2(_ t: String) -> [String] { extract(t).filter { $0.type == .vitals }.compactMap { $0.fields["spo2"] } }
+
+    func test_R4_1_setHeardForSat() {
+        XCTAssertEqual(spo2("Set 96."), ["96"])
+        XCTAssertEqual(spo2("heart rate 124, ress 24, set 97."), ["97"])
+        XCTAssertEqual(spo2("SAC's coming up, 95."), ["95"])
+        XCTAssertEqual(spo2("Pulse 104, set 95 when we're in air."), ["95"])
+        XCTAssertEqual(spo2("We need to set 30 minutes aside."), [], "'set' only reads as sats where a sat reading belongs")
+        XCTAssertEqual(spo2("I set 90 of them out."), [])
+        XCTAssertTrue(TestEnv.dict.initialPrompt().contains("sats 94"))
+    }
+
+    func test_R4_2_musicNotesAreNotSpeech() {
+        XCTAssertTrue(ASRFilter.isHallucination("♪♪♪♪"))
+        XCTAssertTrue(ASRFilter.isHallucination(" 🎵 ♪ "))
+        XCTAssertFalse(ASRFilter.isHallucination("♪ Second dose, 2 milligrams IV"))
+        let c = Cleanup(dict: TestEnv.dict).clean(seg("♪ Second dose, 2 milligrams IV")).0
+        XCTAssertFalse(c.text.contains("♪"))
+    }
+
+    func test_R4_3_spokenFormDrift() {
+        let o2 = extract("Now we're breather at 15 liters.").first { $0.fields["drug"] == "oxygen" }
+        XCTAssertEqual(o2?.fields["route"], "NRB"); XCTAssertEqual(o2?.fields["dose"], "15")
+        XCTAssertEqual(extract("hung a leader of saline").first { $0.type == .medication }?.fields["dose"], "1")
+        XCTAssertEqual(extract("oxygen 2 leaders nasal cannula").first { $0.fields["drug"] == "oxygen" }?.fields["dose"], "2")
+    }
+}

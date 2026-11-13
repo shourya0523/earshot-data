@@ -163,6 +163,8 @@ public final class RulesExtractor {
         VitalRule(fields: ["resp_rate"], rx: Rx(#"\bbreathing\s*;?\s+(?:rate|at)\s+"# + NF + #"(\d{1,2})\b"#), ranges: [2...40], conf: 0.8),
         VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:tachy|tachycardic|brady|bradycardic|sinus tach|sinus brady|sinus|afib|tachycardia|bradycardia)\s+(?:at|in the|of)\s+(?:about\s+)?(\d{2,3})s?\b"#), ranges: [20...260], conf: 0.85),
         VitalRule(fields: ["spo2"], rx: Rx(#"\b(?:spo2|sats|sat|o2 sat|o2 sats|pulse ox|satting|sating|saturation|saturating|sats are|o2 saturation)\s+"# + NF + #"(\d{2,3})\b(?!\s*(?:lpm|l|liters))"#), ranges: [40...100], conf: 0.9),
+        // ASR hears "sat 95" as "set 95" / "SAC's 95" (review R4-1): only at a sentence start or right after another vital
+        VitalRule(fields: ["spo2"], rx: Rx(#"(?:^|\|\s+|(?:\d{2,3}(?:/\d{2,3})?|room air|ra)\s*;\s+)(?:set|sets|sac|sacs|sac's|satz|sad)\s+"# + NF + #"(\d{2,3})\b(?!\s*(?:lpm|l|liters|minutes|mins|seconds))"#), ranges: [70...100], conf: 0.7, groupOnly: true),
         VitalRule(fields: ["spo2"], rx: Rx(#"\b(\d{2,3})\s*(?:%)\s+(?:on\s+)?(?:room air|ra|\d+\s*lpm|nrb|nc|non rebreather|nasal cannula)"#), ranges: [40...100], conf: 0.85),
         VitalRule(fields: ["glucose"], rx: Rx(#"\b(?:bgl|cbg|glucose|sugar|blood sugar|blood glucose|d stick|dextro|accucheck|accu check|sugars)\s+"# + N + #"(\d{2,3}|high|hi|low|lo)\b"#), ranges: [10...700], conf: 0.88),
         VitalRule(fields: ["gcs"], rx: Rx(#"\bgcs\s+(?:is |of |was |a |at )?(\d{1,2})\b"#), ranges: [3...15], conf: 0.92),
@@ -444,7 +446,8 @@ public final class RulesExtractor {
     }
 
     /// Oxygen named by its device: "non-rebreather at 15 liters", "2 liters nasal cannula".
-    static let o2Devices: [(String, String)] = [("non rebreather", "NRB"), ("nrb", "NRB"), ("nasal cannula", "NC"), ("nasal canula", "NC"), ("blow by", "BLOWBY")]
+    static let o2Devices: [(String, String)] = [("non rebreather", "NRB"), ("nrb", "NRB"), ("now we're breather", "NRB"), ("now we are breather", "NRB"),
+        ("non rib breather", "NRB"), ("non re breather", "NRB"), ("nonrebreather", "NRB"), ("now rebreather", "NRB"), ("non breather", "NRB"), ("nasal cannula", "NC"), ("nasal canula", "NC"), ("blow by", "BLOWBY")]
     func oxygenDevice(_ tt: TokText) -> [Finding] {
         let toks = tt.seg.tokens
         let texts = toks.map(\.text)

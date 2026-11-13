@@ -169,7 +169,7 @@ ROUTES = {
     "IN": (["in", "intranasal", "nasal", "atomized", "mad device", "up the nose", "per nose"], "9927017"),
     "SQ": (["sq", "subq", "sub q", "subcutaneous", "sc", "sub cut"], "9927045"),
     "NEB": (["neb", "nebulized", "nebulizer", "via neb", "hand held neb", "inline neb", "by nebulizer"], "9927071"),
-    "NRB": (["non rebreather", "non-rebreather", "nrb", "via nrb", "via non rebreather"], "9927031"),
+    "NRB": (["non rebreather", "non-rebreather", "nrb", "via nrb", "via non rebreather", "now we're breather", "non rib breather", "nonrebreather"], "9927031"),
     "NC": (["nasal cannula", "nasal canula", "via nasal cannula", "via nc", "cannula"], "9927025"),
     "BVM": (["bvm", "bag valve mask", "via bvm"], "9927065"),
     "CPAP": (["cpap", "on cpap", "via cpap"], "9927067"),
@@ -188,10 +188,10 @@ UNITS = {
     "mcg": (["mcg", "microgram", "micrograms", "mics", "mikes", "micro", "micrograms of", "ug"], "3706015"),
     "g": (["g", "gram", "grams", "gm", "gms"], "3706001"),
     "ml": (["ml", "milliliter", "milliliters", "cc", "ccs", "mls", "mil", "mils"], "3706025"),
-    "l": (["l", "liter", "liters", "litre"], "3706009"),
+    "l": (["l", "liter", "liters", "litre", "leader", "leaders"], "3706009"),
     "meq": (["meq", "milliequivalent", "milliequivalents", "mill equivalents"], "3706019"),
     "units": (["units", "unit", "u", "iu", "international units"], "3706049"),
-    "lpm": (["lpm", "liters per minute", "liters a minute", "l per minute", "liters"], "3706035"),
+    "lpm": (["lpm", "liters per minute", "liters a minute", "l per minute", "liters", "leaders"], "3706035"),
     "mg/kg": (["mg/kg", "milligrams per kilo", "milligrams per kilogram", "migs per kilo", "mg per kg"], "3706039"),
     "mcg/kg": (["mcg/kg", "micrograms per kilo", "mics per kilo", "micrograms per kilogram"], "3706047"),
     "mcg/min": (["mcg/min", "micrograms per minute", "mics a minute"], "3706037"),
@@ -414,7 +414,7 @@ CONTEXT_REQUIRED = sorted({
     "valley um", "at a van", "card is em", "low presser", "leave a fed", "by carb", "bi carb", "kepra", "play vix",
 })
 
-INITIAL_PROMPT = ("EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, RR 20, SpO2 94%, BGL 42, ETCO2 35. "
+INITIAL_PROMPT = ("EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, resps 20, sats 94%, BGL 42, ETCO2 35. "
                   "Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, "
                   "Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. "
                   "12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
@@ -642,7 +642,8 @@ def main():
         "generated_by": "core/tools/build_dictionary.py",
         "terms": terms,
         "initial_prompt_core": PROMPT_CORE,
-        # Sentence-style prompt (dose + route phrases). Measured by the data agent: stock small.en
+        # Sentence-style prompt (dose + route phrases). "sats"/"resps" instead of "SpO2"/"RR" so Whisper
+        # keeps the spoken words (review R4-1: "sat 95" was heard as "set 95"). Measured by the data agent: stock small.en
         # drug-name WER 26.9% vs 38.5% for the bare comma list (eval/BENCHMARK.md, REVIEW round 2).
         "initial_prompt": INITIAL_PROMPT,
     }

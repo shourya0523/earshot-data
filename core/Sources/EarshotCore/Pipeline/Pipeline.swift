@@ -299,7 +299,8 @@ public enum ASRFilter {
     /// that keeps real words is kept whole (raw stays raw; cleanup drops the tags).
     public static func isHallucination(_ s: String) -> Bool {
         let rest = stripTags(s).trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return rest.isEmpty || junk.contains(rest) || rest.allSatisfy { $0.isPunctuation || $0.isWhitespace }
+        // "♪♪♪", "🎵", "..." : no letters or digits at all is not speech (review R4-2)
+        return rest.isEmpty || junk.contains(rest) || !rest.contains(where: { $0.isLetter || $0.isNumber })
     }
 }
 
