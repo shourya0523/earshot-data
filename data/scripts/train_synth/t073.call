@@ -1,0 +1,43 @@
+@call t073 seizure start=04:14:58
+@patient age=18 sex=male weight_kg=77 complaint="seizure" allergies=unknown home_meds=unknown history=unknown
+@traps epilepsy
+RD: Medic 39, respond to convulsions, 18 year old male.  >> dispatch:convulsions "convulsions"
+GAP 2
+M1: Medic 39 on scene.  >> time:eTimes.06 "on scene"
+M2: Watch the step.
+PT: No allergies.
+GAP 11
+TAP knock -
+GAP 11
+GAP 11
+TAP knock -
+GAP 11
+GAP 6
+PT: I'm tired, my tongue hurts.
+GAP 6
+M2: Repeat, sugar's 288, capno's 24.  >> vital:bgl=288 "sugar's 288"; vital:etco2=24 "capno's 24"
+GAP 6
+M2: Okay, breathing at 14, sat 98 percent, GCS 10.  >> vital:rr=14 "breathing at 14"; vital:spo2=98 "sat 98 percent"; vital:gcs=10 "GCS 10"
+GAP 8
+TAP knock +label
+M1: Okay, pain is 9 out of 10.  >> vital:pain=9 "9 out of 10"
+GAP 3
+M1: Stay with me, keep your eyes open.
+BY: No allergies.
+GAP 4
+M1: Get suction.  >> proc:suction "suction"
+GAP 6
+M1: 2 Ativan IV, it's in.  >> med:lorazepam,2,,IV "2 Ativan IV"
+GAP 8
+M2: Get the cot.
+GAP 4
+M1: We're transporting to Valley.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: We need check her sugar.  >> proc:glucose check "check her sugar"
+GAP 2
+M1: Versed 5 mg in the deltoid.  >> med:midazolam,5,mg,IM "Versed 5 mg in the deltoid"
+GAP 8
+M2: Hang tight, partner.
+GAP 6
+M1: Arriving at Valley.  >> time:eTimes.11 "Arriving at"
+KNOCK3

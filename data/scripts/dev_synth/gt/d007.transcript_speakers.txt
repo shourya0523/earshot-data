@@ -1,0 +1,22 @@
+RD: Medic 18, respond to unconscious person, 36 year old female.
+M1: Medic 18 we're on scene.
+M1: Okay, we're going to take care of you.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+PT: I just blacked out.
+M2: Can you tell me what day it is?
+PT: Am I going to be okay?
+M2: How long has this been going on?
+M2: Can you tell me what day it is?
+M1: pain is 3 out of 10.
+M1: Get the cot.
+M1: Let's move on three. One, two, three.
+M1: Let's do monitor.
+M1: Giving 2 of oxygen nasal cannula.
+M2: Doing 12 lead.
+M1: Leaving scene to Good Sam.
+M1: Giving 500 mils of normal saline.
+M1: Second set, pulse is 146, 109 over 40, glucose 146.
+M1: pulse ox 83, resps 17.
+M1: Any allergies?
+M1: Arriving at University.
+M1: Handing off now.

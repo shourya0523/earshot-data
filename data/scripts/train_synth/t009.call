@@ -1,0 +1,47 @@
+@call t009 hypoglycemia start=20:14:15
+@patient age=23 sex=male weight_kg=136 complaint="unresponsive" allergies=unknown home_meds=unknown history=unknown
+@traps hypoglycemia
+RD: Squad 15, you have a unresponsive, 23 year old male.  >> dispatch:unresponsive "unresponsive"
+GAP 4
+M2: Squad 15 on scene.  >> time:eTimes.06 "on scene"
+M2: Grab the stair chair.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 8
+PT: I took my insulin and skipped breakfast.
+GAP 4
+TAP knock +label
+M2: Repeat, sugar 80, sat's 83, breathing is 33.  >> vital:bgl=80 "sugar 80"; vital:spo2=83 "sat's 83"; vital:rr=33 "breathing is 33"
+GAP 6
+M1: Repeat, SpO2 83 percent, pulse is 42.  >> vital:spo2=83 "SpO2 83 percent"; vital:hr=42 "pulse is 42"
+GAP 1
+M1: Can you tell me what day it is?
+PT: No allergies.
+GAP 2
+TAP snap +label
+M1: Drawing up 25 grams of D10 IV.  >> med:dextrose,25,g,IV "Drawing up 25 grams of D10 IV"
+GAP 1
+TAP knock +label
+M1: Giving 15 of insta-glucose.  >> med:oral glucose,15,, "Giving 15 of insta-glucose"
+GAP 8
+TAP snap +label
+M1: 1 glucagon intramuscular, it's in.  >> med:glucagon,1,,IM "1 glucagon intramuscular"
+GAP 8
+M2: I'm going to put some stickers on your chest.
+GAP 11
+TAP snap -
+GAP 11
+GAP 4
+M1: We're transporting to General.  >> time:eTimes.09 "We're transporting"
+GAP 3
+GAP 11
+TAP snap -
+GAP 11
+M1: When did you last eat?
+GAP 2
+M1: Let's do BGL check.  >> proc:glucose check "BGL check"
+GAP 1
+M2: Got 18 gauge.  >> proc:IV access "18 gauge"
+GAP 3
+M1: We're at Memorial.  >> time:eTimes.11 "We're at"
+GAP 11
+M1: Handing off to bed four.  >> time:eTimes.12 "Handing off"

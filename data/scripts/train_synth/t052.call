@@ -1,0 +1,52 @@
+@call t052 trauma start=12:09:27
+@patient age=75 sex=male weight_kg=112 complaint="MVC rollover" allergies=unknown home_meds=unknown history=unknown
+@traps fracture; head injury
+RD: Squad 28, priority two, pedestrian struck, 75 year old male.  >> dispatch:pedestrian struck "pedestrian struck"
+GAP 3
+M2: Squad 28 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Let's move on three. One, two, three.
+BY: Can somebody call my wife?
+GAP 3
+PT: I can't feel my fingers.
+GAP 3
+TAP knock +label
+M1: Okay, sat at 99 percent, GCS's 9.  >> vital:spo2=99 "sat at 99 percent"; vital:gcs=9 "GCS's 9"
+GAP 3
+M1: When did you last eat?
+GAP 1
+TAP snap +label
+M1: Second set, glucose 437, end tidal 27, BP's 113 over 81.  >> vital:bgl=437 "glucose 437"; vital:etco2=27 "end tidal 27"; vital:bp=113/81 "BP's 113 over 81"
+GAP 2
+M2: I gave ket 0.3 IV.  >> med:ketamine,0.3,,IV "I gave ket 0.3 IV"
+GAP 1
+TAP knock +label
+M1: Drawing up 250 mLs of saline IV push.  >> med:normal saline,250,mL,IV "Drawing up 250 mLs of saline IV push"
+GAP 2
+M1: Are you having any trouble breathing?
+BY: Yeah, I take a bunch of pills, my daughter knows.
+GAP 1
+M2: I gave Sublimaze 100 mics through the line.  >> med:fentanyl,100,mcg,IV "I gave Sublimaze 100 mics through the line"
+GAP 2
+M2: Can you squeeze my fingers?
+PT: No allergies.
+GAP 6
+M1: Leaving scene to County.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP button +label
+M1: morphine 4 milligrams through the line.  >> med:morphine,4,mg,IV "morphine 4 milligrams through the line"
+GAP 11
+TAP button -
+GAP 11
+GAP 4
+M1: Can you tell me what day it is?
+GAP 6
+M1: Got traction splint.  >> proc:splinting "traction splint"
+GAP 4
+TAP knock +label
+M1: Okay, heart rate's 77, GCS is 10, breathing is 29.  >> vital:hr=77 "heart rate's 77"; vital:gcs=10 "GCS is 10"; vital:rr=29 "breathing is 29"
+GAP 2
+M1: Arriving at General.  >> time:eTimes.11 "Arriving at"
+GAP 14
+TAP button +label
+M1: Giving report now.  >> time:eTimes.12 "Giving report"
+KNOCK3

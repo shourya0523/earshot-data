@@ -1,0 +1,52 @@
+@call t002 ob start=07:01:25
+@patient age=73 sex=male weight_kg=63 complaint="childbirth" allergies=unknown home_meds=unknown history=unknown
+@traps postpartum hemorrhage
+RD: Rescue 39, priority one, childbirth, 73 year old male.  >> dispatch:childbirth "childbirth"
+GAP 4
+M2: Rescue 39 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: Grab the stair chair.
+BY: I don't know, it just started.
+GAP 6
+PT: My water broke.
+GAP 2
+M2: Did you pass out at all?
+BY: It's getting worse.
+GAP 6
+M1: I'm going to put some stickers on your chest.
+PT: Am I going to be okay?
+GAP 6
+M1: Repeat, pulse ox 94 percent, pain is 8 out of 10.  >> vital:spo2=94 "pulse ox 94 percent"; vital:pain=8 "8 out of 10"
+GAP 4
+M2: Get the cot.
+GAP 8
+M1: Get 20 gauge.  >> proc:IV access "20 gauge"
+GAP 8
+M1: Do you take any medications?
+PT: I feel sick.
+GAP 11
+TAP knock -
+GAP 11
+GAP 2
+M1: Watch the step.
+GAP 3
+M1: Watch the step.
+PT: Am I going to be okay?
+GAP 6
+M1: We're transporting to Saint Vincent's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP button +label
+M1: Giving 1 gram of tranexamic acid IV.  >> med:tranexamic acid,1,g,IV "Giving 1 gram of tranexamic acid IV"
+GAP 3
+TAP button +label
+M1: Okay, heart rate at 110, sugar 430.  >> vital:hr=110 "heart rate at 110"; vital:bgl=430 "sugar 430"
+GAP 1
+TAP button +label
+M2: Giving 10 units of Pitocin IM.  >> med:oxytocin,10,units,IM "Giving 10 units of Pitocin IM"
+GAP 1
+TAP snap +label
+M1: Repeat, sugar 79, pain is 8 out of 10, breathing's 18.  >> vital:bgl=79 "sugar 79"; vital:pain=8 "8 out of 10"; vital:rr=18 "breathing's 18"
+GAP 6
+M1: We're at Riverside.  >> time:eTimes.11 "We're at"
+GAP 8
+TAP button +label
+M1: Handing off to the nurse.  >> time:eTimes.12 "Handing off"

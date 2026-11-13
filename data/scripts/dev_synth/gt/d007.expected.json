@@ -1,0 +1,141 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "36",
+  "sex": "female",
+  "weight_kg": "112",
+  "complaint": "unconscious person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "unconscious person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "3",
+    "hr": "146",
+    "bp": "109/40",
+    "bgl": "146",
+    "spo2": "83",
+    "rr": "17"
+   },
+   "last_vitals": {
+    "pain": "3",
+    "hr": "146",
+    "bp": "109/40",
+    "bgl": "146",
+    "spo2": "83",
+    "rr": "17"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "vasovagal"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 2 NC",
+    "normal saline 500 mL"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "cardiac monitor"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "36",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "unconscious person",
+  "I_injuries_or_information": "unconscious person",
+  "S_signs": {
+   "pain": "3",
+   "hr": "146",
+   "bp": "109/40",
+   "bgl": "146",
+   "spo2": "83",
+   "rr": "17"
+  },
+  "T_treatment": [
+   "oxygen 2 NC",
+   "normal saline 500 mL",
+   "12-lead ECG",
+   "cardiac monitor"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "17:05:07",
+  "eTimes.09": "17:07:32",
+  "eTimes.11": "17:08:19",
+  "eTimes.12": "17:08:33"
+ },
+ "wall_time_seconds": 14,
+ "dispatch_reason": "unconscious person",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "2",
+   "route": "NC"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "17:06:20"
+  },
+  {
+   "name": "hr",
+   "value": "146",
+   "time": "17:07:50"
+  },
+  {
+   "name": "bp",
+   "value": "109/40",
+   "time": "17:07:50"
+  },
+  {
+   "name": "bgl",
+   "value": "146",
+   "time": "17:07:50"
+  },
+  {
+   "name": "spo2",
+   "value": "83",
+   "time": "17:08:06"
+  },
+  {
+   "name": "rr",
+   "value": "17",
+   "time": "17:08:06"
+  }
+ ],
+ "diagnosis_traps": [
+  "vasovagal"
+ ]
+}

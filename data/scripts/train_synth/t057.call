@@ -1,0 +1,43 @@
+@call t057 chest_pain start=19:52:03
+@patient age=88 sex=female weight_kg=87 complaint="chest discomfort" allergies=unknown home_meds=unknown history=unknown
+@traps MI; heart attack
+RD: Rescue 48, priority two, cardiac problem, 88 year old female.  >> dispatch:cardiac problem "cardiac problem"
+GAP 3
+M1: Rescue 48 on scene.  >> time:eTimes.06 "on scene"
+M2: I'm going to put some stickers on your chest.
+GAP 2
+PT: Pressure in my chest.
+GAP 2
+M2: Repeat, sats is 96.  >> vital:spo2=96 "sats is 96"
+GAP 2
+M1: When did you last eat?
+PT: I had something like this last year.
+GAP 2
+GAP 11
+TAP knock -
+GAP 11
+GAP 11
+TAP knock -
+GAP 11
+M2: Vitals, sugar's 166, pain is 6 out of 10, sat at 95 percent.  >> vital:bgl=166 "sugar's 166"; vital:pain=6 "6 out of 10"; vital:spo2=95 "sat at 95 percent"
+GAP 8
+M1: Small poke.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 4
+M1: Do you take any medications?
+PT: It's about an eight.
+GAP 8
+M2: Get 20 in the left hand.  >> proc:IV access "20 in the left hand"
+GAP 3
+M1: We're transporting to Saint Joseph's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Can you tell me what day it is?
+GAP 8
+M1: Drawing up 324 of Bayer chewed.  >> med:aspirin,324,,PO "Drawing up 324 of Bayer chewed"
+GAP 2
+M1: I gave zofran 4 mg IV.  >> med:ondansetron,4,mg,IV "I gave zofran 4 mg IV"
+GAP 8
+M1: Arriving at Saint Joseph's.  >> time:eTimes.11 "Arriving at"
+GAP 9
+TAP button +label
+M1: Handing off now.  >> time:eTimes.12 "Handing off"

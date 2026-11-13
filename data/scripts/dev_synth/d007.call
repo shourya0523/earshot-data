@@ -1,0 +1,51 @@
+@call d007 syncope start=17:04:58
+@patient age=36 sex=female weight_kg=112 complaint="unconscious person" allergies=unknown home_meds=unknown history=unknown
+@traps vasovagal
+RD: Medic 18, respond to unconscious person, 36 year old female.  >> dispatch:unconscious person "unconscious person"
+GAP 4
+M1: Medic 18 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Okay, we're going to take care of you.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 6
+PT: I just blacked out.
+GAP 8
+M2: Can you tell me what day it is?
+PT: Am I going to be okay?
+GAP 3
+M2: How long has this been going on?
+GAP 11
+TAP knock -
+GAP 11
+GAP 3
+M2: Can you tell me what day it is?
+GAP 6
+M1: pain is 3 out of 10.  >> vital:pain=3 "3 out of 10"
+GAP 1
+GAP 11
+TAP snap -
+GAP 11
+M1: Get the cot.
+GAP 8
+M1: Let's move on three. One, two, three.
+GAP 8
+M1: Let's do monitor.  >> proc:cardiac monitor "monitor"
+GAP 6
+M1: Giving 2 of oxygen nasal cannula.  >> med:oxygen,2,,NC "Giving 2 of oxygen nasal cannula"
+GAP 8
+M2: Doing 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 4
+M1: Leaving scene to Good Sam.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP knock +label
+M1: Giving 500 mils of normal saline.  >> med:normal saline,500,mL, "Giving 500 mils of normal saline"
+GAP 8
+TAP snap +label
+M1: Second set, pulse is 146, 109 over 40, glucose 146.  >> vital:hr=146 "pulse is 146"; vital:bp=109/40 "109 over 40"; vital:bgl=146 "glucose 146"
+GAP 8
+M1: pulse ox 83, resps 17.  >> vital:spo2=83 "pulse ox 83"; vital:rr=17 "resps 17"
+GAP 4
+M1: Any allergies?
+GAP 4
+M1: Arriving at University.  >> time:eTimes.11 "Arriving at"
+GAP 12
+M1: Handing off now.  >> time:eTimes.12 "Handing off"

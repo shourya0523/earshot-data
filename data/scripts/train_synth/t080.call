@@ -1,0 +1,52 @@
+@call t080 chest_pain start=20:10:23
+@patient age=33 sex=male weight_kg=77 complaint="cardiac problem" allergies=unknown home_meds=unknown history=unknown
+@traps MI; heart attack
+RD: Ambulance 54, priority two, cardiac problem, 33 year old male.  >> dispatch:cardiac problem "cardiac problem"
+GAP 4
+M1: Ambulance 54 on scene.  >> time:eTimes.06 "on scene"
+M2: Are you having any trouble breathing?
+PT: I feel sick.
+GAP 2
+PT: Pressure in my chest.
+GAP 3
+TAP snap +label
+M1: Vitals, HR's 82, pain is 5 out of 10.  >> vital:hr=82 "HR's 82"; vital:pain=5 "5 out of 10"
+GAP 6
+M2: Do you take any medications?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 8
+M2: Giving 50 of fent.  >> med:fentanyl,50,, "Giving 50 of fent"
+GAP 3
+TAP button +label
+M1: Bayer 324 mg by mouth.  >> med:aspirin,324,mg,PO "Bayer 324 mg by mouth"
+GAP 4
+TAP button +label
+M1: GCS 14.  >> vital:gcs=14 "GCS 14"
+GAP 11
+TAP button -
+GAP 11
+GAP 1
+M1: Any medical history I should know about?
+GAP 1
+M1: How long has this been going on?
+GAP 1
+M1: Do you take any medications?
+GAP 1
+TAP knock +label
+M2: Giving 4 of ondansetron IV.  >> med:ondansetron,4,,IV "Giving 4 of ondansetron IV"
+GAP 2
+M1: Transporting to Saint Joseph's.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: Okay, we're going to take care of you.
+BY: Am I going to be okay?
+GAP 8
+M2: Drawing up 0.4 of NTG SL.  >> med:nitroglycerin,0.4,,SL "Drawing up 0.4 of NTG SL"
+GAP 8
+M1: Get 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 3
+M1: Repeat, end tidal at 46.  >> vital:etco2=46 "end tidal at 46"
+GAP 8
+M1: Arriving at Saint Vincent's.  >> time:eTimes.11 "Arriving at"
+GAP 9
+TAP button +label
+M1: Handing off to the nurse.  >> time:eTimes.12 "Handing off"

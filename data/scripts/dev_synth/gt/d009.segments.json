@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4330,
+  "speaker": "RD",
+  "text": "Squad 28, respond to cardiac arrest, 71 year old female."
+ },
+ {
+  "start_ms": 6824,
+  "end_ms": 8336,
+  "speaker": "M2",
+  "text": "Squad 28 we're on scene."
+ },
+ {
+  "start_ms": 8676,
+  "end_ms": 10239,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 16594,
+  "end_ms": 18284,
+  "speaker": "M2",
+  "text": "Okay, capno 43."
+ },
+ {
+  "start_ms": 46396,
+  "end_ms": 47216,
+  "speaker": "M2",
+  "text": "Get bag him."
+ },
+ {
+  "start_ms": 55439,
+  "end_ms": 58522,
+  "speaker": "M2",
+  "text": "Okay, ETCO2 34, GCS at 11."
+ },
+ {
+  "start_ms": 59967,
+  "end_ms": 61786,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 63255,
+  "end_ms": 64600,
+  "speaker": "M1",
+  "text": "Let's do compressions."
+ },
+ {
+  "start_ms": 67376,
+  "end_ms": 68672,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 69499,
+  "end_ms": 71096,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 75405,
+  "end_ms": 78737,
+  "speaker": "M1",
+  "text": "Pushing amiodarone, 150 milligrams IV."
+ },
+ {
+  "start_ms": 81083,
+  "end_ms": 82286,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 83999,
+  "end_ms": 85674,
+  "speaker": "M1",
+  "text": "We're transporting to Good Sam."
+ },
+ {
+  "start_ms": 89204,
+  "end_ms": 92427,
+  "speaker": "M2",
+  "text": "I gave Nexterone 300 milligrams IO."
+ },
+ {
+  "start_ms": 97267,
+  "end_ms": 98521,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 105040,
+  "end_ms": 105952,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 106538,
+  "end_ms": 107880,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 117831,
+  "end_ms": 122916,
+  "speaker": "M1",
+  "text": "Second set, end tidal 31, pressure's 91 over 51."
+ },
+ {
+  "start_ms": 131497,
+  "end_ms": 132656,
+  "speaker": "M1",
+  "text": "We're at Northside."
+ },
+ {
+  "start_ms": 142039,
+  "end_ms": 143726,
+  "speaker": "M1",
+  "text": "Transfer of care to bed four."
+ }
+]

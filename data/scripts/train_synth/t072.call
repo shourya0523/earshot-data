@@ -1,0 +1,48 @@
+@call t072 svt start=12:23:26
+@patient age=81 sex=male weight_kg=135 complaint="palpitations" allergies=unknown home_meds=unknown history=unknown
+@traps SVT
+RD: Medic 48, priority two, rapid heart rate, 81 year old male.  >> dispatch:rapid heart rate "rapid heart rate"
+GAP 3
+M2: Medic 48 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: When did you last eat?
+GAP 8
+PT: My heart won't slow down.
+GAP 1
+M1: I'm going to put some stickers on your chest.
+PT: It's getting worse.
+GAP 1
+M2: Doing modified valsalva.  >> proc:vagal maneuver "modified valsalva"
+GAP 4
+M2: Giving 10 mils of saline through the line.  >> med:normal saline,10,mL,IV "Giving 10 mils of saline through the line"
+GAP 3
+M2: Repeat, capno 55, pulse 64.  >> vital:etco2=55 "capno 55"; vital:hr=64 "pulse 64"
+GAP 3
+M1: Second set, GCS 8.  >> vital:gcs=8 "GCS 8"
+GAP 4
+TAP button +label
+M2: Repeat, BP is 110 over 75.  >> vital:bp=110/75 "BP is 110 over 75"
+GAP 4
+M2: Drawing up 6 milligrams of adenocard IV.  >> med:adenosine,6,mg,IV "Drawing up 6 milligrams of adenocard IV"
+GAP 11
+TAP button -
+GAP 11
+GAP 1
+M1: Transporting to Valley.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: Any allergies?
+GAP 11
+TAP button -
+GAP 11
+PT: I don't know, it just started.
+GAP 3
+M2: Okay, we're going to take care of you.
+GAP 1
+M2: Did you pass out at all?
+BY: I feel sick.
+GAP 6
+M1: I gave adenocard 12 IV.  >> med:adenosine,12,,IV "I gave adenocard 12 IV"
+GAP 3
+M1: Arriving at Valley.  >> time:eTimes.11 "Arriving at"
+GAP 10
+TAP button +label
+M1: Giving report to the nurse.  >> time:eTimes.12 "Giving report"

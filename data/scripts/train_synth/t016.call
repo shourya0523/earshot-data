@@ -1,0 +1,49 @@
+@call t016 sepsis start=17:32:49
+@patient age=73 sex=male weight_kg=109 complaint="sick person" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Rescue 58, priority one, fever, 73 year old male.  >> dispatch:fever "fever"
+GAP 4
+M2: Rescue 58 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+GAP 1
+PT: I'm freezing.
+GAP 2
+TAP snap +label
+M2: APAP 1000 PO.  >> med:acetaminophen,1000,,PO "APAP 1000 PO"
+GAP 4
+M2: Any allergies?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 3
+M1: I'm going to put some stickers on your chest.
+GAP 4
+M1: Let's do saline lock.  >> proc:IV access "saline lock"
+GAP 8
+M1: Can you squeeze my fingers?
+PT: Please don't cut my shirt.
+GAP 8
+M1: 500 mils lactated ringers, it's in.  >> med:lactated Ringer's,500,mL, "500 mils lactated ringers"
+GAP 4
+GAP 11
+TAP knock -
+GAP 11
+M1: Are you having any trouble breathing?
+GAP 3
+M1: Get twelve lead.  >> proc:12-lead ECG "twelve lead"
+GAP 6
+M1: We're transporting to Riverside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Drawing up 1000 of normal saline IV push.  >> med:normal saline,1000,,IV "Drawing up 1000 of normal saline IV push"
+GAP 8
+TAP snap +label
+M1: pressure is 119 over 88, glucose's 255.  >> vital:bp=119/88 "pressure is 119 over 88"; vital:bgl=255 "glucose's 255"
+GAP 2
+M2: When did you last eat?
+GAP 1
+TAP knock +label
+M2: Okay, glucose 233.  >> vital:bgl=233 "glucose 233"
+GAP 2
+M1: Arriving at Good Sam.  >> time:eTimes.11 "Arriving at"
+GAP 15
+TAP button +label
+M1: Transfer of care now.  >> time:eTimes.12 "Transfer of care"

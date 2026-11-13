@@ -1,0 +1,54 @@
+@call t017 copd start=19:34:01
+@patient age=50 sex=female weight_kg=88 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps COPD exacerbation
+RD: Medic 15, you have a difficulty breathing, 50 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 3
+M1: Medic 15 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Hang tight, partner.
+PT: It's about an eight.
+GAP 8
+PT: My breathing's bad today.
+GAP 1
+TAP button +label
+M2: breathing 32.  >> vital:rr=32 "breathing 32"
+GAP 2
+M1: Repeat, pain is 9 out of 10.  >> vital:pain=9 "9 out of 10"
+GAP 3
+M1: Can you tell me what day it is?
+BY: I feel sick.
+GAP 3
+M1: Can you tell me what day it is?
+BY: I had something like this last year.
+GAP 2
+TAP snap +label
+M1: Vitals, glucose at 162, sat is 97 on room air, resps's 18.  >> vital:bgl=162 "glucose at 162"; vital:spo2=97 "sat is 97 on room air"; vital:rr=18 "resps's 18"
+GAP 3
+GAP 11
+TAP knock -
+GAP 11
+GAP 11
+TAP knock -
+GAP 11
+M2: Got CPAP.  >> proc:CPAP "CPAP"
+GAP 4
+M1: magnesium sulfate 2 grams IV.  >> med:magnesium sulfate,2,g,IV "magnesium sulfate 2 grams IV"
+GAP 8
+TAP button +label
+M1: Pushing oxygen, 4 L nasal cannula.  >> med:oxygen,4,L/min,NC "Pushing oxygen, 4 L nasal cannula"
+GAP 6
+M2: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+GAP 2
+M1: We're transporting to Memorial.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M2: 3 mils duo neb nebulized, it's in.  >> med:albuterol/ipratropium,3,mL,neb "3 mils duo neb nebulized"
+GAP 4
+M2: Stay with me, keep your eyes open.
+GAP 2
+TAP snap +label
+M1: methylprednisolone 125 intravenous.  >> med:methylprednisolone,125,,IV "methylprednisolone 125 intravenous"
+GAP 1
+M1: Do you take any medications?
+PT: Can somebody call my wife?
+GAP 8
+M1: Arrived at Valley.  >> time:eTimes.11 "Arrived at"

@@ -1,0 +1,55 @@
+@call t022 arrest start=02:15:10
+@patient age=62 sex=male weight_kg=70 complaint="unconscious not breathing" allergies=unknown home_meds=unknown history=unknown
+@traps cardiac arrest
+RD: Rescue 39, priority one, cardiac arrest, 62 year old male.  >> dispatch:cardiac arrest "cardiac arrest"
+GAP 3
+M2: Rescue 39 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Any medical history I should know about?
+BY: Please don't cut my shirt.
+GAP 8
+M1: Let's do humeral IO.  >> proc:IO access "humeral IO"
+GAP 6
+M1: I'm going to put some stickers on your chest.
+PT: Am I going to be okay?
+GAP 8
+TAP knock +label
+M1: Giving 150 of amio through the line.  >> med:amiodarone,150,,IV "Giving 150 of amio through the line"
+GAP 3
+M1: Grab the stair chair.
+PT: Can somebody call my wife?
+GAP 4
+M1: Can you tell me what day it is?
+PT: No allergies.
+GAP 4
+TAP button +label
+M1: Repeat, pain is 9 out of 10, capno 19, sugar is 287.  >> vital:pain=9 "9 out of 10"; vital:etco2=19 "capno 19"; vital:bgl=287 "sugar is 287"
+GAP 2
+TAP snap +label
+M1: I gave epi pen 1 IO.  >> med:epinephrine,1,,IO "I gave epi pen 1 IO"
+GAP 4
+TAP button +label
+M1: Second set, pain is 10 out of 10.  >> vital:pain=10 "10 out of 10"
+GAP 1
+M1: Transporting to Good Sam.  >> time:eTimes.09 "Transporting"
+GAP 11
+TAP button -
+GAP 11
+GAP 11
+TAP button -
+GAP 11
+GAP 3
+M2: Repeat, GCS 10.  >> vital:gcs=10 "GCS 10"
+GAP 8
+M1: Get the cot.
+PT: Please don't cut my shirt.
+GAP 4
+M2: We need bag her.  >> proc:BVM ventilation "bag her"
+GAP 3
+M2: Small poke.
+PT: Can somebody call my wife?
+GAP 3
+M1: We're at Mercy.  >> time:eTimes.11 "We're at"
+GAP 11
+TAP button +label
+M1: Transfer of care complete.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

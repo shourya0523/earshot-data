@@ -1,0 +1,46 @@
+@call d009 arrest start=18:17:26
+@patient age=71 sex=female weight_kg=45 complaint="unconscious not breathing" allergies=unknown home_meds=unknown history=unknown
+@traps cardiac arrest
+RD: Squad 28, respond to cardiac arrest, 71 year old female.  >> dispatch:cardiac arrest "cardiac arrest"
+GAP 2
+M2: Squad 28 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: Are you having any trouble breathing?
+GAP 4
+TAP snap +label
+M2: Okay, capno 43.  >> vital:etco2=43 "capno 43"
+GAP 11
+TAP knock -
+GAP 11
+GAP 4
+M2: Get bag him.  >> proc:BVM ventilation "bag him"
+GAP 6
+TAP button +label
+M2: Okay, ETCO2 34, GCS at 11.  >> vital:etco2=34 "ETCO2 34"; vital:gcs=11 "GCS at 11"
+GAP 1
+M1: Stay with me, keep your eyes open.
+GAP 1
+M1: Let's do compressions.  >> proc:CPR "compressions"
+GAP 2
+M1: Grab the stair chair.
+BY: I had something like this last year.
+GAP 4
+M1: Pushing amiodarone, 150 milligrams IV.  >> med:amiodarone,150,mg,IV "Pushing amiodarone, 150 milligrams IV"
+GAP 2
+M1: Any allergies?
+GAP 1
+M1: We're transporting to Good Sam.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M2: I gave Nexterone 300 milligrams IO.  >> med:amiodarone,300,mg,IO "I gave Nexterone 300 milligrams IO"
+GAP 4
+M1: When did you last eat?
+GAP 6
+M1: Small poke.
+BY: Can somebody call my wife?
+GAP 8
+TAP button +label
+M1: Second set, end tidal 31, pressure's 91 over 51.  >> vital:etco2=31 "end tidal 31"; vital:bp=91/51 "pressure's 91 over 51"
+GAP 8
+M1: We're at Northside.  >> time:eTimes.11 "We're at"
+GAP 9
+M1: Transfer of care to bed four.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

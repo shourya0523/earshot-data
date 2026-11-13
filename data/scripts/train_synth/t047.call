@@ -1,0 +1,50 @@
+@call t047 burn start=09:54:31
+@patient age=44 sex=male weight_kg=109 complaint="structure fire" allergies=unknown home_meds=unknown history=unknown
+@traps smoke inhalation
+RD: Squad 20, respond to burns, 44 year old male.  >> dispatch:burns "burns"
+GAP 3
+M2: Squad 20 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: When did you last eat?
+PT: I had something like this last year.
+GAP 3
+PT: My arms are on fire.
+GAP 1
+M1: I gave lactated ringers 1000 mils IV.  >> med:lactated Ringer's,1000,mL,IV "I gave lactated ringers 1000 mils IV"
+GAP 2
+M2: We need dressing.  >> proc:bandaging "dressing"
+GAP 4
+M1: Can you squeeze my fingers?
+GAP 2
+M1: Get the cot.
+BY: Can somebody call my wife?
+GAP 3
+M2: We need cooling.  >> proc:cooling "cooling"
+GAP 8
+M2: How long has this been going on?
+PT: I had something like this last year.
+GAP 2
+M1: Second set, GCS 10.  >> vital:gcs=10 "GCS 10"
+GAP 3
+M1: Watch the step.
+BY: I don't know, it just started.
+GAP 11
+TAP button -
+GAP 11
+GAP 1
+M1: We're transporting to County.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Okay, we're going to take care of you.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 1
+TAP button +label
+M1: pain is 6 out of 10, 151 over 101.  >> vital:pain=6 "6 out of 10"; vital:bp=151/101 "151 over 101"
+GAP 2
+M2: Any allergies?
+GAP 8
+TAP knock +label
+M1: Drawing up 5 of hydroxocobalamin IV push.  >> med:hydroxocobalamin,5,,IV "Drawing up 5 of hydroxocobalamin IV push"
+GAP 2
+M1: Arrived at Riverside.  >> time:eTimes.11 "Arrived at"
+GAP 9
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"
+KNOCK3

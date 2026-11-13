@@ -1,0 +1,45 @@
+@call t053 chest_pain start=12:53:34
+@patient age=29 sex=female weight_kg=82 complaint="chest discomfort" allergies=unknown home_meds=unknown history=unknown
+@traps MI; heart attack
+RD: Medic 26, priority two, cardiac problem, 29 year old female.  >> dispatch:cardiac problem "cardiac problem"
+GAP 4
+M1: Medic 26 on scene.  >> time:eTimes.06 "on scene"
+M1: Can you squeeze my fingers?
+GAP 3
+PT: My chest is squeezing.
+GAP 8
+TAP button +label
+M1: Okay, glucose's 230.  >> vital:bgl=230 "glucose's 230"
+GAP 6
+M1: Let's do pads on.  >> proc:cardiac monitor "pads on"
+GAP 2
+M2: Drawing up 324 migs of aspirin.  >> med:aspirin,324,mg, "Drawing up 324 migs of aspirin"
+GAP 1
+TAP snap +label
+M2: Vitals, pain is 7 out of 10.  >> vital:pain=7 "7 out of 10"
+GAP 1
+M1: Small poke.
+PT: I feel sick.
+GAP 4
+M1: Who's your doctor?
+BY: Can somebody call my wife?
+GAP 1
+M2: Second set, resp rate's 16.  >> vital:rr=16 "resp rate's 16"
+GAP 8
+M1: Transporting to Saint Joseph's.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP knock +label
+M1: I gave Nitrostat 0.4 milligrams sublingual.  >> med:nitroglycerin,0.4,mg,SL "I gave Nitrostat 0.4 milligrams sublingual"
+GAP 6
+GAP 11
+TAP knock -
+GAP 11
+M2: Did you pass out at all?
+GAP 1
+M2: Can you squeeze my fingers?
+PT: I feel sick.
+GAP 3
+M1: When did you last eat?
+GAP 2
+M1: Arriving at Memorial.  >> time:eTimes.11 "Arriving at"
+KNOCK3

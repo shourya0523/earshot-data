@@ -1,0 +1,51 @@
+@call t019 burn start=02:22:33
+@patient age=91 sex=female weight_kg=80 complaint="burns" allergies=unknown home_meds=unknown history=unknown
+@traps smoke inhalation
+RD: Ambulance 5, priority one, structure fire, 91 year old female.  >> dispatch:structure fire "structure fire"
+GAP 4
+M1: Ambulance 5 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Can you tell me what day it is?
+BY: Can somebody call my wife?
+GAP 6
+PT: I breathed in smoke.
+GAP 3
+M2: Any allergies?
+GAP 11
+TAP snap -
+GAP 11
+PT: It's about an eight.
+GAP 1
+M1: Doing bandage.  >> proc:bandaging "bandage"
+GAP 6
+M1: Let's move on three. One, two, three.
+PT: Please don't cut my shirt.
+GAP 2
+M1: glucose is 247.  >> vital:bgl=247 "glucose is 247"
+GAP 6
+TAP snap +label
+M1: Pushing hydroxocobalamin, 5 intravenous.  >> med:hydroxocobalamin,5,,IV "Pushing hydroxocobalamin, 5 intravenous"
+GAP 8
+M2: Sublimaze 1 atomized.  >> med:fentanyl,1,,IN "Sublimaze 1 atomized"
+GAP 8
+M1: We need cold packs.  >> proc:cooling "cold packs"
+GAP 1
+M1: Did you pass out at all?
+GAP 2
+M1: Can you tell me what day it is?
+BY: Please don't cut my shirt.
+GAP 8
+M1: Leaving scene to General.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP button +label
+M1: Repeat, pain is 5 out of 10, respirations is 14.  >> vital:pain=5 "5 out of 10"; vital:rr=14 "respirations is 14"
+GAP 6
+M1: Vitals, GCS at 10.  >> vital:gcs=10 "GCS at 10"
+GAP 8
+M1: Watch the step.
+GAP 8
+M1: Did you pass out at all?
+GAP 2
+M1: I gave lactated ringers 1000 mLs intravenous.  >> med:lactated Ringer's,1000,mL,IV "I gave lactated ringers 1000 mLs intravenous"
+GAP 3
+M1: We're at County.  >> time:eTimes.11 "We're at"
+KNOCK3

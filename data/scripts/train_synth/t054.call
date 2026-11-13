@@ -1,0 +1,49 @@
+@call t054 ob start=01:47:55
+@patient age=31 sex=male weight_kg=107 complaint="pregnancy problem" allergies=unknown home_meds=unknown history=unknown
+@traps postpartum hemorrhage
+RD: Ambulance 37, priority one, childbirth, 31 year old male.  >> dispatch:childbirth "childbirth"
+GAP 4
+M2: Ambulance 37 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: Are you having any trouble breathing?
+GAP 4
+PT: My water broke.
+GAP 3
+M2: Who's your doctor?
+PT: I had something like this last year.
+GAP 3
+M1: Get established IV.  >> proc:IV access "established IV"
+GAP 2
+TAP snap +label
+M1: Repeat, respirations is 25, ETCO2's 47, blood pressure 193 over 119.  >> vital:rr=25 "respirations is 25"; vital:etco2=47 "ETCO2's 47"; vital:bp=193/119 "blood pressure 193 over 119"
+GAP 11
+TAP button -
+GAP 11
+GAP 3
+M1: I'm going to put some stickers on your chest.
+PT: It's getting worse.
+GAP 6
+M1: Any allergies?
+GAP 6
+M1: Are you having any trouble breathing?
+GAP 3
+M1: Who's your doctor?
+PT: Please don't cut my shirt.
+GAP 3
+M2: Vitals, pain is 9 out of 10, GCS at 15, capno is 43.  >> vital:pain=9 "9 out of 10"; vital:gcs=15 "GCS at 15"; vital:etco2=43 "capno is 43"
+GAP 1
+M1: Leaving scene to County.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP button +label
+M1: Pushing oxytocin, 10 units in the thigh.  >> med:oxytocin,10,units,IM "Pushing oxytocin, 10 units in the thigh"
+GAP 8
+M2: Any medical history I should know about?
+GAP 3
+TAP button +label
+M1: Repeat, resp rate is 25.  >> vital:rr=25 "resp rate is 25"
+GAP 6
+M1: I gave tranexamic acid 1 grams.  >> med:tranexamic acid,1,g, "I gave tranexamic acid 1 grams"
+GAP 2
+M1: We're at University.  >> time:eTimes.11 "We're at"
+GAP 5
+TAP button +label
+M1: Handing off to the nurse.  >> time:eTimes.12 "Handing off"

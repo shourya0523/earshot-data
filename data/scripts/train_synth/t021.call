@@ -1,0 +1,48 @@
+@call t021 chf start=13:28:53
+@patient age=63 sex=male weight_kg=87 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps CHF; pulmonary edema
+RD: Squad 6, respond to difficulty breathing, 63 year old male.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 2
+M1: Squad 6 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Any allergies?
+GAP 2
+PT: I've been sleeping in the recliner.
+GAP 3
+M1: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+GAP 2
+M2: Hang tight, partner.
+PT: I don't know, it just started.
+GAP 2
+M2: 0.8 migs Nitrostat SL, it's in.  >> med:nitroglycerin,0.8,mg,SL "0.8 migs Nitrostat SL"
+GAP 2
+M1: We need c pap.  >> proc:CPAP "c pap"
+GAP 6
+M1: Let's move on three. One, two, three.
+PT: Can somebody call my wife?
+GAP 4
+M2: Okay, BP's 160 over 100.  >> vital:bp=160/100 "BP's 160 over 100"
+GAP 3
+M1: Any allergies?
+BY: Am I going to be okay?
+GAP 6
+M1: Doing twelve lead.  >> proc:12-lead ECG "twelve lead"
+GAP 8
+M2: Any allergies?
+GAP 4
+M1: Transporting to Riverside.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP knock +label
+M1: Drawing up 0.4 milligrams of Nitrolingual under the tongue.  >> med:nitroglycerin,0.4,mg,SL "Drawing up 0.4 milligrams of Nitrolingual under the tongue"
+GAP 4
+TAP snap +label
+M1: Drawing up 40 of lasix through the line.  >> med:furosemide,40,,IV "Drawing up 40 of lasix through the line"
+GAP 2
+M2: Okay, we're going to take care of you.
+GAP 4
+GAP 11
+TAP snap -
+GAP 11
+M2: rate's 40, end tidal 35.  >> vital:hr=40 "rate's 40"; vital:etco2=35 "end tidal 35"
+GAP 8
+M1: We're at Valley.  >> time:eTimes.11 "We're at"

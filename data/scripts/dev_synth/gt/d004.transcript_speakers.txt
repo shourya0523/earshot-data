@@ -1,0 +1,18 @@
+RD: Ambulance 22, respond to diabetic problem, 73 year old male.
+M2: Ambulance 22 arriving on scene.
+M2: Any medical history I should know about?
+PT: I took my insulin and skipped breakfast.
+M2: Watch the step.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M2: Can you squeeze my fingers?
+M2: 15 gram glucose gel by mouth, it's in.
+M2: Doing finger stick.
+M2: Okay, blood sugar at 36, GCS's 10.
+M1: Okay, pain is 4 out of 10, SpO2 97, rate's 140.
+M2: Pushing glucagon, 1 migs in the thigh.
+M1: Leaving scene to Good Sam.
+M1: Grab the stair chair.
+M1: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+M1: D10 25 gram intravenous.
+M1: We're at Saint Vincent's.

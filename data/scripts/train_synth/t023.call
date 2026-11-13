@@ -1,0 +1,48 @@
+@call t023 seizure start=17:17:47
+@patient age=24 sex=male weight_kg=84 complaint="seizure" allergies=unknown home_meds=unknown history=unknown
+@traps epilepsy
+RD: Squad 6, you have a convulsions, 24 year old male.  >> dispatch:convulsions "convulsions"
+GAP 2
+M1: Squad 6 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Did you pass out at all?
+BY: Can somebody call my wife?
+GAP 1
+PT: I'm tired, my tongue hurts.
+GAP 1
+TAP knock +label
+M2: versed 2.5 atomized.  >> med:midazolam,2.5,,IN "versed 2.5 atomized"
+GAP 3
+M2: Okay, we're going to take care of you.
+PT: I feel sick.
+GAP 6
+M1: I gave ativan 2 migs IV.  >> med:lorazepam,2,mg,IV "I gave ativan 2 migs IV"
+GAP 1
+M1: Let's do nasal airway.  >> proc:NPA "nasal airway"
+GAP 3
+M1: Second set, rate 79, sugar at 182, pulse ox's 100 on room air.  >> vital:hr=79 "rate 79"; vital:bgl=182 "sugar at 182"; vital:spo2=100 "pulse ox's 100 on room air"
+GAP 2
+TAP button +label
+M1: Versed 5 mg IM.  >> med:midazolam,5,mg,IM "Versed 5 mg IM"
+GAP 11
+TAP knock -
+GAP 11
+GAP 8
+M1: breathing 20, heart rate 42.  >> vital:rr=20 "breathing 20"; vital:hr=42 "heart rate 42"
+GAP 8
+TAP button +label
+M2: Okay, resp rate's 10.  >> vital:rr=10 "resp rate's 10"
+GAP 2
+M1: Leaving scene to Mercy.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: When did you last eat?
+GAP 2
+M1: How long has this been going on?
+PT: I had something like this last year.
+GAP 2
+TAP knock +label
+M1: Pushing Valium, 10 rectal.  >> med:diazepam,10,,PR "Pushing Valium, 10 rectal"
+GAP 2
+M1: Let's do BGL check.  >> proc:glucose check "BGL check"
+GAP 1
+M1: We're at Northside.  >> time:eTimes.11 "We're at"
+KNOCK3

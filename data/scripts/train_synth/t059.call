@@ -1,0 +1,44 @@
+@call t059 seizure start=03:45:11
+@patient age=23 sex=male weight_kg=77 complaint="seizure" allergies=unknown home_meds=unknown history=unknown
+@traps epilepsy
+RD: Rescue 59, respond to seizure, 23 year old male.  >> dispatch:seizure "seizure"
+GAP 4
+M1: Rescue 59 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: Okay, we're going to take care of you.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 8
+GAP 11
+TAP knock -
+GAP 11
+PT: I'm tired, my tongue hurts.
+GAP 2
+M1: We need suction.  >> proc:suction "suction"
+GAP 1
+M1: Drawing up 2 of Ativan through the line.  >> med:lorazepam,2,,IV "Drawing up 2 of Ativan through the line"
+GAP 8
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+GAP 4
+M1: Okay, we're going to take care of you.
+GAP 2
+TAP button +label
+M2: Repeat, blood pressure is 180 over 131, GCS at 14, rate 88.  >> vital:bp=180/131 "blood pressure is 180 over 131"; vital:gcs=14 "GCS at 14"; vital:hr=88 "rate 88"
+GAP 6
+M2: pain is 2 out of 10.  >> vital:pain=2 "2 out of 10"
+GAP 6
+TAP knock +label
+M2: Giving 2.5 milligrams of versed intranasal.  >> med:midazolam,2.5,mg,IN "Giving 2.5 milligrams of versed intranasal"
+GAP 3
+M1: Transporting to Good Sam.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP knock +label
+M2: Repeat, blood sugar is 210, GCS is 15.  >> vital:bgl=210 "blood sugar is 210"; vital:gcs=15 "GCS is 15"
+GAP 1
+M1: Can you squeeze my fingers?
+GAP 4
+M1: Got nasal airway.  >> proc:NPA "nasal airway"
+GAP 3
+M1: Did you pass out at all?
+PT: Please don't cut my shirt.
+GAP 2
+M1: Arrived at Good Sam.  >> time:eTimes.11 "Arrived at"

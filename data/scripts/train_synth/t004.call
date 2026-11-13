@@ -1,0 +1,46 @@
+@call t004 stroke start=16:54:10
+@patient age=62 sex=female weight_kg=114 complaint="stroke" allergies=unknown home_meds=unknown history=unknown
+@traps CVA; TIA
+RD: Squad 46, priority two, stroke, 62 year old female.  >> dispatch:stroke "stroke"
+GAP 4
+M2: Squad 46 on scene.  >> time:eTimes.06 "on scene"
+M2: Can you squeeze my fingers?
+PT: It's about an eight.
+GAP 3
+PT: Words aren't coming out right.
+GAP 2
+M1: Can you squeeze my fingers?
+PT: I feel sick.
+GAP 4
+M2: How long has this been going on?
+BY: Am I going to be okay?
+GAP 3
+TAP snap +label
+M1: SpO2 at 100 percent.  >> vital:spo2=100 "SpO2 at 100 percent"
+GAP 6
+M1: Any allergies?
+PT: I don't know, it just started.
+GAP 1
+M2: Second set, glucose's 66.  >> vital:bgl=66 "glucose's 66"
+GAP 1
+M2: Doing finger stick.  >> proc:glucose check "finger stick"
+GAP 3
+M1: Can you squeeze my fingers?
+BY: It's getting worse.
+GAP 4
+M1: Leaving scene to General.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: Drawing up 2 of non-rebreather nasal cannula.  >> med:oxygen,2,,NC "Drawing up 2 of non-rebreather nasal cannula"
+GAP 8
+GAP 11
+TAP button -
+GAP 11
+M2: Any allergies?
+GAP 4
+M2: Who's your doctor?
+BY: It's about an eight.
+GAP 8
+M1: Arriving at Good Sam.  >> time:eTimes.11 "Arriving at"
+GAP 12
+TAP button +label
+M1: Handing off complete.  >> time:eTimes.12 "Handing off"

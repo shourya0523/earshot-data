@@ -1,0 +1,48 @@
+@call t010 trauma start=05:29:41
+@patient age=88 sex=male weight_kg=125 complaint="assault" allergies=unknown home_meds=unknown history=unknown
+@traps fracture; head injury
+RD: Rescue 56, you have a assault, 88 year old male.  >> dispatch:assault "assault"
+GAP 2
+M2: Rescue 56 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Get the cot.
+PT: I feel sick.
+GAP 8
+PT: My arm, don't touch my arm.
+GAP 8
+M1: Watch the step.
+GAP 2
+M1: We need backboard.  >> proc:spinal motion restriction "backboard"
+GAP 6
+M2: Any allergies?
+PT: I had something like this last year.
+GAP 6
+M1: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+GAP 3
+M2: Second set, sats's 89.  >> vital:spo2=89 "sats's 89"
+GAP 4
+M1: 4 mg morphine, it's in.  >> med:morphine,4,mg, "4 mg morphine"
+GAP 2
+M1: Giving 0.3 milligrams per kilo of Ketalar IV push.  >> med:ketamine,0.3,mg/kg,IV "Giving 0.3 milligrams per kilo of Ketalar IV push"
+GAP 3
+M1: Hang tight, partner.
+GAP 11
+TAP knock -
+GAP 11
+BY: Am I going to be okay?
+GAP 1
+M1: Any allergies?
+GAP 2
+M1: Leaving scene to the trauma center.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: normal saline 250 through the line.  >> med:normal saline,250,,IV "normal saline 250 through the line"
+GAP 4
+M2: I gave tranexamic acid 1 gram IV.  >> med:tranexamic acid,1,g,IV "I gave tranexamic acid 1 gram IV"
+GAP 3
+M2: Repeat, pulse's 93, pulse ox's 90, respirations's 28.  >> vital:hr=93 "pulse's 93"; vital:spo2=90 "pulse ox's 90"; vital:rr=28 "respirations's 28"
+GAP 6
+M2: Let's do binder.  >> proc:pelvic binder "binder"
+GAP 3
+M1: We're at County.  >> time:eTimes.11 "We're at"
+GAP 13
+M1: Transfer of care complete.  >> time:eTimes.12 "Transfer of care"

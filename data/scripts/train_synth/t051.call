@@ -1,0 +1,53 @@
+@call t051 copd start=15:59:39
+@patient age=73 sex=female weight_kg=75 complaint="shortness of breath" allergies=unknown home_meds=unknown history=unknown
+@traps COPD exacerbation
+RD: Squad 27, respond to difficulty breathing, 73 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 2
+M2: Squad 27 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+GAP 6
+PT: My breathing's bad today.
+GAP 1
+M2: Can you tell me what day it is?
+BY: It's getting worse.
+GAP 2
+TAP snap +label
+M1: Pushing mag, 2 gram intravenous.  >> med:magnesium sulfate,2,g,IV "Pushing mag, 2 gram intravenous"
+GAP 4
+TAP button +label
+M1: Repeat, pulse at 61, blood sugar at 37.  >> vital:hr=61 "pulse at 61"; vital:bgl=37 "blood sugar at 37"
+GAP 1
+TAP button +label
+M1: Drawing up 3 cc's of DuoNeb.  >> med:albuterol/ipratropium,3,mL, "Drawing up 3 cc's of DuoNeb"
+GAP 3
+M2: Can you tell me what day it is?
+GAP 4
+M1: How long has this been going on?
+GAP 1
+M2: We need c pap.  >> proc:CPAP "c pap"
+GAP 8
+M1: Vitals, sugar's 384, SpO2 is 97 percent.  >> vital:bgl=384 "sugar's 384"; vital:spo2=97 "SpO2 is 97 percent"
+GAP 4
+M2: Watch the step.
+BY: Am I going to be okay?
+GAP 2
+M1: Transporting to Riverside.  >> time:eTimes.09 "Transporting"
+GAP 11
+TAP knock -
+GAP 11
+GAP 3
+TAP button +label
+M1: solu-medrol 125 milligrams.  >> med:methylprednisolone,125,mg, "solu-medrol 125 milligrams"
+GAP 3
+M2: Any medical history I should know about?
+GAP 6
+M1: Any allergies?
+BY: I don't know, it just started.
+GAP 6
+M1: Pushing non-rebreather, 4 nasal cannula.  >> med:oxygen,4,,NC "Pushing non-rebreather, 4 nasal cannula"
+GAP 2
+M1: Arrived at Saint Joseph's.  >> time:eTimes.11 "Arrived at"
+GAP 11
+TAP button +label
+M1: Transfer of care to bed four.  >> time:eTimes.12 "Transfer of care"

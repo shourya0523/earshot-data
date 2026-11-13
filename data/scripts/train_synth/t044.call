@@ -1,0 +1,48 @@
+@call t044 svt start=06:51:42
+@patient age=44 sex=male weight_kg=120 complaint="rapid heart rate" allergies=unknown home_meds=unknown history=unknown
+@traps SVT
+RD: Medic 52, respond to palpitations, 44 year old male.  >> dispatch:palpitations "palpitations"
+GAP 4
+M2: Medic 52 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Do you take any medications?
+GAP 3
+GAP 11
+TAP knock -
+GAP 11
+PT: My heart won't slow down.
+GAP 2
+M2: Small poke.
+GAP 1
+M1: Are you having any trouble breathing?
+PT: I had something like this last year.
+GAP 1
+TAP snap +label
+M1: Repeat, heart rate at 131, resp rate at 34.  >> vital:hr=131 "heart rate at 131"; vital:rr=34 "resp rate at 34"
+GAP 8
+M1: Any medical history I should know about?
+GAP 6
+M1: BP's 193 over 120, pulse ox at 85 percent, pain is 2 out of 10.  >> vital:bp=193/120 "BP's 193 over 120"; vital:spo2=85 "pulse ox at 85 percent"; vital:pain=2 "2 out of 10"
+GAP 4
+TAP button +label
+M1: Vitals, pain is 7 out of 10.  >> vital:pain=7 "7 out of 10"
+GAP 6
+TAP knock +label
+M1: Drawing up 12 migs of Adenocard IV push.  >> med:adenosine,12,mg,IV "Drawing up 12 migs of Adenocard IV push"
+GAP 1
+GAP 11
+TAP button -
+GAP 11
+M1: Leaving scene to General.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Who's your doctor?
+PT: It's getting worse.
+GAP 6
+TAP snap +label
+M2: Pushing normal saline, 10 cc's through the line.  >> med:normal saline,10,mL,IV "Pushing normal saline, 10 cc's through the line"
+GAP 1
+M1: Got transmit the 12.  >> proc:12-lead ECG "transmit the 12"
+GAP 8
+M1: Arriving at Mercy.  >> time:eTimes.11 "Arriving at"
+GAP 9
+TAP button +label
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"

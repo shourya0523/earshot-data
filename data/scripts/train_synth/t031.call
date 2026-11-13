@@ -1,0 +1,51 @@
+@call t031 trauma start=16:41:39
+@patient age=83 sex=female weight_kg=99 complaint="fall" allergies=unknown home_meds=unknown history=unknown
+@traps fracture; head injury
+RD: Ambulance 32, respond to fall, 83 year old female.  >> dispatch:fall "fall"
+GAP 2
+M2: Ambulance 32 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Get the cot.
+PT: Please don't cut my shirt.
+GAP 1
+PT: My arm, don't touch my arm.
+GAP 2
+TAP button +label
+M1: Repeat, pulse at 83, pulse ox's 92 on room air.  >> vital:hr=83 "pulse at 83"; vital:spo2=92 "pulse ox's 92 on room air"
+GAP 11
+TAP knock -
+GAP 11
+GAP 3
+M1: Do you take any medications?
+GAP 2
+M1: Stay with me, keep your eyes open.
+GAP 8
+M1: Small poke.
+GAP 3
+M1: Stay with me, keep your eyes open.
+BY: No allergies.
+GAP 2
+TAP snap +label
+M2: Vitals, BGL is 374.  >> vital:bgl=374 "BGL is 374"
+GAP 1
+TAP knock +label
+M2: 167 over 128, resp rate's 13.  >> vital:bp=167/128 "167 over 128"; vital:rr=13 "resp rate's 13"
+GAP 8
+M1: Hang tight, partner.
+PT: Can somebody call my wife?
+GAP 8
+M1: normal saline 250 IV.  >> med:normal saline,250,,IV "normal saline 250 IV"
+GAP 3
+M1: We're transporting to Riverside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Let's do packing.  >> proc:wound packing "packing"
+GAP 3
+TAP knock +label
+M2: Giving 100 mcg of fentanyl IV push.  >> med:fentanyl,100,mcg,IV "Giving 100 mcg of fentanyl IV push"
+GAP 8
+M1: Watch the step.
+BY: Can somebody call my wife?
+GAP 8
+TAP button +label
+M1: 1 grams TXA IV, it's in.  >> med:tranexamic acid,1,g,IV "1 grams TXA IV"
+GAP 4
+M1: Arriving at Valley.  >> time:eTimes.11 "Arriving at"

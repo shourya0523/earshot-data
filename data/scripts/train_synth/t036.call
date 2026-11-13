@@ -1,0 +1,54 @@
+@call t036 allergy start=14:14:10
+@patient age=56 sex=male weight_kg=117 complaint="allergic reaction" allergies=unknown home_meds=unknown history=unknown
+@traps anaphylaxis
+RD: Medic 33, priority one, bee sting, 56 year old male.  >> dispatch:bee sting "bee sting"
+GAP 3
+M2: Medic 33 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: On a scale of zero to ten, how bad is it?
+PT: I don't know, it just started.
+GAP 2
+PT: My lips are swelling.
+GAP 4
+TAP button +label
+M1: 25 milligrams diphenhydramine IV, it's in.  >> med:diphenhydramine,25,mg,IV "25 milligrams diphenhydramine IV"
+GAP 2
+TAP button +label
+M2: Vitals, sats is 95 on room air, blood sugar is 352, respirations is 9.  >> vital:spo2=95 "sats is 95 on room air"; vital:bgl=352 "blood sugar is 352"; vital:rr=9 "respirations is 9"
+GAP 8
+GAP 11
+TAP button -
+GAP 11
+M1: Giving 125 mg of Solu-Medrol IV push.  >> med:methylprednisolone,125,mg,IV "Giving 125 mg of Solu-Medrol IV push"
+GAP 4
+M2: Grab the stair chair.
+GAP 2
+M1: Get nebulizer treatment.  >> proc:nebulizer "nebulizer treatment"
+GAP 1
+M1: When did you last eat?
+BY: It's about an eight.
+GAP 6
+TAP snap +label
+M2: Vitals, sat is 87.  >> vital:spo2=87 "sat is 87"
+GAP 8
+TAP button +label
+M2: 0.3 epinephrine in the deltoid, it's in.  >> med:epinephrine,0.3,,IM "0.3 epinephrine in the deltoid"
+GAP 3
+M1: Hang tight, partner.
+GAP 8
+M1: Leaving scene to University.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Doing got a line.  >> proc:IV access "got a line"
+GAP 4
+M1: I'm going to put some stickers on your chest.
+BY: Am I going to be okay?
+GAP 6
+TAP snap +label
+M2: Giving 10 of epinephrine IV.  >> med:epinephrine,10,,IV "Giving 10 of epinephrine IV"
+GAP 6
+M2: blood pressure's 136 over 92, sugar at 197.  >> vital:bp=136/92 "blood pressure's 136 over 92"; vital:bgl=197 "sugar at 197"
+GAP 1
+M1: Arrived at Riverside.  >> time:eTimes.11 "Arrived at"
+GAP 13
+TAP button +label
+M1: Transfer of care to bed four.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

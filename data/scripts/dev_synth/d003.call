@@ -1,0 +1,48 @@
+@call d003 nausea start=07:17:51
+@patient age=35 sex=male weight_kg=115 complaint="abdominal pain" allergies=unknown home_meds=unknown history=unknown
+@traps appendicitis; kidney stone
+RD: Rescue 23, priority two, abdominal pain, 35 year old male.  >> dispatch:abdominal pain "abdominal pain"
+GAP 3
+M2: Rescue 23 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Get the cot.
+BY: Please don't cut my shirt.
+GAP 1
+PT: My stomach is killing me.
+GAP 6
+M1: On a scale of zero to ten, how bad is it?
+GAP 6
+M1: Can you squeeze my fingers?
+BY: No allergies.
+GAP 3
+TAP snap +label
+M1: Repeat, resp rate 14.  >> vital:rr=14 "resp rate 14"
+GAP 2
+M1: I gave zofran 4 ODT.  >> med:ondansetron,4,,ODT "I gave zofran 4 ODT"
+GAP 2
+TAP knock +label
+M1: saline 1000 cc's through the line.  >> med:normal saline,1000,mL,IV "saline 1000 cc's through the line"
+GAP 8
+M1: Second set, capno at 52, HR 91, blood pressure 123 over 65.  >> vital:etco2=52 "capno at 52"; vital:hr=91 "HR 91"; vital:bp=123/65 "blood pressure 123 over 65"
+GAP 1
+M1: Let's move on three. One, two, three.
+BY: I don't know, it just started.
+GAP 3
+TAP snap +label
+M1: Vitals, resps at 12.  >> vital:rr=12 "resps at 12"
+GAP 4
+M1: Leaving scene to Saint Joseph's.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Can you tell me what day it is?
+GAP 6
+M1: Let's do line.  >> proc:IV access "line"
+GAP 6
+GAP 11
+TAP knock -
+GAP 11
+M2: Giving 4 migs of zofran IV push.  >> med:ondansetron,4,mg,IV "Giving 4 migs of zofran IV push"
+GAP 1
+TAP snap +label
+M1: Drawing up 15 milligrams of ketorolac IV push.  >> med:ketorolac,15,mg,IV "Drawing up 15 milligrams of ketorolac IV push"
+GAP 8
+M1: Arriving at Saint Joseph's.  >> time:eTimes.11 "Arriving at"
+KNOCK3

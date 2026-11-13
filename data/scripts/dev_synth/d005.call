@@ -1,0 +1,45 @@
+@call d005 syncope start=09:13:15
+@patient age=78 sex=female weight_kg=73 complaint="fainting" allergies=unknown home_meds=unknown history=unknown
+@traps vasovagal
+RD: Squad 26, respond to fainting, 78 year old female.  >> dispatch:fainting "fainting"
+GAP 2
+M2: Squad 26 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+GAP 8
+PT: I just blacked out.
+GAP 3
+GAP 11
+TAP snap -
+GAP 11
+GAP 11
+TAP snap -
+GAP 11
+M2: rate at 126.  >> vital:hr=126 "rate at 126"
+GAP 3
+M2: GCS 12.  >> vital:gcs=12 "GCS 12"
+GAP 4
+M2: How long has this been going on?
+BY: I don't know, it just started.
+GAP 8
+M2: Doing on the monitor.  >> proc:cardiac monitor "on the monitor"
+GAP 4
+M1: Stay with me, keep your eyes open.
+PT: I don't know, it just started.
+GAP 6
+M1: We need check her sugar.  >> proc:glucose check "check her sugar"
+GAP 1
+M1: Second set, sat is 89.  >> vital:spo2=89 "sat is 89"
+GAP 1
+M1: Leaving scene to Mercy.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP button +label
+M1: I gave saline 500 mils IV push.  >> med:normal saline,500,mL,IV "I gave saline 500 mils IV push"
+GAP 4
+M2: oxygen 2 liters nasal cannula.  >> med:oxygen,2,L/min,NC "oxygen 2 liters nasal cannula"
+GAP 2
+M2: Did you pass out at all?
+GAP 6
+M1: Arrived at Saint Joseph's.  >> time:eTimes.11 "Arrived at"
+GAP 6
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"

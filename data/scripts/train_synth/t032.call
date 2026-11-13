@@ -1,0 +1,53 @@
+@call t032 chf start=00:42:48
+@patient age=20 sex=female weight_kg=122 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps CHF; pulmonary edema
+RD: Medic 25, priority two, difficulty breathing, 20 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 3
+M2: Medic 25 on scene.  >> time:eTimes.06 "on scene"
+M1: Hang tight, partner.
+GAP 4
+PT: I woke up and couldn't breathe.
+GAP 2
+M2: Got see pap.  >> proc:CPAP "see pap"
+GAP 1
+M1: NTG 0.4 migs.  >> med:nitroglycerin,0.4,mg, "NTG 0.4 migs"
+GAP 1
+M1: When did you last eat?
+GAP 4
+GAP 11
+TAP snap -
+GAP 11
+TAP button +label
+M1: Lasix 40 migs IV push.  >> med:furosemide,40,mg,IV "Lasix 40 migs IV push"
+GAP 3
+M2: Okay, resp rate 19, GCS 14, sat 89 percent.  >> vital:rr=19 "resp rate 19"; vital:gcs=14 "GCS 14"; vital:spo2=89 "sat 89 percent"
+GAP 1
+M2: Hang tight, partner.
+BY: Can somebody call my wife?
+GAP 3
+M2: Doing transmit the 12.  >> proc:12-lead ECG "transmit the 12"
+GAP 4
+M1: Okay, we're going to take care of you.
+BY: I don't know, it just started.
+GAP 1
+TAP snap +label
+M1: I gave nitro 0.8 milligrams SL.  >> med:nitroglycerin,0.8,mg,SL "I gave nitro 0.8 milligrams SL"
+GAP 1
+M1: Leaving scene to Mercy.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Okay, breathing at 30, sats is 82 percent.  >> vital:rr=30 "breathing at 30"; vital:spo2=82 "sats is 82 percent"
+GAP 3
+M2: Can you squeeze my fingers?
+GAP 11
+TAP button -
+GAP 11
+GAP 1
+M1: Hang tight, partner.
+GAP 4
+M1: Let's move on three. One, two, three.
+BY: I feel sick.
+GAP 1
+M1: We're at University.  >> time:eTimes.11 "We're at"
+GAP 8
+TAP button +label
+M1: Giving report to bed four.  >> time:eTimes.12 "Giving report"

@@ -1,0 +1,53 @@
+@call t035 sepsis start=10:27:40
+@patient age=24 sex=female weight_kg=48 complaint="sick person" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Ambulance 32, priority two, fever, 24 year old female.  >> dispatch:fever "fever"
+GAP 2
+M1: Ambulance 32 on scene.  >> time:eTimes.06 "on scene"
+M1: Small poke.
+GAP 11
+TAP button -
+GAP 11
+PT: I don't know, it just started.
+GAP 4
+PT: I'm freezing.
+GAP 8
+M1: I'm going to put some stickers on your chest.
+GAP 6
+M1: Can you tell me what day it is?
+PT: I had something like this last year.
+GAP 2
+M2: Doing 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 2
+M1: We need 20 gauge.  >> proc:IV access "20 gauge"
+GAP 1
+M1: normal saline 1000 intravenous.  >> med:normal saline,1000,,IV "normal saline 1000 intravenous"
+GAP 8
+M1: When did you last eat?
+PT: Am I going to be okay?
+GAP 2
+M2: Do you take any medications?
+PT: Can somebody call my wife?
+GAP 6
+M2: Any allergies?
+PT: Please don't cut my shirt.
+GAP 1
+TAP knock +label
+M1: Okay, breathing at 21, rate at 44.  >> vital:rr=21 "breathing at 21"; vital:hr=44 "rate at 44"
+GAP 2
+M1: We're transporting to Saint Vincent's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP button +label
+M1: lactated ringers 500 mils through the line.  >> med:lactated Ringer's,500,mL,IV "lactated ringers 500 mils through the line"
+GAP 1
+M1: Hang tight, partner.
+GAP 2
+M1: Okay, BGL's 447, sat 97 percent, pain is 3 out of 10.  >> vital:bgl=447 "BGL's 447"; vital:spo2=97 "sat 97 percent"; vital:pain=3 "3 out of 10"
+GAP 8
+TAP button +label
+M1: 1000 mg acetaminophen by mouth, it's in.  >> med:acetaminophen,1000,mg,PO "1000 mg acetaminophen by mouth"
+GAP 2
+M1: Arriving at University.  >> time:eTimes.11 "Arriving at"
+GAP 5
+TAP button +label
+M1: Handing off complete.  >> time:eTimes.12 "Handing off"

@@ -1,0 +1,129 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "71",
+  "sex": "female",
+  "weight_kg": "45",
+  "complaint": "unconscious not breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "unconscious not breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "43",
+    "gcs": "11",
+    "bp": "91/51"
+   },
+   "last_vitals": {
+    "etco2": "31",
+    "gcs": "11",
+    "bp": "91/51"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "cardiac arrest"
+   ]
+  },
+  "P": {
+   "medications": [
+    "amiodarone 150 mg IV",
+    "amiodarone 300 mg IO"
+   ],
+   "procedures": [
+    "BVM ventilation",
+    "CPR"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "71",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "cardiac arrest",
+  "I_injuries_or_information": "unconscious not breathing",
+  "S_signs": {
+   "etco2": "43",
+   "gcs": "11",
+   "bp": "91/51"
+  },
+  "T_treatment": [
+   "amiodarone 150 mg IV",
+   "amiodarone 300 mg IO",
+   "BVM ventilation",
+   "CPR"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "18:17:32",
+  "eTimes.09": "18:18:49",
+  "eTimes.11": "18:19:37",
+  "eTimes.12": "18:19:48"
+ },
+ "wall_time_seconds": 11,
+ "dispatch_reason": "cardiac arrest",
+ "medications": [
+  {
+   "drug": "amiodarone",
+   "dose": "150",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "amiodarone",
+   "dose": "300",
+   "unit": "mg",
+   "route": "IO"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "43",
+   "time": "18:17:41"
+  },
+  {
+   "name": "etco2",
+   "value": "34",
+   "time": "18:18:20"
+  },
+  {
+   "name": "gcs",
+   "value": "11",
+   "time": "18:18:20"
+  },
+  {
+   "name": "etco2",
+   "value": "31",
+   "time": "18:19:22"
+  },
+  {
+   "name": "bp",
+   "value": "91/51",
+   "time": "18:19:22"
+  }
+ ],
+ "diagnosis_traps": [
+  "cardiac arrest"
+ ]
+}

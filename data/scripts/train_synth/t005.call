@@ -1,0 +1,50 @@
+@call t005 allergy start=06:25:10
+@patient age=92 sex=female weight_kg=127 complaint="allergic reaction" allergies=unknown home_meds=unknown history=unknown
+@traps anaphylaxis
+RD: Squad 55, respond to allergic reaction, 92 year old female.  >> dispatch:allergic reaction "allergic reaction"
+GAP 3
+M1: Squad 55 on scene.  >> time:eTimes.06 "on scene"
+M2: Any allergies?
+GAP 4
+PT: I'm itchy all over.
+GAP 11
+TAP knock -
+GAP 11
+GAP 3
+M2: Let's do saline lock.  >> proc:IV access "saline lock"
+GAP 11
+TAP button -
+GAP 11
+GAP 2
+M1: Are you having any trouble breathing?
+GAP 6
+TAP snap +label
+M2: Drawing up 25 milligrams of benadryl through the line.  >> med:diphenhydramine,25,mg,IV "Drawing up 25 milligrams of benadryl through the line"
+GAP 4
+M1: Giving 0.3 migs of epinephrine.  >> med:epinephrine,0.3,mg, "Giving 0.3 migs of epinephrine"
+GAP 2
+M1: Any medical history I should know about?
+PT: I feel sick.
+GAP 4
+M2: Get the cot.
+PT: I don't know, it just started.
+GAP 2
+M2: Any medical history I should know about?
+PT: Please don't cut my shirt.
+GAP 8
+M1: Transporting to Valley.  >> time:eTimes.09 "Transporting"
+GAP 3
+M1: We need breathing treatment.  >> proc:nebulizer "breathing treatment"
+GAP 3
+TAP knock +label
+M2: Repeat, 88 over 42, GCS's 14.  >> vital:bp=88/42 "88 over 42"; vital:gcs=14 "GCS's 14"
+GAP 6
+TAP knock +label
+M2: 10 epi, it's in.  >> med:epinephrine,10,, "10 epi"
+GAP 2
+TAP snap +label
+M2: Okay, GCS at 8, pressure 102 over 55, pulse ox at 86 percent.  >> vital:gcs=8 "GCS at 8"; vital:bp=102/55 "pressure 102 over 55"; vital:spo2=86 "pulse ox at 86 percent"
+GAP 8
+M1: Arriving at Mercy.  >> time:eTimes.11 "Arriving at"
+GAP 8
+M1: Giving report now.  >> time:eTimes.12 "Giving report"

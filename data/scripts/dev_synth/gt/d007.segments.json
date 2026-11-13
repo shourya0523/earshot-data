@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5353,
+  "speaker": "RD",
+  "text": "Medic 18, respond to unconscious person, 36 year old female."
+ },
+ {
+  "start_ms": 9983,
+  "end_ms": 11648,
+  "speaker": "M1",
+  "text": "Medic 18 we're on scene."
+ },
+ {
+  "start_ms": 12531,
+  "end_ms": 14518,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 14902,
+  "end_ms": 17998,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 24526,
+  "end_ms": 26038,
+  "speaker": "PT",
+  "text": "I just blacked out."
+ },
+ {
+  "start_ms": 34934,
+  "end_ms": 37613,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 38403,
+  "end_ms": 40023,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 43495,
+  "end_ms": 45918,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 73625,
+  "end_ms": 76024,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 82763,
+  "end_ms": 84193,
+  "speaker": "M1",
+  "text": "pain is 3 out of 10."
+ },
+ {
+  "start_ms": 109337,
+  "end_ms": 110140,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 119008,
+  "end_ms": 121675,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 130077,
+  "end_ms": 131086,
+  "speaker": "M1",
+  "text": "Let's do monitor."
+ },
+ {
+  "start_ms": 137751,
+  "end_ms": 139948,
+  "speaker": "M1",
+  "text": "Giving 2 of oxygen nasal cannula."
+ },
+ {
+  "start_ms": 148568,
+  "end_ms": 150048,
+  "speaker": "M2",
+  "text": "Doing 12 lead."
+ },
+ {
+  "start_ms": 154367,
+  "end_ms": 155821,
+  "speaker": "M1",
+  "text": "Leaving scene to Good Sam."
+ },
+ {
+  "start_ms": 161178,
+  "end_ms": 163557,
+  "speaker": "M1",
+  "text": "Giving 500 mils of normal saline."
+ },
+ {
+  "start_ms": 173730,
+  "end_ms": 180084,
+  "speaker": "M1",
+  "text": "Second set, pulse is 146, 109 over 40, glucose 146."
+ },
+ {
+  "start_ms": 188978,
+  "end_ms": 191541,
+  "speaker": "M1",
+  "text": "pulse ox 83, resps 17."
+ },
+ {
+  "start_ms": 196414,
+  "end_ms": 197335,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 201863,
+  "end_ms": 203141,
+  "speaker": "M1",
+  "text": "Arriving at University."
+ },
+ {
+  "start_ms": 215444,
+  "end_ms": 216461,
+  "speaker": "M1",
+  "text": "Handing off now."
+ }
+]

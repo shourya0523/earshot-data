@@ -1,0 +1,48 @@
+@call t033 burn start=03:12:02
+@patient age=38 sex=female weight_kg=132 complaint="burns" allergies=unknown home_meds=unknown history=unknown
+@traps smoke inhalation
+RD: Medic 39, respond to structure fire, 38 year old female.  >> dispatch:structure fire "structure fire"
+GAP 4
+M1: Medic 39 we're on scene.  >> time:eTimes.06 "we're on scene"
+GAP 11
+TAP snap -
+GAP 11
+M1: Let's move on three. One, two, three.
+BY: I feel sick.
+GAP 6
+PT: My arms are on fire.
+GAP 8
+M1: Giving 1000 mLs of lactated ringers.  >> med:lactated Ringer's,1000,mL, "Giving 1000 mLs of lactated ringers"
+GAP 2
+M1: Stay with me, keep your eyes open.
+PT: I don't know, it just started.
+GAP 1
+M2: Any medical history I should know about?
+GAP 4
+M1: Cyanokit 5 gram through the line.  >> med:hydroxocobalamin,5,g,IV "Cyanokit 5 gram through the line"
+GAP 3
+M1: Vitals, ETCO2's 31, pulse's 57.  >> vital:etco2=31 "ETCO2's 31"; vital:hr=57 "pulse's 57"
+GAP 1
+M1: Hang tight, partner.
+GAP 4
+M1: Get the cot.
+GAP 11
+TAP button -
+GAP 11
+GAP 8
+M1: Transporting to Saint Vincent's.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: We need cooling.  >> proc:cooling "cooling"
+GAP 8
+TAP button +label
+M2: Repeat, blood pressure is 81 over 50, sugar is 186, pain is 5 out of 10.  >> vital:bp=81/50 "blood pressure is 81 over 50"; vital:bgl=186 "sugar is 186"; vital:pain=5 "5 out of 10"
+GAP 8
+TAP snap +label
+M1: Pushing fentanyl, 1 mics per kilo intranasal.  >> med:fentanyl,1,mcg/kg,IN "Pushing fentanyl, 1 mics per kilo intranasal"
+GAP 3
+M1: Doing dressing.  >> proc:bandaging "dressing"
+GAP 4
+M1: We're at Good Sam.  >> time:eTimes.11 "We're at"
+GAP 11
+TAP button +label
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"

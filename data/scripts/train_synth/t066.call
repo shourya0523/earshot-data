@@ -1,0 +1,47 @@
+@call t066 chf start=05:24:21
+@patient age=47 sex=female weight_kg=83 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps CHF; pulmonary edema
+RD: Squad 16, respond to difficulty breathing, 47 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 3
+M1: Squad 16 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: On a scale of zero to ten, how bad is it?
+GAP 4
+PT: I woke up and couldn't breathe.
+GAP 2
+M2: Are you having any trouble breathing?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 2
+M1: Get the cot.
+PT: No allergies.
+GAP 4
+M2: Any allergies?
+GAP 6
+TAP snap +label
+M1: 40 mg lasix IV push, it's in.  >> med:furosemide,40,mg,IV "40 mg lasix IV push"
+GAP 2
+M2: Drawing up 0.8 of nitro under the tongue.  >> med:nitroglycerin,0.8,,SL "Drawing up 0.8 of nitro under the tongue"
+GAP 6
+M1: Okay, we're going to take care of you.
+PT: It's getting worse.
+GAP 1
+TAP knock +label
+M2: Repeat, pain is 7 out of 10.  >> vital:pain=7 "7 out of 10"
+GAP 4
+M1: Let's do 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 4
+M1: We're transporting to Mercy.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP knock +label
+M2: Drawing up 0.4 of NTG sublingual.  >> med:nitroglycerin,0.4,,SL "Drawing up 0.4 of NTG sublingual"
+GAP 3
+M1: Repeat, pain is 4 out of 10.  >> vital:pain=4 "4 out of 10"
+GAP 8
+GAP 11
+TAP snap -
+GAP 11
+M2: Can you squeeze my fingers?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 1
+M1: Let's move on three. One, two, three.
+GAP 4
+M1: Arriving at Riverside.  >> time:eTimes.11 "Arriving at"

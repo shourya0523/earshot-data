@@ -1,0 +1,36 @@
+@call t050 stroke start=20:27:25
+@patient age=69 sex=male weight_kg=95 complaint="weakness one side" allergies=unknown home_meds=unknown history=unknown
+@traps CVA; TIA
+RD: Medic 33, priority two, weakness one side, 69 year old male.  >> dispatch:weakness one side "weakness one side"
+GAP 4
+M2: Medic 33 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Are you having any trouble breathing?
+BY: Can somebody call my wife?
+GAP 1
+PT: Words aren't coming out right.
+GAP 3
+M1: Are you having any trouble breathing?
+PT: Please don't cut my shirt.
+GAP 3
+M1: Hang tight, partner.
+GAP 6
+TAP knock +label
+M1: non-rebreather 2 nasal cannula.  >> med:oxygen,2,,NC "non-rebreather 2 nasal cannula"
+GAP 8
+M2: Let's move on three. One, two, three.
+BY: It's getting worse.
+GAP 2
+TAP snap +label
+M1: Repeat, 119 over 74, pain is 5 out of 10, glucose's 250.  >> vital:bp=119/74 "119 over 74"; vital:pain=5 "5 out of 10"; vital:bgl=250 "glucose's 250"
+GAP 8
+GAP 11
+TAP snap -
+GAP 11
+M1: We're transporting to Riverside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP knock +label
+M2: Okay, ETCO2 is 18, BP's 135 over 60.  >> vital:etco2=18 "ETCO2 is 18"; vital:bp=135/60 "BP's 135 over 60"
+GAP 1
+M2: Let's do established IV.  >> proc:IV access "established IV"
+GAP 1
+M1: Arriving at General.  >> time:eTimes.11 "Arriving at"

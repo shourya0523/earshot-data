@@ -1,0 +1,48 @@
+@call t056 svt start=02:04:38
+@patient age=86 sex=female weight_kg=84 complaint="rapid heart rate" allergies=unknown home_meds=unknown history=unknown
+@traps SVT
+RD: Rescue 1, you have a palpitations, 86 year old female.  >> dispatch:palpitations "palpitations"
+GAP 4
+M2: Rescue 1 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Watch the step.
+PT: I don't know, it just started.
+GAP 2
+PT: It feels like it's fluttering.
+GAP 4
+M1: Any allergies?
+PT: I had something like this last year.
+GAP 1
+M2: Vitals, BGL's 331, pain is 8 out of 10.  >> vital:bgl=331 "BGL's 331"; vital:pain=8 "8 out of 10"
+GAP 2
+GAP 11
+TAP knock -
+GAP 11
+TAP button +label
+M1: Drawing up 6 of adenosine intravenous.  >> med:adenosine,6,,IV "Drawing up 6 of adenosine intravenous"
+GAP 4
+TAP knock +label
+M2: Okay, GCS's 10, pain is 8 out of 10.  >> vital:gcs=10 "GCS's 10"; vital:pain=8 "8 out of 10"
+GAP 8
+TAP knock +label
+M1: GCS 10, pressure at 126 over 57, pain is 7 out of 10.  >> vital:gcs=10 "GCS 10"; vital:bp=126/57 "pressure at 126 over 57"; vital:pain=7 "7 out of 10"
+GAP 4
+M2: Let's do vagal.  >> proc:vagal maneuver "vagal"
+GAP 4
+M1: We're transporting to County.  >> time:eTimes.09 "We're transporting"
+GAP 11
+TAP snap -
+GAP 11
+GAP 3
+M1: Small poke.
+GAP 3
+M1: Can you squeeze my fingers?
+PT: Can somebody call my wife?
+GAP 3
+TAP button +label
+M1: Giving 10 mils of saline IV push.  >> med:normal saline,10,mL,IV "Giving 10 mils of saline IV push"
+GAP 8
+M1: Arrived at Northside.  >> time:eTimes.11 "Arrived at"
+GAP 11
+TAP button +label
+M1: Giving report now.  >> time:eTimes.12 "Giving report"
+KNOCK3

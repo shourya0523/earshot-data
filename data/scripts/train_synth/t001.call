@@ -1,0 +1,48 @@
+@call t001 copd start=14:30:41
+@patient age=33 sex=female weight_kg=93 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps COPD exacerbation
+RD: Medic 17, priority one, difficulty breathing, 33 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 2
+M2: Medic 17 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: How long has this been going on?
+PT: Can somebody call my wife?
+GAP 6
+PT: My breathing's bad today.
+GAP 2
+TAP button +label
+M2: Repeat, pain is 6 out of 10.  >> vital:pain=6 "6 out of 10"
+GAP 6
+M2: Any allergies?
+BY: Can somebody call my wife?
+GAP 6
+TAP knock +label
+M2: SpO2 at 95, GCS at 10.  >> vital:spo2=95 "SpO2 at 95"; vital:gcs=10 "GCS at 10"
+GAP 1
+TAP button +label
+M2: Giving 4 liters of non-rebreather.  >> med:oxygen,4,L/min, "Giving 4 liters of non-rebreather"
+GAP 6
+M1: I'm going to put some stickers on your chest.
+GAP 11
+TAP snap -
+GAP 11
+GAP 11
+TAP snap -
+GAP 11
+BY: I had something like this last year.
+GAP 4
+M1: I gave methylprednisolone 125 IV push.  >> med:methylprednisolone,125,,IV "I gave methylprednisolone 125 IV push"
+GAP 4
+M1: We're transporting to Mercy.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Got c pap.  >> proc:CPAP "c pap"
+GAP 4
+M1: Get the cot.
+PT: I feel sick.
+GAP 6
+M1: Second set, GCS's 10, SpO2's 84, BGL's 204.  >> vital:gcs=10 "GCS's 10"; vital:spo2=84 "SpO2's 84"; vital:bgl=204 "BGL's 204"
+GAP 8
+M1: Arrived at Valley.  >> time:eTimes.11 "Arrived at"
+GAP 10
+TAP button +label
+M1: Transfer of care now.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

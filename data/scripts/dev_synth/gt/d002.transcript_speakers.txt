@@ -1,0 +1,24 @@
+RD: Squad 12, you have a bee sting, 85 year old female.
+M2: Squad 12 we're on scene.
+M2: When did you last eat?
+BY: I had something like this last year.
+PT: I'm itchy all over.
+M1: Got nebulizer treatment.
+M1: I'm going to put some stickers on your chest.
+M2: Okay, blood pressure 169 over 98, breathing is 20, sat at 100 on room air.
+M2: Stay with me, keep your eyes open.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: Pushing breathing treatment, 2.5.
+M1: How long has this been going on?
+M1: Drawing up 25 of diphenhydramine through the line.
+M1: When did you last eat?
+PT: It's about an eight.
+M2: Repeat, 104 over 40, resp rate 35.
+M1: Leaving scene to Memorial.
+M2: Got saline lock.
+M2: Any allergies?
+BY: No allergies.
+M2: Okay, pressure 181 over 137, heart rate's 54.
+M1: Did you pass out at all?
+M1: We're at Riverside.
+M1: Handing off to bed four.

@@ -1,0 +1,41 @@
+@call t067 stroke start=04:14:29
+@patient age=18 sex=female weight_kg=116 complaint="stroke" allergies=unknown home_meds=unknown history=unknown
+@traps CVA; TIA
+RD: Medic 53, priority two, stroke, 18 year old female.  >> dispatch:stroke "stroke"
+GAP 2
+M2: Medic 53 on scene.  >> time:eTimes.06 "on scene"
+M2: I'm going to put some stickers on your chest.
+GAP 1
+PT: My hand won't work.
+GAP 3
+M2: Get the cot.
+GAP 11
+TAP knock -
+GAP 11
+GAP 1
+M2: Okay, pulse ox at 82 percent.  >> vital:spo2=82 "pulse ox at 82 percent"
+GAP 1
+M2: Drawing up 2 L of non-rebreather nasal cannula.  >> med:oxygen,2,L/min,NC "Drawing up 2 L of non-rebreather nasal cannula"
+GAP 3
+M2: Get check a sugar.  >> proc:glucose check "check a sugar"
+GAP 8
+M2: We need 18 gauge.  >> proc:IV access "18 gauge"
+GAP 8
+TAP knock +label
+M2: Repeat, end tidal 53.  >> vital:etco2=53 "end tidal 53"
+GAP 4
+M1: Leaving scene to the trauma center.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: Any allergies?
+GAP 11
+TAP snap -
+GAP 11
+BY: I don't know, it just started.
+GAP 4
+M2: Do you take any medications?
+GAP 2
+M1: We're at Memorial.  >> time:eTimes.11 "We're at"
+GAP 15
+TAP button +label
+M1: Giving report now.  >> time:eTimes.12 "Giving report"
+KNOCK3

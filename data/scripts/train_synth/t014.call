@@ -1,0 +1,46 @@
+@call t014 opioid start=15:52:57
+@patient age=26 sex=male weight_kg=59 complaint="person down" allergies=unknown home_meds=unknown history=unknown
+@traps overdose
+RD: Ambulance 2, priority two, person down, 26 year old male.  >> dispatch:person down "person down"
+GAP 4
+M1: Ambulance 2 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: I'm going to put some stickers on your chest.
+BY: I had something like this last year.
+GAP 6
+PT: I'm good, man.
+GAP 6
+M1: Got suctioning.  >> proc:suction "suctioning"
+GAP 4
+TAP button +label
+M2: BP's 87 over 55, heart rate's 136, capno is 26.  >> vital:bp=87/55 "BP's 87 over 55"; vital:hr=136 "heart rate's 136"; vital:etco2=26 "capno is 26"
+GAP 1
+M2: Got oral airway.  >> proc:OPA "oral airway"
+GAP 3
+M2: ETCO2's 45, pain is 2 out of 10.  >> vital:etco2=45 "ETCO2's 45"; vital:pain=2 "2 out of 10"
+GAP 3
+M1: On a scale of zero to ten, how bad is it?
+BY: I feel sick.
+GAP 11
+TAP button -
+GAP 11
+GAP 4
+M1: When did you last eat?
+GAP 6
+M1: When did you last eat?
+BY: It's about an eight.
+GAP 2
+M1: Leaving scene to Saint Joseph's.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: naloxone 2 atomized.  >> med:naloxone,2,,IN "naloxone 2 atomized"
+GAP 2
+M1: Giving 15 L of oxygen BVM.  >> med:oxygen,15,L/min,BVM "Giving 15 L of oxygen BVM"
+GAP 4
+M2: Okay, we're going to take care of you.
+PT: It's getting worse.
+GAP 8
+M1: Repeat, end tidal 27, glucose at 354.  >> vital:etco2=27 "end tidal 27"; vital:bgl=354 "glucose at 354"
+GAP 3
+M1: Arrived at Good Sam.  >> time:eTimes.11 "Arrived at"
+GAP 15
+M1: Handing off complete.  >> time:eTimes.12 "Handing off"
+KNOCK3

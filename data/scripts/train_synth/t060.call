@@ -1,0 +1,46 @@
+@call t060 chf start=00:28:23
+@patient age=46 sex=male weight_kg=110 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps CHF; pulmonary edema
+RD: Ambulance 27, you have a difficulty breathing, 46 year old male.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 2
+M1: Ambulance 27 on scene.  >> time:eTimes.06 "on scene"
+M2: When did you last eat?
+GAP 4
+PT: I've been sleeping in the recliner.
+GAP 4
+M2: Stay with me, keep your eyes open.
+GAP 3
+M1: Lasix 40 migs IV push.  >> med:furosemide,40,mg,IV "Lasix 40 migs IV push"
+GAP 6
+TAP button +label
+M1: pulse ox at 82, end tidal 28.  >> vital:spo2=82 "pulse ox at 82"; vital:etco2=28 "end tidal 28"
+GAP 6
+M2: How long has this been going on?
+GAP 6
+GAP 11
+TAP snap -
+GAP 11
+M1: Get the cot.
+GAP 8
+TAP knock +label
+M1: pain is 4 out of 10, end tidal's 18.  >> vital:pain=4 "4 out of 10"; vital:etco2=18 "end tidal's 18"
+GAP 6
+M2: Grab the stair chair.
+GAP 3
+M2: We need 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 3
+M1: Pushing Nitrostat, 0.8 migs.  >> med:nitroglycerin,0.8,mg, "Pushing Nitrostat, 0.8 migs"
+GAP 8
+M1: Leaving scene to Riverside.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+TAP button +label
+M1: 0.4 nitroglycerin SL, it's in.  >> med:nitroglycerin,0.4,,SL "0.4 nitroglycerin SL"
+GAP 6
+M1: Grab the stair chair.
+GAP 3
+M1: Did you pass out at all?
+PT: Can somebody call my wife?
+GAP 1
+M2: We need c pap.  >> proc:CPAP "c pap"
+GAP 1
+M1: Arrived at University.  >> time:eTimes.11 "Arrived at"

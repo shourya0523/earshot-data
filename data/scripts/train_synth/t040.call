@@ -1,0 +1,41 @@
+@call t040 sepsis start=01:42:55
+@patient age=24 sex=male weight_kg=64 complaint="sick person" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Rescue 29, you have a fever, 24 year old male.  >> dispatch:fever "fever"
+GAP 4
+M1: Rescue 29 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Any medical history I should know about?
+GAP 11
+TAP snap -
+GAP 11
+PT: I had something like this last year.
+GAP 4
+GAP 11
+TAP snap -
+GAP 11
+PT: I'm freezing.
+GAP 8
+M1: Did you pass out at all?
+GAP 8
+M1: Grab the stair chair.
+PT: Please don't cut my shirt.
+GAP 2
+M1: end tidal 38, pain is 5 out of 10.  >> vital:etco2=38 "end tidal 38"; vital:pain=5 "5 out of 10"
+GAP 3
+M1: Vitals, blood pressure at 113 over 40.  >> vital:bp=113/40 "blood pressure at 113 over 40"
+GAP 8
+M1: Pushing Tylenol, 1000 mg by mouth.  >> med:acetaminophen,1000,mg,PO "Pushing Tylenol, 1000 mg by mouth"
+GAP 8
+M1: Get the cot.
+BY: I had something like this last year.
+GAP 4
+M1: We're transporting to Mercy.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: 500 lactated Ringer's intravenous, it's in.  >> med:lactated Ringer's,500,,IV "500 lactated Ringer's intravenous"
+GAP 3
+M2: I gave normal saline 1000 intravenous.  >> med:normal saline,1000,,IV "I gave normal saline 1000 intravenous"
+GAP 8
+M1: Let's do 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 3
+M1: Arriving at Good Sam.  >> time:eTimes.11 "Arriving at"
+KNOCK3

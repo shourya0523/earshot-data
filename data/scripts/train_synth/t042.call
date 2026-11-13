@@ -1,0 +1,46 @@
+@call t042 brady start=21:41:46
+@patient age=29 sex=male weight_kg=112 complaint="dizziness" allergies=unknown home_meds=unknown history=unknown
+@traps heart block
+RD: Rescue 44, priority two, weakness, 29 year old male.  >> dispatch:weakness "weakness"
+GAP 2
+M2: Rescue 44 on scene.  >> time:eTimes.06 "on scene"
+M1: Any allergies?
+BY: It's getting worse.
+GAP 3
+PT: I'm so weak.
+GAP 4
+TAP snap +label
+M1: 1 atropine intravenous, it's in.  >> med:atropine,1,,IV "1 atropine intravenous"
+GAP 4
+M1: How long has this been going on?
+PT: No allergies.
+GAP 1
+M2: Doing 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 4
+M1: Grab the stair chair.
+GAP 6
+M2: Grab the stair chair.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 4
+M1: Okay, GCS is 10.  >> vital:gcs=10 "GCS is 10"
+GAP 3
+M1: How long has this been going on?
+PT: It's about an eight.
+GAP 6
+M1: We're transporting to County.  >> time:eTimes.09 "We're transporting"
+GAP 11
+TAP button -
+GAP 11
+GAP 3
+M1: Let's move on three. One, two, three.
+GAP 3
+M2: When did you last eat?
+GAP 8
+TAP snap +label
+M2: normal saline 500 mLs IV push.  >> med:normal saline,500,mL,IV "normal saline 500 mLs IV push"
+GAP 8
+TAP snap +label
+M1: SpO2's 83 on room air, GCS's 15.  >> vital:spo2=83 "SpO2's 83 on room air"; vital:gcs=15 "GCS's 15"
+GAP 3
+M1: We're at Riverside.  >> time:eTimes.11 "We're at"
+KNOCK3
