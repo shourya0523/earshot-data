@@ -122,6 +122,19 @@ public final class Cleanup {
                 out.append(CleanToken(text: canon, rawStart: rs, rawEnd: re, rule: "unit:split", punct: p))
                 i += 1; continue
             }
+            // 4b. glued vital name + number from ASR ("respS32", "sats94", "hr110") -> name, number
+            if t.range(of: #"^(resps|resp|rr|sats|sat|spo2|hr|pulse|gcs|bgl|etco2)(\d{1,3})$"#, options: .regularExpression) != nil {
+                let head = ["etco2", "spo2", "resps", "resp", "pulse", "sats", "sat", "gcs", "bgl", "rr", "hr"].first { t.hasPrefix($0) }!
+                let num = String(t.dropFirst(head.count))
+                let rs = toks[i].range.lowerBound, re = toks[i].range.upperBound
+                let chars = Array(seg.text)
+                corr.append(Correction(id: "c\(nextId)", rawSpan: seg.id, rawRange: [rs, re], original: String(chars[rs..<re]),
+                                       replacement: head + " " + num, rule: "asr:split_glued"))
+                nextId += 1
+                out.append(CleanToken(text: head, rawStart: rs, rawEnd: re, rule: "asr:split_glued"))
+                out.append(CleanToken(text: num, rawStart: rs, rawEnd: re, rule: "asr:split_glued", punct: toks[i].raw.last.map { ".,?!;:".contains($0) ? String($0) : nil } ?? nil))
+                i += 1; continue
+            }
             // 5. "120 over 80" -> 120/80
             if isNum(t), i + 2 < toks.count, toks[i + 1].norm == "over" || toks[i + 1].norm == "/", isNum(toks[i + 2].norm) {
                 emit("\(t)/\(toks[i + 2].norm)", i, i + 3, rule: "number:over"); i += 3; continue
@@ -159,7 +172,7 @@ public final class Cleanup {
             }
             k += 1
         }
-        return (CleanSegment(rawSpan: seg.id, startMs: seg.startMs, endMs: seg.endMs, rawText: seg.text, tokens: out), corr)
+        return (CleanSegment(rawSpan: seg.id, startMs: seg.startMs, endMs: seg.endMs, rawText: seg.text, tokens: out, wordTimes: seg.wordTimes), corr)
     }
 
     /// If tokens starting at i form a bracketed tag ([...] or (...)), return the index after it.

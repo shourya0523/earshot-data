@@ -8,10 +8,12 @@ public struct RawSegment: Codable, Equatable, Sendable {
     public var endMs: Int64
     public var text: String
     public var avgLogprob: Double?
-    public init(id: String, startMs: Int64, endMs: Int64, text: String, avgLogprob: Double? = nil) {
-        self.id = id; self.startMs = startMs; self.endMs = endMs; self.text = text; self.avgLogprob = avgLogprob
+    /// ASR token times: [character offset in `text`, call ms]. Nil when the engine gave none.
+    public var wordTimes: [[Int64]]?
+    public init(id: String, startMs: Int64, endMs: Int64, text: String, avgLogprob: Double? = nil, wordTimes: [[Int64]]? = nil) {
+        self.id = id; self.startMs = startMs; self.endMs = endMs; self.text = text; self.avgLogprob = avgLogprob; self.wordTimes = wordTimes
     }
-    enum CodingKeys: String, CodingKey { case id, startMs = "start_ms", endMs = "end_ms", text, avgLogprob = "avg_logprob" }
+    enum CodingKeys: String, CodingKey { case id, startMs = "start_ms", endMs = "end_ms", text, avgLogprob = "avg_logprob", wordTimes = "word_times" }
 }
 
 public struct RawTranscript: Codable, Sendable {
@@ -52,6 +54,7 @@ public struct CleanSegment: Equatable, Sendable {
     public var endMs: Int64
     public var rawText: String
     public var tokens: [CleanToken]
+    public var wordTimes: [[Int64]]? = nil
     public var text: String { tokens.map(\.text).joined(separator: " ") }
 
     /// Exact raw quote for clean tokens [a, b].
@@ -60,8 +63,14 @@ public struct CleanSegment: Equatable, Sendable {
         let s = tokens[a].rawStart, e = tokens[b].rawEnd
         return String(chars[max(0, s)..<min(chars.count, e)])
     }
-    /// Estimated time of clean token i (proportional to char position).
+    /// Time of clean token i: from ASR token times when present (last ASR token
+    /// starting at or before the word), else proportional to character position.
     public func timeOf(token i: Int) -> Int64 {
+        let c = tokens[min(i, tokens.count - 1)].rawStart
+        if let wt = wordTimes, !wt.isEmpty {
+            if let hit = wt.last(where: { $0[0] <= Int64(c) }) { return max(startMs, hit[1]) }
+            return max(startMs, wt[0][1])
+        }
         let n = max(1, rawText.count)
         let frac = Double(tokens[min(i, tokens.count - 1)].rawStart) / Double(n)
         return startMs + Int64(frac * Double(endMs - startMs))

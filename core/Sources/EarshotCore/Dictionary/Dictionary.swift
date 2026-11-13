@@ -36,6 +36,7 @@ public struct EMSTermsFile: Codable, Sendable {
     public var version: String
     public var terms: [EMSTerm]
     public var initial_prompt_core: [String]
+    public var initial_prompt: String?
 }
 
 /// Loaded EMS dictionary with lookup indexes. Immutable after load.
@@ -111,6 +112,7 @@ public final class EMSDictionary: @unchecked Sendable {
     /// whisper.cpp initial prompt: the core list plus the most-spoken drug
     /// names. Kept under ~200 tokens (whisper uses at most n_text_ctx/2).
     public func initialPrompt(maxChars: Int = 600) -> String {
+        if let p = terms.initial_prompt, !p.isEmpty { return p }   // sentence-style prompt (preferred)
         var words = terms.initial_prompt_core
         for d in formulary.drugs.prefix(40) {
             if let s = d.slang.first, s.count > 3 { words.append(s) }

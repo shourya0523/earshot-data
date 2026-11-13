@@ -221,3 +221,43 @@ final class GroundTruthRound2Tests: XCTestCase {
         XCTAssertEqual(v("Heart rate's 148 and irregular")["heart_rate"], "148")
     }
 }
+
+/// Round 3 (data agent ran earshot-eval on audio).
+final class Round3Tests: XCTestCase {
+    func drugs(_ t: String) -> [String] { extract(t).compactMap { $0.fields["drug"] } }
+
+    func test_R3_1_noDrugWithoutADrugWord() {
+        XCTAssertEqual(drugs("Nitro 0.4 sublingual is pressure holds."), ["nitroglycerin"])
+        XCTAssertEqual(drugs("Zofran 4 IV, DOT arrived at Memorial,"), ["ondansetron"])
+        XCTAssertEqual(drugs("Morphine 4 IM left deltide."), ["morphine"])
+        XCTAssertEqual(drugs("Medic 4 back in service."), [])
+        XCTAssertEqual(drugs("Memorial,"), [])
+    }
+
+    func test_R3_3_respRateAsrForms() {
+        func rr(_ t: String) -> String? { extract(t).first { $0.type == .vitals }?.fields["resp_rate"] }
+        XCTAssertEqual(rr("Sat 94 on the neb, resps 24."), "24")
+        XCTAssertEqual(rr("heart rate 124, ress 24."), "24")
+        XCTAssertEqual(rr("respS32,"), "32")
+    }
+
+    func test_R3_2_tokenTimesDriveFindingTimes() {
+        // chunk starts at 93.78 s but speech starts at 108.0 s: segment and finding take the token time
+        let p = ASRPiece(startMs: 0, endMs: 16270, text: " Got an 18 in the left AC.",
+                         tokens: [ASRToken(charOffset: 1, startMs: 14220, endMs: 14400), ASRToken(charOffset: 8, startMs: 14600, endMs: 14800),
+                                  ASRToken(charOffset: 14, startMs: 15000, endMs: 15200)])
+        let seg = p.rawSegment(id: "s15", chunkStartMs: 93780, chunkEndMs: 110050)!
+        XCTAssertEqual(seg.startMs, 108000)
+        let f = RulesExtractor(dict: TestEnv.dict).extract(Cleanup(dict: TestEnv.dict).clean(seg).0)
+        let iv = f.first { $0.type == .procedure }!
+        XCTAssertGreaterThanOrEqual(iv.tMs, 108000)
+        // an unlabelled tap at 95.0 s must stay unlabelled (no speech within -3/+10 s)
+        let e = TapMerger(callId: "c", clock: TestEnv.clock, models: ModelInfo(asr: "t", extract: "r"))
+            .merge(findings: f, segments: ["s15": (seg.startMs, seg.endMs)], taps: [PlacedTap(tMs: 95000, source: "button", gesture: "mark", clipMs: 95000)], gaps: [])
+        XCTAssertTrue(e.contains { $0.isUnlabeledTap })
+    }
+
+    func test_R3_5_sentencePromptIsDefault() {
+        XCTAssertTrue(TestEnv.dict.initialPrompt().hasPrefix("EMS call."))
+    }
+}

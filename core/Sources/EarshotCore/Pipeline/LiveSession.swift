@@ -231,16 +231,14 @@ public final class LiveSession {
         let audio = ring.read(from: c.startSample, to: c.endSample).map { Float($0) / 32768 }
         ring.discard(before: c.endSample)            // free audio as soon as it is handed to ASR
         guard let tr = transcriber else { return }
-        let prompt = config.asr.useInitialPrompt ? dict.initialPrompt() : nil
+        let prompt = config.asr.useInitialPrompt ? (config.asr.prompt ?? dict.initialPrompt()) : nil
         asrQueue.async {
             let pieces = (try? tr.transcribe(audio, prompt: prompt)) ?? []
             self.work.async {
                 for p in pieces {
-                    let text = p.text.trimmingCharacters(in: .whitespacesAndNewlines)
-                    if text.isEmpty || ASRFilter.isHallucination(text) { continue }
+                    if ASRFilter.isHallucination(p.text) { continue }
+                    guard let seg = p.rawSegment(id: "s\(self.segCounter + 1)", chunkStartMs: c.startMs, chunkEndMs: c.endMs) else { continue }
                     self.segCounter += 1
-                    let seg = RawSegment(id: "s\(self.segCounter)", startMs: c.startMs + p.startMs, endMs: min(c.endMs, c.startMs + p.endMs),
-                                         text: text, avgLogprob: p.avgLogprob)
                     self.rawSegments.append(seg)
                     self.pendingClean.append(seg)
                 }

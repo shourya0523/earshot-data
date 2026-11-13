@@ -35,6 +35,8 @@ OPTIONS
   --call-id <id>          default c1
   --start <iso8601>       call start wall time. Without it: replay clock-sync packet, else an assumed start that is flagged in every output
   --no-prompt             disable the EMS initial prompt for whisper
+  --prompt-file <f>       use this initial prompt instead of the dictionary's
+  --beam <n>              beam size (default 5); --greedy = beam 1, no temperature fallback (fastest)
   --pii-scrub             replace names/DOB/addresses/phones in quotes and fields with tokens (off by default)
 """
 
@@ -136,6 +138,9 @@ if let t = opt("--threads"), let n = Int(t) { config.asr.threads = n }
 if let c = opt("--call-id") { config.callId = c }
 if let s = opt("--start") { config.startTime = s }
 if flag("--no-prompt") { config.asr.useInitialPrompt = false }
+if let pf = opt("--prompt-file") { config.asr.prompt = (try? String(contentsOfFile: pf, encoding: .utf8))?.trimmingCharacters(in: .whitespacesAndNewlines) }
+if flag("--greedy") { config.asr.beamSize = 1; config.asr.temperatureFallback = false }
+if let b = opt("--beam"), let n = Int(b) { config.asr.beamSize = n }
 if flag("--pii-scrub") { config.piiScrub = true }
 _ = flag("--no-pii") // old flag, now the default
 let tapsPath = opt("--taps")
@@ -164,7 +169,8 @@ let t0 = Date()
 if ext != "json" {
     #if canImport(EarshotWhisper)
     let model = config.asr.model ?? ProcessInfo.processInfo.environment["EARSHOT_ASR_MODEL"] ?? "models/ggml-small.en.bin"
-    do { transcriber = try WhisperTranscriber(modelPath: model, name: config.asr.model == nil ? nil : config.asr.name, threads: config.asr.threads) }
+    do { transcriber = try WhisperTranscriber(modelPath: model, name: config.asr.model == nil ? nil : config.asr.name, threads: config.asr.threads,
+                                              beamSize: config.asr.beamSize, temperatureFallback: config.asr.temperatureFallback) }
     catch { fail("\(error.localizedDescription). Download: https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin and pass --asr-model") }
     #else
     fail("this build has no whisper.cpp; pass a transcript .json instead")

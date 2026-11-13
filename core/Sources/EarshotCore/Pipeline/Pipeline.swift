@@ -14,8 +14,36 @@ public struct ASRPiece: Equatable, Sendable {
     public var endMs: Int64
     public var text: String
     public var avgLogprob: Double?
-    public init(startMs: Int64, endMs: Int64, text: String, avgLogprob: Double? = nil) {
-        self.startMs = startMs; self.endMs = endMs; self.text = text; self.avgLogprob = avgLogprob
+    /// Token timings when the engine provides them: (character offset in `text`, start ms, end ms), relative to the chunk.
+    public var tokens: [ASRToken]
+    public init(startMs: Int64, endMs: Int64, text: String, avgLogprob: Double? = nil, tokens: [ASRToken] = []) {
+        self.startMs = startMs; self.endMs = endMs; self.text = text; self.avgLogprob = avgLogprob; self.tokens = tokens
+    }
+}
+
+public struct ASRToken: Equatable, Sendable {
+    public var charOffset: Int
+    public var startMs: Int64
+    public var endMs: Int64
+    public init(charOffset: Int, startMs: Int64, endMs: Int64) { self.charOffset = charOffset; self.startMs = startMs; self.endMs = endMs }
+}
+
+extension ASRPiece {
+    /// Raw segment with call-relative times taken from the first/last token when available
+    /// (VAD chunks can start well before the speech), and per-token times for findings.
+    public func rawSegment(id: String, chunkStartMs: Int64, chunkEndMs: Int64) -> RawSegment? {
+        let lead = text.prefix { $0.isWhitespace }.count
+        let t = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !t.isEmpty else { return nil }
+        var start = chunkStartMs + startMs, end = min(chunkEndMs, chunkStartMs + endMs)
+        var wt: [[Int64]]? = nil
+        let toks = tokens.filter { $0.endMs >= $0.startMs }
+        if let f = toks.first, let l = toks.last {
+            start = max(start, chunkStartMs + f.startMs)
+            end = max(start, min(chunkEndMs, chunkStartMs + max(l.endMs, l.startMs)))
+            wt = toks.map { [Int64(max(0, $0.charOffset - lead)), chunkStartMs + $0.startMs] }
+        }
+        return RawSegment(id: id, startMs: start, endMs: end, text: t, avgLogprob: avgLogprob, wordTimes: wt)
     }
 }
 
@@ -38,8 +66,14 @@ public struct PipelineConfig: Codable, Sendable {
         public var name: String = "whisper.cpp small.en"
         public var threads: Int = 4
         public var useInitialPrompt: Bool = true
+        /// Prompt text; nil = the dictionary's sentence-style prompt.
+        public var prompt: String? = nil
+        /// 1 = greedy. Beam search is slower but more accurate on noisy audio (review R3-4).
+        public var beamSize: Int = 5
+        /// Re-decode low-confidence windows at higher temperature (whisper.cpp fallback; deterministic seed).
+        public var temperatureFallback: Bool = true
         public init() {}
-        enum CodingKeys: String, CodingKey { case engine, model, name, threads, useInitialPrompt = "use_initial_prompt" }
+        enum CodingKeys: String, CodingKey { case engine, model, name, threads, useInitialPrompt = "use_initial_prompt", prompt, beamSize = "beam_size", temperatureFallback = "temperature_fallback" }
         public init(from d: Decoder) throws {
             let c = try d.container(keyedBy: CodingKeys.self)
             engine = try c.decodeIfPresent(String.self, forKey: .engine) ?? "whisper.cpp"
@@ -47,6 +81,9 @@ public struct PipelineConfig: Codable, Sendable {
             name = try c.decodeIfPresent(String.self, forKey: .name) ?? "whisper.cpp small.en"
             threads = try c.decodeIfPresent(Int.self, forKey: .threads) ?? 4
             useInitialPrompt = try c.decodeIfPresent(Bool.self, forKey: .useInitialPrompt) ?? true
+            prompt = try c.decodeIfPresent(String.self, forKey: .prompt)
+            beamSize = try c.decodeIfPresent(Int.self, forKey: .beamSize) ?? 5
+            temperatureFallback = try c.decodeIfPresent(Bool.self, forKey: .temperatureFallback) ?? true
         }
     }
     public var callId: String = "c1"
@@ -231,7 +268,7 @@ public final class EarshotPipeline {
         chunks += vad.finish()
         timing["vad"] = Date().timeIntervalSince(t0)
         stats["speech_chunks"] = chunks.count
-        let prompt = config.asr.useInitialPrompt ? dict.initialPrompt() : nil
+        let prompt = config.asr.useInitialPrompt ? (config.asr.prompt ?? dict.initialPrompt()) : nil
         var segs: [RawSegment] = []
         var n = 0
         for c in chunks {
@@ -239,10 +276,10 @@ public final class EarshotPipeline {
             guard b > a else { continue }
             let f = pcm[a..<b].map { Float($0) / 32768 }
             for p in try tr.transcribe(f, prompt: prompt) {
-                let text = p.text.trimmingCharacters(in: .whitespacesAndNewlines)
-                if text.isEmpty || ASRFilter.isHallucination(text) { continue }
+                if ASRFilter.isHallucination(p.text) { continue }
+                guard let seg = p.rawSegment(id: "s\(n + 1)", chunkStartMs: c.startMs, chunkEndMs: c.endMs) else { continue }
                 n += 1
-                segs.append(RawSegment(id: "s\(n)", startMs: c.startMs + p.startMs, endMs: min(c.endMs, c.startMs + p.endMs), text: text, avgLogprob: p.avgLogprob))
+                segs.append(seg)
             }
         }
         return RawTranscript(callId: config.callId, asrModel: asrName, initialPrompt: prompt, segments: segs)

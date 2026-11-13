@@ -154,7 +154,7 @@ public final class RulesExtractor {
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure|bps)\s+"# + N + #"(\d{2,3})/(\d{2,3})\b"#), ranges: [40...300, 20...200], conf: 0.92),
         VitalRule(fields: ["bp_systolic"], rx: Rx(#"\b(?:bp|blood pressure|pressure)\s+"# + N + #"(\d{2,3})\s+(?:by\s+)?palp"#), ranges: [40...300], conf: 0.88),
         VitalRule(fields: ["bp_systolic", "bp_diastolic"], rx: Rx(#"(?<![\w/])(\d{2,3})/(\d{2,3})(?![\w/])"#), ranges: [60...260, 30...160], conf: 0.7),
-        VitalRule(fields: ["resp_rate"], rx: Rx(#"\b(?:rr|resps|resp|respirations|respiratory rate|resp rate|breathing|breathing at|respiration)\s+"# + #"(?:are |is |of |at |about |around )?(\d{1,2})\b"#), ranges: [2...70], conf: 0.88),
+        VitalRule(fields: ["resp_rate"], rx: Rx(#"\b(?:rr|resps|resp|respirations|respiratory rate|resp rate|breathing|breathing at|respiration|ress|reps|resp's|respirations are|rest rate)\s+"# + #"(?:are |is |of |at |about |around )?(\d{1,2})\b"#), ranges: [2...70], conf: 0.88),
         VitalRule(fields: ["heart_rate"], rx: Rx(#"\b(?:hr|heart rate|pulse|pulse rate|pulses|heart rates)\s+"# + NF + #"(\d{2,3})\b"#), ranges: [20...260], conf: 0.9),
         // bare "rate N" right after a BP or sat reading ("Recheck, 104 over 66, rate 132"): heart rate when N > 40
         VitalRule(fields: ["heart_rate"], rx: Rx(#"(?:\d{2,3}/\d{2,3}|sats?\s+\d{2,3})\s*;?\s+(?:heart\s+)?rate\s+"# + NF + #"(\d{2,3})\b"#), ranges: [41...260], conf: 0.8, groupOnly: true),
@@ -263,16 +263,17 @@ public final class RulesExtractor {
             }
             if found == nil, toks[i].text.count >= 5, toks[i].text.allSatisfy({ $0.isLetter }), dict.termIndex[toks[i].text] == nil,
                RulesExtractor.hasDoseOrRoute(toks.map(\.text), i, dict) {
+                // Exact sound-alike only, and the heard word must also be spelled close to a real
+                // name of that drug (same first letter, >= 60% letters). No edit-distance-1 keys:
+                // "pressure" ~ Lopressor and "Memorial" ~ Medrol were wrong (review R3-1).
                 let key = Phonetic.key(toks[i].text)
                 if let ds = dict.phoneticIndex[key], ds.count == 1 {
-                    found = DrugHit(drug: ds[0], range: i...i, conf: 0.55, how: "phonetic")
-                } else if key.count >= 4 {
-                    // near-phonetic: keys within edit distance 1 (e.g. "Safranib" SFRNB ~ Zofran SFRN). Always "please confirm".
-                    var cands = Set<Int>()
-                    for (k, ds) in dict.phoneticIndex where abs(k.count - key.count) <= 1 && k.count >= 4 && Text.levenshtein(k, key) <= 1 {
-                        cands.formUnion(ds)
+                    let d = dict.drug(ds[0])
+                    let w = toks[i].text
+                    let close = ([d.generic] + d.slang + d.brands + d.aliases).contains { a in
+                        let al = a.lowercased(); return al.first == w.first && Text.similarity(w, al) >= 0.6
                     }
-                    if cands.count == 1 { found = DrugHit(drug: cands.first!, range: i...i, conf: 0.45, how: "phonetic~") }
+                    if close { found = DrugHit(drug: ds[0], range: i...i, conf: 0.55, how: "phonetic") }
                 }
             }
             if let f = found { hits.append(f); i = f.range.upperBound + 1 } else { i += 1 }
@@ -433,6 +434,7 @@ public final class RulesExtractor {
             } else if amount == nil && !admin {
                 type = .status; fields["kind"] = "drug_mention"; flags.append("confirm")
             }
+            if h.how == "phonetic" && (type != .medication || fields["dose"] == nil) { continue }
             if d.high_alert && type == .medication && fields["dose"] == nil { flags.append("confirm") }
             out.append(Finding(type: type, fields: fields, receipts: rec, tMs: tt.seg.timeOf(token: a0), rawSpan: tt.seg.rawSpan,
                                quote: tt.seg.quote(span.lowerBound, span.upperBound), confidence: h.conf, flags: Array(Set(flags)).sorted(),

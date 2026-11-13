@@ -414,6 +414,11 @@ CONTEXT_REQUIRED = sorted({
     "valley um", "at a van", "card is em", "low presser", "leave a fed", "by carb", "bi carb", "kepra", "play vix",
 })
 
+INITIAL_PROMPT = ("EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, RR 20, SpO2 94%, BGL 42, ETCO2 35. "
+                  "Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, "
+                  "Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. "
+                  "12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
+
 HTTP_HEADERS = {"User-Agent": "earshot-dictionary-builder/1.0"}
 
 
@@ -637,6 +642,9 @@ def main():
         "generated_by": "core/tools/build_dictionary.py",
         "terms": terms,
         "initial_prompt_core": PROMPT_CORE,
+        # Sentence-style prompt (dose + route phrases). Measured by the data agent: stock small.en
+        # drug-name WER 26.9% vs 38.5% for the bare comma list (eval/BENCHMARK.md, REVIEW round 2).
+        "initial_prompt": INITIAL_PROMPT,
     }
     os.makedirs(args.out, exist_ok=True)
     with open(os.path.join(args.out, "formulary.json"), "w") as f:
