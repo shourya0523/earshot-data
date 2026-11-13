@@ -11,3 +11,4 @@ __pycache__/
 models/*.bin
 !models/README.md
 .DS_Store
+mocks/**/*.replay
