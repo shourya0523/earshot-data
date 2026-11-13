@@ -287,18 +287,12 @@
     "f1": 0.7272727272727273
    }
   },
-  "unsupported_field_rate": 0.006329113924050633,
-  "unsupported": 1,
+  "unsupported_field_rate": 0.0,
+  "unsupported": 0,
   "pred_fields": 158,
-  "unsupported_examples": [
-   [
-    "c08",
-    "e15",
-    "drug=famotidine quote='fametidin 20 IV.'"
-   ]
-  ],
+  "unsupported_examples": [],
   "unsupported_inferred": 0,
-  "unsupported_field_rate_excl_flagged_inferred": 0.006329113924050633,
+  "unsupported_field_rate_excl_flagged_inferred": 0.0,
   "timestamp_error_ms": {
    "median": 0.0,
    "p90": 4875,

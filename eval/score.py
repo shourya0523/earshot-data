@@ -224,7 +224,11 @@ def _value_in_quote(k, v, q, e):
     v = str(v)
     if k == "drug":
         if canon_drug(v) in ("albuterol", "ipratropium") and re.search(r"\bduoneb\b|\bduo neb\b", q): return True
-        return any(canon_drug(term) == canon_drug(v) for term in _ngrams(q)) or tn.normalize(v) in q
+        if any(canon_drug(term) == canon_drug(v) for term in _ngrams(q)) or tn.normalize(v) in q: return True
+        # a close ASR misspelling of the drug in the quote still links the value to what was heard ("fametidin" -> famotidine)
+        import difflib
+        names = [n for n, g in CANON.items() if g == canon_drug(v)] + [tn.normalize(v)]
+        return any(difflib.SequenceMatcher(None, w, n).ratio() >= 0.8 for w in q.split() if len(w) > 4 for n in names if len(n) > 4)
     if k == "dose" or (k == "value"):
         if e.get("type") == "vital" and "/" in v:
             a, b = v.split("/"); return a in q.split() and b in q.split()
