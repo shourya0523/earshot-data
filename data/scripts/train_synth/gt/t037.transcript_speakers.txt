@@ -1,0 +1,22 @@
+RD: Ambulance 55, priority two, sick person, 65 year old male.
+M2: Ambulance 55 we're on scene.
+M1: I'm going to put some stickers on your chest.
+PT: It's getting worse.
+PT: I've had a fever for three days.
+M1: Second set, BP's 112 over 58.
+M2: Doing 12-lead.
+M2: Are you having any trouble breathing?
+PT: Am I going to be okay?
+M1: Are you having any trouble breathing?
+BY: I feel sick.
+M1: lactated ringers 500 mils IV.
+M1: Repeat, HR at 148, pain is 3 out of 10.
+M1: Are you having any trouble breathing?
+BY: I had something like this last year.
+M2: Stay with me, keep your eyes open.
+M1: Leaving scene to University.
+M1: acetaminophen 1000 mg.
+M1: Small poke.
+M2: Let's do 18 in the AC.
+M1: Drawing up 1000 of normal saline.
+M1: We're at Northside.

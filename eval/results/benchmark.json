@@ -1,0 +1,233 @@
+{
+ "stock_small/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.14988290398126464,
+  "drug_wer": 0.38461538461538464,
+  "drug_tokens": 26,
+  "number_acc": 0.8554216867469879,
+  "jargon_recall": 0.782608695652174,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.3347147877194863,
+  "audio_min": 23.63853333333333
+ },
+ "stock_small/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.043668122270742356,
+  "drug_wer": 0.1111111111111111,
+  "drug_tokens": 9,
+  "number_acc": 0.9777777777777777,
+  "jargon_recall": 0.9047619047619048,
+  "false_drug_per_1k": 0.0,
+  "rtf": 1.075403566905309,
+  "audio_min": 4.606642708333334
+ },
+ "stock_small/real_test_eka": {
+  "n": 120,
+  "wer": 0.27216174183514774,
+  "drug_wer": 0.41208791208791207,
+  "drug_tokens": 182,
+  "number_acc": 0.8333333333333334,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 3.1104199066874028,
+  "rtf": 2.5652254283490112,
+  "audio_min": 9.602274999999999
+ },
+ "stock_small/real_test_primock": {
+  "n": 120,
+  "wer": 0.11990740740740741,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.8888888888888888,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.9603557469588714,
+  "audio_min": 12.833091666666666
+ },
+ "stock_small/real_test_medintent": {
+  "n": 100,
+  "wer": 0.03696498054474708,
+  "drug_wer": 0.0,
+  "drug_tokens": 0,
+  "number_acc": 1.0,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 1.3642737864046217,
+  "audio_min": 6.4312604166666665
+ },
+ "emsassist_small/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.14754098360655737,
+  "drug_wer": 0.5,
+  "drug_tokens": 26,
+  "number_acc": 0.8734939759036144,
+  "jargon_recall": 0.782608695652174,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.2734306696974996,
+  "audio_min": 23.63853333333333
+ },
+ "emsassist_small/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.039301310043668124,
+  "drug_wer": 0.1111111111111111,
+  "drug_tokens": 9,
+  "number_acc": 0.9777777777777777,
+  "jargon_recall": 0.9523809523809523,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.5547062134232338,
+  "audio_min": 4.606642708333333
+ },
+ "emsassist_small/real_test_eka": {
+  "n": 120,
+  "wer": 0.24572317262830481,
+  "drug_wer": 0.4340659340659341,
+  "drug_tokens": 182,
+  "number_acc": 0.8833333333333333,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.8773788850385282,
+  "audio_min": 9.602274999999999
+ },
+ "emsassist_small/real_test_primock": {
+  "n": 120,
+  "wer": 0.13842592592592592,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.8333333333333334,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.8125737432717887,
+  "audio_min": 12.833091666666668
+ },
+ "emsassist_small/real_test_medintent": {
+  "n": 100,
+  "wer": 0.04669260700389105,
+  "drug_wer": 0.0,
+  "drug_tokens": 0,
+  "number_acc": 1.0,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 1.1029460593682228,
+  "audio_min": 6.431260416666666
+ },
+ "emsassist_base/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.1990632318501171,
+  "drug_wer": 0.6153846153846154,
+  "drug_tokens": 26,
+  "number_acc": 0.8493975903614458,
+  "jargon_recall": 0.6666666666666666,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.13738867047588968,
+  "audio_min": 23.63853333333333
+ },
+ "emsassist_base/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.05895196506550218,
+  "drug_wer": 0.1111111111111111,
+  "drug_tokens": 9,
+  "number_acc": 0.9777777777777777,
+  "jargon_recall": 0.8095238095238095,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.23654247478222684,
+  "audio_min": 4.606642708333333
+ },
+ "emsassist_base/real_test_eka": {
+  "n": 120,
+  "wer": 0.37636080870917576,
+  "drug_wer": 0.5384615384615384,
+  "drug_tokens": 182,
+  "number_acc": 0.75,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 3.1104199066874028,
+  "rtf": 0.362952182338734,
+  "audio_min": 9.602274999999999
+ },
+ "emsassist_base/real_test_primock": {
+  "n": 120,
+  "wer": 0.17962962962962964,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.9444444444444444,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.2969536439322558,
+  "audio_min": 12.833091666666668
+ },
+ "emsassist_base/real_test_medintent": {
+  "n": 100,
+  "wer": 0.0622568093385214,
+  "drug_wer": 0.0,
+  "drug_tokens": 0,
+  "number_acc": 1.0,
+  "jargon_recall": 0.5714285714285714,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.3975892491265807,
+  "audio_min": 6.431260416666666
+ },
+ "stock_base/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.19672131147540983,
+  "drug_wer": 0.38461538461538464,
+  "drug_tokens": 26,
+  "number_acc": 0.8433734939759037,
+  "jargon_recall": 0.6956521739130435,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.11374789186018311,
+  "audio_min": 23.63853333333333
+ },
+ "stock_base/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.05240174672489083,
+  "drug_wer": 0.0,
+  "drug_tokens": 9,
+  "number_acc": 0.9555555555555556,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.18925568760872266,
+  "audio_min": 4.606642708333333
+ },
+ "stock_base/real_test_eka": {
+  "n": 120,
+  "wer": 0.36702954898911355,
+  "drug_wer": 0.5,
+  "drug_tokens": 182,
+  "number_acc": 0.8,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.3045632415234932,
+  "audio_min": 9.602274999999999
+ },
+ "stock_base/real_test_primock": {
+  "n": 120,
+  "wer": 0.14629629629629629,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.8888888888888888,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.27938188446405804,
+  "audio_min": 12.833091666666668
+ },
+ "stock_base/real_test_medintent": {
+  "n": 100,
+  "wer": 0.04961089494163424,
+  "drug_wer": 0.0,
+  "drug_tokens": 0,
+  "number_acc": 1.0,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.3452926056161231,
+  "audio_min": 6.431260416666666
+ },
+ "medical_v1/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.21389539422326306,
+  "drug_wer": 0.5769230769230769,
+  "drug_tokens": 26,
+  "number_acc": 0.7771084337349398,
+  "jargon_recall": 0.6231884057971014,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.5626547614347196,
+  "audio_min": 23.63853333333333
+ }
+}

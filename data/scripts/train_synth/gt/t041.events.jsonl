@@ -1,0 +1,11 @@
+{"id": "e1", "call_id": "t041", "time": "04:29:11", "clip_ms": 500, "type": "dispatch", "fields": {"text": "fainting"}, "source": "heard", "quote": "fainting", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t041", "time": "04:29:20", "clip_ms": 9031, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 9031}
+{"id": "e3", "call_id": "t041", "time": "04:29:37", "clip_ms": 26323, "type": "medication", "fields": {"drug": "normal saline", "dose": "500", "unit": "mL", "route": "IV"}, "source": "heard", "quote": "I gave saline 500 cc's intravenous", "segment_start_ms": 26323}
+{"id": "e4", "call_id": "t041", "time": "04:29:56", "clip_ms": 45793, "type": "medication", "fields": {"drug": "oxygen", "dose": "2", "unit": "L/min", "route": "NC"}, "source": "tap+heard", "quote": "Giving 2 L of non-rebreather nasal cannula", "segment_start_ms": 46793, "tap_id": "t1"}
+{"id": "e5", "call_id": "t041", "time": "04:30:08", "clip_ms": 57576, "type": "vital", "fields": {"name": "gcs", "value": "13", "unit": ""}, "source": "heard", "quote": "GCS's 13", "segment_start_ms": 57576}
+{"id": "mt2", "call_id": "t041", "time": "04:30:22", "clip_ms": 71908, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e6", "call_id": "t041", "time": "04:30:43", "clip_ms": 92547, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 92547}
+{"id": "e7", "call_id": "t041", "time": "04:30:49", "clip_ms": 98459, "type": "vital", "fields": {"name": "spo2", "value": "93", "unit": "%"}, "source": "heard", "quote": "SpO2's 93", "segment_start_ms": 98459}
+{"id": "e8", "call_id": "t041", "time": "04:30:49", "clip_ms": 98459, "type": "vital", "fields": {"name": "etco2", "value": "31", "unit": "mmHg"}, "source": "heard", "quote": "capno's 31", "segment_start_ms": 98459}
+{"id": "e9", "call_id": "t041", "time": "04:30:55", "clip_ms": 104680, "type": "procedure", "fields": {"name": "12-lead ECG"}, "source": "heard", "quote": "12-lead", "segment_start_ms": 104680}
+{"id": "e10", "call_id": "t041", "time": "04:31:05", "clip_ms": 114530, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 114530}

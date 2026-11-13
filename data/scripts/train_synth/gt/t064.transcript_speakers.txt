@@ -1,0 +1,22 @@
+RD: Ambulance 51, respond to palpitations, 77 year old male.
+M2: Ambulance 51 arriving on scene.
+M2: Can you squeeze my fingers?
+PT: I had something like this last year.
+PT: It feels like it's fluttering.
+M1: Giving 6 milligrams of adenosine intravenous.
+M2: Vitals, breathing is 8, GCS is 12, sats 90 percent.
+M1: Do you take any medications?
+M1: Okay, GCS at 8, pain is 2 out of 10, resp rate at 15.
+M1: Okay, respirations 30.
+M1: Any medical history I should know about?
+PT: I don't know, it just started.
+M1: Grab the stair chair.
+BY: No allergies.
+M1: Transporting to Mercy.
+M1: Get established IV.
+M1: Get vagal.
+M2: Did you pass out at all?
+PT: It's getting worse.
+M1: Drawing up 12 migs of adenosine.
+M1: We're at Mercy.
+M1: Handing off now.

@@ -1,0 +1,10 @@
+{"id": "e1", "call_id": "t004", "time": "16:54:10", "clip_ms": 500, "type": "dispatch", "fields": {"text": "stroke"}, "source": "heard", "quote": "stroke", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t004", "time": "16:54:20", "clip_ms": 10254, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 10254}
+{"id": "e3", "call_id": "t004", "time": "16:54:49", "clip_ms": 39943, "type": "vital", "fields": {"name": "spo2", "value": "100", "unit": "%"}, "source": "tap+heard", "quote": "SpO2 at 100 percent", "segment_start_ms": 41374, "tap_id": "t1"}
+{"id": "e4", "call_id": "t004", "time": "16:55:05", "clip_ms": 55900, "type": "vital", "fields": {"name": "bgl", "value": "66", "unit": "mg/dL"}, "source": "heard", "quote": "glucose's 66", "segment_start_ms": 55900}
+{"id": "e5", "call_id": "t004", "time": "16:55:10", "clip_ms": 60096, "type": "procedure", "fields": {"name": "glucose check"}, "source": "heard", "quote": "finger stick", "segment_start_ms": 60096}
+{"id": "e6", "call_id": "t004", "time": "16:55:23", "clip_ms": 73006, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Leaving scene", "segment_start_ms": 73006}
+{"id": "e7", "call_id": "t004", "time": "16:55:27", "clip_ms": 77823, "type": "medication", "fields": {"drug": "oxygen", "dose": "2", "route": "NC"}, "source": "heard", "quote": "Drawing up 2 of non-rebreather nasal cannula", "segment_start_ms": 77823}
+{"id": "mt2", "call_id": "t004", "time": "16:55:50", "clip_ms": 100698, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e8", "call_id": "t004", "time": "16:56:19", "clip_ms": 129673, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arriving at", "segment_start_ms": 129673}
+{"id": "e9", "call_id": "t004", "time": "16:56:33", "clip_ms": 143662, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "tap+heard", "quote": "Handing off", "segment_start_ms": 144662, "tap_id": "t3"}

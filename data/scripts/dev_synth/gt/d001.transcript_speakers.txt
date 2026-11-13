@@ -1,0 +1,24 @@
+RD: Medic 6, respond to rapid heart rate, 64 year old male.
+M1: Medic 6 we're on scene.
+M2: Who's your doctor?
+BY: I feel sick.
+PT: My heart won't slow down.
+M2: Got vagal.
+M1: 10 cc's normal saline intravenous, it's in.
+M2: Drawing up 12 of adenocard intravenous.
+M1: When did you last eat?
+M1: Second set, glucose's 183.
+M2: How long has this been going on?
+M1: Second set, BP's 183 over 112.
+M1: Who's your doctor?
+PT: Am I going to be okay?
+M1: Small poke.
+M1: We're transporting to Mercy.
+M1: Second set, BP 118 over 87, pain is 10 out of 10, end tidal's 27.
+M1: When did you last eat?
+PT: I feel sick.
+M2: Any medical history I should know about?
+M2: Let's do twelve lead.
+M2: Giving 6 milligrams of Adenocard.
+M1: We're at Memorial.
+M1: Giving report to bed four.

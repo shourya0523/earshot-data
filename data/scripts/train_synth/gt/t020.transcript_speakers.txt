@@ -1,0 +1,19 @@
+RD: Ambulance 3, priority two, bee sting, 57 year old female.
+M2: Ambulance 3 arriving on scene.
+M2: Who's your doctor?
+PT: My lips are swelling.
+M2: 0.3 milligrams epi pen, it's in.
+M2: Got breathing treatment.
+M1: pain is 9 out of 10.
+M1: Get the cot.
+M1: Did you pass out at all?
+BY: It's getting worse.
+M2: Okay, we're going to take care of you.
+M2: Watch the step.
+PT: I had something like this last year.
+M1: Leaving scene to Riverside.
+M2: Second set, HR is 99, sats is 86, glucose at 432.
+M2: Giving 25 of benadryl intravenous.
+M1: respirations's 12, sat at 100 on room air.
+M1: Do you take any medications?
+M1: We're at Good Sam.

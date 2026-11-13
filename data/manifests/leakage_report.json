@@ -1,0 +1,19 @@
+{
+ "train_synth": {
+  "lines": 1680,
+  "exact_matches": 0,
+  "shared_6grams": 0,
+  "shared_examples": [],
+  "possible_paraphrases": 0,
+  "paraphrase_examples": []
+ },
+ "dev_synth": {
+  "lines": 209,
+  "exact_matches": 0,
+  "shared_6grams": 0,
+  "shared_examples": [],
+  "possible_paraphrases": 0,
+  "paraphrase_examples": []
+ },
+ "verdict": "PASS"
+}

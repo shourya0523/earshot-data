@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5503,
+  "speaker": "RD",
+  "text": "Ambulance 9, priority one, unconscious not breathing, 28 year old female."
+ },
+ {
+  "start_ms": 8117,
+  "end_ms": 9662,
+  "speaker": "M1",
+  "text": "Ambulance 9 we're on scene."
+ },
+ {
+  "start_ms": 10224,
+  "end_ms": 12267,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 13166,
+  "end_ms": 14218,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 17806,
+  "end_ms": 21122,
+  "speaker": "M2",
+  "text": "Giving 50 mEq of sodium bicarbonate IV push."
+ },
+ {
+  "start_ms": 29968,
+  "end_ms": 31849,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 35369,
+  "end_ms": 38295,
+  "speaker": "M1",
+  "text": "Drawing up 150 migs of Nexterone IV."
+ },
+ {
+  "start_ms": 40711,
+  "end_ms": 42372,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 42680,
+  "end_ms": 44080,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 46423,
+  "end_ms": 47816,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 78379,
+  "end_ms": 79273,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 79961,
+  "end_ms": 81210,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 83645,
+  "end_ms": 84783,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 85375,
+  "end_ms": 86276,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 88848,
+  "end_ms": 91339,
+  "speaker": "M2",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 91657,
+  "end_ms": 93204,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 96906,
+  "end_ms": 97998,
+  "speaker": "M1",
+  "text": "Transporting to General."
+ },
+ {
+  "start_ms": 103251,
+  "end_ms": 105340,
+  "speaker": "M1",
+  "text": "Second set, pain is 9 out of 10."
+ },
+ {
+  "start_ms": 107669,
+  "end_ms": 108551,
+  "speaker": "M1",
+  "text": "We need shock."
+ },
+ {
+  "start_ms": 112862,
+  "end_ms": 115463,
+  "speaker": "M1",
+  "text": "Vitals, BGL 42, resps is 22."
+ },
+ {
+  "start_ms": 119772,
+  "end_ms": 121119,
+  "speaker": "M1",
+  "text": "Arriving at Saint Joseph's."
+ }
+]

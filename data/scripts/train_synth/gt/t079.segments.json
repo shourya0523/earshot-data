@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5318,
+  "speaker": "RD",
+  "text": "Rescue 42, priority one, weakness one side, 25 year old female."
+ },
+ {
+  "start_ms": 8877,
+  "end_ms": 10247,
+  "speaker": "M1",
+  "text": "Rescue 42 on scene."
+ },
+ {
+  "start_ms": 10609,
+  "end_ms": 11584,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 13035,
+  "end_ms": 14485,
+  "speaker": "PT",
+  "text": "My hand won't work."
+ },
+ {
+  "start_ms": 17940,
+  "end_ms": 19125,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 23007,
+  "end_ms": 25062,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 25399,
+  "end_ms": 26639,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 31346,
+  "end_ms": 34423,
+  "speaker": "M1",
+  "text": "Okay, glucose is 75, breathing 33."
+ },
+ {
+  "start_ms": 36786,
+  "end_ms": 37517,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 38295,
+  "end_ms": 40496,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 43287,
+  "end_ms": 43937,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 54094,
+  "end_ms": 56411,
+  "speaker": "M2",
+  "text": "Pushing oxygen, 2 L nasal cannula."
+ },
+ {
+  "start_ms": 60301,
+  "end_ms": 61241,
+  "speaker": "M1",
+  "text": "We need 20 gauge."
+ },
+ {
+  "start_ms": 69861,
+  "end_ms": 71487,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 75127,
+  "end_ms": 76632,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 77225,
+  "end_ms": 78628,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 84306,
+  "end_ms": 87255,
+  "speaker": "M1",
+  "text": "Second set, resp rate 17, GCS's 15."
+ },
+ {
+  "start_ms": 90006,
+  "end_ms": 91446,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 118695,
+  "end_ms": 119677,
+  "speaker": "M2",
+  "text": "Doing BEFAST."
+ },
+ {
+  "start_ms": 121179,
+  "end_ms": 121922,
+  "speaker": "M1",
+  "text": "We're at Good Sam."
+ }
+]

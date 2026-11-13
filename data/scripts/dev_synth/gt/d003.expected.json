@@ -1,0 +1,146 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "35",
+  "sex": "male",
+  "weight_kg": "115",
+  "complaint": "abdominal pain",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "abdominal pain",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "14",
+    "etco2": "52",
+    "hr": "91",
+    "bp": "123/65"
+   },
+   "last_vitals": {
+    "rr": "12",
+    "etco2": "52",
+    "hr": "91",
+    "bp": "123/65"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "appendicitis",
+    "kidney stone"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ondansetron 4 ODT",
+    "normal saline 1000 mL IV",
+    "ondansetron 4 mg IV",
+    "ketorolac 15 mg IV"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "35",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "abdominal pain",
+  "I_injuries_or_information": "abdominal pain",
+  "S_signs": {
+   "rr": "14",
+   "etco2": "52",
+   "hr": "91",
+   "bp": "123/65"
+  },
+  "T_treatment": [
+   "ondansetron 4 ODT",
+   "normal saline 1000 mL IV",
+   "ondansetron 4 mg IV",
+   "ketorolac 15 mg IV",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "07:17:59",
+  "eTimes.09": "07:19:23",
+  "eTimes.11": "07:20:27"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "abdominal pain",
+ "medications": [
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "route": "ODT"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "ketorolac",
+   "dose": "15",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "14",
+   "time": "07:18:32"
+  },
+  {
+   "name": "etco2",
+   "value": "52",
+   "time": "07:18:56"
+  },
+  {
+   "name": "hr",
+   "value": "91",
+   "time": "07:18:56"
+  },
+  {
+   "name": "bp",
+   "value": "123/65",
+   "time": "07:18:56"
+  },
+  {
+   "name": "rr",
+   "value": "12",
+   "time": "07:19:14"
+  }
+ ],
+ "diagnosis_traps": [
+  "appendicitis",
+  "kidney stone"
+ ]
+}

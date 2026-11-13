@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5449,
+  "speaker": "RD",
+  "text": "Squad 26, priority one, chest discomfort, 37 year old female."
+ },
+ {
+  "start_ms": 8271,
+  "end_ms": 10187,
+  "speaker": "M1",
+  "text": "Squad 26 we're on scene."
+ },
+ {
+  "start_ms": 11056,
+  "end_ms": 11985,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 12644,
+  "end_ms": 14729,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 21176,
+  "end_ms": 23313,
+  "speaker": "PT",
+  "text": "It's burning in my chest and my jaw."
+ },
+ {
+  "start_ms": 25185,
+  "end_ms": 29678,
+  "speaker": "M1",
+  "text": "Vitals, glucose's 427, sats's 100 percent."
+ },
+ {
+  "start_ms": 54719,
+  "end_ms": 56356,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 57008,
+  "end_ms": 58374,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 62754,
+  "end_ms": 65981,
+  "speaker": "M1",
+  "text": "0.4 mg nitro sublingual, it's in."
+ },
+ {
+  "start_ms": 74847,
+  "end_ms": 75965,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 76340,
+  "end_ms": 77241,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 85797,
+  "end_ms": 86946,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 93687,
+  "end_ms": 94569,
+  "speaker": "M1",
+  "text": "Get 12-lead."
+ },
+ {
+  "start_ms": 99438,
+  "end_ms": 100843,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 101614,
+  "end_ms": 102562,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 106295,
+  "end_ms": 108269,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 111831,
+  "end_ms": 118612,
+  "speaker": "M1",
+  "text": "Second set, 137 over 64, BGL is 403, capno 46."
+ },
+ {
+  "start_ms": 120161,
+  "end_ms": 121671,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 122192,
+  "end_ms": 123116,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 131913,
+  "end_ms": 135041,
+  "speaker": "M2",
+  "text": "Drawing up 324 of ASA."
+ },
+ {
+  "start_ms": 136926,
+  "end_ms": 140282,
+  "speaker": "M1",
+  "text": "Okay, pain is 4 out of 10, resp rate is 20."
+ },
+ {
+  "start_ms": 141648,
+  "end_ms": 142659,
+  "speaker": "M1",
+  "text": "Arrived at Valley."
+ },
+ {
+  "start_ms": 158718,
+  "end_ms": 160169,
+  "speaker": "M1",
+  "text": "Transfer of care now."
+ }
+]

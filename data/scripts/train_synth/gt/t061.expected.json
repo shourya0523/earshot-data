@@ -1,0 +1,146 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "37",
+  "sex": "female",
+  "weight_kg": "66",
+  "complaint": "chest pain",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest pain",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "427",
+    "spo2": "100",
+    "bp": "137/64",
+    "etco2": "46",
+    "pain": "4",
+    "rr": "20"
+   },
+   "last_vitals": {
+    "bgl": "403",
+    "spo2": "100",
+    "bp": "137/64",
+    "etco2": "46",
+    "pain": "4",
+    "rr": "20"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "nitroglycerin 0.4 mg SL",
+    "aspirin 324"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "37",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "chest discomfort",
+  "I_injuries_or_information": "chest pain",
+  "S_signs": {
+   "bgl": "427",
+   "spo2": "100",
+   "bp": "137/64",
+   "etco2": "46",
+   "pain": "4",
+   "rr": "20"
+  },
+  "T_treatment": [
+   "nitroglycerin 0.4 mg SL",
+   "aspirin 324",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "17:40:29",
+  "eTimes.09": "17:42:07",
+  "eTimes.11": "17:42:42",
+  "eTimes.12": "17:42:58"
+ },
+ "wall_time_seconds": 16,
+ "dispatch_reason": "chest discomfort",
+ "medications": [
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "unit": "mg",
+   "route": "SL"
+  },
+  {
+   "drug": "aspirin",
+   "dose": "324"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "427",
+   "time": "17:40:46"
+  },
+  {
+   "name": "spo2",
+   "value": "100",
+   "time": "17:40:46"
+  },
+  {
+   "name": "bp",
+   "value": "137/64",
+   "time": "17:42:12"
+  },
+  {
+   "name": "bgl",
+   "value": "403",
+   "time": "17:42:12"
+  },
+  {
+   "name": "etco2",
+   "value": "46",
+   "time": "17:42:12"
+  },
+  {
+   "name": "pain",
+   "value": "4",
+   "time": "17:42:37"
+  },
+  {
+   "name": "rr",
+   "value": "20",
+   "time": "17:42:37"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

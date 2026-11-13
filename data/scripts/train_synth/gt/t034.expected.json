@@ -1,0 +1,128 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "77",
+  "sex": "male",
+  "weight_kg": "83",
+  "complaint": "assault",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "assault",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "24",
+    "spo2": "100",
+    "hr": "145",
+    "bp": "180/142"
+   },
+   "last_vitals": {
+    "etco2": "24",
+    "spo2": "100",
+    "hr": "52",
+    "bp": "180/142"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "morphine 4",
+    "ketamine 0.3 mg/kg IV"
+   ],
+   "procedures": [
+    "tourniquet"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "77",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "pedestrian struck",
+  "I_injuries_or_information": "assault",
+  "S_signs": {
+   "etco2": "24",
+   "spo2": "100",
+   "hr": "145",
+   "bp": "180/142"
+  },
+  "T_treatment": [
+   "morphine 4",
+   "ketamine 0.3 mg/kg IV",
+   "tourniquet"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "02:42:08",
+  "eTimes.09": "02:43:20",
+  "eTimes.11": "02:44:27"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "pedestrian struck",
+ "medications": [
+  {
+   "drug": "morphine",
+   "dose": "4"
+  },
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "unit": "mg/kg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "24",
+   "time": "02:42:31"
+  },
+  {
+   "name": "spo2",
+   "value": "100",
+   "time": "02:43:26"
+  },
+  {
+   "name": "hr",
+   "value": "145",
+   "time": "02:43:26"
+  },
+  {
+   "name": "bp",
+   "value": "180/142",
+   "time": "02:44:14"
+  },
+  {
+   "name": "hr",
+   "value": "52",
+   "time": "02:44:14"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

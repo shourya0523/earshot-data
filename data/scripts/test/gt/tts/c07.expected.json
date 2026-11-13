@@ -1,0 +1,150 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "complaint"
+ ],
+ "patient": {
+  "age": "34",
+  "sex": "male",
+  "weight_kg": "90",
+  "complaint": "motorcycle crash, left leg pain and bleeding",
+  "allergies": "NKDA",
+  "home_meds": "none",
+  "history": "none"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "motorcycle crash, left leg pain and bleeding",
+   "allergies": "NKDA",
+   "medications": "none",
+   "history": "none"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "98/60",
+    "hr": "124",
+    "rr": "24",
+    "spo2": "97",
+    "pain": "8"
+   },
+   "last_vitals": {
+    "bp": "102/64",
+    "hr": "116",
+    "rr": "24",
+    "spo2": "97",
+    "pain": "8"
+   },
+   "status": [
+    "compensating",
+    "tourniquet time 02:34"
+   ],
+   "found": "helmeted rider, bleeding left thigh"
+  },
+  "A": {
+   "must_not_contain": [
+    "femur fracture",
+    "hemorrhagic shock"
+   ]
+  },
+  "P": {
+   "medications": [
+    "tranexamic acid 1 g IV",
+    "fentanyl 50 mcg IV"
+   ],
+   "procedures": [
+    "IV access",
+    "splinting",
+    "tourniquet"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "34",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "motorcycle versus car",
+  "I_injuries_or_information": "helmeted rider, bleeding left thigh",
+  "S_signs": {
+   "bp": "98/60",
+   "hr": "124",
+   "rr": "24",
+   "spo2": "97",
+   "pain": "8"
+  },
+  "T_treatment": [
+   "tranexamic acid 1 g IV",
+   "fentanyl 50 mcg IV",
+   "IV access",
+   "splinting",
+   "tourniquet"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "none",
+  "B_background": "none",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "02:31:49",
+  "eTimes.09": "02:32:55",
+  "eTimes.11": "02:33:50",
+  "eTimes.12": "02:33:55"
+ },
+ "wall_time_seconds": 5,
+ "dispatch_reason": "motorcycle versus car",
+ "medications": [
+  {
+   "drug": "tranexamic acid",
+   "dose": "1",
+   "unit": "g",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "50",
+   "unit": "mcg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "98/60",
+   "time": "02:32:14"
+  },
+  {
+   "name": "hr",
+   "value": "124",
+   "time": "02:32:14"
+  },
+  {
+   "name": "rr",
+   "value": "24",
+   "time": "02:32:14"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "02:32:14"
+  },
+  {
+   "name": "bp",
+   "value": "102/64",
+   "time": "02:33:27"
+  },
+  {
+   "name": "hr",
+   "value": "116",
+   "time": "02:33:27"
+  },
+  {
+   "name": "pain",
+   "value": "8",
+   "time": "02:33:27"
+  }
+ ],
+ "diagnosis_traps": [
+  "femur fracture",
+  "hemorrhagic shock"
+ ]
+}

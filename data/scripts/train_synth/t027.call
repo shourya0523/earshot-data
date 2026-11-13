@@ -1,0 +1,49 @@
+@call t027 agitation start=10:24:28
+@patient age=21 sex=female weight_kg=108 complaint="combative person" allergies=unknown home_meds=unknown history=unknown
+@traps excited delirium; psychosis
+RD: Ambulance 23, you have a combative person, 21 year old female.  >> dispatch:combative person "combative person"
+GAP 3
+M2: Ambulance 23 on scene.  >> time:eTimes.06 "on scene"
+M1: Any medical history I should know about?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 8
+PT: Get away from me.
+GAP 6
+M1: How long has this been going on?
+GAP 2
+M2: I'm going to put some stickers on your chest.
+PT: Please don't cut my shirt.
+GAP 3
+TAP knock +label
+M1: I gave droperidol 5 migs intramuscular.  >> med:droperidol,5,mg,IM "I gave droperidol 5 migs intramuscular"
+GAP 11
+TAP button -
+GAP 11
+GAP 4
+M1: Who's your doctor?
+GAP 8
+TAP button +label
+M1: Repeat, resps 26, GCS's 15, capno at 48.  >> vital:rr=26 "resps 26"; vital:gcs=15 "GCS's 15"; vital:etco2=48 "capno at 48"
+GAP 1
+M2: Get check his sugar.  >> proc:glucose check "check his sugar"
+GAP 6
+TAP snap +label
+M1: Okay, sugar at 175.  >> vital:bgl=175 "sugar at 175"
+GAP 4
+M1: Leaving scene to Memorial.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: I gave Ketalar 4 milligrams per kilo in the deltoid.  >> med:ketamine,4,mg/kg,IM "I gave Ketalar 4 milligrams per kilo in the deltoid"
+GAP 4
+M1: Did you pass out at all?
+PT: It's getting worse.
+GAP 6
+M1: Can you tell me what day it is?
+PT: I don't know, it just started.
+GAP 4
+M1: Stay with me, keep your eyes open.
+BY: It's about an eight.
+GAP 2
+M1: Arriving at General.  >> time:eTimes.11 "Arriving at"
+GAP 10
+TAP button +label
+M1: Transfer of care complete.  >> time:eTimes.12 "Transfer of care"

@@ -1,0 +1,12 @@
+{"id": "e1", "call_id": "t079", "time": "21:31:17", "clip_ms": 500, "type": "dispatch", "fields": {"text": "weakness one side"}, "source": "heard", "quote": "weakness one side", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t079", "time": "21:31:25", "clip_ms": 8877, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 8877}
+{"id": "e3", "call_id": "t079", "time": "21:31:48", "clip_ms": 31346, "type": "vital", "fields": {"name": "bgl", "value": "75", "unit": "mg/dL"}, "source": "heard", "quote": "glucose is 75", "segment_start_ms": 31346}
+{"id": "e4", "call_id": "t079", "time": "21:31:48", "clip_ms": 31346, "type": "vital", "fields": {"name": "rr", "value": "33", "unit": "/min"}, "source": "heard", "quote": "breathing 33", "segment_start_ms": 31346}
+{"id": "e5", "call_id": "t079", "time": "21:32:09", "clip_ms": 52666, "type": "medication", "fields": {"drug": "oxygen", "dose": "2", "unit": "L/min", "route": "NC"}, "source": "tap+heard", "quote": "Pushing oxygen, 2 L nasal cannula", "segment_start_ms": 54094, "tap_id": "t1"}
+{"id": "e6", "call_id": "t079", "time": "21:32:17", "clip_ms": 60301, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "20 gauge", "segment_start_ms": 60301}
+{"id": "e7", "call_id": "t079", "time": "21:32:26", "clip_ms": 69861, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 69861}
+{"id": "e8", "call_id": "t079", "time": "21:32:39", "clip_ms": 82818, "type": "vital", "fields": {"name": "rr", "value": "17", "unit": "/min"}, "source": "tap+heard", "quote": "resp rate 17", "segment_start_ms": 84306, "tap_id": "t2"}
+{"id": "e9", "call_id": "t079", "time": "21:32:39", "clip_ms": 82818, "type": "vital", "fields": {"name": "gcs", "value": "15", "unit": ""}, "source": "tap+heard", "quote": "GCS's 15", "segment_start_ms": 84306, "tap_id": "t2"}
+{"id": "mt3", "call_id": "t079", "time": "21:33:03", "clip_ms": 106350, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t3"}
+{"id": "e10", "call_id": "t079", "time": "21:33:15", "clip_ms": 118695, "type": "procedure", "fields": {"name": "stroke scale"}, "source": "heard", "quote": "BEFAST", "segment_start_ms": 118695}
+{"id": "e11", "call_id": "t079", "time": "21:33:18", "clip_ms": 121179, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 121179}

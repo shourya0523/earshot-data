@@ -1,0 +1,50 @@
+@call t046 agitation start=21:47:04
+@patient age=84 sex=female weight_kg=138 complaint="psychiatric emergency" allergies=unknown home_meds=unknown history=unknown
+@traps excited delirium; psychosis
+RD: Medic 27, respond to combative person, 84 year old female.  >> dispatch:combative person "combative person"
+GAP 2
+M1: Medic 27 on scene.  >> time:eTimes.06 "on scene"
+M1: I'm going to put some stickers on your chest.
+GAP 2
+PT: I didn't do anything.
+GAP 6
+M2: Let's do restraints.  >> proc:restraint "restraints"
+GAP 1
+TAP button +label
+M2: Drawing up 5 milligrams of haloperidol.  >> med:haloperidol,5,mg, "Drawing up 5 milligrams of haloperidol"
+GAP 6
+M1: When did you last eat?
+BY: Can somebody call my wife?
+GAP 1
+M2: Stay with me, keep your eyes open.
+PT: Can somebody call my wife?
+GAP 2
+TAP snap +label
+M2: BP's 196 over 128.  >> vital:bp=196/128 "BP's 196 over 128"
+GAP 2
+TAP knock +label
+M1: Drawing up 4 milligrams per kilo of Ketalar IM.  >> med:ketamine,4,mg/kg,IM "Drawing up 4 milligrams per kilo of Ketalar IM"
+GAP 3
+TAP button +label
+M1: Giving 10 of olanzapine.  >> med:olanzapine,10,, "Giving 10 of olanzapine"
+GAP 11
+TAP button -
+GAP 11
+GAP 8
+M1: Transporting to General.  >> time:eTimes.09 "Transporting"
+GAP 3
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+GAP 4
+TAP snap +label
+M2: Repeat, GCS is 10.  >> vital:gcs=10 "GCS is 10"
+GAP 2
+M2: On a scale of zero to ten, how bad is it?
+GAP 3
+M1: Are you having any trouble breathing?
+BY: No allergies.
+GAP 1
+M1: Arriving at Good Sam.  >> time:eTimes.11 "Arriving at"
+GAP 11
+TAP button +label
+M1: Handing off to the nurse.  >> time:eTimes.12 "Handing off"

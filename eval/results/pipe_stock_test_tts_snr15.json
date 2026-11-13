@@ -1,0 +1,369 @@
+{
+ "run": "eval/runs/pipe_stock/test_tts_snr15",
+ "gt": "data/scripts/test/gt/tts",
+ "n": 10,
+ "transcription": {
+  "n_files": 10,
+  "wer": 0.17642466822794692,
+  "drug_wer": 0.34615384615384615,
+  "drug_tokens": 26,
+  "number_acc": 0.8132530120481928,
+  "number_tokens": 166,
+  "unit_acc": 0.8181818181818181,
+  "jargon_recall": 0.8115942028985508,
+  "jargon_terms": 69,
+  "per_file": [
+   {
+    "id": "c01",
+    "ref_words": 157,
+    "errors": 17,
+    "wer": 0.10828025477707007,
+    "drug_n": 5,
+    "drug_err": 2,
+    "num_n": 22,
+    "num_err": 1,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 5,
+    "drug_misses": [
+     "lisinopril and atorvastatin -> end up adorvastatin"
+    ]
+   },
+   {
+    "id": "c02",
+    "ref_words": 162,
+    "errors": 26,
+    "wer": 0.16049382716049382,
+    "drug_n": 2,
+    "drug_err": 2,
+    "num_n": 17,
+    "num_err": 2,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 8,
+    "jargon_hit": 7,
+    "drug_misses": [
+     "eliquis and metoprolol -> s in metaprolol"
+    ]
+   },
+   {
+    "id": "c03",
+    "ref_words": 121,
+    "errors": 21,
+    "wer": 0.17355371900826447,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 13,
+    "num_err": 1,
+    "unit_n": 2,
+    "unit_err": 1,
+    "jargon_n": 7,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "narcan 4 -> beep pulses"
+    ]
+   },
+   {
+    "id": "c04",
+    "ref_words": 151,
+    "errors": 20,
+    "wer": 0.13245033112582782,
+    "drug_n": 4,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 2,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 11,
+    "jargon_hit": 8,
+    "drug_misses": []
+   },
+   {
+    "id": "c05",
+    "ref_words": 121,
+    "errors": 16,
+    "wer": 0.1322314049586777,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 17,
+    "num_err": 8,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 12,
+    "jargon_hit": 11,
+    "drug_misses": []
+   },
+   {
+    "id": "c06",
+    "ref_words": 117,
+    "errors": 21,
+    "wer": 0.1794871794871795,
+    "drug_n": 6,
+    "drug_err": 1,
+    "num_n": 20,
+    "num_err": 1,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 4,
+    "drug_misses": [
+     "ipratropium -> epitropium"
+    ]
+   },
+   {
+    "id": "c07",
+    "ref_words": 120,
+    "errors": 44,
+    "wer": 0.36666666666666664,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 19,
+    "num_err": 9,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "fentanyl -> anal"
+    ]
+   },
+   {
+    "id": "c08",
+    "ref_words": 95,
+    "errors": 34,
+    "wer": 0.35789473684210527,
+    "drug_n": 3,
+    "drug_err": 1,
+    "num_n": 16,
+    "num_err": 6,
+    "unit_n": 3,
+    "unit_err": 1,
+    "jargon_n": 3,
+    "jargon_hit": 2,
+    "drug_misses": [
+     "famotidine -> famatidine"
+    ]
+   },
+   {
+    "id": "c09",
+    "ref_words": 103,
+    "errors": 21,
+    "wer": 0.20388349514563106,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 14,
+    "num_err": 1,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 4,
+    "drug_misses": [
+     "keppra -> capra"
+    ]
+   },
+   {
+    "id": "c10",
+    "ref_words": 134,
+    "errors": 6,
+    "wer": 0.04477611940298507,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 0,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 4,
+    "jargon_hit": 3,
+    "drug_misses": []
+   }
+  ]
+ },
+ "extraction": {
+  "fields": {
+   "dose": {
+    "tp": 17,
+    "pred": 17,
+    "gt": 22,
+    "precision": 1.0,
+    "recall": 0.7727272727272727,
+    "f1": 0.8717948717948718
+   },
+   "drug": {
+    "tp": 18,
+    "pred": 19,
+    "gt": 22,
+    "precision": 0.9473684210526315,
+    "recall": 0.8181818181818182,
+    "f1": 0.8780487804878049
+   },
+   "procedure": {
+    "tp": 12,
+    "pred": 16,
+    "gt": 14,
+    "precision": 0.75,
+    "recall": 0.8571428571428571,
+    "f1": 0.7999999999999999
+   },
+   "route": {
+    "tp": 13,
+    "pred": 13,
+    "gt": 19,
+    "precision": 1.0,
+    "recall": 0.6842105263157895,
+    "f1": 0.8125000000000001
+   },
+   "status": {
+    "tp": 9,
+    "pred": 12,
+    "gt": 16,
+    "precision": 0.75,
+    "recall": 0.5625,
+    "f1": 0.6428571428571429
+   },
+   "unit": {
+    "tp": 7,
+    "pred": 7,
+    "gt": 11,
+    "precision": 1.0,
+    "recall": 0.6363636363636364,
+    "f1": 0.7777777777777778
+   },
+   "vital.bgl": {
+    "tp": 5,
+    "pred": 5,
+    "gt": 7,
+    "precision": 1.0,
+    "recall": 0.7142857142857143,
+    "f1": 0.8333333333333333
+   },
+   "vital.bp": {
+    "tp": 10,
+    "pred": 11,
+    "gt": 16,
+    "precision": 0.9090909090909091,
+    "recall": 0.625,
+    "f1": 0.7407407407407406
+   },
+   "vital.gcs": {
+    "tp": 2,
+    "pred": 2,
+    "gt": 3,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8
+   },
+   "vital.hr": {
+    "tp": 11,
+    "pred": 11,
+    "gt": 16,
+    "precision": 1.0,
+    "recall": 0.6875,
+    "f1": 0.8148148148148148
+   },
+   "vital.pain": {
+    "tp": 2,
+    "pred": 2,
+    "gt": 2,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "vital.rr": {
+    "tp": 4,
+    "pred": 4,
+    "gt": 7,
+    "precision": 1.0,
+    "recall": 0.5714285714285714,
+    "f1": 0.7272727272727273
+   },
+   "vital.spo2": {
+    "tp": 9,
+    "pred": 9,
+    "gt": 14,
+    "precision": 1.0,
+    "recall": 0.6428571428571429,
+    "f1": 0.782608695652174
+   }
+  },
+  "unsupported_field_rate": 0.03867403314917127,
+  "unsupported": 7,
+  "pred_fields": 181,
+  "unsupported_examples": [
+   [
+    "c01",
+    "e9",
+    "drug=metoprolol quote='sublingual, his pressure'"
+   ],
+   [
+    "c08",
+    "e7",
+    "route=IM quote='epi 0.5 milligrams, iam right thigh.'"
+   ],
+   [
+    "c08",
+    "e14",
+    "drug=famotidine quote='Famatidine 20 IV,'"
+   ],
+   [
+    "c08",
+    "e15",
+    "drug=cetirizine quote='IV, DOT arrived'"
+   ],
+   [
+    "c08",
+    "e16",
+    "drug=methylprednisolone quote='Memorial,'"
+   ],
+   [
+    "c09",
+    "e8",
+    "drug=hydromorphone quote='IM left deltide.'"
+   ],
+   [
+    "c10",
+    "e11",
+    "drug=cetirizine quote='service.'"
+   ]
+  ],
+  "unsupported_inferred": 0,
+  "unsupported_field_rate_excl_flagged_inferred": 0.03867403314917127,
+  "timestamp_error_ms": {
+   "median": 0,
+   "p90": 5023,
+   "n": 61
+  },
+  "tap_labelling": {
+   "labelled_correct": 25,
+   "labelled_total": 40,
+   "unlabelled_correct": 6,
+   "unlabelled_total": 10,
+   "accuracy": 0.62
+  }
+ },
+ "taps": null,
+ "outputs": {
+  "key_field_match": {
+   "soap": 0.744,
+   "chart": 0.744,
+   "imist": 0.744,
+   "nemsis": 0.6962025316455697
+  },
+  "nemsis_schema_valid": "10/10",
+  "diagnosis_leaks": []
+ },
+ "speed": {
+  "audio_s": 1418.312,
+  "wall_s": 569.914,
+  "rtf": 0.4018255503725556,
+  "stages_s": {
+   "asr_total": 562.4870000000001,
+   "cleanup": 0.032,
+   "extract_rules": 0.055999999999999994,
+   "merge": 0.008,
+   "render": 0.033,
+   "total": 569.914,
+   "vad": 0.189
+  }
+ }
+}

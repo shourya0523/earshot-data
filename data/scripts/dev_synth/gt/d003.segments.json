@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5091,
+  "speaker": "RD",
+  "text": "Rescue 23, priority two, abdominal pain, 35 year old male."
+ },
+ {
+  "start_ms": 8477,
+  "end_ms": 10191,
+  "speaker": "M2",
+  "text": "Rescue 23 we're on scene."
+ },
+ {
+  "start_ms": 10738,
+  "end_ms": 11485,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 11994,
+  "end_ms": 13394,
+  "speaker": "BY",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 14888,
+  "end_ms": 16045,
+  "speaker": "PT",
+  "text": "My stomach is killing me."
+ },
+ {
+  "start_ms": 22758,
+  "end_ms": 26615,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 33499,
+  "end_ms": 35379,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 36079,
+  "end_ms": 37201,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 42894,
+  "end_ms": 45362,
+  "speaker": "M1",
+  "text": "Repeat, resp rate 14."
+ },
+ {
+  "start_ms": 48014,
+  "end_ms": 50248,
+  "speaker": "M1",
+  "text": "I gave zofran 4 ODT."
+ },
+ {
+  "start_ms": 54462,
+  "end_ms": 56970,
+  "speaker": "M1",
+  "text": "saline 1000 cc's through the line."
+ },
+ {
+  "start_ms": 65308,
+  "end_ms": 72705,
+  "speaker": "M1",
+  "text": "Second set, capno at 52, HR 91, blood pressure 123 over 65."
+ },
+ {
+  "start_ms": 74013,
+  "end_ms": 77156,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 77927,
+  "end_ms": 79548,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 85084,
+  "end_ms": 87724,
+  "speaker": "M1",
+  "text": "Vitals, resps at 12."
+ },
+ {
+  "start_ms": 92299,
+  "end_ms": 94595,
+  "speaker": "M1",
+  "text": "Leaving scene to Saint Joseph's."
+ },
+ {
+  "start_ms": 98074,
+  "end_ms": 100460,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 106866,
+  "end_ms": 108166,
+  "speaker": "M1",
+  "text": "Let's do line."
+ },
+ {
+  "start_ms": 138884,
+  "end_ms": 140993,
+  "speaker": "M2",
+  "text": "Giving 4 migs of zofran IV push."
+ },
+ {
+  "start_ms": 144537,
+  "end_ms": 147756,
+  "speaker": "M1",
+  "text": "Drawing up 15 milligrams of ketorolac IV push."
+ },
+ {
+  "start_ms": 156184,
+  "end_ms": 158218,
+  "speaker": "M1",
+  "text": "Arriving at Saint Joseph's."
+ }
+]

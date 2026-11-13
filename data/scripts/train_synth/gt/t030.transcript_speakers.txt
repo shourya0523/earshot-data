@@ -1,0 +1,20 @@
+RD: Ambulance 33, respond to MVC rollover, 52 year old male.
+M1: Ambulance 33 we're on scene.
+M1: How long has this been going on?
+PT: Please don't cut my shirt.
+PT: My hip hurts so bad.
+M1: Watch the step.
+M1: Can you squeeze my fingers?
+M2: Pushing Ketalar, 0.3 IV.
+M2: Got pelvic binder.
+M1: Okay, sugar's 432.
+M1: Are you having any trouble breathing?
+BY: It's about an eight.
+M2: Pushing morphine, 4 intravenous.
+M1: Transporting to Northside.
+M1: Giving 250 of saline IV.
+M1: Second set, sats 85, BGL is 112, GCS is 12.
+M1: 100 fent IV, it's in.
+M2: Doing hemostatic gauze.
+M1: Arriving at Memorial.
+M1: Giving report now.

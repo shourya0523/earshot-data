@@ -1,0 +1,17 @@
+RD: Squad 15, respond to unknown problem, 75 year old male.
+M1: Squad 15 we're on scene.
+M1: How long has this been going on?
+PT: I only had one.
+M1: Let's move on three. One, two, three.
+M1: Okay, we're going to take care of you.
+PT: No allergies.
+M1: Vitals, GCS at 10, 142 over 100, rate is 86.
+M1: Repeat, heart rate 72.
+M2: Small poke.
+BY: Am I going to be okay?
+M1: Giving 4 migs of narcan IN.
+M1: We're transporting to Valley.
+M2: Got oral airway.
+M1: I gave Narcan 2 milligrams in the nose.
+M1: Okay, respirations's 33, end tidal is 30.
+M1: Arrived at Saint Joseph's.

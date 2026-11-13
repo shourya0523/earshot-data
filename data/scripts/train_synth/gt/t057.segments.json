@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5109,
+  "speaker": "RD",
+  "text": "Rescue 48, priority two, cardiac problem, 88 year old female."
+ },
+ {
+  "start_ms": 8881,
+  "end_ms": 10483,
+  "speaker": "M1",
+  "text": "Rescue 48 on scene."
+ },
+ {
+  "start_ms": 11214,
+  "end_ms": 13218,
+  "speaker": "M2",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 15579,
+  "end_ms": 16817,
+  "speaker": "PT",
+  "text": "Pressure in my chest."
+ },
+ {
+  "start_ms": 19396,
+  "end_ms": 21470,
+  "speaker": "M2",
+  "text": "Repeat, sats is 96."
+ },
+ {
+  "start_ms": 23870,
+  "end_ms": 24950,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 25475,
+  "end_ms": 27142,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 77595,
+  "end_ms": 83419,
+  "speaker": "M2",
+  "text": "Vitals, sugar's 166, pain is 6 out of 10, sat at 95 percent."
+ },
+ {
+  "start_ms": 91723,
+  "end_ms": 92641,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 93018,
+  "end_ms": 95208,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 99928,
+  "end_ms": 101193,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 102046,
+  "end_ms": 103028,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 111820,
+  "end_ms": 113407,
+  "speaker": "M2",
+  "text": "Get 20 in the left hand."
+ },
+ {
+  "start_ms": 117034,
+  "end_ms": 118787,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Joseph's."
+ },
+ {
+  "start_ms": 122330,
+  "end_ms": 123642,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 132218,
+  "end_ms": 135085,
+  "speaker": "M1",
+  "text": "Drawing up 324 of Bayer chewed."
+ },
+ {
+  "start_ms": 137969,
+  "end_ms": 139908,
+  "speaker": "M1",
+  "text": "I gave zofran 4 mg IV."
+ },
+ {
+  "start_ms": 148741,
+  "end_ms": 150506,
+  "speaker": "M1",
+  "text": "Arriving at Saint Joseph's."
+ },
+ {
+  "start_ms": 161207,
+  "end_ms": 162101,
+  "speaker": "M1",
+  "text": "Handing off now."
+ }
+]

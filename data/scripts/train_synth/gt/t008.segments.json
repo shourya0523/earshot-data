@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4601,
+  "speaker": "RD",
+  "text": "Medic 35, you have a psychiatric emergency, 49 year old female."
+ },
+ {
+  "start_ms": 7039,
+  "end_ms": 9628,
+  "speaker": "M1",
+  "text": "Medic 35 arriving on scene."
+ },
+ {
+  "start_ms": 10429,
+  "end_ms": 13970,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 14472,
+  "end_ms": 16125,
+  "speaker": "BY",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 18789,
+  "end_ms": 19655,
+  "speaker": "PT",
+  "text": "Get away from me."
+ },
+ {
+  "start_ms": 26024,
+  "end_ms": 27759,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 54518,
+  "end_ms": 57189,
+  "speaker": "M1",
+  "text": "Drawing up 5 of versed in the deltoid."
+ },
+ {
+  "start_ms": 66065,
+  "end_ms": 67666,
+  "speaker": "M1",
+  "text": "Doing soft restraints."
+ },
+ {
+  "start_ms": 97245,
+  "end_ms": 99648,
+  "speaker": "M1",
+  "text": "I gave ket 4 intramuscular."
+ },
+ {
+  "start_ms": 108425,
+  "end_ms": 109616,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 115172,
+  "end_ms": 117624,
+  "speaker": "M1",
+  "text": "5 migs Haldol, it's in."
+ },
+ {
+  "start_ms": 120498,
+  "end_ms": 122594,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 123434,
+  "end_ms": 124405,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 129066,
+  "end_ms": 131508,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 132085,
+  "end_ms": 133909,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 138519,
+  "end_ms": 140727,
+  "speaker": "M1",
+  "text": "Transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 145951,
+  "end_ms": 149098,
+  "speaker": "M1",
+  "text": "Vitals, 105 over 51."
+ },
+ {
+  "start_ms": 157994,
+  "end_ms": 159626,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 160184,
+  "end_ms": 161468,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 165284,
+  "end_ms": 169189,
+  "speaker": "M1",
+  "text": "capno's 40, resps's 24, GCS is 8."
+ },
+ {
+  "start_ms": 174047,
+  "end_ms": 175831,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 176407,
+  "end_ms": 177216,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 183829,
+  "end_ms": 185520,
+  "speaker": "M1",
+  "text": "Arriving at Good Sam."
+ },
+ {
+  "start_ms": 201383,
+  "end_ms": 203428,
+  "speaker": "M1",
+  "text": "Giving report to the nurse."
+ }
+]

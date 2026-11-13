@@ -1,0 +1,44 @@
+@call d010 sepsis start=04:06:07
+@patient age=89 sex=female weight_kg=68 complaint="sick person" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Rescue 12, you have a sick person, 89 year old female.  >> dispatch:sick person "sick person"
+GAP 2
+M1: Rescue 12 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: When did you last eat?
+PT: No allergies.
+GAP 6
+PT: I've had a fever for three days.
+GAP 2
+TAP knock +label
+M1: Pushing lactated ringers, 500 IV.  >> med:lactated Ringer's,500,,IV "Pushing lactated ringers, 500 IV"
+GAP 6
+M2: Second set, pulse ox's 84 percent.  >> vital:spo2=84 "pulse ox's 84 percent"
+GAP 4
+TAP snap +label
+M1: Pushing normal saline, 1000 mils.  >> med:normal saline,1000,mL, "Pushing normal saline, 1000 mils"
+GAP 1
+TAP snap +label
+M1: Repeat, pulse 79, resps's 27, BP at 185 over 145.  >> vital:hr=79 "pulse 79"; vital:rr=27 "resps's 27"; vital:bp=185/145 "BP at 185 over 145"
+GAP 3
+M1: Did you pass out at all?
+GAP 11
+TAP snap -
+GAP 11
+GAP 6
+M1: Doing 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 8
+M1: Watch the step.
+BY: Can somebody call my wife?
+GAP 3
+M1: We're transporting to General.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Any allergies?
+PT: I feel sick.
+GAP 4
+TAP button +label
+M1: Tylenol 1000 migs chewed.  >> med:acetaminophen,1000,mg,PO "Tylenol 1000 migs chewed"
+GAP 8
+M2: Get the cot.
+GAP 6
+M1: Arrived at University.  >> time:eTimes.11 "Arrived at"
+KNOCK3

@@ -1,0 +1,20 @@
+{
+ "train": {
+  "items": 3328,
+  "real_items": 2698,
+  "synthetic_items": 630,
+  "real_hours": 5.74,
+  "synthetic_hours": 1.52,
+  "real_share_items": 0.811,
+  "real_share_hours": 0.791
+ },
+ "dev": {
+  "items": 145,
+  "real_items": 90,
+  "synthetic_items": 55,
+  "real_hours": 0.18,
+  "synthetic_hours": 0.31,
+  "real_share_items": 0.621,
+  "real_share_hours": 0.375
+ }
+}

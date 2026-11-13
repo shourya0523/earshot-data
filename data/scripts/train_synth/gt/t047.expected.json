@@ -1,0 +1,118 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "44",
+  "sex": "male",
+  "weight_kg": "109",
+  "complaint": "structure fire",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "structure fire",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "10",
+    "pain": "6",
+    "bp": "151/101"
+   },
+   "last_vitals": {
+    "gcs": "10",
+    "pain": "6",
+    "bp": "151/101"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "lactated Ringer's 1000 mL IV",
+    "hydroxocobalamin 5 IV"
+   ],
+   "procedures": [
+    "bandaging",
+    "cooling"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "44",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "burns",
+  "I_injuries_or_information": "structure fire",
+  "S_signs": {
+   "gcs": "10",
+   "pain": "6",
+   "bp": "151/101"
+  },
+  "T_treatment": [
+   "lactated Ringer's 1000 mL IV",
+   "hydroxocobalamin 5 IV",
+   "bandaging",
+   "cooling"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "09:54:38",
+  "eTimes.09": "09:56:07",
+  "eTimes.11": "09:56:44",
+  "eTimes.12": "09:56:55"
+ },
+ "wall_time_seconds": 11,
+ "dispatch_reason": "burns",
+ "medications": [
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "09:55:33"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "09:56:20"
+  },
+  {
+   "name": "bp",
+   "value": "151/101",
+   "time": "09:56:20"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

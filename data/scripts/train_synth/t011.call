@@ -1,0 +1,44 @@
+@call t011 copd start=23:40:15
+@patient age=49 sex=male weight_kg=55 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps COPD exacerbation
+RD: Squad 45, priority one, difficulty breathing, 49 year old male.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 4
+M2: Squad 45 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Did you pass out at all?
+GAP 3
+PT: My breathing's bad today.
+GAP 2
+TAP snap +label
+M1: Pushing oxygen, 4 nasal cannula.  >> med:oxygen,4,,NC "Pushing oxygen, 4 nasal cannula"
+GAP 11
+TAP knock -
+GAP 11
+GAP 1
+M2: On a scale of zero to ten, how bad is it?
+GAP 6
+TAP button +label
+M2: Second set, SpO2 is 85.  >> vital:spo2=85 "SpO2 is 85"
+GAP 2
+M1: 125 solumedrol intravenous, it's in.  >> med:methylprednisolone,125,,IV "125 solumedrol intravenous"
+GAP 6
+M1: pulse ox is 82 on room air, resps 36.  >> vital:spo2=82 "pulse ox is 82 on room air"; vital:rr=36 "resps 36"
+GAP 6
+M1: Can you tell me what day it is?
+PT: Can somebody call my wife?
+GAP 4
+M2: Are you having any trouble breathing?
+PT: It's getting worse.
+GAP 4
+GAP 11
+TAP button -
+GAP 11
+M1: We're transporting to Valley.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP snap +label
+M2: Repeat, BGL at 312.  >> vital:bgl=312 "BGL at 312"
+GAP 3
+M2: Get nebulizer treatment.  >> proc:nebulizer "nebulizer treatment"
+GAP 8
+M1: Grab the stair chair.
+GAP 4
+M1: Arriving at County.  >> time:eTimes.11 "Arriving at"

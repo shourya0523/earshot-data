@@ -1,0 +1,18 @@
+RD: Squad 45, you have a fever, 39 year old male.
+M2: Squad 45 on scene.
+M1: How long has this been going on?
+PT: I had something like this last year.
+PT: I've had a fever for three days.
+M1: Hang tight, partner.
+M1: Hang tight, partner.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M2: end tidal is 33, pain is 7 out of 10.
+M2: Repeat, pain is 9 out of 10.
+M2: 1000 cc's saline intravenous, it's in.
+M1: I gave lactated ringers 500 cc's.
+M1: Leaving scene to Saint Joseph's.
+M2: Doing 20 gauge.
+M1: Small poke.
+BY: Can somebody call my wife?
+M1: Tylenol 1000 by mouth.
+M1: Arriving at Saint Joseph's.

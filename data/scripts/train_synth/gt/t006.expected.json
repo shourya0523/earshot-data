@@ -1,0 +1,145 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "77",
+  "sex": "female",
+  "weight_kg": "48",
+  "complaint": "sick person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "sick person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "20",
+    "bgl": "328",
+    "spo2": "100",
+    "rr": "10",
+    "gcs": "12"
+   },
+   "last_vitals": {
+    "etco2": "43",
+    "bgl": "328",
+    "spo2": "100",
+    "rr": "10",
+    "gcs": "12"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "appendicitis",
+    "kidney stone"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ondansetron 4",
+    "ondansetron 4 mg IV",
+    "ketorolac 15 mg"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "77",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "abdominal pain",
+  "I_injuries_or_information": "sick person",
+  "S_signs": {
+   "etco2": "20",
+   "bgl": "328",
+   "spo2": "100",
+   "rr": "10",
+   "gcs": "12"
+  },
+  "T_treatment": [
+   "ondansetron 4",
+   "ondansetron 4 mg IV",
+   "ketorolac 15 mg",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "17:32:20",
+  "eTimes.09": "17:34:38",
+  "eTimes.11": "17:35:00",
+  "eTimes.12": "17:35:15"
+ },
+ "wall_time_seconds": 15,
+ "dispatch_reason": "abdominal pain",
+ "medications": [
+  {
+   "drug": "ondansetron",
+   "dose": "4"
+  },
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "ketorolac",
+   "dose": "15",
+   "unit": "mg"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "20",
+   "time": "17:33:23"
+  },
+  {
+   "name": "bgl",
+   "value": "328",
+   "time": "17:34:20"
+  },
+  {
+   "name": "spo2",
+   "value": "100",
+   "time": "17:34:20"
+  },
+  {
+   "name": "rr",
+   "value": "10",
+   "time": "17:34:20"
+  },
+  {
+   "name": "gcs",
+   "value": "12",
+   "time": "17:34:44"
+  },
+  {
+   "name": "etco2",
+   "value": "43",
+   "time": "17:34:44"
+  }
+ ],
+ "diagnosis_traps": [
+  "appendicitis",
+  "kidney stone"
+ ]
+}

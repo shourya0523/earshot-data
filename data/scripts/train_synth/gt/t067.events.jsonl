@@ -1,0 +1,12 @@
+{"id": "e1", "call_id": "t067", "time": "04:14:29", "clip_ms": 500, "type": "dispatch", "fields": {"text": "stroke"}, "source": "heard", "quote": "stroke", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t067", "time": "04:14:36", "clip_ms": 7787, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 7787}
+{"id": "mt1", "call_id": "t067", "time": "04:15:00", "clip_ms": 31665, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "e3", "call_id": "t067", "time": "04:15:14", "clip_ms": 45111, "type": "vital", "fields": {"name": "spo2", "value": "82", "unit": "%"}, "source": "heard", "quote": "pulse ox at 82 percent", "segment_start_ms": 45111}
+{"id": "e4", "call_id": "t067", "time": "04:15:17", "clip_ms": 48646, "type": "medication", "fields": {"drug": "oxygen", "dose": "2", "unit": "L/min", "route": "NC"}, "source": "heard", "quote": "Drawing up 2 L of non-rebreather nasal cannula", "segment_start_ms": 48646}
+{"id": "e5", "call_id": "t067", "time": "04:15:24", "clip_ms": 55095, "type": "procedure", "fields": {"name": "glucose check"}, "source": "heard", "quote": "check a sugar", "segment_start_ms": 55095}
+{"id": "e6", "call_id": "t067", "time": "04:15:33", "clip_ms": 64940, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "18 gauge", "segment_start_ms": 64940}
+{"id": "e7", "call_id": "t067", "time": "04:15:44", "clip_ms": 75256, "type": "vital", "fields": {"name": "etco2", "value": "53", "unit": "mmHg"}, "source": "tap+heard", "quote": "end tidal 53", "segment_start_ms": 76621, "tap_id": "t2"}
+{"id": "e8", "call_id": "t067", "time": "04:15:51", "clip_ms": 82751, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Leaving scene", "segment_start_ms": 82751}
+{"id": "mt3", "call_id": "t067", "time": "04:16:10", "clip_ms": 101378, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t3"}
+{"id": "e9", "call_id": "t067", "time": "04:16:32", "clip_ms": 123686, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 123686}
+{"id": "e10", "call_id": "t067", "time": "04:16:49", "clip_ms": 140769, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "tap+heard", "quote": "Giving report", "segment_start_ms": 141769, "tap_id": "t4"}

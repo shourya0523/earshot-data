@@ -1,0 +1,21 @@
+RD: Ambulance 9, priority one, unconscious not breathing, 28 year old female.
+M1: Ambulance 9 we're on scene.
+M1: Let's move on three. One, two, three.
+PT: It's getting worse.
+M2: Giving 50 mEq of sodium bicarbonate IV push.
+M1: Let's move on three. One, two, three.
+M1: Drawing up 150 migs of Nexterone IV.
+M1: Stay with me, keep your eyes open.
+PT: Am I going to be okay?
+M1: Can you squeeze my fingers?
+M1: Watch the step.
+BY: Am I going to be okay?
+M1: Did you pass out at all?
+PT: It's about an eight.
+M2: Let's move on three. One, two, three.
+BY: Can somebody call my wife?
+M1: Transporting to General.
+M1: Second set, pain is 9 out of 10.
+M1: We need shock.
+M1: Vitals, BGL 42, resps is 22.
+M1: Arriving at Saint Joseph's.

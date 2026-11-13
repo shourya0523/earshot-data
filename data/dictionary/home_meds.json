@@ -1,0 +1,1819 @@
+{
+ "note": "Medications mentioned in real clinical conversation/EMS text, resolved via RxNav (RxNorm). For history/home-med recognition and ASR prompt candidates; NOT EMS-administered drugs.",
+ "source": "RxNav displaynames + rxcui lookup, 2026-11-13",
+ "items": [
+  {
+   "name": "ibuprofen",
+   "generic": "ibuprofen",
+   "rxcui": "5640",
+   "tty": "IN",
+   "mentions": 42,
+   "sources": [
+    "ACI-Bench",
+    "ADE",
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "methotrexate",
+   "generic": "methotrexate",
+   "rxcui": "6851",
+   "tty": "IN",
+   "mentions": 30,
+   "sources": [
+    "ACI-Bench",
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "tylenol",
+   "generic": "acetaminophen",
+   "rxcui": "202433",
+   "tty": "BN",
+   "mentions": 28,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog",
+    "medintent"
+   ]
+  },
+  {
+   "name": "aspirin",
+   "generic": "aspirin",
+   "rxcui": "1191",
+   "tty": "IN",
+   "mentions": 21,
+   "sources": [
+    "ACI-Bench",
+    "ADE",
+    "MTS-Dialog",
+    "YouTube EMS captions",
+    "eka",
+    "emsctx",
+    "primock"
+   ]
+  },
+  {
+   "name": "metformin",
+   "generic": "metformin hydrochloride",
+   "rxcui": "235743",
+   "tty": "PIN",
+   "mentions": 19,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "allegra",
+   "generic": "fexofenadine",
+   "rxcui": "324026",
+   "tty": "BN",
+   "mentions": 18,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "carboplatin",
+   "generic": "carboplatin",
+   "rxcui": "40048",
+   "tty": "IN",
+   "mentions": 11,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "albuterol",
+   "generic": "albuterol sulfate",
+   "rxcui": "142153",
+   "tty": "PIN",
+   "mentions": 11,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog",
+    "YouTube EMS captions"
+   ]
+  },
+  {
+   "name": "advil",
+   "generic": "ibuprofen",
+   "rxcui": "153010",
+   "tty": "BN",
+   "mentions": 11,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "meloxicam",
+   "generic": "meloxicam",
+   "rxcui": "41493",
+   "tty": "IN",
+   "mentions": 10,
+   "sources": [
+    "ACI-Bench",
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "coumadin",
+   "generic": "warfarin",
+   "rxcui": "202421",
+   "tty": "BN",
+   "mentions": 9,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "heroin",
+   "generic": "heroin",
+   "rxcui": "3304",
+   "tty": "IN",
+   "mentions": 9,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "norvasc",
+   "generic": "amlodipine",
+   "rxcui": "58927",
+   "tty": "BN",
+   "mentions": 9,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "lisinopril",
+   "generic": "lisinopril",
+   "rxcui": "29046",
+   "tty": "IN",
+   "mentions": 9,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "methylprednisolone",
+   "generic": "methylprednisolone acetate",
+   "rxcui": "155323",
+   "tty": "PIN",
+   "mentions": 9,
+   "sources": [
+    "ADE",
+    "YouTube EMS captions",
+    "eka"
+   ]
+  },
+  {
+   "name": "lamotrigine",
+   "generic": "lamotrigine",
+   "rxcui": "28439",
+   "tty": "IN",
+   "mentions": 9,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "sertraline",
+   "generic": "sertraline hydrochloride",
+   "rxcui": "155137",
+   "tty": "PIN",
+   "mentions": 9,
+   "sources": [
+    "ADE",
+    "primock"
+   ]
+  },
+  {
+   "name": "paclitaxel",
+   "generic": "paclitaxel",
+   "rxcui": "56946",
+   "tty": "IN",
+   "mentions": 9,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "benadryl",
+   "generic": "diphenhydramine",
+   "rxcui": "203457",
+   "tty": "BN",
+   "mentions": 8,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "cocaine",
+   "generic": "cocaine",
+   "rxcui": "2653",
+   "tty": "IN",
+   "mentions": 7,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "nitroglycerin",
+   "generic": "nitroglycerin",
+   "rxcui": "4917",
+   "tty": "IN",
+   "mentions": 7,
+   "sources": [
+    "MTS-Dialog",
+    "YouTube EMS captions",
+    "eka",
+    "emsctx"
+   ]
+  },
+  {
+   "name": "carbamazepine",
+   "generic": "carbamazepine",
+   "rxcui": "2002",
+   "tty": "IN",
+   "mentions": 7,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "lithium",
+   "generic": "lithium",
+   "rxcui": "6448",
+   "tty": "IN",
+   "mentions": 7,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "phenytoin",
+   "generic": "phenytoin",
+   "rxcui": "8183",
+   "tty": "IN",
+   "mentions": 7,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "morphine",
+   "generic": "morphine hydrochloride",
+   "rxcui": "235751",
+   "tty": "PIN",
+   "mentions": 6,
+   "sources": [
+    "ADE",
+    "MTS-Dialog",
+    "emsctx"
+   ]
+  },
+  {
+   "name": "fluticasone",
+   "generic": "fluticasone",
+   "rxcui": "41126",
+   "tty": "IN",
+   "mentions": 6,
+   "sources": [
+    "ADE",
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "cortisone",
+   "generic": "cortisone acetate",
+   "rxcui": "21655",
+   "tty": "PIN",
+   "mentions": 6,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "omeprazole",
+   "generic": "esomeprazole",
+   "rxcui": "283742",
+   "tty": "IN",
+   "mentions": 6,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "motrin",
+   "generic": "ibuprofen",
+   "rxcui": "202488",
+   "tty": "BN",
+   "mentions": 6,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "lansoprazole",
+   "generic": "lansoprazole",
+   "rxcui": "17128",
+   "tty": "IN",
+   "mentions": 6,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "amiodarone",
+   "generic": "amiodarone hydrochloride",
+   "rxcui": "203114",
+   "tty": "PIN",
+   "mentions": 6,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "aleve",
+   "generic": "naproxen",
+   "rxcui": "215101",
+   "tty": "BN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "lasix",
+   "generic": "furosemide",
+   "rxcui": "202991",
+   "tty": "BN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "amoxicillin",
+   "generic": "amoxicillin trihydrate",
+   "rxcui": "133008",
+   "tty": "PIN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "lipitor",
+   "generic": "atorvastatin",
+   "rxcui": "153165",
+   "tty": "BN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "lidocaine",
+   "generic": "lidocaine hydrochloride",
+   "rxcui": "142440",
+   "tty": "PIN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "ADE",
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "naprosyn",
+   "generic": "naproxen",
+   "rxcui": "203012",
+   "tty": "BN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "prednisone",
+   "generic": "prednisone",
+   "rxcui": "8640",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "cyclophosphamide",
+   "generic": "cyclophosphamide monohydrate",
+   "rxcui": "2679071",
+   "tty": "PIN",
+   "mentions": 5,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "clozapine",
+   "generic": "clozapine",
+   "rxcui": "2626",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "glipizide",
+   "generic": "glipizide",
+   "rxcui": "4821",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "sulfamethoxazole",
+   "generic": "sulfamethazine",
+   "rxcui": "10178",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "trimethoprim",
+   "generic": "trimethoprim",
+   "rxcui": "10829",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "amphotericin",
+   "generic": "amphotericin",
+   "rxcui": "42527",
+   "tty": "IN",
+   "mentions": 5,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "lexapro",
+   "generic": "escitalopram",
+   "rxcui": "352741",
+   "tty": "BN",
+   "mentions": 4,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "claritin",
+   "generic": "loratadine",
+   "rxcui": "203576",
+   "tty": "BN",
+   "mentions": 4,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "metoprolol",
+   "generic": "metoprolol succinate",
+   "rxcui": "221124",
+   "tty": "PIN",
+   "mentions": 4,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "flonase",
+   "generic": "fluticasone",
+   "rxcui": "83373",
+   "tty": "BN",
+   "mentions": 4,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "colchicine",
+   "generic": "colchicine",
+   "rxcui": "2683",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "pantoprazole",
+   "generic": "pantoprazole",
+   "rxcui": "40790",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "valproic acid",
+   "generic": "valproic acid",
+   "rxcui": "11118",
+   "tty": "PIN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "vincristine",
+   "generic": "vincristine",
+   "rxcui": "11202",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "venlafaxine",
+   "generic": "venlafaxine hydrochloride",
+   "rxcui": "235988",
+   "tty": "PIN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "hydrocortisone",
+   "generic": "hydrocortisone / lactate",
+   "rxcui": "1007334",
+   "tty": "MIN",
+   "mentions": 4,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "indomethacin",
+   "generic": "indomethacin",
+   "rxcui": "5781",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "acyclovir",
+   "generic": "acyclovir",
+   "rxcui": "281",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "mefloquine",
+   "generic": "mefloquine",
+   "rxcui": "6694",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "fluticasone propionate",
+   "generic": "fluticasone",
+   "rxcui": "41126",
+   "tty": "IN",
+   "mentions": 4,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "azithromycin",
+   "generic": "azithromycin monohydrate",
+   "rxcui": "1298839",
+   "tty": "PIN",
+   "mentions": 4,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "xanax",
+   "generic": "alprazolam",
+   "rxcui": "202363",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "wellbutrin",
+   "generic": "bupropion",
+   "rxcui": "42568",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "advair",
+   "generic": "salmeterol",
+   "rxcui": "301543",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "accutane",
+   "generic": "isotretinoin",
+   "rxcui": "202795",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "toprol",
+   "generic": "metoprolol",
+   "rxcui": "865575",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "bactrim",
+   "generic": "sulfamethoxazole",
+   "rxcui": "151399",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "cialis",
+   "generic": "tadalafil",
+   "rxcui": "303263",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "methadone",
+   "generic": "methadone hydrochloride",
+   "rxcui": "218337",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "trazodone",
+   "generic": "trazodone",
+   "rxcui": "10737",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "epinephrine",
+   "generic": "epinephrine sulfate",
+   "rxcui": "1249590",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "furosemide",
+   "generic": "furosemide",
+   "rxcui": "4603",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "atenolol",
+   "generic": "atenolol",
+   "rxcui": "1202",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "hydrochlorothiazide",
+   "generic": "hydrochlorothiazide",
+   "rxcui": "5487",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "doxorubicin",
+   "generic": "doxorubicin hydrochloride",
+   "rxcui": "142433",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "ultracet",
+   "generic": "tramadol",
+   "rxcui": "353062",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "codeine",
+   "generic": "benzoate / codeine",
+   "rxcui": "1008493",
+   "tty": "MIN",
+   "mentions": 3,
+   "sources": [
+    "MTS-Dialog",
+    "primock"
+   ]
+  },
+  {
+   "name": "cisplatin",
+   "generic": "cisplatin",
+   "rxcui": "2555",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench",
+    "ADE"
+   ]
+  },
+  {
+   "name": "oxycodone",
+   "generic": "oxycodone",
+   "rxcui": "7804",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "clindamycin",
+   "generic": "clindamycin palmitate",
+   "rxcui": "21235",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench",
+    "primock"
+   ]
+  },
+  {
+   "name": "ventolin",
+   "generic": "albuterol",
+   "rxcui": "8887",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "ACI-Bench",
+    "emsctx",
+    "primock"
+   ]
+  },
+  {
+   "name": "metoclopramide",
+   "generic": "metoclopramide dihydrochloride",
+   "rxcui": "267035",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "glucagon",
+   "generic": "glucagon hydrochloride",
+   "rxcui": "253170",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "dexamethasone",
+   "generic": "dexamethasone acetate",
+   "rxcui": "22690",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "emsctx"
+   ]
+  },
+  {
+   "name": "quetiapine",
+   "generic": "quetiapine",
+   "rxcui": "51272",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "metronidazole",
+   "generic": "metronidazole benzoate",
+   "rxcui": "103866",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "olanzapine",
+   "generic": "olanzapine pamoate",
+   "rxcui": "1294588",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "bupropion",
+   "generic": "bupropion hydrochloride",
+   "rxcui": "203204",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "glycopyrrolate",
+   "generic": "glycopyrrolate",
+   "rxcui": "4955",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "propranolol",
+   "generic": "propranolol hydrochloride",
+   "rxcui": "82084",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "phenobarbital",
+   "generic": "phenobarbital",
+   "rxcui": "8134",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "pimozide",
+   "generic": "pimozide",
+   "rxcui": "8331",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "thiamine",
+   "generic": "thiamine",
+   "rxcui": "10454",
+   "tty": "IN",
+   "mentions": 3,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "levocarnitine",
+   "generic": "levocarnitine hydrochloride",
+   "rxcui": "1426681",
+   "tty": "PIN",
+   "mentions": 3,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "pataday",
+   "generic": "olopatadine",
+   "rxcui": "686434",
+   "tty": "BN",
+   "mentions": 3,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "sinemet",
+   "generic": "carbidopa",
+   "rxcui": "36572",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "oxycontin",
+   "generic": "oxycodone",
+   "rxcui": "218986",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "cymbalta",
+   "generic": "duloxetine",
+   "rxcui": "482574",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "neurontin",
+   "generic": "gabapentin",
+   "rxcui": "196498",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "elavil",
+   "generic": "amitriptyline",
+   "rxcui": "42940",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "nexium",
+   "generic": "esomeprazole",
+   "rxcui": "284799",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "adderall",
+   "generic": "dextroamphetamine",
+   "rxcui": "84815",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "lamisil",
+   "generic": "terbinafine",
+   "rxcui": "217956",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "glucosamine",
+   "generic": "glucosamine hydrochloride",
+   "rxcui": "236608",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "prilosec",
+   "generic": "omeprazole",
+   "rxcui": "203345",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "tramadol",
+   "generic": "tramadol",
+   "rxcui": "10689",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "clonidine",
+   "generic": "clonidine hydrochloride",
+   "rxcui": "142432",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "klonopin",
+   "generic": "clonazepam",
+   "rxcui": "202585",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "cardizem",
+   "generic": "diltiazem",
+   "rxcui": "203494",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "acetaminophen",
+   "generic": "acetaminophen",
+   "rxcui": "161",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "flomax",
+   "generic": "tamsulosin",
+   "rxcui": "190283",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "ciprofloxacin",
+   "generic": "ciprofloxacin lactate",
+   "rxcui": "235851",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "triamcinolone",
+   "generic": "triamcinolone",
+   "rxcui": "10759",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "medrol",
+   "generic": "methylprednisolone",
+   "rxcui": "202702",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "prozac",
+   "generic": "fluoxetine",
+   "rxcui": "58827",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "augmentin",
+   "generic": "clavulanate",
+   "rxcui": "151392",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog",
+    "eka"
+   ]
+  },
+  {
+   "name": "keflex",
+   "generic": "cephalexin",
+   "rxcui": "203167",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "daypro",
+   "generic": "oxaprozin",
+   "rxcui": "157381",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "zoloft",
+   "generic": "sertraline",
+   "rxcui": "82728",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "zyrtec",
+   "generic": "cetirizine",
+   "rxcui": "58930",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "percocet",
+   "generic": "acetaminophen",
+   "rxcui": "42844",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "MTS-Dialog"
+   ]
+  },
+  {
+   "name": "ultram",
+   "generic": "tramadol",
+   "rxcui": "220606",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "amlodipine",
+   "generic": "amlodipine besylate",
+   "rxcui": "104416",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "eka"
+   ]
+  },
+  {
+   "name": "bumex",
+   "generic": "bumetanide",
+   "rxcui": "203538",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "cozaar",
+   "generic": "losartan",
+   "rxcui": "151558",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "doxycycline",
+   "generic": "doxycycline monohydrate",
+   "rxcui": "203122",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "ADE"
+   ]
+  },
+  {
+   "name": "singulair",
+   "generic": "montelukast",
+   "rxcui": "153889",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "flovent",
+   "generic": "fluticasone",
+   "rxcui": "217152",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "melatonin",
+   "generic": "melatonin",
+   "rxcui": "6711",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "primock"
+   ]
+  },
+  {
+   "name": "fentanyl",
+   "generic": "fentanyl citrate",
+   "rxcui": "142436",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "emsctx"
+   ]
+  },
+  {
+   "name": "mobic",
+   "generic": "meloxicam",
+   "rxcui": "152699",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench"
+   ]
+  },
+  {
+   "name": "clobetasol",
+   "generic": "clobetasol propionate",
+   "rxcui": "21245",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ACI-Bench",
+    "eka"
+   ]
+  },
+  {
+   "name": "clomipramine",
+   "generic": "clomipramine",
+   "rxcui": "2597",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "rosiglitazone",
+   "generic": "rosiglitazone maleate",
+   "rxcui": "253198",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "gemcitabine",
+   "generic": "gemcitabine",
+   "rxcui": "12574",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "prednisolone",
+   "generic": "prednisolone acetate",
+   "rxcui": "34372",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "busulfan",
+   "generic": "busulfan",
+   "rxcui": "1828",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "melphalan",
+   "generic": "melphalan hydrochloride",
+   "rxcui": "235857",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "flecainide",
+   "generic": "flecainide acetate",
+   "rxcui": "42686",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "ropinirole",
+   "generic": "ropinirole hydrochloride",
+   "rxcui": "236553",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "lacosamide",
+   "generic": "lacosamide",
+   "rxcui": "623400",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "ifosfamide",
+   "generic": "ifosfamide",
+   "rxcui": "5657",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "clofazimine",
+   "generic": "clofazimine",
+   "rxcui": "2592",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "prazosin",
+   "generic": "prazosin hydrochloride",
+   "rxcui": "203210",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "phenytoin sodium",
+   "generic": "phenytoin sodium",
+   "rxcui": "71227",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "heparin",
+   "generic": "heparin, porcine",
+   "rxcui": "235473",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "prochlorperazine",
+   "generic": "prochlorperazine mesylate",
+   "rxcui": "235739",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "vinblastine",
+   "generic": "vinblastine",
+   "rxcui": "11198",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "mannitol",
+   "generic": "mannitol",
+   "rxcui": "6628",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "methotrimeprazine",
+   "generic": "levomepromazine maleate",
+   "rxcui": "160372",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "thioridazine",
+   "generic": "thioridazine",
+   "rxcui": "10502",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "magnesium sulfate",
+   "generic": "magnesium sulfate",
+   "rxcui": "6585",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "pentasa",
+   "generic": "mesalamine",
+   "rxcui": "196495",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "aminosalicylic acid",
+   "generic": "aminosalicylic acid",
+   "rxcui": "7833",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "alprazolam",
+   "generic": "alprazolam",
+   "rxcui": "596",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE",
+    "eka"
+   ]
+  },
+  {
+   "name": "isosorbide",
+   "generic": "isosorbide mononitrate",
+   "rxcui": "28004",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "isosorbide dinitrate",
+   "generic": "isosorbide dinitrate",
+   "rxcui": "6058",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "ADE"
+   ]
+  },
+  {
+   "name": "ketamine",
+   "generic": "ketamine hydrochloride",
+   "rxcui": "203184",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "eka",
+    "emsctx"
+   ]
+  },
+  {
+   "name": "carbimazole",
+   "generic": "carbimazole",
+   "rxcui": "2020",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "hydroxyzine",
+   "generic": "hydroxyzine hydrochloride",
+   "rxcui": "154987",
+   "tty": "PIN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "dexlansoprazole",
+   "generic": "dexlansoprazole",
+   "rxcui": "816346",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "gentamicin",
+   "generic": "gentamicin",
+   "rxcui": "1596450",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "carnitor",
+   "generic": "levocarnitine",
+   "rxcui": "151494",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "oxyphenbutazone",
+   "generic": "oxyphenbutazone",
+   "rxcui": "7816",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "rybelsus",
+   "generic": "semaglutide",
+   "rxcui": "2200645",
+   "tty": "BN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "calcitonin",
+   "generic": "calcitonin",
+   "rxcui": "1311287",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  },
+  {
+   "name": "glimepiride",
+   "generic": "glimepiride",
+   "rxcui": "25789",
+   "tty": "IN",
+   "mentions": 2,
+   "sources": [
+    "eka"
+   ]
+  }
+ ],
+ "removed_as_not_medication_in_speech": [
+  "alanine",
+  "all clear",
+  "aspartate",
+  "barium",
+  "cholesterol",
+  "coconut water",
+  "cranberry juice",
+  "creatinine",
+  "crocin",
+  "cytosine",
+  "ethanol",
+  "fiber",
+  "gelatin",
+  "gelusil",
+  "julie",
+  "my way",
+  "perform",
+  "platinum",
+  "propionate",
+  "react",
+  "restart",
+  "serotonin",
+  "tomorrow",
+  "urea"
+ ],
+ "seed_added": [
+  "insulin",
+  "Lantus",
+  "Humalog",
+  "atorvastatin",
+  "simvastatin",
+  "levothyroxine",
+  "Synthroid",
+  "apixaban",
+  "Eliquis",
+  "rivaroxaban",
+  "Xarelto",
+  "warfarin",
+  "clopidogrel",
+  "Plavix",
+  "carvedilol",
+  "losartan",
+  "HCTZ",
+  "gabapentin",
+  "fluoxetine",
+  "hydrocodone",
+  "Norco",
+  "clonazepam",
+  "levetiracetam",
+  "Keppra",
+  "Dilantin",
+  "Lamictal",
+  "Depakote",
+  "montelukast",
+  "Symbicort",
+  "digoxin",
+  "Entresto",
+  "sildenafil",
+  "Viagra",
+  "tamsulosin",
+  "donepezil",
+  "Aricept",
+  "Suboxone",
+  "buprenorphine"
+ ]
+}

@@ -1,0 +1,22 @@
+RD: Ambulance 37, priority one, childbirth, 31 year old male.
+M2: Ambulance 37 we're on scene.
+M2: Are you having any trouble breathing?
+PT: My water broke.
+M2: Who's your doctor?
+PT: I had something like this last year.
+M1: Get established IV.
+M1: Repeat, respirations is 25, ETCO2's 47, blood pressure 193 over 119.
+M1: I'm going to put some stickers on your chest.
+PT: It's getting worse.
+M1: Any allergies?
+M1: Are you having any trouble breathing?
+M1: Who's your doctor?
+PT: Please don't cut my shirt.
+M2: Vitals, pain is 9 out of 10, GCS at 15, capno is 43.
+M1: Leaving scene to County.
+M1: Pushing oxytocin, 10 units in the thigh.
+M2: Any medical history I should know about?
+M1: Repeat, resp rate is 25.
+M1: I gave tranexamic acid 1 grams.
+M1: We're at University.
+M1: Handing off to the nurse.

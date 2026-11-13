@@ -1,0 +1,16 @@
+RD: Medic 2, allergic reaction, forty-one year old female, at the restaurant.
+M1: Medic 2 on scene.
+PT: I ate shrimp. My throat feels tight and I'm itching everywhere.
+M1: Hives on the chest and arms, lips are swelling. Any trouble swallowing?
+PT: A little.
+M2: BP 88 over 54, heart rate 122, sat 93.
+M1: Epi 0.5 milligrams IM, right thigh.
+M2: Non-rebreather at 15 liters.
+M2: Eighteen, left AC.
+M1: Benadryl 50 IV.
+M1: And a liter of saline.
+M1: Transporting to Memorial.
+M2: Recheck, 104 over 70, heart rate 108, sat 97.
+PT: It's easier to breathe now.
+M1: Famotidine 20 IV.
+M1: Arrived at Memorial.

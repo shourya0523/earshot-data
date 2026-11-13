@@ -1,0 +1,22 @@
+RD: Squad 16, respond to difficulty breathing, 47 year old female.
+M1: Squad 16 we're on scene.
+M1: On a scale of zero to ten, how bad is it?
+PT: I woke up and couldn't breathe.
+M2: Are you having any trouble breathing?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: Get the cot.
+PT: No allergies.
+M2: Any allergies?
+M1: 40 mg lasix IV push, it's in.
+M2: Drawing up 0.8 of nitro under the tongue.
+M1: Okay, we're going to take care of you.
+PT: It's getting worse.
+M2: Repeat, pain is 7 out of 10.
+M1: Let's do 12-lead.
+M1: We're transporting to Mercy.
+M2: Drawing up 0.4 of NTG sublingual.
+M1: Repeat, pain is 4 out of 10.
+M2: Can you squeeze my fingers?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: Let's move on three. One, two, three.
+M1: Arriving at Riverside.

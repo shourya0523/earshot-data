@@ -1,0 +1,41 @@
+@call d004 hypoglycemia start=13:08:25
+@patient age=73 sex=male weight_kg=85 complaint="unresponsive" allergies=unknown home_meds=unknown history=unknown
+@traps hypoglycemia
+RD: Ambulance 22, respond to diabetic problem, 73 year old male.  >> dispatch:diabetic problem "diabetic problem"
+GAP 3
+M2: Ambulance 22 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Any medical history I should know about?
+GAP 2
+PT: I took my insulin and skipped breakfast.
+GAP 2
+GAP 11
+TAP button -
+GAP 11
+M2: Watch the step.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 2
+M2: Can you squeeze my fingers?
+GAP 1
+M2: 15 gram glucose gel by mouth, it's in.  >> med:oral glucose,15,g,PO "15 gram glucose gel by mouth"
+GAP 6
+M2: Doing finger stick.  >> proc:glucose check "finger stick"
+GAP 8
+M2: Okay, blood sugar at 36, GCS's 10.  >> vital:bgl=36 "blood sugar at 36"; vital:gcs=10 "GCS's 10"
+GAP 6
+TAP knock +label
+M1: Okay, pain is 4 out of 10, SpO2 97, rate's 140.  >> vital:pain=4 "4 out of 10"; vital:spo2=97 "SpO2 97"; vital:hr=140 "rate's 140"
+GAP 4
+TAP button +label
+M2: Pushing glucagon, 1 migs in the thigh.  >> med:glucagon,1,mg,IM "Pushing glucagon, 1 migs in the thigh"
+GAP 1
+M1: Leaving scene to Good Sam.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Grab the stair chair.
+GAP 4
+M1: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+GAP 2
+M1: D10 25 gram intravenous.  >> med:dextrose,25,g,IV "D10 25 gram intravenous"
+GAP 8
+M1: We're at Saint Vincent's.  >> time:eTimes.11 "We're at"
+KNOCK3

@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4360,
+  "speaker": "RD",
+  "text": "Squad 20, respond to burns, 44 year old male."
+ },
+ {
+  "start_ms": 7995,
+  "end_ms": 10058,
+  "speaker": "M2",
+  "text": "Squad 20 arriving on scene."
+ },
+ {
+  "start_ms": 10371,
+  "end_ms": 12025,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 12770,
+  "end_ms": 14983,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 18373,
+  "end_ms": 20161,
+  "speaker": "PT",
+  "text": "My arms are on fire."
+ },
+ {
+  "start_ms": 21736,
+  "end_ms": 24822,
+  "speaker": "M1",
+  "text": "I gave lactated ringers 1000 mils IV."
+ },
+ {
+  "start_ms": 27568,
+  "end_ms": 28955,
+  "speaker": "M2",
+  "text": "We need dressing."
+ },
+ {
+  "start_ms": 33708,
+  "end_ms": 35346,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 38214,
+  "end_ms": 39057,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 39724,
+  "end_ms": 41331,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 44704,
+  "end_ms": 46108,
+  "speaker": "M2",
+  "text": "We need cooling."
+ },
+ {
+  "start_ms": 54860,
+  "end_ms": 56700,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 57263,
+  "end_ms": 59445,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 62292,
+  "end_ms": 64682,
+  "speaker": "M1",
+  "text": "Second set, GCS 10."
+ },
+ {
+  "start_ms": 68503,
+  "end_ms": 69538,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 69983,
+  "end_ms": 71519,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 96758,
+  "end_ms": 98347,
+  "speaker": "M1",
+  "text": "We're transporting to County."
+ },
+ {
+  "start_ms": 101727,
+  "end_ms": 103863,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 104636,
+  "end_ms": 107773,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 110500,
+  "end_ms": 113881,
+  "speaker": "M1",
+  "text": "pain is 6 out of 10, 151 over 101."
+ },
+ {
+  "start_ms": 116563,
+  "end_ms": 117693,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 128045,
+  "end_ms": 130987,
+  "speaker": "M1",
+  "text": "Drawing up 5 of hydroxocobalamin IV push."
+ },
+ {
+  "start_ms": 133565,
+  "end_ms": 135028,
+  "speaker": "M1",
+  "text": "Arrived at Riverside."
+ },
+ {
+  "start_ms": 144543,
+  "end_ms": 146000,
+  "speaker": "M1",
+  "text": "Giving report complete."
+ }
+]

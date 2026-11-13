@@ -1,0 +1,115 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "84",
+  "sex": "female",
+  "weight_kg": "138",
+  "complaint": "psychiatric emergency",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "psychiatric emergency",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "196/128",
+    "gcs": "10"
+   },
+   "last_vitals": {
+    "bp": "196/128",
+    "gcs": "10"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "excited delirium",
+    "psychosis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "haloperidol 5 mg",
+    "ketamine 4 mg/kg IM",
+    "olanzapine 10"
+   ],
+   "procedures": [
+    "restraint"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "84",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "combative person",
+  "I_injuries_or_information": "psychiatric emergency",
+  "S_signs": {
+   "bp": "196/128",
+   "gcs": "10"
+  },
+  "T_treatment": [
+   "haloperidol 5 mg",
+   "ketamine 4 mg/kg IM",
+   "olanzapine 10",
+   "restraint"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "21:47:11",
+  "eTimes.09": "21:48:46",
+  "eTimes.11": "21:49:19",
+  "eTimes.12": "21:49:33"
+ },
+ "wall_time_seconds": 14,
+ "dispatch_reason": "combative person",
+ "medications": [
+  {
+   "drug": "haloperidol",
+   "dose": "5",
+   "unit": "mg"
+  },
+  {
+   "drug": "ketamine",
+   "dose": "4",
+   "unit": "mg/kg",
+   "route": "IM"
+  },
+  {
+   "drug": "olanzapine",
+   "dose": "10"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "196/128",
+   "time": "21:47:55"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "21:49:01"
+  }
+ ],
+ "diagnosis_traps": [
+  "excited delirium",
+  "psychosis"
+ ]
+}

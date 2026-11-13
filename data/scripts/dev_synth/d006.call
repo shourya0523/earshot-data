@@ -1,0 +1,52 @@
+@call d006 seizure start=13:27:17
+@patient age=77 sex=male weight_kg=73 complaint="convulsions" allergies=unknown home_meds=unknown history=unknown
+@traps epilepsy
+RD: Squad 31, priority one, seizure, 77 year old male.  >> dispatch:seizure "seizure"
+GAP 4
+M2: Squad 31 on scene.  >> time:eTimes.06 "on scene"
+M1: Okay, we're going to take care of you.
+GAP 11
+TAP knock -
+GAP 11
+PT: Please don't cut my shirt.
+GAP 1
+PT: I'm tired, my tongue hurts.
+GAP 4
+M1: Repeat, pain is 7 out of 10, 91 over 40, GCS's 12.  >> vital:pain=7 "7 out of 10"; vital:bp=91/40 "91 over 40"; vital:gcs=12 "GCS's 12"
+GAP 4
+M1: 10 Valium rectal, it's in.  >> med:diazepam,10,,PR "10 Valium rectal"
+GAP 6
+TAP snap +label
+M1: I gave lorazepam 2 migs IV.  >> med:lorazepam,2,mg,IV "I gave lorazepam 2 migs IV"
+GAP 4
+M1: Hang tight, partner.
+PT: It's about an eight.
+GAP 4
+M1: Get check a sugar.  >> proc:glucose check "check a sugar"
+GAP 3
+TAP button +label
+M2: Second set, pressure is 136 over 92, sat is 94 on room air, GCS is 13.  >> vital:bp=136/92 "pressure is 136 over 92"; vital:spo2=94 "sat is 94 on room air"; vital:gcs=13 "GCS is 13"
+GAP 2
+GAP 11
+TAP knock -
+GAP 11
+M1: Grab the stair chair.
+BY: No allergies.
+GAP 1
+M1: When did you last eat?
+GAP 8
+M1: Leaving scene to Saint Joseph's.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Hang tight, partner.
+GAP 4
+M1: Let's do suction.  >> proc:suction "suction"
+GAP 8
+M1: How long has this been going on?
+GAP 4
+M2: Any allergies?
+GAP 3
+M1: Arrived at University.  >> time:eTimes.11 "Arrived at"
+GAP 11
+TAP button +label
+M1: Transfer of care complete.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

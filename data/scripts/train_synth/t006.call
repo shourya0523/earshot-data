@@ -1,0 +1,46 @@
+@call t006 nausea start=17:32:10
+@patient age=77 sex=female weight_kg=48 complaint="sick person" allergies=unknown home_meds=unknown history=unknown
+@traps appendicitis; kidney stone
+RD: Squad 20, you have a abdominal pain, 77 year old female.  >> dispatch:abdominal pain "abdominal pain"
+GAP 4
+M1: Squad 20 on scene.  >> time:eTimes.06 "on scene"
+M2: Get the cot.
+GAP 4
+PT: I've been throwing up all night.
+GAP 11
+TAP button -
+GAP 11
+GAP 8
+M1: Pushing ondansetron, 4.  >> med:ondansetron,4,, "Pushing ondansetron, 4"
+GAP 8
+TAP knock +label
+M1: I gave Zofran 4 milligrams through the line.  >> med:ondansetron,4,mg,IV "I gave Zofran 4 milligrams through the line"
+GAP 6
+M2: Vitals, ETCO2 20.  >> vital:etco2=20 "ETCO2 20"
+GAP 11
+TAP button -
+GAP 11
+GAP 8
+M2: 15 milligrams ketorolac, it's in.  >> med:ketorolac,15,mg, "15 milligrams ketorolac"
+GAP 8
+M2: Can you squeeze my fingers?
+PT: I feel sick.
+GAP 6
+TAP button +label
+M2: Okay, blood sugar 328, SpO2 100 on room air, resp rate's 10.  >> vital:bgl=328 "blood sugar 328"; vital:spo2=100 "SpO2 100 on room air"; vital:rr=10 "resp rate's 10"
+GAP 4
+M1: Doing 20 gauge.  >> proc:IV access "20 gauge"
+GAP 3
+M1: We're transporting to Saint Joseph's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP knock +label
+M1: Vitals, GCS's 12, end tidal 43.  >> vital:gcs=12 "GCS's 12"; vital:etco2=43 "end tidal 43"
+GAP 2
+M1: How long has this been going on?
+PT: Can somebody call my wife?
+GAP 1
+M1: Stay with me, keep your eyes open.
+GAP 1
+M1: We're at County.  >> time:eTimes.11 "We're at"
+GAP 14
+M1: Transfer of care complete.  >> time:eTimes.12 "Transfer of care"

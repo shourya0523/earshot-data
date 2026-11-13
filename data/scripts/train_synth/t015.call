@@ -1,0 +1,44 @@
+@call t015 arrest start=22:24:01
+@patient age=28 sex=female weight_kg=106 complaint="cardiac arrest" allergies=unknown home_meds=unknown history=unknown
+@traps cardiac arrest
+RD: Ambulance 9, priority one, unconscious not breathing, 28 year old female.  >> dispatch:unconscious not breathing "unconscious not breathing"
+GAP 2
+M1: Ambulance 9 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Let's move on three. One, two, three.
+PT: It's getting worse.
+GAP 3
+M2: Giving 50 mEq of sodium bicarbonate IV push.  >> med:sodium bicarbonate,50,mEq,IV "Giving 50 mEq of sodium bicarbonate IV push"
+GAP 8
+M1: Let's move on three. One, two, three.
+GAP 3
+M1: Drawing up 150 migs of Nexterone IV.  >> med:amiodarone,150,mg,IV "Drawing up 150 migs of Nexterone IV"
+GAP 2
+M1: Stay with me, keep your eyes open.
+PT: Am I going to be okay?
+GAP 2
+M1: Can you squeeze my fingers?
+GAP 6
+GAP 11
+TAP snap -
+GAP 11
+M1: Watch the step.
+BY: Am I going to be okay?
+GAP 2
+M1: Did you pass out at all?
+PT: It's about an eight.
+GAP 2
+M2: Let's move on three. One, two, three.
+BY: Can somebody call my wife?
+GAP 3
+M1: Transporting to General.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP knock +label
+M1: Second set, pain is 9 out of 10.  >> vital:pain=9 "9 out of 10"
+GAP 2
+M1: We need shock.  >> proc:defibrillation "shock"
+GAP 2
+TAP snap +label
+M1: Vitals, BGL 42, resps is 22.  >> vital:bgl=42 "BGL 42"; vital:rr=22 "resps is 22"
+GAP 4
+M1: Arriving at Saint Joseph's.  >> time:eTimes.11 "Arriving at"
+KNOCK3

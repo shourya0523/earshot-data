@@ -1,0 +1,139 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "73",
+  "sex": "male",
+  "weight_kg": "85",
+  "complaint": "unresponsive",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "unresponsive",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "36",
+    "gcs": "10",
+    "pain": "4",
+    "spo2": "97",
+    "hr": "140"
+   },
+   "last_vitals": {
+    "bgl": "36",
+    "gcs": "10",
+    "pain": "4",
+    "spo2": "97",
+    "hr": "140"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "hypoglycemia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oral glucose 15 g PO",
+    "glucagon 1 mg IM",
+    "dextrose 25 g IV"
+   ],
+   "procedures": [
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "73",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "diabetic problem",
+  "I_injuries_or_information": "unresponsive",
+  "S_signs": {
+   "bgl": "36",
+   "gcs": "10",
+   "pain": "4",
+   "spo2": "97",
+   "hr": "140"
+  },
+  "T_treatment": [
+   "oral glucose 15 g PO",
+   "glucagon 1 mg IM",
+   "dextrose 25 g IV",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "13:08:34",
+  "eTimes.09": "13:10:09",
+  "eTimes.11": "13:10:39"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "diabetic problem",
+ "medications": [
+  {
+   "drug": "oral glucose",
+   "dose": "15",
+   "unit": "g",
+   "route": "PO"
+  },
+  {
+   "drug": "glucagon",
+   "dose": "1",
+   "unit": "mg",
+   "route": "IM"
+  },
+  {
+   "drug": "dextrose",
+   "dose": "25",
+   "unit": "g",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "36",
+   "time": "13:09:42"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "13:09:42"
+  },
+  {
+   "name": "pain",
+   "value": "4",
+   "time": "13:09:52"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "13:09:52"
+  },
+  {
+   "name": "hr",
+   "value": "140",
+   "time": "13:09:52"
+  }
+ ],
+ "diagnosis_traps": [
+  "hypoglycemia"
+ ]
+}

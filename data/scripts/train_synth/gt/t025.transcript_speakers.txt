@@ -1,0 +1,21 @@
+RD: Medic 58, respond to fall, 90 year old female.
+M2: Medic 58 on scene.
+M1: On a scale of zero to ten, how bad is it?
+PT: My hip hurts so bad.
+M1: Drawing up 0.3 milligrams per kilo of Ketalar IV.
+M2: I gave morphine 4 mg through the line.
+M1: How long has this been going on?
+BY: Am I going to be okay?
+M1: Who's your doctor?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: Repeat, respirations at 35, pulse is 44, end tidal's 45.
+M2: On a scale of zero to ten, how bad is it?
+PT: I had something like this last year.
+M2: breathing 17, sats 85 percent, pain is 6 out of 10.
+M1: Leaving scene to Riverside.
+M1: Grab the stair chair.
+M1: Doing binder.
+M1: Giving 100 micrograms of Sublimaze IV.
+M1: When did you last eat?
+BY: Am I going to be okay?
+M1: Arrived at Saint Vincent's.

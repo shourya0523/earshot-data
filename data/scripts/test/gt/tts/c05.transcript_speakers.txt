@@ -1,0 +1,15 @@
+RD: Medic 9, possible stroke, seventy-one year old male.
+M1: Medic 9 on scene.
+BY: He was fine at lunch, then at four fifteen he dropped his coffee and his face went funny.
+M1: Last known well sixteen fifteen.
+M1: Sir, smile for me. Squeeze my hands. Right side facial droop, right arm drift, slurred speech.
+M2: BP 188 over 102, heart rate 84, sat 97.
+M2: Sugar's 136.
+M1: BE-FAST positive. Calling a stroke alert, let's load and go.
+M1: Transporting to Regional.
+M2: Eighteen in the left AC.
+M2: GCS is 14, he's confused on verbal.
+M1: Don't give him anything by mouth. Keep the head of the bed up thirty.
+M2: Repeat pressure 182 over 98.
+M1: Arrived at Regional, straight to CT.
+M1: Handing off to the stroke team.

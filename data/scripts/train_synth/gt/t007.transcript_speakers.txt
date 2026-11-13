@@ -1,0 +1,19 @@
+RD: Ambulance 24, respond to weakness one side, 55 year old male.
+M2: Ambulance 24 on scene.
+M1: Hang tight, partner.
+PT: Can somebody call my wife?
+PT: Words aren't coming out right.
+M2: How long has this been going on?
+M2: Giving 2 of non-rebreather.
+M1: Can you squeeze my fingers?
+M1: Any medical history I should know about?
+M1: Get the cot.
+BY: I don't know, it just started.
+M2: Doing 18 gauge.
+M1: Okay, sats at 86 on room air, GCS is 8.
+M1: We're transporting to Riverside.
+M1: On a scale of zero to ten, how bad is it?
+M1: pain is 10 out of 10, GCS 10.
+M1: I'm going to put some stickers on your chest.
+M1: We're at General.
+M1: Giving report to bed four.

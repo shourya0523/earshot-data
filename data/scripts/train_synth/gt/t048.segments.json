@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6176,
+  "speaker": "RD",
+  "text": "Medic 29, priority two, shortness of breath, 54 year old female."
+ },
+ {
+  "start_ms": 10779,
+  "end_ms": 13215,
+  "speaker": "M2",
+  "text": "Medic 29 arriving on scene."
+ },
+ {
+  "start_ms": 37082,
+  "end_ms": 38547,
+  "speaker": "M2",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 47120,
+  "end_ms": 48485,
+  "speaker": "PT",
+  "text": "I can't get my air."
+ },
+ {
+  "start_ms": 56491,
+  "end_ms": 59404,
+  "speaker": "M1",
+  "text": "solumedrol 125 migs through the line."
+ },
+ {
+  "start_ms": 61926,
+  "end_ms": 65201,
+  "speaker": "M1",
+  "text": "Okay, sugar at 204, resps's 18."
+ },
+ {
+  "start_ms": 68661,
+  "end_ms": 69788,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 70477,
+  "end_ms": 71413,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 73159,
+  "end_ms": 74088,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 74637,
+  "end_ms": 75734,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 78467,
+  "end_ms": 80182,
+  "speaker": "M1",
+  "text": "4 L non-rebreather, it's in."
+ },
+ {
+  "start_ms": 83454,
+  "end_ms": 85552,
+  "speaker": "M1",
+  "text": "Okay, pulse's 106."
+ },
+ {
+  "start_ms": 88877,
+  "end_ms": 89705,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 90053,
+  "end_ms": 91936,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 98811,
+  "end_ms": 99985,
+  "speaker": "M1",
+  "text": "Leaving scene to Valley."
+ },
+ {
+  "start_ms": 103366,
+  "end_ms": 104238,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 104881,
+  "end_ms": 106249,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 116655,
+  "end_ms": 118583,
+  "speaker": "M1",
+  "text": "3 cc's duo neb, it's in."
+ },
+ {
+  "start_ms": 125280,
+  "end_ms": 126627,
+  "speaker": "M1",
+  "text": "We need nebulizer treatment."
+ },
+ {
+  "start_ms": 131070,
+  "end_ms": 132281,
+  "speaker": "M2",
+  "text": "Got CPAP."
+ },
+ {
+  "start_ms": 140938,
+  "end_ms": 141989,
+  "speaker": "M1",
+  "text": "Arriving at Valley."
+ },
+ {
+  "start_ms": 156664,
+  "end_ms": 157653,
+  "speaker": "M1",
+  "text": "Handing off complete."
+ }
+]

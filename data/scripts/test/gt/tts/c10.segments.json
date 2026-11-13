@@ -1,0 +1,80 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6049,
+  "speaker": "RD",
+  "text": "Medic 4, two car MVC, minor damage, one patient complaining of neck pain."
+ },
+ {
+  "start_ms": 9474,
+  "end_ms": 10794,
+  "speaker": "M1",
+  "text": "Medic 4 on scene."
+ },
+ {
+  "start_ms": 13551,
+  "end_ms": 17324,
+  "speaker": "M1",
+  "text": "Found him standing outside his car, airbags didn't deploy."
+ },
+ {
+  "start_ms": 18103,
+  "end_ms": 22316,
+  "speaker": "PT",
+  "text": "I'm fine, really. My neck's a little sore, that's all."
+ },
+ {
+  "start_ms": 22920,
+  "end_ms": 25371,
+  "speaker": "M1",
+  "text": "Were you wearing your seatbelt? Did you hit your head?"
+ },
+ {
+  "start_ms": 25719,
+  "end_ms": 29440,
+  "speaker": "PT",
+  "text": "Yes, seatbelt. No, I didn't hit anything."
+ },
+ {
+  "start_ms": 32108,
+  "end_ms": 36887,
+  "speaker": "M2",
+  "text": "BP 136 over 84, pulse 82, sat 99."
+ },
+ {
+  "start_ms": 40199,
+  "end_ms": 43799,
+  "speaker": "M1",
+  "text": "He's A and O times four, no midline tenderness, moves everything."
+ },
+ {
+  "start_ms": 69549,
+  "end_ms": 74021,
+  "speaker": "M1",
+  "text": "Sir, we recommend you get checked at the hospital. Neck injuries can get worse."
+ },
+ {
+  "start_ms": 74657,
+  "end_ms": 77702,
+  "speaker": "PT",
+  "text": "No, I've got to pick up my kids. I'm not going."
+ },
+ {
+  "start_ms": 80263,
+  "end_ms": 84473,
+  "speaker": "M2",
+  "text": "Second set, 132 over 80, pulse 78."
+ },
+ {
+  "start_ms": 88927,
+  "end_ms": 95791,
+  "speaker": "M1",
+  "text": "Okay. If anything changes, numbness, worse pain, call 911 right away. Sign here for the refusal."
+ },
+ {
+  "start_ms": 104032,
+  "end_ms": 108296,
+  "speaker": "M1",
+  "text": "Patient signed refusal against medical advice. Medic 4 back in service."
+ }
+]

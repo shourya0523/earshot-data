@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6003,
+  "speaker": "RD",
+  "text": "Rescue 57, priority two, fainting, 79 year old female."
+ },
+ {
+  "start_ms": 10624,
+  "end_ms": 12652,
+  "speaker": "M2",
+  "text": "Rescue 57 we're on scene."
+ },
+ {
+  "start_ms": 13426,
+  "end_ms": 15008,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 15706,
+  "end_ms": 16840,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 25483,
+  "end_ms": 26571,
+  "speaker": "PT",
+  "text": "Everything went grey."
+ },
+ {
+  "start_ms": 33116,
+  "end_ms": 36807,
+  "speaker": "M2",
+  "text": "Repeat, GCS is 15, pain is 2 out of 10."
+ },
+ {
+  "start_ms": 40215,
+  "end_ms": 42021,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 42471,
+  "end_ms": 43499,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 48034,
+  "end_ms": 49341,
+  "speaker": "M2",
+  "text": "We need check his sugar."
+ },
+ {
+  "start_ms": 79329,
+  "end_ms": 80824,
+  "speaker": "M2",
+  "text": "Let's do 4 lead."
+ },
+ {
+  "start_ms": 85211,
+  "end_ms": 87730,
+  "speaker": "M2",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 88446,
+  "end_ms": 89420,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 93739,
+  "end_ms": 94470,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 100975,
+  "end_ms": 101834,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 102729,
+  "end_ms": 103914,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 108322,
+  "end_ms": 113035,
+  "speaker": "M2",
+  "text": "end tidal's 19, 162 over 82, sugar is 403."
+ },
+ {
+  "start_ms": 114905,
+  "end_ms": 116460,
+  "speaker": "M1",
+  "text": "Leaving scene to University."
+ },
+ {
+  "start_ms": 119938,
+  "end_ms": 123042,
+  "speaker": "M2",
+  "text": "Giving 500 mLs of saline IV push."
+ },
+ {
+  "start_ms": 124657,
+  "end_ms": 126809,
+  "speaker": "M2",
+  "text": "I gave non-rebreather 2 liters."
+ },
+ {
+  "start_ms": 130269,
+  "end_ms": 131810,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 132691,
+  "end_ms": 133634,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 137045,
+  "end_ms": 138554,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 139358,
+  "end_ms": 141099,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 144766,
+  "end_ms": 145799,
+  "speaker": "M1",
+  "text": "Arrived at General."
+ }
+]

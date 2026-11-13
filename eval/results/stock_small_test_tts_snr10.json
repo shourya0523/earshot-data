@@ -1,0 +1,187 @@
+{
+ "run": "eval/runs/stock_small/test_tts_snr10",
+ "gt": "data/scripts/test/gt/tts",
+ "n": 10,
+ "transcription": {
+  "n_files": 10,
+  "wer": 0.12412177985948478,
+  "drug_wer": 0.2692307692307692,
+  "drug_tokens": 26,
+  "number_acc": 0.891566265060241,
+  "number_tokens": 166,
+  "unit_acc": 1.0,
+  "jargon_recall": 0.8260869565217391,
+  "jargon_terms": 69,
+  "per_file": [
+   {
+    "id": "c01",
+    "ref_words": 157,
+    "errors": 20,
+    "wer": 0.12738853503184713,
+    "drug_n": 5,
+    "drug_err": 2,
+    "num_n": 22,
+    "num_err": 1,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "lisinopril and atorvastatin -> up roland adorvastatin"
+    ]
+   },
+   {
+    "id": "c02",
+    "ref_words": 162,
+    "errors": 34,
+    "wer": 0.20987654320987653,
+    "drug_n": 2,
+    "drug_err": 2,
+    "num_n": 17,
+    "num_err": 2,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 8,
+    "jargon_hit": 6,
+    "drug_misses": [
+     "eliquis and metoprolol -> at using metaprolol"
+    ]
+   },
+   {
+    "id": "c03",
+    "ref_words": 121,
+    "errors": 9,
+    "wer": 0.0743801652892562,
+    "drug_n": 2,
+    "drug_err": 0,
+    "num_n": 13,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 7,
+    "jargon_hit": 6,
+    "drug_misses": []
+   },
+   {
+    "id": "c04",
+    "ref_words": 151,
+    "errors": 16,
+    "wer": 0.10596026490066225,
+    "drug_n": 4,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 2,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 11,
+    "jargon_hit": 8,
+    "drug_misses": []
+   },
+   {
+    "id": "c05",
+    "ref_words": 121,
+    "errors": 8,
+    "wer": 0.06611570247933884,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 17,
+    "num_err": 4,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 12,
+    "jargon_hit": 12,
+    "drug_misses": []
+   },
+   {
+    "id": "c06",
+    "ref_words": 117,
+    "errors": 11,
+    "wer": 0.09401709401709402,
+    "drug_n": 6,
+    "drug_err": 1,
+    "num_n": 20,
+    "num_err": 0,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 5,
+    "drug_misses": [
+     "ipratropium -> epitropium"
+    ]
+   },
+   {
+    "id": "c07",
+    "ref_words": 120,
+    "errors": 12,
+    "wer": 0.1,
+    "drug_n": 2,
+    "drug_err": 0,
+    "num_n": 19,
+    "num_err": 3,
+    "unit_n": 2,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 6,
+    "drug_misses": []
+   },
+   {
+    "id": "c08",
+    "ref_words": 95,
+    "errors": 21,
+    "wer": 0.22105263157894736,
+    "drug_n": 3,
+    "drug_err": 1,
+    "num_n": 16,
+    "num_err": 5,
+    "unit_n": 3,
+    "unit_err": 0,
+    "jargon_n": 3,
+    "jargon_hit": 2,
+    "drug_misses": [
+     "famotidine -> famitating"
+    ]
+   },
+   {
+    "id": "c09",
+    "ref_words": 103,
+    "errors": 20,
+    "wer": 0.1941747572815534,
+    "drug_n": 2,
+    "drug_err": 1,
+    "num_n": 14,
+    "num_err": 1,
+    "unit_n": 1,
+    "unit_err": 0,
+    "jargon_n": 6,
+    "jargon_hit": 3,
+    "drug_misses": [
+     "keppra -> capra"
+    ]
+   },
+   {
+    "id": "c10",
+    "ref_words": 134,
+    "errors": 8,
+    "wer": 0.05970149253731343,
+    "drug_n": 0,
+    "drug_err": 0,
+    "num_n": 14,
+    "num_err": 0,
+    "unit_n": 0,
+    "unit_err": 0,
+    "jargon_n": 4,
+    "jargon_hit": 3,
+    "drug_misses": []
+   }
+  ]
+ },
+ "extraction": null,
+ "taps": null,
+ "outputs": null,
+ "speed": {
+  "audio_s": 1418.312,
+  "wall_s": 754.74,
+  "rtf": 0.5321396138508312,
+  "stages_s": null
+ }
+}

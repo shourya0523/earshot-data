@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4505,
+  "speaker": "RD",
+  "text": "Ambulance 27, you have a difficulty breathing, 46 year old male."
+ },
+ {
+  "start_ms": 6840,
+  "end_ms": 8408,
+  "speaker": "M1",
+  "text": "Ambulance 27 on scene."
+ },
+ {
+  "start_ms": 9078,
+  "end_ms": 10292,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 14742,
+  "end_ms": 17014,
+  "speaker": "PT",
+  "text": "I've been sleeping in the recliner."
+ },
+ {
+  "start_ms": 21320,
+  "end_ms": 23579,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 27329,
+  "end_ms": 29048,
+  "speaker": "M1",
+  "text": "Lasix 40 migs IV push."
+ },
+ {
+  "start_ms": 37098,
+  "end_ms": 39339,
+  "speaker": "M1",
+  "text": "pulse ox at 82, end tidal 28."
+ },
+ {
+  "start_ms": 45719,
+  "end_ms": 47316,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 77535,
+  "end_ms": 78220,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 88847,
+  "end_ms": 91250,
+  "speaker": "M1",
+  "text": "pain is 4 out of 10, end tidal's 18."
+ },
+ {
+  "start_ms": 97686,
+  "end_ms": 98749,
+  "speaker": "M2",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 102081,
+  "end_ms": 103249,
+  "speaker": "M2",
+  "text": "We need 12-lead."
+ },
+ {
+  "start_ms": 107008,
+  "end_ms": 109411,
+  "speaker": "M1",
+  "text": "Pushing Nitrostat, 0.8 migs."
+ },
+ {
+  "start_ms": 117858,
+  "end_ms": 119216,
+  "speaker": "M1",
+  "text": "Leaving scene to Riverside."
+ },
+ {
+  "start_ms": 124106,
+  "end_ms": 126298,
+  "speaker": "M1",
+  "text": "0.4 nitroglycerin SL, it's in."
+ },
+ {
+  "start_ms": 132604,
+  "end_ms": 133730,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 137271,
+  "end_ms": 138432,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 139150,
+  "end_ms": 141153,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 143042,
+  "end_ms": 144025,
+  "speaker": "M2",
+  "text": "We need c pap."
+ },
+ {
+  "start_ms": 145716,
+  "end_ms": 146970,
+  "speaker": "M1",
+  "text": "Arrived at University."
+ }
+]

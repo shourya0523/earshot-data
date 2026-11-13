@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4575,
+  "speaker": "RD",
+  "text": "Rescue 23, you have a unconscious person, 22 year old male."
+ },
+ {
+  "start_ms": 9468,
+  "end_ms": 12266,
+  "speaker": "M1",
+  "text": "Rescue 23 arriving on scene."
+ },
+ {
+  "start_ms": 12851,
+  "end_ms": 14010,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 14788,
+  "end_ms": 16118,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 67361,
+  "end_ms": 68529,
+  "speaker": "PT",
+  "text": "Everything went grey."
+ },
+ {
+  "start_ms": 72851,
+  "end_ms": 74431,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 84757,
+  "end_ms": 88365,
+  "speaker": "M2",
+  "text": "Repeat, glucose 318, breathing 23."
+ },
+ {
+  "start_ms": 95123,
+  "end_ms": 96668,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 97448,
+  "end_ms": 98825,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 102549,
+  "end_ms": 103903,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 104645,
+  "end_ms": 106440,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 109042,
+  "end_ms": 110637,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 111342,
+  "end_ms": 112417,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 114983,
+  "end_ms": 116095,
+  "speaker": "M2",
+  "text": "Let's do pads on."
+ },
+ {
+  "start_ms": 117536,
+  "end_ms": 120756,
+  "speaker": "M1",
+  "text": "Vitals, pulse ox 84 on room air."
+ },
+ {
+  "start_ms": 127447,
+  "end_ms": 129026,
+  "speaker": "M1",
+  "text": "Transporting to General."
+ },
+ {
+  "start_ms": 132403,
+  "end_ms": 134849,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 135412,
+  "end_ms": 136433,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 140816,
+  "end_ms": 143394,
+  "speaker": "M2",
+  "text": "2 L non-rebreather nasal cannula, it's in."
+ },
+ {
+  "start_ms": 147922,
+  "end_ms": 154122,
+  "speaker": "M1",
+  "text": "Second set, pain is 7 out of 10, GCS is 12, rate is 133."
+ },
+ {
+  "start_ms": 158836,
+  "end_ms": 162582,
+  "speaker": "M1",
+  "text": "Pushing saline, 500 cc's intravenous."
+ },
+ {
+  "start_ms": 168989,
+  "end_ms": 170124,
+  "speaker": "M1",
+  "text": "We're at Mercy."
+ }
+]

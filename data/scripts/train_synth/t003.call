@@ -1,0 +1,39 @@
+@call t003 allergy start=10:11:20
+@patient age=57 sex=male weight_kg=119 complaint="bee sting" allergies=unknown home_meds=unknown history=unknown
+@traps anaphylaxis
+RD: Rescue 25, priority two, allergic reaction, 57 year old male.  >> dispatch:allergic reaction "allergic reaction"
+GAP 2
+M1: Rescue 25 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Who's your doctor?
+GAP 3
+PT: My lips are swelling.
+GAP 1
+M2: Stay with me, keep your eyes open.
+GAP 11
+TAP knock -
+GAP 11
+GAP 11
+TAP snap -
+GAP 11
+PT: No allergies.
+GAP 3
+TAP button +label
+M1: Drawing up 2.5 of breathing treatment nebulized.  >> med:albuterol,2.5,,neb "Drawing up 2.5 of breathing treatment nebulized"
+GAP 3
+M2: Vitals, pulse ox's 87 percent, pulse's 109, respirations is 8.  >> vital:spo2=87 "pulse ox's 87 percent"; vital:hr=109 "pulse's 109"; vital:rr=8 "respirations is 8"
+GAP 3
+M2: Let's do breathing treatment.  >> proc:nebulizer "breathing treatment"
+GAP 6
+TAP snap +label
+M2: Pushing diphenhydramine, 25 mg through the line.  >> med:diphenhydramine,25,mg,IV "Pushing diphenhydramine, 25 mg through the line"
+GAP 8
+M2: On a scale of zero to ten, how bad is it?
+PT: Can somebody call my wife?
+GAP 2
+M1: We're transporting to Saint Vincent's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Can you squeeze my fingers?
+GAP 8
+M1: Second set, sats's 98 percent, blood pressure at 180 over 127.  >> vital:spo2=98 "sats's 98 percent"; vital:bp=180/127 "blood pressure at 180 over 127"
+GAP 1
+M1: Arriving at Riverside.  >> time:eTimes.11 "Arriving at"

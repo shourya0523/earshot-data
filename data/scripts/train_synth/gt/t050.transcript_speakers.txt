@@ -1,0 +1,16 @@
+RD: Medic 33, priority two, weakness one side, 69 year old male.
+M2: Medic 33 arriving on scene.
+M2: Are you having any trouble breathing?
+BY: Can somebody call my wife?
+PT: Words aren't coming out right.
+M1: Are you having any trouble breathing?
+PT: Please don't cut my shirt.
+M1: Hang tight, partner.
+M1: non-rebreather 2 nasal cannula.
+M2: Let's move on three. One, two, three.
+BY: It's getting worse.
+M1: Repeat, 119 over 74, pain is 5 out of 10, glucose's 250.
+M1: We're transporting to Riverside.
+M2: Okay, ETCO2 is 18, BP's 135 over 60.
+M2: Let's do established IV.
+M1: Arriving at General.

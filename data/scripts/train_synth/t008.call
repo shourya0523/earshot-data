@@ -1,0 +1,54 @@
+@call t008 agitation start=05:42:11
+@patient age=49 sex=female weight_kg=88 complaint="psychiatric emergency" allergies=unknown home_meds=unknown history=unknown
+@traps excited delirium; psychosis
+RD: Medic 35, you have a psychiatric emergency, 49 year old female.  >> dispatch:psychiatric emergency "psychiatric emergency"
+GAP 2
+M1: Medic 35 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Let's move on three. One, two, three.
+BY: Please don't cut my shirt.
+GAP 2
+PT: Get away from me.
+GAP 6
+M1: Can you squeeze my fingers?
+GAP 3
+GAP 11
+TAP button -
+GAP 11
+M1: Drawing up 5 of versed in the deltoid.  >> med:midazolam,5,,IM "Drawing up 5 of versed in the deltoid"
+GAP 8
+M1: Doing soft restraints.  >> proc:restraint "soft restraints"
+GAP 11
+TAP snap -
+GAP 11
+GAP 3
+TAP knock +label
+M1: I gave ket 4 intramuscular.  >> med:ketamine,4,,IM "I gave ket 4 intramuscular"
+GAP 8
+M1: Watch the step.
+GAP 3
+TAP snap +label
+M1: 5 migs Haldol, it's in.  >> med:haloperidol,5,mg, "5 migs Haldol"
+GAP 2
+M1: Are you having any trouble breathing?
+PT: I feel sick.
+GAP 4
+M2: On a scale of zero to ten, how bad is it?
+BY: Can somebody call my wife?
+GAP 4
+M1: Transporting to Saint Vincent's.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP knock +label
+M1: Vitals, 105 over 51.  >> vital:bp=105/51 "105 over 51"
+GAP 8
+M2: Can you squeeze my fingers?
+PT: Please don't cut my shirt.
+GAP 2
+TAP button +label
+M1: capno's 40, resps's 24, GCS is 8.  >> vital:etco2=40 "capno's 40"; vital:rr=24 "resps's 24"; vital:gcs=8 "GCS is 8"
+GAP 4
+M2: Are you having any trouble breathing?
+PT: I feel sick.
+GAP 6
+M1: Arriving at Good Sam.  >> time:eTimes.11 "Arriving at"
+GAP 15
+M1: Giving report to the nurse.  >> time:eTimes.12 "Giving report"

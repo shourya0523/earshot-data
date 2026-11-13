@@ -1,0 +1,149 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "87",
+  "sex": "male",
+  "weight_kg": "111",
+  "complaint": "combative person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "combative person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "35",
+    "spo2": "96",
+    "etco2": "25",
+    "bgl": "167",
+    "gcs": "11"
+   },
+   "last_vitals": {
+    "rr": "35",
+    "spo2": "88",
+    "etco2": "22",
+    "bgl": "233",
+    "gcs": "11"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "excited delirium",
+    "psychosis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ketamine 4 mg/kg IM",
+    "haloperidol 5 mg"
+   ],
+   "procedures": [
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "87",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "combative person",
+  "I_injuries_or_information": "combative person",
+  "S_signs": {
+   "rr": "35",
+   "spo2": "96",
+   "etco2": "25",
+   "bgl": "167",
+   "gcs": "11"
+  },
+  "T_treatment": [
+   "ketamine 4 mg/kg IM",
+   "haloperidol 5 mg",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "06:00:03",
+  "eTimes.09": "06:01:03",
+  "eTimes.11": "06:01:59",
+  "eTimes.12": "06:02:07"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "combative person",
+ "medications": [
+  {
+   "drug": "ketamine",
+   "dose": "4",
+   "unit": "mg/kg",
+   "route": "IM"
+  },
+  {
+   "drug": "haloperidol",
+   "dose": "5",
+   "unit": "mg"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "35",
+   "time": "06:00:14"
+  },
+  {
+   "name": "spo2",
+   "value": "96",
+   "time": "06:00:14"
+  },
+  {
+   "name": "etco2",
+   "value": "25",
+   "time": "06:00:14"
+  },
+  {
+   "name": "spo2",
+   "value": "88",
+   "time": "06:00:46"
+  },
+  {
+   "name": "bgl",
+   "value": "167",
+   "time": "06:00:46"
+  },
+  {
+   "name": "etco2",
+   "value": "22",
+   "time": "06:01:09"
+  },
+  {
+   "name": "gcs",
+   "value": "11",
+   "time": "06:01:09"
+  },
+  {
+   "name": "bgl",
+   "value": "233",
+   "time": "06:01:09"
+  }
+ ],
+ "diagnosis_traps": [
+  "excited delirium",
+  "psychosis"
+ ]
+}

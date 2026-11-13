@@ -1,0 +1,19 @@
+RD: Squad 15, you have a unresponsive, 23 year old male.
+M2: Squad 15 on scene.
+M2: Grab the stair chair.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+PT: I took my insulin and skipped breakfast.
+M2: Repeat, sugar 80, sat's 83, breathing is 33.
+M1: Repeat, SpO2 83 percent, pulse is 42.
+M1: Can you tell me what day it is?
+PT: No allergies.
+M1: Drawing up 25 grams of D10 IV.
+M1: Giving 15 of insta-glucose.
+M1: 1 glucagon intramuscular, it's in.
+M2: I'm going to put some stickers on your chest.
+M1: We're transporting to General.
+M1: When did you last eat?
+M1: Let's do BGL check.
+M2: Got 18 gauge.
+M1: We're at Memorial.
+M1: Handing off to bed four.

@@ -1,0 +1,13 @@
+{
+ "rise_db": 20,
+ "attack_ms": 12,
+ "decay_db": 16,
+ "decay_ms": 40,
+ "min_gap_ms": 110,
+ "max_gap_ms": 550,
+ "quiet_ms": 500,
+ "snap_ratio_db": 0.0,
+ "refractory_ms": 90,
+ "tail_db": 8,
+ "tail_ms": 120
+}

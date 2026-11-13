@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5481,
+  "speaker": "RD",
+  "text": "Ambulance 55, priority two, sick person, 65 year old male."
+ },
+ {
+  "start_ms": 8800,
+  "end_ms": 10892,
+  "speaker": "M2",
+  "text": "Ambulance 55 we're on scene."
+ },
+ {
+  "start_ms": 11624,
+  "end_ms": 13773,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 14401,
+  "end_ms": 15383,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 17794,
+  "end_ms": 19264,
+  "speaker": "PT",
+  "text": "I've had a fever for three days."
+ },
+ {
+  "start_ms": 23927,
+  "end_ms": 27340,
+  "speaker": "M1",
+  "text": "Second set, BP's 112 over 58."
+ },
+ {
+  "start_ms": 54720,
+  "end_ms": 55760,
+  "speaker": "M2",
+  "text": "Doing 12-lead."
+ },
+ {
+  "start_ms": 64534,
+  "end_ms": 66166,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 66951,
+  "end_ms": 68038,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 70600,
+  "end_ms": 72441,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 73338,
+  "end_ms": 74390,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 84777,
+  "end_ms": 87560,
+  "speaker": "M1",
+  "text": "lactated ringers 500 mils IV."
+ },
+ {
+  "start_ms": 92067,
+  "end_ms": 96451,
+  "speaker": "M1",
+  "text": "Repeat, HR at 148, pain is 3 out of 10."
+ },
+ {
+  "start_ms": 99047,
+  "end_ms": 100754,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 101412,
+  "end_ms": 103532,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 106046,
+  "end_ms": 108015,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 110751,
+  "end_ms": 112414,
+  "speaker": "M1",
+  "text": "Leaving scene to University."
+ },
+ {
+  "start_ms": 117694,
+  "end_ms": 120142,
+  "speaker": "M1",
+  "text": "acetaminophen 1000 mg."
+ },
+ {
+  "start_ms": 122716,
+  "end_ms": 123541,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 127153,
+  "end_ms": 128762,
+  "speaker": "M2",
+  "text": "Let's do 18 in the AC."
+ },
+ {
+  "start_ms": 132321,
+  "end_ms": 134909,
+  "speaker": "M1",
+  "text": "Drawing up 1000 of normal saline."
+ },
+ {
+  "start_ms": 143757,
+  "end_ms": 144803,
+  "speaker": "M1",
+  "text": "We're at Northside."
+ }
+]

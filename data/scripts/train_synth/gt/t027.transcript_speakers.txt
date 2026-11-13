@@ -1,0 +1,23 @@
+RD: Ambulance 23, you have a combative person, 21 year old female.
+M2: Ambulance 23 on scene.
+M1: Any medical history I should know about?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+PT: Get away from me.
+M1: How long has this been going on?
+M2: I'm going to put some stickers on your chest.
+PT: Please don't cut my shirt.
+M1: I gave droperidol 5 migs intramuscular.
+M1: Who's your doctor?
+M1: Repeat, resps 26, GCS's 15, capno at 48.
+M2: Get check his sugar.
+M1: Okay, sugar at 175.
+M1: Leaving scene to Memorial.
+M2: I gave Ketalar 4 milligrams per kilo in the deltoid.
+M1: Did you pass out at all?
+PT: It's getting worse.
+M1: Can you tell me what day it is?
+PT: I don't know, it just started.
+M1: Stay with me, keep your eyes open.
+BY: It's about an eight.
+M1: Arriving at General.
+M1: Transfer of care complete.

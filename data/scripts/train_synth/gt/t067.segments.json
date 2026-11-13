@@ -1,0 +1,98 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5091,
+  "speaker": "RD",
+  "text": "Medic 53, priority two, stroke, 18 year old female."
+ },
+ {
+  "start_ms": 7787,
+  "end_ms": 9489,
+  "speaker": "M2",
+  "text": "Medic 53 on scene."
+ },
+ {
+  "start_ms": 10331,
+  "end_ms": 12223,
+  "speaker": "M2",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 14041,
+  "end_ms": 15371,
+  "speaker": "PT",
+  "text": "My hand won't work."
+ },
+ {
+  "start_ms": 18918,
+  "end_ms": 19877,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 45111,
+  "end_ms": 47185,
+  "speaker": "M2",
+  "text": "Okay, pulse ox at 82 percent."
+ },
+ {
+  "start_ms": 48646,
+  "end_ms": 51230,
+  "speaker": "M2",
+  "text": "Drawing up 2 L of non-rebreather nasal cannula."
+ },
+ {
+  "start_ms": 55095,
+  "end_ms": 56078,
+  "speaker": "M2",
+  "text": "Get check a sugar."
+ },
+ {
+  "start_ms": 64940,
+  "end_ms": 66177,
+  "speaker": "M2",
+  "text": "We need 18 gauge."
+ },
+ {
+  "start_ms": 76621,
+  "end_ms": 78416,
+  "speaker": "M2",
+  "text": "Repeat, end tidal 53."
+ },
+ {
+  "start_ms": 82751,
+  "end_ms": 84736,
+  "speaker": "M1",
+  "text": "Leaving scene to the trauma center."
+ },
+ {
+  "start_ms": 88580,
+  "end_ms": 89655,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 113736,
+  "end_ms": 115549,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 119883,
+  "end_ms": 121364,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 123686,
+  "end_ms": 124789,
+  "speaker": "M1",
+  "text": "We're at Memorial."
+ },
+ {
+  "start_ms": 141769,
+  "end_ms": 143081,
+  "speaker": "M1",
+  "text": "Giving report now."
+ }
+]

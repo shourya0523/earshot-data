@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4183,
+  "speaker": "RD",
+  "text": "Ambulance 10, respond to difficulty breathing, 62 year old male."
+ },
+ {
+  "start_ms": 8990,
+  "end_ms": 10519,
+  "speaker": "M2",
+  "text": "Ambulance 10 on scene."
+ },
+ {
+  "start_ms": 11310,
+  "end_ms": 12459,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 13354,
+  "end_ms": 14278,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 18136,
+  "end_ms": 19478,
+  "speaker": "PT",
+  "text": "My breathing's bad today."
+ },
+ {
+  "start_ms": 23009,
+  "end_ms": 23898,
+  "speaker": "M2",
+  "text": "Got c pap."
+ },
+ {
+  "start_ms": 27352,
+  "end_ms": 28872,
+  "speaker": "M1",
+  "text": "Giving 4 L of non-rebreather."
+ },
+ {
+  "start_ms": 31665,
+  "end_ms": 32752,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 37221,
+  "end_ms": 45185,
+  "speaker": "M1",
+  "text": "Repeat, pressure at 154 over 101, respirations 33, SpO2 is 93 percent."
+ },
+ {
+  "start_ms": 75023,
+  "end_ms": 77132,
+  "speaker": "M2",
+  "text": "Repeat, ETCO2 at 39."
+ },
+ {
+  "start_ms": 79614,
+  "end_ms": 81657,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 82412,
+  "end_ms": 83728,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 87921,
+  "end_ms": 90796,
+  "speaker": "M2",
+  "text": "Drawing up 2 grams of mag sulfate intravenous."
+ },
+ {
+  "start_ms": 99179,
+  "end_ms": 100468,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 100910,
+  "end_ms": 101962,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 104266,
+  "end_ms": 105601,
+  "speaker": "M1",
+  "text": "Leaving scene to Riverside."
+ },
+ {
+  "start_ms": 109077,
+  "end_ms": 110749,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 111412,
+  "end_ms": 114263,
+  "speaker": "BY",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 116996,
+  "end_ms": 118035,
+  "speaker": "M1",
+  "text": "Let's do breathing treatment."
+ },
+ {
+  "start_ms": 121600,
+  "end_ms": 123070,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 123820,
+  "end_ms": 126149,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 127730,
+  "end_ms": 128589,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 129018,
+  "end_ms": 130389,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 138796,
+  "end_ms": 139728,
+  "speaker": "M1",
+  "text": "Arriving at Mercy."
+ }
+]

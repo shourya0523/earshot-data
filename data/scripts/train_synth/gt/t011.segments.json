@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5364,
+  "speaker": "RD",
+  "text": "Squad 45, priority one, difficulty breathing, 49 year old male."
+ },
+ {
+  "start_ms": 9733,
+  "end_ms": 12031,
+  "speaker": "M2",
+  "text": "Squad 45 arriving on scene."
+ },
+ {
+  "start_ms": 12481,
+  "end_ms": 13758,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 17404,
+  "end_ms": 18688,
+  "speaker": "PT",
+  "text": "My breathing's bad today."
+ },
+ {
+  "start_ms": 23286,
+  "end_ms": 25783,
+  "speaker": "M1",
+  "text": "Pushing oxygen, 4 nasal cannula."
+ },
+ {
+  "start_ms": 51359,
+  "end_ms": 54166,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 61888,
+  "end_ms": 64620,
+  "speaker": "M2",
+  "text": "Second set, SpO2 is 85."
+ },
+ {
+  "start_ms": 67272,
+  "end_ms": 71092,
+  "speaker": "M1",
+  "text": "125 solumedrol intravenous, it's in."
+ },
+ {
+  "start_ms": 77939,
+  "end_ms": 81922,
+  "speaker": "M1",
+  "text": "pulse ox is 82 on room air, resps 36."
+ },
+ {
+  "start_ms": 88689,
+  "end_ms": 90117,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 90716,
+  "end_ms": 92128,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 96647,
+  "end_ms": 98444,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 99185,
+  "end_ms": 100272,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 128332,
+  "end_ms": 129562,
+  "speaker": "M1",
+  "text": "We're transporting to Valley."
+ },
+ {
+  "start_ms": 135018,
+  "end_ms": 137461,
+  "speaker": "M2",
+  "text": "Repeat, BGL at 312."
+ },
+ {
+  "start_ms": 140993,
+  "end_ms": 142477,
+  "speaker": "M2",
+  "text": "Get nebulizer treatment."
+ },
+ {
+  "start_ms": 151012,
+  "end_ms": 152080,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 156718,
+  "end_ms": 157842,
+  "speaker": "M1",
+  "text": "Arriving at County."
+ }
+]

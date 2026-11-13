@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4644,
+  "speaker": "RD",
+  "text": "Squad 52, priority one, chest pain, 20 year old male."
+ },
+ {
+  "start_ms": 7437,
+  "end_ms": 9835,
+  "speaker": "M2",
+  "text": "Squad 52 arriving on scene."
+ },
+ {
+  "start_ms": 10414,
+  "end_ms": 11540,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 12240,
+  "end_ms": 13384,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 17731,
+  "end_ms": 19201,
+  "speaker": "PT",
+  "text": "My chest is squeezing."
+ },
+ {
+  "start_ms": 26043,
+  "end_ms": 27158,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 33900,
+  "end_ms": 35897,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 40769,
+  "end_ms": 42719,
+  "speaker": "M1",
+  "text": "Giving 50 of fentanyl intravenous."
+ },
+ {
+  "start_ms": 53513,
+  "end_ms": 56584,
+  "speaker": "M2",
+  "text": "Drawing up 324 of aspirin chewed."
+ },
+ {
+  "start_ms": 63366,
+  "end_ms": 64907,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 66702,
+  "end_ms": 68757,
+  "speaker": "M1",
+  "text": "Drawing up 4 milligrams of zofran IV."
+ },
+ {
+  "start_ms": 94634,
+  "end_ms": 96352,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 103221,
+  "end_ms": 106112,
+  "speaker": "M2",
+  "text": "Second set, ETCO2 at 27."
+ },
+ {
+  "start_ms": 108778,
+  "end_ms": 110211,
+  "speaker": "M1",
+  "text": "We're transporting to Northside."
+ },
+ {
+  "start_ms": 115455,
+  "end_ms": 116442,
+  "speaker": "M1",
+  "text": "rate's 92."
+ },
+ {
+  "start_ms": 146217,
+  "end_ms": 148028,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 148499,
+  "end_ms": 149690,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 153283,
+  "end_ms": 154189,
+  "speaker": "M1",
+  "text": "Get on the monitor."
+ },
+ {
+  "start_ms": 158847,
+  "end_ms": 160182,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 160910,
+  "end_ms": 161980,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 168328,
+  "end_ms": 169385,
+  "speaker": "M1",
+  "text": "Arrived at Valley."
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4682,
+  "speaker": "RD",
+  "text": "Rescue 59, respond to seizure, 23 year old male."
+ },
+ {
+  "start_ms": 9201,
+  "end_ms": 10955,
+  "speaker": "M1",
+  "text": "Rescue 59 we're on scene."
+ },
+ {
+  "start_ms": 11585,
+  "end_ms": 13416,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 14287,
+  "end_ms": 16291,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 48423,
+  "end_ms": 49951,
+  "speaker": "PT",
+  "text": "I'm tired, my tongue hurts."
+ },
+ {
+  "start_ms": 52670,
+  "end_ms": 53646,
+  "speaker": "M1",
+  "text": "We need suction."
+ },
+ {
+  "start_ms": 55256,
+  "end_ms": 57137,
+  "speaker": "M1",
+  "text": "Drawing up 2 of Ativan through the line."
+ },
+ {
+  "start_ms": 65513,
+  "end_ms": 67452,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 68291,
+  "end_ms": 69436,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 74024,
+  "end_ms": 75800,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 79602,
+  "end_ms": 85633,
+  "speaker": "M2",
+  "text": "Repeat, blood pressure is 180 over 131, GCS at 14, rate 88."
+ },
+ {
+  "start_ms": 92110,
+  "end_ms": 93445,
+  "speaker": "M2",
+  "text": "pain is 2 out of 10."
+ },
+ {
+  "start_ms": 102030,
+  "end_ms": 105046,
+  "speaker": "M2",
+  "text": "Giving 2.5 milligrams of versed intranasal."
+ },
+ {
+  "start_ms": 108658,
+  "end_ms": 109993,
+  "speaker": "M1",
+  "text": "Transporting to Good Sam."
+ },
+ {
+  "start_ms": 115664,
+  "end_ms": 119253,
+  "speaker": "M2",
+  "text": "Repeat, blood sugar is 210, GCS is 15."
+ },
+ {
+  "start_ms": 121033,
+  "end_ms": 122624,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 127192,
+  "end_ms": 128214,
+  "speaker": "M1",
+  "text": "Got nasal airway."
+ },
+ {
+  "start_ms": 131838,
+  "end_ms": 133057,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 133667,
+  "end_ms": 134882,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 137433,
+  "end_ms": 138594,
+  "speaker": "M1",
+  "text": "Arrived at Good Sam."
+ }
+]

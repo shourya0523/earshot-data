@@ -1,0 +1,24 @@
+RD: Ambulance 7, you have a seizure, 64 year old female.
+M2: Ambulance 7 we're on scene.
+M1: Stay with me, keep your eyes open.
+PT: I don't know, it just started.
+PT: I'm tired, my tongue hurts.
+M1: Stay with me, keep your eyes open.
+M1: I gave midazolam 5 milligrams in the deltoid.
+M1: Can you squeeze my fingers?
+PT: Can somebody call my wife?
+M2: Giving 10 mg of diazepam rectal.
+M1: Watch the step.
+BY: It's about an eight.
+M1: Vitals, blood sugar at 190, sat is 88 on room air, pain is 5 out of 10.
+M2: I gave lorazepam 2 IV push.
+M1: breathing's 36.
+M1: We need check a sugar.
+M1: Leaving scene to Saint Joseph's.
+M1: Let's do suction.
+M2: Any medical history I should know about?
+BY: I feel sick.
+M2: Small poke.
+BY: I don't know, it just started.
+M1: Who's your doctor?
+M1: Arrived at Saint Joseph's.

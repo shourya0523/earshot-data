@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5186,
+  "speaker": "RD",
+  "text": "Medic 12, priority two, structure fire, 58 year old female."
+ },
+ {
+  "start_ms": 7516,
+  "end_ms": 9033,
+  "speaker": "M2",
+  "text": "Medic 12 we're on scene."
+ },
+ {
+  "start_ms": 9840,
+  "end_ms": 11079,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 11489,
+  "end_ms": 12762,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 21358,
+  "end_ms": 22735,
+  "speaker": "PT",
+  "text": "My arms are on fire."
+ },
+ {
+  "start_ms": 52558,
+  "end_ms": 55489,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 55981,
+  "end_ms": 57056,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 59665,
+  "end_ms": 65106,
+  "speaker": "M2",
+  "text": "Vitals, pressure 115 over 40, resps at 32, pain is 8 out of 10."
+ },
+ {
+  "start_ms": 73151,
+  "end_ms": 79658,
+  "speaker": "M1",
+  "text": "Repeat, resps is 10, BP is 101 over 66, pain is 3 out of 10."
+ },
+ {
+  "start_ms": 82336,
+  "end_ms": 83202,
+  "speaker": "M2",
+  "text": "Got bandage."
+ },
+ {
+  "start_ms": 86379,
+  "end_ms": 90052,
+  "speaker": "M1",
+  "text": "Pushing Sublimaze, 1 mics per kilo atomized."
+ },
+ {
+  "start_ms": 96378,
+  "end_ms": 100194,
+  "speaker": "M1",
+  "text": "Giving 1000 mils of lactated Ringer's through the line."
+ },
+ {
+  "start_ms": 107896,
+  "end_ms": 115024,
+  "speaker": "M1",
+  "text": "Vitals, GCS 10, HR is 152, respirations's 31."
+ },
+ {
+  "start_ms": 121465,
+  "end_ms": 123218,
+  "speaker": "M1",
+  "text": "Transporting to Northside."
+ },
+ {
+  "start_ms": 151516,
+  "end_ms": 154019,
+  "speaker": "M2",
+  "text": "5 gram Cyanokit IV, it's in."
+ },
+ {
+  "start_ms": 158746,
+  "end_ms": 160227,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 161080,
+  "end_ms": 162701,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 167276,
+  "end_ms": 168781,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 173563,
+  "end_ms": 175261,
+  "speaker": "M1",
+  "text": "Arrived at Good Sam."
+ },
+ {
+  "start_ms": 188687,
+  "end_ms": 190358,
+  "speaker": "M1",
+  "text": "Handing off to bed four."
+ }
+]

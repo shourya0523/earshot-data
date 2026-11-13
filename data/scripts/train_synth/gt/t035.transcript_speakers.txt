@@ -1,0 +1,25 @@
+RD: Ambulance 32, priority two, fever, 24 year old female.
+M1: Ambulance 32 on scene.
+M1: Small poke.
+PT: I don't know, it just started.
+PT: I'm freezing.
+M1: I'm going to put some stickers on your chest.
+M1: Can you tell me what day it is?
+PT: I had something like this last year.
+M2: Doing 12 lead.
+M1: We need 20 gauge.
+M1: normal saline 1000 intravenous.
+M1: When did you last eat?
+PT: Am I going to be okay?
+M2: Do you take any medications?
+PT: Can somebody call my wife?
+M2: Any allergies?
+PT: Please don't cut my shirt.
+M1: Okay, breathing at 21, rate at 44.
+M1: We're transporting to Saint Vincent's.
+M1: lactated ringers 500 mils through the line.
+M1: Hang tight, partner.
+M1: Okay, BGL's 447, sat 97 percent, pain is 3 out of 10.
+M1: 1000 mg acetaminophen by mouth, it's in.
+M1: Arriving at University.
+M1: Handing off complete.

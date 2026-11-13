@@ -1,0 +1,158 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3936,
+  "speaker": "RD",
+  "text": "Rescue 59, priority one, fall, 53 year old male."
+ },
+ {
+  "start_ms": 7772,
+  "end_ms": 10059,
+  "speaker": "M1",
+  "text": "Rescue 59 we're on scene."
+ },
+ {
+  "start_ms": 10882,
+  "end_ms": 11795,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 36048,
+  "end_ms": 37289,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 39697,
+  "end_ms": 41283,
+  "speaker": "PT",
+  "text": "My arm, don't touch my arm."
+ },
+ {
+  "start_ms": 47178,
+  "end_ms": 50362,
+  "speaker": "M1",
+  "text": "1 gram tranexamic acid IV, it's in."
+ },
+ {
+  "start_ms": 52164,
+  "end_ms": 53877,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 54481,
+  "end_ms": 55278,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 58729,
+  "end_ms": 59700,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 60408,
+  "end_ms": 61332,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 64892,
+  "end_ms": 67953,
+  "speaker": "M2",
+  "text": "Giving 0.3 milligrams per kilo of ketamine."
+ },
+ {
+  "start_ms": 95375,
+  "end_ms": 96433,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 97207,
+  "end_ms": 100366,
+  "speaker": "BY",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 108257,
+  "end_ms": 111050,
+  "speaker": "M2",
+  "text": "I gave Sublimaze 100 mics through the line."
+ },
+ {
+  "start_ms": 113769,
+  "end_ms": 118444,
+  "speaker": "M2",
+  "text": "Second set, capno 53, pain is 7 out of 10, GCS at 12."
+ },
+ {
+  "start_ms": 120096,
+  "end_ms": 121299,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 121922,
+  "end_ms": 124298,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 127037,
+  "end_ms": 132628,
+  "speaker": "M2",
+  "text": "Repeat, resps at 11, BGL 221, heart rate is 99."
+ },
+ {
+  "start_ms": 141500,
+  "end_ms": 143082,
+  "speaker": "M1",
+  "text": "Transporting to Mercy."
+ },
+ {
+  "start_ms": 146741,
+  "end_ms": 147944,
+  "speaker": "M2",
+  "text": "Doing c-collar."
+ },
+ {
+  "start_ms": 152434,
+  "end_ms": 153420,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 154216,
+  "end_ms": 155558,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 159066,
+  "end_ms": 160397,
+  "speaker": "M1",
+  "text": "Let's do dressing."
+ },
+ {
+  "start_ms": 163631,
+  "end_ms": 164845,
+  "speaker": "M2",
+  "text": "Pushing morphine, 4."
+ },
+ {
+  "start_ms": 167244,
+  "end_ms": 168865,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 175689,
+  "end_ms": 177160,
+  "speaker": "M1",
+  "text": "Arriving at Mercy."
+ }
+]

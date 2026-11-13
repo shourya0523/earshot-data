@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4493,
+  "speaker": "RD",
+  "text": "Ambulance 32, respond to fall, 83 year old female."
+ },
+ {
+  "start_ms": 7162,
+  "end_ms": 10204,
+  "speaker": "M2",
+  "text": "Ambulance 32 arriving on scene."
+ },
+ {
+  "start_ms": 10773,
+  "end_ms": 11538,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 12215,
+  "end_ms": 13731,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 15541,
+  "end_ms": 17511,
+  "speaker": "PT",
+  "text": "My arm, don't touch my arm."
+ },
+ {
+  "start_ms": 21430,
+  "end_ms": 25690,
+  "speaker": "M1",
+  "text": "Repeat, pulse at 83, pulse ox's 92 on room air."
+ },
+ {
+  "start_ms": 53344,
+  "end_ms": 54856,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 57707,
+  "end_ms": 59583,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 68400,
+  "end_ms": 69236,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 72710,
+  "end_ms": 74606,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 75059,
+  "end_ms": 76016,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 80294,
+  "end_ms": 83407,
+  "speaker": "M2",
+  "text": "Vitals, BGL is 374."
+ },
+ {
+  "start_ms": 86577,
+  "end_ms": 90131,
+  "speaker": "M2",
+  "text": "167 over 128, resp rate's 13."
+ },
+ {
+  "start_ms": 98639,
+  "end_ms": 100015,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 100516,
+  "end_ms": 102253,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 110580,
+  "end_ms": 113104,
+  "speaker": "M1",
+  "text": "normal saline 250 IV."
+ },
+ {
+  "start_ms": 116763,
+  "end_ms": 118621,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 122369,
+  "end_ms": 123454,
+  "speaker": "M1",
+  "text": "Let's do packing."
+ },
+ {
+  "start_ms": 128519,
+  "end_ms": 132264,
+  "speaker": "M2",
+  "text": "Giving 100 mcg of fentanyl IV push."
+ },
+ {
+  "start_ms": 140719,
+  "end_ms": 141628,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 142144,
+  "end_ms": 143787,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 153589,
+  "end_ms": 156221,
+  "speaker": "M1",
+  "text": "1 grams TXA IV, it's in."
+ },
+ {
+  "start_ms": 160636,
+  "end_ms": 161718,
+  "speaker": "M1",
+  "text": "Arriving at Valley."
+ }
+]

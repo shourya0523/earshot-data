@@ -1,0 +1,41 @@
+@call t007 stroke start=04:54:50
+@patient age=55 sex=male weight_kg=93 complaint="weakness one side" allergies=unknown home_meds=unknown history=unknown
+@traps CVA; TIA
+RD: Ambulance 24, respond to weakness one side, 55 year old male.  >> dispatch:weakness one side "weakness one side"
+GAP 4
+M2: Ambulance 24 on scene.  >> time:eTimes.06 "on scene"
+M1: Hang tight, partner.
+PT: Can somebody call my wife?
+GAP 1
+PT: Words aren't coming out right.
+GAP 11
+TAP button -
+GAP 11
+GAP 8
+M2: How long has this been going on?
+GAP 1
+M2: Giving 2 of non-rebreather.  >> med:oxygen,2,, "Giving 2 of non-rebreather"
+GAP 2
+M1: Can you squeeze my fingers?
+GAP 2
+M1: Any medical history I should know about?
+GAP 3
+M1: Get the cot.
+BY: I don't know, it just started.
+GAP 6
+M2: Doing 18 gauge.  >> proc:IV access "18 gauge"
+GAP 3
+TAP snap +label
+M1: Okay, sats at 86 on room air, GCS is 8.  >> vital:spo2=86 "sats at 86 on room air"; vital:gcs=8 "GCS is 8"
+GAP 1
+M1: We're transporting to Riverside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: On a scale of zero to ten, how bad is it?
+GAP 4
+M1: pain is 10 out of 10, GCS 10.  >> vital:pain=10 "10 out of 10"; vital:gcs=10 "GCS 10"
+GAP 2
+M1: I'm going to put some stickers on your chest.
+GAP 3
+M1: We're at General.  >> time:eTimes.11 "We're at"
+GAP 10
+M1: Giving report to bed four.  >> time:eTimes.12 "Giving report"

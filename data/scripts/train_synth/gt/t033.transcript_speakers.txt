@@ -1,0 +1,20 @@
+RD: Medic 39, respond to structure fire, 38 year old female.
+M1: Medic 39 we're on scene.
+M1: Let's move on three. One, two, three.
+BY: I feel sick.
+PT: My arms are on fire.
+M1: Giving 1000 mLs of lactated ringers.
+M1: Stay with me, keep your eyes open.
+PT: I don't know, it just started.
+M2: Any medical history I should know about?
+M1: Cyanokit 5 gram through the line.
+M1: Vitals, ETCO2's 31, pulse's 57.
+M1: Hang tight, partner.
+M1: Get the cot.
+M1: Transporting to Saint Vincent's.
+M2: We need cooling.
+M2: Repeat, blood pressure is 81 over 50, sugar is 186, pain is 5 out of 10.
+M1: Pushing fentanyl, 1 mics per kilo intranasal.
+M1: Doing dressing.
+M1: We're at Good Sam.
+M1: Giving report complete.

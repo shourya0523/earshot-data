@@ -1,0 +1,43 @@
+@call t013 ob start=12:21:06
+@patient age=31 sex=male weight_kg=102 complaint="pregnancy problem" allergies=unknown home_meds=unknown history=unknown
+@traps postpartum hemorrhage
+RD: Rescue 5, you have a pregnancy problem, 31 year old male.  >> dispatch:pregnancy problem "pregnancy problem"
+GAP 3
+M2: Rescue 5 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Stay with me, keep your eyes open.
+GAP 6
+PT: The contractions are two minutes apart.
+GAP 1
+M1: Small poke.
+GAP 3
+M1: Can you tell me what day it is?
+GAP 8
+M1: Pushing TXA, 1 gram through the line.  >> med:tranexamic acid,1,g,IV "Pushing TXA, 1 gram through the line"
+GAP 8
+M1: We need crowning.  >> proc:childbirth "crowning"
+GAP 11
+TAP snap -
+GAP 11
+GAP 1
+M1: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+GAP 3
+M1: We need 18 in the AC.  >> proc:IV access "18 in the AC"
+GAP 1
+TAP knock +label
+M2: Repeat, heart rate is 141, ETCO2 at 33.  >> vital:hr=141 "heart rate is 141"; vital:etco2=33 "ETCO2 at 33"
+GAP 11
+TAP button -
+GAP 11
+GAP 1
+M1: Transporting to General.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: Repeat, GCS is 9, 121 over 72, capno 43.  >> vital:gcs=9 "GCS is 9"; vital:bp=121/72 "121 over 72"; vital:etco2=43 "capno 43"
+GAP 4
+M1: Grab the stair chair.
+GAP 3
+M1: Drawing up 10 units of Pitocin IM.  >> med:oxytocin,10,units,IM "Drawing up 10 units of Pitocin IM"
+GAP 4
+M1: Arriving at Northside.  >> time:eTimes.11 "Arriving at"
+GAP 14
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"

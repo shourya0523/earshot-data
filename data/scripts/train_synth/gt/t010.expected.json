@@ -1,0 +1,140 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "88",
+  "sex": "male",
+  "weight_kg": "125",
+  "complaint": "assault",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "assault",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "89",
+    "hr": "93",
+    "rr": "28"
+   },
+   "last_vitals": {
+    "spo2": "90",
+    "hr": "93",
+    "rr": "28"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "morphine 4 mg",
+    "ketamine 0.3 mg/kg IV",
+    "normal saline 250 IV",
+    "tranexamic acid 1 g IV"
+   ],
+   "procedures": [
+    "pelvic binder",
+    "spinal motion restriction"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "88",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "assault",
+  "I_injuries_or_information": "assault",
+  "S_signs": {
+   "spo2": "89",
+   "hr": "93",
+   "rr": "28"
+  },
+  "T_treatment": [
+   "morphine 4 mg",
+   "ketamine 0.3 mg/kg IV",
+   "normal saline 250 IV",
+   "tranexamic acid 1 g IV",
+   "pelvic binder",
+   "spinal motion restriction"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "05:29:48",
+  "eTimes.09": "05:31:36",
+  "eTimes.11": "05:32:11",
+  "eTimes.12": "05:32:26"
+ },
+ "wall_time_seconds": 15,
+ "dispatch_reason": "assault",
+ "medications": [
+  {
+   "drug": "morphine",
+   "dose": "4",
+   "unit": "mg"
+  },
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "unit": "mg/kg",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "250",
+   "route": "IV"
+  },
+  {
+   "drug": "tranexamic acid",
+   "dose": "1",
+   "unit": "g",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "89",
+   "time": "05:30:44"
+  },
+  {
+   "name": "hr",
+   "value": "93",
+   "time": "05:31:55"
+  },
+  {
+   "name": "spo2",
+   "value": "90",
+   "time": "05:31:55"
+  },
+  {
+   "name": "rr",
+   "value": "28",
+   "time": "05:31:55"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

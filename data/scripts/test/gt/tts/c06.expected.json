@@ -1,0 +1,166 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint",
+  "home_meds"
+ ],
+ "patient": {
+  "age": "19",
+  "sex": "female",
+  "weight_kg": "58",
+  "complaint": "shortness of breath, inhaler not helping",
+  "allergies": "NKDA",
+  "home_meds": "albuterol inhaler, Symbicort",
+  "history": "asthma"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "shortness of breath, inhaler not helping",
+   "allergies": "NKDA",
+   "medications": "albuterol inhaler, Symbicort",
+   "history": "asthma"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "88",
+    "rr": "32",
+    "hr": "126",
+    "bp": "138/84"
+   },
+   "last_vitals": {
+    "spo2": "96",
+    "rr": "24",
+    "hr": "118",
+    "bp": "138/84"
+   },
+   "status": [
+    "tripoding",
+    "wheezes"
+   ],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "asthma exacerbation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "albuterol 2.5 neb",
+    "ipratropium 0.5 neb",
+    "methylprednisolone 125 IV",
+    "albuterol 5 mg neb",
+    "magnesium sulfate 2 g IV"
+   ],
+   "procedures": []
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "19",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "difficulty breathing",
+  "I_injuries_or_information": "shortness of breath, inhaler not helping",
+  "S_signs": {
+   "spo2": "88",
+   "rr": "32",
+   "hr": "126",
+   "bp": "138/84"
+  },
+  "T_treatment": [
+   "albuterol 2.5 neb",
+   "ipratropium 0.5 neb",
+   "methylprednisolone 125 IV",
+   "albuterol 5 mg neb",
+   "magnesium sulfate 2 g IV"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "albuterol inhaler, Symbicort",
+  "B_background": "asthma",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "11:05:07",
+  "eTimes.09": "11:06:29",
+  "eTimes.11": "11:07:27"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "difficulty breathing",
+ "medications": [
+  {
+   "drug": "albuterol",
+   "dose": "2.5",
+   "route": "neb"
+  },
+  {
+   "drug": "ipratropium",
+   "dose": "0.5",
+   "route": "neb"
+  },
+  {
+   "drug": "methylprednisolone",
+   "dose": "125",
+   "route": "IV"
+  },
+  {
+   "drug": "albuterol",
+   "dose": "5",
+   "unit": "mg",
+   "route": "neb"
+  },
+  {
+   "drug": "magnesium sulfate",
+   "dose": "2",
+   "unit": "g",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "88",
+   "time": "11:05:23"
+  },
+  {
+   "name": "rr",
+   "value": "32",
+   "time": "11:05:23"
+  },
+  {
+   "name": "hr",
+   "value": "126",
+   "time": "11:05:23"
+  },
+  {
+   "name": "bp",
+   "value": "138/84",
+   "time": "11:06:09"
+  },
+  {
+   "name": "spo2",
+   "value": "94",
+   "time": "11:06:40"
+  },
+  {
+   "name": "rr",
+   "value": "24",
+   "time": "11:06:40"
+  },
+  {
+   "name": "hr",
+   "value": "118",
+   "time": "11:07:18"
+  },
+  {
+   "name": "spo2",
+   "value": "96",
+   "time": "11:07:18"
+  }
+ ],
+ "diagnosis_traps": [
+  "asthma exacerbation"
+ ]
+}

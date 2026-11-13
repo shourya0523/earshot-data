@@ -1,0 +1,35 @@
+@call c03 overdose_naloxone start=23:15:00
+@patient age=28 sex=male weight_kg=75 complaint="found unresponsive with slow breathing" allergies=unknown home_meds=unknown history="unknown"
+@traps opioid overdose
+RD: Medic 3, unconscious person, possible overdose, in the parking garage.  >> dispatch:unconscious person, possible overdose "unconscious person, possible overdose"
+GAP 3
+M1: Medic 3 on scene.  >> time:eTimes.06 "on scene"
+GAP 3
+BY: He was in his car, he's barely breathing, I didn't touch anything.
+M1: Sir! Sir, can you hear me? Nothing. Pinpoint pupils.  >> status:pinpoint pupils "Pinpoint pupils"
+TAP knock +label
+M2: Resps are 6, shallow, sat's 82.  >> vital:rr=6 "Resps are 6"; vital:spo2=82 "sat's 82"
+M1: Start bagging him.  >> proc:BVM ventilation "Start bagging him"
+GAP 4
+TAP button +label
+M1: Narcan 4 milligrams intranasal, in.  >> med:naloxone,4,mg,IN "Narcan 4 milligrams intranasal"
+GAP 12
+TAP snap -
+GAP 12
+M2: Pulse is 58, pressure 100 over 62.  >> vital:hr=58 "Pulse is 58"; vital:bp=100/62 "pressure 100 over 62"
+GAP 6
+TAP button +label
+M1: No change. Second dose, 2 milligrams IV.  >> med:naloxone,2,mg,IV "Second dose, 2 milligrams IV"
+GAP 8
+M2: He's breathing, rate 14 now, sat 96.  >> vital:rr=14 "rate 14 now"; vital:spo2=96 "sat 96"
+PT: What... what happened? Where am I?
+M1: You stopped breathing, buddy. We gave you some Narcan. Did you take anything?
+PT: Just a little. I'm fine. My head hurts.
+M2: Blood sugar 98.  >> vital:bgl=98 "Blood sugar 98"
+GAP 5
+M1: Transporting to St. Luke's.  >> time:eTimes.09 "Transporting"
+GAP 10
+TAP knock +label
+M2: He's A and O times three now.  >> status:A&O×3 "A and O times three"
+GAP 8
+M1: Arriving at St. Luke's.  >> time:eTimes.11 "Arriving at St. Luke's"

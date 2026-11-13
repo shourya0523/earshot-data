@@ -1,0 +1,136 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint",
+  "allergies",
+  "home_meds"
+ ],
+ "patient": {
+  "age": "54",
+  "sex": "female",
+  "weight_kg": "82",
+  "complaint": "confused and sweaty, not acting right",
+  "allergies": "sulfa",
+  "home_meds": "insulin, metformin",
+  "history": "type 1 diabetes"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "confused and sweaty, not acting right",
+   "allergies": "sulfa",
+   "medications": "insulin, metformin",
+   "history": "type 1 diabetes"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "42",
+    "bp": "134/78",
+    "hr": "96",
+    "rr": "18"
+   },
+   "last_vitals": {
+    "bgl": "124",
+    "bp": "134/78",
+    "hr": "96",
+    "rr": "18"
+   },
+   "status": [
+    "pale, cool and diaphoretic",
+    "A&O\u00d74"
+   ],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "hypoglycemia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "dextrose 100 mL IV",
+    "dextrose 100"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "54",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "altered mental status",
+  "I_injuries_or_information": "confused and sweaty, not acting right",
+  "S_signs": {
+   "bgl": "42",
+   "bp": "134/78",
+   "hr": "96",
+   "rr": "18"
+  },
+  "T_treatment": [
+   "dextrose 100 mL IV",
+   "dextrose 100",
+   "IV access"
+  ],
+  "A_allergies": "sulfa",
+  "M_medications": "insulin, metformin",
+  "B_background": "type 1 diabetes",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "07:22:53",
+  "eTimes.09": "07:25:09"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "altered mental status",
+ "medications": [
+  {
+   "drug": "dextrose",
+   "dose": "100",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "dextrose",
+   "dose": "100"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "42",
+   "time": "07:23:10"
+  },
+  {
+   "name": "bp",
+   "value": "134/78",
+   "time": "07:24:03"
+  },
+  {
+   "name": "hr",
+   "value": "96",
+   "time": "07:24:03"
+  },
+  {
+   "name": "rr",
+   "value": "18",
+   "time": "07:24:03"
+  },
+  {
+   "name": "bgl",
+   "value": "68",
+   "time": "07:24:18"
+  },
+  {
+   "name": "bgl",
+   "value": "124",
+   "time": "07:24:46"
+  }
+ ],
+ "diagnosis_traps": [
+  "hypoglycemia"
+ ]
+}

@@ -1,0 +1,50 @@
+@call t063 chf start=09:18:41
+@patient age=65 sex=female weight_kg=92 complaint="difficulty breathing" allergies=unknown home_meds=unknown history=unknown
+@traps CHF; pulmonary edema
+RD: Ambulance 2, priority two, difficulty breathing, 65 year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 3
+M1: Ambulance 2 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Okay, we're going to take care of you.
+PT: It's getting worse.
+GAP 3
+PT: I've been sleeping in the recliner.
+GAP 2
+M2: Doing c pap.  >> proc:CPAP "c pap"
+GAP 4
+TAP snap +label
+M1: I gave NTG 0.4 mg SL.  >> med:nitroglycerin,0.4,mg,SL "I gave NTG 0.4 mg SL"
+GAP 4
+M1: Can you squeeze my fingers?
+GAP 8
+M1: Vitals, pulse ox at 93, blood sugar is 259, ETCO2's 18.  >> vital:spo2=93 "pulse ox at 93"; vital:bgl=259 "blood sugar is 259"; vital:etco2=18 "ETCO2's 18"
+GAP 11
+TAP knock -
+GAP 11
+GAP 4
+M1: Second set, pain is 8 out of 10.  >> vital:pain=8 "8 out of 10"
+GAP 8
+TAP knock +label
+M1: Drawing up 40 migs of Lasix through the line.  >> med:furosemide,40,mg,IV "Drawing up 40 migs of Lasix through the line"
+GAP 4
+M2: Got twelve lead.  >> proc:12-lead ECG "twelve lead"
+GAP 8
+M1: I'm going to put some stickers on your chest.
+PT: It's about an eight.
+GAP 3
+GAP 11
+TAP button -
+GAP 11
+M1: Transporting to Saint Joseph's.  >> time:eTimes.09 "Transporting"
+GAP 3
+M2: I'm going to put some stickers on your chest.
+GAP 1
+M1: Second set, glucose 334, pain is 3 out of 10, rate 87.  >> vital:bgl=334 "glucose 334"; vital:pain=3 "3 out of 10"; vital:hr=87 "rate 87"
+GAP 2
+M1: Do you take any medications?
+GAP 1
+M1: Any allergies?
+GAP 1
+M1: Arriving at Valley.  >> time:eTimes.11 "Arriving at"
+GAP 7
+TAP button +label
+M1: Giving report complete.  >> time:eTimes.12 "Giving report"

@@ -1,0 +1,98 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5304,
+  "speaker": "RD",
+  "text": "Rescue 25, priority two, allergic reaction, 57 year old male."
+ },
+ {
+  "start_ms": 7690,
+  "end_ms": 10240,
+  "speaker": "M1",
+  "text": "Rescue 25 we're on scene."
+ },
+ {
+  "start_ms": 10633,
+  "end_ms": 11837,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 15289,
+  "end_ms": 16724,
+  "speaker": "PT",
+  "text": "My lips are swelling."
+ },
+ {
+  "start_ms": 18362,
+  "end_ms": 20459,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 68699,
+  "end_ms": 69972,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 74991,
+  "end_ms": 78457,
+  "speaker": "M1",
+  "text": "Drawing up 2.5 of breathing treatment nebulized."
+ },
+ {
+  "start_ms": 82149,
+  "end_ms": 88495,
+  "speaker": "M2",
+  "text": "Vitals, pulse ox's 87 percent, pulse's 109, respirations is 8."
+ },
+ {
+  "start_ms": 91834,
+  "end_ms": 93374,
+  "speaker": "M2",
+  "text": "Let's do breathing treatment."
+ },
+ {
+  "start_ms": 101524,
+  "end_ms": 105014,
+  "speaker": "M2",
+  "text": "Pushing diphenhydramine, 25 mg through the line."
+ },
+ {
+  "start_ms": 113357,
+  "end_ms": 116162,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 116780,
+  "end_ms": 118424,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 120957,
+  "end_ms": 123250,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 126759,
+  "end_ms": 128768,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 137225,
+  "end_ms": 143584,
+  "speaker": "M1",
+  "text": "Second set, sats's 98 percent, blood pressure at 180 over 127."
+ },
+ {
+  "start_ms": 145261,
+  "end_ms": 147028,
+  "speaker": "M1",
+  "text": "Arriving at Riverside."
+ }
+]

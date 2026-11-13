@@ -1,0 +1,150 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint",
+  "home_meds",
+  "history"
+ ],
+ "patient": {
+  "age": "23",
+  "sex": "male",
+  "weight_kg": "70",
+  "complaint": "shaking episode, still seizing on arrival",
+  "allergies": "NKDA",
+  "home_meds": "Keppra",
+  "history": "epilepsy, missed doses"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "shaking episode, still seizing on arrival",
+   "allergies": "NKDA",
+   "medications": "Keppra",
+   "history": "epilepsy, missed doses"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "86",
+    "hr": "132",
+    "bgl": "104",
+    "bp": "146/90",
+    "rr": "16",
+    "gcs": "10"
+   },
+   "last_vitals": {
+    "spo2": "95",
+    "hr": "132",
+    "bgl": "104",
+    "bp": "146/90",
+    "rr": "16",
+    "gcs": "10"
+   },
+   "status": [
+    "actively seizing",
+    "postictal"
+   ],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "status epilepticus"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 15 NRB",
+    "midazolam 10 mg IM"
+   ],
+   "procedures": [
+    "NPA"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "23",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "seizure",
+  "I_injuries_or_information": "shaking episode, still seizing on arrival",
+  "S_signs": {
+   "spo2": "86",
+   "hr": "132",
+   "bgl": "104",
+   "bp": "146/90",
+   "rr": "16",
+   "gcs": "10"
+  },
+  "T_treatment": [
+   "oxygen 15 NRB",
+   "midazolam 10 mg IM",
+   "NPA"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "Keppra",
+  "B_background": "epilepsy, missed doses",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "13:27:21",
+  "eTimes.09": "13:28:52",
+  "eTimes.11": "13:29:17",
+  "eTimes.12": "13:29:31"
+ },
+ "wall_time_seconds": 14,
+ "dispatch_reason": "seizure",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "15",
+   "route": "NRB"
+  },
+  {
+   "drug": "midazolam",
+   "dose": "10",
+   "unit": "mg",
+   "route": "IM"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "13:27:38"
+  },
+  {
+   "name": "hr",
+   "value": "132",
+   "time": "13:27:38"
+  },
+  {
+   "name": "bgl",
+   "value": "104",
+   "time": "13:28:31"
+  },
+  {
+   "name": "bp",
+   "value": "146/90",
+   "time": "13:28:31"
+  },
+  {
+   "name": "rr",
+   "value": "16",
+   "time": "13:28:31"
+  },
+  {
+   "name": "spo2",
+   "value": "95",
+   "time": "13:28:45"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "13:29:05"
+  }
+ ],
+ "diagnosis_traps": [
+  "status epilepticus"
+ ]
+}

@@ -1,0 +1,35 @@
+@call t041 syncope start=04:29:11
+@patient age=24 sex=male weight_kg=64 complaint="fainting" allergies=unknown home_meds=unknown history=unknown
+@traps vasovagal
+RD: Medic 10, priority two, fainting, 24 year old male.  >> dispatch:fainting "fainting"
+GAP 4
+M1: Medic 10 on scene.  >> time:eTimes.06 "on scene"
+M1: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+GAP 3
+PT: Everything went grey.
+GAP 4
+M2: I gave saline 500 cc's intravenous.  >> med:normal saline,500,mL,IV "I gave saline 500 cc's intravenous"
+GAP 6
+M2: On a scale of zero to ten, how bad is it?
+BY: Please don't cut my shirt.
+GAP 4
+TAP button +label
+M1: Giving 2 L of non-rebreather nasal cannula.  >> med:oxygen,2,L/min,NC "Giving 2 L of non-rebreather nasal cannula"
+GAP 2
+M1: Watch the step.
+GAP 4
+M2: Vitals, GCS's 13.  >> vital:gcs=13 "GCS's 13"
+GAP 11
+TAP button -
+GAP 11
+GAP 2
+M1: Did you pass out at all?
+GAP 4
+M1: We're transporting to Memorial.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M2: Okay, SpO2's 93, capno's 31.  >> vital:spo2=93 "SpO2's 93"; vital:etco2=31 "capno's 31"
+GAP 2
+M2: Get 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 8
+M1: We're at County.  >> time:eTimes.11 "We're at"

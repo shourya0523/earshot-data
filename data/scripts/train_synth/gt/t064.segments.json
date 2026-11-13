@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5797,
+  "speaker": "RD",
+  "text": "Ambulance 51, respond to palpitations, 77 year old male."
+ },
+ {
+  "start_ms": 9390,
+  "end_ms": 11289,
+  "speaker": "M2",
+  "text": "Ambulance 51 arriving on scene."
+ },
+ {
+  "start_ms": 11750,
+  "end_ms": 13267,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 37665,
+  "end_ms": 39743,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 44110,
+  "end_ms": 45870,
+  "speaker": "PT",
+  "text": "It feels like it's fluttering."
+ },
+ {
+  "start_ms": 55589,
+  "end_ms": 58353,
+  "speaker": "M1",
+  "text": "Giving 6 milligrams of adenosine intravenous."
+ },
+ {
+  "start_ms": 68716,
+  "end_ms": 72543,
+  "speaker": "M2",
+  "text": "Vitals, breathing is 8, GCS is 12, sats 90 percent."
+ },
+ {
+  "start_ms": 78968,
+  "end_ms": 80489,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 108815,
+  "end_ms": 113560,
+  "speaker": "M1",
+  "text": "Okay, GCS at 8, pain is 2 out of 10, resp rate at 15."
+ },
+ {
+  "start_ms": 117416,
+  "end_ms": 119216,
+  "speaker": "M1",
+  "text": "Okay, respirations 30."
+ },
+ {
+  "start_ms": 124051,
+  "end_ms": 126040,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 126688,
+  "end_ms": 128577,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 133457,
+  "end_ms": 134608,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 135132,
+  "end_ms": 136445,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 144750,
+  "end_ms": 145995,
+  "speaker": "M1",
+  "text": "Transporting to Mercy."
+ },
+ {
+  "start_ms": 149494,
+  "end_ms": 150813,
+  "speaker": "M1",
+  "text": "Get established IV."
+ },
+ {
+  "start_ms": 155239,
+  "end_ms": 156320,
+  "speaker": "M1",
+  "text": "Get vagal."
+ },
+ {
+  "start_ms": 158704,
+  "end_ms": 159977,
+  "speaker": "M2",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 160773,
+  "end_ms": 162027,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 169960,
+  "end_ms": 172130,
+  "speaker": "M1",
+  "text": "Drawing up 12 migs of adenosine."
+ },
+ {
+  "start_ms": 175948,
+  "end_ms": 176831,
+  "speaker": "M1",
+  "text": "We're at Mercy."
+ },
+ {
+  "start_ms": 191995,
+  "end_ms": 192952,
+  "speaker": "M1",
+  "text": "Handing off now."
+ }
+]

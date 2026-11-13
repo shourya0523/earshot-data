@@ -1,0 +1,147 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "62",
+  "sex": "female",
+  "weight_kg": "57",
+  "complaint": "dizziness",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "dizziness",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "68",
+    "bgl": "133",
+    "rr": "11",
+    "pain": "3",
+    "gcs": "13",
+    "spo2": "86"
+   },
+   "last_vitals": {
+    "hr": "68",
+    "bgl": "170",
+    "rr": "11",
+    "pain": "3",
+    "gcs": "13",
+    "spo2": "86"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "heart block"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 500 mL IV",
+    "atropine 1 mg IV"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "62",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "dizziness",
+  "I_injuries_or_information": "dizziness",
+  "S_signs": {
+   "hr": "68",
+   "bgl": "133",
+   "rr": "11",
+   "pain": "3",
+   "gcs": "13",
+   "spo2": "86"
+  },
+  "T_treatment": [
+   "normal saline 500 mL IV",
+   "atropine 1 mg IV",
+   "12-lead ECG",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "10:23:10",
+  "eTimes.09": "10:25:26",
+  "eTimes.11": "10:26:03"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "dizziness",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "atropine",
+   "dose": "1",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "68",
+   "time": "10:24:20"
+  },
+  {
+   "name": "bgl",
+   "value": "133",
+   "time": "10:24:20"
+  },
+  {
+   "name": "rr",
+   "value": "11",
+   "time": "10:25:18"
+  },
+  {
+   "name": "bgl",
+   "value": "170",
+   "time": "10:25:18"
+  },
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "10:25:18"
+  },
+  {
+   "name": "gcs",
+   "value": "13",
+   "time": "10:25:47"
+  },
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "10:25:47"
+  }
+ ],
+ "diagnosis_traps": [
+  "heart block"
+ ]
+}

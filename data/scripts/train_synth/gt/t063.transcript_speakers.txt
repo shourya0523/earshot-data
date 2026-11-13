@@ -1,0 +1,21 @@
+RD: Ambulance 2, priority two, difficulty breathing, 65 year old female.
+M1: Ambulance 2 arriving on scene.
+M2: Okay, we're going to take care of you.
+PT: It's getting worse.
+PT: I've been sleeping in the recliner.
+M2: Doing c pap.
+M1: I gave NTG 0.4 mg SL.
+M1: Can you squeeze my fingers?
+M1: Vitals, pulse ox at 93, blood sugar is 259, ETCO2's 18.
+M1: Second set, pain is 8 out of 10.
+M1: Drawing up 40 migs of Lasix through the line.
+M2: Got twelve lead.
+M1: I'm going to put some stickers on your chest.
+PT: It's about an eight.
+M1: Transporting to Saint Joseph's.
+M2: I'm going to put some stickers on your chest.
+M1: Second set, glucose 334, pain is 3 out of 10, rate 87.
+M1: Do you take any medications?
+M1: Any allergies?
+M1: Arriving at Valley.
+M1: Giving report complete.

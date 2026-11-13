@@ -1,0 +1,48 @@
+@call t030 trauma start=06:56:48
+@patient age=52 sex=male weight_kg=104 complaint="fall" allergies=unknown home_meds=unknown history=unknown
+@traps fracture; head injury
+RD: Ambulance 33, respond to MVC rollover, 52 year old male.  >> dispatch:MVC rollover "MVC rollover"
+GAP 4
+M1: Ambulance 33 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: How long has this been going on?
+PT: Please don't cut my shirt.
+GAP 6
+PT: My hip hurts so bad.
+GAP 3
+M1: Watch the step.
+GAP 3
+M1: Can you squeeze my fingers?
+GAP 8
+TAP snap +label
+M2: Pushing Ketalar, 0.3 IV.  >> med:ketamine,0.3,,IV "Pushing Ketalar, 0.3 IV"
+GAP 1
+M2: Got pelvic binder.  >> proc:pelvic binder "pelvic binder"
+GAP 6
+TAP button +label
+M1: Okay, sugar's 432.  >> vital:bgl=432 "sugar's 432"
+GAP 3
+M1: Are you having any trouble breathing?
+BY: It's about an eight.
+GAP 2
+M2: Pushing morphine, 4 intravenous.  >> med:morphine,4,,IV "Pushing morphine, 4 intravenous"
+GAP 1
+GAP 11
+TAP button -
+GAP 11
+M1: Transporting to Northside.  >> time:eTimes.09 "Transporting"
+GAP 3
+TAP button +label
+M1: Giving 250 of saline IV.  >> med:normal saline,250,,IV "Giving 250 of saline IV"
+GAP 1
+TAP button +label
+M1: Second set, sats 85, BGL is 112, GCS is 12.  >> vital:spo2=85 "sats 85"; vital:bgl=112 "BGL is 112"; vital:gcs=12 "GCS is 12"
+GAP 4
+TAP button +label
+M1: 100 fent IV, it's in.  >> med:fentanyl,100,,IV "100 fent IV"
+GAP 6
+M2: Doing hemostatic gauze.  >> proc:wound packing "hemostatic gauze"
+GAP 2
+M1: Arriving at Memorial.  >> time:eTimes.11 "Arriving at"
+GAP 15
+M1: Giving report now.  >> time:eTimes.12 "Giving report"
+KNOCK3

@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5712,
+  "speaker": "RD",
+  "text": "Medic 11, motor vehicle collision, motorcycle versus car, rider down."
+ },
+ {
+  "start_ms": 9054,
+  "end_ms": 10478,
+  "speaker": "M1",
+  "text": "Medic 11 on scene."
+ },
+ {
+  "start_ms": 13363,
+  "end_ms": 16780,
+  "speaker": "M1",
+  "text": "Helmet on, he's talking. Big bleed, left thigh."
+ },
+ {
+  "start_ms": 18571,
+  "end_ms": 20886,
+  "speaker": "M2",
+  "text": "Tourniquet high and tight, left thigh."
+ },
+ {
+  "start_ms": 24380,
+  "end_ms": 27006,
+  "speaker": "PT",
+  "text": "My leg! Oh God, my leg."
+ },
+ {
+  "start_ms": 27828,
+  "end_ms": 31287,
+  "speaker": "M1",
+  "text": "Stay still for me. Any other pain? Neck, back?"
+ },
+ {
+  "start_ms": 32181,
+  "end_ms": 33927,
+  "speaker": "PT",
+  "text": "No, just the leg."
+ },
+ {
+  "start_ms": 36202,
+  "end_ms": 42604,
+  "speaker": "M2",
+  "text": "BP 98 over 60, heart rate 124, resps 24, sat 97."
+ },
+ {
+  "start_ms": 43467,
+  "end_ms": 46008,
+  "speaker": "M1",
+  "text": "He's compensating. Pale, cool skin."
+ },
+ {
+  "start_ms": 49358,
+  "end_ms": 51005,
+  "speaker": "M1",
+  "text": "Traction splint, then load."
+ },
+ {
+  "start_ms": 75333,
+  "end_ms": 77113,
+  "speaker": "M1",
+  "text": "Transporting to the trauma center."
+ },
+ {
+  "start_ms": 80619,
+  "end_ms": 82283,
+  "speaker": "M2",
+  "text": "Fourteen in the right AC."
+ },
+ {
+  "start_ms": 86486,
+  "end_ms": 88762,
+  "speaker": "M1",
+  "text": "TXA, one gram IV over ten."
+ },
+ {
+  "start_ms": 96580,
+  "end_ms": 99015,
+  "speaker": "M1",
+  "text": "Fentanyl 50 micrograms IV for pain."
+ },
+ {
+  "start_ms": 107672,
+  "end_ms": 113253,
+  "speaker": "M2",
+  "text": "Repeat, 102 over 64, rate 116. Pain's an 8 out of 10."
+ },
+ {
+  "start_ms": 119709,
+  "end_ms": 121497,
+  "speaker": "M1",
+  "text": "Tourniquet time oh two thirty four."
+ },
+ {
+  "start_ms": 130043,
+  "end_ms": 131241,
+  "speaker": "M1",
+  "text": "At the trauma center."
+ },
+ {
+  "start_ms": 135736,
+  "end_ms": 137752,
+  "speaker": "M1",
+  "text": "Transfer of care to trauma bay two."
+ }
+]

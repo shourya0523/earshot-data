@@ -1,0 +1,12 @@
+{"id": "e1", "call_id": "t076", "time": "02:05:38", "clip_ms": 500, "type": "dispatch", "fields": {"text": "chest pain"}, "source": "heard", "quote": "chest pain", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t076", "time": "02:05:45", "clip_ms": 7437, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "arriving on scene", "segment_start_ms": 7437}
+{"id": "e3", "call_id": "t076", "time": "02:06:18", "clip_ms": 40769, "type": "medication", "fields": {"drug": "fentanyl", "dose": "50", "route": "IV"}, "source": "heard", "quote": "Giving 50 of fentanyl intravenous", "segment_start_ms": 40769}
+{"id": "e4", "call_id": "t076", "time": "02:06:30", "clip_ms": 52013, "type": "medication", "fields": {"drug": "aspirin", "dose": "324", "route": "PO"}, "source": "tap+heard", "quote": "Drawing up 324 of aspirin chewed", "segment_start_ms": 53513, "tap_id": "t1"}
+{"id": "e5", "call_id": "t076", "time": "02:06:44", "clip_ms": 66702, "type": "medication", "fields": {"drug": "ondansetron", "dose": "4", "unit": "mg", "route": "IV"}, "source": "heard", "quote": "Drawing up 4 milligrams of zofran IV", "segment_start_ms": 66702}
+{"id": "mt2", "call_id": "t076", "time": "02:07:00", "clip_ms": 82634, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e6", "call_id": "t076", "time": "02:07:21", "clip_ms": 103221, "type": "vital", "fields": {"name": "etco2", "value": "27", "unit": "mmHg"}, "source": "heard", "quote": "ETCO2 at 27", "segment_start_ms": 103221}
+{"id": "e7", "call_id": "t076", "time": "02:07:26", "clip_ms": 108778, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 108778}
+{"id": "e8", "call_id": "t076", "time": "02:07:31", "clip_ms": 113965, "type": "vital", "fields": {"name": "hr", "value": "92", "unit": "bpm"}, "source": "tap+heard", "quote": "rate's 92", "segment_start_ms": 115455, "tap_id": "t3"}
+{"id": "mt4", "call_id": "t076", "time": "02:07:46", "clip_ms": 128217, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t4"}
+{"id": "e9", "call_id": "t076", "time": "02:08:11", "clip_ms": 153283, "type": "procedure", "fields": {"name": "cardiac monitor"}, "source": "heard", "quote": "on the monitor", "segment_start_ms": 153283}
+{"id": "e10", "call_id": "t076", "time": "02:08:26", "clip_ms": 168328, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arrived at", "segment_start_ms": 168328}

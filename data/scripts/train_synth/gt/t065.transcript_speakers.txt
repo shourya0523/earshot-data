@@ -1,0 +1,18 @@
+RD: Squad 18, priority one, sick person, 92 year old female.
+M1: Squad 18 arriving on scene.
+M2: Who's your doctor?
+PT: I've had a fever for three days.
+M2: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+M1: Get the cot.
+PT: No allergies.
+M2: Repeat, respirations's 28, BP 88 over 40, GCS's 10.
+M2: Giving 1000 of normal saline through the line.
+M1: end tidal's 48, sats 98 on room air.
+M2: I gave lactated Ringer's 500 mils IV push.
+M1: Leaving scene to Saint Joseph's.
+M2: Okay, we're going to take care of you.
+BY: Am I going to be okay?
+M2: Doing 12-lead.
+M2: I gave Tylenol 1000 migs orally.
+M1: Arriving at Saint Vincent's.

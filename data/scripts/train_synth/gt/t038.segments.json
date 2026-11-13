@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5155,
+  "speaker": "RD",
+  "text": "Ambulance 44, priority two, difficulty breathing, 88 year old male."
+ },
+ {
+  "start_ms": 8707,
+  "end_ms": 11466,
+  "speaker": "M2",
+  "text": "Ambulance 44 we're on scene."
+ },
+ {
+  "start_ms": 12293,
+  "end_ms": 14011,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 16578,
+  "end_ms": 18907,
+  "speaker": "PT",
+  "text": "I woke up and couldn't breathe."
+ },
+ {
+  "start_ms": 25268,
+  "end_ms": 28077,
+  "speaker": "M1",
+  "text": "40 furosemide intravenous, it's in."
+ },
+ {
+  "start_ms": 29846,
+  "end_ms": 30989,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 31489,
+  "end_ms": 32344,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 37603,
+  "end_ms": 42526,
+  "speaker": "M2",
+  "text": "resps at 32, pulse is 64, GCS 10."
+ },
+ {
+  "start_ms": 44868,
+  "end_ms": 49306,
+  "speaker": "M1",
+  "text": "Repeat, HR at 41, pain is 7 out of 10, GCS is 14."
+ },
+ {
+  "start_ms": 52145,
+  "end_ms": 54046,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 55584,
+  "end_ms": 57871,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 58223,
+  "end_ms": 60710,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 92419,
+  "end_ms": 95019,
+  "speaker": "M2",
+  "text": "Repeat, end tidal's 42."
+ },
+ {
+  "start_ms": 98273,
+  "end_ms": 101245,
+  "speaker": "M1",
+  "text": "Pushing Nitrostat, 0.8 sublingual."
+ },
+ {
+  "start_ms": 106048,
+  "end_ms": 108126,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 111849,
+  "end_ms": 112871,
+  "speaker": "M1",
+  "text": "Get 12 lead."
+ },
+ {
+  "start_ms": 115215,
+  "end_ms": 117948,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 145437,
+  "end_ms": 148530,
+  "speaker": "M1",
+  "text": "Drawing up 0.4 of nitroglycerin sublingual."
+ },
+ {
+  "start_ms": 152296,
+  "end_ms": 153503,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 160278,
+  "end_ms": 161718,
+  "speaker": "M1",
+  "text": "Arrived at University."
+ }
+]

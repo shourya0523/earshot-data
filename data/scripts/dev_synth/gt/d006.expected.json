@@ -1,0 +1,135 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "77",
+  "sex": "male",
+  "weight_kg": "73",
+  "complaint": "convulsions",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "convulsions",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "7",
+    "bp": "91/40",
+    "gcs": "12",
+    "spo2": "94"
+   },
+   "last_vitals": {
+    "pain": "7",
+    "bp": "136/92",
+    "gcs": "13",
+    "spo2": "94"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "epilepsy"
+   ]
+  },
+  "P": {
+   "medications": [
+    "diazepam 10 PR",
+    "lorazepam 2 mg IV"
+   ],
+   "procedures": [
+    "glucose check",
+    "suction"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "77",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "seizure",
+  "I_injuries_or_information": "convulsions",
+  "S_signs": {
+   "pain": "7",
+   "bp": "91/40",
+   "gcs": "12",
+   "spo2": "94"
+  },
+  "T_treatment": [
+   "diazepam 10 PR",
+   "lorazepam 2 mg IV",
+   "glucose check",
+   "suction"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "13:27:27",
+  "eTimes.09": "13:29:34",
+  "eTimes.11": "13:30:04",
+  "eTimes.12": "13:30:18"
+ },
+ "wall_time_seconds": 14,
+ "dispatch_reason": "seizure",
+ "medications": [
+  {
+   "drug": "diazepam",
+   "dose": "10",
+   "route": "PR"
+  },
+  {
+   "drug": "lorazepam",
+   "dose": "2",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "13:28:05"
+  },
+  {
+   "name": "bp",
+   "value": "91/40",
+   "time": "13:28:05"
+  },
+  {
+   "name": "gcs",
+   "value": "12",
+   "time": "13:28:05"
+  },
+  {
+   "name": "bp",
+   "value": "136/92",
+   "time": "13:28:43"
+  },
+  {
+   "name": "spo2",
+   "value": "94",
+   "time": "13:28:43"
+  },
+  {
+   "name": "gcs",
+   "value": "13",
+   "time": "13:28:43"
+  }
+ ],
+ "diagnosis_traps": [
+  "epilepsy"
+ ]
+}

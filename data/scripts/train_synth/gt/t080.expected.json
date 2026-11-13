@@ -1,0 +1,139 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "33",
+  "sex": "male",
+  "weight_kg": "77",
+  "complaint": "cardiac problem",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "cardiac problem",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "82",
+    "pain": "5",
+    "gcs": "14",
+    "etco2": "46"
+   },
+   "last_vitals": {
+    "hr": "82",
+    "pain": "5",
+    "gcs": "14",
+    "etco2": "46"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "fentanyl 50",
+    "aspirin 324 mg PO",
+    "ondansetron 4 IV",
+    "nitroglycerin 0.4 SL"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "33",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "cardiac problem",
+  "I_injuries_or_information": "cardiac problem",
+  "S_signs": {
+   "hr": "82",
+   "pain": "5",
+   "gcs": "14",
+   "etco2": "46"
+  },
+  "T_treatment": [
+   "fentanyl 50",
+   "aspirin 324 mg PO",
+   "ondansetron 4 IV",
+   "nitroglycerin 0.4 SL",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "20:10:32",
+  "eTimes.09": "20:12:12",
+  "eTimes.11": "20:12:57",
+  "eTimes.12": "20:13:09"
+ },
+ "wall_time_seconds": 12,
+ "dispatch_reason": "cardiac problem",
+ "medications": [
+  {
+   "drug": "fentanyl",
+   "dose": "50"
+  },
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "unit": "mg",
+   "route": "PO"
+  },
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "route": "IV"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "82",
+   "time": "20:10:46"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "20:10:46"
+  },
+  {
+   "name": "gcs",
+   "value": "14",
+   "time": "20:11:26"
+  },
+  {
+   "name": "etco2",
+   "value": "46",
+   "time": "20:12:46"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "29",
+  "sex": "female",
+  "weight_kg": "82",
+  "complaint": "chest discomfort",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest discomfort",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "230",
+    "pain": "7",
+    "rr": "16"
+   },
+   "last_vitals": {
+    "bgl": "230",
+    "pain": "7",
+    "rr": "16"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "aspirin 324 mg",
+    "nitroglycerin 0.4 mg SL"
+   ],
+   "procedures": [
+    "cardiac monitor"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "29",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "cardiac problem",
+  "I_injuries_or_information": "chest discomfort",
+  "S_signs": {
+   "bgl": "230",
+   "pain": "7",
+   "rr": "16"
+  },
+  "T_treatment": [
+   "aspirin 324 mg",
+   "nitroglycerin 0.4 mg SL",
+   "cardiac monitor"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "12:53:43",
+  "eTimes.09": "12:54:49",
+  "eTimes.11": "12:55:44"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "cardiac problem",
+ "medications": [
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "unit": "mg"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "unit": "mg",
+   "route": "SL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "230",
+   "time": "12:54:01"
+  },
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "12:54:20"
+  },
+  {
+   "name": "rr",
+   "value": "16",
+   "time": "12:54:38"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

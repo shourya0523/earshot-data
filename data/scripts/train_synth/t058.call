@@ -1,0 +1,48 @@
+@call t058 sepsis start=19:23:50
+@patient age=61 sex=male weight_kg=48 complaint="fever" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Squad 28, priority two, sick person, 61 year old male.  >> dispatch:sick person "sick person"
+GAP 2
+M1: Squad 28 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Did you pass out at all?
+GAP 3
+PT: I've had a fever for three days.
+GAP 2
+TAP snap +label
+M1: normal saline 1000 intravenous.  >> med:normal saline,1000,,IV "normal saline 1000 intravenous"
+GAP 8
+M1: Do you take any medications?
+GAP 8
+M1: Can you tell me what day it is?
+GAP 3
+TAP knock +label
+M2: Repeat, respirations's 17, glucose is 398.  >> vital:rr=17 "respirations's 17"; vital:bgl=398 "glucose is 398"
+GAP 6
+M1: Pushing lactated Ringer's, 500.  >> med:lactated Ringer's,500,, "Pushing lactated Ringer's, 500"
+GAP 1
+M2: Let's do 12 lead.  >> proc:12-lead ECG "12 lead"
+GAP 2
+TAP knock +label
+M2: Vitals, blood sugar's 265.  >> vital:bgl=265 "blood sugar's 265"
+GAP 3
+GAP 11
+TAP button -
+GAP 11
+M1: We're transporting to Riverside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M2: Get the cot.
+PT: It's about an eight.
+GAP 3
+TAP button +label
+M2: 1000 Ofirmev by mouth, it's in.  >> med:acetaminophen,1000,,PO "1000 Ofirmev by mouth"
+GAP 3
+M2: On a scale of zero to ten, how bad is it?
+BY: It's getting worse.
+GAP 2
+TAP knock +label
+M1: resps at 24, blood sugar 173.  >> vital:rr=24 "resps at 24"; vital:bgl=173 "blood sugar 173"
+GAP 4
+M1: Arriving at Valley.  >> time:eTimes.11 "Arriving at"
+GAP 6
+M1: Giving report to bed four.  >> time:eTimes.12 "Giving report"
+KNOCK3

@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5218,
+  "speaker": "RD",
+  "text": "Squad 38, priority two, cardiac problem, 82 year old male."
+ },
+ {
+  "start_ms": 10092,
+  "end_ms": 12606,
+  "speaker": "M1",
+  "text": "Squad 38 arriving on scene."
+ },
+ {
+  "start_ms": 13466,
+  "end_ms": 17221,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 17967,
+  "end_ms": 19379,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 20745,
+  "end_ms": 22537,
+  "speaker": "PT",
+  "text": "It's burning in my chest and my jaw."
+ },
+ {
+  "start_ms": 26702,
+  "end_ms": 29172,
+  "speaker": "M1",
+  "text": "Repeat, respirations is 8."
+ },
+ {
+  "start_ms": 37485,
+  "end_ms": 38328,
+  "speaker": "M2",
+  "text": "Got line."
+ },
+ {
+  "start_ms": 46989,
+  "end_ms": 47794,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 51563,
+  "end_ms": 52982,
+  "speaker": "M2",
+  "text": "Get transmit the 12."
+ },
+ {
+  "start_ms": 55837,
+  "end_ms": 58992,
+  "speaker": "M1",
+  "text": "Pushing aspirin, 324 migs by mouth."
+ },
+ {
+  "start_ms": 63469,
+  "end_ms": 68705,
+  "speaker": "M2",
+  "text": "Second set, BGL at 247, pulse ox's 97 percent."
+ },
+ {
+  "start_ms": 77290,
+  "end_ms": 80382,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 84912,
+  "end_ms": 86925,
+  "speaker": "M1",
+  "text": "Transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 113903,
+  "end_ms": 114888,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 115195,
+  "end_ms": 117188,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 121287,
+  "end_ms": 123595,
+  "speaker": "M1",
+  "text": "fentanyl 50 micrograms."
+ },
+ {
+  "start_ms": 127246,
+  "end_ms": 130268,
+  "speaker": "M1",
+  "text": "Pushing nitro, 0.4 sublingual."
+ },
+ {
+  "start_ms": 133571,
+  "end_ms": 140218,
+  "speaker": "M1",
+  "text": "Second set, breathing at 11, glucose at 199, 95 over 63."
+ },
+ {
+  "start_ms": 144063,
+  "end_ms": 145762,
+  "speaker": "M1",
+  "text": "Arrived at Good Sam."
+ },
+ {
+  "start_ms": 153197,
+  "end_ms": 154730,
+  "speaker": "M1",
+  "text": "Handing off to the nurse."
+ }
+]

@@ -1,0 +1,24 @@
+RD: Rescue 39, priority one, cardiac arrest, 62 year old male.
+M2: Rescue 39 we're on scene.
+M1: Any medical history I should know about?
+BY: Please don't cut my shirt.
+M1: Let's do humeral IO.
+M1: I'm going to put some stickers on your chest.
+PT: Am I going to be okay?
+M1: Giving 150 of amio through the line.
+M1: Grab the stair chair.
+PT: Can somebody call my wife?
+M1: Can you tell me what day it is?
+PT: No allergies.
+M1: Repeat, pain is 9 out of 10, capno 19, sugar is 287.
+M1: I gave epi pen 1 IO.
+M1: Second set, pain is 10 out of 10.
+M1: Transporting to Good Sam.
+M2: Repeat, GCS 10.
+M1: Get the cot.
+PT: Please don't cut my shirt.
+M2: We need bag her.
+M2: Small poke.
+PT: Can somebody call my wife?
+M1: We're at Mercy.
+M1: Transfer of care complete.

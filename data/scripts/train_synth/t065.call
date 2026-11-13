@@ -1,0 +1,43 @@
+@call t065 sepsis start=06:48:44
+@patient age=92 sex=female weight_kg=65 complaint="fever" allergies=unknown home_meds=unknown history=unknown
+@traps sepsis; pneumonia
+RD: Squad 18, priority one, sick person, 92 year old female.  >> dispatch:sick person "sick person"
+GAP 3
+M1: Squad 18 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Who's your doctor?
+GAP 3
+PT: I've had a fever for three days.
+GAP 3
+M2: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+GAP 1
+M1: Get the cot.
+PT: No allergies.
+GAP 8
+TAP knock +label
+M2: Repeat, respirations's 28, BP 88 over 40, GCS's 10.  >> vital:rr=28 "respirations's 28"; vital:bp=88/40 "BP 88 over 40"; vital:gcs=10 "GCS's 10"
+GAP 1
+TAP button +label
+M2: Giving 1000 of normal saline through the line.  >> med:normal saline,1000,,IV "Giving 1000 of normal saline through the line"
+GAP 11
+TAP snap -
+GAP 11
+GAP 4
+M1: end tidal's 48, sats 98 on room air.  >> vital:etco2=48 "end tidal's 48"; vital:spo2=98 "sats 98 on room air"
+GAP 6
+TAP button +label
+M2: I gave lactated Ringer's 500 mils IV push.  >> med:lactated Ringer's,500,mL,IV "I gave lactated Ringer's 500 mils IV push"
+GAP 11
+TAP button -
+GAP 11
+GAP 4
+M1: Leaving scene to Saint Joseph's.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: Okay, we're going to take care of you.
+BY: Am I going to be okay?
+GAP 3
+M2: Doing 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 3
+M2: I gave Tylenol 1000 migs orally.  >> med:acetaminophen,1000,mg,PO "I gave Tylenol 1000 migs orally"
+GAP 2
+M1: Arriving at Saint Vincent's.  >> time:eTimes.11 "Arriving at"

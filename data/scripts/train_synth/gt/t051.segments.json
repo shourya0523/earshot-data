@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5592,
+  "speaker": "RD",
+  "text": "Squad 27, respond to difficulty breathing, 73 year old female."
+ },
+ {
+  "start_ms": 8098,
+  "end_ms": 9998,
+  "speaker": "M2",
+  "text": "Squad 27 arriving on scene."
+ },
+ {
+  "start_ms": 10383,
+  "end_ms": 12619,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 13485,
+  "end_ms": 15041,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 21482,
+  "end_ms": 23103,
+  "speaker": "PT",
+  "text": "My breathing's bad today."
+ },
+ {
+  "start_ms": 24975,
+  "end_ms": 26467,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 27189,
+  "end_ms": 28183,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 32697,
+  "end_ms": 34522,
+  "speaker": "M1",
+  "text": "Pushing mag, 2 gram intravenous."
+ },
+ {
+  "start_ms": 40566,
+  "end_ms": 44192,
+  "speaker": "M1",
+  "text": "Repeat, pulse at 61, blood sugar at 37."
+ },
+ {
+  "start_ms": 47429,
+  "end_ms": 49464,
+  "speaker": "M1",
+  "text": "Drawing up 3 cc's of DuoNeb."
+ },
+ {
+  "start_ms": 52888,
+  "end_ms": 54377,
+  "speaker": "M2",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 58944,
+  "end_ms": 60459,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 62345,
+  "end_ms": 63362,
+  "speaker": "M2",
+  "text": "We need c pap."
+ },
+ {
+  "start_ms": 72248,
+  "end_ms": 75943,
+  "speaker": "M1",
+  "text": "Vitals, sugar's 384, SpO2 is 97 percent."
+ },
+ {
+  "start_ms": 80406,
+  "end_ms": 81310,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 81709,
+  "end_ms": 83017,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 85893,
+  "end_ms": 87416,
+  "speaker": "M1",
+  "text": "Transporting to Riverside."
+ },
+ {
+  "start_ms": 116484,
+  "end_ms": 119163,
+  "speaker": "M1",
+  "text": "solu-medrol 125 milligrams."
+ },
+ {
+  "start_ms": 123035,
+  "end_ms": 125008,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 131799,
+  "end_ms": 132658,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 133182,
+  "end_ms": 134931,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 141529,
+  "end_ms": 144019,
+  "speaker": "M1",
+  "text": "Pushing non-rebreather, 4 nasal cannula."
+ },
+ {
+  "start_ms": 146320,
+  "end_ms": 147727,
+  "speaker": "M1",
+  "text": "Arrived at Saint Joseph's."
+ },
+ {
+  "start_ms": 160709,
+  "end_ms": 162567,
+  "speaker": "M1",
+  "text": "Transfer of care to bed four."
+ }
+]

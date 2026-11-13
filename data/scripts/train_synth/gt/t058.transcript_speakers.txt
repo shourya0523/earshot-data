@@ -1,0 +1,20 @@
+RD: Squad 28, priority two, sick person, 61 year old male.
+M1: Squad 28 arriving on scene.
+M2: Did you pass out at all?
+PT: I've had a fever for three days.
+M1: normal saline 1000 intravenous.
+M1: Do you take any medications?
+M1: Can you tell me what day it is?
+M2: Repeat, respirations's 17, glucose is 398.
+M1: Pushing lactated Ringer's, 500.
+M2: Let's do 12 lead.
+M2: Vitals, blood sugar's 265.
+M1: We're transporting to Riverside.
+M2: Get the cot.
+PT: It's about an eight.
+M2: 1000 Ofirmev by mouth, it's in.
+M2: On a scale of zero to ten, how bad is it?
+BY: It's getting worse.
+M1: resps at 24, blood sugar 173.
+M1: Arriving at Valley.
+M1: Giving report to bed four.

@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4497,
+  "speaker": "RD",
+  "text": "Ambulance 18, priority two, assault, 92 year old female."
+ },
+ {
+  "start_ms": 8023,
+  "end_ms": 10085,
+  "speaker": "M2",
+  "text": "Ambulance 18 arriving on scene."
+ },
+ {
+  "start_ms": 10689,
+  "end_ms": 11709,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 12340,
+  "end_ms": 14286,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 18074,
+  "end_ms": 19591,
+  "speaker": "PT",
+  "text": "I can't feel my fingers."
+ },
+ {
+  "start_ms": 26056,
+  "end_ms": 30853,
+  "speaker": "M1",
+  "text": "end tidal's 22, pressure is 167 over 114, BGL's 400."
+ },
+ {
+  "start_ms": 34273,
+  "end_ms": 36386,
+  "speaker": "M1",
+  "text": "Giving 100 mcg of fent IV."
+ },
+ {
+  "start_ms": 40138,
+  "end_ms": 41241,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 41863,
+  "end_ms": 42846,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 51502,
+  "end_ms": 52187,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 58593,
+  "end_ms": 60249,
+  "speaker": "M2",
+  "text": "Let's do hemostatic gauze."
+ },
+ {
+  "start_ms": 66603,
+  "end_ms": 68775,
+  "speaker": "M1",
+  "text": "normal saline 250 mLs."
+ },
+ {
+  "start_ms": 70243,
+  "end_ms": 71678,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 72350,
+  "end_ms": 73844,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 77619,
+  "end_ms": 82022,
+  "speaker": "M1",
+  "text": "blood pressure is 177 over 145, pain is 6 out of 10."
+ },
+ {
+  "start_ms": 86632,
+  "end_ms": 87492,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 89247,
+  "end_ms": 90222,
+  "speaker": "M1",
+  "text": "Transporting to Northside."
+ },
+ {
+  "start_ms": 93717,
+  "end_ms": 95436,
+  "speaker": "M1",
+  "text": "Second set, sat's 100 on room air."
+ },
+ {
+  "start_ms": 97120,
+  "end_ms": 99603,
+  "speaker": "M1",
+  "text": "ket 0.3 milligrams per kilo through the line."
+ },
+ {
+  "start_ms": 105910,
+  "end_ms": 106421,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 106789,
+  "end_ms": 108723,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 141007,
+  "end_ms": 142395,
+  "speaker": "M2",
+  "text": "Doing traction splint."
+ },
+ {
+  "start_ms": 147080,
+  "end_ms": 148473,
+  "speaker": "M1",
+  "text": "1 grams TXA, it's in."
+ },
+ {
+  "start_ms": 150236,
+  "end_ms": 151331,
+  "speaker": "M1",
+  "text": "Arriving at Riverside."
+ }
+]

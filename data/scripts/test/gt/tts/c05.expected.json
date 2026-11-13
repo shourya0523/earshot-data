@@ -1,0 +1,129 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "71",
+  "sex": "male",
+  "weight_kg": "88",
+  "complaint": "sudden right sided weakness and trouble speaking",
+  "allergies": "NKDA",
+  "home_meds": "aspirin, amlodipine",
+  "history": "hypertension"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "sudden right sided weakness and trouble speaking",
+   "allergies": "NKDA",
+   "medications": "aspirin, amlodipine",
+   "history": "hypertension"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "188/102",
+    "hr": "84",
+    "spo2": "97",
+    "bgl": "136",
+    "gcs": "14"
+   },
+   "last_vitals": {
+    "bp": "182/98",
+    "hr": "84",
+    "spo2": "97",
+    "bgl": "136",
+    "gcs": "14"
+   },
+   "status": [
+    "last known well 16:15",
+    "facial droop",
+    "arm drift",
+    "slurred speech"
+   ],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "stroke",
+    "CVA"
+   ]
+  },
+  "P": {
+   "medications": [],
+   "procedures": [
+    "IV access",
+    "stroke scale"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "71",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "possible stroke",
+  "I_injuries_or_information": "sudden right sided weakness and trouble speaking",
+  "S_signs": {
+   "bp": "188/102",
+   "hr": "84",
+   "spo2": "97",
+   "bgl": "136",
+   "gcs": "14"
+  },
+  "T_treatment": [
+   "IV access",
+   "stroke scale"
+  ],
+  "A_allergies": "NKDA",
+  "M_medications": "aspirin, amlodipine",
+  "B_background": "hypertension",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "16:48:27",
+  "eTimes.09": "16:49:10",
+  "eTimes.11": "16:50:18",
+  "eTimes.12": "16:50:26"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "possible stroke",
+ "medications": [],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "188/102",
+   "time": "16:48:48"
+  },
+  {
+   "name": "hr",
+   "value": "84",
+   "time": "16:48:48"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "16:48:48"
+  },
+  {
+   "name": "bgl",
+   "value": "136",
+   "time": "16:48:58"
+  },
+  {
+   "name": "gcs",
+   "value": "14",
+   "time": "16:49:43"
+  },
+  {
+   "name": "bp",
+   "value": "182/98",
+   "time": "16:50:06"
+  }
+ ],
+ "diagnosis_traps": [
+  "stroke",
+  "CVA"
+ ]
+}

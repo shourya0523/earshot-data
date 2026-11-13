@@ -1,0 +1,133 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "64",
+  "sex": "female",
+  "weight_kg": "106",
+  "complaint": "seizure",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "seizure",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "190",
+    "spo2": "88",
+    "pain": "5",
+    "rr": "36"
+   },
+   "last_vitals": {
+    "bgl": "190",
+    "spo2": "88",
+    "pain": "5",
+    "rr": "36"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "epilepsy"
+   ]
+  },
+  "P": {
+   "medications": [
+    "midazolam 5 mg IM",
+    "diazepam 10 mg PR",
+    "lorazepam 2 IV"
+   ],
+   "procedures": [
+    "glucose check",
+    "suction"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "64",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "seizure",
+  "I_injuries_or_information": "seizure",
+  "S_signs": {
+   "bgl": "190",
+   "spo2": "88",
+   "pain": "5",
+   "rr": "36"
+  },
+  "T_treatment": [
+   "midazolam 5 mg IM",
+   "diazepam 10 mg PR",
+   "lorazepam 2 IV",
+   "glucose check",
+   "suction"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "16:27:36",
+  "eTimes.09": "16:29:21",
+  "eTimes.11": "16:29:54"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "seizure",
+ "medications": [
+  {
+   "drug": "midazolam",
+   "dose": "5",
+   "unit": "mg",
+   "route": "IM"
+  },
+  {
+   "drug": "diazepam",
+   "dose": "10",
+   "unit": "mg",
+   "route": "PR"
+  },
+  {
+   "drug": "lorazepam",
+   "dose": "2",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "190",
+   "time": "16:28:24"
+  },
+  {
+   "name": "spo2",
+   "value": "88",
+   "time": "16:28:24"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "16:28:24"
+  },
+  {
+   "name": "rr",
+   "value": "36",
+   "time": "16:29:11"
+  }
+ ],
+ "diagnosis_traps": [
+  "epilepsy"
+ ]
+}

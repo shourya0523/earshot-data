@@ -1,0 +1,2288 @@
+{
+ "version": "0.1-data-agent-seed",
+ "note": "Seed EMS dictionary from the data agent. Keys: drugs[] (EMS-administered), home_meds[], routes{canonical:[aliases]}, units{canonical:[aliases]}, vitals{key:{aliases,pattern,unit}}, procedures{canonical:[aliases]}, status_terms[], dispatch_terms{dispatch,found}, time_events{NEMSIS eTimes}, jargon[], initial_prompt (≤ ~200 tokens, for whisper.cpp --prompt).",
+ "drugs": [
+  {
+   "name": "aspirin",
+   "generic": "aspirin",
+   "brands": [
+    "Bayer"
+   ],
+   "aliases": [
+    "ASA",
+    "baby aspirin",
+    "chewable aspirin"
+   ],
+   "asr_variants": [
+    "asprin",
+    "a s a"
+   ],
+   "drug_class": "antiplatelet",
+   "routes": [
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "324",
+    "325",
+    "162",
+    "81"
+   ]
+  },
+  {
+   "name": "nitroglycerin",
+   "generic": "nitroglycerin",
+   "brands": [
+    "Nitrostat",
+    "Nitrolingual"
+   ],
+   "aliases": [
+    "nitro",
+    "NTG",
+    "nitro spray",
+    "nitro tab",
+    "nitro paste"
+   ],
+   "asr_variants": [
+    "nitro glycerin",
+    "night row",
+    "nitroglycerine"
+   ],
+   "drug_class": "vasodilator",
+   "routes": [
+    "SL",
+    "topical"
+   ],
+   "units": [
+    "mg",
+    "inch"
+   ],
+   "typical_doses": [
+    "0.4"
+   ]
+  },
+  {
+   "name": "naloxone",
+   "generic": "naloxone",
+   "brands": [
+    "Narcan"
+   ],
+   "aliases": [
+    "narcan",
+    "nasal narcan"
+   ],
+   "asr_variants": [
+    "nar can",
+    "narkan",
+    "naloxon",
+    "now loxone"
+   ],
+   "drug_class": "opioid antagonist",
+   "routes": [
+    "IN",
+    "IV",
+    "IM",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "0.4",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "name": "dextrose",
+   "generic": "dextrose",
+   "brands": [],
+   "aliases": [
+    "D10",
+    "D50",
+    "D25",
+    "dextrose 10%",
+    "dextrose 50%",
+    "D10W",
+    "amp of D50"
+   ],
+   "asr_variants": [
+    "d 10",
+    "d-10",
+    "d ten",
+    "d 50",
+    "d fifty",
+    "dextros"
+   ],
+   "drug_class": "carbohydrate",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "g",
+    "mL"
+   ],
+   "typical_doses": [
+    "25",
+    "12.5",
+    "5",
+    "10",
+    "100",
+    "250"
+   ]
+  },
+  {
+   "name": "oral glucose",
+   "generic": "oral glucose",
+   "brands": [],
+   "aliases": [
+    "glucose gel",
+    "insta-glucose",
+    "glucose tube"
+   ],
+   "asr_variants": [
+    "oral glucos"
+   ],
+   "drug_class": "carbohydrate",
+   "routes": [
+    "PO",
+    "buccal"
+   ],
+   "units": [
+    "g"
+   ],
+   "typical_doses": [
+    "15",
+    "24"
+   ]
+  },
+  {
+   "name": "glucagon",
+   "generic": "glucagon",
+   "brands": [
+    "GlucaGen",
+    "Baqsimi"
+   ],
+   "aliases": [],
+   "asr_variants": [
+    "glucogon",
+    "gluca gone"
+   ],
+   "drug_class": "hormone",
+   "routes": [
+    "IM",
+    "IN"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "1",
+    "3"
+   ]
+  },
+  {
+   "name": "albuterol",
+   "generic": "albuterol",
+   "brands": [
+    "ProAir",
+    "Ventolin",
+    "Proventil"
+   ],
+   "aliases": [
+    "neb",
+    "breathing treatment",
+    "albuterol neb"
+   ],
+   "asr_variants": [
+    "albuteral",
+    "al butyrol",
+    "albuterall",
+    "albuterol's"
+   ],
+   "drug_class": "beta-2 agonist",
+   "routes": [
+    "neb",
+    "MDI",
+    "inhaled"
+   ],
+   "units": [
+    "mg",
+    "puffs"
+   ],
+   "typical_doses": [
+    "2.5",
+    "5"
+   ]
+  },
+  {
+   "name": "ipratropium",
+   "generic": "ipratropium",
+   "brands": [
+    "Atrovent"
+   ],
+   "aliases": [
+    "atrovent"
+   ],
+   "asr_variants": [
+    "atro vent",
+    "ipratropeum"
+   ],
+   "drug_class": "anticholinergic",
+   "routes": [
+    "neb"
+   ],
+   "units": [
+    "mcg",
+    "mg"
+   ],
+   "typical_doses": [
+    "500",
+    "0.5"
+   ]
+  },
+  {
+   "name": "albuterol/ipratropium",
+   "generic": "albuterol/ipratropium",
+   "brands": [
+    "DuoNeb"
+   ],
+   "aliases": [
+    "duoneb",
+    "duo neb",
+    "duo-neb"
+   ],
+   "asr_variants": [
+    "do neb",
+    "duo nab",
+    "dual neb"
+   ],
+   "drug_class": "bronchodilator combination",
+   "routes": [
+    "neb"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "3"
+   ]
+  },
+  {
+   "name": "epinephrine",
+   "generic": "epinephrine",
+   "brands": [
+    "EpiPen",
+    "Adrenalin",
+    "Auvi-Q"
+   ],
+   "aliases": [
+    "epi",
+    "epi pen",
+    "epi 1 to 1000",
+    "epi 1:1000",
+    "epi 1:10,000",
+    "push dose epi",
+    "adrenaline"
+   ],
+   "asr_variants": [
+    "epipen",
+    "epi pin",
+    "epinephrin",
+    "epi nephrine"
+   ],
+   "drug_class": "sympathomimetic",
+   "routes": [
+    "IM",
+    "IV",
+    "IO",
+    "neb",
+    "ET"
+   ],
+   "units": [
+    "mg",
+    "mcg"
+   ],
+   "typical_doses": [
+    "0.3",
+    "0.15",
+    "0.5",
+    "1",
+    "10"
+   ]
+  },
+  {
+   "name": "racemic epinephrine",
+   "generic": "racemic epinephrine",
+   "brands": [],
+   "aliases": [
+    "racemic epi"
+   ],
+   "asr_variants": [],
+   "drug_class": "sympathomimetic",
+   "routes": [
+    "neb"
+   ],
+   "units": [
+    "mg",
+    "mL"
+   ],
+   "typical_doses": [
+    "11.25",
+    "0.5"
+   ]
+  },
+  {
+   "name": "diphenhydramine",
+   "generic": "diphenhydramine",
+   "brands": [
+    "Benadryl"
+   ],
+   "aliases": [
+    "benadryl"
+   ],
+   "asr_variants": [
+    "bena dril",
+    "benadril",
+    "diphen hydramine"
+   ],
+   "drug_class": "antihistamine",
+   "routes": [
+    "IV",
+    "IM",
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "25",
+    "50"
+   ]
+  },
+  {
+   "name": "famotidine",
+   "generic": "famotidine",
+   "brands": [
+    "Pepcid"
+   ],
+   "aliases": [
+    "pepcid"
+   ],
+   "asr_variants": [],
+   "drug_class": "H2 blocker",
+   "routes": [
+    "IV",
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "20"
+   ]
+  },
+  {
+   "name": "methylprednisolone",
+   "generic": "methylprednisolone",
+   "brands": [
+    "Solu-Medrol"
+   ],
+   "aliases": [
+    "solu-medrol",
+    "solumedrol"
+   ],
+   "asr_variants": [
+    "solu medrol",
+    "sol you medrol",
+    "soul medrol",
+    "solu-medrol's"
+   ],
+   "drug_class": "corticosteroid",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "125"
+   ]
+  },
+  {
+   "name": "dexamethasone",
+   "generic": "dexamethasone",
+   "brands": [
+    "Decadron"
+   ],
+   "aliases": [
+    "decadron",
+    "dex"
+   ],
+   "asr_variants": [],
+   "drug_class": "corticosteroid",
+   "routes": [
+    "IV",
+    "IM",
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "10",
+    "8"
+   ]
+  },
+  {
+   "name": "magnesium sulfate",
+   "generic": "magnesium sulfate",
+   "brands": [],
+   "aliases": [
+    "mag",
+    "mag sulfate",
+    "magnesium"
+   ],
+   "asr_variants": [
+    "mag sulphate"
+   ],
+   "drug_class": "electrolyte",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "g"
+   ],
+   "typical_doses": [
+    "2",
+    "1"
+   ]
+  },
+  {
+   "name": "ondansetron",
+   "generic": "ondansetron",
+   "brands": [
+    "Zofran"
+   ],
+   "aliases": [
+    "zofran"
+   ],
+   "asr_variants": [
+    "zofrin",
+    "so fran",
+    "zophran",
+    "zofran's"
+   ],
+   "drug_class": "antiemetic",
+   "routes": [
+    "IV",
+    "IM",
+    "PO",
+    "ODT"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "4",
+    "8"
+   ]
+  },
+  {
+   "name": "fentanyl",
+   "generic": "fentanyl",
+   "brands": [
+    "Sublimaze"
+   ],
+   "aliases": [
+    "fent"
+   ],
+   "asr_variants": [
+    "fentanil",
+    "fentenyl",
+    "fenta nil"
+   ],
+   "drug_class": "opioid analgesic",
+   "routes": [
+    "IV",
+    "IN",
+    "IM",
+    "IO"
+   ],
+   "units": [
+    "mcg"
+   ],
+   "typical_doses": [
+    "50",
+    "100",
+    "25",
+    "1"
+   ]
+  },
+  {
+   "name": "morphine",
+   "generic": "morphine",
+   "brands": [],
+   "aliases": [
+    "MS"
+   ],
+   "asr_variants": [
+    "morphin"
+   ],
+   "drug_class": "opioid analgesic",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "2",
+    "4",
+    "5",
+    "10"
+   ]
+  },
+  {
+   "name": "hydromorphone",
+   "generic": "hydromorphone",
+   "brands": [
+    "Dilaudid"
+   ],
+   "aliases": [
+    "dilaudid"
+   ],
+   "asr_variants": [],
+   "drug_class": "opioid analgesic",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "0.5",
+    "1"
+   ]
+  },
+  {
+   "name": "ketamine",
+   "generic": "ketamine",
+   "brands": [
+    "Ketalar"
+   ],
+   "aliases": [
+    "ket",
+    "special K"
+   ],
+   "asr_variants": [
+    "keta mean",
+    "ketamin"
+   ],
+   "drug_class": "dissociative",
+   "routes": [
+    "IV",
+    "IM",
+    "IN",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "0.3",
+    "1",
+    "2",
+    "4",
+    "50",
+    "100"
+   ]
+  },
+  {
+   "name": "ketorolac",
+   "generic": "ketorolac",
+   "brands": [
+    "Toradol"
+   ],
+   "aliases": [
+    "toradol"
+   ],
+   "asr_variants": [
+    "tora doll"
+   ],
+   "drug_class": "NSAID",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "15",
+    "30"
+   ]
+  },
+  {
+   "name": "acetaminophen",
+   "generic": "acetaminophen",
+   "brands": [
+    "Tylenol",
+    "Ofirmev"
+   ],
+   "aliases": [
+    "tylenol",
+    "APAP"
+   ],
+   "asr_variants": [],
+   "drug_class": "analgesic",
+   "routes": [
+    "PO",
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "500",
+    "650",
+    "1000"
+   ]
+  },
+  {
+   "name": "ibuprofen",
+   "generic": "ibuprofen",
+   "brands": [
+    "Motrin",
+    "Advil"
+   ],
+   "aliases": [
+    "motrin",
+    "advil"
+   ],
+   "asr_variants": [],
+   "drug_class": "NSAID",
+   "routes": [
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "400",
+    "600",
+    "800"
+   ]
+  },
+  {
+   "name": "midazolam",
+   "generic": "midazolam",
+   "brands": [
+    "Versed"
+   ],
+   "aliases": [
+    "versed"
+   ],
+   "asr_variants": [
+    "ver said",
+    "versed's",
+    "midazolom",
+    "mid as olam"
+   ],
+   "drug_class": "benzodiazepine",
+   "routes": [
+    "IV",
+    "IM",
+    "IN",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "2",
+    "2.5",
+    "5",
+    "10"
+   ]
+  },
+  {
+   "name": "lorazepam",
+   "generic": "lorazepam",
+   "brands": [
+    "Ativan"
+   ],
+   "aliases": [
+    "ativan"
+   ],
+   "asr_variants": [
+    "ativen",
+    "adivan"
+   ],
+   "drug_class": "benzodiazepine",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "1",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "name": "diazepam",
+   "generic": "diazepam",
+   "brands": [
+    "Valium",
+    "Diastat"
+   ],
+   "aliases": [
+    "valium"
+   ],
+   "asr_variants": [],
+   "drug_class": "benzodiazepine",
+   "routes": [
+    "IV",
+    "PR"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "5",
+    "10"
+   ]
+  },
+  {
+   "name": "amiodarone",
+   "generic": "amiodarone",
+   "brands": [
+    "Cordarone",
+    "Nexterone"
+   ],
+   "aliases": [
+    "amio"
+   ],
+   "asr_variants": [
+    "amy oderone",
+    "amiodaron",
+    "amioderone"
+   ],
+   "drug_class": "antiarrhythmic",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "300",
+    "150"
+   ]
+  },
+  {
+   "name": "adenosine",
+   "generic": "adenosine",
+   "brands": [
+    "Adenocard"
+   ],
+   "aliases": [
+    "adenocard"
+   ],
+   "asr_variants": [
+    "adenoseen",
+    "a denosine"
+   ],
+   "drug_class": "antiarrhythmic",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "6",
+    "12"
+   ]
+  },
+  {
+   "name": "atropine",
+   "generic": "atropine",
+   "brands": [],
+   "aliases": [],
+   "asr_variants": [
+    "a tropine",
+    "atropeen"
+   ],
+   "drug_class": "anticholinergic",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "1",
+    "0.5",
+    "2"
+   ]
+  },
+  {
+   "name": "lidocaine",
+   "generic": "lidocaine",
+   "brands": [
+    "Xylocaine"
+   ],
+   "aliases": [
+    "lido"
+   ],
+   "asr_variants": [],
+   "drug_class": "antiarrhythmic / local anesthetic",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "100",
+    "40",
+    "1.5"
+   ]
+  },
+  {
+   "name": "diltiazem",
+   "generic": "diltiazem",
+   "brands": [
+    "Cardizem"
+   ],
+   "aliases": [
+    "cardizem"
+   ],
+   "asr_variants": [
+    "cardi zem",
+    "dil tiazem"
+   ],
+   "drug_class": "calcium channel blocker",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "10",
+    "15",
+    "20"
+   ]
+  },
+  {
+   "name": "metoprolol",
+   "generic": "metoprolol",
+   "brands": [
+    "Lopressor",
+    "Toprol"
+   ],
+   "aliases": [
+    "lopressor"
+   ],
+   "asr_variants": [],
+   "drug_class": "beta blocker",
+   "routes": [
+    "IV",
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "5",
+    "25"
+   ]
+  },
+  {
+   "name": "calcium chloride",
+   "generic": "calcium chloride",
+   "brands": [],
+   "aliases": [
+    "calcium",
+    "CaCl"
+   ],
+   "asr_variants": [],
+   "drug_class": "electrolyte",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "g",
+    "mg"
+   ],
+   "typical_doses": [
+    "1",
+    "1000"
+   ]
+  },
+  {
+   "name": "calcium gluconate",
+   "generic": "calcium gluconate",
+   "brands": [],
+   "aliases": [],
+   "asr_variants": [],
+   "drug_class": "electrolyte",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "g"
+   ],
+   "typical_doses": [
+    "1",
+    "3"
+   ]
+  },
+  {
+   "name": "sodium bicarbonate",
+   "generic": "sodium bicarbonate",
+   "brands": [],
+   "aliases": [
+    "bicarb",
+    "sodium bicarb",
+    "amp of bicarb"
+   ],
+   "asr_variants": [],
+   "drug_class": "alkalinizer",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mEq"
+   ],
+   "typical_doses": [
+    "50",
+    "1"
+   ]
+  },
+  {
+   "name": "normal saline",
+   "generic": "normal saline",
+   "brands": [],
+   "aliases": [
+    "NS",
+    "saline",
+    "fluid bolus",
+    "bolus",
+    "0.9% sodium chloride"
+   ],
+   "asr_variants": [],
+   "drug_class": "crystalloid",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mL",
+    "L"
+   ],
+   "typical_doses": [
+    "500",
+    "1000",
+    "250",
+    "20"
+   ]
+  },
+  {
+   "name": "lactated Ringer's",
+   "generic": "lactated Ringer's",
+   "brands": [],
+   "aliases": [
+    "LR",
+    "lactated ringers",
+    "ringers"
+   ],
+   "asr_variants": [],
+   "drug_class": "crystalloid",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "mL",
+    "L"
+   ],
+   "typical_doses": [
+    "500",
+    "1000"
+   ]
+  },
+  {
+   "name": "oxygen",
+   "generic": "oxygen",
+   "brands": [],
+   "aliases": [
+    "O2",
+    "non-rebreather",
+    "NRB",
+    "nasal cannula",
+    "NC",
+    "blow-by"
+   ],
+   "asr_variants": [
+    "o two",
+    "o 2"
+   ],
+   "drug_class": "gas",
+   "routes": [
+    "NC",
+    "NRB",
+    "BVM",
+    "CPAP",
+    "inhaled"
+   ],
+   "units": [
+    "L/min",
+    "LPM",
+    "%"
+   ],
+   "typical_doses": [
+    "2",
+    "4",
+    "15",
+    "10"
+   ]
+  },
+  {
+   "name": "tranexamic acid",
+   "generic": "tranexamic acid",
+   "brands": [],
+   "aliases": [
+    "TXA"
+   ],
+   "asr_variants": [
+    "t x a"
+   ],
+   "drug_class": "antifibrinolytic",
+   "routes": [
+    "IV",
+    "IO"
+   ],
+   "units": [
+    "g",
+    "mg"
+   ],
+   "typical_doses": [
+    "1",
+    "1000",
+    "2"
+   ]
+  },
+  {
+   "name": "haloperidol",
+   "generic": "haloperidol",
+   "brands": [
+    "Haldol"
+   ],
+   "aliases": [
+    "haldol"
+   ],
+   "asr_variants": [],
+   "drug_class": "antipsychotic",
+   "routes": [
+    "IM",
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "5",
+    "10"
+   ]
+  },
+  {
+   "name": "droperidol",
+   "generic": "droperidol",
+   "brands": [
+    "Inapsine"
+   ],
+   "aliases": [],
+   "asr_variants": [],
+   "drug_class": "antipsychotic",
+   "routes": [
+    "IM",
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "2.5",
+    "5"
+   ]
+  },
+  {
+   "name": "olanzapine",
+   "generic": "olanzapine",
+   "brands": [
+    "Zyprexa"
+   ],
+   "aliases": [
+    "zyprexa"
+   ],
+   "asr_variants": [],
+   "drug_class": "antipsychotic",
+   "routes": [
+    "IM",
+    "ODT"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "10"
+   ]
+  },
+  {
+   "name": "promethazine",
+   "generic": "promethazine",
+   "brands": [
+    "Phenergan"
+   ],
+   "aliases": [
+    "phenergan"
+   ],
+   "asr_variants": [],
+   "drug_class": "antiemetic",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "12.5",
+    "25"
+   ]
+  },
+  {
+   "name": "prochlorperazine",
+   "generic": "prochlorperazine",
+   "brands": [
+    "Compazine"
+   ],
+   "aliases": [
+    "compazine"
+   ],
+   "asr_variants": [],
+   "drug_class": "antiemetic",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "10"
+   ]
+  },
+  {
+   "name": "furosemide",
+   "generic": "furosemide",
+   "brands": [
+    "Lasix"
+   ],
+   "aliases": [
+    "lasix"
+   ],
+   "asr_variants": [],
+   "drug_class": "loop diuretic",
+   "routes": [
+    "IV",
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "40",
+    "20"
+   ]
+  },
+  {
+   "name": "norepinephrine",
+   "generic": "norepinephrine",
+   "brands": [
+    "Levophed"
+   ],
+   "aliases": [
+    "levophed",
+    "norepi"
+   ],
+   "asr_variants": [],
+   "drug_class": "vasopressor",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mcg/min",
+    "mcg"
+   ],
+   "typical_doses": [
+    "2",
+    "4"
+   ]
+  },
+  {
+   "name": "dopamine",
+   "generic": "dopamine",
+   "brands": [],
+   "aliases": [],
+   "asr_variants": [],
+   "drug_class": "vasopressor",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mcg/kg/min"
+   ],
+   "typical_doses": [
+    "5",
+    "10"
+   ]
+  },
+  {
+   "name": "etomidate",
+   "generic": "etomidate",
+   "brands": [
+    "Amidate"
+   ],
+   "aliases": [],
+   "asr_variants": [],
+   "drug_class": "sedative / induction",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "20",
+    "0.3"
+   ]
+  },
+  {
+   "name": "rocuronium",
+   "generic": "rocuronium",
+   "brands": [
+    "Zemuron"
+   ],
+   "aliases": [
+    "roc",
+    "rocc"
+   ],
+   "asr_variants": [],
+   "drug_class": "paralytic",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "100",
+    "1"
+   ]
+  },
+  {
+   "name": "succinylcholine",
+   "generic": "succinylcholine",
+   "brands": [],
+   "aliases": [
+    "sux",
+    "succs",
+    "anectine"
+   ],
+   "asr_variants": [],
+   "drug_class": "paralytic",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "100",
+    "1.5"
+   ]
+  },
+  {
+   "name": "oxytocin",
+   "generic": "oxytocin",
+   "brands": [
+    "Pitocin"
+   ],
+   "aliases": [
+    "pitocin"
+   ],
+   "asr_variants": [],
+   "drug_class": "hormone",
+   "routes": [
+    "IM",
+    "IV"
+   ],
+   "units": [
+    "units"
+   ],
+   "typical_doses": [
+    "10"
+   ]
+  },
+  {
+   "name": "terbutaline",
+   "generic": "terbutaline",
+   "brands": [],
+   "aliases": [
+    "terb"
+   ],
+   "asr_variants": [],
+   "drug_class": "beta-2 agonist",
+   "routes": [
+    "SQ"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "0.25"
+   ]
+  },
+  {
+   "name": "hydroxocobalamin",
+   "generic": "hydroxocobalamin",
+   "brands": [
+    "Cyanokit"
+   ],
+   "aliases": [
+    "cyanokit"
+   ],
+   "asr_variants": [],
+   "drug_class": "antidote",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "g"
+   ],
+   "typical_doses": [
+    "5"
+   ]
+  },
+  {
+   "name": "activated charcoal",
+   "generic": "activated charcoal",
+   "brands": [],
+   "aliases": [
+    "charcoal",
+    "actidose"
+   ],
+   "asr_variants": [],
+   "drug_class": "adsorbent",
+   "routes": [
+    "PO"
+   ],
+   "units": [
+    "g"
+   ],
+   "typical_doses": [
+    "50",
+    "25"
+   ]
+  },
+  {
+   "name": "nitrous oxide",
+   "generic": "nitrous oxide",
+   "brands": [],
+   "aliases": [
+    "nitrous",
+    "nitronox"
+   ],
+   "asr_variants": [],
+   "drug_class": "analgesic gas",
+   "routes": [
+    "inhaled"
+   ],
+   "units": [
+    "%"
+   ],
+   "typical_doses": [
+    "50"
+   ]
+  },
+  {
+   "name": "thiamine",
+   "generic": "thiamine",
+   "brands": [],
+   "aliases": [
+    "vitamin B1"
+   ],
+   "asr_variants": [],
+   "drug_class": "vitamin",
+   "routes": [
+    "IV",
+    "IM"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "100"
+   ]
+  },
+  {
+   "name": "heparin",
+   "generic": "heparin",
+   "brands": [],
+   "aliases": [],
+   "asr_variants": [],
+   "drug_class": "anticoagulant",
+   "routes": [
+    "IV"
+   ],
+   "units": [
+    "units"
+   ],
+   "typical_doses": [
+    "4000",
+    "5000"
+   ]
+  },
+  {
+   "name": "ticagrelor",
+   "generic": "ticagrelor",
+   "brands": [
+    "Brilinta"
+   ],
+   "aliases": [
+    "brilinta"
+   ],
+   "asr_variants": [],
+   "drug_class": "antiplatelet",
+   "routes": [
+    "PO"
+   ],
+   "units": [
+    "mg"
+   ],
+   "typical_doses": [
+    "180"
+   ]
+  }
+ ],
+ "home_meds": [
+  "metformin",
+  "insulin",
+  "Lantus",
+  "Humalog",
+  "lisinopril",
+  "amlodipine",
+  "atorvastatin",
+  "Lipitor",
+  "simvastatin",
+  "levothyroxine",
+  "Synthroid",
+  "apixaban",
+  "Eliquis",
+  "rivaroxaban",
+  "Xarelto",
+  "warfarin",
+  "Coumadin",
+  "clopidogrel",
+  "Plavix",
+  "metoprolol",
+  "carvedilol",
+  "losartan",
+  "hydrochlorothiazide",
+  "HCTZ",
+  "furosemide",
+  "Lasix",
+  "gabapentin",
+  "sertraline",
+  "Zoloft",
+  "fluoxetine",
+  "Prozac",
+  "oxycodone",
+  "Percocet",
+  "hydrocodone",
+  "Norco",
+  "tramadol",
+  "alprazolam",
+  "Xanax",
+  "clonazepam",
+  "Klonopin",
+  "levetiracetam",
+  "Keppra",
+  "phenytoin",
+  "Dilantin",
+  "lamotrigine",
+  "Lamictal",
+  "Depakote",
+  "valproic acid",
+  "prednisone",
+  "montelukast",
+  "Singulair",
+  "Advair",
+  "Symbicort",
+  "fluticasone",
+  "omeprazole",
+  "pantoprazole",
+  "digoxin",
+  "Entresto",
+  "sildenafil",
+  "Viagra",
+  "tamsulosin",
+  "donepezil",
+  "Aricept",
+  "Suboxone",
+  "buprenorphine",
+  "methadone"
+ ],
+ "routes": {
+  "PO": [
+   "by mouth",
+   "orally",
+   "oral",
+   "chewed",
+   "p o"
+  ],
+  "SL": [
+   "sublingual",
+   "under the tongue",
+   "s l"
+  ],
+  "IV": [
+   "intravenous",
+   "i v",
+   "IV push",
+   "slow push"
+  ],
+  "IO": [
+   "intraosseous",
+   "i o"
+  ],
+  "IM": [
+   "intramuscular",
+   "i m",
+   "in the thigh",
+   "lateral thigh",
+   "deltoid"
+  ],
+  "IN": [
+   "intranasal",
+   "nasal",
+   "in the nose",
+   "atomized",
+   "MAD"
+  ],
+  "SQ": [
+   "subcutaneous",
+   "sub q",
+   "subcu",
+   "SC"
+  ],
+  "neb": [
+   "nebulized",
+   "nebulizer",
+   "via neb",
+   "breathing treatment",
+   "hand-held neb"
+  ],
+  "inhaled": [
+   "MDI",
+   "inhaler",
+   "puffs"
+  ],
+  "ET": [
+   "endotracheal",
+   "down the tube"
+  ],
+  "PR": [
+   "rectal",
+   "rectally"
+  ],
+  "topical": [
+   "on the skin",
+   "paste"
+  ],
+  "buccal": [
+   "in the cheek"
+  ],
+  "ODT": [
+   "dissolving tab"
+  ]
+ },
+ "units": {
+  "mg": [
+   "milligrams",
+   "milligram",
+   "milligrams of",
+   "mgs",
+   "migs"
+  ],
+  "mcg": [
+   "micrograms",
+   "microgram",
+   "mics",
+   "mikes",
+   "mcg",
+   "ug"
+  ],
+  "g": [
+   "grams",
+   "gram",
+   "gm"
+  ],
+  "mL": [
+   "milliliters",
+   "mls",
+   "cc",
+   "ccs",
+   "ml"
+  ],
+  "L": [
+   "liters",
+   "liter"
+  ],
+  "L/min": [
+   "liters per minute",
+   "LPM",
+   "liters a minute",
+   "liters"
+  ],
+  "units": [
+   "units",
+   "U"
+  ],
+  "mEq": [
+   "milliequivalents",
+   "meq",
+   "m e q"
+  ],
+  "puffs": [
+   "puffs",
+   "puff"
+  ],
+  "J": [
+   "joules",
+   "jewels"
+  ],
+  "%": [
+   "percent"
+  ],
+  "mcg/kg/min": [
+   "mics per kilo per minute"
+  ],
+  "mg/kg": [
+   "milligrams per kilo",
+   "mgs per kilo"
+  ]
+ },
+ "vitals": {
+  "bp": {
+   "aliases": [
+    "BP",
+    "blood pressure",
+    "pressure",
+    "b p"
+   ],
+   "pattern": "\\b(\\d{2,3})\\s*(?:/|over)\\s*(\\d{2,3})\\b",
+   "unit": "mmHg"
+  },
+  "hr": {
+   "aliases": [
+    "HR",
+    "heart rate",
+    "pulse",
+    "rate",
+    "heart's at",
+    "p"
+   ],
+   "pattern": "\\b(\\d{2,3})\\b",
+   "unit": "bpm"
+  },
+  "rr": {
+   "aliases": [
+    "RR",
+    "resp",
+    "resps",
+    "respirations",
+    "respiratory rate",
+    "breathing at"
+   ],
+   "pattern": "\\b(\\d{1,2})\\b",
+   "unit": "/min"
+  },
+  "spo2": {
+   "aliases": [
+    "SpO2",
+    "sat",
+    "sats",
+    "pulse ox",
+    "O2 sat",
+    "oxygen saturation",
+    "satting",
+    "sat'ing",
+    "spo two"
+   ],
+   "pattern": "\\b(\\d{2,3})\\s*(?:%|percent)?",
+   "unit": "%"
+  },
+  "bgl": {
+   "aliases": [
+    "BGL",
+    "blood glucose",
+    "blood sugar",
+    "sugar",
+    "glucose",
+    "CBG",
+    "dextro",
+    "accucheck",
+    "accu-chek",
+    "BG"
+   ],
+   "pattern": "\\b(\\d{2,3}|HI|LO|high|low)\\b",
+   "unit": "mg/dL"
+  },
+  "etco2": {
+   "aliases": [
+    "ETCO2",
+    "end tidal",
+    "end-tidal",
+    "capno",
+    "wave form capno",
+    "CO2"
+   ],
+   "pattern": "\\b(\\d{1,3})\\b",
+   "unit": "mmHg"
+  },
+  "temp": {
+   "aliases": [
+    "temp",
+    "temperature"
+   ],
+   "pattern": "\\b(\\d{2,3}(?:\\.\\d)?)\\b",
+   "unit": "F"
+  },
+  "gcs": {
+   "aliases": [
+    "GCS",
+    "Glasgow",
+    "glasgow coma scale",
+    "GCS of"
+   ],
+   "pattern": "\\b(3|4|5|6|7|8|9|1[0-5])\\b",
+   "unit": ""
+  },
+  "pain": {
+   "aliases": [
+    "pain",
+    "pain scale",
+    "out of ten",
+    "out of 10",
+    "on a scale"
+   ],
+   "pattern": "\\b(10|[0-9])\\s*(?:/|out of)\\s*10\\b",
+   "unit": "/10"
+  }
+ },
+ "procedures": {
+  "12-lead ECG": [
+   "12 lead",
+   "twelve lead",
+   "12-lead",
+   "EKG",
+   "ECG",
+   "transmit the 12"
+  ],
+  "cardiac monitor": [
+   "on the monitor",
+   "monitor",
+   "pads on",
+   "4 lead"
+  ],
+  "IV access": [
+   "IV",
+   "line",
+   "got a line",
+   "18 in the AC",
+   "20 in the left hand",
+   "saline lock",
+   "established IV",
+   "18 gauge",
+   "20 gauge"
+  ],
+  "IO access": [
+   "IO",
+   "EZ-IO",
+   "drilled",
+   "tibial IO",
+   "humeral IO"
+  ],
+  "CPR": [
+   "compressions",
+   "CPR",
+   "starting compressions"
+  ],
+  "defibrillation": [
+   "shock",
+   "shocking",
+   "clear",
+   "defib",
+   "200 joules",
+   "shock advised"
+  ],
+  "synchronized cardioversion": [
+   "cardioversion",
+   "sync",
+   "synchronized"
+  ],
+  "transcutaneous pacing": [
+   "pacing",
+   "pace",
+   "pacer pads"
+  ],
+  "BVM ventilation": [
+   "bagging",
+   "BVM",
+   "bag valve mask",
+   "bag him",
+   "bag her"
+  ],
+  "endotracheal intubation": [
+   "intubate",
+   "tube",
+   "ETT",
+   "intubated",
+   "tubed"
+  ],
+  "supraglottic airway": [
+   "i-gel",
+   "King airway",
+   "King",
+   "LMA",
+   "supraglottic"
+  ],
+  "OPA": [
+   "OPA",
+   "oral airway"
+  ],
+  "NPA": [
+   "NPA",
+   "nasal trumpet",
+   "nasal airway"
+  ],
+  "suction": [
+   "suction",
+   "suctioning"
+  ],
+  "CPAP": [
+   "CPAP",
+   "c pap",
+   "see pap"
+  ],
+  "needle decompression": [
+   "needle decompression",
+   "needle d",
+   "decompress"
+  ],
+  "tourniquet": [
+   "tourniquet",
+   "TQ",
+   "CAT"
+  ],
+  "wound packing": [
+   "packing",
+   "packed the wound",
+   "hemostatic gauze"
+  ],
+  "bandaging": [
+   "bandage",
+   "dressing",
+   "4x4"
+  ],
+  "splinting": [
+   "splint",
+   "SAM splint",
+   "traction splint"
+  ],
+  "spinal motion restriction": [
+   "c-collar",
+   "c collar",
+   "collar",
+   "SMR",
+   "backboard",
+   "spinal precautions",
+   "full spinal"
+  ],
+  "pelvic binder": [
+   "pelvic binder",
+   "binder",
+   "sheet the pelvis"
+  ],
+  "glucose check": [
+   "finger stick",
+   "check a sugar",
+   "check her sugar",
+   "check his sugar",
+   "BGL check"
+  ],
+  "stroke scale": [
+   "BE-FAST",
+   "BEFAST",
+   "Cincinnati",
+   "stroke scale",
+   "LAMS",
+   "FAST exam",
+   "RACE score"
+  ],
+  "nebulizer": [
+   "neb",
+   "nebulizer treatment",
+   "breathing treatment"
+  ],
+  "oxygen": [
+   "non-rebreather",
+   "nasal cannula",
+   "on O2",
+   "put her on oxygen",
+   "put him on oxygen"
+  ],
+  "vagal maneuver": [
+   "modified valsalva",
+   "vagal",
+   "bear down"
+  ],
+  "restraint": [
+   "restraints",
+   "soft restraints"
+  ],
+  "childbirth": [
+   "delivered",
+   "crowning"
+  ],
+  "cooling": [
+   "cold packs",
+   "cooling"
+  ],
+  "refusal": [
+   "AMA",
+   "refusal",
+   "signed off",
+   "sign the refusal",
+   "release"
+  ]
+ },
+ "status_terms": [
+  "A&O×4",
+  "A&Ox4",
+  "A and O times four",
+  "alert and oriented times four",
+  "A&O×3",
+  "A and O times three",
+  "A&O×2",
+  "A&O×1",
+  "CAOx4",
+  "GCS 15",
+  "altered",
+  "AMS",
+  "altered mental status",
+  "unresponsive",
+  "responsive to verbal",
+  "responsive to pain",
+  "AVPU",
+  "alert",
+  "lethargic",
+  "postictal",
+  "combative",
+  "confused",
+  "compensating",
+  "decompensating",
+  "stable",
+  "unstable",
+  "improving",
+  "worsening",
+  "no change",
+  "ROSC",
+  "pulses back",
+  "pulseless",
+  "apneic",
+  "agonal",
+  "cyanotic",
+  "diaphoretic",
+  "pale, cool, diaphoretic",
+  "PCD",
+  "warm and dry",
+  "skin signs good",
+  "flushed",
+  "mottled",
+  "lung sounds clear",
+  "clear bilaterally",
+  "wheezes",
+  "wheezing",
+  "rales",
+  "crackles",
+  "diminished",
+  "stridor",
+  "JVD",
+  "pedal edema",
+  "tripoding",
+  "accessory muscle use",
+  "speaking in one-word sentences",
+  "pupils PERRL",
+  "PERRL",
+  "pinpoint",
+  "pinpoint pupils",
+  "facial droop",
+  "arm drift",
+  "slurred speech",
+  "aphasia",
+  "last known well",
+  "LKW",
+  "sinus tach",
+  "sinus rhythm",
+  "NSR",
+  "afib",
+  "a-fib",
+  "SVT",
+  "VF",
+  "v-fib",
+  "v-tach",
+  "asystole",
+  "PEA",
+  "STEMI",
+  "ST elevation",
+  "STEMI alert",
+  "stroke alert",
+  "trauma alert",
+  "priority 1",
+  "code 3",
+  "hot",
+  "cold",
+  "non-emergent"
+ ],
+ "dispatch_terms": {
+  "dispatch": [
+   "dispatched for",
+   "dispatched to",
+   "toned out for",
+   "call came in as",
+   "called for",
+   "reported as",
+   "respond to",
+   "per dispatch",
+   "CAD says",
+   "caller states"
+  ],
+  "found": [
+   "found",
+   "on arrival",
+   "upon arrival",
+   "we found",
+   "patient found",
+   "pt found",
+   "found sitting",
+   "found lying",
+   "found supine",
+   "found on the floor",
+   "on scene we have",
+   "presents with",
+   "actually"
+  ]
+ },
+ "time_events": {
+  "eTimes.01": {
+   "name": "PSAP call",
+   "cues": [
+    "call received"
+   ]
+  },
+  "eTimes.03": {
+   "name": "unit notified by dispatch",
+   "cues": [
+    "toned out",
+    "dispatched"
+   ]
+  },
+  "eTimes.05": {
+   "name": "unit en route",
+   "cues": [
+    "en route",
+    "responding",
+    "we're en route"
+   ]
+  },
+  "eTimes.06": {
+   "name": "unit arrived on scene",
+   "cues": [
+    "on scene",
+    "arriving on scene",
+    "we're on scene"
+   ]
+  },
+  "eTimes.07": {
+   "name": "arrived at patient",
+   "cues": [
+    "at patient side",
+    "with the patient",
+    "at patient"
+   ]
+  },
+  "eTimes.09": {
+   "name": "unit left scene",
+   "cues": [
+    "transporting",
+    "leaving scene",
+    "we're transporting",
+    "en route to"
+   ]
+  },
+  "eTimes.11": {
+   "name": "patient arrived at destination",
+   "cues": [
+    "arrived at",
+    "at the hospital",
+    "we're at",
+    "arriving at destination",
+    "pulling in"
+   ]
+  },
+  "eTimes.12": {
+   "name": "destination patient transfer of care",
+   "cues": [
+    "transfer of care",
+    "handing off",
+    "giving report",
+    "bed assigned",
+    "handoff complete"
+   ]
+  },
+  "eTimes.13": {
+   "name": "unit back in service",
+   "cues": [
+    "back in service",
+    "in service",
+    "available"
+   ]
+  }
+ },
+ "jargon": [
+  "BGL",
+  "SpO2",
+  "ETCO2",
+  "GCS",
+  "A&O×4",
+  "PCD",
+  "PERRL",
+  "LKW",
+  "STEMI",
+  "ROSC",
+  "12-lead",
+  "IO",
+  "IV",
+  "NRB",
+  "NC",
+  "BVM",
+  "CPAP",
+  "SMR",
+  "AMA",
+  "PMH",
+  "HPI",
+  "SAMPLE",
+  "OPQRST",
+  "DCAP-BTLS",
+  "CMS",
+  "PMS",
+  "c-collar",
+  "non-rebreather",
+  "diaphoretic",
+  "tachy",
+  "brady",
+  "hypotensive",
+  "hypertensive",
+  "hypoxic",
+  "postictal",
+  "syncope",
+  "near-syncope",
+  "LOC",
+  "no LOC",
+  "CC",
+  "chief complaint",
+  "NKDA",
+  "NKA",
+  "ETOH",
+  "GSW",
+  "MVC",
+  "MVA",
+  "T-bone",
+  "rollover",
+  "airbags deployed",
+  "starred windshield",
+  "entrapment",
+  "extrication",
+  "ALS",
+  "BLS",
+  "medic",
+  "rig",
+  "bus",
+  "box",
+  "ED",
+  "ER",
+  "triage",
+  "wall time",
+  "bed",
+  "charge nurse",
+  "RN",
+  "doc",
+  "STEMI alert",
+  "stroke alert",
+  "trauma alert",
+  "cath lab",
+  "ABCs",
+  "sick",
+  "not sick",
+  "compensating",
+  "load and go",
+  "IMIST-AMBO",
+  "SBAR",
+  "DNR",
+  "POLST",
+  "hospice",
+  "lift assist",
+  "refusal",
+  "sign off",
+  "rule of nines",
+  "pinpoint",
+  "agonal",
+  "PEA",
+  "asystole",
+  "V-fib",
+  "shockable"
+ ],
+ "initial_prompt": "EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, RR 20, SpO2 94%, BGL 42, ETCO2 35. Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar."
+}

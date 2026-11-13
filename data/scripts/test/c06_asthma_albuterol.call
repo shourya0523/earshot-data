@@ -1,0 +1,36 @@
+@call c06 asthma_albuterol start=11:05:00
+@patient age=19 sex=female weight_kg=58 complaint="shortness of breath, inhaler not helping" allergies=NKDA home_meds="albuterol inhaler, Symbicort" history="asthma"
+@traps asthma exacerbation
+RD: Medic 5, difficulty breathing, nineteen year old female.  >> dispatch:difficulty breathing "difficulty breathing"
+GAP 3
+M1: Medic 5 on scene.  >> time:eTimes.06 "on scene"
+GAP 2
+PT: I can't... I can't catch my breath. Used my inhaler... four times.
+M1: Okay, don't talk, just nod. She's tripoding, speaking in two-word sentences.  >> status:tripoding "tripoding"
+TAP knock +label
+M2: Sat's 88, resps 32, heart rate 126.  >> vital:spo2=88 "Sat's 88"; vital:rr=32 "resps 32"; vital:hr=126 "heart rate 126"
+M1: Wheezes in all fields, diminished in the bases.  >> status:wheezes "Wheezes in all fields"
+GAP 2
+TAP button +label
+M1: Starting a DuoNeb, albuterol 2.5 and ipratropium 0.5 by nebulizer.  >> med:albuterol,2.5,,neb "albuterol 2.5"; med:ipratropium,0.5,,neb "ipratropium 0.5 by nebulizer"
+GAP 12
+TAP snap -
+GAP 12
+M2: Peak flow wouldn't register. BP 138 over 84.  >> vital:bp=138/84 "BP 138 over 84"
+GAP 5
+TAP button +label
+M1: Solu-Medrol 125 IV.  >> med:methylprednisolone,125,,IV "Solu-Medrol 125 IV"
+GAP 6
+M1: Transporting to Children's West.  >> time:eTimes.09 "Transporting"
+GAP 8
+M2: She's moving more air. Sat 94 on the neb, resps 24.  >> vital:spo2=94 "Sat 94"; vital:rr=24 "resps 24"
+GAP 4
+TAP knock +label
+M1: Second albuterol, 5 milligrams, neb.  >> med:albuterol,5,mg,neb "Second albuterol, 5 milligrams, neb"
+GAP 8
+M1: Magnesium 2 grams IV over ten minutes.  >> med:magnesium sulfate,2,g,IV "Magnesium 2 grams IV"
+GAP 10
+PT: It's getting easier.
+M2: Heart rate 118, sat 96.  >> vital:hr=118 "Heart rate 118"; vital:spo2=96 "sat 96"
+GAP 6
+M1: We're here, Children's West.  >> time:eTimes.11 "We're here"

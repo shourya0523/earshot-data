@@ -1,0 +1,119 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "78",
+  "sex": "female",
+  "weight_kg": "73",
+  "complaint": "fainting",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "fainting",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "126",
+    "gcs": "12",
+    "spo2": "89"
+   },
+   "last_vitals": {
+    "hr": "126",
+    "gcs": "12",
+    "spo2": "89"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "vasovagal"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 500 mL IV",
+    "oxygen 2 L/min NC"
+   ],
+   "procedures": [
+    "cardiac monitor",
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "78",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fainting",
+  "I_injuries_or_information": "fainting",
+  "S_signs": {
+   "hr": "126",
+   "gcs": "12",
+   "spo2": "89"
+  },
+  "T_treatment": [
+   "normal saline 500 mL IV",
+   "oxygen 2 L/min NC",
+   "cardiac monitor",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "09:13:23",
+  "eTimes.09": "09:15:21",
+  "eTimes.11": "09:15:49",
+  "eTimes.12": "09:15:57"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "fainting",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "oxygen",
+   "dose": "2",
+   "unit": "L/min",
+   "route": "NC"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "126",
+   "time": "09:14:31"
+  },
+  {
+   "name": "gcs",
+   "value": "12",
+   "time": "09:14:37"
+  },
+  {
+   "name": "spo2",
+   "value": "89",
+   "time": "09:15:17"
+  }
+ ],
+ "diagnosis_traps": [
+  "vasovagal"
+ ]
+}

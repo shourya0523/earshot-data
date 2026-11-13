@@ -1,0 +1,21 @@
+RD: Squad 55, respond to allergic reaction, 92 year old female.
+M1: Squad 55 on scene.
+M2: Any allergies?
+PT: I'm itchy all over.
+M2: Let's do saline lock.
+M1: Are you having any trouble breathing?
+M2: Drawing up 25 milligrams of benadryl through the line.
+M1: Giving 0.3 migs of epinephrine.
+M1: Any medical history I should know about?
+PT: I feel sick.
+M2: Get the cot.
+PT: I don't know, it just started.
+M2: Any medical history I should know about?
+PT: Please don't cut my shirt.
+M1: Transporting to Valley.
+M1: We need breathing treatment.
+M2: Repeat, 88 over 42, GCS's 14.
+M2: 10 epi, it's in.
+M2: Okay, GCS at 8, pressure 102 over 55, pulse ox at 86 percent.
+M1: Arriving at Mercy.
+M1: Giving report now.

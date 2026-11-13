@@ -1,0 +1,19 @@
+RD: Squad 20, you have a abdominal pain, 77 year old female.
+M1: Squad 20 on scene.
+M2: Get the cot.
+PT: I've been throwing up all night.
+M1: Pushing ondansetron, 4.
+M1: I gave Zofran 4 milligrams through the line.
+M2: Vitals, ETCO2 20.
+M2: 15 milligrams ketorolac, it's in.
+M2: Can you squeeze my fingers?
+PT: I feel sick.
+M2: Okay, blood sugar 328, SpO2 100 on room air, resp rate's 10.
+M1: Doing 20 gauge.
+M1: We're transporting to Saint Joseph's.
+M1: Vitals, GCS's 12, end tidal 43.
+M1: How long has this been going on?
+PT: Can somebody call my wife?
+M1: Stay with me, keep your eyes open.
+M1: We're at County.
+M1: Transfer of care complete.

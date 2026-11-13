@@ -1,0 +1,46 @@
+@call t078 syncope start=10:50:23
+@patient age=79 sex=female weight_kg=89 complaint="unconscious person" allergies=unknown home_meds=unknown history=unknown
+@traps vasovagal
+RD: Rescue 57, priority two, fainting, 79 year old female.  >> dispatch:fainting "fainting"
+GAP 4
+M2: Rescue 57 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: How long has this been going on?
+BY: It's getting worse.
+GAP 8
+PT: Everything went grey.
+GAP 6
+M2: Repeat, GCS is 15, pain is 2 out of 10.  >> vital:gcs=15 "GCS is 15"; vital:pain=2 "2 out of 10"
+GAP 3
+M2: Are you having any trouble breathing?
+BY: It's about an eight.
+GAP 4
+M2: We need check his sugar.  >> proc:glucose check "check his sugar"
+GAP 6
+GAP 11
+TAP button -
+GAP 11
+M2: Let's do 4 lead.  >> proc:cardiac monitor "4 lead"
+GAP 4
+M2: Let's move on three. One, two, three.
+BY: It's about an eight.
+GAP 4
+M1: Get the cot.
+GAP 6
+M1: Watch the step.
+PT: It's getting worse.
+GAP 4
+M2: end tidal's 19, 162 over 82, sugar is 403.  >> vital:etco2=19 "end tidal's 19"; vital:bp=162/82 "162 over 82"; vital:bgl=403 "sugar is 403"
+GAP 1
+M1: Leaving scene to University.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M2: Giving 500 mLs of saline IV push.  >> med:normal saline,500,mL,IV "Giving 500 mLs of saline IV push"
+GAP 1
+M2: I gave non-rebreather 2 liters.  >> med:oxygen,2,L/min, "I gave non-rebreather 2 liters"
+GAP 3
+M2: Can you squeeze my fingers?
+PT: No allergies.
+GAP 3
+M2: Can you squeeze my fingers?
+PT: I had something like this last year.
+GAP 3
+M1: Arrived at General.  >> time:eTimes.11 "Arrived at"

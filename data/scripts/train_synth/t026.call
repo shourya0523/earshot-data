@@ -1,0 +1,49 @@
+@call t026 seizure start=16:27:28
+@patient age=64 sex=female weight_kg=106 complaint="seizure" allergies=unknown home_meds=unknown history=unknown
+@traps epilepsy
+RD: Ambulance 7, you have a seizure, 64 year old female.  >> dispatch:seizure "seizure"
+GAP 4
+M2: Ambulance 7 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Stay with me, keep your eyes open.
+PT: I don't know, it just started.
+GAP 2
+PT: I'm tired, my tongue hurts.
+GAP 3
+M1: Stay with me, keep your eyes open.
+GAP 3
+M1: I gave midazolam 5 milligrams in the deltoid.  >> med:midazolam,5,mg,IM "I gave midazolam 5 milligrams in the deltoid"
+GAP 6
+M1: Can you squeeze my fingers?
+PT: Can somebody call my wife?
+GAP 2
+TAP button +label
+M2: Giving 10 mg of diazepam rectal.  >> med:diazepam,10,mg,PR "Giving 10 mg of diazepam rectal"
+GAP 4
+M1: Watch the step.
+BY: It's about an eight.
+GAP 2
+TAP button +label
+M1: Vitals, blood sugar at 190, sat is 88 on room air, pain is 5 out of 10.  >> vital:bgl=190 "blood sugar at 190"; vital:spo2=88 "sat is 88 on room air"; vital:pain=5 "5 out of 10"
+GAP 11
+TAP snap -
+GAP 11
+GAP 6
+M2: I gave lorazepam 2 IV push.  >> med:lorazepam,2,,IV "I gave lorazepam 2 IV push"
+GAP 8
+M1: breathing's 36.  >> vital:rr=36 "breathing's 36"
+GAP 6
+M1: We need check a sugar.  >> proc:glucose check "check a sugar"
+GAP 1
+M1: Leaving scene to Saint Joseph's.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+M1: Let's do suction.  >> proc:suction "suction"
+GAP 8
+M2: Any medical history I should know about?
+BY: I feel sick.
+GAP 1
+M2: Small poke.
+BY: I don't know, it just started.
+GAP 6
+M1: Who's your doctor?
+GAP 2
+M1: Arrived at Saint Joseph's.  >> time:eTimes.11 "Arrived at"

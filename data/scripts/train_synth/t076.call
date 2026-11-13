@@ -1,0 +1,49 @@
+@call t076 chest_pain start=02:05:38
+@patient age=20 sex=male weight_kg=122 complaint="cardiac problem" allergies=unknown home_meds=unknown history=unknown
+@traps MI; heart attack
+RD: Squad 52, priority one, chest pain, 20 year old male.  >> dispatch:chest pain "chest pain"
+GAP 2
+M2: Squad 52 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Grab the stair chair.
+PT: It's about an eight.
+GAP 4
+PT: My chest is squeezing.
+GAP 6
+M1: Did you pass out at all?
+GAP 6
+M1: Let's move on three. One, two, three.
+GAP 4
+M1: Giving 50 of fentanyl intravenous.  >> med:fentanyl,50,,IV "Giving 50 of fentanyl intravenous"
+GAP 8
+TAP knock +label
+M2: Drawing up 324 of aspirin chewed.  >> med:aspirin,324,,PO "Drawing up 324 of aspirin chewed"
+GAP 6
+M1: Do you take any medications?
+GAP 1
+M1: Drawing up 4 milligrams of zofran IV.  >> med:ondansetron,4,mg,IV "Drawing up 4 milligrams of zofran IV"
+GAP 2
+GAP 11
+TAP button -
+GAP 11
+M1: Stay with me, keep your eyes open.
+GAP 6
+M2: Second set, ETCO2 at 27.  >> vital:etco2=27 "ETCO2 at 27"
+GAP 2
+M1: We're transporting to Northside.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP snap +label
+M1: rate's 92.  >> vital:hr=92 "rate's 92"
+GAP 11
+TAP button -
+GAP 11
+GAP 6
+M1: I'm going to put some stickers on your chest.
+PT: It's about an eight.
+GAP 3
+M1: Get on the monitor.  >> proc:cardiac monitor "on the monitor"
+GAP 4
+M1: Can you tell me what day it is?
+BY: I feel sick.
+GAP 6
+M1: Arrived at Valley.  >> time:eTimes.11 "Arrived at"
+KNOCK3

@@ -1,0 +1,133 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "20",
+  "sex": "female",
+  "weight_kg": "93",
+  "complaint": "chest discomfort",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest discomfort",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "8",
+    "hr": "139",
+    "bgl": "205",
+    "pain": "7",
+    "spo2": "86"
+   },
+   "last_vitals": {
+    "gcs": "8",
+    "hr": "139",
+    "bgl": "205",
+    "pain": "7",
+    "spo2": "86"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "aspirin 324 mg",
+    "fentanyl 50 mcg IV"
+   ],
+   "procedures": [
+    "cardiac monitor"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "20",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "cardiac problem",
+  "I_injuries_or_information": "chest discomfort",
+  "S_signs": {
+   "gcs": "8",
+   "hr": "139",
+   "bgl": "205",
+   "pain": "7",
+   "spo2": "86"
+  },
+  "T_treatment": [
+   "aspirin 324 mg",
+   "fentanyl 50 mcg IV",
+   "cardiac monitor"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "01:17:20",
+  "eTimes.09": "01:19:02",
+  "eTimes.11": "01:19:35"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "cardiac problem",
+ "medications": [
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "unit": "mg"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "50",
+   "unit": "mcg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "01:17:33"
+  },
+  {
+   "name": "hr",
+   "value": "139",
+   "time": "01:17:33"
+  },
+  {
+   "name": "bgl",
+   "value": "205",
+   "time": "01:17:33"
+  },
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "01:18:06"
+  },
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "01:18:06"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

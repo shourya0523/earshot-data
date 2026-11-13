@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3644,
+  "speaker": "RD",
+  "text": "Squad 12, you have a bee sting, 85 year old female."
+ },
+ {
+  "start_ms": 8491,
+  "end_ms": 10119,
+  "speaker": "M2",
+  "text": "Squad 12 we're on scene."
+ },
+ {
+  "start_ms": 10582,
+  "end_ms": 11685,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 12226,
+  "end_ms": 13963,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 22492,
+  "end_ms": 23853,
+  "speaker": "PT",
+  "text": "I'm itchy all over."
+ },
+ {
+  "start_ms": 32162,
+  "end_ms": 33381,
+  "speaker": "M1",
+  "text": "Got nebulizer treatment."
+ },
+ {
+  "start_ms": 39884,
+  "end_ms": 41892,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 46521,
+  "end_ms": 52600,
+  "speaker": "M2",
+  "text": "Okay, blood pressure 169 over 98, breathing is 20, sat at 100 on room air."
+ },
+ {
+  "start_ms": 59297,
+  "end_ms": 61231,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 61983,
+  "end_ms": 64697,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 70399,
+  "end_ms": 72617,
+  "speaker": "M1",
+  "text": "Pushing breathing treatment, 2.5."
+ },
+ {
+  "start_ms": 78929,
+  "end_ms": 80485,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 87257,
+  "end_ms": 89788,
+  "speaker": "M1",
+  "text": "Drawing up 25 of diphenhydramine through the line."
+ },
+ {
+  "start_ms": 91278,
+  "end_ms": 92439,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 93255,
+  "end_ms": 94456,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 98362,
+  "end_ms": 102148,
+  "speaker": "M2",
+  "text": "Repeat, 104 over 40, resp rate 35."
+ },
+ {
+  "start_ms": 105541,
+  "end_ms": 106841,
+  "speaker": "M1",
+  "text": "Leaving scene to Memorial."
+ },
+ {
+  "start_ms": 133613,
+  "end_ms": 134756,
+  "speaker": "M2",
+  "text": "Got saline lock."
+ },
+ {
+  "start_ms": 136611,
+  "end_ms": 137637,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 138437,
+  "end_ms": 139606,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 146473,
+  "end_ms": 151434,
+  "speaker": "M2",
+  "text": "Okay, pressure 181 over 137, heart rate's 54."
+ },
+ {
+  "start_ms": 154239,
+  "end_ms": 155377,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 160159,
+  "end_ms": 161181,
+  "speaker": "M1",
+  "text": "We're at Riverside."
+ },
+ {
+  "start_ms": 166689,
+  "end_ms": 167885,
+  "speaker": "M1",
+  "text": "Handing off to bed four."
+ }
+]

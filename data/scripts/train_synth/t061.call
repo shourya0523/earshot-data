@@ -1,0 +1,47 @@
+@call t061 chest_pain start=17:40:21
+@patient age=37 sex=female weight_kg=66 complaint="chest pain" allergies=unknown home_meds=unknown history=unknown
+@traps MI; heart attack
+RD: Squad 26, priority one, chest discomfort, 37 year old female.  >> dispatch:chest discomfort "chest discomfort"
+GAP 2
+M1: Squad 26 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Watch the step.
+BY: I don't know, it just started.
+GAP 6
+PT: It's burning in my chest and my jaw.
+GAP 1
+M1: Vitals, glucose's 427, sats's 100 percent.  >> vital:bgl=427 "glucose's 427"; vital:spo2=100 "sats's 100 percent"
+GAP 1
+GAP 11
+TAP button -
+GAP 11
+M1: Are you having any trouble breathing?
+PT: Can somebody call my wife?
+GAP 4
+M1: 0.4 mg nitro sublingual, it's in.  >> med:nitroglycerin,0.4,mg,SL "0.4 mg nitro sublingual"
+GAP 8
+M2: Any allergies?
+PT: I feel sick.
+GAP 8
+M1: Grab the stair chair.
+GAP 6
+M1: Get 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 4
+M1: Can you tell me what day it is?
+PT: I feel sick.
+GAP 3
+M1: We're transporting to Saint Vincent's.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M1: Second set, 137 over 64, BGL is 403, capno 46.  >> vital:bp=137/64 "137 over 64"; vital:bgl=403 "BGL is 403"; vital:etco2=46 "capno 46"
+GAP 1
+M1: How long has this been going on?
+PT: It's about an eight.
+GAP 8
+M2: Drawing up 324 of ASA.  >> med:aspirin,324,, "Drawing up 324 of ASA"
+GAP 1
+M1: Okay, pain is 4 out of 10, resp rate is 20.  >> vital:pain=4 "4 out of 10"; vital:rr=20 "resp rate is 20"
+GAP 1
+M1: Arrived at Valley.  >> time:eTimes.11 "Arrived at"
+GAP 14
+TAP button +label
+M1: Transfer of care now.  >> time:eTimes.12 "Transfer of care"
+KNOCK3

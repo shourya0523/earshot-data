@@ -1,0 +1,49 @@
+@call t062 burn start=19:01:57
+@patient age=58 sex=female weight_kg=87 complaint="structure fire" allergies=unknown home_meds=unknown history=unknown
+@traps smoke inhalation
+RD: Medic 12, priority two, structure fire, 58 year old female.  >> dispatch:structure fire "structure fire"
+GAP 2
+M2: Medic 12 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: Any allergies?
+BY: Am I going to be okay?
+GAP 8
+PT: My arms are on fire.
+GAP 11
+TAP button -
+GAP 11
+GAP 6
+M1: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+GAP 2
+M2: Vitals, pressure 115 over 40, resps at 32, pain is 8 out of 10.  >> vital:bp=115/40 "pressure 115 over 40"; vital:rr=32 "resps at 32"; vital:pain=8 "8 out of 10"
+GAP 6
+TAP button +label
+M1: Repeat, resps is 10, BP is 101 over 66, pain is 3 out of 10.  >> vital:rr=10 "resps is 10"; vital:bp=101/66 "BP is 101 over 66"; vital:pain=3 "3 out of 10"
+GAP 2
+M2: Got bandage.  >> proc:bandaging "bandage"
+GAP 1
+TAP snap +label
+M1: Pushing Sublimaze, 1 mics per kilo atomized.  >> med:fentanyl,1,mcg/kg,IN "Pushing Sublimaze, 1 mics per kilo atomized"
+GAP 4
+TAP knock +label
+M1: Giving 1000 mils of lactated Ringer's through the line.  >> med:lactated Ringer's,1000,mL,IV "Giving 1000 mils of lactated Ringer's through the line"
+GAP 6
+TAP button +label
+M1: Vitals, GCS 10, HR is 152, respirations's 31.  >> vital:gcs=10 "GCS 10"; vital:hr=152 "HR is 152"; vital:rr=31 "respirations's 31"
+GAP 6
+M1: Transporting to Northside.  >> time:eTimes.09 "Transporting"
+GAP 3
+GAP 11
+TAP button -
+GAP 11
+TAP button +label
+M2: 5 gram Cyanokit IV, it's in.  >> med:hydroxocobalamin,5,g,IV "5 gram Cyanokit IV"
+GAP 4
+M2: Do you take any medications?
+BY: I had something like this last year.
+GAP 4
+M1: Did you pass out at all?
+GAP 4
+M1: Arrived at Good Sam.  >> time:eTimes.11 "Arrived at"
+GAP 13
+M1: Handing off to bed four.  >> time:eTimes.12 "Handing off"

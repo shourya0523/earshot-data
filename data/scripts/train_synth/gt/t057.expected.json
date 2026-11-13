@@ -1,0 +1,123 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "88",
+  "sex": "female",
+  "weight_kg": "87",
+  "complaint": "chest discomfort",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest discomfort",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "96",
+    "bgl": "166",
+    "pain": "6"
+   },
+   "last_vitals": {
+    "spo2": "95",
+    "bgl": "166",
+    "pain": "6"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "aspirin 324 PO",
+    "ondansetron 4 mg IV"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "88",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "cardiac problem",
+  "I_injuries_or_information": "chest discomfort",
+  "S_signs": {
+   "spo2": "96",
+   "bgl": "166",
+   "pain": "6"
+  },
+  "T_treatment": [
+   "aspirin 324 PO",
+   "ondansetron 4 mg IV",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "19:52:11",
+  "eTimes.09": "19:54:00",
+  "eTimes.11": "19:54:31",
+  "eTimes.12": "19:54:43"
+ },
+ "wall_time_seconds": 12,
+ "dispatch_reason": "cardiac problem",
+ "medications": [
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "route": "PO"
+  },
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "96",
+   "time": "19:52:22"
+  },
+  {
+   "name": "bgl",
+   "value": "166",
+   "time": "19:53:20"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "19:53:20"
+  },
+  {
+   "name": "spo2",
+   "value": "95",
+   "time": "19:53:20"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4435,
+  "speaker": "RD",
+  "text": "Medic 25, priority two, difficulty breathing, 20 year old female."
+ },
+ {
+  "start_ms": 7966,
+  "end_ms": 9705,
+  "speaker": "M2",
+  "text": "Medic 25 on scene."
+ },
+ {
+  "start_ms": 10076,
+  "end_ms": 11517,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 16176,
+  "end_ms": 17801,
+  "speaker": "PT",
+  "text": "I woke up and couldn't breathe."
+ },
+ {
+  "start_ms": 20219,
+  "end_ms": 21213,
+  "speaker": "M2",
+  "text": "Got see pap."
+ },
+ {
+  "start_ms": 23111,
+  "end_ms": 25232,
+  "speaker": "M1",
+  "text": "NTG 0.4 migs."
+ },
+ {
+  "start_ms": 27131,
+  "end_ms": 28575,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 58463,
+  "end_ms": 60766,
+  "speaker": "M1",
+  "text": "Lasix 40 migs IV push."
+ },
+ {
+  "start_ms": 64511,
+  "end_ms": 69473,
+  "speaker": "M2",
+  "text": "Okay, resp rate 19, GCS 14, sat 89 percent."
+ },
+ {
+  "start_ms": 71192,
+  "end_ms": 72594,
+  "speaker": "M2",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 73153,
+  "end_ms": 74472,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 78061,
+  "end_ms": 79563,
+  "speaker": "M2",
+  "text": "Doing transmit the 12."
+ },
+ {
+  "start_ms": 84105,
+  "end_ms": 86545,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 87331,
+  "end_ms": 88975,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 92570,
+  "end_ms": 95485,
+  "speaker": "M1",
+  "text": "I gave nitro 0.8 milligrams SL."
+ },
+ {
+  "start_ms": 97042,
+  "end_ms": 98864,
+  "speaker": "M1",
+  "text": "Leaving scene to Mercy."
+ },
+ {
+  "start_ms": 102552,
+  "end_ms": 105937,
+  "speaker": "M1",
+  "text": "Okay, breathing at 30, sats is 82 percent."
+ },
+ {
+  "start_ms": 109625,
+  "end_ms": 111183,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 136139,
+  "end_ms": 137567,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 142216,
+  "end_ms": 145455,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 146195,
+  "end_ms": 147189,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 148643,
+  "end_ms": 150007,
+  "speaker": "M1",
+  "text": "We're at University."
+ },
+ {
+  "start_ms": 160244,
+  "end_ms": 162122,
+  "speaker": "M1",
+  "text": "Giving report to bed four."
+ }
+]

@@ -1,0 +1,115 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "20",
+  "sex": "male",
+  "weight_kg": "122",
+  "complaint": "cardiac problem",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "cardiac problem",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "27",
+    "hr": "92"
+   },
+   "last_vitals": {
+    "etco2": "27",
+    "hr": "92"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "fentanyl 50 IV",
+    "aspirin 324 PO",
+    "ondansetron 4 mg IV"
+   ],
+   "procedures": [
+    "cardiac monitor"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "20",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "chest pain",
+  "I_injuries_or_information": "cardiac problem",
+  "S_signs": {
+   "etco2": "27",
+   "hr": "92"
+  },
+  "T_treatment": [
+   "fentanyl 50 IV",
+   "aspirin 324 PO",
+   "ondansetron 4 mg IV",
+   "cardiac monitor"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "02:05:45",
+  "eTimes.09": "02:07:26",
+  "eTimes.11": "02:08:26"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "chest pain",
+ "medications": [
+  {
+   "drug": "fentanyl",
+   "dose": "50",
+   "route": "IV"
+  },
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "route": "PO"
+  },
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "27",
+   "time": "02:07:21"
+  },
+  {
+   "name": "hr",
+   "value": "92",
+   "time": "02:07:31"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

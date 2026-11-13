@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5344,
+  "speaker": "RD",
+  "text": "Ambulance 22, respond to diabetic problem, 73 year old male."
+ },
+ {
+  "start_ms": 9141,
+  "end_ms": 11741,
+  "speaker": "M2",
+  "text": "Ambulance 22 arriving on scene."
+ },
+ {
+  "start_ms": 12464,
+  "end_ms": 14720,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 17603,
+  "end_ms": 20151,
+  "speaker": "PT",
+  "text": "I took my insulin and skipped breakfast."
+ },
+ {
+  "start_ms": 46131,
+  "end_ms": 47417,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 48305,
+  "end_ms": 51218,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 54035,
+  "end_ms": 55786,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 57533,
+  "end_ms": 60383,
+  "speaker": "M2",
+  "text": "15 gram glucose gel by mouth, it's in."
+ },
+ {
+  "start_ms": 66928,
+  "end_ms": 68310,
+  "speaker": "M2",
+  "text": "Doing finger stick."
+ },
+ {
+  "start_ms": 77033,
+  "end_ms": 80334,
+  "speaker": "M2",
+  "text": "Okay, blood sugar at 36, GCS's 10."
+ },
+ {
+  "start_ms": 88681,
+  "end_ms": 94532,
+  "speaker": "M1",
+  "text": "Okay, pain is 4 out of 10, SpO2 97, rate's 140."
+ },
+ {
+  "start_ms": 100483,
+  "end_ms": 102877,
+  "speaker": "M2",
+  "text": "Pushing glucagon, 1 migs in the thigh."
+ },
+ {
+  "start_ms": 104392,
+  "end_ms": 106110,
+  "speaker": "M1",
+  "text": "Leaving scene to Good Sam."
+ },
+ {
+  "start_ms": 109828,
+  "end_ms": 111326,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 115628,
+  "end_ms": 118821,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 119488,
+  "end_ms": 120994,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 123538,
+  "end_ms": 126092,
+  "speaker": "M1",
+  "text": "D10 25 gram intravenous."
+ },
+ {
+  "start_ms": 134425,
+  "end_ms": 135760,
+  "speaker": "M1",
+  "text": "We're at Saint Vincent's."
+ }
+]

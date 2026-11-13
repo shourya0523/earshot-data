@@ -1,0 +1,161 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "58",
+  "sex": "female",
+  "weight_kg": "87",
+  "complaint": "structure fire",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "structure fire",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "115/40",
+    "rr": "32",
+    "pain": "8",
+    "gcs": "10",
+    "hr": "152"
+   },
+   "last_vitals": {
+    "bp": "101/66",
+    "rr": "31",
+    "pain": "3",
+    "gcs": "10",
+    "hr": "152"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "fentanyl 1 mcg/kg IN",
+    "lactated Ringer's 1000 mL IV",
+    "hydroxocobalamin 5 g IV"
+   ],
+   "procedures": [
+    "bandaging"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "58",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "structure fire",
+  "I_injuries_or_information": "structure fire",
+  "S_signs": {
+   "bp": "115/40",
+   "rr": "32",
+   "pain": "8",
+   "gcs": "10",
+   "hr": "152"
+  },
+  "T_treatment": [
+   "fentanyl 1 mcg/kg IN",
+   "lactated Ringer's 1000 mL IV",
+   "hydroxocobalamin 5 g IV",
+   "bandaging"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "19:02:04",
+  "eTimes.09": "19:03:58",
+  "eTimes.11": "19:04:50",
+  "eTimes.12": "19:05:05"
+ },
+ "wall_time_seconds": 15,
+ "dispatch_reason": "structure fire",
+ "medications": [
+  {
+   "drug": "fentanyl",
+   "dose": "1",
+   "unit": "mcg/kg",
+   "route": "IN"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "unit": "g",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "115/40",
+   "time": "19:02:56"
+  },
+  {
+   "name": "rr",
+   "value": "32",
+   "time": "19:02:56"
+  },
+  {
+   "name": "pain",
+   "value": "8",
+   "time": "19:02:56"
+  },
+  {
+   "name": "rr",
+   "value": "10",
+   "time": "19:03:09"
+  },
+  {
+   "name": "bp",
+   "value": "101/66",
+   "time": "19:03:09"
+  },
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "19:03:09"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "19:03:43"
+  },
+  {
+   "name": "hr",
+   "value": "152",
+   "time": "19:03:43"
+  },
+  {
+   "name": "rr",
+   "value": "31",
+   "time": "19:03:43"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

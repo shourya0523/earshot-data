@@ -1,0 +1,143 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "complaint"
+ ],
+ "patient": {
+  "age": "28",
+  "sex": "male",
+  "weight_kg": "75",
+  "complaint": "found unresponsive with slow breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "found unresponsive with slow breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "6",
+    "spo2": "82",
+    "hr": "58",
+    "bp": "100/62",
+    "bgl": "98"
+   },
+   "last_vitals": {
+    "rr": "14",
+    "spo2": "96",
+    "hr": "58",
+    "bp": "100/62",
+    "bgl": "98"
+   },
+   "status": [
+    "pinpoint pupils",
+    "A&O\u00d73"
+   ],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "opioid overdose"
+   ]
+  },
+  "P": {
+   "medications": [
+    "naloxone 4 mg IN",
+    "naloxone 2 mg IV"
+   ],
+   "procedures": [
+    "BVM ventilation"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "28",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "unconscious person, possible overdose",
+  "I_injuries_or_information": "found unresponsive with slow breathing",
+  "S_signs": {
+   "rr": "6",
+   "spo2": "82",
+   "hr": "58",
+   "bp": "100/62",
+   "bgl": "98"
+  },
+  "T_treatment": [
+   "naloxone 4 mg IN",
+   "naloxone 2 mg IV",
+   "BVM ventilation"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "23:15:08",
+  "eTimes.09": "23:16:52",
+  "eTimes.11": "23:17:17"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "unconscious person, possible overdose",
+ "medications": [
+  {
+   "drug": "naloxone",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IN"
+  },
+  {
+   "drug": "naloxone",
+   "dose": "2",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "6",
+   "time": "23:15:23"
+  },
+  {
+   "name": "spo2",
+   "value": "82",
+   "time": "23:15:23"
+  },
+  {
+   "name": "hr",
+   "value": "58",
+   "time": "23:16:04"
+  },
+  {
+   "name": "bp",
+   "value": "100/62",
+   "time": "23:16:04"
+  },
+  {
+   "name": "rr",
+   "value": "14",
+   "time": "23:16:28"
+  },
+  {
+   "name": "spo2",
+   "value": "96",
+   "time": "23:16:28"
+  },
+  {
+   "name": "bgl",
+   "value": "98",
+   "time": "23:16:45"
+  }
+ ],
+ "diagnosis_traps": [
+  "opioid overdose"
+ ]
+}

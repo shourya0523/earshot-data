@@ -1,0 +1,143 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "24",
+  "sex": "female",
+  "weight_kg": "48",
+  "complaint": "sick person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "sick person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "21",
+    "hr": "44",
+    "bgl": "447",
+    "spo2": "97",
+    "pain": "3"
+   },
+   "last_vitals": {
+    "rr": "21",
+    "hr": "44",
+    "bgl": "447",
+    "spo2": "97",
+    "pain": "3"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "sepsis",
+    "pneumonia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 1000 IV",
+    "lactated Ringer's 500 mL IV",
+    "acetaminophen 1000 mg PO"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "24",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fever",
+  "I_injuries_or_information": "sick person",
+  "S_signs": {
+   "rr": "21",
+   "hr": "44",
+   "bgl": "447",
+   "spo2": "97",
+   "pain": "3"
+  },
+  "T_treatment": [
+   "normal saline 1000 IV",
+   "lactated Ringer's 500 mL IV",
+   "acetaminophen 1000 mg PO",
+   "12-lead ECG",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "10:27:46",
+  "eTimes.09": "10:29:30",
+  "eTimes.11": "10:30:05",
+  "eTimes.12": "10:30:13"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "fever",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "1000",
+   "route": "IV"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "acetaminophen",
+   "dose": "1000",
+   "unit": "mg",
+   "route": "PO"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "21",
+   "time": "10:29:22"
+  },
+  {
+   "name": "hr",
+   "value": "44",
+   "time": "10:29:22"
+  },
+  {
+   "name": "bgl",
+   "value": "447",
+   "time": "10:29:44"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "10:29:44"
+  },
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "10:29:44"
+  }
+ ],
+ "diagnosis_traps": [
+  "sepsis",
+  "pneumonia"
+ ]
+}

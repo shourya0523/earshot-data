@@ -1,0 +1,11 @@
+{"id": "e1", "call_id": "t042", "time": "21:41:46", "clip_ms": 500, "type": "dispatch", "fields": {"text": "weakness"}, "source": "heard", "quote": "weakness", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t042", "time": "21:41:53", "clip_ms": 7905, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 7905}
+{"id": "e3", "call_id": "t042", "time": "21:42:08", "clip_ms": 22652, "type": "medication", "fields": {"drug": "atropine", "dose": "1", "route": "IV"}, "source": "tap+heard", "quote": "1 atropine intravenous", "segment_start_ms": 24028, "tap_id": "t1"}
+{"id": "e4", "call_id": "t042", "time": "21:42:22", "clip_ms": 36876, "type": "procedure", "fields": {"name": "12-lead ECG"}, "source": "heard", "quote": "12 lead", "segment_start_ms": 36876}
+{"id": "e5", "call_id": "t042", "time": "21:42:45", "clip_ms": 59043, "type": "vital", "fields": {"name": "gcs", "value": "10", "unit": ""}, "source": "heard", "quote": "GCS is 10", "segment_start_ms": 59043}
+{"id": "e6", "call_id": "t042", "time": "21:43:00", "clip_ms": 74533, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 74533}
+{"id": "mt2", "call_id": "t042", "time": "21:43:14", "clip_ms": 88337, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e7", "call_id": "t042", "time": "21:43:46", "clip_ms": 120262, "type": "medication", "fields": {"drug": "normal saline", "dose": "500", "unit": "mL", "route": "IV"}, "source": "tap+heard", "quote": "normal saline 500 mLs IV push", "segment_start_ms": 121644, "tap_id": "t3"}
+{"id": "e8", "call_id": "t042", "time": "21:43:59", "clip_ms": 133903, "type": "vital", "fields": {"name": "spo2", "value": "83", "unit": "%"}, "source": "tap+heard", "quote": "SpO2's 83 on room air", "segment_start_ms": 135277, "tap_id": "t4"}
+{"id": "e9", "call_id": "t042", "time": "21:43:59", "clip_ms": 133903, "type": "vital", "fields": {"name": "gcs", "value": "15", "unit": ""}, "source": "tap+heard", "quote": "GCS's 15", "segment_start_ms": 135277, "tap_id": "t4"}
+{"id": "e10", "call_id": "t042", "time": "21:44:08", "clip_ms": 142509, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 142509}

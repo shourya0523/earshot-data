@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4256,
+  "speaker": "RD",
+  "text": "Ambulance 8, priority one, assault, 20 year old male."
+ },
+ {
+  "start_ms": 6693,
+  "end_ms": 8640,
+  "speaker": "M1",
+  "text": "Ambulance 8 on scene."
+ },
+ {
+  "start_ms": 9441,
+  "end_ms": 13000,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 13502,
+  "end_ms": 14787,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 23452,
+  "end_ms": 25154,
+  "speaker": "PT",
+  "text": "My arm, don't touch my arm."
+ },
+ {
+  "start_ms": 27523,
+  "end_ms": 29146,
+  "speaker": "M1",
+  "text": "Get traction splint."
+ },
+ {
+  "start_ms": 32505,
+  "end_ms": 35100,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 35877,
+  "end_ms": 36779,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 38618,
+  "end_ms": 41613,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 50204,
+  "end_ms": 53371,
+  "speaker": "M1",
+  "text": "0.3 ket through the line, it's in."
+ },
+ {
+  "start_ms": 83316,
+  "end_ms": 89117,
+  "speaker": "M2",
+  "text": "Repeat, GCS is 9, respirations at 22, sugar's 295."
+ },
+ {
+  "start_ms": 95110,
+  "end_ms": 98599,
+  "speaker": "M1",
+  "text": "pain is 6 out of 10, end tidal 31."
+ },
+ {
+  "start_ms": 104453,
+  "end_ms": 106716,
+  "speaker": "M1",
+  "text": "Giving 1 grams of TXA."
+ },
+ {
+  "start_ms": 108359,
+  "end_ms": 111035,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 115815,
+  "end_ms": 117959,
+  "speaker": "M2",
+  "text": "Drawing up 4 of morphine IV push."
+ },
+ {
+  "start_ms": 119433,
+  "end_ms": 121595,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 131536,
+  "end_ms": 134527,
+  "speaker": "M2",
+  "text": "Giving 100 mics of Sublimaze IV."
+ },
+ {
+  "start_ms": 137839,
+  "end_ms": 139846,
+  "speaker": "M1",
+  "text": "Arrived at University."
+ },
+ {
+  "start_ms": 148805,
+  "end_ms": 150404,
+  "speaker": "M1",
+  "text": "Handing off complete."
+ }
+]

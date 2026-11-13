@@ -1,0 +1,104 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4830,
+  "speaker": "RD",
+  "text": "Medic 3, unconscious person, possible overdose, in the parking garage."
+ },
+ {
+  "start_ms": 8454,
+  "end_ms": 10002,
+  "speaker": "M1",
+  "text": "Medic 3 on scene."
+ },
+ {
+  "start_ms": 13857,
+  "end_ms": 17754,
+  "speaker": "BY",
+  "text": "He was in his car, he's barely breathing, I didn't touch anything."
+ },
+ {
+  "start_ms": 18099,
+  "end_ms": 23039,
+  "speaker": "M1",
+  "text": "Sir! Sir, can you hear me? Nothing. Pinpoint pupils."
+ },
+ {
+  "start_ms": 25289,
+  "end_ms": 28116,
+  "speaker": "M2",
+  "text": "Resps are 6, shallow, sat's 82."
+ },
+ {
+  "start_ms": 28642,
+  "end_ms": 29850,
+  "speaker": "M1",
+  "text": "Start bagging him."
+ },
+ {
+  "start_ms": 36017,
+  "end_ms": 38782,
+  "speaker": "M1",
+  "text": "Narcan 4 milligrams intranasal, in."
+ },
+ {
+  "start_ms": 64966,
+  "end_ms": 68275,
+  "speaker": "M2",
+  "text": "Pulse is 58, pressure 100 over 62."
+ },
+ {
+  "start_ms": 76025,
+  "end_ms": 79392,
+  "speaker": "M1",
+  "text": "No change. Second dose, 2 milligrams IV."
+ },
+ {
+  "start_ms": 88243,
+  "end_ms": 91688,
+  "speaker": "M2",
+  "text": "He's breathing, rate 14 now, sat 96."
+ },
+ {
+  "start_ms": 92260,
+  "end_ms": 94647,
+  "speaker": "PT",
+  "text": "What... what happened? Where am I?"
+ },
+ {
+  "start_ms": 95342,
+  "end_ms": 100253,
+  "speaker": "M1",
+  "text": "You stopped breathing, buddy. We gave you some Narcan. Did you take anything?"
+ },
+ {
+  "start_ms": 100933,
+  "end_ms": 104716,
+  "speaker": "PT",
+  "text": "Just a little. I'm fine. My head hurts."
+ },
+ {
+  "start_ms": 105202,
+  "end_ms": 106781,
+  "speaker": "M2",
+  "text": "Blood sugar 98."
+ },
+ {
+  "start_ms": 112399,
+  "end_ms": 114321,
+  "speaker": "M1",
+  "text": "Transporting to St. Luke's."
+ },
+ {
+  "start_ms": 126424,
+  "end_ms": 128533,
+  "speaker": "M2",
+  "text": "He's A and O times three now."
+ },
+ {
+  "start_ms": 137206,
+  "end_ms": 139138,
+  "speaker": "M1",
+  "text": "Arriving at St. Luke's."
+ }
+]

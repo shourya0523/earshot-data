@@ -1,0 +1,46 @@
+@call t020 allergy start=01:22:18
+@patient age=57 sex=female weight_kg=116 complaint="allergic reaction" allergies=unknown home_meds=unknown history=unknown
+@traps anaphylaxis
+RD: Ambulance 3, priority two, bee sting, 57 year old female.  >> dispatch:bee sting "bee sting"
+GAP 2
+M2: Ambulance 3 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Who's your doctor?
+GAP 4
+PT: My lips are swelling.
+GAP 11
+TAP knock -
+GAP 11
+GAP 1
+TAP button +label
+M2: 0.3 milligrams epi pen, it's in.  >> med:epinephrine,0.3,mg, "0.3 milligrams epi pen"
+GAP 1
+M2: Got breathing treatment.  >> proc:nebulizer "breathing treatment"
+GAP 3
+TAP knock +label
+M1: pain is 9 out of 10.  >> vital:pain=9 "9 out of 10"
+GAP 4
+M1: Get the cot.
+GAP 2
+M1: Did you pass out at all?
+BY: It's getting worse.
+GAP 3
+M2: Okay, we're going to take care of you.
+GAP 2
+M2: Watch the step.
+PT: I had something like this last year.
+GAP 1
+M1: Leaving scene to Riverside.  >> time:eTimes.09 "Leaving scene"
+GAP 3
+GAP 11
+TAP snap -
+GAP 11
+M2: Second set, HR is 99, sats is 86, glucose at 432.  >> vital:hr=99 "HR is 99"; vital:spo2=86 "sats is 86"; vital:bgl=432 "glucose at 432"
+GAP 6
+M2: Giving 25 of benadryl intravenous.  >> med:diphenhydramine,25,,IV "Giving 25 of benadryl intravenous"
+GAP 8
+TAP knock +label
+M1: respirations's 12, sat at 100 on room air.  >> vital:rr=12 "respirations's 12"; vital:spo2=100 "sat at 100 on room air"
+GAP 1
+M1: Do you take any medications?
+GAP 2
+M1: We're at Good Sam.  >> time:eTimes.11 "We're at"

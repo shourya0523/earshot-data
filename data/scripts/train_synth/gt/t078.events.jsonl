@@ -1,0 +1,14 @@
+{"id": "e1", "call_id": "t078", "time": "10:50:23", "clip_ms": 500, "type": "dispatch", "fields": {"text": "fainting"}, "source": "heard", "quote": "fainting", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t078", "time": "10:50:33", "clip_ms": 10624, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "we're on scene", "segment_start_ms": 10624}
+{"id": "e3", "call_id": "t078", "time": "10:50:56", "clip_ms": 33116, "type": "vital", "fields": {"name": "gcs", "value": "15", "unit": ""}, "source": "heard", "quote": "GCS is 15", "segment_start_ms": 33116}
+{"id": "e4", "call_id": "t078", "time": "10:50:56", "clip_ms": 33116, "type": "vital", "fields": {"name": "pain", "value": "2", "unit": "/10"}, "source": "heard", "quote": "2 out of 10", "segment_start_ms": 33116}
+{"id": "e5", "call_id": "t078", "time": "10:51:11", "clip_ms": 48034, "type": "procedure", "fields": {"name": "glucose check"}, "source": "heard", "quote": "check his sugar", "segment_start_ms": 48034}
+{"id": "mt1", "call_id": "t078", "time": "10:51:30", "clip_ms": 67329, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "e6", "call_id": "t078", "time": "10:51:42", "clip_ms": 79329, "type": "procedure", "fields": {"name": "cardiac monitor"}, "source": "heard", "quote": "4 lead", "segment_start_ms": 79329}
+{"id": "e7", "call_id": "t078", "time": "10:52:11", "clip_ms": 108322, "type": "vital", "fields": {"name": "etco2", "value": "19", "unit": "mmHg"}, "source": "heard", "quote": "end tidal's 19", "segment_start_ms": 108322}
+{"id": "e8", "call_id": "t078", "time": "10:52:11", "clip_ms": 108322, "type": "vital", "fields": {"name": "bp", "value": "162/82", "unit": "mmHg"}, "source": "heard", "quote": "162 over 82", "segment_start_ms": 108322}
+{"id": "e9", "call_id": "t078", "time": "10:52:11", "clip_ms": 108322, "type": "vital", "fields": {"name": "bgl", "value": "403", "unit": "mg/dL"}, "source": "heard", "quote": "sugar is 403", "segment_start_ms": 108322}
+{"id": "e10", "call_id": "t078", "time": "10:52:17", "clip_ms": 114905, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Leaving scene", "segment_start_ms": 114905}
+{"id": "e11", "call_id": "t078", "time": "10:52:22", "clip_ms": 119938, "type": "medication", "fields": {"drug": "normal saline", "dose": "500", "unit": "mL", "route": "IV"}, "source": "heard", "quote": "Giving 500 mLs of saline IV push", "segment_start_ms": 119938}
+{"id": "e12", "call_id": "t078", "time": "10:52:27", "clip_ms": 124657, "type": "medication", "fields": {"drug": "oxygen", "dose": "2", "unit": "L/min"}, "source": "heard", "quote": "I gave non-rebreather 2 liters", "segment_start_ms": 124657}
+{"id": "e13", "call_id": "t078", "time": "10:52:47", "clip_ms": 144766, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arrived at", "segment_start_ms": 144766}

@@ -1,0 +1,39 @@
+@call t077 brady start=12:23:31
+@patient age=56 sex=male weight_kg=119 complaint="dizziness" allergies=unknown home_meds=unknown history=unknown
+@traps heart block
+RD: Medic 37, priority one, dizziness, 56 year old male.  >> dispatch:dizziness "dizziness"
+GAP 2
+M2: Medic 37 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Do you take any medications?
+BY: It's about an eight.
+GAP 2
+PT: I feel like I'm going to pass out.
+GAP 4
+TAP knock +label
+M1: Drawing up 1 of atropine IV.  >> med:atropine,1,,IV "Drawing up 1 of atropine IV"
+GAP 6
+M1: Let's move on three. One, two, three.
+BY: Am I going to be okay?
+GAP 4
+TAP knock +label
+M1: Repeat, pressure at 108 over 58, respirations is 26.  >> vital:bp=108/58 "pressure at 108 over 58"; vital:rr=26 "respirations is 26"
+GAP 11
+TAP knock -
+GAP 11
+GAP 6
+M2: Let's do 12-lead.  >> proc:12-lead ECG "12-lead"
+GAP 3
+M1: Okay, sats 94, pain is 5 out of 10, capno is 23.  >> vital:spo2=94 "sats 94"; vital:pain=5 "5 out of 10"; vital:etco2=23 "capno is 23"
+GAP 1
+M1: Okay, we're going to take care of you.
+GAP 3
+M1: We're transporting to Valley.  >> time:eTimes.09 "We're transporting"
+GAP 3
+TAP knock +label
+M1: I gave normal saline 500 IV push.  >> med:normal saline,500,,IV "I gave normal saline 500 IV push"
+GAP 2
+M2: Watch the step.
+PT: I feel sick.
+GAP 8
+M1: Arriving at Memorial.  >> time:eTimes.11 "Arriving at"
+KNOCK3

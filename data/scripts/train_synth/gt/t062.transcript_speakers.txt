@@ -1,0 +1,20 @@
+RD: Medic 12, priority two, structure fire, 58 year old female.
+M2: Medic 12 we're on scene.
+M1: Any allergies?
+BY: Am I going to be okay?
+PT: My arms are on fire.
+M1: On a scale of zero to ten, how bad is it?
+BY: No allergies.
+M2: Vitals, pressure 115 over 40, resps at 32, pain is 8 out of 10.
+M1: Repeat, resps is 10, BP is 101 over 66, pain is 3 out of 10.
+M2: Got bandage.
+M1: Pushing Sublimaze, 1 mics per kilo atomized.
+M1: Giving 1000 mils of lactated Ringer's through the line.
+M1: Vitals, GCS 10, HR is 152, respirations's 31.
+M1: Transporting to Northside.
+M2: 5 gram Cyanokit IV, it's in.
+M2: Do you take any medications?
+BY: I had something like this last year.
+M1: Did you pass out at all?
+M1: Arrived at Good Sam.
+M1: Handing off to bed four.

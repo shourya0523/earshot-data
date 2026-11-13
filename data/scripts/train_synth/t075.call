@@ -1,0 +1,39 @@
+@call t075 opioid start=06:09:58
+@patient age=75 sex=male weight_kg=128 complaint="person down" allergies=unknown home_meds=unknown history=unknown
+@traps overdose
+RD: Squad 15, respond to unknown problem, 75 year old male.  >> dispatch:unknown problem "unknown problem"
+GAP 3
+M1: Squad 15 we're on scene.  >> time:eTimes.06 "we're on scene"
+M1: How long has this been going on?
+GAP 4
+PT: I only had one.
+GAP 2
+M1: Let's move on three. One, two, three.
+GAP 2
+M1: Okay, we're going to take care of you.
+PT: No allergies.
+GAP 3
+TAP snap +label
+M1: Vitals, GCS at 10, 142 over 100, rate is 86.  >> vital:gcs=10 "GCS at 10"; vital:bp=142/100 "142 over 100"; vital:hr=86 "rate is 86"
+GAP 1
+TAP snap +label
+M1: Repeat, heart rate 72.  >> vital:hr=72 "heart rate 72"
+GAP 2
+M2: Small poke.
+BY: Am I going to be okay?
+GAP 4
+M1: Giving 4 migs of narcan IN.  >> med:naloxone,4,mg,IN "Giving 4 migs of narcan IN"
+GAP 1
+M1: We're transporting to Valley.  >> time:eTimes.09 "We're transporting"
+GAP 3
+M2: Got oral airway.  >> proc:OPA "oral airway"
+GAP 11
+TAP button -
+GAP 11
+GAP 6
+M1: I gave Narcan 2 milligrams in the nose.  >> med:naloxone,2,mg,IN "I gave Narcan 2 milligrams in the nose"
+GAP 4
+TAP snap +label
+M1: Okay, respirations's 33, end tidal is 30.  >> vital:rr=33 "respirations's 33"; vital:etco2=30 "end tidal is 30"
+GAP 4
+M1: Arrived at Saint Joseph's.  >> time:eTimes.11 "Arrived at"

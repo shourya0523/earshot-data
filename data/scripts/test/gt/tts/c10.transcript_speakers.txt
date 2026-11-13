@@ -1,0 +1,13 @@
+RD: Medic 4, two car MVC, minor damage, one patient complaining of neck pain.
+M1: Medic 4 on scene.
+M1: Found him standing outside his car, airbags didn't deploy.
+PT: I'm fine, really. My neck's a little sore, that's all.
+M1: Were you wearing your seatbelt? Did you hit your head?
+PT: Yes, seatbelt. No, I didn't hit anything.
+M2: BP 136 over 84, pulse 82, sat 99.
+M1: He's A and O times four, no midline tenderness, moves everything.
+M1: Sir, we recommend you get checked at the hospital. Neck injuries can get worse.
+PT: No, I've got to pick up my kids. I'm not going.
+M2: Second set, 132 over 80, pulse 78.
+M1: Okay. If anything changes, numbness, worse pain, call 911 right away. Sign here for the refusal.
+M1: Patient signed refusal against medical advice. Medic 4 back in service.

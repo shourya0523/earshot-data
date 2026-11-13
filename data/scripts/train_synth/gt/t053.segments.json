@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4795,
+  "speaker": "RD",
+  "text": "Medic 26, priority two, cardiac problem, 29 year old female."
+ },
+ {
+  "start_ms": 9431,
+  "end_ms": 11416,
+  "speaker": "M1",
+  "text": "Medic 26 on scene."
+ },
+ {
+  "start_ms": 12085,
+  "end_ms": 13846,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 17538,
+  "end_ms": 18636,
+  "speaker": "PT",
+  "text": "My chest is squeezing."
+ },
+ {
+  "start_ms": 28903,
+  "end_ms": 31068,
+  "speaker": "M1",
+  "text": "Okay, glucose's 230."
+ },
+ {
+  "start_ms": 37421,
+  "end_ms": 38943,
+  "speaker": "M1",
+  "text": "Let's do pads on."
+ },
+ {
+  "start_ms": 41771,
+  "end_ms": 44387,
+  "speaker": "M2",
+  "text": "Drawing up 324 migs of aspirin."
+ },
+ {
+  "start_ms": 47816,
+  "end_ms": 50029,
+  "speaker": "M2",
+  "text": "Vitals, pain is 7 out of 10."
+ },
+ {
+  "start_ms": 51907,
+  "end_ms": 52952,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 53527,
+  "end_ms": 54463,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 59285,
+  "end_ms": 60270,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 61099,
+  "end_ms": 62893,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 64334,
+  "end_ms": 66990,
+  "speaker": "M2",
+  "text": "Second set, resp rate's 16."
+ },
+ {
+  "start_ms": 75445,
+  "end_ms": 77401,
+  "speaker": "M1",
+  "text": "Transporting to Saint Joseph's."
+ },
+ {
+  "start_ms": 82690,
+  "end_ms": 86727,
+  "speaker": "M1",
+  "text": "I gave Nitrostat 0.4 milligrams sublingual."
+ },
+ {
+  "start_ms": 117354,
+  "end_ms": 118764,
+  "speaker": "M2",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 120295,
+  "end_ms": 121869,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 122403,
+  "end_ms": 123316,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 126795,
+  "end_ms": 128182,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 130544,
+  "end_ms": 132227,
+  "speaker": "M1",
+  "text": "Arriving at Memorial."
+ }
+]

@@ -1,0 +1,51 @@
+@call t029 trauma start=07:14:07
+@patient age=92 sex=female weight_kg=139 complaint="pedestrian struck" allergies=unknown home_meds=unknown history=unknown
+@traps fracture; head injury
+RD: Ambulance 18, priority two, assault, 92 year old female.  >> dispatch:assault "assault"
+GAP 3
+M2: Ambulance 18 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M1: Grab the stair chair.
+BY: I had something like this last year.
+GAP 3
+PT: I can't feel my fingers.
+GAP 4
+TAP snap +label
+M1: end tidal's 22, pressure is 167 over 114, BGL's 400.  >> vital:etco2=22 "end tidal's 22"; vital:bp=167/114 "pressure is 167 over 114"; vital:bgl=400 "BGL's 400"
+GAP 1
+TAP snap +label
+M1: Giving 100 mcg of fent IV.  >> med:fentanyl,100,mcg,IV "Giving 100 mcg of fent IV"
+GAP 3
+M1: Hang tight, partner.
+PT: It's getting worse.
+GAP 8
+M1: Any allergies?
+GAP 6
+M2: Let's do hemostatic gauze.  >> proc:wound packing "hemostatic gauze"
+GAP 6
+M1: normal saline 250 mLs.  >> med:normal saline,250,mL, "normal saline 250 mLs"
+GAP 1
+M2: When did you last eat?
+PT: Can somebody call my wife?
+GAP 2
+TAP button +label
+M1: blood pressure is 177 over 145, pain is 6 out of 10.  >> vital:bp=177/145 "blood pressure is 177 over 145"; vital:pain=6 "6 out of 10"
+GAP 4
+M1: Grab the stair chair.
+GAP 1
+M1: Transporting to Northside.  >> time:eTimes.09 "Transporting"
+GAP 3
+M1: Second set, sat's 100 on room air.  >> vital:spo2=100 "sat's 100 on room air"
+GAP 1
+M1: ket 0.3 milligrams per kilo through the line.  >> med:ketamine,0.3,mg/kg,IV "ket 0.3 milligrams per kilo through the line"
+GAP 6
+M1: Get the cot.
+BY: I had something like this last year.
+GAP 8
+GAP 11
+TAP snap -
+GAP 11
+M2: Doing traction splint.  >> proc:splinting "traction splint"
+GAP 4
+M1: 1 grams TXA, it's in.  >> med:tranexamic acid,1,g, "1 grams TXA"
+GAP 1
+M1: Arriving at Riverside.  >> time:eTimes.11 "Arriving at"

@@ -1,0 +1,51 @@
+@call t064 svt start=10:56:48
+@patient age=77 sex=male weight_kg=137 complaint="palpitations" allergies=unknown home_meds=unknown history=unknown
+@traps SVT
+RD: Ambulance 51, respond to palpitations, 77 year old male.  >> dispatch:palpitations "palpitations"
+GAP 3
+M2: Ambulance 51 arriving on scene.  >> time:eTimes.06 "arriving on scene"
+M2: Can you squeeze my fingers?
+GAP 11
+TAP snap -
+GAP 11
+PT: I had something like this last year.
+GAP 4
+PT: It feels like it's fluttering.
+GAP 8
+TAP button +label
+M1: Giving 6 milligrams of adenosine intravenous.  >> med:adenosine,6,mg,IV "Giving 6 milligrams of adenosine intravenous"
+GAP 8
+TAP knock +label
+M2: Vitals, breathing is 8, GCS is 12, sats 90 percent.  >> vital:rr=8 "breathing is 8"; vital:gcs=12 "GCS is 12"; vital:spo2=90 "sats 90 percent"
+GAP 6
+M1: Do you take any medications?
+GAP 4
+GAP 11
+TAP knock -
+GAP 11
+M1: Okay, GCS at 8, pain is 2 out of 10, resp rate at 15.  >> vital:gcs=8 "GCS at 8"; vital:pain=2 "2 out of 10"; vital:rr=15 "resp rate at 15"
+GAP 3
+M1: Okay, respirations 30.  >> vital:rr=30 "respirations 30"
+GAP 4
+M1: Any medical history I should know about?
+PT: I don't know, it just started.
+GAP 4
+M1: Grab the stair chair.
+BY: No allergies.
+GAP 8
+M1: Transporting to Mercy.  >> time:eTimes.09 "Transporting"
+GAP 3
+M1: Get established IV.  >> proc:IV access "established IV"
+GAP 4
+M1: Get vagal.  >> proc:vagal maneuver "vagal"
+GAP 2
+M2: Did you pass out at all?
+PT: It's getting worse.
+GAP 6
+TAP button +label
+M1: Drawing up 12 migs of adenosine.  >> med:adenosine,12,mg, "Drawing up 12 migs of adenosine"
+GAP 3
+M1: We're at Mercy.  >> time:eTimes.11 "We're at"
+GAP 13
+TAP button +label
+M1: Handing off now.  >> time:eTimes.12 "Handing off"

@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6136,
+  "speaker": "RD",
+  "text": "Squad 20, you have a abdominal pain, 77 year old female."
+ },
+ {
+  "start_ms": 10935,
+  "end_ms": 12363,
+  "speaker": "M1",
+  "text": "Squad 20 on scene."
+ },
+ {
+  "start_ms": 12971,
+  "end_ms": 14127,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 18511,
+  "end_ms": 20077,
+  "speaker": "PT",
+  "text": "I've been throwing up all night."
+ },
+ {
+  "start_ms": 52364,
+  "end_ms": 54094,
+  "speaker": "M1",
+  "text": "Pushing ondansetron, 4."
+ },
+ {
+  "start_ms": 64309,
+  "end_ms": 66782,
+  "speaker": "M1",
+  "text": "I gave Zofran 4 milligrams through the line."
+ },
+ {
+  "start_ms": 73244,
+  "end_ms": 75757,
+  "speaker": "M2",
+  "text": "Vitals, ETCO2 20."
+ },
+ {
+  "start_ms": 107858,
+  "end_ms": 110955,
+  "speaker": "M2",
+  "text": "15 milligrams ketorolac, it's in."
+ },
+ {
+  "start_ms": 119741,
+  "end_ms": 121523,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 122084,
+  "end_ms": 123053,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 131052,
+  "end_ms": 138612,
+  "speaker": "M2",
+  "text": "Okay, blood sugar 328, SpO2 100 on room air, resp rate's 10."
+ },
+ {
+  "start_ms": 143266,
+  "end_ms": 144485,
+  "speaker": "M1",
+  "text": "Doing 20 gauge."
+ },
+ {
+  "start_ms": 148033,
+  "end_ms": 150041,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Joseph's."
+ },
+ {
+  "start_ms": 155466,
+  "end_ms": 158415,
+  "speaker": "M1",
+  "text": "Vitals, GCS's 12, end tidal 43."
+ },
+ {
+  "start_ms": 161045,
+  "end_ms": 162682,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 163037,
+  "end_ms": 164751,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 166278,
+  "end_ms": 168438,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 170068,
+  "end_ms": 171020,
+  "speaker": "M1",
+  "text": "We're at County."
+ },
+ {
+  "start_ms": 185610,
+  "end_ms": 187084,
+  "speaker": "M1",
+  "text": "Transfer of care complete."
+ }
+]

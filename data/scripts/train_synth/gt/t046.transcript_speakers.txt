@@ -1,0 +1,22 @@
+RD: Medic 27, respond to combative person, 84 year old female.
+M1: Medic 27 on scene.
+M1: I'm going to put some stickers on your chest.
+PT: I didn't do anything.
+M2: Let's do restraints.
+M2: Drawing up 5 milligrams of haloperidol.
+M1: When did you last eat?
+BY: Can somebody call my wife?
+M2: Stay with me, keep your eyes open.
+PT: Can somebody call my wife?
+M2: BP's 196 over 128.
+M1: Drawing up 4 milligrams per kilo of Ketalar IM.
+M1: Giving 10 of olanzapine.
+M1: Transporting to General.
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+M2: Repeat, GCS is 10.
+M2: On a scale of zero to ten, how bad is it?
+M1: Are you having any trouble breathing?
+BY: No allergies.
+M1: Arriving at Good Sam.
+M1: Handing off to the nurse.

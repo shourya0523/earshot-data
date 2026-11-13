@@ -1,0 +1,20 @@
+RD: Rescue 59, respond to seizure, 23 year old male.
+M1: Rescue 59 we're on scene.
+M2: Okay, we're going to take care of you.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+PT: I'm tired, my tongue hurts.
+M1: We need suction.
+M1: Drawing up 2 of Ativan through the line.
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+M1: Okay, we're going to take care of you.
+M2: Repeat, blood pressure is 180 over 131, GCS at 14, rate 88.
+M2: pain is 2 out of 10.
+M2: Giving 2.5 milligrams of versed intranasal.
+M1: Transporting to Good Sam.
+M2: Repeat, blood sugar is 210, GCS is 15.
+M1: Can you squeeze my fingers?
+M1: Got nasal airway.
+M1: Did you pass out at all?
+PT: Please don't cut my shirt.
+M1: Arrived at Good Sam.

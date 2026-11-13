@@ -1,0 +1,22 @@
+RD: Rescue 23, you have a unconscious person, 22 year old male.
+M1: Rescue 23 arriving on scene.
+M1: Any allergies?
+PT: Can somebody call my wife?
+PT: Everything went grey.
+M2: Are you having any trouble breathing?
+M2: Repeat, glucose 318, breathing 23.
+M2: Can you tell me what day it is?
+BY: Am I going to be okay?
+M1: Grab the stair chair.
+BY: I don't know, it just started.
+M1: Can you squeeze my fingers?
+PT: It's getting worse.
+M2: Let's do pads on.
+M1: Vitals, pulse ox 84 on room air.
+M1: Transporting to General.
+M1: Any medical history I should know about?
+BY: It's about an eight.
+M2: 2 L non-rebreather nasal cannula, it's in.
+M1: Second set, pain is 7 out of 10, GCS is 12, rate is 133.
+M1: Pushing saline, 500 cc's intravenous.
+M1: We're at Mercy.

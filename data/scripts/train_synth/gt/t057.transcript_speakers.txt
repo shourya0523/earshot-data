@@ -1,0 +1,19 @@
+RD: Rescue 48, priority two, cardiac problem, 88 year old female.
+M1: Rescue 48 on scene.
+M2: I'm going to put some stickers on your chest.
+PT: Pressure in my chest.
+M2: Repeat, sats is 96.
+M1: When did you last eat?
+PT: I had something like this last year.
+M2: Vitals, sugar's 166, pain is 6 out of 10, sat at 95 percent.
+M1: Small poke.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: Do you take any medications?
+PT: It's about an eight.
+M2: Get 20 in the left hand.
+M1: We're transporting to Saint Joseph's.
+M1: Can you tell me what day it is?
+M1: Drawing up 324 of Bayer chewed.
+M1: I gave zofran 4 mg IV.
+M1: Arriving at Saint Joseph's.
+M1: Handing off now.

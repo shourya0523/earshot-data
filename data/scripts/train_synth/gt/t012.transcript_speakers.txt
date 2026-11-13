@@ -1,0 +1,24 @@
+RD: Ambulance 10, respond to difficulty breathing, 62 year old male.
+M2: Ambulance 10 on scene.
+M1: Did you pass out at all?
+PT: I feel sick.
+PT: My breathing's bad today.
+M2: Got c pap.
+M1: Giving 4 L of non-rebreather.
+M2: Any allergies?
+M1: Repeat, pressure at 154 over 101, respirations 33, SpO2 is 93 percent.
+M2: Repeat, ETCO2 at 39.
+M1: Stay with me, keep your eyes open.
+BY: No allergies.
+M2: Drawing up 2 grams of mag sulfate intravenous.
+M1: Hang tight, partner.
+PT: No allergies.
+M1: Leaving scene to Riverside.
+M1: Are you having any trouble breathing?
+BY: Yeah, I take a bunch of pills, my daughter knows.
+M1: Let's do breathing treatment.
+M2: Can you tell me what day it is?
+BY: I had something like this last year.
+M1: When did you last eat?
+PT: Am I going to be okay?
+M1: Arriving at Mercy.

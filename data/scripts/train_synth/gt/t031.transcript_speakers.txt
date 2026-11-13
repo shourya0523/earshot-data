@@ -1,0 +1,23 @@
+RD: Ambulance 32, respond to fall, 83 year old female.
+M2: Ambulance 32 arriving on scene.
+M1: Get the cot.
+PT: Please don't cut my shirt.
+PT: My arm, don't touch my arm.
+M1: Repeat, pulse at 83, pulse ox's 92 on room air.
+M1: Do you take any medications?
+M1: Stay with me, keep your eyes open.
+M1: Small poke.
+M1: Stay with me, keep your eyes open.
+BY: No allergies.
+M2: Vitals, BGL is 374.
+M2: 167 over 128, resp rate's 13.
+M1: Hang tight, partner.
+PT: Can somebody call my wife?
+M1: normal saline 250 IV.
+M1: We're transporting to Riverside.
+M1: Let's do packing.
+M2: Giving 100 mcg of fentanyl IV push.
+M1: Watch the step.
+BY: Can somebody call my wife?
+M1: 1 grams TXA IV, it's in.
+M1: Arriving at Valley.

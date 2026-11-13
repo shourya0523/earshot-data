@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4099,
+  "speaker": "RD",
+  "text": "Rescue 29, you have a fever, 24 year old male."
+ },
+ {
+  "start_ms": 8663,
+  "end_ms": 10812,
+  "speaker": "M1",
+  "text": "Rescue 29 arriving on scene."
+ },
+ {
+  "start_ms": 11254,
+  "end_ms": 13348,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 37869,
+  "end_ms": 39524,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 67734,
+  "end_ms": 68646,
+  "speaker": "PT",
+  "text": "I'm freezing."
+ },
+ {
+  "start_ms": 77368,
+  "end_ms": 78596,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 86994,
+  "end_ms": 88198,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 89052,
+  "end_ms": 90173,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 92834,
+  "end_ms": 95569,
+  "speaker": "M1",
+  "text": "end tidal 38, pain is 5 out of 10."
+ },
+ {
+  "start_ms": 99362,
+  "end_ms": 102526,
+  "speaker": "M1",
+  "text": "Vitals, blood pressure at 113 over 40."
+ },
+ {
+  "start_ms": 111229,
+  "end_ms": 114216,
+  "speaker": "M1",
+  "text": "Pushing Tylenol, 1000 mg by mouth."
+ },
+ {
+  "start_ms": 122606,
+  "end_ms": 123334,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 124121,
+  "end_ms": 126390,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 130882,
+  "end_ms": 132367,
+  "speaker": "M1",
+  "text": "We're transporting to Mercy."
+ },
+ {
+  "start_ms": 136198,
+  "end_ms": 139266,
+  "speaker": "M1",
+  "text": "500 lactated Ringer's intravenous, it's in."
+ },
+ {
+  "start_ms": 142622,
+  "end_ms": 145292,
+  "speaker": "M2",
+  "text": "I gave normal saline 1000 intravenous."
+ },
+ {
+  "start_ms": 153901,
+  "end_ms": 155216,
+  "speaker": "M1",
+  "text": "Let's do 12 lead."
+ },
+ {
+  "start_ms": 159084,
+  "end_ms": 160369,
+  "speaker": "M1",
+  "text": "Arriving at Good Sam."
+ }
+]

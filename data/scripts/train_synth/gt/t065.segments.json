@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5202,
+  "speaker": "RD",
+  "text": "Squad 18, priority one, sick person, 92 year old female."
+ },
+ {
+  "start_ms": 8638,
+  "end_ms": 10775,
+  "speaker": "M1",
+  "text": "Squad 18 arriving on scene."
+ },
+ {
+  "start_ms": 11320,
+  "end_ms": 12349,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 16050,
+  "end_ms": 18200,
+  "speaker": "PT",
+  "text": "I've had a fever for three days."
+ },
+ {
+  "start_ms": 21658,
+  "end_ms": 24312,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 25035,
+  "end_ms": 26401,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 28107,
+  "end_ms": 28941,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 29778,
+  "end_ms": 31185,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 41371,
+  "end_ms": 45721,
+  "speaker": "M2",
+  "text": "Repeat, respirations's 28, BP 88 over 40, GCS's 10."
+ },
+ {
+  "start_ms": 49007,
+  "end_ms": 51499,
+  "speaker": "M2",
+  "text": "Giving 1000 of normal saline through the line."
+ },
+ {
+  "start_ms": 80106,
+  "end_ms": 83433,
+  "speaker": "M1",
+  "text": "end tidal's 48, sats 98 on room air."
+ },
+ {
+  "start_ms": 91710,
+  "end_ms": 94956,
+  "speaker": "M2",
+  "text": "I gave lactated Ringer's 500 mils IV push."
+ },
+ {
+  "start_ms": 123242,
+  "end_ms": 125021,
+  "speaker": "M1",
+  "text": "Leaving scene to Saint Joseph's."
+ },
+ {
+  "start_ms": 128352,
+  "end_ms": 130158,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 130595,
+  "end_ms": 132003,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 135860,
+  "end_ms": 136889,
+  "speaker": "M2",
+  "text": "Doing 12-lead."
+ },
+ {
+  "start_ms": 140476,
+  "end_ms": 142538,
+  "speaker": "M2",
+  "text": "I gave Tylenol 1000 migs orally."
+ },
+ {
+  "start_ms": 145343,
+  "end_ms": 147034,
+  "speaker": "M1",
+  "text": "Arriving at Saint Vincent's."
+ }
+]

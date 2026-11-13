@@ -1,0 +1,149 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "88",
+  "sex": "male",
+  "weight_kg": "61",
+  "complaint": "difficulty breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "difficulty breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "32",
+    "hr": "64",
+    "gcs": "10",
+    "pain": "7",
+    "etco2": "42"
+   },
+   "last_vitals": {
+    "rr": "32",
+    "hr": "41",
+    "gcs": "14",
+    "pain": "7",
+    "etco2": "42"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "CHF",
+    "pulmonary edema"
+   ]
+  },
+  "P": {
+   "medications": [
+    "furosemide 40 IV",
+    "nitroglycerin 0.8 SL",
+    "nitroglycerin 0.4 SL"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "88",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "difficulty breathing",
+  "I_injuries_or_information": "difficulty breathing",
+  "S_signs": {
+   "rr": "32",
+   "hr": "64",
+   "gcs": "10",
+   "pain": "7",
+   "etco2": "42"
+  },
+  "T_treatment": [
+   "furosemide 40 IV",
+   "nitroglycerin 0.8 SL",
+   "nitroglycerin 0.4 SL",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "14:45:35",
+  "eTimes.09": "14:47:13",
+  "eTimes.11": "14:48:07"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "difficulty breathing",
+ "medications": [
+  {
+   "drug": "furosemide",
+   "dose": "40",
+   "route": "IV"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.8",
+   "route": "SL"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "32",
+   "time": "14:46:03"
+  },
+  {
+   "name": "hr",
+   "value": "64",
+   "time": "14:46:03"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "14:46:03"
+  },
+  {
+   "name": "hr",
+   "value": "41",
+   "time": "14:46:11"
+  },
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "14:46:11"
+  },
+  {
+   "name": "gcs",
+   "value": "14",
+   "time": "14:46:11"
+  },
+  {
+   "name": "etco2",
+   "value": "42",
+   "time": "14:46:58"
+  }
+ ],
+ "diagnosis_traps": [
+  "CHF",
+  "pulmonary edema"
+ ]
+}

@@ -1,0 +1,13 @@
+{"id": "e1", "call_id": "t047", "time": "09:54:31", "clip_ms": 500, "type": "dispatch", "fields": {"text": "burns"}, "source": "heard", "quote": "burns", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t047", "time": "09:54:38", "clip_ms": 7995, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "arriving on scene", "segment_start_ms": 7995}
+{"id": "e3", "call_id": "t047", "time": "09:54:52", "clip_ms": 21736, "type": "medication", "fields": {"drug": "lactated Ringer's", "dose": "1000", "unit": "mL", "route": "IV"}, "source": "heard", "quote": "I gave lactated ringers 1000 mils IV", "segment_start_ms": 21736}
+{"id": "e4", "call_id": "t047", "time": "09:54:58", "clip_ms": 27568, "type": "procedure", "fields": {"name": "bandaging"}, "source": "heard", "quote": "dressing", "segment_start_ms": 27568}
+{"id": "e5", "call_id": "t047", "time": "09:55:15", "clip_ms": 44704, "type": "procedure", "fields": {"name": "cooling"}, "source": "heard", "quote": "cooling", "segment_start_ms": 44704}
+{"id": "e6", "call_id": "t047", "time": "09:55:33", "clip_ms": 62292, "type": "vital", "fields": {"name": "gcs", "value": "10", "unit": ""}, "source": "heard", "quote": "GCS 10", "segment_start_ms": 62292}
+{"id": "mt1", "call_id": "t047", "time": "09:55:54", "clip_ms": 83758, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "e7", "call_id": "t047", "time": "09:56:07", "clip_ms": 96758, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 96758}
+{"id": "e8", "call_id": "t047", "time": "09:56:20", "clip_ms": 109500, "type": "vital", "fields": {"name": "pain", "value": "6", "unit": "/10"}, "source": "tap+heard", "quote": "6 out of 10", "segment_start_ms": 110500, "tap_id": "t2"}
+{"id": "e9", "call_id": "t047", "time": "09:56:20", "clip_ms": 109500, "type": "vital", "fields": {"name": "bp", "value": "151/101", "unit": "mmHg"}, "source": "tap+heard", "quote": "151 over 101", "segment_start_ms": 110500, "tap_id": "t2"}
+{"id": "e10", "call_id": "t047", "time": "09:56:37", "clip_ms": 126654, "type": "medication", "fields": {"drug": "hydroxocobalamin", "dose": "5", "route": "IV"}, "source": "tap+heard", "quote": "Drawing up 5 of hydroxocobalamin IV push", "segment_start_ms": 128045, "tap_id": "t3"}
+{"id": "e11", "call_id": "t047", "time": "09:56:44", "clip_ms": 133565, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arrived at", "segment_start_ms": 133565}
+{"id": "e12", "call_id": "t047", "time": "09:56:55", "clip_ms": 144543, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "heard", "quote": "Giving report", "segment_start_ms": 144543}

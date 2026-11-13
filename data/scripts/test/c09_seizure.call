@@ -1,0 +1,35 @@
+@call c09 seizure start=13:27:15
+@patient age=23 sex=male weight_kg=70 complaint="shaking episode, still seizing on arrival" allergies=NKDA home_meds="Keppra" history="epilepsy, missed doses"
+@traps status epilepticus
+RD: Medic 8, seizure, twenty-three year old male, at the gym.  >> dispatch:seizure "seizure"
+GAP 3
+M1: Medic 8 on scene.  >> time:eTimes.06 "on scene"
+GAP 2
+BY: He's been shaking for like five minutes. He has epilepsy, he takes Keppra, but he said he ran out.
+M1: Still seizing. Protect his head. Get him on his side.  >> status:actively seizing "Still seizing"
+TAP knock +label
+M2: Sat's 86, heart rate 132.  >> vital:spo2=86 "Sat's 86"; vital:hr=132 "heart rate 132"
+M1: Nasal cannula... no, non-rebreather, 15.  >> med:oxygen,15,,NRB "non-rebreather, 15"
+GAP 2
+TAP button +label
+M1: Versed 10 milligrams IM, left deltoid.  >> med:midazolam,10,mg,IM "Versed 10 milligrams IM"
+GAP 12
+TAP snap -
+GAP 12
+M2: Seizure stopped. He's postictal, snoring respirations.  >> status:postictal "He's postictal"
+M1: NPA, right nare.  >> proc:NPA "NPA"
+GAP 4
+TAP button +label
+M2: Sugar 104. BP 146 over 90, resps 16.  >> vital:bgl=104 "Sugar 104"; vital:bp=146/90 "BP 146 over 90"; vital:rr=16 "resps 16"
+GAP 6
+M2: Sat's coming up, 95.  >> vital:spo2=95 "95"
+GAP 5
+M1: Transporting to County.  >> time:eTimes.09 "Transporting"
+GAP 10
+M2: GCS is 10. Eyes open to voice.  >> vital:gcs=10 "GCS is 10"
+GAP 8
+M1: Arrived at County.  >> time:eTimes.11 "Arrived at County"
+GAP 12
+TAP knock +label
+M1: Report given, transfer of care.  >> time:eTimes.12 "transfer of care"
+KNOCK3

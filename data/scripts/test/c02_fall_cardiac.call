@@ -1,0 +1,37 @@
+@call c02 fall_cardiac start=09:41:30
+@patient age=78 sex=female weight_kg=60 complaint="fall, felt lightheaded and heart racing before falling" allergies=penicillin home_meds="Eliquis, metoprolol" history="atrial fibrillation"
+@traps atrial fibrillation with RVR; afib
+RD: Medic 7, fall, seventy-eight year old female, lift assist requested.  >> dispatch:fall, lift assist "fall, seventy-eight year old female, lift assist"
+GAP 3
+M2: On scene, Medic 7.  >> time:eTimes.06 "On scene"
+GAP 3
+BY: She's in the kitchen, she went down about twenty minutes ago.
+M1: Ma'am, did you trip, or did you feel funny before you fell?
+PT: I got dizzy, my heart was going so fast, and then I was on the floor.
+M1: Did you hit your head? Are you on blood thinners?
+PT: I don't think so. I take Eliquis and metoprolol. I'm allergic to penicillin.
+M1: Okay. Found her on the floor, alert, no obvious injury, but this isn't just a fall.  >> found:on the floor, lightheaded, palpitations "Found her on the floor"
+TAP knock +label
+M2: Heart rate's 148 and irregular, BP 96 over 60, sat 93.  >> vital:hr=148 "Heart rate's 148"; vital:bp=96/60 "BP 96 over 60"; vital:spo2=93 "sat 93"
+GAP 4
+M1: Get the monitor on her and a twelve lead.  >> proc:12-lead ECG "twelve lead"
+GAP 10
+TAP button -
+GAP 12
+M2: She's a GCS 15, A and O times four.  >> status:A&O×4 "A and O times four"; vital:gcs=15 "GCS 15"
+GAP 3
+TAP snap +label
+M2: Twenty in the right hand.  >> proc:IV access "Twenty in the right hand"
+M1: Start 500 of saline, wide open.  >> med:normal saline,500,, "500 of saline"
+GAP 6
+M1: Blood sugar's 112.  >> vital:bgl=112 "Blood sugar's 112"
+GAP 5
+M1: Let's go, we're transporting to General.  >> time:eTimes.09 "we're transporting"
+GAP 8
+TAP button +label
+M2: Recheck, 104 over 66, rate 132.  >> vital:bp=104/66 "104 over 66"; vital:hr=132 "rate 132"
+GAP 12
+M1: At General now.  >> time:eTimes.11 "At General now"
+GAP 6
+TAP knock +label
+M1: Report's given, transfer of care complete.  >> time:eTimes.12 "transfer of care complete"

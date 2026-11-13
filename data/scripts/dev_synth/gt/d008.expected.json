@@ -1,0 +1,147 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "20",
+  "sex": "male",
+  "weight_kg": "58",
+  "complaint": "pedestrian struck",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "pedestrian struck",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "9",
+    "rr": "22",
+    "bgl": "295",
+    "pain": "6",
+    "etco2": "31"
+   },
+   "last_vitals": {
+    "gcs": "9",
+    "rr": "22",
+    "bgl": "295",
+    "pain": "6",
+    "etco2": "31"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ketamine 0.3 IV",
+    "tranexamic acid 1 g",
+    "morphine 4 IV",
+    "fentanyl 100 mcg IV"
+   ],
+   "procedures": [
+    "splinting"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "20",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "assault",
+  "I_injuries_or_information": "pedestrian struck",
+  "S_signs": {
+   "gcs": "9",
+   "rr": "22",
+   "bgl": "295",
+   "pain": "6",
+   "etco2": "31"
+  },
+  "T_treatment": [
+   "ketamine 0.3 IV",
+   "tranexamic acid 1 g",
+   "morphine 4 IV",
+   "fentanyl 100 mcg IV",
+   "splinting"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "11:57:23",
+  "eTimes.09": "11:59:05",
+  "eTimes.11": "11:59:34",
+  "eTimes.12": "11:59:44"
+ },
+ "wall_time_seconds": 10,
+ "dispatch_reason": "assault",
+ "medications": [
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "route": "IV"
+  },
+  {
+   "drug": "tranexamic acid",
+   "dose": "1",
+   "unit": "g"
+  },
+  {
+   "drug": "morphine",
+   "dose": "4",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "100",
+   "unit": "mcg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "9",
+   "time": "11:58:38"
+  },
+  {
+   "name": "rr",
+   "value": "22",
+   "time": "11:58:38"
+  },
+  {
+   "name": "bgl",
+   "value": "295",
+   "time": "11:58:38"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "11:58:51"
+  },
+  {
+   "name": "etco2",
+   "value": "31",
+   "time": "11:58:51"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

@@ -1,0 +1,50 @@
+@call d002 allergy start=03:09:34
+@patient age=85 sex=female weight_kg=99 complaint="allergic reaction" allergies=unknown home_meds=unknown history=unknown
+@traps anaphylaxis
+RD: Squad 12, you have a bee sting, 85 year old female.  >> dispatch:bee sting "bee sting"
+GAP 4
+M2: Squad 12 we're on scene.  >> time:eTimes.06 "we're on scene"
+M2: When did you last eat?
+BY: I had something like this last year.
+GAP 8
+PT: I'm itchy all over.
+GAP 8
+M1: Got nebulizer treatment.  >> proc:nebulizer "nebulizer treatment"
+GAP 6
+M1: I'm going to put some stickers on your chest.
+GAP 4
+M2: Okay, blood pressure 169 over 98, breathing is 20, sat at 100 on room air.  >> vital:bp=169/98 "blood pressure 169 over 98"; vital:rr=20 "breathing is 20"; vital:spo2=100 "sat at 100 on room air"
+GAP 6
+M2: Stay with me, keep your eyes open.
+PT: Yeah, I take a bunch of pills, my daughter knows.
+GAP 3
+TAP snap +label
+M1: Pushing breathing treatment, 2.5.  >> med:albuterol,2.5,, "Pushing breathing treatment, 2.5"
+GAP 6
+M1: How long has this been going on?
+GAP 6
+M1: Drawing up 25 of diphenhydramine through the line.  >> med:diphenhydramine,25,,IV "Drawing up 25 of diphenhydramine through the line"
+GAP 1
+M1: When did you last eat?
+PT: It's about an eight.
+GAP 2
+TAP button +label
+M2: Repeat, 104 over 40, resp rate 35.  >> vital:bp=104/40 "104 over 40"; vital:rr=35 "resp rate 35"
+GAP 3
+M1: Leaving scene to Memorial.  >> time:eTimes.09 "Leaving scene"
+GAP 11
+TAP button -
+GAP 11
+GAP 3
+M2: Got saline lock.  >> proc:IV access "saline lock"
+GAP 1
+M2: Any allergies?
+BY: No allergies.
+GAP 6
+M2: Okay, pressure 181 over 137, heart rate's 54.  >> vital:bp=181/137 "pressure 181 over 137"; vital:hr=54 "heart rate's 54"
+GAP 2
+M1: Did you pass out at all?
+GAP 4
+M1: We're at Riverside.  >> time:eTimes.11 "We're at"
+GAP 5
+M1: Handing off to bed four.  >> time:eTimes.12 "Handing off"
