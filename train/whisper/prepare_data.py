@@ -13,7 +13,10 @@ sys.path.insert(0, str(ROOT / "data/synth")); sys.path.insert(0, str(ROOT / "eva
 import calldsl, render, gen_calls, textnorm as tn
 
 OUT = ROOT / "train/whisper/data"; OUT.mkdir(parents=True, exist_ok=True)
-N_DRUG_UTT = 500
+N_DRUG_UTT = 450
+# per-subset caps (items) for the training mix; real subsets are drug/EMS-focused first
+CAPS = dict(emsctx=999, emsassist=999, eka=420, primock=180, medintent=80, train_synth_call=200, drug_utt=N_DRUG_UTT, united_syn_med=250,
+            ems_synth_ext=120, dispatch_synth_ext=40)
 rng = random.Random(42)
 
 
@@ -77,26 +80,69 @@ def drug_utterances(n):
     return out
 
 
+def united_syn_med(n):
+    """United-Syn-Med TTS sentences that mention a drug from the pipeline formulary or our home-med list."""
+    import pyarrow.parquet as pq, re
+    F = json.loads(pathlib.Path("/home/user/pipeline/shared/formulary.json").read_text())
+    names = set()
+    for d in F["drugs"]:
+        for x in [d["generic"], *d.get("brands", []), *d.get("slang", [])]:
+            if len(x) > 3: names.add(x.lower())
+    for o in json.loads((ROOT / "data/dictionary/home_meds.json").read_text())["items"]:
+        names.add(o["name"].lower())
+    rx = re.compile(r"\b(" + "|".join(sorted(map(re.escape, names), key=len, reverse=True)) + r")\b", re.I)
+    out = []; d = ROOT / "data/audio/united_syn_med"; d.mkdir(parents=True, exist_ok=True)
+    for f in sorted((ROOT / "data/raw/united_syn_med").glob("*.parquet")):
+        pf = pq.ParquetFile(f)
+        for g in range(pf.metadata.num_row_groups):
+            for r in pf.read_row_group(g).to_pylist():
+                if not rx.search(r["transcription"]): continue
+                uid = f"usm_{f.stem[6:11]}_{len(out):05d}"
+                wav = d / f"{uid}.wav"
+                if not wav.exists():
+                    import subprocess
+                    subprocess.run(["ffmpeg", "-v", "quiet", "-i", "pipe:0", "-ac", "1", "-ar", "16000", str(wav)], input=r["audio"]["bytes"])
+                dur = sf.info(wav).duration
+                if 0.5 < dur <= 30:
+                    out.append(dict(id=uid, wav=str(wav.relative_to(ROOT)), start_s=0, end_s=dur, text=r["transcription"], type="synthetic", subset="united_syn_med"))
+                if len(out) >= n: return out
+    return out
+
+
+def cap(rows):
+    by = {}
+    for r in rows: by.setdefault(r["subset"], []).append(r)
+    out = []
+    for k, v in by.items():
+        rng.shuffle(v)
+        if k == "eka":   # prefer drug-bearing Eka clips
+            v.sort(key=lambda r: 0 if (ROOT / f"data/scripts/real/gt/eka/{r['id']}.drug_terms.json").exists() and json.loads((ROOT / f"data/scripts/real/gt/eka/{r['id']}.drug_terms.json").read_text()) else 1)
+        out += v[: CAPS.get(k, len(v))]
+    return out
+
+
 def real_rows(split):
     rows = []
     for l in open(ROOT / "data/manifests/real_items.jsonl"):
         it = json.loads(l)
         if it["split"] != split or it["duration"] <= 0.5 or it["duration"] > 30: continue
+        if it["type"] not in ("real", "synthetic_external"): continue
         gt = ROOT / f"data/scripts/real/gt/{it['subset']}/{it['id']}.transcript.txt"
         txt = gt.read_text().strip()
         if "[NAME]" in txt or "[ADDRESS]" in txt or "[DOB]" in txt:   # audio still contains the PII -> excluded from training
             continue
-        rows.append(dict(id=it["id"], wav=f"data/audio/real/{it['subset']}/{it['id']}.wav", start_s=0, end_s=it["duration"], text=txt, type="real", subset=it["subset"]))
+        rows.append(dict(id=it["id"], wav=f"data/audio/real/{it['subset']}/{it['id']}.wav", start_s=0, end_s=it["duration"], text=txt,
+                         type="real" if it["type"] == "real" else "synthetic", subset=it["subset"]))
     return rows
 
 
 if __name__ == "__main__":
     real_tr = real_rows("train"); syn_calls = call_chunks("train")
-    utt = drug_utterances(N_DRUG_UTT)
-    train = real_tr + syn_calls + utt
+    utt = drug_utterances(N_DRUG_UTT); usm = united_syn_med(CAPS["united_syn_med"])
+    train = cap(real_tr + syn_calls + utt + usm)
     rng.shuffle(train)
     dev_real = real_rows("dev"); rng.shuffle(dev_real)
-    dev = call_chunks("dev") + dev_real[:80]
+    dev = call_chunks("dev")[:60] + [r for r in dev_real if r["type"] == "real"][:90]
     for name, rows in [("train", train), ("dev", dev)]:
         (OUT / f"{name}.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
     def stats(rows):
