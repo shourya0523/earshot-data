@@ -54,28 +54,31 @@ public struct TapPayload: Equatable, Sendable {
     }
 }
 
-/// State payload: state u8, flags u8 [, tuning]. Flags bit0 = USB power,
-/// bit1 = battery low, bit2 = tone playing (mic muted).
-/// Optional tuning (iPad -> clip write, 8 bytes): knock_threshold u16 (x1/1000
-/// of full scale peak), knock_min_gap_ms u16, knock_window_ms u16,
-/// snap_threshold u16.
+/// State payload.
+/// clip -> iPad (3 bytes): state u8, flags u8, proto_version u8.
+///   Flags bit0 = USB power, bit1 = battery low, bit2 = tone playing (mic muted).
+/// iPad -> clip write (2 or 10 bytes): state u8 (only OFF is honoured), flags u8
+///   (ignored), then optional tuning: onset dB x10 u16, min_gap_ms u16,
+///   window_ms u16, snap onset dB x10 u16.
 public struct StatePayload: Equatable, Sendable {
     public var state: ClipState
     public var flags: UInt8
     public var tuning: AcousticTuning?
-    public init(state: ClipState, flags: UInt8 = 0, tuning: AcousticTuning? = nil) {
-        self.state = state; self.flags = flags; self.tuning = tuning
+    public var version: UInt8?
+    public init(state: ClipState, flags: UInt8 = 0, tuning: AcousticTuning? = nil, version: UInt8? = nil) {
+        self.state = state; self.flags = flags; self.tuning = tuning; self.version = version
     }
     public var usbPower: Bool { flags & 0x01 != 0 }
     public var batteryLow: Bool { flags & 0x02 != 0 }
 }
 
+/// Knock/snap detector tuning (firmware/common/tap_detect.h).
 public struct AcousticTuning: Equatable, Sendable, Codable {
-    public var knockThreshold: UInt16   // peak / full-scale * 1000
-    public var minGapMs: UInt16         // min spacing between spikes
-    public var windowMs: UInt16         // double/triple window (default 600)
-    public var snapThreshold: UInt16    // high-band peak * 1000
-    public init(knockThreshold: UInt16 = 350, minGapMs: UInt16 = 120, windowMs: UInt16 = 600, snapThreshold: UInt16 = 300) {
+    public var knockThreshold: UInt16   // onset above the noise floor, dB x10 (200 = 20 dB)
+    public var minGapMs: UInt16         // min spacing between hits (110)
+    public var windowMs: UInt16         // max spacing between hits (550)
+    public var snapThreshold: UInt16    // snap onset above the high-band floor, dB x10 (160)
+    public init(knockThreshold: UInt16 = 200, minGapMs: UInt16 = 110, windowMs: UInt16 = 550, snapThreshold: UInt16 = 160) {
         self.knockThreshold = knockThreshold; self.minGapMs = minGapMs; self.windowMs = windowMs; self.snapThreshold = snapThreshold
     }
 }
@@ -105,6 +108,7 @@ public enum Wire {
     public static let samplesPerFrame = 320
     public static let sampleRate = 16000
     public static let frameMs: UInt32 = 20
+    public static let protocolVersion: UInt8 = 1
 
     public static func encode(_ p: Packet) -> [UInt8] {
         var out: [UInt8] = []
@@ -118,6 +122,7 @@ public enum Wire {
             out.append(t.gesture.rawValue); out.append(t.source.rawValue); out.appendLE(t.pressClipMs)
         case .state(_, let s):
             out.append(s.state.rawValue); out.append(s.flags)
+            if let v = s.version, s.tuning == nil { out.append(v) }
             if let t = s.tuning {
                 out.appendLE(t.knockThreshold); out.appendLE(t.minGapMs); out.appendLE(t.windowMs); out.appendLE(t.snapThreshold)
             }
@@ -147,7 +152,7 @@ public enum Wire {
                 tuning = AcousticTuning(knockThreshold: p.readLE(UInt16.self, at: 2), minGapMs: p.readLE(UInt16.self, at: 4),
                                         windowMs: p.readLE(UInt16.self, at: 6), snapThreshold: p.readLE(UInt16.self, at: 8))
             }
-            return .state(h, StatePayload(state: st, flags: p[1], tuning: tuning))
+            return .state(h, StatePayload(state: st, flags: p[1], tuning: tuning, version: p.count == 3 ? p[2] : nil))
         case .clock:
             guard p.count >= 8 else { throw WireError.badPayload(type) }
             return .clock(h, epochMs: p.readLE(UInt64.self, at: 0))

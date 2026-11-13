@@ -143,7 +143,7 @@ public enum ReplayFile {
         var tapSeq: UInt16 = 0
         var i = 0
         var pendingTaps = taps.sorted { $0.clipMs < $1.clipMs }
-        out.append(.state(PacketHeader(type: .state, seq: 0, clipMs: startClipMs), StatePayload(state: .listening, flags: 1)))
+        out.append(.state(PacketHeader(type: .state, seq: 0, clipMs: startClipMs), StatePayload(state: .listening, flags: 1, version: Wire.protocolVersion)))
         while i + Wire.samplesPerFrame <= pcm.count {
             let clip = startClipMs &+ UInt32(i / 16)
             while let t = pendingTaps.first, t.clipMs <= Int64(clip) {

@@ -13,6 +13,7 @@ enum { ES_SRC_BUTTON = 0, ES_SRC_KNOCK = 1, ES_SRC_SNAP = 2 };
 enum { ES_STATE_OFF = 0, ES_STATE_ASKING = 1, ES_STATE_LISTENING = 2, ES_STATE_REFUSED = 3 };
 enum { ES_FLAG_USB = 0x01, ES_FLAG_BATT_LOW = 0x02, ES_FLAG_TONE = 0x04 };
 
+#define ES_PROTO_VERSION 1           /* sent as byte 3 of every clip->iPad state payload */
 #define ES_HDR_SIZE 7
 #define ES_SAMPLE_RATE 16000
 #define ES_FRAME_SAMPLES 320          /* 20 ms */
@@ -42,8 +43,9 @@ static inline size_t es_tap_packet(uint8_t *out, uint16_t seq, uint32_t clip_ms,
     es_header(out, ES_PKT_TAP, seq, clip_ms);
     out[7] = gesture; out[8] = source; es_put32(out + 9, press_ms); return ES_HDR_SIZE + ES_TAP_PAYLOAD;
 }
+/* clip -> iPad state: state u8, flags u8, proto_version u8 (3 bytes) */
 static inline size_t es_state_packet(uint8_t *out, uint16_t seq, uint32_t clip_ms, uint8_t state, uint8_t flags) {
-    es_header(out, ES_PKT_STATE, seq, clip_ms); out[7] = state; out[8] = flags; return ES_HDR_SIZE + 2;
+    es_header(out, ES_PKT_STATE, seq, clip_ms); out[7] = state; out[8] = flags; out[9] = ES_PROTO_VERSION; return ES_HDR_SIZE + 3;
 }
 
 #ifdef __cplusplus
