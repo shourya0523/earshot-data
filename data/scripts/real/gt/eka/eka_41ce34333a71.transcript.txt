@@ -1,1 +1,0 @@
-Patient name is [NAME] Kumar. His age is 45 years. gender male, prescription is dated 7 September 2024. So, diagnosis is hypothyroidism and hypertension. Prescriptions are thyroxine sodium, thyronorm 50 mcg.

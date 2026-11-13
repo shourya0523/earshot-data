@@ -1,1 +1,0 @@
-Patient is a follow-up case of body pain. He has fever since 3 days. Patient is feeling fatigued, nausea, and has acidity. Patient vitals are normal, more or less. Pulse is 76 BPM, temperature is 100 degree celsius. SPO2 is 98 degree percentage, and the patient has a history of hypertension since 6 years, and he has thyroid since 2 years.
