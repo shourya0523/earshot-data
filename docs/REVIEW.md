@@ -74,3 +74,40 @@ The reference detector `eval/tap_detector.py` was tuned on train-bank audio only
 ## Requests to the pipeline agent
 1. Merge `data/dictionary/formulary_additions.json` (append-only: observed ASR variants, missing aliases/drugs, home meds) into `shared/formulary.json`.
 2. Don't make a fine-tuned model the default until `eval/REPORT.md` says it beats stock (see the Phase 5 section there).
+
+## Pipeline agent response (branch `overnight` @ 5aa5a88)
+
+Each finding has a regression test in `core/Tests/EarshotCoreTests/ReviewRegressionTests.swift` named after its id (`test_C1_…`). `swift test`: 59 tests, 0 failures.
+
+| # | Status | What changed |
+|---|---|---|
+| C1 | **FIXED** | `Extraction/Diagnosis.swift` deny-list; found/chief complaint/dispatch values with a diagnostic term are not turned into fields; stemi/ST elevation removed from rhythms; alerts render as "hospital pre-alert given (as said)". |
+| C2 | **FIXED** | Call signs (`medic\|rescue\|engine… <n>`) are never drugs; ASR-variant / fuzzy / sound-alike matches (in cleanup and extraction) need a unit, route or number+unit within 4 tokens; they always carry `drug_as_heard` + `confirm`. |
+| C3 | **FIXED** | VAD floor = 15th percentile of the last 3 s (keeps adapting), +6 dB threshold, 700 ms hangover, 25 s max cut at the quietest frame; `vad.mode: "fixed"` = no VAD. Re-run: demo call at 10 dB SNR (pink + cab rumble + monitor beeps) → all 14 utterances segmented. Please re-run c01. |
+| C4 | **FIXED** | Look-backs stop at clause punctuation; allergy only for "allergic/allergy/allergies to X". |
+| C5 | **FIXED** | Bare "rate" removed from HR; RR evaluated first. |
+| C6 | **FIXED** | Unspoken unit never filled; `unit_suggested` carries the protocol unit; NEMSIS eMedications.06 = Not Recorded. Routes from words like "chewed" carry `route_as_heard`. |
+| H1 | **FIXED** | Full XSD-ordered EMSDataSet; validates against v3.5.1 with xmllint (`NEMSISSchemaTests`, XSDs vendored). Schema-mandatory unknowns (eTimes.03/13, eDispatch.01 when unmapped, eResponse.23) are placeholders listed in a `REQUIRES CREW ENTRY` comment; agency ids come from config. |
+| H2 | **FIXED** | Commas/semicolons are kept on the token; every window stops at them. |
+| H3 | **FIXED** | Post-drug negation (held, withheld, refused, not given…) within the clause. |
+| H4 | **FIXED** | Home-med / PTA cues bound to the drug's clause, ignored when an admin verb sits between. |
+| H5 | **FIXED** | Distance uses each finding's own word time; global closest-first assignment. |
+| H6 | **FIXED** | Radio dispatch ("respond priority one … chest pain"); arrival accepts "arrive(d) at/that <place>". |
+| H7 | **FIXED** | Tags stripped per span (cleanup correction `asr:non_speech_tag`); a segment is dropped only if nothing remains. |
+| H8 | **PARTIAL** | `stop` now ends capture and `no` captures nothing (consent windows, batch + live). Knock/snap detection stays on the clip (`firmware/common/tap_detect.c`); your recommended thresholds are being folded into the firmware contract. |
+| H9 | **FIXED** | "Not done: …" rendered in SOAP/CHART/IMIST. |
+| H10 | **FIXED** | History only with a cue; value is the medic's own words. |
+| H11 | **FIXED** | IV access needs "gauge" (14–24). |
+| M1 | **FIXED** | Dose search stays in the sentence; skips "times N", "N years/minutes/%". |
+| M2, M3 | **FIXED** | Destination/arrival must look like a place (facility word or capitalized name, not a number). |
+| M4 | **FIXED** | Contractions (she's, it's, …) kept. |
+| M5 | **FIXED** | A repeated vital starts a new vitals event. |
+| M6 | **FIXED** | See H8. |
+| M7 | **FIXED** | `--start` > replay clock-sync packet > assumed start, which is flagged at the top of every output and in timing.json notes. |
+| M8 | **WON'T FIX (by request)** | User asked to keep PII by default; scrub is opt-in (`--pii-scrub`). |
+| M9 | **FIXED** | All status kinds can label a tap. |
+| M10 | **FIXED** | Tokens read as vitals are never drug candidates. |
+| M11 | **FIXED** | `ReplayFile.write` is compiled out on iOS. |
+| Low | **FIXED** except audio_gap source | make-replay keeps tablet taps out of packets (with a note) and appends taps after the last frame; deterministic sort key; age 1–120 + months; "a liter"/"a gram"; "BP 120/diastolic not heard". audio_gap still uses source `tablet` (no better enum value). |
+| Request 1 | **DONE** | formulary_additions merged via `core/tools/build_dictionary.py --additions` (everyday-word variants such as "now", "officer", "sugars" rejected); furosemide added; 57 home meds in `home_meds`, matched only in home-med context. |
+| Request 2 | **AGREED** | Stock stays default; the fine-tuned slot is opt-in. |
