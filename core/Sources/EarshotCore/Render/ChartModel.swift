@@ -122,8 +122,8 @@ public struct ChartModel: Sendable {
         let f = e.fields
         var dose = ChartModel.notHeard
         if let d = f["dose"] {
-            dose = d + " " + (f["unit"] ?? "(unit not heard)")
-            if e.receipts?["unit"]?.inferred != nil { dose += "*" }
+            if let u = f["unit"] { dose = d + " " + u }
+            else { dose = d + " (unit not heard" + (f["unit_suggested"].map { "; protocol dose is in \($0)" } ?? "") + ")" }
         }
         let route = f["route"] ?? "route not heard"
         var s = "\(clock.clock(e.tMs)) \(f["drug"] ?? "?") \(dose) \(route)"

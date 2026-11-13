@@ -55,7 +55,7 @@ public struct PipelineConfig: Codable, Sendable {
     public var tagger: String? = nil
     public var vad = VADConfig()
     public var merge = MergeConfig()
-    public var piiScrub: Bool = true
+    public var piiScrub: Bool = false   // PII kept by default (ePCR needs it); scrub is opt-in
     public init() {}
     enum CodingKeys: String, CodingKey { case callId = "call_id", startTime = "start_time", asr, tagger, vad, merge, piiScrub = "pii_scrub" }
     public init(from d: Decoder) throws {
@@ -66,7 +66,7 @@ public struct PipelineConfig: Codable, Sendable {
         tagger = try c.decodeIfPresent(String.self, forKey: .tagger)
         vad = try c.decodeIfPresent(VADConfig.self, forKey: .vad) ?? VADConfig()
         merge = try c.decodeIfPresent(MergeConfig.self, forKey: .merge) ?? MergeConfig()
-        piiScrub = try c.decodeIfPresent(Bool.self, forKey: .piiScrub) ?? true
+        piiScrub = try c.decodeIfPresent(Bool.self, forKey: .piiScrub) ?? false
     }
 }
 

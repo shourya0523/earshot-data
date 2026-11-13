@@ -31,7 +31,7 @@ OPTIONS
   --call-id <id>          default c1
   --start <iso8601>       call start wall time (default 2026-11-15T14:00:00-05:00)
   --no-prompt             disable the EMS initial prompt for whisper
-  --no-pii                skip PII scrub of quotes/fields
+  --pii-scrub             replace names/DOB/addresses/phones in quotes and fields with tokens (off by default)
 """
 
 func fail(_ s: String) -> Never {
@@ -109,7 +109,8 @@ if let t = opt("--threads"), let n = Int(t) { config.asr.threads = n }
 if let c = opt("--call-id") { config.callId = c }
 if let s = opt("--start") { config.startTime = s }
 if flag("--no-prompt") { config.asr.useInitialPrompt = false }
-if flag("--no-pii") { config.piiScrub = false }
+if flag("--pii-scrub") { config.piiScrub = true }
+_ = flag("--no-pii") // old flag, now the default
 let tapsPath = opt("--taps")
 let outOpt = opt("--out")
 let dictOpt = opt("--dict")

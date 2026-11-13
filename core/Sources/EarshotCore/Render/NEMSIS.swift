@@ -103,7 +103,7 @@ public enum NEMSISExport {
                     x.append("          <eMedications.DosageGroup>")
                     x.append("            <eMedications.05>\(d)</eMedications.05>")
                     if let u = f["unit"], let code = dict.formulary.units[u]?.nemsis_code {
-                        x.append("            <eMedications.06>\(code)</eMedications.06>" + (e.receipts?["unit"]?.inferred != nil ? "<!-- unit inferred from protocol, confirm -->" : ""))
+                        x.append("            <eMedications.06>\(code)</eMedications.06>")
                     } else { x.append("            <eMedications.06 \(notRecorded)/>") }
                     x.append("          </eMedications.DosageGroup>")
                 }

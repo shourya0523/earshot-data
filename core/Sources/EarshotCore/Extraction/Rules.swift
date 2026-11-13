@@ -203,7 +203,7 @@ public final class RulesExtractor {
                 }
             }
             if found == nil, toks[i].text.count >= 5, toks[i].text.allSatisfy({ $0.isLetter }), dict.termIndex[toks[i].text] == nil,
-               hasMedContext(toks, i, i) {
+               hasStrongMedContext(toks, i) {
                 let key = Phonetic.key(toks[i].text)
                 if let ds = dict.phoneticIndex[key], ds.count == 1 {
                     found = DrugHit(drug: ds[0], range: i...i, conf: 0.55, how: "phonetic")
@@ -222,6 +222,17 @@ public final class RulesExtractor {
     }
 
     func isNumber(_ s: String) -> Bool { Double(s) != nil }
+
+    /// Stricter context for sound-alike matches: a dose unit, route or
+    /// administration verb within 3 tokens (a bare number is not enough).
+    func hasStrongMedContext(_ toks: [CleanToken], _ i: Int) -> Bool {
+        let lo = max(0, i - 3), hi = min(toks.count - 1, i + 3)
+        for k in lo...hi where k != i {
+            let t = toks[k].text
+            if dict.formulary.units[t] != nil || RulesExtractor.adminVerbs.contains(t) || ["po", "sl", "iv", "io", "im", "sq", "neb"].contains(t) { return true }
+        }
+        return false
+    }
 
     func hasMedContext(_ toks: [CleanToken], _ a: Int, _ b: Int) -> Bool {
         let lo = max(0, a - 5), hi = min(toks.count - 1, b + 5)
@@ -281,13 +292,10 @@ public final class RulesExtractor {
                 if let u = unit {
                     fields["unit"] = u.0; rec["unit"] = tt.receipt(u.1); span = min(span.lowerBound, u.1.lowerBound)...max(span.upperBound, u.1.upperBound)
                 } else {
+                    // Unit not spoken: never filled. If the amount matches exactly one
+                    // protocol dose, offer it as a suggestion the medic can accept.
                     let units = Set(d.typical_doses.filter { $0.amount == a.0 }.map(\.unit))
-                    if units.count == 1, let u = units.first {
-                        fields["unit"] = u
-                        rec["unit"] = FieldReceipt(rawSpan: tt.seg.rawSpan, quote: tt.seg.quote(a.1.lowerBound, a.1.upperBound), rawRange: nil,
-                                                   inferred: "unit not spoken; \(a.0) \(u) is the protocol dose for \(d.generic)")
-                        flags.append("inferred")
-                    }
+                    if units.count == 1, let u = units.first { fields["unit_suggested"] = u }
                 }
                 if let u = fields["unit"], u.hasSuffix("/kg") || u.hasSuffix("/min") || u.hasSuffix("/hr") { /* rate/weight dose stays as heard */ }
             }

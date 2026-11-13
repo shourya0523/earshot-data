@@ -13,7 +13,7 @@ public final class PIIScrubber {
     static let nameCue = Rx(#"\b(?:my name is|name is|name's|this is mr\.?|this is mrs\.?|this is ms\.?|patient is|patient's name is|pt is|her name is|his name is|goes by)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)"#)
     static let honorific = Rx(#"\b(?:Mr|Mrs|Ms|Miss|Mister|Dr)\.?\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)"#)
     static let dob = Rx(#"\b(?:date of birth|d\.?o\.?b\.?|born on|birthday is|birth date)\s*(?:is\s+)?((?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\.?\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{2,4}|\d{1,2}[/-]\d{1,2}[/-]\d{2,4}|\d{1,2}\s+\d{1,2}\s+\d{2,4})"#)
-    static let addr = Rx(#"\b(\d{1,5}\s+(?:[A-Z][a-z]+\s+){1,3}(?:Street|St|Avenue|Ave|Road|Rd|Lane|Ln|Drive|Boulevard|Blvd|Court|Ct|Way|Place|Pl|Terrace|Circle|Parkway|Highway|Hwy)\b\.?)"#)
+    static let addr = Rx(#"\b(\d{1,5}\s+(?:[A-Z][a-z]+\s+){1,3}(?:Street|St|Avenue|Ave|Road|Rd|Lane|Ln|Drive|Boulevard|Blvd|Court|Ct|Way|Place|Pl|Terrace|Circle|Parkway|Highway|Hwy)\b)"#)
     static let phone = Rx(#"\b(\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4})\b"#)
 
     /// Learn PII from a raw segment (case-sensitive patterns need raw text).

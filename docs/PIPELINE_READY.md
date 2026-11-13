@@ -1,6 +1,6 @@
 # Pipeline ready — earshot-eval
 
-Status: **stock pipeline works end to end on Linux** (whisper.cpp `small.en` + rules-v1). Tested on Ubuntu 24.04, Swift 6.2.1.
+Repo/branch: `shourya0523/earshot-data` @ `overnight`. Status: **stock pipeline works end to end on Linux** (whisper.cpp `small.en` + rules-v1). Tested on Ubuntu 24.04, Swift 6.2.1.
 
 ## Build
 
@@ -34,7 +34,7 @@ Demo: `$B run mocks/demo_call/transcript.truth.json --taps mocks/demo_call/taps.
 | taps | `[{"clip_ms":52500,"source":"button","gesture":"mark"}]`; source `button|knock|snap|tablet`; gesture `mark` (default) `yes|no|arrival|handoff`. `clip_ms` = ms from audio start (wav/json) or clip-boot ms (replay) |
 | config (`--config`) | `{"call_id":"c1","start_time":"2026-11-15T14:00:00-05:00","asr":{"model":"...","threads":4,"use_initial_prompt":true},"tagger":null,"vad":{...},"merge":{"windowMs":3000,"extendedMs":10000},"pii_scrub":true}` — all optional |
 
-Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Linux it's ignored with a note in timing.json), `--threads`, `--call-id`, `--start`, `--dict <dir>` (default: finds `shared/`), `--no-prompt`, `--no-pii`.
+Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Linux it's ignored with a note in timing.json), `--threads`, `--call-id`, `--start`, `--dict <dir>` (default: finds `shared/`), `--no-prompt`, `--pii-scrub` (off by default: PII is kept).
 
 ## Outputs (in `--out`)
 | File | Contents |
@@ -48,14 +48,13 @@ Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Lin
 
 Event: `{"id","call_id","time"(ISO),"t_ms","type","fields","source","quote","raw_span","confidence","models":{"asr","extract"},"receipts":{field:{"raw_span","quote","raw_range","inferred"?}},"flags":["confirm"|"inferred"|"unlabeled"],"tap_source","tap_clip_ms"}`.
 Types: vitals, medication, procedure, status, dispatch, transport, tap, consent, arrival, handoff, audio_gap. `status.fields.kind` ∈ patient, symptom, history, allergy, home_med, prior_to_arrival_med, med_not_given, drug_mention, condition, not_done.
-Vitals field names: `bp_systolic bp_diastolic bp_method heart_rate resp_rate spo2 etco2 glucose gcs temp pain mental_status pupils ecg o2_on`. Medication: `drug`(generic) `dose unit route drug_as_heard`.
+Vitals field names: `bp_systolic bp_diastolic bp_method heart_rate resp_rate spo2 etco2 glucose gcs temp pain mental_status pupils ecg o2_on`. Medication: `drug`(generic) `dose unit route drug_as_heard unit_suggested` — `unit` only when spoken; `unit_suggested` is the protocol unit when unspoken (not a heard value, don't score it as one).
 
 Determinism: same input + config + threads ⇒ same files, except `timing.json`.
 
 ## Known gaps
 - Word times inside a segment are proportional estimates (no token timestamps yet).
 - Free-text fields (dispatch, chief complaint, destination, allergy, history) are raw quotes ≤5 words.
-- Units not spoken are filled from the protocol dose only when unique, flagged `inferred` + `*`.
 - Procedures have no SNOMED codes; NEMSIS XML not schema-validated.
 - `mocks/demo_call/demo_call.replay` is not in git (binary); regenerate: `python3 core/tools/make_demo_call.py /tmp/demo.wav mocks/demo_call && $B make-replay /tmp/demo.wav mocks/demo_call/demo_call.replay --taps mocks/demo_call/taps.json` (needs espeak-ng, ffmpeg).
 - Performance: 166 s demo audio → 51 s ASR on 4 x86 threads (small.en, CPU).

@@ -65,6 +65,14 @@ public final class Cleanup {
             }
         }
         while i < toks.count {
+            // 0. Whisper non-speech tags inside a segment ("[beep]", "(siren)") are dropped
+            if let r = Cleanup.nonSpeechSpan(toks, i) {
+                let rs = toks[i].range.lowerBound, re = toks[r - 1].range.upperBound
+                let chars = Array(seg.text)
+                corr.append(Correction(id: "c\(nextId)", rawSpan: seg.id, rawRange: [rs, re], original: String(chars[rs..<re]),
+                                       replacement: "", rule: "asr:non_speech_tag"))
+                nextId += 1; i = r; continue
+            }
             // 1. spelled abbreviations / letter runs (longest first, up to 5 tokens)
             var matched = false
             for n in stride(from: min(5, toks.count - i), through: 1, by: -1) {
@@ -151,6 +159,17 @@ public final class Cleanup {
             k += 1
         }
         return (CleanSegment(rawSpan: seg.id, startMs: seg.startMs, endMs: seg.endMs, rawText: seg.text, tokens: out), corr)
+    }
+
+    /// If tokens starting at i form a bracketed tag ([...] or (...)), return the index after it.
+    static func nonSpeechSpan(_ t: [Text.Token], _ i: Int) -> Int? {
+        guard let open = t[i].raw.first, open == "[" || open == "(" else { return nil }
+        let close: Character = open == "[" ? "]" : ")"
+        for j in i..<min(t.count, i + 5) {
+            let r = t[j].raw.trimmingCharacters(in: CharacterSet(charactersIn: ".,!?;:"))
+            if r.last == close { return j + 1 }
+        }
+        return nil
     }
 
     func isNum(_ s: String) -> Bool { !s.isEmpty && Double(s) != nil }
