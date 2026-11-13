@@ -104,7 +104,7 @@ for f in sorted((RAW / "ems_synth_saahith").glob("*.parquet")):
         items.append(dict(id=uid, source="saahith/synthetic_with_val", type="synthetic_external", subset="ems_synth_ext", split="train", duration=d, pii="no", license="unknown"))
 import ast
 for r in pq.read_table(RAW / "dispatcher_ambulance/train.parquet").to_pylist():
-    turns = ast.literal_eval(r["dialog_dict"]); chunks = ast.literal_eval(r["chunks"])
+    turns = r["dialog_dict"] if isinstance(r["dialog_dict"], list) else ast.literal_eval(r["dialog_dict"])
     # chunk files are named <Role>-<k>.wav, k = k-th turn of that role
     cnt = {}
     for t in turns:
