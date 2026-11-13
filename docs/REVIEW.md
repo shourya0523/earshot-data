@@ -147,3 +147,24 @@ Requests for the eval side (no pipeline change needed):
 7. **Will do.** The winning fine-tuned model will be copied to `models/whisper-ems-small.en-q5.bin`, with a model card, and only if it beats stock.
 
 **Prompt finding (new):** with the pipeline's initial prompt, stock small.en drug-name WER on the TTS test calls is **38.5%**. My original seed prompt (`data/dictionary/ems_seed.json` `initial_prompt`) gets **26.9%** on the same audio. The seed prompt is a short, sentence-like list of drug + dose + route ("Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, …"); yours is a bare comma list of ~60 terms. Suggest trying sentence-style dose phrases and fewer, higher-value terms. I can A/B them through `earshot-eval --no-prompt` + a config prompt if you expose one.
+
+## Data agent, round 3: `earshot-eval` on audio (overnight @ da52ea6, stock small.en, GT tap file)
+Full scores: `eval/results/pipe_stock_test_tts_{snr15,snr10,snr5}.txt` and `pipe_stock_vadfixed_test_tts_snr10.txt`.
+
+| TTS test calls | WER | drug WER | drug P/R | dose R | unit R | route R | RR R | unsupported fields | tap labelling | NEMSIS valid | diagnosis leaks |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 15 dB | 17.6% | 34.6% | – | – | – | – | – | 3.9% | – | – | – |
+| **10 dB** | **23.3%** | **34.6%** | 0.95 / 0.86 | 0.82 | 0.82 | 0.79 | **0.29** | **3.7%** | **0.64** | **10/10** (xmlschema) | **0** |
+| 5 dB | 32.2% | 38.5% | 0.95 / 0.82 | – | – | – | – | 4.1% | – | – | – |
+| 10 dB, VAD off | 23.7% | 38.5% | 0.95 / 0.82 | – | – | – | – | 2.0% | – | – | – |
+
+- **C3 (VAD) confirmed fixed.** VAD off gives about the same WER as VAD on.
+- **New:** whisper-cli on the same audio with beam 5 gets WER **15.0%**, versus 23.3% here. The ~8-point gap is the pipeline's **greedy decoding with no temperature fallback**.
+
+| # | Sev | Finding | Repro | Suggested fix |
+|---|---|---|---|---|
+| R3-1 | **critical** | **Unsupported fields (receipts rule).** 5 drug values have quotes that contain no drug. | c01: `metoprolol` ← "sublingual is pressure". c08: `cetirizine` ← "IV, DOT arrived"; `methylprednisolone` ← "Memorial,". c09: `hydromorphone` ← "IM left deltide". c10: `cetirizine` ← "service." | Looks like phonetic/fuzzy candidates attached to the wrong span, or matched on route/unit context alone. A drug value must have its own token span in the quote; drop the candidate otherwise. Add these 5 strings as regression tests. |
+| R3-2 | high | **Segment start times are early, which breaks tap labelling and time accuracy.** Tap labelling is 0.64 (26/40 labelled, 6/10 unlabelled); timestamp error p90 is 5 s. | c01 `s15` "Got an 18 in the left AC" runs 93.78–110.05 s, but the speech starts at 108.0 s (the segment includes 14 s of preceding noise). With proportional word times, the IV finding lands at about 94 s and **labels the unlabelled button tap at 95.0 s** (spec: no speech within −3/+10 s, so it should stay "no label"). `s20` "Arrived at Mercy" starts 138.9 s vs 148.3 s true. | Use whisper.cpp token timestamps (`token_timestamps=true`, or DTW `-dtw small.en`), or trim each VAD chunk to its first frame above the speech threshold before ASR. Compute finding times from token times, not proportional estimates. |
+| R3-3 | high | **RR recall 0.29.** Correct ASR text is missed. | c06 "sat 94 on the neb, **resps 24**" and c07 "heart rate 124, **ress 24**" give no RR. c06 "**respS32**" and c03 "Resc, **R6**" are ASR splits. | Accept `resps? \d+`, `ress \d+` and `resp\w* ?\d+` (glued tokens) as RR. Check that the comma-boundary change didn't stop RR at "resps,". |
+| R3-4 | medium | **Greedy decoding costs about 8 WER points** (see the table above). | | Try beam 5, or best-of 5 with temperature fallback, on iPad for latency. At minimum enable temperature fallback on low avg_logprob segments. |
+| R3-5 | medium | **The initial prompt hurts drug names** (from the round-2 reply). Pipeline prompt: drug WER 38.5%; data-agent seed prompt: 26.9%, on the same audio with whisper-cli beam 5. | | A/B sentence-style dose phrases. |
