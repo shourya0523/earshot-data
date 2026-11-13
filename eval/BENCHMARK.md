@@ -13,7 +13,7 @@ RTF = processing time / audio duration on 4 x86 CPU threads in this container. R
 | EMSAssist small.en v2 | 244M | 10 | 14.8% | 50.0% (26) | 87.3% | 78.3% | 0.0 | 0.27 |
 | EMSAssist base.en v3 | 74M | 10 | 19.9% | 61.5% (26) | 84.9% | 66.7% | 0.0 | 0.14 |
 | whisper base.en (stock) | 74M | 10 | 19.7% | 38.5% (26) | 84.3% | 69.6% | 0.0 | 0.11 |
-| Whisper-Medicalv1 (distil-large-v3) | 756M | (not run) | | | | | | |
+| Whisper-Medicalv1 (distil-large-v3) | 756M | 10 | 21.4% | 57.7% (26) | 77.7% | 62.3% | 0.0 | 0.56 |
 
 ## EMSContExt (EMS narratives, read) (real)
 
