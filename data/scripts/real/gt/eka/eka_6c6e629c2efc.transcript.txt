@@ -1,0 +1,1 @@
+RBC, value is not available AST SGOT, the value is 4237.0 U/L Transferin Saturation Calculated, the value is 30.31 %
