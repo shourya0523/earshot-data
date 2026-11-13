@@ -14,3 +14,5 @@ models/*.bin
 app/Frameworks/
 app/Models/*
 app/Earshot.xcodeproj/
+firmware/*/.pio/
+firmware/common/test/host_tests
