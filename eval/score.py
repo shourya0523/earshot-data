@@ -33,7 +33,14 @@ def canon_drug(s):
     return CANON.get(k, k)
 
 
+GT_DIR = None
+
+
 def gt_id(uid):
+    if GT_DIR is not None and (GT_DIR / f"{uid}.transcript.txt").exists():
+        return uid                      # team takes: c01.t1
+    if GT_DIR is not None and "." in uid and (GT_DIR / f"{uid.rsplit('.', 1)[0]}.transcript.txt").exists():
+        return uid.rsplit(".", 1)[0]
     return uid.split(".")[0].split("_")[0]
 
 
@@ -342,7 +349,8 @@ def main():
     ap.add_argument("--gt", required=True); ap.add_argument("--run", required=True)
     ap.add_argument("--noise-run"); ap.add_argument("--json"); ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args()
-    gt, run = pathlib.Path(a.gt), pathlib.Path(a.run)
+    global GT_DIR
+    gt, run = pathlib.Path(a.gt), pathlib.Path(a.run); GT_DIR = gt
     ids = sorted({p.name.split(".hyp.txt")[0] for p in run.glob("*.hyp.txt")} | {p.name.split(".events.jsonl")[0] for p in run.glob("*.events.jsonl")})
     ids = [i for i in ids if (gt / f"{gt_id(i)}.transcript.txt").exists()]
     res = dict(run=str(run), gt=str(gt), n=len(ids), transcription=transcription(gt, run, ids), extraction=extraction(gt, run, ids),
