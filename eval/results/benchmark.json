@@ -22,14 +22,80 @@
   "audio_min": 4.606642708333334
  },
  "stock_small/real_test_eka": {
-  "n": 116,
-  "wer": 0.27408637873754155,
-  "drug_wer": 0.4134078212290503,
-  "drug_tokens": 179,
-  "number_acc": 0.8301886792452831,
+  "n": 120,
+  "wer": 0.27216174183514774,
+  "drug_wer": 0.41208791208791207,
+  "drug_tokens": 182,
+  "number_acc": 0.8333333333333334,
   "jargon_recall": 1.0,
-  "false_drug_per_1k": 3.3222591362126246,
-  "rtf": 2.648045673014636,
-  "audio_min": 9.165879166666667
+  "false_drug_per_1k": 3.1104199066874028,
+  "rtf": 2.5652254283490112,
+  "audio_min": 9.602274999999999
+ },
+ "stock_small/real_test_primock": {
+  "n": 120,
+  "wer": 0.11990740740740741,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.8888888888888888,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.9603557469588714,
+  "audio_min": 12.833091666666666
+ },
+ "stock_small/real_test_medintent": {
+  "n": 100,
+  "wer": 0.03696498054474708,
+  "drug_wer": 0.0,
+  "drug_tokens": 0,
+  "number_acc": 1.0,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 1.3642737864046217,
+  "audio_min": 6.4312604166666665
+ },
+ "emsassist_small/test_tts_snr10": {
+  "n": 10,
+  "wer": 0.14754098360655737,
+  "drug_wer": 0.5,
+  "drug_tokens": 26,
+  "number_acc": 0.8734939759036144,
+  "jargon_recall": 0.782608695652174,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.2734306696974996,
+  "audio_min": 23.63853333333333
+ },
+ "emsassist_small/real_test_emsctx": {
+  "n": 30,
+  "wer": 0.039301310043668124,
+  "drug_wer": 0.1111111111111111,
+  "drug_tokens": 9,
+  "number_acc": 0.9777777777777777,
+  "jargon_recall": 0.9523809523809523,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.5547062134232338,
+  "audio_min": 4.606642708333333
+ },
+ "emsassist_small/real_test_eka": {
+  "n": 120,
+  "wer": 0.24572317262830481,
+  "drug_wer": 0.4340659340659341,
+  "drug_tokens": 182,
+  "number_acc": 0.8833333333333333,
+  "jargon_recall": 1.0,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.8773788850385282,
+  "audio_min": 9.602274999999999
+ },
+ "emsassist_small/real_test_primock": {
+  "n": 120,
+  "wer": 0.13842592592592592,
+  "drug_wer": 0.4,
+  "drug_tokens": 5,
+  "number_acc": 0.8333333333333334,
+  "jargon_recall": 0.8571428571428571,
+  "false_drug_per_1k": 0.0,
+  "rtf": 0.8125737432717887,
+  "audio_min": 12.833091666666668
  }
 }
