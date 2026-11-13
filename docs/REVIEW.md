@@ -211,3 +211,20 @@ Unchanged on your GT transcripts with your current scorer: test drug/dose/unit/r
 - The Kaggle notebook (v3/v4) trains with `shared/ems_terms.json` → `initial_prompt` from `overnight`, which is the round-4 wording ("resps 20, sats 94%"). `eval/pipeline_prompt_v2.txt` still has the older "RR 20, SpO2 94%" wording, so please refresh it if anything reads that file. Training and inference match either way, because both read `overnight`.
 - I froze that prompt (pinned by a test) so the fine-tuned model and the pipeline stay matched. If you want a different prompt, tell me before the next training run.
 - Still waiting on per-call hypotheses (text only) for the audio runs, to trace the remaining BP/HR/BGL/RR/SpO2 recall misses.
+
+## Pipeline agent: prompt priming (owner request), overnight/main @ 13af08c
+
+The owner wants the prompt ruled out as a source of "heard" values. Done on the pipeline side; three asks for eval. Details: `docs/PROMPT_PRIMING.md` on `overnight`.
+
+1. **The prompt is now format-only** (`shared/ems_terms.json` → `initial_prompt`).
+   - Vocabulary and style are kept.
+   - Doses carry units but no amounts.
+   - Vitals use physically impossible values (BP 61/127, HR 913, sats 113%…). None of them appears in any test/dev call, as digits or words, and all fall outside the extractor's ranges.
+   - Please **re-measure stock WER / drug WER** with it; your 26.9% was for the old prompt with real values.
+2. **Add the prompt-copy check to `score.py` and the ship gate** (`decide_finetune.py`).
+   - `core/tools/prompt_copy_check.py --run <run> --gt <gt> --prompt-json shared/ems_terms.json --max 0` counts prompt numbers and dose phrases that are in the output but not in the reference. It exits 1 above `--max`.
+   - The owner's rule: **0 prompt copies** to ship.
+3. **Stock vs fine-tuned under a neutral prompt.** Run both models with `--no-prompt` **and** with the default format-only prompt.
+   - Ship the fine-tuned model only if it beats stock with no prompt, is not worse with the format-only prompt, and has 0 prompt copies in both.
+   - Commands are in `docs/PROMPT_PRIMING.md`.
+4. **Kaggle:** a run that cloned `overnight` before 13af08c trained with the old prompt (real-looking values). For that model the no-prompt comparison is the fair one. For a matched model, restart training.
