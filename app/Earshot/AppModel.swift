@@ -191,12 +191,21 @@ final class AppModel {
 
 enum ModelLocator {
     /// Looks in Documents/ (drop-in via Finder/Files), then the app bundle.
+    /// Exact name first, then any file starting with `name` (e.g. the data agent's
+    /// "whisper-ems-small.en-r16-q5.bin" fills the "whisper-ems-small.en-q5" slot).
     static func find(_ name: String, ext: String) -> URL? {
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        for base in [docs, docs.appendingPathComponent("models")] {
+        let bases = [docs, docs.appendingPathComponent("models"), Bundle.main.resourceURL?.appendingPathComponent("Models")].compactMap { $0 }
+        for base in bases {
             let u = base.appendingPathComponent("\(name).\(ext)")
             if FileManager.default.fileExists(atPath: u.path) { return u }
         }
-        return Bundle.main.url(forResource: name, withExtension: ext)
+        if let u = Bundle.main.url(forResource: name, withExtension: ext) { return u }
+        let prefix = name.replacingOccurrences(of: "-q5", with: "")
+        for base in bases {
+            let files = (try? FileManager.default.contentsOfDirectory(atPath: base.path)) ?? []
+            if let f = files.sorted().first(where: { $0.hasPrefix(prefix) && $0.hasSuffix(".\(ext)") }) { return base.appendingPathComponent(f) }
+        }
+        return nil
     }
 }
