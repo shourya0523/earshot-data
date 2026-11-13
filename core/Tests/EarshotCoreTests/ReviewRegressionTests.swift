@@ -291,3 +291,11 @@ final class Round4Tests: XCTestCase {
         XCTAssertEqual(extract("oxygen 2 leaders nasal cannula").first { $0.fields["drug"] == "oxygen" }?.fields["dose"], "2")
     }
 }
+
+/// The Kaggle fine-tune trains with this exact prompt (read from shared/ems_terms.json on
+/// this branch). Changing it breaks the train/inference match: coordinate with the data agent first.
+final class PromptFreezeTests: XCTestCase {
+    func testPromptIsFrozen() {
+        XCTAssertEqual(TestEnv.dict.initialPrompt(), "EMS call. Patient A&O×4, GCS 15. BP 142/88, HR 110, resps 20, sats 94%, BGL 42, ETCO2 35. Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, D10, glucagon, albuterol, DuoNeb, epi 0.3 mg IM, Benadryl, Solu-Medrol, Zofran 4 mg IV, fentanyl 50 mcg, Versed, Ativan, amiodarone, adenosine, TXA. 12-lead, STEMI, IV, IO, CPAP, BVM, c-collar.")
+    }
+}

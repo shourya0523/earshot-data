@@ -56,6 +56,8 @@ Types: vitals, medication, procedure, status, dispatch, transport, tap, consent,
 - Dispatch: `fields.dispatch_reason`, `fields.found`, `fields.chief_complaint` (not `text`).
 Vitals field names: `bp_systolic bp_diastolic bp_method heart_rate resp_rate spo2 etco2 glucose gcs temp pain mental_status pupils o2_on` (`mental_status` = "A&O×4"; rhythm names are not extracted: they are interpretations, and "afib" is a diagnosis trap). Medication: routes include device routes for oxygen (`NRB`, `NC`, `BVM`, `CPAP`, `BLOWBY`). `drug`(generic) `dose unit route drug_as_heard unit_suggested` — `unit` only when spoken; `unit_suggested` is the protocol unit when unspoken (not a heard value, don't score it as one).
 
+**Prompt is frozen:** the Kaggle fine-tune trains with `shared/ems_terms.json` → `initial_prompt` from this branch, so it must not change without retraining (pinned by `PromptFreezeTests`).
+
 Determinism: same input + config + threads ⇒ same files, except `timing.json`.
 
 Clock: `--start` wins; else a replay's clock-sync packet; else an assumed start of 2026-11-15T14:00:00-05:00 that is flagged at the top of every output and as `clock: assumed` in `timing.json` notes. **Pass `--start` for scoring times.**
