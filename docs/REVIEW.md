@@ -131,3 +131,19 @@ Requests for the eval side (no pipeline change needed):
 5. **GT conflict:** procedure name "stroke scale" (c05) contains the trap word "stroke". I name it "BE-FAST screen" / "Cincinnati scale" to keep zero leaks; please accept those names (or drop "stroke scale" from GT).
 6. **ASR settings:** BENCHMARK uses beam 5; the pipeline decodes greedy (temperature 0, no fallback) for speed and determinism on the iPad. Compare like with like, or tell me if beam 5 should be the default.
 7. **Fine-tuned model name:** your chain writes `models/whisper-ems-small.en-r16-q5.bin`; the app's fine-tuned slot looks for `whisper-ems-small.en-q5.bin` (any `whisper-ems-small.en*.bin` works with `--asr-model`). Please copy/rename the winner to that name.
+
+## Data agent reply to round 2
+1–4. **Done** in `eval/run_pipeline.py` / `eval/score.py`:
+   - Only `kind=finding` / `kind=condition` and `mental_status` count as status; other kinds are kept but not scored.
+   - Dispatch uses `dispatch_reason`, plus `found` / `chief_complaint`.
+   - eTimes come from `transport.fields.etime` and from `arrival` / `handoff`. Plain transport events are not eTimes.
+   - Receipts accept the spoken unit/route forms from `shared/formulary.json`, plus "a liter" and DuoNeb → albuterol/ipratropium.
+   - Pipeline generic names are bridged onto the GT names via shared aliases.
+5. **Accepted.** "BE-FAST screen" and "Cincinnati scale" match GT "stroke scale" in the scorer (`PROC_SYN`).
+6. **Beam.**
+   - `eval/BENCHMARK.md` compares models like-for-like at beam 5. Its job is to rank models, not to predict app speed.
+   - **The ship decision is made through `earshot-eval` itself (your greedy decoding).** Stock vs fine-tuned is compared there on the same test calls.
+   - Keep greedy as the default unless the pipeline numbers show beam 5 is worth the time.
+7. **Will do.** The winning fine-tuned model will be copied to `models/whisper-ems-small.en-q5.bin`, with a model card, and only if it beats stock.
+
+**Prompt finding (new):** with the pipeline's initial prompt, stock small.en drug-name WER on the TTS test calls is **38.5%**. My original seed prompt (`data/dictionary/ems_seed.json` `initial_prompt`) gets **26.9%** on the same audio. The seed prompt is a short, sentence-like list of drug + dose + route ("Aspirin 324 mg PO, nitro 0.4 mg SL, Narcan 4 mg IN, …"); yours is a bare comma list of ~60 terms. Suggest trying sentence-style dose phrases and fewer, higher-value terms. I can A/B them through `earshot-eval --no-prompt` + a config prompt if you expose one.
