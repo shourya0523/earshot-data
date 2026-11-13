@@ -3,7 +3,7 @@
 # Kaggle Secrets needed: HF_TOKEN (write access, to push the model), GITHUB_TOKEN (read access to shourya0523/earshot-data, if private).
 # Output: a private HF model repo <HF_USER>/whisper-ems-small.en-ft (HF format). The data agent converts it to ggml + q5 and evaluates it.
 # Runtime: ~60 min data rebuild (downloads + TTS) + ~60-90 min training (all real clips, 3 epochs).
-# Version: 2026-11-13 v3 (round3 human speech, no caps, /tmp data, pipeline's current prompt).
+# Version: 2026-11-13 v4 (v3 + faster/visible downloads: HF token, per-file progress, no MedIntent one-by-one clips).
 import os, subprocess, sys, json, pathlib
 
 def sh(c):
@@ -28,7 +28,11 @@ sh("apt-get -qq install -y ffmpeg > /dev/null || true")
 sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/tmp/pipeline/shared/formulary.json#' train/whisper/prepare_data.py")
 
 # 2) data (same scripts and splits as the overnight run; test sets are never used for training)
-sh("python3 -I data/collect/download_all.py --only piper,real,more,round2,round3,fsd,zenodo,ev --skip-big")
+os.environ["HF_TOKEN"] = HF_TOKEN            # authenticated HF downloads (higher rate limits)
+os.environ["EARSHOT_SKIP_MEDWAV"] = "1"      # skip 1,800 one-by-one MedIntent clips (low value, very slow)
+os.environ["PYTHONUNBUFFERED"] = "1"
+for step in ["piper", "real", "more", "round2", "round3", "fsd", "zenodo", "ev"]:   # one step per call so progress shows
+    sh(f"python3 -u data/collect/download_all.py --only {step} --skip-big")
 sh("python3 data/collect/prepare_real.py")
 sh("python3 data/collect/prepare_extra_human.py --delete-parquet")
 os.environ["EARSHOT_NO_CAPS"] = "1"   # GPU: use every real training clip

@@ -29,7 +29,10 @@ def fetch(url, dest, tries=4):
     for i in range(tries):
         try:
             url = urllib.parse.quote(url, safe=":/?=&%")
-            req = urllib.request.Request(url, headers={"User-Agent": "earshot-data/0.1"})
+            hdr = {"User-Agent": "earshot-data/0.1"}
+            if "huggingface.co" in url and os.environ.get("HF_TOKEN"):
+                hdr["Authorization"] = "Bearer " + os.environ["HF_TOKEN"]   # higher HF rate limits (Kaggle run)
+            req = urllib.request.Request(url, headers=hdr)
             with urllib.request.urlopen(req, timeout=120) as r, open(tmp, "wb") as f:
                 while True:
                     b = r.read(1 << 20)
@@ -37,6 +40,8 @@ def fetch(url, dest, tries=4):
                         break
                     f.write(b)
             tmp.rename(dest)
+            if dest.stat().st_size > 5e6:
+                print(f"  got {dest.relative_to(RAW)} ({dest.stat().st_size/1e6:.0f} MB)", flush=True)
             return dest
         except Exception as e:  # noqa
             print(f"  retry {i+1} {url}: {e}", file=sys.stderr)
@@ -258,11 +263,11 @@ def more_speech():
         hf_file("saahith/synthetic_with_val", f, d / pathlib.Path(f).name.split("-")[0].__add__(".parquet"), "saahith/synthetic_with_val (EMS utterances, synthetic voices)", "unknown (no card)", "no")
     d = RAW / "dispatcher_ambulance"
     hf_file("ahmedelsayed/dispatcher-ambulance", "data/train-00000-of-00001.parquet", d / "train.parquet", "ahmedelsayed/dispatcher-ambulance (dispatch-crew dialogs, synthetic voices)", "unknown (no card)", "synthetic addresses")
-    d = RAW / "modulate_dictation"
-    hf_file("modulate/synthetic-medical-dictation", "data/dev-00000-of-00003.parquet", d / "dev-0.parquet", "modulate/synthetic-medical-dictation", "CC-BY-4.0", "no (TTS)")
+    # modulate/synthetic-medical-dictation: dropped (long dictations without timestamps; unused for training)
     d = RAW / "emsassist2"
     hf_file("saahith/EMSAssist-2", "data/train-00000-of-00002-b50edc4e2587ffd7.parquet", d / "train-0.parquet", "saahith/EMSAssist-2 (EMS condition phrases)", "unknown (no card)", "no")
-    medspeech_wavs(1800)
+    if not os.environ.get("EARSHOT_SKIP_MEDWAV"):
+        medspeech_wavs(1800)   # 1,800 one-by-one HF downloads (slow); simple symptom phrases, ~0.4 h
 
 
 def round2():
