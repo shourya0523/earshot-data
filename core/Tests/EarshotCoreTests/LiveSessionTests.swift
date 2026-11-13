@@ -17,7 +17,7 @@ final class LiveSessionTests: XCTestCase {
         XCTAssertEqual(s.rawSegments.count, 2)
         XCTAssertEqual(s.events.first { $0.type == .medication }?.source, .tapHeard)
         XCTAssertEqual(s.events.first { $0.type == .consent }?.fields["consent"], "yes")
-        XCTAssertEqual(src.sent.filter { if case .ack = $0 { return true }; return false }.count, 2, "every tap is acked")
+        XCTAssertEqual(src.sent.filter { if case .ack = $0 { return true }; return false }.count, 4, "every tap is acked (start, yes, snap, stop)")
         XCTAssertLessThan(s.audioSecondsHeld, 3, "audio is freed after transcription")
         s.wipe()
         XCTAssertTrue(s.events.isEmpty)
@@ -25,8 +25,8 @@ final class LiveSessionTests: XCTestCase {
 
     func testAudioIgnoredBeforeConsent() {
         let pcm = burstPCM(seconds: 3, bursts: [(1, 2)])
-        var packets = ReplayFile.packets(fromPCM: pcm, startClipMs: 1000)
-        packets.removeFirst() // drop the LISTENING state packet
+        // audio with no consent flow at all (a broken clip): never transcribed
+        let packets = ReplayFile.packets(fromPCM: pcm, startClipMs: 1000).filter { if case .audio = $0 { return true }; return false }
         let asr = ScriptedTranscriber(["should never be heard"])
         let s = LiveSession(dict: TestEnv.dict, config: PipelineConfig(), callId: "c1", startEpochMs: 0, tzOffsetSeconds: 0, transcriber: asr)
         s.callbackQueue = DispatchQueue(label: "cb")

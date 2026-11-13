@@ -65,7 +65,7 @@ final class WireTests: XCTestCase {
         XCTAssertEqual(asm.gaps.count, 1)
         XCTAssertEqual(asm.gaps[0].missingFrames, 1)
         XCTAssertEqual(asm.duplicates, 1)
-        XCTAssertEqual(asm.taps.count, 1)
+        XCTAssertEqual(asm.taps.map(\.gesture), ["start", "yes", "mark", "stop"])
     }
 
     func testSeqUnwrap() {

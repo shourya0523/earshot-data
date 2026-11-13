@@ -136,34 +136,50 @@ public enum ReplayFile {
     }
     #endif
     /// Build a replay stream from PCM + taps (used by tests and mock generation).
+    /// Build a contract-conformant clip stream from PCM + taps (tests, mocks,
+    /// fake-clip): consent flow (ASKING + start tap, yes tap + LISTENING) before
+    /// the first audio frame, a state heartbeat every 2 s, then stop tap + OFF.
+    /// Consent gestures in `taps` are ignored; the generator plays that part.
     public static func packets(fromPCM pcm: [Int16], taps: [TapInput] = [], startClipMs: UInt32 = 1000) -> [Packet] {
         var out: [Packet] = []
         var st = IMAADPCM.State()
         var seq: UInt16 = 0
         var tapSeq: UInt16 = 0
+        var stateSeq: UInt16 = 0
         var i = 0
-        var pendingTaps = taps.sorted { $0.clipMs < $1.clipMs }
-        out.append(.state(PacketHeader(type: .state, seq: 0, clipMs: startClipMs), StatePayload(state: .listening, flags: 1, version: Wire.protocolVersion)))
+        let t0 = max(startClipMs, 400)
+        func state(_ s: ClipState, _ clip: UInt32) {
+            out.append(.state(PacketHeader(type: .state, seq: stateSeq, clipMs: clip), StatePayload(state: s, flags: 1, version: Wire.protocolVersion)))
+            stateSeq &+= 1
+        }
+        func tap(_ g: TapGesture, _ src: TapSource, press: UInt32, at clip: UInt32) {
+            out.append(.tap(PacketHeader(type: .tap, seq: tapSeq, clipMs: clip), TapPayload(gesture: g, source: src, pressClipMs: press)))
+            tapSeq &+= 1
+        }
+        state(.off, t0 - 400)
+        tap(.start, .button, press: t0 - 400, at: t0 - 400); state(.asking, t0 - 400)
+        tap(.yes, .button, press: t0 - 200, at: t0 - 200); state(.listening, t0 - 200)
+        var pendingTaps = taps.filter { !["start", "yes", "no", "stop"].contains($0.gesture) && TapGesture(name: $0.gesture) != nil }
+            .sorted { $0.clipMs < $1.clipMs }
+        var lastState = t0 - 200
+        var clip = t0
         while i + Wire.samplesPerFrame <= pcm.count {
-            let clip = startClipMs &+ UInt32(i / 16)
+            clip = t0 &+ UInt32(i / 16)
             while let t = pendingTaps.first, t.clipMs <= Int64(clip) {
                 pendingTaps.removeFirst()
-                let g = TapGesture(name: t.gesture) ?? .mark
-                let s = TapSource(name: t.source) ?? .button
-                out.append(.tap(PacketHeader(type: .tap, seq: tapSeq, clipMs: clip), TapPayload(gesture: g, source: s, pressClipMs: UInt32(t.clipMs))))
-                tapSeq &+= 1
+                tap(TapGesture(name: t.gesture) ?? .mark, TapSource(name: t.source) ?? .button, press: UInt32(t.clipMs), at: clip)
             }
+            if clip - lastState >= 2000 { state(.listening, clip); lastState = clip }
             let block = IMAADPCM.encodeBlock(Array(pcm[i..<(i + Wire.samplesPerFrame)]), state: &st)
             out.append(.audio(PacketHeader(type: .audio, seq: seq, clipMs: clip), adpcm: block))
             seq &+= 1
             i += Wire.samplesPerFrame
         }
-        for t in pendingTaps {   // taps after the last audio frame
-            let g = TapGesture(name: t.gesture) ?? .mark
-            let s = TapSource(name: t.source) ?? .button
-            out.append(.tap(PacketHeader(type: .tap, seq: tapSeq, clipMs: UInt32(t.clipMs)), TapPayload(gesture: g, source: s, pressClipMs: UInt32(t.clipMs))))
-            tapSeq &+= 1
+        let end = clip + 20
+        for t in pendingTaps where t.clipMs <= Int64(end) + 3000 {   // marks just after the last frame
+            tap(TapGesture(name: t.gesture) ?? .mark, TapSource(name: t.source) ?? .button, press: UInt32(t.clipMs), at: max(end, UInt32(t.clipMs)))
         }
+        tap(.stop, .button, press: end, at: end); state(.off, end)
         return out
     }
 }

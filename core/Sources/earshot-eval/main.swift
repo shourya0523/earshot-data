@@ -10,6 +10,10 @@ earshot-eval — run the Earshot pipeline offline (same code as the iPad app).
 USAGE
   earshot-eval run <input> [options]
   earshot-eval make-replay <in.wav> <out.replay> [--taps taps.json]
+  earshot-eval check-stream <capture.replay> [--json out.json]
+                          check a clip capture against docs/FIRMWARE_CONTRACT.md (exit 1 on failure)
+  earshot-eval fake-clip [--port 7070] [--wav call.wav] [--taps taps.json] [--loop]
+                          reference clip over TCP (Wi-Fi framing) for testing the app without hardware
   earshot-eval version
 
 INPUT (by extension)
@@ -94,6 +98,25 @@ case "make-replay":
     let packets = ReplayFile.packets(fromPCM: pcm, taps: shifted, startClipMs: 1000)
     try ReplayFile.write(packets, to: URL(fileURLWithPath: args[1]))
     print("wrote \(packets.count) packets (\(pcm.count / 16000) s audio, \(taps.count) taps) to \(args[1])")
+    exit(0)
+case "check-stream":
+    let jsonOut = opt("--json")
+    guard let path = args.first else { fail("check-stream <capture.replay> [--json out.json]") }
+    guard let capture = try? Data(contentsOf: URL(fileURLWithPath: path)) else { fail("cannot read \(path)") }
+    let r = StreamConformance.check(rawBytes: [UInt8](capture))
+    for c in r.checks { print("\(c.pass ? "PASS" : "FAIL")  \(c.id)  \(c.detail)") }
+    print(r.stats.sorted { $0.key < $1.key }.map { "\($0.key)=\($0.value)" }.joined(separator: "  "))
+    print(r.pass ? "CONFORMS" : "DOES NOT CONFORM")
+    if let j = jsonOut { try writeJSON(r, URL(fileURLWithPath: j)) }
+    exit(r.pass ? 0 : 1)
+case "fake-clip":
+    let port = UInt16(opt("--port") ?? "7070") ?? 7070
+    let wav = opt("--wav"); let tapsFile = opt("--taps"); let loop = flag("--loop")
+    var pcm: [Int16]
+    if let w = wav { pcm = try WAVReader.read(URL(fileURLWithPath: w)) } else { pcm = [Int16](repeating: 0, count: 16000 * 10) }
+    var ftaps: [TapInput] = []
+    if let t = tapsFile { ftaps = try JSONDecoder().decode([TapInput].self, from: Data(contentsOf: URL(fileURLWithPath: t))) }
+    try FakeClip(port: port, packets: ReplayFile.packets(fromPCM: pcm, taps: ftaps.map { TapInput(clipMs: $0.clipMs + 1000, source: $0.source, gesture: $0.gesture) }, startClipMs: 1000), loop: loop).run()
     exit(0)
 case "run":
     break
