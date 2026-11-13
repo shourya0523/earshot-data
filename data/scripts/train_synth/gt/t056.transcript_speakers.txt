@@ -1,0 +1,19 @@
+RD: Rescue 1, you have a palpitations, 86 year old female.
+M2: Rescue 1 arriving on scene.
+M2: Watch the step.
+PT: I don't know, it just started.
+PT: It feels like it's fluttering.
+M1: Any allergies?
+PT: I had something like this last year.
+M2: Vitals, BGL's 331, pain is 8 out of 10.
+M1: Drawing up 6 of adenosine intravenous.
+M2: Okay, GCS's 10, pain is 8 out of 10.
+M1: GCS 10, pressure at 126 over 57, pain is 7 out of 10.
+M2: Let's do vagal.
+M1: We're transporting to County.
+M1: Small poke.
+M1: Can you squeeze my fingers?
+PT: Can somebody call my wife?
+M1: Giving 10 mils of saline IV push.
+M1: Arrived at Northside.
+M1: Giving report now.

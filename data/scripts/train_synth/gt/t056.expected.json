@@ -1,0 +1,138 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "86",
+  "sex": "female",
+  "weight_kg": "84",
+  "complaint": "rapid heart rate",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "rapid heart rate",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "331",
+    "pain": "8",
+    "gcs": "10",
+    "bp": "126/57"
+   },
+   "last_vitals": {
+    "bgl": "331",
+    "pain": "7",
+    "gcs": "10",
+    "bp": "126/57"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "SVT"
+   ]
+  },
+  "P": {
+   "medications": [
+    "adenosine 6 IV",
+    "normal saline 10 mL IV"
+   ],
+   "procedures": [
+    "vagal maneuver"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "86",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "palpitations",
+  "I_injuries_or_information": "rapid heart rate",
+  "S_signs": {
+   "bgl": "331",
+   "pain": "8",
+   "gcs": "10",
+   "bp": "126/57"
+  },
+  "T_treatment": [
+   "adenosine 6 IV",
+   "normal saline 10 mL IV",
+   "vagal maneuver"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "02:04:48",
+  "eTimes.09": "02:06:17",
+  "eTimes.11": "02:07:09",
+  "eTimes.12": "02:07:22"
+ },
+ "wall_time_seconds": 13,
+ "dispatch_reason": "palpitations",
+ "medications": [
+  {
+   "drug": "adenosine",
+   "dose": "6",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "10",
+   "unit": "mL",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "331",
+   "time": "02:05:07"
+  },
+  {
+   "name": "pain",
+   "value": "8",
+   "time": "02:05:07"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "02:05:47"
+  },
+  {
+   "name": "pain",
+   "value": "8",
+   "time": "02:05:47"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "02:06:00"
+  },
+  {
+   "name": "bp",
+   "value": "126/57",
+   "time": "02:06:00"
+  },
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "02:06:00"
+  }
+ ],
+ "diagnosis_traps": [
+  "SVT"
+ ]
+}

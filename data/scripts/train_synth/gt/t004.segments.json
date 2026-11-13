@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5457,
+  "speaker": "RD",
+  "text": "Squad 46, priority two, stroke, 62 year old female."
+ },
+ {
+  "start_ms": 10254,
+  "end_ms": 11949,
+  "speaker": "M2",
+  "text": "Squad 46 on scene."
+ },
+ {
+  "start_ms": 12672,
+  "end_ms": 14448,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 15331,
+  "end_ms": 16310,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 19890,
+  "end_ms": 21497,
+  "speaker": "PT",
+  "text": "Words aren't coming out right."
+ },
+ {
+  "start_ms": 24074,
+  "end_ms": 25525,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 26339,
+  "end_ms": 27512,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 31890,
+  "end_ms": 33745,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 34551,
+  "end_ms": 35778,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 41374,
+  "end_ms": 44091,
+  "speaker": "M1",
+  "text": "SpO2 at 100 percent."
+ },
+ {
+  "start_ms": 50698,
+  "end_ms": 51569,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 52410,
+  "end_ms": 54395,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 55900,
+  "end_ms": 58545,
+  "speaker": "M2",
+  "text": "Second set, glucose's 66."
+ },
+ {
+  "start_ms": 60096,
+  "end_ms": 61495,
+  "speaker": "M2",
+  "text": "Doing finger stick."
+ },
+ {
+  "start_ms": 65010,
+  "end_ms": 66473,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 67191,
+  "end_ms": 68115,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 73006,
+  "end_ms": 74167,
+  "speaker": "M1",
+  "text": "Leaving scene to General."
+ },
+ {
+  "start_ms": 77823,
+  "end_ms": 80853,
+  "speaker": "M2",
+  "text": "Drawing up 2 of non-rebreather nasal cannula."
+ },
+ {
+  "start_ms": 112698,
+  "end_ms": 113783,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 118246,
+  "end_ms": 119336,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 120128,
+  "end_ms": 121005,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 129673,
+  "end_ms": 130892,
+  "speaker": "M1",
+  "text": "Arriving at Good Sam."
+ },
+ {
+  "start_ms": 144662,
+  "end_ms": 145695,
+  "speaker": "M1",
+  "text": "Handing off complete."
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4714,
+  "speaker": "RD",
+  "text": "Squad 28, priority two, sick person, 61 year old male."
+ },
+ {
+  "start_ms": 7363,
+  "end_ms": 9426,
+  "speaker": "M1",
+  "text": "Squad 28 arriving on scene."
+ },
+ {
+  "start_ms": 9763,
+  "end_ms": 11396,
+  "speaker": "M2",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 15263,
+  "end_ms": 17407,
+  "speaker": "PT",
+  "text": "I've had a fever for three days."
+ },
+ {
+  "start_ms": 22014,
+  "end_ms": 24290,
+  "speaker": "M1",
+  "text": "normal saline 1000 intravenous."
+ },
+ {
+  "start_ms": 32998,
+  "end_ms": 34577,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 43015,
+  "end_ms": 44465,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 49785,
+  "end_ms": 54216,
+  "speaker": "M2",
+  "text": "Repeat, respirations's 17, glucose is 398."
+ },
+ {
+  "start_ms": 60859,
+  "end_ms": 63146,
+  "speaker": "M1",
+  "text": "Pushing lactated Ringer's, 500."
+ },
+ {
+  "start_ms": 64870,
+  "end_ms": 66108,
+  "speaker": "M2",
+  "text": "Let's do 12 lead."
+ },
+ {
+  "start_ms": 70412,
+  "end_ms": 73263,
+  "speaker": "M2",
+  "text": "Vitals, blood sugar's 265."
+ },
+ {
+  "start_ms": 100188,
+  "end_ms": 101906,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 105672,
+  "end_ms": 106472,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 107229,
+  "end_ms": 108352,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 113406,
+  "end_ms": 115294,
+  "speaker": "M2",
+  "text": "1000 Ofirmev by mouth, it's in."
+ },
+ {
+  "start_ms": 119045,
+  "end_ms": 121765,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 122493,
+  "end_ms": 123371,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 128041,
+  "end_ms": 131895,
+  "speaker": "M1",
+  "text": "resps at 24, blood sugar 173."
+ },
+ {
+  "start_ms": 136241,
+  "end_ms": 137379,
+  "speaker": "M1",
+  "text": "Arriving at Valley."
+ },
+ {
+  "start_ms": 144124,
+  "end_ms": 145529,
+  "speaker": "M1",
+  "text": "Giving report to bed four."
+ }
+]

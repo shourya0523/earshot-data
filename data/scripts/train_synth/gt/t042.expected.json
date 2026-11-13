@@ -1,0 +1,111 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "29",
+  "sex": "male",
+  "weight_kg": "112",
+  "complaint": "dizziness",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "dizziness",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "10",
+    "spo2": "83"
+   },
+   "last_vitals": {
+    "gcs": "15",
+    "spo2": "83"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "heart block"
+   ]
+  },
+  "P": {
+   "medications": [
+    "atropine 1 IV",
+    "normal saline 500 mL IV"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "29",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "weakness",
+  "I_injuries_or_information": "dizziness",
+  "S_signs": {
+   "gcs": "10",
+   "spo2": "83"
+  },
+  "T_treatment": [
+   "atropine 1 IV",
+   "normal saline 500 mL IV",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "21:41:53",
+  "eTimes.09": "21:43:00",
+  "eTimes.11": "21:44:08"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "weakness",
+ "medications": [
+  {
+   "drug": "atropine",
+   "dose": "1",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "21:42:45"
+  },
+  {
+   "name": "spo2",
+   "value": "83",
+   "time": "21:43:59"
+  },
+  {
+   "name": "gcs",
+   "value": "15",
+   "time": "21:43:59"
+  }
+ ],
+ "diagnosis_traps": [
+  "heart block"
+ ]
+}

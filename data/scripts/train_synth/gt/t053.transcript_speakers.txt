@@ -1,0 +1,20 @@
+RD: Medic 26, priority two, cardiac problem, 29 year old female.
+M1: Medic 26 on scene.
+M1: Can you squeeze my fingers?
+PT: My chest is squeezing.
+M1: Okay, glucose's 230.
+M1: Let's do pads on.
+M2: Drawing up 324 migs of aspirin.
+M2: Vitals, pain is 7 out of 10.
+M1: Small poke.
+PT: I feel sick.
+M1: Who's your doctor?
+BY: Can somebody call my wife?
+M2: Second set, resp rate's 16.
+M1: Transporting to Saint Joseph's.
+M1: I gave Nitrostat 0.4 milligrams sublingual.
+M2: Did you pass out at all?
+M2: Can you squeeze my fingers?
+PT: I feel sick.
+M1: When did you last eat?
+M1: Arriving at Memorial.

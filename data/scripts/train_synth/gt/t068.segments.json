@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4548,
+  "speaker": "RD",
+  "text": "Squad 55, you have a dizziness, 62 year old female."
+ },
+ {
+  "start_ms": 7213,
+  "end_ms": 10106,
+  "speaker": "M1",
+  "text": "Squad 55 arriving on scene."
+ },
+ {
+  "start_ms": 10966,
+  "end_ms": 11946,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 18646,
+  "end_ms": 19536,
+  "speaker": "PT",
+  "text": "I'm so weak."
+ },
+ {
+  "start_ms": 28149,
+  "end_ms": 31806,
+  "speaker": "M1",
+  "text": "Pushing normal saline, 500 mLs IV."
+ },
+ {
+  "start_ms": 38676,
+  "end_ms": 40737,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 41318,
+  "end_ms": 44673,
+  "speaker": "BY",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 49552,
+  "end_ms": 52194,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 53063,
+  "end_ms": 55102,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 60058,
+  "end_ms": 62886,
+  "speaker": "M1",
+  "text": "Giving 1 milligrams of atropine intravenous."
+ },
+ {
+  "start_ms": 69203,
+  "end_ms": 70313,
+  "speaker": "M2",
+  "text": "Doing 12 lead."
+ },
+ {
+  "start_ms": 73633,
+  "end_ms": 74627,
+  "speaker": "M2",
+  "text": "Get got a line."
+ },
+ {
+  "start_ms": 79107,
+  "end_ms": 83019,
+  "speaker": "M2",
+  "text": "Vitals, pulse's 68, blood sugar at 133."
+ },
+ {
+  "start_ms": 109773,
+  "end_ms": 110748,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 135923,
+  "end_ms": 140795,
+  "speaker": "M2",
+  "text": "Repeat, resps 11, BGL at 170, pain is 3 out of 10."
+ },
+ {
+  "start_ms": 143296,
+  "end_ms": 145382,
+  "speaker": "M1",
+  "text": "Transporting to Saint Joseph's."
+ },
+ {
+  "start_ms": 149162,
+  "end_ms": 151992,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 152715,
+  "end_ms": 154205,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 155791,
+  "end_ms": 157931,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 158601,
+  "end_ms": 159688,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 165467,
+  "end_ms": 168718,
+  "speaker": "M1",
+  "text": "GCS 13, sat 86 percent."
+ },
+ {
+  "start_ms": 175263,
+  "end_ms": 176243,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 176660,
+  "end_ms": 177526,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 180975,
+  "end_ms": 182152,
+  "speaker": "M1",
+  "text": "We're at Northside."
+ }
+]

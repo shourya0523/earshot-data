@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5144,
+  "speaker": "RD",
+  "text": "Rescue 44, priority two, weakness, 29 year old male."
+ },
+ {
+  "start_ms": 7905,
+  "end_ms": 9834,
+  "speaker": "M2",
+  "text": "Rescue 44 on scene."
+ },
+ {
+  "start_ms": 10462,
+  "end_ms": 11652,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 12496,
+  "end_ms": 13644,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 16998,
+  "end_ms": 17899,
+  "speaker": "PT",
+  "text": "I'm so weak."
+ },
+ {
+  "start_ms": 24028,
+  "end_ms": 26862,
+  "speaker": "M1",
+  "text": "1 atropine intravenous, it's in."
+ },
+ {
+  "start_ms": 31580,
+  "end_ms": 33577,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 34412,
+  "end_ms": 35534,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 36876,
+  "end_ms": 37984,
+  "speaker": "M2",
+  "text": "Doing 12 lead."
+ },
+ {
+  "start_ms": 42585,
+  "end_ms": 43917,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 50293,
+  "end_ms": 51571,
+  "speaker": "M2",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 52130,
+  "end_ms": 54691,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 59043,
+  "end_ms": 61087,
+  "speaker": "M1",
+  "text": "Okay, GCS is 10."
+ },
+ {
+  "start_ms": 64467,
+  "end_ms": 66476,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 66896,
+  "end_ms": 67798,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 74533,
+  "end_ms": 76282,
+  "speaker": "M1",
+  "text": "We're transporting to County."
+ },
+ {
+  "start_ms": 103337,
+  "end_ms": 106354,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 110122,
+  "end_ms": 111497,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 121644,
+  "end_ms": 124665,
+  "speaker": "M2",
+  "text": "normal saline 500 mLs IV push."
+ },
+ {
+  "start_ms": 135277,
+  "end_ms": 138952,
+  "speaker": "M1",
+  "text": "SpO2's 83 on room air, GCS's 15."
+ },
+ {
+  "start_ms": 142509,
+  "end_ms": 143805,
+  "speaker": "M1",
+  "text": "We're at Riverside."
+ }
+]

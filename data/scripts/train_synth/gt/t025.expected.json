@@ -1,0 +1,147 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "90",
+  "sex": "female",
+  "weight_kg": "129",
+  "complaint": "fall",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "fall",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "35",
+    "hr": "44",
+    "etco2": "45",
+    "spo2": "85",
+    "pain": "6"
+   },
+   "last_vitals": {
+    "rr": "17",
+    "hr": "44",
+    "etco2": "45",
+    "spo2": "85",
+    "pain": "6"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ketamine 0.3 mg/kg IV",
+    "morphine 4 mg IV",
+    "fentanyl 100 mcg IV"
+   ],
+   "procedures": [
+    "pelvic binder"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "90",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fall",
+  "I_injuries_or_information": "fall",
+  "S_signs": {
+   "rr": "35",
+   "hr": "44",
+   "etco2": "45",
+   "spo2": "85",
+   "pain": "6"
+  },
+  "T_treatment": [
+   "ketamine 0.3 mg/kg IV",
+   "morphine 4 mg IV",
+   "fentanyl 100 mcg IV",
+   "pelvic binder"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "16:00:33",
+  "eTimes.09": "16:02:25",
+  "eTimes.11": "16:02:52"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "fall",
+ "medications": [
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "unit": "mg/kg",
+   "route": "IV"
+  },
+  {
+   "drug": "morphine",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "100",
+   "unit": "mcg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "35",
+   "time": "16:01:37"
+  },
+  {
+   "name": "hr",
+   "value": "44",
+   "time": "16:01:37"
+  },
+  {
+   "name": "etco2",
+   "value": "45",
+   "time": "16:01:37"
+  },
+  {
+   "name": "rr",
+   "value": "17",
+   "time": "16:02:19"
+  },
+  {
+   "name": "spo2",
+   "value": "85",
+   "time": "16:02:19"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "16:02:19"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

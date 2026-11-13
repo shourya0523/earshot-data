@@ -1,0 +1,132 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "79",
+  "sex": "female",
+  "weight_kg": "89",
+  "complaint": "unconscious person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "unconscious person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "15",
+    "pain": "2",
+    "etco2": "19",
+    "bp": "162/82",
+    "bgl": "403"
+   },
+   "last_vitals": {
+    "gcs": "15",
+    "pain": "2",
+    "etco2": "19",
+    "bp": "162/82",
+    "bgl": "403"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "vasovagal"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 500 mL IV",
+    "oxygen 2 L/min"
+   ],
+   "procedures": [
+    "cardiac monitor",
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "79",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fainting",
+  "I_injuries_or_information": "unconscious person",
+  "S_signs": {
+   "gcs": "15",
+   "pain": "2",
+   "etco2": "19",
+   "bp": "162/82",
+   "bgl": "403"
+  },
+  "T_treatment": [
+   "normal saline 500 mL IV",
+   "oxygen 2 L/min",
+   "cardiac monitor",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "10:50:33",
+  "eTimes.09": "10:52:17",
+  "eTimes.11": "10:52:47"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "fainting",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "oxygen",
+   "dose": "2",
+   "unit": "L/min"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "15",
+   "time": "10:50:56"
+  },
+  {
+   "name": "pain",
+   "value": "2",
+   "time": "10:50:56"
+  },
+  {
+   "name": "etco2",
+   "value": "19",
+   "time": "10:52:11"
+  },
+  {
+   "name": "bp",
+   "value": "162/82",
+   "time": "10:52:11"
+  },
+  {
+   "name": "bgl",
+   "value": "403",
+   "time": "10:52:11"
+  }
+ ],
+ "diagnosis_traps": [
+  "vasovagal"
+ ]
+}

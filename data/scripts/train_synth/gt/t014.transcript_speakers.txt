@@ -1,0 +1,22 @@
+RD: Ambulance 2, priority two, person down, 26 year old male.
+M1: Ambulance 2 arriving on scene.
+M2: I'm going to put some stickers on your chest.
+BY: I had something like this last year.
+PT: I'm good, man.
+M1: Got suctioning.
+M2: BP's 87 over 55, heart rate's 136, capno is 26.
+M2: Got oral airway.
+M2: ETCO2's 45, pain is 2 out of 10.
+M1: On a scale of zero to ten, how bad is it?
+BY: I feel sick.
+M1: When did you last eat?
+M1: When did you last eat?
+BY: It's about an eight.
+M1: Leaving scene to Saint Joseph's.
+M1: naloxone 2 atomized.
+M1: Giving 15 L of oxygen BVM.
+M2: Okay, we're going to take care of you.
+PT: It's getting worse.
+M1: Repeat, end tidal 27, glucose at 354.
+M1: Arrived at Good Sam.
+M1: Handing off complete.

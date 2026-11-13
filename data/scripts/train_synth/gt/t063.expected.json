@@ -1,0 +1,147 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "65",
+  "sex": "female",
+  "weight_kg": "92",
+  "complaint": "difficulty breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "difficulty breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "93",
+    "bgl": "259",
+    "etco2": "18",
+    "pain": "8",
+    "hr": "87"
+   },
+   "last_vitals": {
+    "spo2": "93",
+    "bgl": "334",
+    "etco2": "18",
+    "pain": "3",
+    "hr": "87"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "CHF",
+    "pulmonary edema"
+   ]
+  },
+  "P": {
+   "medications": [
+    "nitroglycerin 0.4 mg SL",
+    "furosemide 40 mg IV"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "CPAP"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "65",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "difficulty breathing",
+  "I_injuries_or_information": "difficulty breathing",
+  "S_signs": {
+   "spo2": "93",
+   "bgl": "259",
+   "etco2": "18",
+   "pain": "8",
+   "hr": "87"
+  },
+  "T_treatment": [
+   "nitroglycerin 0.4 mg SL",
+   "furosemide 40 mg IV",
+   "12-lead ECG",
+   "CPAP"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "09:18:50",
+  "eTimes.09": "09:21:01",
+  "eTimes.11": "09:21:24",
+  "eTimes.12": "09:21:34"
+ },
+ "wall_time_seconds": 10,
+ "dispatch_reason": "difficulty breathing",
+ "medications": [
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "unit": "mg",
+   "route": "SL"
+  },
+  {
+   "drug": "furosemide",
+   "dose": "40",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "93",
+   "time": "09:19:28"
+  },
+  {
+   "name": "bgl",
+   "value": "259",
+   "time": "09:19:28"
+  },
+  {
+   "name": "etco2",
+   "value": "18",
+   "time": "09:19:28"
+  },
+  {
+   "name": "pain",
+   "value": "8",
+   "time": "09:20:02"
+  },
+  {
+   "name": "bgl",
+   "value": "334",
+   "time": "09:21:10"
+  },
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "09:21:10"
+  },
+  {
+   "name": "hr",
+   "value": "87",
+   "time": "09:21:10"
+  }
+ ],
+ "diagnosis_traps": [
+  "CHF",
+  "pulmonary edema"
+ ]
+}

@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4848,
+  "speaker": "RD",
+  "text": "Medic 15, you have a difficulty breathing, 50 year old female."
+ },
+ {
+  "start_ms": 8719,
+  "end_ms": 10223,
+  "speaker": "M1",
+  "text": "Medic 15 we're on scene."
+ },
+ {
+  "start_ms": 10988,
+  "end_ms": 12485,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 12820,
+  "end_ms": 13975,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 22828,
+  "end_ms": 24514,
+  "speaker": "PT",
+  "text": "My breathing's bad today."
+ },
+ {
+  "start_ms": 27732,
+  "end_ms": 29340,
+  "speaker": "M2",
+  "text": "breathing 32."
+ },
+ {
+  "start_ms": 32067,
+  "end_ms": 34215,
+  "speaker": "M1",
+  "text": "Repeat, pain is 9 out of 10."
+ },
+ {
+  "start_ms": 37813,
+  "end_ms": 39392,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 39787,
+  "end_ms": 40921,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 44607,
+  "end_ms": 46193,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 46575,
+  "end_ms": 48927,
+  "speaker": "BY",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 53541,
+  "end_ms": 60133,
+  "speaker": "M1",
+  "text": "Vitals, glucose at 162, sat is 97 on room air, resps's 18."
+ },
+ {
+  "start_ms": 111433,
+  "end_ms": 112673,
+  "speaker": "M2",
+  "text": "Got CPAP."
+ },
+ {
+  "start_ms": 117250,
+  "end_ms": 119572,
+  "speaker": "M1",
+  "text": "magnesium sulfate 2 grams IV."
+ },
+ {
+  "start_ms": 129292,
+  "end_ms": 131789,
+  "speaker": "M1",
+  "text": "Pushing oxygen, 4 L nasal cannula."
+ },
+ {
+  "start_ms": 138583,
+  "end_ms": 141200,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 141668,
+  "end_ms": 143386,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 145772,
+  "end_ms": 147308,
+  "speaker": "M1",
+  "text": "We're transporting to Memorial."
+ },
+ {
+  "start_ms": 150855,
+  "end_ms": 153991,
+  "speaker": "M2",
+  "text": "3 mils duo neb nebulized, it's in."
+ },
+ {
+  "start_ms": 158552,
+  "end_ms": 160990,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 165183,
+  "end_ms": 168736,
+  "speaker": "M1",
+  "text": "methylprednisolone 125 intravenous."
+ },
+ {
+  "start_ms": 170618,
+  "end_ms": 172243,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 172931,
+  "end_ms": 174646,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 183349,
+  "end_ms": 184327,
+  "speaker": "M1",
+  "text": "Arrived at Valley."
+ }
+]

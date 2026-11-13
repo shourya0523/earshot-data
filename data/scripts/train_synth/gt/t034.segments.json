@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5846,
+  "speaker": "RD",
+  "text": "Medic 33, you have a pedestrian struck, 77 year old male."
+ },
+ {
+  "start_ms": 9546,
+  "end_ms": 11518,
+  "speaker": "M2",
+  "text": "Medic 33 on scene."
+ },
+ {
+  "start_ms": 12215,
+  "end_ms": 13539,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 14221,
+  "end_ms": 15322,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 21876,
+  "end_ms": 23242,
+  "speaker": "PT",
+  "text": "I can't feel my fingers."
+ },
+ {
+  "start_ms": 25698,
+  "end_ms": 27683,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 28037,
+  "end_ms": 29326,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 33536,
+  "end_ms": 35010,
+  "speaker": "M1",
+  "text": "ETCO2 is 24."
+ },
+ {
+  "start_ms": 39921,
+  "end_ms": 41140,
+  "speaker": "M1",
+  "text": "I gave morphine 4."
+ },
+ {
+  "start_ms": 47720,
+  "end_ms": 48696,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 49225,
+  "end_ms": 51078,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 59932,
+  "end_ms": 64062,
+  "speaker": "M2",
+  "text": "Giving 0.3 milligrams per kilo of ketamine IV push."
+ },
+ {
+  "start_ms": 68409,
+  "end_ms": 69186,
+  "speaker": "M1",
+  "text": "Got tourniquet."
+ },
+ {
+  "start_ms": 73046,
+  "end_ms": 74605,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 74974,
+  "end_ms": 76409,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 81183,
+  "end_ms": 82252,
+  "speaker": "M1",
+  "text": "Transporting to General."
+ },
+ {
+  "start_ms": 85658,
+  "end_ms": 86540,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 87844,
+  "end_ms": 91034,
+  "speaker": "M2",
+  "text": "Okay, sat's 100, HR's 145."
+ },
+ {
+  "start_ms": 123609,
+  "end_ms": 124340,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 124989,
+  "end_ms": 126563,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 136762,
+  "end_ms": 142648,
+  "speaker": "M1",
+  "text": "Vitals, BP at 180 over 142, rate's 52."
+ },
+ {
+  "start_ms": 148992,
+  "end_ms": 149933,
+  "speaker": "M1",
+  "text": "We're at County."
+ }
+]

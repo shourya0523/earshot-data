@@ -1,0 +1,12 @@
+{"id": "e1", "call_id": "t007", "time": "04:54:50", "clip_ms": 500, "type": "dispatch", "fields": {"text": "weakness one side"}, "source": "heard", "quote": "weakness one side", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t007", "time": "04:54:59", "clip_ms": 9547, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 9547}
+{"id": "mt1", "call_id": "t007", "time": "04:55:21", "clip_ms": 31151, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "e3", "call_id": "t007", "time": "04:55:45", "clip_ms": 55161, "type": "medication", "fields": {"drug": "oxygen", "dose": "2"}, "source": "heard", "quote": "Giving 2 of non-rebreather", "segment_start_ms": 55161}
+{"id": "e4", "call_id": "t007", "time": "04:56:08", "clip_ms": 78821, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "18 gauge", "segment_start_ms": 78821}
+{"id": "e5", "call_id": "t007", "time": "04:56:14", "clip_ms": 84130, "type": "vital", "fields": {"name": "spo2", "value": "86", "unit": "%"}, "source": "tap+heard", "quote": "sats at 86 on room air", "segment_start_ms": 85482, "tap_id": "t2"}
+{"id": "e6", "call_id": "t007", "time": "04:56:14", "clip_ms": 84130, "type": "vital", "fields": {"name": "gcs", "value": "8", "unit": ""}, "source": "tap+heard", "quote": "GCS is 8", "segment_start_ms": 85482, "tap_id": "t2"}
+{"id": "e7", "call_id": "t007", "time": "04:56:20", "clip_ms": 90352, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 90352}
+{"id": "e8", "call_id": "t007", "time": "04:56:32", "clip_ms": 102454, "type": "vital", "fields": {"name": "pain", "value": "10", "unit": "/10"}, "source": "heard", "quote": "10 out of 10", "segment_start_ms": 102454}
+{"id": "e9", "call_id": "t007", "time": "04:56:32", "clip_ms": 102454, "type": "vital", "fields": {"name": "gcs", "value": "10", "unit": ""}, "source": "heard", "quote": "GCS 10", "segment_start_ms": 102454}
+{"id": "e10", "call_id": "t007", "time": "04:56:43", "clip_ms": 113665, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 113665}
+{"id": "e11", "call_id": "t007", "time": "04:56:54", "clip_ms": 124883, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "heard", "quote": "Giving report", "segment_start_ms": 124883}

@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4644,
+  "speaker": "RD",
+  "text": "Ambulance 3, priority two, bee sting, 57 year old female."
+ },
+ {
+  "start_ms": 7256,
+  "end_ms": 8877,
+  "speaker": "M2",
+  "text": "Ambulance 3 arriving on scene."
+ },
+ {
+  "start_ms": 9739,
+  "end_ms": 10594,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 15347,
+  "end_ms": 16562,
+  "speaker": "PT",
+  "text": "My lips are swelling."
+ },
+ {
+  "start_ms": 43620,
+  "end_ms": 46123,
+  "speaker": "M2",
+  "text": "0.3 milligrams epi pen, it's in."
+ },
+ {
+  "start_ms": 47874,
+  "end_ms": 49007,
+  "speaker": "M2",
+  "text": "Got breathing treatment."
+ },
+ {
+  "start_ms": 54635,
+  "end_ms": 56197,
+  "speaker": "M1",
+  "text": "pain is 9 out of 10."
+ },
+ {
+  "start_ms": 60900,
+  "end_ms": 61759,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 64139,
+  "end_ms": 65392,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 65739,
+  "end_ms": 66861,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 70466,
+  "end_ms": 72075,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 74865,
+  "end_ms": 75790,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 76096,
+  "end_ms": 77694,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 79536,
+  "end_ms": 81045,
+  "speaker": "M1",
+  "text": "Leaving scene to Riverside."
+ },
+ {
+  "start_ms": 108759,
+  "end_ms": 112911,
+  "speaker": "M2",
+  "text": "Second set, HR is 99, sats is 86, glucose at 432."
+ },
+ {
+  "start_ms": 119620,
+  "end_ms": 121676,
+  "speaker": "M2",
+  "text": "Giving 25 of benadryl intravenous."
+ },
+ {
+  "start_ms": 132264,
+  "end_ms": 135663,
+  "speaker": "M1",
+  "text": "respirations's 12, sat at 100 on room air."
+ },
+ {
+  "start_ms": 137151,
+  "end_ms": 138727,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 141090,
+  "end_ms": 142366,
+  "speaker": "M1",
+  "text": "We're at Good Sam."
+ }
+]

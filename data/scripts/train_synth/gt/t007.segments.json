@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4916,
+  "speaker": "RD",
+  "text": "Ambulance 24, respond to weakness one side, 55 year old male."
+ },
+ {
+  "start_ms": 9547,
+  "end_ms": 11899,
+  "speaker": "M2",
+  "text": "Ambulance 24 on scene."
+ },
+ {
+  "start_ms": 12324,
+  "end_ms": 13496,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 13875,
+  "end_ms": 15694,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 17099,
+  "end_ms": 18934,
+  "speaker": "PT",
+  "text": "Words aren't coming out right."
+ },
+ {
+  "start_ms": 51151,
+  "end_ms": 53751,
+  "speaker": "M2",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 55161,
+  "end_ms": 57382,
+  "speaker": "M2",
+  "text": "Giving 2 of non-rebreather."
+ },
+ {
+  "start_ms": 59796,
+  "end_ms": 61226,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 63818,
+  "end_ms": 65841,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 69456,
+  "end_ms": 70163,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 70628,
+  "end_ms": 72458,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 78821,
+  "end_ms": 80416,
+  "speaker": "M2",
+  "text": "Doing 18 gauge."
+ },
+ {
+  "start_ms": 85482,
+  "end_ms": 89011,
+  "speaker": "M1",
+  "text": "Okay, sats at 86 on room air, GCS is 8."
+ },
+ {
+  "start_ms": 90352,
+  "end_ms": 92043,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 95411,
+  "end_ms": 98082,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 102454,
+  "end_ms": 105690,
+  "speaker": "M1",
+  "text": "pain is 10 out of 10, GCS 10."
+ },
+ {
+  "start_ms": 108032,
+  "end_ms": 110218,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 113665,
+  "end_ms": 114445,
+  "speaker": "M1",
+  "text": "We're at General."
+ },
+ {
+  "start_ms": 124883,
+  "end_ms": 126435,
+  "speaker": "M1",
+  "text": "Giving report to bed four."
+ }
+]

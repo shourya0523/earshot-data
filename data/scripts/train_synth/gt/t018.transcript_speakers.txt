@@ -1,0 +1,22 @@
+RD: Medic 44, respond to shortness of breath, 69 year old male.
+M1: Medic 44 on scene.
+M1: Who's your doctor?
+PT: Am I going to be okay?
+PT: My breathing's bad today.
+M2: I gave DuoNeb 3 mils in the neb.
+M1: Can you squeeze my fingers?
+M2: Let's do CPAP.
+M1: Let's do breathing treatment.
+M1: 2 grams mag sulfate intravenous, it's in.
+M1: Can you tell me what day it is?
+M2: GCS is 12, glucose's 161.
+M1: Okay, pain is 5 out of 10, ETCO2 at 28, sat at 85.
+M1: Giving 4 L of oxygen.
+M1: Leaving scene to Valley.
+M1: Any medical history I should know about?
+BY: Am I going to be okay?
+M1: methylprednisolone 125 milligrams.
+M2: Can you tell me what day it is?
+BY: No allergies.
+M1: Okay, pulse ox 87.
+M1: Arriving at Riverside.

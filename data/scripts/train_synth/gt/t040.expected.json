@@ -1,0 +1,123 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "24",
+  "sex": "male",
+  "weight_kg": "64",
+  "complaint": "sick person",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "sick person",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "38",
+    "pain": "5",
+    "bp": "113/40"
+   },
+   "last_vitals": {
+    "etco2": "38",
+    "pain": "5",
+    "bp": "113/40"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "sepsis",
+    "pneumonia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "acetaminophen 1000 mg PO",
+    "lactated Ringer's 500 IV",
+    "normal saline 1000 IV"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "24",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "fever",
+  "I_injuries_or_information": "sick person",
+  "S_signs": {
+   "etco2": "38",
+   "pain": "5",
+   "bp": "113/40"
+  },
+  "T_treatment": [
+   "acetaminophen 1000 mg PO",
+   "lactated Ringer's 500 IV",
+   "normal saline 1000 IV",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "01:43:03",
+  "eTimes.09": "01:45:05",
+  "eTimes.11": "01:45:34"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "fever",
+ "medications": [
+  {
+   "drug": "acetaminophen",
+   "dose": "1000",
+   "unit": "mg",
+   "route": "PO"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "500",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "1000",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "38",
+   "time": "01:44:27"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "01:44:27"
+  },
+  {
+   "name": "bp",
+   "value": "113/40",
+   "time": "01:44:34"
+  }
+ ],
+ "diagnosis_traps": [
+  "sepsis",
+  "pneumonia"
+ ]
+}

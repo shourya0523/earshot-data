@@ -1,0 +1,11 @@
+{"id": "e1", "call_id": "t053", "time": "12:53:34", "clip_ms": 500, "type": "dispatch", "fields": {"text": "cardiac problem"}, "source": "heard", "quote": "cardiac problem", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t053", "time": "12:53:43", "clip_ms": 9431, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 9431}
+{"id": "e3", "call_id": "t053", "time": "12:54:01", "clip_ms": 27903, "type": "vital", "fields": {"name": "bgl", "value": "230", "unit": "mg/dL"}, "source": "tap+heard", "quote": "glucose's 230", "segment_start_ms": 28903, "tap_id": "t1"}
+{"id": "e4", "call_id": "t053", "time": "12:54:11", "clip_ms": 37421, "type": "procedure", "fields": {"name": "cardiac monitor"}, "source": "heard", "quote": "pads on", "segment_start_ms": 37421}
+{"id": "e5", "call_id": "t053", "time": "12:54:15", "clip_ms": 41771, "type": "medication", "fields": {"drug": "aspirin", "dose": "324", "unit": "mg"}, "source": "heard", "quote": "Drawing up 324 migs of aspirin", "segment_start_ms": 41771}
+{"id": "e6", "call_id": "t053", "time": "12:54:20", "clip_ms": 46359, "type": "vital", "fields": {"name": "pain", "value": "7", "unit": "/10"}, "source": "tap+heard", "quote": "7 out of 10", "segment_start_ms": 47816, "tap_id": "t2"}
+{"id": "e7", "call_id": "t053", "time": "12:54:38", "clip_ms": 64334, "type": "vital", "fields": {"name": "rr", "value": "16", "unit": "/min"}, "source": "heard", "quote": "resp rate's 16", "segment_start_ms": 64334}
+{"id": "e8", "call_id": "t053", "time": "12:54:49", "clip_ms": 75445, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Transporting", "segment_start_ms": 75445}
+{"id": "e9", "call_id": "t053", "time": "12:54:55", "clip_ms": 81243, "type": "medication", "fields": {"drug": "nitroglycerin", "dose": "0.4", "unit": "mg", "route": "SL"}, "source": "tap+heard", "quote": "I gave Nitrostat 0.4 milligrams sublingual", "segment_start_ms": 82690, "tap_id": "t3"}
+{"id": "mt4", "call_id": "t053", "time": "12:55:18", "clip_ms": 104914, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t4"}
+{"id": "e10", "call_id": "t053", "time": "12:55:44", "clip_ms": 130544, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arriving at", "segment_start_ms": 130544}

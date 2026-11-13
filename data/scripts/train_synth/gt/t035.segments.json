@@ -1,0 +1,152 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4192,
+  "speaker": "RD",
+  "text": "Ambulance 32, priority two, fever, 24 year old female."
+ },
+ {
+  "start_ms": 6683,
+  "end_ms": 8216,
+  "speaker": "M1",
+  "text": "Ambulance 32 on scene."
+ },
+ {
+  "start_ms": 9104,
+  "end_ms": 9789,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 33526,
+  "end_ms": 35565,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 40258,
+  "end_ms": 41240,
+  "speaker": "PT",
+  "text": "I'm freezing."
+ },
+ {
+  "start_ms": 49709,
+  "end_ms": 51648,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 58385,
+  "end_ms": 59709,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 60262,
+  "end_ms": 62068,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 64595,
+  "end_ms": 66090,
+  "speaker": "M2",
+  "text": "Doing 12 lead."
+ },
+ {
+  "start_ms": 68923,
+  "end_ms": 69980,
+  "speaker": "M1",
+  "text": "We need 20 gauge."
+ },
+ {
+  "start_ms": 71574,
+  "end_ms": 73803,
+  "speaker": "M1",
+  "text": "normal saline 1000 intravenous."
+ },
+ {
+  "start_ms": 82170,
+  "end_ms": 83238,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 83541,
+  "end_ms": 84814,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 87340,
+  "end_ms": 89337,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 89785,
+  "end_ms": 91325,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 98216,
+  "end_ms": 99545,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 99992,
+  "end_ms": 101206,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 104410,
+  "end_ms": 107394,
+  "speaker": "M1",
+  "text": "Okay, breathing at 21, rate at 44."
+ },
+ {
+  "start_ms": 110148,
+  "end_ms": 111681,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 116619,
+  "end_ms": 119498,
+  "speaker": "M1",
+  "text": "lactated ringers 500 mils through the line."
+ },
+ {
+  "start_ms": 120985,
+  "end_ms": 122134,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 124966,
+  "end_ms": 130098,
+  "speaker": "M1",
+  "text": "Okay, BGL's 447, sat 97 percent, pain is 3 out of 10."
+ },
+ {
+  "start_ms": 140129,
+  "end_ms": 143034,
+  "speaker": "M1",
+  "text": "1000 mg acetaminophen by mouth, it's in."
+ },
+ {
+  "start_ms": 145856,
+  "end_ms": 147202,
+  "speaker": "M1",
+  "text": "Arriving at University."
+ },
+ {
+  "start_ms": 154478,
+  "end_ms": 155488,
+  "speaker": "M1",
+  "text": "Handing off complete."
+ }
+]

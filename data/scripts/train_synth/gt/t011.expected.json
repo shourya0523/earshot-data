@@ -1,0 +1,119 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "49",
+  "sex": "male",
+  "weight_kg": "55",
+  "complaint": "difficulty breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "difficulty breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "85",
+    "rr": "36",
+    "bgl": "312"
+   },
+   "last_vitals": {
+    "spo2": "82",
+    "rr": "36",
+    "bgl": "312"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "COPD exacerbation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 4 NC",
+    "methylprednisolone 125 IV"
+   ],
+   "procedures": [
+    "nebulizer"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "49",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "difficulty breathing",
+  "I_injuries_or_information": "difficulty breathing",
+  "S_signs": {
+   "spo2": "85",
+   "rr": "36",
+   "bgl": "312"
+  },
+  "T_treatment": [
+   "oxygen 4 NC",
+   "methylprednisolone 125 IV",
+   "nebulizer"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "23:40:24",
+  "eTimes.09": "23:42:23",
+  "eTimes.11": "23:42:51"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "difficulty breathing",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "4",
+   "route": "NC"
+  },
+  {
+   "drug": "methylprednisolone",
+   "dose": "125",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "85",
+   "time": "23:41:15"
+  },
+  {
+   "name": "spo2",
+   "value": "82",
+   "time": "23:41:32"
+  },
+  {
+   "name": "rr",
+   "value": "36",
+   "time": "23:41:32"
+  },
+  {
+   "name": "bgl",
+   "value": "312",
+   "time": "23:42:28"
+  }
+ ],
+ "diagnosis_traps": [
+  "COPD exacerbation"
+ ]
+}

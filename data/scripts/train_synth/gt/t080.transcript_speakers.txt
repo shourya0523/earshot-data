@@ -1,0 +1,23 @@
+RD: Ambulance 54, priority two, cardiac problem, 33 year old male.
+M1: Ambulance 54 on scene.
+M2: Are you having any trouble breathing?
+PT: I feel sick.
+PT: Pressure in my chest.
+M1: Vitals, HR's 82, pain is 5 out of 10.
+M2: Do you take any medications?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M2: Giving 50 of fent.
+M1: Bayer 324 mg by mouth.
+M1: GCS 14.
+M1: Any medical history I should know about?
+M1: How long has this been going on?
+M1: Do you take any medications?
+M2: Giving 4 of ondansetron IV.
+M1: Transporting to Saint Joseph's.
+M2: Okay, we're going to take care of you.
+BY: Am I going to be okay?
+M2: Drawing up 0.4 of NTG SL.
+M1: Get 12 lead.
+M1: Repeat, end tidal at 46.
+M1: Arriving at Saint Vincent's.
+M1: Handing off to the nurse.

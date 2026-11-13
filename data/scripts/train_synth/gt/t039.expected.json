@@ -1,0 +1,124 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "24",
+  "sex": "female",
+  "weight_kg": "82",
+  "complaint": "chest discomfort",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest discomfort",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "3",
+    "etco2": "19"
+   },
+   "last_vitals": {
+    "pain": "3",
+    "etco2": "19"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ondansetron 4 mg IV",
+    "nitroglycerin 0.4 SL",
+    "aspirin 324 PO",
+    "fentanyl 50 IV"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "24",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "chest pain",
+  "I_injuries_or_information": "chest discomfort",
+  "S_signs": {
+   "pain": "3",
+   "etco2": "19"
+  },
+  "T_treatment": [
+   "ondansetron 4 mg IV",
+   "nitroglycerin 0.4 SL",
+   "aspirin 324 PO",
+   "fentanyl 50 IV",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "05:52:37",
+  "eTimes.09": "05:54:16",
+  "eTimes.11": "05:54:58",
+  "eTimes.12": "05:55:14"
+ },
+ "wall_time_seconds": 16,
+ "dispatch_reason": "chest pain",
+ "medications": [
+  {
+   "drug": "ondansetron",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  },
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "route": "PO"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "50",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "3",
+   "time": "05:53:01"
+  },
+  {
+   "name": "etco2",
+   "value": "19",
+   "time": "05:53:22"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5084,
+  "speaker": "RD",
+  "text": "Ambulance 7, respond to combative person, 87 year old male."
+ },
+ {
+  "start_ms": 8743,
+  "end_ms": 10224,
+  "speaker": "M1",
+  "text": "Ambulance 7 we're on scene."
+ },
+ {
+  "start_ms": 11042,
+  "end_ms": 12621,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 13022,
+  "end_ms": 14025,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 15814,
+  "end_ms": 16859,
+  "speaker": "PT",
+  "text": "Get away from me."
+ },
+ {
+  "start_ms": 19283,
+  "end_ms": 24380,
+  "speaker": "M1",
+  "text": "Vitals, breathing at 35, SpO2 is 96 on room air, ETCO2 is 25."
+ },
+ {
+  "start_ms": 32687,
+  "end_ms": 35160,
+  "speaker": "M1",
+  "text": "Giving 4 milligrams per kilo of ket in the deltoid."
+ },
+ {
+  "start_ms": 37688,
+  "end_ms": 38864,
+  "speaker": "M2",
+  "text": "Got check a sugar."
+ },
+ {
+  "start_ms": 42183,
+  "end_ms": 43286,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 44664,
+  "end_ms": 46266,
+  "speaker": "M1",
+  "text": "haloperidol 5 milligrams."
+ },
+ {
+  "start_ms": 51136,
+  "end_ms": 55803,
+  "speaker": "M1",
+  "text": "Second set, sat's 88, sugar's 167."
+ },
+ {
+  "start_ms": 60490,
+  "end_ms": 62080,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 62742,
+  "end_ms": 64026,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 68701,
+  "end_ms": 69920,
+  "speaker": "M1",
+  "text": "We're transporting to Mercy."
+ },
+ {
+  "start_ms": 75544,
+  "end_ms": 80780,
+  "speaker": "M1",
+  "text": "Vitals, ETCO2's 22, GCS's 11, BGL is 233."
+ },
+ {
+  "start_ms": 83592,
+  "end_ms": 85101,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 93555,
+  "end_ms": 95842,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 96465,
+  "end_ms": 97819,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 124171,
+  "end_ms": 125158,
+  "speaker": "M1",
+  "text": "Arrived at Valley."
+ },
+ {
+  "start_ms": 133314,
+  "end_ms": 134359,
+  "speaker": "M1",
+  "text": "Handing off complete."
+ }
+]

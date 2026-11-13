@@ -1,0 +1,132 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "49",
+  "sex": "female",
+  "weight_kg": "88",
+  "complaint": "psychiatric emergency",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "psychiatric emergency",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "105/51",
+    "etco2": "40",
+    "rr": "24",
+    "gcs": "8"
+   },
+   "last_vitals": {
+    "bp": "105/51",
+    "etco2": "40",
+    "rr": "24",
+    "gcs": "8"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "excited delirium",
+    "psychosis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "midazolam 5 IM",
+    "ketamine 4 IM",
+    "haloperidol 5 mg"
+   ],
+   "procedures": [
+    "restraint"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "49",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "psychiatric emergency",
+  "I_injuries_or_information": "psychiatric emergency",
+  "S_signs": {
+   "bp": "105/51",
+   "etco2": "40",
+   "rr": "24",
+   "gcs": "8"
+  },
+  "T_treatment": [
+   "midazolam 5 IM",
+   "ketamine 4 IM",
+   "haloperidol 5 mg",
+   "restraint"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "05:42:18",
+  "eTimes.09": "05:44:29",
+  "eTimes.11": "05:45:14",
+  "eTimes.12": "05:45:32"
+ },
+ "wall_time_seconds": 18,
+ "dispatch_reason": "psychiatric emergency",
+ "medications": [
+  {
+   "drug": "midazolam",
+   "dose": "5",
+   "route": "IM"
+  },
+  {
+   "drug": "ketamine",
+   "dose": "4",
+   "route": "IM"
+  },
+  {
+   "drug": "haloperidol",
+   "dose": "5",
+   "unit": "mg"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "105/51",
+   "time": "05:44:35"
+  },
+  {
+   "name": "etco2",
+   "value": "40",
+   "time": "05:44:55"
+  },
+  {
+   "name": "rr",
+   "value": "24",
+   "time": "05:44:55"
+  },
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "05:44:55"
+  }
+ ],
+ "diagnosis_traps": [
+  "excited delirium",
+  "psychosis"
+ ]
+}

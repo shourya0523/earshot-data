@@ -1,0 +1,124 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "53",
+  "sex": "male",
+  "weight_kg": "71",
+  "complaint": "dizziness",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "dizziness",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "85/40",
+    "spo2": "94",
+    "hr": "146",
+    "gcs": "8"
+   },
+   "last_vitals": {
+    "bp": "85/40",
+    "spo2": "94",
+    "hr": "146",
+    "gcs": "8"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "heart block"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 500 mL IV",
+    "atropine 1 mg IV"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "53",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "weakness",
+  "I_injuries_or_information": "dizziness",
+  "S_signs": {
+   "bp": "85/40",
+   "spo2": "94",
+   "hr": "146",
+   "gcs": "8"
+  },
+  "T_treatment": [
+   "normal saline 500 mL IV",
+   "atropine 1 mg IV",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "06:35:48",
+  "eTimes.09": "06:37:33",
+  "eTimes.11": "06:38:04",
+  "eTimes.12": "06:38:11"
+ },
+ "wall_time_seconds": 7,
+ "dispatch_reason": "weakness",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "500",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "atropine",
+   "dose": "1",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "85/40",
+   "time": "06:37:03"
+  },
+  {
+   "name": "spo2",
+   "value": "94",
+   "time": "06:37:47"
+  },
+  {
+   "name": "hr",
+   "value": "146",
+   "time": "06:37:47"
+  },
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "06:37:47"
+  }
+ ],
+ "diagnosis_traps": [
+  "heart block"
+ ]
+}

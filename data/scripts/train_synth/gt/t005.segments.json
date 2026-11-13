@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 6274,
+  "speaker": "RD",
+  "text": "Squad 55, respond to allergic reaction, 92 year old female."
+ },
+ {
+  "start_ms": 9807,
+  "end_ms": 11917,
+  "speaker": "M1",
+  "text": "Squad 55 on scene."
+ },
+ {
+  "start_ms": 12270,
+  "end_ms": 13156,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 17815,
+  "end_ms": 19251,
+  "speaker": "PT",
+  "text": "I'm itchy all over."
+ },
+ {
+  "start_ms": 46862,
+  "end_ms": 48185,
+  "speaker": "M2",
+  "text": "Let's do saline lock."
+ },
+ {
+  "start_ms": 74112,
+  "end_ms": 76041,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 84802,
+  "end_ms": 87993,
+  "speaker": "M2",
+  "text": "Drawing up 25 milligrams of benadryl through the line."
+ },
+ {
+  "start_ms": 92572,
+  "end_ms": 95439,
+  "speaker": "M1",
+  "text": "Giving 0.3 migs of epinephrine."
+ },
+ {
+  "start_ms": 98108,
+  "end_ms": 100481,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 101374,
+  "end_ms": 102616,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 106972,
+  "end_ms": 107823,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 108302,
+  "end_ms": 110283,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 113118,
+  "end_ms": 115538,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 115955,
+  "end_ms": 117550,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 126299,
+  "end_ms": 127736,
+  "speaker": "M1",
+  "text": "Transporting to Valley."
+ },
+ {
+  "start_ms": 131610,
+  "end_ms": 133576,
+  "speaker": "M1",
+  "text": "We need breathing treatment."
+ },
+ {
+  "start_ms": 139243,
+  "end_ms": 142607,
+  "speaker": "M2",
+  "text": "Repeat, 88 over 42, GCS's 14."
+ },
+ {
+  "start_ms": 150981,
+  "end_ms": 152016,
+  "speaker": "M2",
+  "text": "10 epi, it's in."
+ },
+ {
+  "start_ms": 156188,
+  "end_ms": 161863,
+  "speaker": "M2",
+  "text": "Okay, GCS at 8, pressure 102 over 55, pulse ox at 86 percent."
+ },
+ {
+  "start_ms": 170285,
+  "end_ms": 171779,
+  "speaker": "M1",
+  "text": "Arriving at Mercy."
+ },
+ {
+  "start_ms": 180138,
+  "end_ms": 181540,
+  "speaker": "M1",
+  "text": "Giving report now."
+ }
+]

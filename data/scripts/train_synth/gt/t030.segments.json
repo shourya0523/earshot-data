@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5306,
+  "speaker": "RD",
+  "text": "Ambulance 33, respond to MVC rollover, 52 year old male."
+ },
+ {
+  "start_ms": 9834,
+  "end_ms": 12058,
+  "speaker": "M1",
+  "text": "Ambulance 33 we're on scene."
+ },
+ {
+  "start_ms": 12934,
+  "end_ms": 14941,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 15580,
+  "end_ms": 17465,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 24216,
+  "end_ms": 25961,
+  "speaker": "PT",
+  "text": "My hip hurts so bad."
+ },
+ {
+  "start_ms": 29304,
+  "end_ms": 30295,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 33761,
+  "end_ms": 35449,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 45712,
+  "end_ms": 48371,
+  "speaker": "M2",
+  "text": "Pushing Ketalar, 0.3 IV."
+ },
+ {
+  "start_ms": 49874,
+  "end_ms": 51329,
+  "speaker": "M2",
+  "text": "Got pelvic binder."
+ },
+ {
+  "start_ms": 59080,
+  "end_ms": 61459,
+  "speaker": "M1",
+  "text": "Okay, sugar's 432."
+ },
+ {
+  "start_ms": 65283,
+  "end_ms": 67087,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 67599,
+  "end_ms": 68593,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 70947,
+  "end_ms": 73428,
+  "speaker": "M2",
+  "text": "Pushing morphine, 4 intravenous."
+ },
+ {
+  "start_ms": 98386,
+  "end_ms": 99865,
+  "speaker": "M1",
+  "text": "Transporting to Northside."
+ },
+ {
+  "start_ms": 105105,
+  "end_ms": 107891,
+  "speaker": "M1",
+  "text": "Giving 250 of saline IV."
+ },
+ {
+  "start_ms": 110595,
+  "end_ms": 115655,
+  "speaker": "M1",
+  "text": "Second set, sats 85, BGL is 112, GCS is 12."
+ },
+ {
+  "start_ms": 121839,
+  "end_ms": 123679,
+  "speaker": "M1",
+  "text": "100 fent IV, it's in."
+ },
+ {
+  "start_ms": 130026,
+  "end_ms": 131624,
+  "speaker": "M2",
+  "text": "Doing hemostatic gauze."
+ },
+ {
+  "start_ms": 134450,
+  "end_ms": 135779,
+  "speaker": "M1",
+  "text": "Arriving at Memorial."
+ },
+ {
+  "start_ms": 151210,
+  "end_ms": 152438,
+  "speaker": "M1",
+  "text": "Giving report now."
+ }
+]

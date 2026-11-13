@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5414,
+  "speaker": "RD",
+  "text": "Medic 27, respond to combative person, 84 year old female."
+ },
+ {
+  "start_ms": 7991,
+  "end_ms": 10045,
+  "speaker": "M1",
+  "text": "Medic 27 on scene."
+ },
+ {
+  "start_ms": 10365,
+  "end_ms": 13129,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 15925,
+  "end_ms": 17223,
+  "speaker": "PT",
+  "text": "I didn't do anything."
+ },
+ {
+  "start_ms": 23842,
+  "end_ms": 25444,
+  "speaker": "M2",
+  "text": "Let's do restraints."
+ },
+ {
+  "start_ms": 28621,
+  "end_ms": 31363,
+  "speaker": "M2",
+  "text": "Drawing up 5 milligrams of haloperidol."
+ },
+ {
+  "start_ms": 37818,
+  "end_ms": 39238,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 39802,
+  "end_ms": 41636,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 43356,
+  "end_ms": 46287,
+  "speaker": "M2",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 46738,
+  "end_ms": 48463,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 52624,
+  "end_ms": 55107,
+  "speaker": "M2",
+  "text": "BP's 196 over 128."
+ },
+ {
+  "start_ms": 59725,
+  "end_ms": 63086,
+  "speaker": "M1",
+  "text": "Drawing up 4 milligrams per kilo of Ketalar IM."
+ },
+ {
+  "start_ms": 68272,
+  "end_ms": 70417,
+  "speaker": "M1",
+  "text": "Giving 10 of olanzapine."
+ },
+ {
+  "start_ms": 102484,
+  "end_ms": 103958,
+  "speaker": "M1",
+  "text": "Transporting to General."
+ },
+ {
+  "start_ms": 107361,
+  "end_ms": 109894,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 110662,
+  "end_ms": 112197,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 118459,
+  "end_ms": 120634,
+  "speaker": "M2",
+  "text": "Repeat, GCS is 10."
+ },
+ {
+  "start_ms": 122946,
+  "end_ms": 126658,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 130036,
+  "end_ms": 131892,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 132682,
+  "end_ms": 133955,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 135359,
+  "end_ms": 136914,
+  "speaker": "M1",
+  "text": "Arriving at Good Sam."
+ },
+ {
+  "start_ms": 150133,
+  "end_ms": 151726,
+  "speaker": "M1",
+  "text": "Handing off to the nurse."
+ }
+]

@@ -1,0 +1,23 @@
+RD: Medic 25, priority two, difficulty breathing, 20 year old female.
+M2: Medic 25 on scene.
+M1: Hang tight, partner.
+PT: I woke up and couldn't breathe.
+M2: Got see pap.
+M1: NTG 0.4 migs.
+M1: When did you last eat?
+M1: Lasix 40 migs IV push.
+M2: Okay, resp rate 19, GCS 14, sat 89 percent.
+M2: Hang tight, partner.
+BY: Can somebody call my wife?
+M2: Doing transmit the 12.
+M1: Okay, we're going to take care of you.
+BY: I don't know, it just started.
+M1: I gave nitro 0.8 milligrams SL.
+M1: Leaving scene to Mercy.
+M1: Okay, breathing at 30, sats is 82 percent.
+M2: Can you squeeze my fingers?
+M1: Hang tight, partner.
+M1: Let's move on three. One, two, three.
+BY: I feel sick.
+M1: We're at University.
+M1: Giving report to bed four.

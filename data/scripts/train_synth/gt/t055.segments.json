@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5108,
+  "speaker": "RD",
+  "text": "Ambulance 35, priority one, cardiac problem, 20 year old female."
+ },
+ {
+  "start_ms": 7728,
+  "end_ms": 10166,
+  "speaker": "M1",
+  "text": "Ambulance 35 arriving on scene."
+ },
+ {
+  "start_ms": 10620,
+  "end_ms": 12886,
+  "speaker": "M2",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 13676,
+  "end_ms": 15563,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 17319,
+  "end_ms": 18556,
+  "speaker": "PT",
+  "text": "Pressure in my chest."
+ },
+ {
+  "start_ms": 20282,
+  "end_ms": 26540,
+  "speaker": "M1",
+  "text": "Vitals, GCS 8, heart rate at 139, blood sugar at 205."
+ },
+ {
+  "start_ms": 33396,
+  "end_ms": 34208,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 34627,
+  "end_ms": 35739,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 37176,
+  "end_ms": 39995,
+  "speaker": "M2",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 40510,
+  "end_ms": 41957,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 46547,
+  "end_ms": 48439,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 54923,
+  "end_ms": 59513,
+  "speaker": "M2",
+  "text": "Okay, pain is 7 out of 10, pulse ox's 86 percent."
+ },
+ {
+  "start_ms": 89696,
+  "end_ms": 92842,
+  "speaker": "M1",
+  "text": "Drawing up 324 migs of ASA."
+ },
+ {
+  "start_ms": 98461,
+  "end_ms": 100975,
+  "speaker": "M2",
+  "text": "Giving 50 mics of fent through the line."
+ },
+ {
+  "start_ms": 109822,
+  "end_ms": 111540,
+  "speaker": "M1",
+  "text": "We're transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 115050,
+  "end_ms": 116211,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 116997,
+  "end_ms": 119834,
+  "speaker": "BY",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 126702,
+  "end_ms": 128234,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 136789,
+  "end_ms": 137672,
+  "speaker": "M1",
+  "text": "We need monitor."
+ },
+ {
+  "start_ms": 139227,
+  "end_ms": 140121,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 142692,
+  "end_ms": 143899,
+  "speaker": "M1",
+  "text": "Arrived at Good Sam."
+ }
+]

@@ -1,0 +1,23 @@
+RD: Medic 33, priority one, bee sting, 56 year old male.
+M2: Medic 33 we're on scene.
+M2: On a scale of zero to ten, how bad is it?
+PT: I don't know, it just started.
+PT: My lips are swelling.
+M1: 25 milligrams diphenhydramine IV, it's in.
+M2: Vitals, sats is 95 on room air, blood sugar is 352, respirations is 9.
+M1: Giving 125 mg of Solu-Medrol IV push.
+M2: Grab the stair chair.
+M1: Get nebulizer treatment.
+M1: When did you last eat?
+BY: It's about an eight.
+M2: Vitals, sat is 87.
+M2: 0.3 epinephrine in the deltoid, it's in.
+M1: Hang tight, partner.
+M1: Leaving scene to University.
+M1: Doing got a line.
+M1: I'm going to put some stickers on your chest.
+BY: Am I going to be okay?
+M2: Giving 10 of epinephrine IV.
+M2: blood pressure's 136 over 92, sugar at 197.
+M1: Arrived at Riverside.
+M1: Transfer of care to bed four.

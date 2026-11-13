@@ -1,0 +1,22 @@
+RD: Rescue 58, priority one, fever, 73 year old male.
+M2: Rescue 58 arriving on scene.
+M1: Okay, we're going to take care of you.
+PT: Please don't cut my shirt.
+PT: I'm freezing.
+M2: APAP 1000 PO.
+M2: Any allergies?
+PT: Yeah, I take a bunch of pills, my daughter knows.
+M1: I'm going to put some stickers on your chest.
+M1: Let's do saline lock.
+M1: Can you squeeze my fingers?
+PT: Please don't cut my shirt.
+M1: 500 mils lactated ringers, it's in.
+M1: Are you having any trouble breathing?
+M1: Get twelve lead.
+M1: We're transporting to Riverside.
+M1: Drawing up 1000 of normal saline IV push.
+M1: pressure is 119 over 88, glucose's 255.
+M2: When did you last eat?
+M2: Okay, glucose 233.
+M1: Arriving at Good Sam.
+M1: Transfer of care now.

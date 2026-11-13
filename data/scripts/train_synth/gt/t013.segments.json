@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4265,
+  "speaker": "RD",
+  "text": "Rescue 5, you have a pregnancy problem, 31 year old male."
+ },
+ {
+  "start_ms": 7750,
+  "end_ms": 9452,
+  "speaker": "M2",
+  "text": "Rescue 5 arriving on scene."
+ },
+ {
+  "start_ms": 9813,
+  "end_ms": 11713,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 18058,
+  "end_ms": 20004,
+  "speaker": "PT",
+  "text": "The contractions are two minutes apart."
+ },
+ {
+  "start_ms": 21477,
+  "end_ms": 22298,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 25702,
+  "end_ms": 27073,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 35951,
+  "end_ms": 38649,
+  "speaker": "M1",
+  "text": "Pushing TXA, 1 gram through the line."
+ },
+ {
+  "start_ms": 47340,
+  "end_ms": 48331,
+  "speaker": "M1",
+  "text": "We need crowning."
+ },
+ {
+  "start_ms": 73941,
+  "end_ms": 76083,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 76874,
+  "end_ms": 78716,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 82521,
+  "end_ms": 84117,
+  "speaker": "M1",
+  "text": "We need 18 in the AC."
+ },
+ {
+  "start_ms": 87797,
+  "end_ms": 92123,
+  "speaker": "M2",
+  "text": "Repeat, heart rate is 141, ETCO2 at 33."
+ },
+ {
+  "start_ms": 117289,
+  "end_ms": 118637,
+  "speaker": "M1",
+  "text": "Transporting to General."
+ },
+ {
+  "start_ms": 122512,
+  "end_ms": 127697,
+  "speaker": "M2",
+  "text": "Repeat, GCS is 9, 121 over 72, capno 43."
+ },
+ {
+  "start_ms": 132116,
+  "end_ms": 133369,
+  "speaker": "M1",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 137206,
+  "end_ms": 139560,
+  "speaker": "M1",
+  "text": "Drawing up 10 units of Pitocin IM."
+ },
+ {
+  "start_ms": 144436,
+  "end_ms": 145948,
+  "speaker": "M1",
+  "text": "Arriving at Northside."
+ },
+ {
+  "start_ms": 160527,
+  "end_ms": 161966,
+  "speaker": "M1",
+  "text": "Giving report complete."
+ }
+]

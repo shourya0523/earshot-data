@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5221,
+  "speaker": "RD",
+  "text": "Rescue 58, priority one, fever, 73 year old male."
+ },
+ {
+  "start_ms": 9607,
+  "end_ms": 11588,
+  "speaker": "M2",
+  "text": "Rescue 58 arriving on scene."
+ },
+ {
+  "start_ms": 12346,
+  "end_ms": 14647,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 15348,
+  "end_ms": 16598,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 18468,
+  "end_ms": 19288,
+  "speaker": "PT",
+  "text": "I'm freezing."
+ },
+ {
+  "start_ms": 23620,
+  "end_ms": 26204,
+  "speaker": "M2",
+  "text": "APAP 1000 PO."
+ },
+ {
+  "start_ms": 30768,
+  "end_ms": 31844,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 32455,
+  "end_ms": 34540,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 37853,
+  "end_ms": 40123,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 44533,
+  "end_ms": 46150,
+  "speaker": "M1",
+  "text": "Let's do saline lock."
+ },
+ {
+  "start_ms": 54900,
+  "end_ms": 56552,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 57100,
+  "end_ms": 58373,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 66778,
+  "end_ms": 69669,
+  "speaker": "M1",
+  "text": "500 mils lactated ringers, it's in."
+ },
+ {
+  "start_ms": 97983,
+  "end_ms": 99599,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 103133,
+  "end_ms": 104227,
+  "speaker": "M1",
+  "text": "Get twelve lead."
+ },
+ {
+  "start_ms": 111120,
+  "end_ms": 112848,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 116374,
+  "end_ms": 119993,
+  "speaker": "M1",
+  "text": "Drawing up 1000 of normal saline IV push."
+ },
+ {
+  "start_ms": 130423,
+  "end_ms": 134793,
+  "speaker": "M1",
+  "text": "pressure is 119 over 88, glucose's 255."
+ },
+ {
+  "start_ms": 137396,
+  "end_ms": 138645,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 142017,
+  "end_ms": 144653,
+  "speaker": "M2",
+  "text": "Okay, glucose 233."
+ },
+ {
+  "start_ms": 147003,
+  "end_ms": 148549,
+  "speaker": "M1",
+  "text": "Arriving at Good Sam."
+ },
+ {
+  "start_ms": 165647,
+  "end_ms": 167010,
+  "speaker": "M1",
+  "text": "Transfer of care now."
+ }
+]

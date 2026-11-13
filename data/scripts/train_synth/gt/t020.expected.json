@@ -1,0 +1,134 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "57",
+  "sex": "female",
+  "weight_kg": "116",
+  "complaint": "allergic reaction",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "allergic reaction",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "9",
+    "hr": "99",
+    "spo2": "86",
+    "bgl": "432",
+    "rr": "12"
+   },
+   "last_vitals": {
+    "pain": "9",
+    "hr": "99",
+    "spo2": "100",
+    "bgl": "432",
+    "rr": "12"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "anaphylaxis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "epinephrine 0.3 mg",
+    "diphenhydramine 25 IV"
+   ],
+   "procedures": [
+    "nebulizer"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "57",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "bee sting",
+  "I_injuries_or_information": "allergic reaction",
+  "S_signs": {
+   "pain": "9",
+   "hr": "99",
+   "spo2": "86",
+   "bgl": "432",
+   "rr": "12"
+  },
+  "T_treatment": [
+   "epinephrine 0.3 mg",
+   "diphenhydramine 25 IV",
+   "nebulizer"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "01:22:25",
+  "eTimes.09": "01:23:37",
+  "eTimes.11": "01:24:39"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "bee sting",
+ "medications": [
+  {
+   "drug": "epinephrine",
+   "dose": "0.3",
+   "unit": "mg"
+  },
+  {
+   "drug": "diphenhydramine",
+   "dose": "25",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "9",
+   "time": "01:23:11"
+  },
+  {
+   "name": "hr",
+   "value": "99",
+   "time": "01:24:06"
+  },
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "01:24:06"
+  },
+  {
+   "name": "bgl",
+   "value": "432",
+   "time": "01:24:06"
+  },
+  {
+   "name": "rr",
+   "value": "12",
+   "time": "01:24:28"
+  },
+  {
+   "name": "spo2",
+   "value": "100",
+   "time": "01:24:28"
+  }
+ ],
+ "diagnosis_traps": [
+  "anaphylaxis"
+ ]
+}

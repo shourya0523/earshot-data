@@ -1,0 +1,137 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "23",
+  "sex": "male",
+  "weight_kg": "136",
+  "complaint": "unresponsive",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "unresponsive",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "80",
+    "spo2": "83",
+    "rr": "33",
+    "hr": "42"
+   },
+   "last_vitals": {
+    "bgl": "80",
+    "spo2": "83",
+    "rr": "33",
+    "hr": "42"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "hypoglycemia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "dextrose 25 g IV",
+    "oral glucose 15",
+    "glucagon 1 IM"
+   ],
+   "procedures": [
+    "IV access",
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "23",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "unresponsive",
+  "I_injuries_or_information": "unresponsive",
+  "S_signs": {
+   "bgl": "80",
+   "spo2": "83",
+   "rr": "33",
+   "hr": "42"
+  },
+  "T_treatment": [
+   "dextrose 25 g IV",
+   "oral glucose 15",
+   "glucagon 1 IM",
+   "IV access",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "20:14:23",
+  "eTimes.09": "20:16:14",
+  "eTimes.11": "20:16:55",
+  "eTimes.12": "20:17:08"
+ },
+ "wall_time_seconds": 13,
+ "dispatch_reason": "unresponsive",
+ "medications": [
+  {
+   "drug": "dextrose",
+   "dose": "25",
+   "unit": "g",
+   "route": "IV"
+  },
+  {
+   "drug": "oral glucose",
+   "dose": "15"
+  },
+  {
+   "drug": "glucagon",
+   "dose": "1",
+   "route": "IM"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "80",
+   "time": "20:14:47"
+  },
+  {
+   "name": "spo2",
+   "value": "83",
+   "time": "20:14:47"
+  },
+  {
+   "name": "rr",
+   "value": "33",
+   "time": "20:14:47"
+  },
+  {
+   "name": "spo2",
+   "value": "83",
+   "time": "20:15:00"
+  },
+  {
+   "name": "hr",
+   "value": "42",
+   "time": "20:15:00"
+  }
+ ],
+ "diagnosis_traps": [
+  "hypoglycemia"
+ ]
+}

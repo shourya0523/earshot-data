@@ -1,0 +1,98 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5377,
+  "speaker": "RD",
+  "text": "Medic 33, priority two, weakness one side, 69 year old male."
+ },
+ {
+  "start_ms": 10058,
+  "end_ms": 12085,
+  "speaker": "M2",
+  "text": "Medic 33 arriving on scene."
+ },
+ {
+  "start_ms": 12801,
+  "end_ms": 14306,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 15009,
+  "end_ms": 16549,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 18211,
+  "end_ms": 19681,
+  "speaker": "PT",
+  "text": "Words aren't coming out right."
+ },
+ {
+  "start_ms": 23460,
+  "end_ms": 25004,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 25486,
+  "end_ms": 27014,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 30670,
+  "end_ms": 31889,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 40300,
+  "end_ms": 42082,
+  "speaker": "M1",
+  "text": "non-rebreather 2 nasal cannula."
+ },
+ {
+  "start_ms": 50837,
+  "end_ms": 52830,
+  "speaker": "M2",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 53533,
+  "end_ms": 54655,
+  "speaker": "BY",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 58799,
+  "end_ms": 66833,
+  "speaker": "M1",
+  "text": "Repeat, 119 over 74, pain is 5 out of 10, glucose's 250."
+ },
+ {
+  "start_ms": 99018,
+  "end_ms": 100614,
+  "speaker": "M1",
+  "text": "We're transporting to Riverside."
+ },
+ {
+  "start_ms": 105825,
+  "end_ms": 109655,
+  "speaker": "M2",
+  "text": "Okay, ETCO2 is 18, BP's 135 over 60."
+ },
+ {
+  "start_ms": 111006,
+  "end_ms": 112487,
+  "speaker": "M2",
+  "text": "Let's do established IV."
+ },
+ {
+  "start_ms": 114053,
+  "end_ms": 115365,
+  "speaker": "M1",
+  "text": "Arriving at General."
+ }
+]

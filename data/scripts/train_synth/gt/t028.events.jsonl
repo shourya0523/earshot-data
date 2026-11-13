@@ -1,0 +1,12 @@
+{"id": "e1", "call_id": "t028", "time": "13:21:47", "clip_ms": 500, "type": "dispatch", "fields": {"text": "allergic reaction"}, "source": "heard", "quote": "allergic reaction", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t028", "time": "13:21:55", "clip_ms": 8286, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 8286}
+{"id": "e3", "call_id": "t028", "time": "13:22:08", "clip_ms": 21779, "type": "vital", "fields": {"name": "hr", "value": "104", "unit": "bpm"}, "source": "tap+heard", "quote": "rate's 104", "segment_start_ms": 23189, "tap_id": "t1"}
+{"id": "e4", "call_id": "t028", "time": "13:22:08", "clip_ms": 21779, "type": "vital", "fields": {"name": "gcs", "value": "15", "unit": ""}, "source": "tap+heard", "quote": "GCS at 15", "segment_start_ms": 23189, "tap_id": "t1"}
+{"id": "mt2", "call_id": "t028", "time": "13:22:39", "clip_ms": 52207, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e5", "call_id": "t028", "time": "13:22:55", "clip_ms": 68951, "type": "medication", "fields": {"drug": "epinephrine", "dose": "0.3", "unit": "mg", "route": "IM"}, "source": "tap+heard", "quote": "0.3 mg epi pen IM", "segment_start_ms": 70440, "tap_id": "t3"}
+{"id": "e6", "call_id": "t028", "time": "13:23:09", "clip_ms": 82180, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "got a line", "segment_start_ms": 82180}
+{"id": "e7", "call_id": "t028", "time": "13:23:14", "clip_ms": 87026, "type": "vital", "fields": {"name": "bgl", "value": "361", "unit": "mg/dL"}, "source": "heard", "quote": "blood sugar at 361", "segment_start_ms": 87026}
+{"id": "e8", "call_id": "t028", "time": "13:23:33", "clip_ms": 106313, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Leaving scene", "segment_start_ms": 106313}
+{"id": "e9", "call_id": "t028", "time": "13:23:47", "clip_ms": 120957, "type": "medication", "fields": {"drug": "albuterol", "dose": "2.5", "unit": "mg"}, "source": "tap+heard", "quote": "I gave Ventolin 2.5 mg", "segment_start_ms": 121957, "tap_id": "t4"}
+{"id": "e10", "call_id": "t028", "time": "13:23:57", "clip_ms": 130171, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "We're at", "segment_start_ms": 130171}
+{"id": "e11", "call_id": "t028", "time": "13:24:05", "clip_ms": 138514, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "heard", "quote": "Handing off", "segment_start_ms": 138514}

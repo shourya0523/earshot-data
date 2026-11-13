@@ -1,0 +1,140 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "18",
+  "sex": "male",
+  "weight_kg": "77",
+  "complaint": "seizure",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "seizure",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "288",
+    "etco2": "24",
+    "rr": "14",
+    "spo2": "98",
+    "gcs": "10",
+    "pain": "9"
+   },
+   "last_vitals": {
+    "bgl": "288",
+    "etco2": "24",
+    "rr": "14",
+    "spo2": "98",
+    "gcs": "10",
+    "pain": "9"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "epilepsy"
+   ]
+  },
+  "P": {
+   "medications": [
+    "lorazepam 2 IV",
+    "midazolam 5 mg IM"
+   ],
+   "procedures": [
+    "glucose check",
+    "suction"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "18",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "convulsions",
+  "I_injuries_or_information": "seizure",
+  "S_signs": {
+   "bgl": "288",
+   "etco2": "24",
+   "rr": "14",
+   "spo2": "98",
+   "gcs": "10",
+   "pain": "9"
+  },
+  "T_treatment": [
+   "lorazepam 2 IV",
+   "midazolam 5 mg IM",
+   "glucose check",
+   "suction"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "04:15:05",
+  "eTimes.09": "04:17:17",
+  "eTimes.11": "04:17:45"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "convulsions",
+ "medications": [
+  {
+   "drug": "lorazepam",
+   "dose": "2",
+   "route": "IV"
+  },
+  {
+   "drug": "midazolam",
+   "dose": "5",
+   "unit": "mg",
+   "route": "IM"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "288",
+   "time": "04:16:13"
+  },
+  {
+   "name": "etco2",
+   "value": "24",
+   "time": "04:16:13"
+  },
+  {
+   "name": "rr",
+   "value": "14",
+   "time": "04:16:23"
+  },
+  {
+   "name": "spo2",
+   "value": "98",
+   "time": "04:16:23"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "04:16:23"
+  },
+  {
+   "name": "pain",
+   "value": "9",
+   "time": "04:16:36"
+  }
+ ],
+ "diagnosis_traps": [
+  "epilepsy"
+ ]
+}

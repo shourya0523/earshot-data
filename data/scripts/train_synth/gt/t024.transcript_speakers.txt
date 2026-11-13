@@ -1,0 +1,23 @@
+RD: Medic 46, priority two, burns, 33 year old female.
+M2: Medic 46 arriving on scene.
+M1: I'm going to put some stickers on your chest.
+PT: I don't know, it just started.
+PT: My arms are on fire.
+M2: Small poke.
+BY: No allergies.
+M1: Giving 1 mics per kilo of Sublimaze intranasal.
+M1: Any medical history I should know about?
+M1: GCS 14, resp rate is 9, BP 141 over 103.
+M2: Drawing up 1000 mLs of lactated ringers intravenous.
+M2: Okay, we're going to take care of you.
+PT: Am I going to be okay?
+M1: Hang tight, partner.
+M2: Second set, end tidal 26, pain is 9 out of 10.
+M2: On a scale of zero to ten, how bad is it?
+BY: I feel sick.
+M1: Leaving scene to Riverside.
+M1: Giving 5 of cyanokit through the line.
+M2: Repeat, glucose at 256.
+M1: Get the cot.
+M1: Doing cooling.
+M1: We're at General.

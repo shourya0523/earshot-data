@@ -1,0 +1,141 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "38",
+  "sex": "female",
+  "weight_kg": "132",
+  "complaint": "burns",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "burns",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "31",
+    "hr": "57",
+    "bp": "81/50",
+    "bgl": "186",
+    "pain": "5"
+   },
+   "last_vitals": {
+    "etco2": "31",
+    "hr": "57",
+    "bp": "81/50",
+    "bgl": "186",
+    "pain": "5"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "lactated Ringer's 1000 mL",
+    "hydroxocobalamin 5 g IV",
+    "fentanyl 1 mcg/kg IN"
+   ],
+   "procedures": [
+    "bandaging",
+    "cooling"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "38",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "structure fire",
+  "I_injuries_or_information": "burns",
+  "S_signs": {
+   "etco2": "31",
+   "hr": "57",
+   "bp": "81/50",
+   "bgl": "186",
+   "pain": "5"
+  },
+  "T_treatment": [
+   "lactated Ringer's 1000 mL",
+   "hydroxocobalamin 5 g IV",
+   "fentanyl 1 mcg/kg IN",
+   "bandaging",
+   "cooling"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "03:12:11",
+  "eTimes.09": "03:14:05",
+  "eTimes.11": "03:14:50",
+  "eTimes.12": "03:15:04"
+ },
+ "wall_time_seconds": 14,
+ "dispatch_reason": "structure fire",
+ "medications": [
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL"
+  },
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "unit": "g",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "1",
+   "unit": "mcg/kg",
+   "route": "IN"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "31",
+   "time": "03:13:21"
+  },
+  {
+   "name": "hr",
+   "value": "57",
+   "time": "03:13:21"
+  },
+  {
+   "name": "bp",
+   "value": "81/50",
+   "time": "03:14:21"
+  },
+  {
+   "name": "bgl",
+   "value": "186",
+   "time": "03:14:21"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "03:14:21"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

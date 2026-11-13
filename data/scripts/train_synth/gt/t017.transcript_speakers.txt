@@ -1,0 +1,24 @@
+RD: Medic 15, you have a difficulty breathing, 50 year old female.
+M1: Medic 15 we're on scene.
+M1: Hang tight, partner.
+PT: It's about an eight.
+PT: My breathing's bad today.
+M2: breathing 32.
+M1: Repeat, pain is 9 out of 10.
+M1: Can you tell me what day it is?
+BY: I feel sick.
+M1: Can you tell me what day it is?
+BY: I had something like this last year.
+M1: Vitals, glucose at 162, sat is 97 on room air, resps's 18.
+M2: Got CPAP.
+M1: magnesium sulfate 2 grams IV.
+M1: Pushing oxygen, 4 L nasal cannula.
+M2: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+M1: We're transporting to Memorial.
+M2: 3 mils duo neb nebulized, it's in.
+M2: Stay with me, keep your eyes open.
+M1: methylprednisolone 125 intravenous.
+M1: Do you take any medications?
+PT: Can somebody call my wife?
+M1: Arrived at Valley.

@@ -1,0 +1,21 @@
+RD: Ambulance 35, priority one, cardiac problem, 20 year old female.
+M1: Ambulance 35 arriving on scene.
+M2: I'm going to put some stickers on your chest.
+BY: I don't know, it just started.
+PT: Pressure in my chest.
+M1: Vitals, GCS 8, heart rate at 139, blood sugar at 205.
+M1: Watch the step.
+BY: It's about an eight.
+M2: On a scale of zero to ten, how bad is it?
+PT: Please don't cut my shirt.
+M1: Any medical history I should know about?
+M2: Okay, pain is 7 out of 10, pulse ox's 86 percent.
+M1: Drawing up 324 migs of ASA.
+M2: Giving 50 mics of fent through the line.
+M1: We're transporting to Saint Vincent's.
+M1: When did you last eat?
+BY: Yeah, I take a bunch of pills, my daughter knows.
+M1: Are you having any trouble breathing?
+M1: We need monitor.
+M1: Any allergies?
+M1: Arrived at Good Sam.

@@ -1,0 +1,138 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "44",
+  "sex": "male",
+  "weight_kg": "120",
+  "complaint": "rapid heart rate",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "rapid heart rate",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "131",
+    "rr": "34",
+    "bp": "193/120",
+    "spo2": "85",
+    "pain": "2"
+   },
+   "last_vitals": {
+    "hr": "131",
+    "rr": "34",
+    "bp": "193/120",
+    "spo2": "85",
+    "pain": "7"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "SVT"
+   ]
+  },
+  "P": {
+   "medications": [
+    "adenosine 12 mg IV",
+    "normal saline 10 mL IV"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "44",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "palpitations",
+  "I_injuries_or_information": "rapid heart rate",
+  "S_signs": {
+   "hr": "131",
+   "rr": "34",
+   "bp": "193/120",
+   "spo2": "85",
+   "pain": "2"
+  },
+  "T_treatment": [
+   "adenosine 12 mg IV",
+   "normal saline 10 mL IV",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "06:51:51",
+  "eTimes.09": "06:53:46",
+  "eTimes.11": "06:54:16",
+  "eTimes.12": "06:54:27"
+ },
+ "wall_time_seconds": 11,
+ "dispatch_reason": "palpitations",
+ "medications": [
+  {
+   "drug": "adenosine",
+   "dose": "12",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "10",
+   "unit": "mL",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "131",
+   "time": "06:52:35"
+  },
+  {
+   "name": "rr",
+   "value": "34",
+   "time": "06:52:35"
+  },
+  {
+   "name": "bp",
+   "value": "193/120",
+   "time": "06:52:57"
+  },
+  {
+   "name": "spo2",
+   "value": "85",
+   "time": "06:52:57"
+  },
+  {
+   "name": "pain",
+   "value": "2",
+   "time": "06:52:57"
+  },
+  {
+   "name": "pain",
+   "value": "7",
+   "time": "06:53:08"
+  }
+ ],
+ "diagnosis_traps": [
+  "SVT"
+ ]
+}

@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4003,
+  "speaker": "RD",
+  "text": "Rescue 15, you have a chest pain, 24 year old female."
+ },
+ {
+  "start_ms": 6384,
+  "end_ms": 7985,
+  "speaker": "M1",
+  "text": "Rescue 15 on scene."
+ },
+ {
+  "start_ms": 8472,
+  "end_ms": 10170,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 18883,
+  "end_ms": 20167,
+  "speaker": "PT",
+  "text": "My chest is squeezing."
+ },
+ {
+  "start_ms": 24242,
+  "end_ms": 27200,
+  "speaker": "M1",
+  "text": "Giving 4 milligrams of ondansetron IV push."
+ },
+ {
+  "start_ms": 31680,
+  "end_ms": 33769,
+  "speaker": "M1",
+  "text": "Vitals, pain is 3 out of 10."
+ },
+ {
+  "start_ms": 40416,
+  "end_ms": 43178,
+  "speaker": "M1",
+  "text": "Pushing Nitrolingual, 0.4 sublingual."
+ },
+ {
+  "start_ms": 53329,
+  "end_ms": 55463,
+  "speaker": "M2",
+  "text": "Okay, end tidal is 19."
+ },
+ {
+  "start_ms": 64184,
+  "end_ms": 65020,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 92069,
+  "end_ms": 93162,
+  "speaker": "M2",
+  "text": "Got 12-lead."
+ },
+ {
+  "start_ms": 94789,
+  "end_ms": 96376,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 105014,
+  "end_ms": 106470,
+  "speaker": "M1",
+  "text": "We're transporting to County."
+ },
+ {
+  "start_ms": 111981,
+  "end_ms": 114565,
+  "speaker": "M2",
+  "text": "Giving 324 of Bayer PO."
+ },
+ {
+  "start_ms": 120931,
+  "end_ms": 122334,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 122897,
+  "end_ms": 124518,
+  "speaker": "BY",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 129293,
+  "end_ms": 131835,
+  "speaker": "M2",
+  "text": "I gave fentanyl 50 IV push."
+ },
+ {
+  "start_ms": 136501,
+  "end_ms": 138447,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 138909,
+  "end_ms": 140694,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 147112,
+  "end_ms": 148704,
+  "speaker": "M1",
+  "text": "Arrived at Saint Joseph's."
+ },
+ {
+  "start_ms": 164803,
+  "end_ms": 166065,
+  "speaker": "M1",
+  "text": "Handing off to the nurse."
+ }
+]

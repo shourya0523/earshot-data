@@ -1,0 +1,20 @@
+RD: Rescue 42, priority one, weakness one side, 25 year old female.
+M1: Rescue 42 on scene.
+M1: Grab the stair chair.
+PT: My hand won't work.
+M1: Can you tell me what day it is?
+M1: Any medical history I should know about?
+PT: It's getting worse.
+M1: Okay, glucose is 75, breathing 33.
+M1: Watch the step.
+PT: I had something like this last year.
+M1: Get the cot.
+M2: Pushing oxygen, 2 L nasal cannula.
+M1: We need 20 gauge.
+M1: We're transporting to Saint Vincent's.
+M2: When did you last eat?
+BY: Am I going to be okay?
+M1: Second set, resp rate 17, GCS's 15.
+M1: Okay, we're going to take care of you.
+M2: Doing BEFAST.
+M1: We're at Good Sam.

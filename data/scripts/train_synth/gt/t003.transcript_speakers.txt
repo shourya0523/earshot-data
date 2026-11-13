@@ -1,0 +1,16 @@
+RD: Rescue 25, priority two, allergic reaction, 57 year old male.
+M1: Rescue 25 we're on scene.
+M1: Who's your doctor?
+PT: My lips are swelling.
+M2: Stay with me, keep your eyes open.
+PT: No allergies.
+M1: Drawing up 2.5 of breathing treatment nebulized.
+M2: Vitals, pulse ox's 87 percent, pulse's 109, respirations is 8.
+M2: Let's do breathing treatment.
+M2: Pushing diphenhydramine, 25 mg through the line.
+M2: On a scale of zero to ten, how bad is it?
+PT: Can somebody call my wife?
+M1: We're transporting to Saint Vincent's.
+M1: Can you squeeze my fingers?
+M1: Second set, sats's 98 percent, blood pressure at 180 over 127.
+M1: Arriving at Riverside.

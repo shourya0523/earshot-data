@@ -1,0 +1,124 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "54",
+  "sex": "female",
+  "weight_kg": "57",
+  "complaint": "difficulty breathing",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "difficulty breathing",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "204",
+    "rr": "18",
+    "hr": "106"
+   },
+   "last_vitals": {
+    "bgl": "204",
+    "rr": "18",
+    "hr": "106"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "COPD exacerbation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "methylprednisolone 125 mg IV",
+    "oxygen 4 L/min",
+    "albuterol/ipratropium 3 mL"
+   ],
+   "procedures": [
+    "CPAP",
+    "nebulizer"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "54",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "shortness of breath",
+  "I_injuries_or_information": "difficulty breathing",
+  "S_signs": {
+   "bgl": "204",
+   "rr": "18",
+   "hr": "106"
+  },
+  "T_treatment": [
+   "methylprednisolone 125 mg IV",
+   "oxygen 4 L/min",
+   "albuterol/ipratropium 3 mL",
+   "CPAP",
+   "nebulizer"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "12:51:48",
+  "eTimes.09": "12:53:16",
+  "eTimes.11": "12:53:58",
+  "eTimes.12": "12:54:14"
+ },
+ "wall_time_seconds": 16,
+ "dispatch_reason": "shortness of breath",
+ "medications": [
+  {
+   "drug": "methylprednisolone",
+   "dose": "125",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "oxygen",
+   "dose": "4",
+   "unit": "L/min"
+  },
+  {
+   "drug": "albuterol/ipratropium",
+   "dose": "3",
+   "unit": "mL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "204",
+   "time": "12:52:39"
+  },
+  {
+   "name": "rr",
+   "value": "18",
+   "time": "12:52:39"
+  },
+  {
+   "name": "hr",
+   "value": "106",
+   "time": "12:53:00"
+  }
+ ],
+ "diagnosis_traps": [
+  "COPD exacerbation"
+ ]
+}

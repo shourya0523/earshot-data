@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4679,
+  "speaker": "RD",
+  "text": "Squad 28, priority two, pedestrian struck, 75 year old male."
+ },
+ {
+  "start_ms": 8218,
+  "end_ms": 9897,
+  "speaker": "M2",
+  "text": "Squad 28 we're on scene."
+ },
+ {
+  "start_ms": 10767,
+  "end_ms": 13501,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 13837,
+  "end_ms": 15264,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 19043,
+  "end_ms": 20653,
+  "speaker": "PT",
+  "text": "I can't feel my fingers."
+ },
+ {
+  "start_ms": 26133,
+  "end_ms": 29473,
+  "speaker": "M1",
+  "text": "Okay, sat at 99 percent, GCS's 9."
+ },
+ {
+  "start_ms": 32958,
+  "end_ms": 34064,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 37632,
+  "end_ms": 44476,
+  "speaker": "M1",
+  "text": "Second set, glucose 437, end tidal 27, BP's 113 over 81."
+ },
+ {
+  "start_ms": 47207,
+  "end_ms": 49269,
+  "speaker": "M2",
+  "text": "I gave ket 0.3 IV."
+ },
+ {
+  "start_ms": 52691,
+  "end_ms": 56262,
+  "speaker": "M1",
+  "text": "Drawing up 250 mLs of saline IV push."
+ },
+ {
+  "start_ms": 58875,
+  "end_ms": 60666,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 61367,
+  "end_ms": 63806,
+  "speaker": "BY",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 65624,
+  "end_ms": 68557,
+  "speaker": "M2",
+  "text": "I gave Sublimaze 100 mics through the line."
+ },
+ {
+  "start_ms": 71124,
+  "end_ms": 72675,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 73298,
+  "end_ms": 74559,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 81412,
+  "end_ms": 82749,
+  "speaker": "M1",
+  "text": "Leaving scene to County."
+ },
+ {
+  "start_ms": 87894,
+  "end_ms": 90031,
+  "speaker": "M1",
+  "text": "morphine 4 milligrams through the line."
+ },
+ {
+  "start_ms": 118295,
+  "end_ms": 119871,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 126579,
+  "end_ms": 127810,
+  "speaker": "M1",
+  "text": "Got traction splint."
+ },
+ {
+  "start_ms": 134003,
+  "end_ms": 138598,
+  "speaker": "M1",
+  "text": "Okay, heart rate's 77, GCS is 10, breathing is 29."
+ },
+ {
+  "start_ms": 141108,
+  "end_ms": 142442,
+  "speaker": "M1",
+  "text": "Arriving at General."
+ },
+ {
+  "start_ms": 158715,
+  "end_ms": 159895,
+  "speaker": "M1",
+  "text": "Giving report now."
+ }
+]

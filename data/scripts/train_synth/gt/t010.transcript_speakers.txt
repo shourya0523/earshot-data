@@ -1,0 +1,24 @@
+RD: Rescue 56, you have a assault, 88 year old male.
+M2: Rescue 56 we're on scene.
+M1: Get the cot.
+PT: I feel sick.
+PT: My arm, don't touch my arm.
+M1: Watch the step.
+M1: We need backboard.
+M2: Any allergies?
+PT: I had something like this last year.
+M1: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+M2: Second set, sats's 89.
+M1: 4 mg morphine, it's in.
+M1: Giving 0.3 milligrams per kilo of Ketalar IV push.
+M1: Hang tight, partner.
+BY: Am I going to be okay?
+M1: Any allergies?
+M1: Leaving scene to the trauma center.
+M1: normal saline 250 through the line.
+M2: I gave tranexamic acid 1 gram IV.
+M2: Repeat, pulse's 93, pulse ox's 90, respirations's 28.
+M2: Let's do binder.
+M1: We're at County.
+M1: Transfer of care complete.

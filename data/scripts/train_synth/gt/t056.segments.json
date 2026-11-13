@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5382,
+  "speaker": "RD",
+  "text": "Rescue 1, you have a palpitations, 86 year old female."
+ },
+ {
+  "start_ms": 10228,
+  "end_ms": 11872,
+  "speaker": "M2",
+  "text": "Rescue 1 arriving on scene."
+ },
+ {
+  "start_ms": 12192,
+  "end_ms": 13047,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 13424,
+  "end_ms": 15544,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 18275,
+  "end_ms": 20035,
+  "speaker": "PT",
+  "text": "It feels like it's fluttering."
+ },
+ {
+  "start_ms": 24829,
+  "end_ms": 25804,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 26417,
+  "end_ms": 28421,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 29804,
+  "end_ms": 34095,
+  "speaker": "M2",
+  "text": "Vitals, BGL's 331, pain is 8 out of 10."
+ },
+ {
+  "start_ms": 61677,
+  "end_ms": 64278,
+  "speaker": "M1",
+  "text": "Drawing up 6 of adenosine intravenous."
+ },
+ {
+  "start_ms": 70672,
+  "end_ms": 74034,
+  "speaker": "M2",
+  "text": "Okay, GCS's 10, pain is 8 out of 10."
+ },
+ {
+  "start_ms": 84255,
+  "end_ms": 89758,
+  "speaker": "M1",
+  "text": "GCS 10, pressure at 126 over 57, pain is 7 out of 10."
+ },
+ {
+  "start_ms": 94178,
+  "end_ms": 95207,
+  "speaker": "M2",
+  "text": "Let's do vagal."
+ },
+ {
+  "start_ms": 99660,
+  "end_ms": 100891,
+  "speaker": "M1",
+  "text": "We're transporting to County."
+ },
+ {
+  "start_ms": 128369,
+  "end_ms": 129031,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 132696,
+  "end_ms": 134031,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 134555,
+  "end_ms": 136234,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 141212,
+  "end_ms": 143093,
+  "speaker": "M1",
+  "text": "Giving 10 mils of saline IV push."
+ },
+ {
+  "start_ms": 151588,
+  "end_ms": 152703,
+  "speaker": "M1",
+  "text": "Arrived at Northside."
+ },
+ {
+  "start_ms": 165658,
+  "end_ms": 166621,
+  "speaker": "M1",
+  "text": "Giving report now."
+ }
+]

@@ -1,0 +1,147 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "33",
+  "sex": "female",
+  "weight_kg": "93",
+  "complaint": "burns",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "burns",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "14",
+    "rr": "9",
+    "bp": "141/103",
+    "etco2": "26",
+    "pain": "9",
+    "bgl": "256"
+   },
+   "last_vitals": {
+    "gcs": "14",
+    "rr": "9",
+    "bp": "141/103",
+    "etco2": "26",
+    "pain": "9",
+    "bgl": "256"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "fentanyl 1 mcg/kg IN",
+    "lactated Ringer's 1000 mL IV",
+    "hydroxocobalamin 5 IV"
+   ],
+   "procedures": [
+    "cooling"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "33",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "burns",
+  "I_injuries_or_information": "burns",
+  "S_signs": {
+   "gcs": "14",
+   "rr": "9",
+   "bp": "141/103",
+   "etco2": "26",
+   "pain": "9",
+   "bgl": "256"
+  },
+  "T_treatment": [
+   "fentanyl 1 mcg/kg IN",
+   "lactated Ringer's 1000 mL IV",
+   "hydroxocobalamin 5 IV",
+   "cooling"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "03:53:23",
+  "eTimes.09": "03:55:51",
+  "eTimes.11": "03:56:23"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "burns",
+ "medications": [
+  {
+   "drug": "fentanyl",
+   "dose": "1",
+   "unit": "mcg/kg",
+   "route": "IN"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "14",
+   "time": "03:54:55"
+  },
+  {
+   "name": "rr",
+   "value": "9",
+   "time": "03:54:55"
+  },
+  {
+   "name": "bp",
+   "value": "141/103",
+   "time": "03:54:55"
+  },
+  {
+   "name": "etco2",
+   "value": "26",
+   "time": "03:55:32"
+  },
+  {
+   "name": "pain",
+   "value": "9",
+   "time": "03:55:32"
+  },
+  {
+   "name": "bgl",
+   "value": "256",
+   "time": "03:56:04"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

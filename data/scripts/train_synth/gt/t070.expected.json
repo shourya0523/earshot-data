@@ -1,0 +1,145 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "82",
+  "sex": "male",
+  "weight_kg": "68",
+  "complaint": "chest pain",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "chest pain",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "8",
+    "bgl": "247",
+    "spo2": "97",
+    "bp": "95/63"
+   },
+   "last_vitals": {
+    "rr": "11",
+    "bgl": "199",
+    "spo2": "97",
+    "bp": "95/63"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "MI",
+    "heart attack"
+   ]
+  },
+  "P": {
+   "medications": [
+    "aspirin 324 mg PO",
+    "fentanyl 50 mcg",
+    "nitroglycerin 0.4 SL"
+   ],
+   "procedures": [
+    "12-lead ECG",
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "82",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "cardiac problem",
+  "I_injuries_or_information": "chest pain",
+  "S_signs": {
+   "rr": "8",
+   "bgl": "247",
+   "spo2": "97",
+   "bp": "95/63"
+  },
+  "T_treatment": [
+   "aspirin 324 mg PO",
+   "fentanyl 50 mcg",
+   "nitroglycerin 0.4 SL",
+   "12-lead ECG",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "11:32:06",
+  "eTimes.09": "11:33:20",
+  "eTimes.11": "11:34:20",
+  "eTimes.12": "11:34:29"
+ },
+ "wall_time_seconds": 9,
+ "dispatch_reason": "cardiac problem",
+ "medications": [
+  {
+   "drug": "aspirin",
+   "dose": "324",
+   "unit": "mg",
+   "route": "PO"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "50",
+   "unit": "mcg"
+  },
+  {
+   "drug": "nitroglycerin",
+   "dose": "0.4",
+   "route": "SL"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "8",
+   "time": "11:32:21"
+  },
+  {
+   "name": "bgl",
+   "value": "247",
+   "time": "11:32:58"
+  },
+  {
+   "name": "spo2",
+   "value": "97",
+   "time": "11:32:58"
+  },
+  {
+   "name": "rr",
+   "value": "11",
+   "time": "11:34:09"
+  },
+  {
+   "name": "bgl",
+   "value": "199",
+   "time": "11:34:09"
+  },
+  {
+   "name": "bp",
+   "value": "95/63",
+   "time": "11:34:09"
+  }
+ ],
+ "diagnosis_traps": [
+  "MI",
+  "heart attack"
+ ]
+}

@@ -1,0 +1,20 @@
+RD: Ambulance 44, priority two, difficulty breathing, 88 year old male.
+M2: Ambulance 44 we're on scene.
+M1: Can you squeeze my fingers?
+PT: I woke up and couldn't breathe.
+M1: 40 furosemide intravenous, it's in.
+M2: Who's your doctor?
+BY: No allergies.
+M2: resps at 32, pulse is 64, GCS 10.
+M1: Repeat, HR at 41, pain is 7 out of 10, GCS is 14.
+M1: Stay with me, keep your eyes open.
+M1: I'm going to put some stickers on your chest.
+PT: I had something like this last year.
+M2: Repeat, end tidal's 42.
+M1: Pushing Nitrostat, 0.8 sublingual.
+M1: We're transporting to Riverside.
+M1: Get 12 lead.
+M1: On a scale of zero to ten, how bad is it?
+M1: Drawing up 0.4 of nitroglycerin sublingual.
+M2: Get the cot.
+M1: Arrived at University.

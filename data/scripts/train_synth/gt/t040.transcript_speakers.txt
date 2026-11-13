@@ -1,0 +1,18 @@
+RD: Rescue 29, you have a fever, 24 year old male.
+M1: Rescue 29 arriving on scene.
+M1: Any medical history I should know about?
+PT: I had something like this last year.
+PT: I'm freezing.
+M1: Did you pass out at all?
+M1: Grab the stair chair.
+PT: Please don't cut my shirt.
+M1: end tidal 38, pain is 5 out of 10.
+M1: Vitals, blood pressure at 113 over 40.
+M1: Pushing Tylenol, 1000 mg by mouth.
+M1: Get the cot.
+BY: I had something like this last year.
+M1: We're transporting to Mercy.
+M1: 500 lactated Ringer's intravenous, it's in.
+M2: I gave normal saline 1000 intravenous.
+M1: Let's do 12 lead.
+M1: Arriving at Good Sam.

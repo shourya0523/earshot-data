@@ -1,0 +1,114 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "55",
+  "sex": "male",
+  "weight_kg": "93",
+  "complaint": "weakness one side",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "weakness one side",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "86",
+    "gcs": "8",
+    "pain": "10"
+   },
+   "last_vitals": {
+    "spo2": "86",
+    "gcs": "10",
+    "pain": "10"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "CVA",
+    "TIA"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 2"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "55",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "weakness one side",
+  "I_injuries_or_information": "weakness one side",
+  "S_signs": {
+   "spo2": "86",
+   "gcs": "8",
+   "pain": "10"
+  },
+  "T_treatment": [
+   "oxygen 2",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "04:54:59",
+  "eTimes.09": "04:56:20",
+  "eTimes.11": "04:56:43",
+  "eTimes.12": "04:56:54"
+ },
+ "wall_time_seconds": 11,
+ "dispatch_reason": "weakness one side",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "2"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "04:56:14"
+  },
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "04:56:14"
+  },
+  {
+   "name": "pain",
+   "value": "10",
+   "time": "04:56:32"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "04:56:32"
+  }
+ ],
+ "diagnosis_traps": [
+  "CVA",
+  "TIA"
+ ]
+}

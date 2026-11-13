@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3832,
+  "speaker": "RD",
+  "text": "Squad 15, you have a unresponsive, 23 year old male."
+ },
+ {
+  "start_ms": 8325,
+  "end_ms": 10538,
+  "speaker": "M2",
+  "text": "Squad 15 on scene."
+ },
+ {
+  "start_ms": 10878,
+  "end_ms": 12395,
+  "speaker": "M2",
+  "text": "Grab the stair chair."
+ },
+ {
+  "start_ms": 12900,
+  "end_ms": 16327,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 24878,
+  "end_ms": 27884,
+  "speaker": "PT",
+  "text": "I took my insulin and skipped breakfast."
+ },
+ {
+  "start_ms": 34158,
+  "end_ms": 39123,
+  "speaker": "M2",
+  "text": "Repeat, sugar 80, sat's 83, breathing is 33."
+ },
+ {
+  "start_ms": 45743,
+  "end_ms": 50007,
+  "speaker": "M1",
+  "text": "Repeat, SpO2 83 percent, pulse is 42."
+ },
+ {
+  "start_ms": 51311,
+  "end_ms": 52807,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 53604,
+  "end_ms": 54877,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 59156,
+  "end_ms": 62025,
+  "speaker": "M1",
+  "text": "Drawing up 25 grams of D10 IV."
+ },
+ {
+  "start_ms": 65103,
+  "end_ms": 67401,
+  "speaker": "M1",
+  "text": "Giving 15 of insta-glucose."
+ },
+ {
+  "start_ms": 77749,
+  "end_ms": 80270,
+  "speaker": "M1",
+  "text": "1 glucagon intramuscular, it's in."
+ },
+ {
+  "start_ms": 88960,
+  "end_ms": 91347,
+  "speaker": "M2",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 119977,
+  "end_ms": 121642,
+  "speaker": "M1",
+  "text": "We're transporting to General."
+ },
+ {
+  "start_ms": 148810,
+  "end_ms": 150070,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 152568,
+  "end_ms": 154034,
+  "speaker": "M1",
+  "text": "Let's do BGL check."
+ },
+ {
+  "start_ms": 155850,
+  "end_ms": 157250,
+  "speaker": "M2",
+  "text": "Got 18 gauge."
+ },
+ {
+  "start_ms": 160694,
+  "end_ms": 161723,
+  "speaker": "M1",
+  "text": "We're at Memorial."
+ },
+ {
+  "start_ms": 173355,
+  "end_ms": 174789,
+  "speaker": "M1",
+  "text": "Handing off to bed four."
+ }
+]

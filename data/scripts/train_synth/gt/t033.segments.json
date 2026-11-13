@@ -1,0 +1,122 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4904,
+  "speaker": "RD",
+  "text": "Medic 39, respond to structure fire, 38 year old female."
+ },
+ {
+  "start_ms": 9456,
+  "end_ms": 11227,
+  "speaker": "M1",
+  "text": "Medic 39 we're on scene."
+ },
+ {
+  "start_ms": 35710,
+  "end_ms": 38522,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 39275,
+  "end_ms": 40754,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 47234,
+  "end_ms": 48600,
+  "speaker": "PT",
+  "text": "My arms are on fire."
+ },
+ {
+  "start_ms": 56975,
+  "end_ms": 60001,
+  "speaker": "M1",
+  "text": "Giving 1000 mLs of lactated ringers."
+ },
+ {
+  "start_ms": 62606,
+  "end_ms": 64553,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 65001,
+  "end_ms": 66548,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 68109,
+  "end_ms": 70209,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 74556,
+  "end_ms": 76635,
+  "speaker": "M1",
+  "text": "Cyanokit 5 gram through the line."
+ },
+ {
+  "start_ms": 79965,
+  "end_ms": 83336,
+  "speaker": "M1",
+  "text": "Vitals, ETCO2's 31, pulse's 57."
+ },
+ {
+  "start_ms": 85094,
+  "end_ms": 86483,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 91025,
+  "end_ms": 91899,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 123987,
+  "end_ms": 125868,
+  "speaker": "M1",
+  "text": "Transporting to Saint Vincent's."
+ },
+ {
+  "start_ms": 129269,
+  "end_ms": 130273,
+  "speaker": "M2",
+  "text": "We need cooling."
+ },
+ {
+  "start_ms": 140005,
+  "end_ms": 146363,
+  "speaker": "M2",
+  "text": "Repeat, blood pressure is 81 over 50, sugar is 186, pain is 5 out of 10."
+ },
+ {
+  "start_ms": 156663,
+  "end_ms": 159810,
+  "speaker": "M1",
+  "text": "Pushing fentanyl, 1 mics per kilo intranasal."
+ },
+ {
+  "start_ms": 163160,
+  "end_ms": 164190,
+  "speaker": "M1",
+  "text": "Doing dressing."
+ },
+ {
+  "start_ms": 168903,
+  "end_ms": 170126,
+  "speaker": "M1",
+  "text": "We're at Good Sam."
+ },
+ {
+  "start_ms": 183137,
+  "end_ms": 184618,
+  "speaker": "M1",
+  "text": "Giving report complete."
+ }
+]

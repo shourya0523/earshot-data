@@ -1,0 +1,16 @@
+{"id": "e1", "call_id": "t073", "time": "04:14:58", "clip_ms": 500, "type": "dispatch", "fields": {"text": "convulsions"}, "source": "heard", "quote": "convulsions", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t073", "time": "04:15:05", "clip_ms": 7927, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 7927}
+{"id": "mt1", "call_id": "t073", "time": "04:15:22", "clip_ms": 24701, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "mt2", "call_id": "t073", "time": "04:15:46", "clip_ms": 48496, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e3", "call_id": "t073", "time": "04:16:13", "clip_ms": 75537, "type": "vital", "fields": {"name": "bgl", "value": "288", "unit": "mg/dL"}, "source": "heard", "quote": "sugar's 288", "segment_start_ms": 75537}
+{"id": "e4", "call_id": "t073", "time": "04:16:13", "clip_ms": 75537, "type": "vital", "fields": {"name": "etco2", "value": "24", "unit": "mmHg"}, "source": "heard", "quote": "capno's 24", "segment_start_ms": 75537}
+{"id": "e5", "call_id": "t073", "time": "04:16:23", "clip_ms": 85845, "type": "vital", "fields": {"name": "rr", "value": "14", "unit": "/min"}, "source": "heard", "quote": "breathing at 14", "segment_start_ms": 85845}
+{"id": "e6", "call_id": "t073", "time": "04:16:23", "clip_ms": 85845, "type": "vital", "fields": {"name": "spo2", "value": "98", "unit": "%"}, "source": "heard", "quote": "sat 98 percent", "segment_start_ms": 85845}
+{"id": "e7", "call_id": "t073", "time": "04:16:23", "clip_ms": 85845, "type": "vital", "fields": {"name": "gcs", "value": "10", "unit": ""}, "source": "heard", "quote": "GCS 10", "segment_start_ms": 85845}
+{"id": "e8", "call_id": "t073", "time": "04:16:36", "clip_ms": 98709, "type": "vital", "fields": {"name": "pain", "value": "9", "unit": "/10"}, "source": "tap+heard", "quote": "9 out of 10", "segment_start_ms": 100049, "tap_id": "t3"}
+{"id": "e9", "call_id": "t073", "time": "04:16:53", "clip_ms": 115710, "type": "procedure", "fields": {"name": "suction"}, "source": "heard", "quote": "suction", "segment_start_ms": 115710}
+{"id": "e10", "call_id": "t073", "time": "04:17:01", "clip_ms": 123309, "type": "medication", "fields": {"drug": "lorazepam", "dose": "2", "route": "IV"}, "source": "heard", "quote": "2 Ativan IV", "segment_start_ms": 123309}
+{"id": "e11", "call_id": "t073", "time": "04:17:17", "clip_ms": 139554, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 139554}
+{"id": "e12", "call_id": "t073", "time": "04:17:22", "clip_ms": 144920, "type": "procedure", "fields": {"name": "glucose check"}, "source": "heard", "quote": "check her sugar", "segment_start_ms": 144920}
+{"id": "e13", "call_id": "t073", "time": "04:17:26", "clip_ms": 148762, "type": "medication", "fields": {"drug": "midazolam", "dose": "5", "unit": "mg", "route": "IM"}, "source": "heard", "quote": "Versed 5 mg in the deltoid", "segment_start_ms": 148762}
+{"id": "e14", "call_id": "t073", "time": "04:17:45", "clip_ms": 167476, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arriving at", "segment_start_ms": 167476}

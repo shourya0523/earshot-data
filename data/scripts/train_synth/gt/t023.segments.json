@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 3891,
+  "speaker": "RD",
+  "text": "Squad 6, you have a convulsions, 24 year old male."
+ },
+ {
+  "start_ms": 6645,
+  "end_ms": 9142,
+  "speaker": "M1",
+  "text": "Squad 6 arriving on scene."
+ },
+ {
+  "start_ms": 9530,
+  "end_ms": 11152,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 12025,
+  "end_ms": 13747,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 15086,
+  "end_ms": 16994,
+  "speaker": "PT",
+  "text": "I'm tired, my tongue hurts."
+ },
+ {
+  "start_ms": 20552,
+  "end_ms": 22510,
+  "speaker": "M2",
+  "text": "versed 2.5 atomized."
+ },
+ {
+  "start_ms": 25942,
+  "end_ms": 27748,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 28229,
+  "end_ms": 29304,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 36141,
+  "end_ms": 38874,
+  "speaker": "M1",
+  "text": "I gave ativan 2 migs IV."
+ },
+ {
+  "start_ms": 40443,
+  "end_ms": 42535,
+  "speaker": "M1",
+  "text": "Let's do nasal airway."
+ },
+ {
+  "start_ms": 46334,
+  "end_ms": 53242,
+  "speaker": "M1",
+  "text": "Second set, rate 79, sugar at 182, pulse ox's 100 on room air."
+ },
+ {
+  "start_ms": 57306,
+  "end_ms": 59881,
+  "speaker": "M1",
+  "text": "Versed 5 mg IM."
+ },
+ {
+  "start_ms": 92127,
+  "end_ms": 94846,
+  "speaker": "M1",
+  "text": "breathing 20, heart rate 42."
+ },
+ {
+  "start_ms": 104586,
+  "end_ms": 106149,
+  "speaker": "M2",
+  "text": "Okay, resp rate's 10."
+ },
+ {
+  "start_ms": 109024,
+  "end_ms": 110852,
+  "speaker": "M1",
+  "text": "Leaving scene to Mercy."
+ },
+ {
+  "start_ms": 114445,
+  "end_ms": 115648,
+  "speaker": "M2",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 118004,
+  "end_ms": 120215,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 120760,
+  "end_ms": 122880,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 127162,
+  "end_ms": 129477,
+  "speaker": "M1",
+  "text": "Pushing Valium, 10 rectal."
+ },
+ {
+  "start_ms": 132290,
+  "end_ms": 134044,
+  "speaker": "M1",
+  "text": "Let's do BGL check."
+ },
+ {
+  "start_ms": 135389,
+  "end_ms": 136758,
+  "speaker": "M1",
+  "text": "We're at Northside."
+ }
+]

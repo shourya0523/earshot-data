@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4006,
+  "speaker": "RD",
+  "text": "Medic 48, priority two, rapid heart rate, 81 year old male."
+ },
+ {
+  "start_ms": 7533,
+  "end_ms": 9689,
+  "speaker": "M2",
+  "text": "Medic 48 arriving on scene."
+ },
+ {
+  "start_ms": 10438,
+  "end_ms": 11379,
+  "speaker": "M1",
+  "text": "When did you last eat?"
+ },
+ {
+  "start_ms": 19861,
+  "end_ms": 21227,
+  "speaker": "PT",
+  "text": "My heart won't slow down."
+ },
+ {
+  "start_ms": 22604,
+  "end_ms": 24543,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 25099,
+  "end_ms": 26209,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 27829,
+  "end_ms": 29558,
+  "speaker": "M2",
+  "text": "Doing modified valsalva."
+ },
+ {
+  "start_ms": 34308,
+  "end_ms": 36680,
+  "speaker": "M2",
+  "text": "Giving 10 mils of saline through the line."
+ },
+ {
+  "start_ms": 40314,
+  "end_ms": 43536,
+  "speaker": "M2",
+  "text": "Repeat, capno 55, pulse 64."
+ },
+ {
+  "start_ms": 47130,
+  "end_ms": 48825,
+  "speaker": "M1",
+  "text": "Second set, GCS 8."
+ },
+ {
+  "start_ms": 54621,
+  "end_ms": 57858,
+  "speaker": "M2",
+  "text": "Repeat, BP is 110 over 75."
+ },
+ {
+  "start_ms": 62557,
+  "end_ms": 65329,
+  "speaker": "M2",
+  "text": "Drawing up 6 milligrams of adenocard IV."
+ },
+ {
+  "start_ms": 90601,
+  "end_ms": 91901,
+  "speaker": "M1",
+  "text": "Transporting to Valley."
+ },
+ {
+  "start_ms": 95530,
+  "end_ms": 96683,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 120600,
+  "end_ms": 122131,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 125544,
+  "end_ms": 127570,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 128979,
+  "end_ms": 130383,
+  "speaker": "M2",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 130899,
+  "end_ms": 131742,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 138419,
+  "end_ms": 140311,
+  "speaker": "M1",
+  "text": "I gave adenocard 12 IV."
+ },
+ {
+  "start_ms": 143668,
+  "end_ms": 144817,
+  "speaker": "M1",
+  "text": "Arriving at Valley."
+ },
+ {
+  "start_ms": 157020,
+  "end_ms": 158355,
+  "speaker": "M1",
+  "text": "Giving report to the nurse."
+ }
+]

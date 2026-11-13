@@ -1,0 +1,154 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "92",
+  "sex": "female",
+  "weight_kg": "139",
+  "complaint": "pedestrian struck",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "pedestrian struck",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "22",
+    "bp": "167/114",
+    "bgl": "400",
+    "pain": "6",
+    "spo2": "100"
+   },
+   "last_vitals": {
+    "etco2": "22",
+    "bp": "177/145",
+    "bgl": "400",
+    "pain": "6",
+    "spo2": "100"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "fentanyl 100 mcg IV",
+    "normal saline 250 mL",
+    "ketamine 0.3 mg/kg IV",
+    "tranexamic acid 1 g"
+   ],
+   "procedures": [
+    "splinting",
+    "wound packing"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "92",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "assault",
+  "I_injuries_or_information": "pedestrian struck",
+  "S_signs": {
+   "etco2": "22",
+   "bp": "167/114",
+   "bgl": "400",
+   "pain": "6",
+   "spo2": "100"
+  },
+  "T_treatment": [
+   "fentanyl 100 mcg IV",
+   "normal saline 250 mL",
+   "ketamine 0.3 mg/kg IV",
+   "tranexamic acid 1 g",
+   "splinting",
+   "wound packing"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "07:14:15",
+  "eTimes.09": "07:15:36",
+  "eTimes.11": "07:16:37"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "assault",
+ "medications": [
+  {
+   "drug": "fentanyl",
+   "dose": "100",
+   "unit": "mcg",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "250",
+   "unit": "mL"
+  },
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "unit": "mg/kg",
+   "route": "IV"
+  },
+  {
+   "drug": "tranexamic acid",
+   "dose": "1",
+   "unit": "g"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "22",
+   "time": "07:14:31"
+  },
+  {
+   "name": "bp",
+   "value": "167/114",
+   "time": "07:14:31"
+  },
+  {
+   "name": "bgl",
+   "value": "400",
+   "time": "07:14:31"
+  },
+  {
+   "name": "bp",
+   "value": "177/145",
+   "time": "07:15:23"
+  },
+  {
+   "name": "pain",
+   "value": "6",
+   "time": "07:15:23"
+  },
+  {
+   "name": "spo2",
+   "value": "100",
+   "time": "07:15:40"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

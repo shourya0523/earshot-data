@@ -1,0 +1,14 @@
+{"id": "e1", "call_id": "t057", "time": "19:52:03", "clip_ms": 500, "type": "dispatch", "fields": {"text": "cardiac problem"}, "source": "heard", "quote": "cardiac problem", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t057", "time": "19:52:11", "clip_ms": 8881, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "on scene", "segment_start_ms": 8881}
+{"id": "e3", "call_id": "t057", "time": "19:52:22", "clip_ms": 19396, "type": "vital", "fields": {"name": "spo2", "value": "96", "unit": "%"}, "source": "heard", "quote": "sats is 96", "segment_start_ms": 19396}
+{"id": "mt1", "call_id": "t057", "time": "19:52:44", "clip_ms": 41313, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t1"}
+{"id": "mt2", "call_id": "t057", "time": "19:53:08", "clip_ms": 65186, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e4", "call_id": "t057", "time": "19:53:20", "clip_ms": 77595, "type": "vital", "fields": {"name": "bgl", "value": "166", "unit": "mg/dL"}, "source": "heard", "quote": "sugar's 166", "segment_start_ms": 77595}
+{"id": "e5", "call_id": "t057", "time": "19:53:20", "clip_ms": 77595, "type": "vital", "fields": {"name": "pain", "value": "6", "unit": "/10"}, "source": "heard", "quote": "6 out of 10", "segment_start_ms": 77595}
+{"id": "e6", "call_id": "t057", "time": "19:53:20", "clip_ms": 77595, "type": "vital", "fields": {"name": "spo2", "value": "95", "unit": "%"}, "source": "heard", "quote": "sat at 95 percent", "segment_start_ms": 77595}
+{"id": "e7", "call_id": "t057", "time": "19:53:54", "clip_ms": 111820, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "20 in the left hand", "segment_start_ms": 111820}
+{"id": "e8", "call_id": "t057", "time": "19:54:00", "clip_ms": 117034, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "We're transporting", "segment_start_ms": 117034}
+{"id": "e9", "call_id": "t057", "time": "19:54:15", "clip_ms": 132218, "type": "medication", "fields": {"drug": "aspirin", "dose": "324", "route": "PO"}, "source": "heard", "quote": "Drawing up 324 of Bayer chewed", "segment_start_ms": 132218}
+{"id": "e10", "call_id": "t057", "time": "19:54:20", "clip_ms": 137969, "type": "medication", "fields": {"drug": "ondansetron", "dose": "4", "unit": "mg", "route": "IV"}, "source": "heard", "quote": "I gave zofran 4 mg IV", "segment_start_ms": 137969}
+{"id": "e11", "call_id": "t057", "time": "19:54:31", "clip_ms": 148741, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arriving at", "segment_start_ms": 148741}
+{"id": "e12", "call_id": "t057", "time": "19:54:43", "clip_ms": 160207, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "tap+heard", "quote": "Handing off", "segment_start_ms": 161207, "tap_id": "t3"}

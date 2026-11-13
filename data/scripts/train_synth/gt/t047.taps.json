@@ -1,0 +1,35 @@
+{
+ "taps": [
+  {
+   "clip_ms": 83758,
+   "source": "button",
+   "id": "t1",
+   "labelled": false
+  },
+  {
+   "clip_ms": 109500,
+   "source": "button",
+   "id": "t2",
+   "labelled": true
+  },
+  {
+   "clip_ms": 126654,
+   "source": "knock",
+   "id": "t3",
+   "labelled": true
+  }
+ ],
+ "ignored": [
+  {
+   "clip_ms": 89758,
+   "source": "knock",
+   "kind": "single_ignored"
+  },
+  {
+   "clip_ms": 147581,
+   "source": "knock",
+   "kind": "triple_stop"
+  }
+ ],
+ "start": "09:54:31"
+}

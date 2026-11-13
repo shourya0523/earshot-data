@@ -1,0 +1,16 @@
+RD: Medic 53, priority two, stroke, 18 year old female.
+M2: Medic 53 on scene.
+M2: I'm going to put some stickers on your chest.
+PT: My hand won't work.
+M2: Get the cot.
+M2: Okay, pulse ox at 82 percent.
+M2: Drawing up 2 L of non-rebreather nasal cannula.
+M2: Get check a sugar.
+M2: We need 18 gauge.
+M2: Repeat, end tidal 53.
+M1: Leaving scene to the trauma center.
+M2: Any allergies?
+BY: I don't know, it just started.
+M2: Do you take any medications?
+M1: We're at Memorial.
+M1: Giving report now.

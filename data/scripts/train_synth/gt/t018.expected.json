@@ -1,0 +1,153 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "69",
+  "sex": "male",
+  "weight_kg": "45",
+  "complaint": "shortness of breath",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "shortness of breath",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "gcs": "12",
+    "bgl": "161",
+    "pain": "5",
+    "etco2": "28",
+    "spo2": "85"
+   },
+   "last_vitals": {
+    "gcs": "12",
+    "bgl": "161",
+    "pain": "5",
+    "etco2": "28",
+    "spo2": "87"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "COPD exacerbation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "albuterol/ipratropium 3 mL neb",
+    "magnesium sulfate 2 g IV",
+    "oxygen 4 L/min",
+    "methylprednisolone 125 mg"
+   ],
+   "procedures": [
+    "CPAP",
+    "nebulizer"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "69",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "shortness of breath",
+  "I_injuries_or_information": "shortness of breath",
+  "S_signs": {
+   "gcs": "12",
+   "bgl": "161",
+   "pain": "5",
+   "etco2": "28",
+   "spo2": "85"
+  },
+  "T_treatment": [
+   "albuterol/ipratropium 3 mL neb",
+   "magnesium sulfate 2 g IV",
+   "oxygen 4 L/min",
+   "methylprednisolone 125 mg",
+   "CPAP",
+   "nebulizer"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "18:32:26",
+  "eTimes.09": "18:34:24",
+  "eTimes.11": "18:35:08"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "shortness of breath",
+ "medications": [
+  {
+   "drug": "albuterol/ipratropium",
+   "dose": "3",
+   "unit": "mL",
+   "route": "neb"
+  },
+  {
+   "drug": "magnesium sulfate",
+   "dose": "2",
+   "unit": "g",
+   "route": "IV"
+  },
+  {
+   "drug": "oxygen",
+   "dose": "4",
+   "unit": "L/min"
+  },
+  {
+   "drug": "methylprednisolone",
+   "dose": "125",
+   "unit": "mg"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "gcs",
+   "value": "12",
+   "time": "18:33:49"
+  },
+  {
+   "name": "bgl",
+   "value": "161",
+   "time": "18:33:49"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "18:33:58"
+  },
+  {
+   "name": "etco2",
+   "value": "28",
+   "time": "18:33:58"
+  },
+  {
+   "name": "spo2",
+   "value": "85",
+   "time": "18:33:58"
+  },
+  {
+   "name": "spo2",
+   "value": "87",
+   "time": "18:35:02"
+  }
+ ],
+ "diagnosis_traps": [
+  "COPD exacerbation"
+ ]
+}

@@ -1,0 +1,18 @@
+RD: Rescue 5, you have a pregnancy problem, 31 year old male.
+M2: Rescue 5 arriving on scene.
+M1: Stay with me, keep your eyes open.
+PT: The contractions are two minutes apart.
+M1: Small poke.
+M1: Can you tell me what day it is?
+M1: Pushing TXA, 1 gram through the line.
+M1: We need crowning.
+M1: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+M1: We need 18 in the AC.
+M2: Repeat, heart rate is 141, ETCO2 at 33.
+M1: Transporting to General.
+M2: Repeat, GCS is 9, 121 over 72, capno 43.
+M1: Grab the stair chair.
+M1: Drawing up 10 units of Pitocin IM.
+M1: Arriving at Northside.
+M1: Giving report complete.

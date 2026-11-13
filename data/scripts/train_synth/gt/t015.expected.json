@@ -1,0 +1,115 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "28",
+  "sex": "female",
+  "weight_kg": "106",
+  "complaint": "cardiac arrest",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "cardiac arrest",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "pain": "9",
+    "bgl": "42",
+    "rr": "22"
+   },
+   "last_vitals": {
+    "pain": "9",
+    "bgl": "42",
+    "rr": "22"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "cardiac arrest"
+   ]
+  },
+  "P": {
+   "medications": [
+    "sodium bicarbonate 50 mEq IV",
+    "amiodarone 150 mg IV"
+   ],
+   "procedures": [
+    "defibrillation"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "28",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "unconscious not breathing",
+  "I_injuries_or_information": "cardiac arrest",
+  "S_signs": {
+   "pain": "9",
+   "bgl": "42",
+   "rr": "22"
+  },
+  "T_treatment": [
+   "sodium bicarbonate 50 mEq IV",
+   "amiodarone 150 mg IV",
+   "defibrillation"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "22:24:09",
+  "eTimes.09": "22:25:37",
+  "eTimes.11": "22:26:00"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "unconscious not breathing",
+ "medications": [
+  {
+   "drug": "sodium bicarbonate",
+   "dose": "50",
+   "unit": "mEq",
+   "route": "IV"
+  },
+  {
+   "drug": "amiodarone",
+   "dose": "150",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "pain",
+   "value": "9",
+   "time": "22:25:42"
+  },
+  {
+   "name": "bgl",
+   "value": "42",
+   "time": "22:25:52"
+  },
+  {
+   "name": "rr",
+   "value": "22",
+   "time": "22:25:52"
+  }
+ ],
+ "diagnosis_traps": [
+  "cardiac arrest"
+ ]
+}

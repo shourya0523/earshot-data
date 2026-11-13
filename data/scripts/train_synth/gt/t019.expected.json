@@ -1,0 +1,131 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "91",
+  "sex": "female",
+  "weight_kg": "80",
+  "complaint": "burns",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "burns",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bgl": "247",
+    "pain": "5",
+    "rr": "14",
+    "gcs": "10"
+   },
+   "last_vitals": {
+    "bgl": "247",
+    "pain": "5",
+    "rr": "14",
+    "gcs": "10"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "hydroxocobalamin 5 IV",
+    "fentanyl 1 IN",
+    "lactated Ringer's 1000 mL IV"
+   ],
+   "procedures": [
+    "bandaging",
+    "cooling"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "91",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "structure fire",
+  "I_injuries_or_information": "burns",
+  "S_signs": {
+   "bgl": "247",
+   "pain": "5",
+   "rr": "14",
+   "gcs": "10"
+  },
+  "T_treatment": [
+   "hydroxocobalamin 5 IV",
+   "fentanyl 1 IN",
+   "lactated Ringer's 1000 mL IV",
+   "bandaging",
+   "cooling"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "02:22:41",
+  "eTimes.09": "02:24:33",
+  "eTimes.11": "02:25:20"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "structure fire",
+ "medications": [
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "1",
+   "route": "IN"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bgl",
+   "value": "247",
+   "time": "02:23:42"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "02:24:38"
+  },
+  {
+   "name": "rr",
+   "value": "14",
+   "time": "02:24:38"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "02:24:49"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

@@ -1,0 +1,18 @@
+RD: Squad 45, priority one, difficulty breathing, 49 year old male.
+M2: Squad 45 arriving on scene.
+M1: Did you pass out at all?
+PT: My breathing's bad today.
+M1: Pushing oxygen, 4 nasal cannula.
+M2: On a scale of zero to ten, how bad is it?
+M2: Second set, SpO2 is 85.
+M1: 125 solumedrol intravenous, it's in.
+M1: pulse ox is 82 on room air, resps 36.
+M1: Can you tell me what day it is?
+PT: Can somebody call my wife?
+M2: Are you having any trouble breathing?
+PT: It's getting worse.
+M1: We're transporting to Valley.
+M2: Repeat, BGL at 312.
+M2: Get nebulizer treatment.
+M1: Grab the stair chair.
+M1: Arriving at County.

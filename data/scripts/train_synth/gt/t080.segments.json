@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5213,
+  "speaker": "RD",
+  "text": "Ambulance 54, priority two, cardiac problem, 33 year old male."
+ },
+ {
+  "start_ms": 9926,
+  "end_ms": 12074,
+  "speaker": "M1",
+  "text": "Ambulance 54 on scene."
+ },
+ {
+  "start_ms": 12815,
+  "end_ms": 14308,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 14875,
+  "end_ms": 16236,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 18574,
+  "end_ms": 19789,
+  "speaker": "PT",
+  "text": "Pressure in my chest."
+ },
+ {
+  "start_ms": 25388,
+  "end_ms": 28807,
+  "speaker": "M1",
+  "text": "Vitals, HR's 82, pain is 5 out of 10."
+ },
+ {
+  "start_ms": 35240,
+  "end_ms": 36757,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 37490,
+  "end_ms": 40492,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 49037,
+  "end_ms": 50614,
+  "speaker": "M2",
+  "text": "Giving 50 of fent."
+ },
+ {
+  "start_ms": 55759,
+  "end_ms": 59068,
+  "speaker": "M1",
+  "text": "Bayer 324 mg by mouth."
+ },
+ {
+  "start_ms": 64847,
+  "end_ms": 66589,
+  "speaker": "M1",
+  "text": "GCS 14."
+ },
+ {
+  "start_ms": 91589,
+  "end_ms": 94120,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 95662,
+  "end_ms": 97787,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 99518,
+  "end_ms": 101236,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 104419,
+  "end_ms": 106574,
+  "speaker": "M2",
+  "text": "Giving 4 of ondansetron IV."
+ },
+ {
+  "start_ms": 109075,
+  "end_ms": 111699,
+  "speaker": "M1",
+  "text": "Transporting to Saint Joseph's."
+ },
+ {
+  "start_ms": 115093,
+  "end_ms": 117097,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 117521,
+  "end_ms": 118978,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 127348,
+  "end_ms": 130095,
+  "speaker": "M2",
+  "text": "Drawing up 0.4 of NTG SL."
+ },
+ {
+  "start_ms": 138812,
+  "end_ms": 140322,
+  "speaker": "M1",
+  "text": "Get 12 lead."
+ },
+ {
+  "start_ms": 143627,
+  "end_ms": 146007,
+  "speaker": "M1",
+  "text": "Repeat, end tidal at 46."
+ },
+ {
+  "start_ms": 154845,
+  "end_ms": 156935,
+  "speaker": "M1",
+  "text": "Arriving at Saint Vincent's."
+ },
+ {
+  "start_ms": 167954,
+  "end_ms": 169509,
+  "speaker": "M1",
+  "text": "Handing off to the nurse."
+ }
+]

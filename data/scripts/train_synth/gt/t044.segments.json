@@ -1,0 +1,116 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4995,
+  "speaker": "RD",
+  "text": "Medic 52, respond to palpitations, 44 year old male."
+ },
+ {
+  "start_ms": 9639,
+  "end_ms": 12265,
+  "speaker": "M2",
+  "text": "Medic 52 arriving on scene."
+ },
+ {
+  "start_ms": 12772,
+  "end_ms": 14189,
+  "speaker": "M1",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 41662,
+  "end_ms": 43016,
+  "speaker": "PT",
+  "text": "My heart won't slow down."
+ },
+ {
+  "start_ms": 45328,
+  "end_ms": 46500,
+  "speaker": "M2",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 47938,
+  "end_ms": 49215,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 49965,
+  "end_ms": 51656,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 55112,
+  "end_ms": 58746,
+  "speaker": "M1",
+  "text": "Repeat, heart rate at 131, resp rate at 34."
+ },
+ {
+  "start_ms": 67288,
+  "end_ms": 68879,
+  "speaker": "M1",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 75308,
+  "end_ms": 81392,
+  "speaker": "M1",
+  "text": "BP's 193 over 120, pulse ox at 85 percent, pain is 2 out of 10."
+ },
+ {
+  "start_ms": 87229,
+  "end_ms": 88831,
+  "speaker": "M1",
+  "text": "Vitals, pain is 7 out of 10."
+ },
+ {
+  "start_ms": 97286,
+  "end_ms": 99468,
+  "speaker": "M1",
+  "text": "Drawing up 12 migs of Adenocard IV push."
+ },
+ {
+  "start_ms": 124425,
+  "end_ms": 125447,
+  "speaker": "M1",
+  "text": "Leaving scene to General."
+ },
+ {
+  "start_ms": 129037,
+  "end_ms": 129827,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 130136,
+  "end_ms": 131118,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 139746,
+  "end_ms": 143232,
+  "speaker": "M2",
+  "text": "Pushing normal saline, 10 cc's through the line."
+ },
+ {
+  "start_ms": 144975,
+  "end_ms": 146322,
+  "speaker": "M1",
+  "text": "Got transmit the 12."
+ },
+ {
+  "start_ms": 154671,
+  "end_ms": 155594,
+  "speaker": "M1",
+  "text": "Arriving at Mercy."
+ },
+ {
+  "start_ms": 166488,
+  "end_ms": 167556,
+  "speaker": "M1",
+  "text": "Giving report complete."
+ }
+]

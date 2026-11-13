@@ -1,0 +1,131 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "81",
+  "sex": "male",
+  "weight_kg": "135",
+  "complaint": "palpitations",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "palpitations",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "etco2": "55",
+    "hr": "64",
+    "gcs": "8",
+    "bp": "110/75"
+   },
+   "last_vitals": {
+    "etco2": "55",
+    "hr": "64",
+    "gcs": "8",
+    "bp": "110/75"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "SVT"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 10 mL IV",
+    "adenosine 6 mg IV",
+    "adenosine 12 IV"
+   ],
+   "procedures": [
+    "vagal maneuver"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "81",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "rapid heart rate",
+  "I_injuries_or_information": "palpitations",
+  "S_signs": {
+   "etco2": "55",
+   "hr": "64",
+   "gcs": "8",
+   "bp": "110/75"
+  },
+  "T_treatment": [
+   "normal saline 10 mL IV",
+   "adenosine 6 mg IV",
+   "adenosine 12 IV",
+   "vagal maneuver"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "12:23:33",
+  "eTimes.09": "12:24:56",
+  "eTimes.11": "12:25:49",
+  "eTimes.12": "12:26:02"
+ },
+ "wall_time_seconds": 13,
+ "dispatch_reason": "rapid heart rate",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "10",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "adenosine",
+   "dose": "6",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "adenosine",
+   "dose": "12",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "etco2",
+   "value": "55",
+   "time": "12:24:06"
+  },
+  {
+   "name": "hr",
+   "value": "64",
+   "time": "12:24:06"
+  },
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "12:24:13"
+  },
+  {
+   "name": "bp",
+   "value": "110/75",
+   "time": "12:24:19"
+  }
+ ],
+ "diagnosis_traps": [
+  "SVT"
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "61",
+  "sex": "male",
+  "weight_kg": "48",
+  "complaint": "fever",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "fever",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "rr": "17",
+    "bgl": "398"
+   },
+   "last_vitals": {
+    "rr": "24",
+    "bgl": "173"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "sepsis",
+    "pneumonia"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 1000 IV",
+    "lactated Ringer's 500",
+    "acetaminophen 1000 PO"
+   ],
+   "procedures": [
+    "12-lead ECG"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "61",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "sick person",
+  "I_injuries_or_information": "fever",
+  "S_signs": {
+   "rr": "17",
+   "bgl": "398"
+  },
+  "T_treatment": [
+   "normal saline 1000 IV",
+   "lactated Ringer's 500",
+   "acetaminophen 1000 PO",
+   "12-lead ECG"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "19:23:57",
+  "eTimes.09": "19:25:30",
+  "eTimes.11": "19:26:06",
+  "eTimes.12": "19:26:14"
+ },
+ "wall_time_seconds": 8,
+ "dispatch_reason": "sick person",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "1000",
+   "route": "IV"
+  },
+  {
+   "drug": "lactated Ringer's",
+   "dose": "500"
+  },
+  {
+   "drug": "acetaminophen",
+   "dose": "1000",
+   "route": "PO"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "rr",
+   "value": "17",
+   "time": "19:24:38"
+  },
+  {
+   "name": "bgl",
+   "value": "398",
+   "time": "19:24:38"
+  },
+  {
+   "name": "bgl",
+   "value": "265",
+   "time": "19:24:58"
+  },
+  {
+   "name": "rr",
+   "value": "24",
+   "time": "19:25:56"
+  },
+  {
+   "name": "bgl",
+   "value": "173",
+   "time": "19:25:56"
+  }
+ ],
+ "diagnosis_traps": [
+  "sepsis",
+  "pneumonia"
+ ]
+}

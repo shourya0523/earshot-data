@@ -1,0 +1,24 @@
+RD: Squad 55, you have a dizziness, 62 year old female.
+M1: Squad 55 arriving on scene.
+M2: Who's your doctor?
+PT: I'm so weak.
+M1: Pushing normal saline, 500 mLs IV.
+M1: Hang tight, partner.
+BY: Yeah, I take a bunch of pills, my daughter knows.
+M2: On a scale of zero to ten, how bad is it?
+PT: I don't know, it just started.
+M1: Giving 1 milligrams of atropine intravenous.
+M2: Doing 12 lead.
+M2: Get got a line.
+M2: Vitals, pulse's 68, blood sugar at 133.
+M1: Watch the step.
+M2: Repeat, resps 11, BGL at 170, pain is 3 out of 10.
+M1: Transporting to Saint Joseph's.
+M1: Let's move on three. One, two, three.
+BY: Am I going to be okay?
+M2: Stay with me, keep your eyes open.
+PT: No allergies.
+M1: GCS 13, sat 86 percent.
+M1: Watch the step.
+PT: I feel sick.
+M1: We're at Northside.

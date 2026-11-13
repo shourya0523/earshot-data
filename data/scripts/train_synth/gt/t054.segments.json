@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5362,
+  "speaker": "RD",
+  "text": "Ambulance 37, priority one, childbirth, 31 year old male."
+ },
+ {
+  "start_ms": 9676,
+  "end_ms": 11668,
+  "speaker": "M2",
+  "text": "Ambulance 37 we're on scene."
+ },
+ {
+  "start_ms": 12197,
+  "end_ms": 13830,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 18595,
+  "end_ms": 19814,
+  "speaker": "PT",
+  "text": "My water broke."
+ },
+ {
+  "start_ms": 23703,
+  "end_ms": 24755,
+  "speaker": "M2",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 25278,
+  "end_ms": 27658,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 31491,
+  "end_ms": 32629,
+  "speaker": "M1",
+  "text": "Get established IV."
+ },
+ {
+  "start_ms": 36807,
+  "end_ms": 45306,
+  "speaker": "M1",
+  "text": "Repeat, respirations is 25, ETCO2's 47, blood pressure 193 over 119."
+ },
+ {
+  "start_ms": 72051,
+  "end_ms": 74013,
+  "speaker": "M1",
+  "text": "I'm going to put some stickers on your chest."
+ },
+ {
+  "start_ms": 74423,
+  "end_ms": 75833,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 82488,
+  "end_ms": 83451,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 89893,
+  "end_ms": 91577,
+  "speaker": "M1",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 94965,
+  "end_ms": 96033,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 96801,
+  "end_ms": 98364,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 102028,
+  "end_ms": 107295,
+  "speaker": "M2",
+  "text": "Vitals, pain is 9 out of 10, GCS at 15, capno is 43."
+ },
+ {
+  "start_ms": 108636,
+  "end_ms": 109972,
+  "speaker": "M1",
+  "text": "Leaving scene to County."
+ },
+ {
+  "start_ms": 115233,
+  "end_ms": 117950,
+  "speaker": "M1",
+  "text": "Pushing oxytocin, 10 units in the thigh."
+ },
+ {
+  "start_ms": 126402,
+  "end_ms": 128627,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 133354,
+  "end_ms": 135184,
+  "speaker": "M1",
+  "text": "Repeat, resp rate is 25."
+ },
+ {
+  "start_ms": 141689,
+  "end_ms": 143663,
+  "speaker": "M1",
+  "text": "I gave tranexamic acid 1 grams."
+ },
+ {
+  "start_ms": 146557,
+  "end_ms": 147776,
+  "speaker": "M1",
+  "text": "We're at University."
+ },
+ {
+  "start_ms": 154665,
+  "end_ms": 155954,
+  "speaker": "M1",
+  "text": "Handing off to the nurse."
+ }
+]

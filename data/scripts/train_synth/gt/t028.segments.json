@@ -1,0 +1,128 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5422,
+  "speaker": "RD",
+  "text": "Rescue 54, priority two, allergic reaction, 89 year old male."
+ },
+ {
+  "start_ms": 8286,
+  "end_ms": 9900,
+  "speaker": "M1",
+  "text": "Rescue 54 on scene."
+ },
+ {
+  "start_ms": 10740,
+  "end_ms": 13418,
+  "speaker": "M2",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 14218,
+  "end_ms": 15166,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 16617,
+  "end_ms": 17702,
+  "speaker": "PT",
+  "text": "My lips are swelling."
+ },
+ {
+  "start_ms": 23189,
+  "end_ms": 26375,
+  "speaker": "M2",
+  "text": "Okay, rate's 104, GCS at 15."
+ },
+ {
+  "start_ms": 28864,
+  "end_ms": 29758,
+  "speaker": "M2",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 30353,
+  "end_ms": 31858,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 38534,
+  "end_ms": 40171,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 70440,
+  "end_ms": 73656,
+  "speaker": "M1",
+  "text": "0.3 mg epi pen IM, it's in."
+ },
+ {
+  "start_ms": 82180,
+  "end_ms": 83398,
+  "speaker": "M2",
+  "text": "Let's do got a line."
+ },
+ {
+  "start_ms": 87026,
+  "end_ms": 89964,
+  "speaker": "M1",
+  "text": "Vitals, blood sugar at 361."
+ },
+ {
+  "start_ms": 96713,
+  "end_ms": 97944,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 98421,
+  "end_ms": 99749,
+  "speaker": "PT",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 106313,
+  "end_ms": 107904,
+  "speaker": "M1",
+  "text": "Leaving scene to Saint Vincent's."
+ },
+ {
+  "start_ms": 111388,
+  "end_ms": 114128,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 116910,
+  "end_ms": 117735,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 121957,
+  "end_ms": 124500,
+  "speaker": "M1",
+  "text": "I gave Ventolin 2.5 mg."
+ },
+ {
+  "start_ms": 126086,
+  "end_ms": 128280,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 130171,
+  "end_ms": 131077,
+  "speaker": "M1",
+  "text": "We're at General."
+ },
+ {
+  "start_ms": 138514,
+  "end_ms": 139489,
+  "speaker": "M1",
+  "text": "Handing off now."
+ }
+]

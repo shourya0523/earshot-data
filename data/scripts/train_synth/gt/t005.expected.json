@@ -1,0 +1,134 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "92",
+  "sex": "female",
+  "weight_kg": "127",
+  "complaint": "allergic reaction",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "allergic reaction",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "88/42",
+    "gcs": "14",
+    "spo2": "86"
+   },
+   "last_vitals": {
+    "bp": "102/55",
+    "gcs": "8",
+    "spo2": "86"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "anaphylaxis"
+   ]
+  },
+  "P": {
+   "medications": [
+    "diphenhydramine 25 mg IV",
+    "epinephrine 0.3 mg",
+    "epinephrine 10"
+   ],
+   "procedures": [
+    "IV access",
+    "nebulizer"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "92",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "allergic reaction",
+  "I_injuries_or_information": "allergic reaction",
+  "S_signs": {
+   "bp": "88/42",
+   "gcs": "14",
+   "spo2": "86"
+  },
+  "T_treatment": [
+   "diphenhydramine 25 mg IV",
+   "epinephrine 0.3 mg",
+   "epinephrine 10",
+   "IV access",
+   "nebulizer"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "06:25:19",
+  "eTimes.09": "06:27:16",
+  "eTimes.11": "06:28:00",
+  "eTimes.12": "06:28:10"
+ },
+ "wall_time_seconds": 10,
+ "dispatch_reason": "allergic reaction",
+ "medications": [
+  {
+   "drug": "diphenhydramine",
+   "dose": "25",
+   "unit": "mg",
+   "route": "IV"
+  },
+  {
+   "drug": "epinephrine",
+   "dose": "0.3",
+   "unit": "mg"
+  },
+  {
+   "drug": "epinephrine",
+   "dose": "10"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "88/42",
+   "time": "06:27:27"
+  },
+  {
+   "name": "gcs",
+   "value": "14",
+   "time": "06:27:27"
+  },
+  {
+   "name": "gcs",
+   "value": "8",
+   "time": "06:27:44"
+  },
+  {
+   "name": "bp",
+   "value": "102/55",
+   "time": "06:27:44"
+  },
+  {
+   "name": "spo2",
+   "value": "86",
+   "time": "06:27:44"
+  }
+ ],
+ "diagnosis_traps": [
+  "anaphylaxis"
+ ]
+}

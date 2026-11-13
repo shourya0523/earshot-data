@@ -1,0 +1,24 @@
+RD: Ambulance 5, priority one, structure fire, 91 year old female.
+M1: Ambulance 5 we're on scene.
+M1: Can you tell me what day it is?
+BY: Can somebody call my wife?
+PT: I breathed in smoke.
+M2: Any allergies?
+PT: It's about an eight.
+M1: Doing bandage.
+M1: Let's move on three. One, two, three.
+PT: Please don't cut my shirt.
+M1: glucose is 247.
+M1: Pushing hydroxocobalamin, 5 intravenous.
+M2: Sublimaze 1 atomized.
+M1: We need cold packs.
+M1: Did you pass out at all?
+M1: Can you tell me what day it is?
+BY: Please don't cut my shirt.
+M1: Leaving scene to General.
+M1: Repeat, pain is 5 out of 10, respirations is 14.
+M1: Vitals, GCS at 10.
+M1: Watch the step.
+M1: Did you pass out at all?
+M1: I gave lactated ringers 1000 mLs intravenous.
+M1: We're at County.

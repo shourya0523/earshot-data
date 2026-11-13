@@ -1,0 +1,134 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5463,
+  "speaker": "RD",
+  "text": "Squad 16, respond to difficulty breathing, 47 year old female."
+ },
+ {
+  "start_ms": 8994,
+  "end_ms": 10468,
+  "speaker": "M1",
+  "text": "Squad 16 we're on scene."
+ },
+ {
+  "start_ms": 10795,
+  "end_ms": 13752,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 18580,
+  "end_ms": 19945,
+  "speaker": "PT",
+  "text": "I woke up and couldn't breathe."
+ },
+ {
+  "start_ms": 22339,
+  "end_ms": 24458,
+  "speaker": "M2",
+  "text": "Are you having any trouble breathing?"
+ },
+ {
+  "start_ms": 24859,
+  "end_ms": 27304,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 29771,
+  "end_ms": 30491,
+  "speaker": "M1",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 30926,
+  "end_ms": 31920,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 36607,
+  "end_ms": 37940,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 46083,
+  "end_ms": 48740,
+  "speaker": "M1",
+  "text": "40 mg lasix IV push, it's in."
+ },
+ {
+  "start_ms": 51352,
+  "end_ms": 54803,
+  "speaker": "M2",
+  "text": "Drawing up 0.8 of nitro under the tongue."
+ },
+ {
+  "start_ms": 61609,
+  "end_ms": 63455,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 64106,
+  "end_ms": 65159,
+  "speaker": "PT",
+  "text": "It's getting worse."
+ },
+ {
+  "start_ms": 68811,
+  "end_ms": 71457,
+  "speaker": "M2",
+  "text": "Repeat, pain is 7 out of 10."
+ },
+ {
+  "start_ms": 76343,
+  "end_ms": 77713,
+  "speaker": "M1",
+  "text": "Let's do 12-lead."
+ },
+ {
+  "start_ms": 82121,
+  "end_ms": 83758,
+  "speaker": "M1",
+  "text": "We're transporting to Mercy."
+ },
+ {
+  "start_ms": 88978,
+  "end_ms": 92325,
+  "speaker": "M2",
+  "text": "Drawing up 0.4 of NTG sublingual."
+ },
+ {
+  "start_ms": 96095,
+  "end_ms": 98243,
+  "speaker": "M1",
+  "text": "Repeat, pain is 4 out of 10."
+ },
+ {
+  "start_ms": 130394,
+  "end_ms": 132243,
+  "speaker": "M2",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 132772,
+  "end_ms": 134846,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 136520,
+  "end_ms": 139074,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 143816,
+  "end_ms": 145216,
+  "speaker": "M1",
+  "text": "Arriving at Riverside."
+ }
+]

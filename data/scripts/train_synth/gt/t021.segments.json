@@ -1,0 +1,140 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4556,
+  "speaker": "RD",
+  "text": "Squad 6, respond to difficulty breathing, 63 year old male."
+ },
+ {
+  "start_ms": 6999,
+  "end_ms": 8671,
+  "speaker": "M1",
+  "text": "Squad 6 arriving on scene."
+ },
+ {
+  "start_ms": 9156,
+  "end_ms": 10155,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 12666,
+  "end_ms": 14565,
+  "speaker": "PT",
+  "text": "I've been sleeping in the recliner."
+ },
+ {
+  "start_ms": 18355,
+  "end_ms": 20781,
+  "speaker": "M1",
+  "text": "On a scale of zero to ten, how bad is it?"
+ },
+ {
+  "start_ms": 21426,
+  "end_ms": 22599,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 25199,
+  "end_ms": 26793,
+  "speaker": "M2",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 27477,
+  "end_ms": 29344,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 32239,
+  "end_ms": 35691,
+  "speaker": "M2",
+  "text": "0.8 migs Nitrostat SL, it's in."
+ },
+ {
+  "start_ms": 38174,
+  "end_ms": 39219,
+  "speaker": "M1",
+  "text": "We need c pap."
+ },
+ {
+  "start_ms": 46041,
+  "end_ms": 48084,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 48972,
+  "end_ms": 50750,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 55156,
+  "end_ms": 59128,
+  "speaker": "M2",
+  "text": "Okay, BP's 160 over 100."
+ },
+ {
+  "start_ms": 62777,
+  "end_ms": 63683,
+  "speaker": "M1",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 64573,
+  "end_ms": 66208,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 72697,
+  "end_ms": 73649,
+  "speaker": "M1",
+  "text": "Doing twelve lead."
+ },
+ {
+  "start_ms": 82074,
+  "end_ms": 83339,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 87687,
+  "end_ms": 89231,
+  "speaker": "M1",
+  "text": "Transporting to Riverside."
+ },
+ {
+  "start_ms": 94692,
+  "end_ms": 98256,
+  "speaker": "M1",
+  "text": "Drawing up 0.4 milligrams of Nitrolingual under the tongue."
+ },
+ {
+  "start_ms": 105029,
+  "end_ms": 106991,
+  "speaker": "M1",
+  "text": "Drawing up 40 of lasix through the line."
+ },
+ {
+  "start_ms": 109304,
+  "end_ms": 111849,
+  "speaker": "M2",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 140170,
+  "end_ms": 143277,
+  "speaker": "M2",
+  "text": "rate's 40, end tidal 35."
+ },
+ {
+  "start_ms": 151752,
+  "end_ms": 152553,
+  "speaker": "M1",
+  "text": "We're at Valley."
+ }
+]

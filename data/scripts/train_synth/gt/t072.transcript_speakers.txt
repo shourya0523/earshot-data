@@ -1,0 +1,21 @@
+RD: Medic 48, priority two, rapid heart rate, 81 year old male.
+M2: Medic 48 arriving on scene.
+M1: When did you last eat?
+PT: My heart won't slow down.
+M1: I'm going to put some stickers on your chest.
+PT: It's getting worse.
+M2: Doing modified valsalva.
+M2: Giving 10 mils of saline through the line.
+M2: Repeat, capno 55, pulse 64.
+M1: Second set, GCS 8.
+M2: Repeat, BP is 110 over 75.
+M2: Drawing up 6 milligrams of adenocard IV.
+M1: Transporting to Valley.
+M2: Any allergies?
+PT: I don't know, it just started.
+M2: Okay, we're going to take care of you.
+M2: Did you pass out at all?
+BY: I feel sick.
+M1: I gave adenocard 12 IV.
+M1: Arriving at Valley.
+M1: Giving report to the nurse.

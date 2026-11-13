@@ -1,0 +1,104 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4644,
+  "speaker": "RD",
+  "text": "Medic 37, priority one, dizziness, 56 year old male."
+ },
+ {
+  "start_ms": 7514,
+  "end_ms": 9765,
+  "speaker": "M2",
+  "text": "Medic 37 arriving on scene."
+ },
+ {
+  "start_ms": 10500,
+  "end_ms": 12216,
+  "speaker": "M2",
+  "text": "Do you take any medications?"
+ },
+ {
+  "start_ms": 12684,
+  "end_ms": 14147,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 16577,
+  "end_ms": 18302,
+  "speaker": "PT",
+  "text": "I feel like I'm going to pass out."
+ },
+ {
+  "start_ms": 25034,
+  "end_ms": 26987,
+  "speaker": "M1",
+  "text": "Drawing up 1 of atropine IV."
+ },
+ {
+  "start_ms": 33793,
+  "end_ms": 36835,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 37302,
+  "end_ms": 39238,
+  "speaker": "BY",
+  "text": "Am I going to be okay?"
+ },
+ {
+  "start_ms": 45675,
+  "end_ms": 50612,
+  "speaker": "M1",
+  "text": "Repeat, pressure at 108 over 58, respirations is 26."
+ },
+ {
+  "start_ms": 81074,
+  "end_ms": 82404,
+  "speaker": "M2",
+  "text": "Let's do 12-lead."
+ },
+ {
+  "start_ms": 85736,
+  "end_ms": 90625,
+  "speaker": "M1",
+  "text": "Okay, sats 94, pain is 5 out of 10, capno is 23."
+ },
+ {
+  "start_ms": 92369,
+  "end_ms": 94366,
+  "speaker": "M1",
+  "text": "Okay, we're going to take care of you."
+ },
+ {
+  "start_ms": 97693,
+  "end_ms": 99167,
+  "speaker": "M1",
+  "text": "We're transporting to Valley."
+ },
+ {
+  "start_ms": 104662,
+  "end_ms": 107365,
+  "speaker": "M1",
+  "text": "I gave normal saline 500 IV push."
+ },
+ {
+  "start_ms": 109779,
+  "end_ms": 110865,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 111323,
+  "end_ms": 112225,
+  "speaker": "PT",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 120626,
+  "end_ms": 121771,
+  "speaker": "M1",
+  "text": "Arriving at Memorial."
+ }
+]

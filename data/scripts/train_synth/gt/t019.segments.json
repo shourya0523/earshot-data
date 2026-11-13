@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4505,
+  "speaker": "RD",
+  "text": "Ambulance 5, priority one, structure fire, 91 year old female."
+ },
+ {
+  "start_ms": 8863,
+  "end_ms": 10435,
+  "speaker": "M1",
+  "text": "Ambulance 5 we're on scene."
+ },
+ {
+  "start_ms": 11270,
+  "end_ms": 12906,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 13453,
+  "end_ms": 14956,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 21297,
+  "end_ms": 22442,
+  "speaker": "PT",
+  "text": "I breathed in smoke."
+ },
+ {
+  "start_ms": 25847,
+  "end_ms": 27005,
+  "speaker": "M2",
+  "text": "Any allergies?"
+ },
+ {
+  "start_ms": 51648,
+  "end_ms": 52594,
+  "speaker": "PT",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 54313,
+  "end_ms": 55214,
+  "speaker": "M1",
+  "text": "Doing bandage."
+ },
+ {
+  "start_ms": 62039,
+  "end_ms": 64654,
+  "speaker": "M1",
+  "text": "Let's move on three. One, two, three."
+ },
+ {
+  "start_ms": 65420,
+  "end_ms": 66657,
+  "speaker": "PT",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 69330,
+  "end_ms": 71508,
+  "speaker": "M1",
+  "text": "glucose is 247."
+ },
+ {
+  "start_ms": 80252,
+  "end_ms": 82957,
+  "speaker": "M1",
+  "text": "Pushing hydroxocobalamin, 5 intravenous."
+ },
+ {
+  "start_ms": 91840,
+  "end_ms": 93602,
+  "speaker": "M2",
+  "text": "Sublimaze 1 atomized."
+ },
+ {
+  "start_ms": 101966,
+  "end_ms": 103123,
+  "speaker": "M1",
+  "text": "We need cold packs."
+ },
+ {
+  "start_ms": 104698,
+  "end_ms": 105849,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 108436,
+  "end_ms": 110112,
+  "speaker": "M1",
+  "text": "Can you tell me what day it is?"
+ },
+ {
+  "start_ms": 110811,
+  "end_ms": 112255,
+  "speaker": "BY",
+  "text": "Please don't cut my shirt."
+ },
+ {
+  "start_ms": 120762,
+  "end_ms": 122071,
+  "speaker": "M1",
+  "text": "Leaving scene to General."
+ },
+ {
+  "start_ms": 126836,
+  "end_ms": 130198,
+  "speaker": "M1",
+  "text": "Repeat, pain is 5 out of 10, respirations is 14."
+ },
+ {
+  "start_ms": 136664,
+  "end_ms": 138463,
+  "speaker": "M1",
+  "text": "Vitals, GCS at 10."
+ },
+ {
+  "start_ms": 147354,
+  "end_ms": 148251,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 156678,
+  "end_ms": 157884,
+  "speaker": "M1",
+  "text": "Did you pass out at all?"
+ },
+ {
+  "start_ms": 160448,
+  "end_ms": 163726,
+  "speaker": "M1",
+  "text": "I gave lactated ringers 1000 mLs intravenous."
+ },
+ {
+  "start_ms": 167420,
+  "end_ms": 168195,
+  "speaker": "M1",
+  "text": "We're at County."
+ }
+]

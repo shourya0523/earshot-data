@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 5336,
+  "speaker": "RD",
+  "text": "Medic 39, respond to convulsions, 18 year old male."
+ },
+ {
+  "start_ms": 7927,
+  "end_ms": 9529,
+  "speaker": "M1",
+  "text": "Medic 39 on scene."
+ },
+ {
+  "start_ms": 10001,
+  "end_ms": 10982,
+  "speaker": "M2",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 11854,
+  "end_ms": 12895,
+  "speaker": "PT",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 66960,
+  "end_ms": 68685,
+  "speaker": "PT",
+  "text": "I'm tired, my tongue hurts."
+ },
+ {
+  "start_ms": 75537,
+  "end_ms": 79251,
+  "speaker": "M2",
+  "text": "Repeat, sugar's 288, capno's 24."
+ },
+ {
+  "start_ms": 85845,
+  "end_ms": 89811,
+  "speaker": "M2",
+  "text": "Okay, breathing at 14, sat 98 percent, GCS 10."
+ },
+ {
+  "start_ms": 100049,
+  "end_ms": 102836,
+  "speaker": "M1",
+  "text": "Okay, pain is 9 out of 10."
+ },
+ {
+  "start_ms": 106701,
+  "end_ms": 109290,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 109806,
+  "end_ms": 111056,
+  "speaker": "BY",
+  "text": "No allergies."
+ },
+ {
+  "start_ms": 115710,
+  "end_ms": 116522,
+  "speaker": "M1",
+  "text": "Get suction."
+ },
+ {
+  "start_ms": 123309,
+  "end_ms": 125399,
+  "speaker": "M1",
+  "text": "2 Ativan IV, it's in."
+ },
+ {
+  "start_ms": 133955,
+  "end_ms": 134752,
+  "speaker": "M2",
+  "text": "Get the cot."
+ },
+ {
+  "start_ms": 139554,
+  "end_ms": 141121,
+  "speaker": "M1",
+  "text": "We're transporting to Valley."
+ },
+ {
+  "start_ms": 144920,
+  "end_ms": 146012,
+  "speaker": "M1",
+  "text": "We need check her sugar."
+ },
+ {
+  "start_ms": 148762,
+  "end_ms": 151153,
+  "speaker": "M1",
+  "text": "Versed 5 mg in the deltoid."
+ },
+ {
+  "start_ms": 159959,
+  "end_ms": 161172,
+  "speaker": "M2",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 167476,
+  "end_ms": 168660,
+  "speaker": "M1",
+  "text": "Arriving at Valley."
+ }
+]

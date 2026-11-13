@@ -1,0 +1,20 @@
+RD: Rescue 15, you have a chest pain, 24 year old female.
+M1: Rescue 15 on scene.
+M2: Are you having any trouble breathing?
+PT: My chest is squeezing.
+M1: Giving 4 milligrams of ondansetron IV push.
+M1: Vitals, pain is 3 out of 10.
+M1: Pushing Nitrolingual, 0.4 sublingual.
+M2: Okay, end tidal is 19.
+M1: Who's your doctor?
+M2: Got 12-lead.
+M1: Do you take any medications?
+M1: We're transporting to County.
+M2: Giving 324 of Bayer PO.
+M1: Hang tight, partner.
+BY: Please don't cut my shirt.
+M2: I gave fentanyl 50 IV push.
+M1: Okay, we're going to take care of you.
+BY: Can somebody call my wife?
+M1: Arrived at Saint Joseph's.
+M1: Handing off to the nurse.

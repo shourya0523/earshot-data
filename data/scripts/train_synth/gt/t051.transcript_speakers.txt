@@ -1,0 +1,24 @@
+RD: Squad 27, respond to difficulty breathing, 73 year old female.
+M2: Squad 27 arriving on scene.
+M2: On a scale of zero to ten, how bad is it?
+PT: Am I going to be okay?
+PT: My breathing's bad today.
+M2: Can you tell me what day it is?
+BY: It's getting worse.
+M1: Pushing mag, 2 gram intravenous.
+M1: Repeat, pulse at 61, blood sugar at 37.
+M1: Drawing up 3 cc's of DuoNeb.
+M2: Can you tell me what day it is?
+M1: How long has this been going on?
+M2: We need c pap.
+M1: Vitals, sugar's 384, SpO2 is 97 percent.
+M2: Watch the step.
+BY: Am I going to be okay?
+M1: Transporting to Riverside.
+M1: solu-medrol 125 milligrams.
+M2: Any medical history I should know about?
+M1: Any allergies?
+BY: I don't know, it just started.
+M1: Pushing non-rebreather, 4 nasal cannula.
+M1: Arrived at Saint Joseph's.
+M1: Transfer of care to bed four.

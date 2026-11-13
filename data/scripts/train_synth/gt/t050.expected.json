@@ -1,0 +1,122 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "69",
+  "sex": "male",
+  "weight_kg": "95",
+  "complaint": "weakness one side",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "weakness one side",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "bp": "119/74",
+    "pain": "5",
+    "bgl": "250",
+    "etco2": "18"
+   },
+   "last_vitals": {
+    "bp": "135/60",
+    "pain": "5",
+    "bgl": "250",
+    "etco2": "18"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "CVA",
+    "TIA"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 2 NC"
+   ],
+   "procedures": [
+    "IV access"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "69",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "weakness one side",
+  "I_injuries_or_information": "weakness one side",
+  "S_signs": {
+   "bp": "119/74",
+   "pain": "5",
+   "bgl": "250",
+   "etco2": "18"
+  },
+  "T_treatment": [
+   "oxygen 2 NC",
+   "IV access"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "20:27:35",
+  "eTimes.09": "20:29:04",
+  "eTimes.11": "20:29:19"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "weakness one side",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "2",
+   "route": "NC"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "bp",
+   "value": "119/74",
+   "time": "20:28:22"
+  },
+  {
+   "name": "pain",
+   "value": "5",
+   "time": "20:28:22"
+  },
+  {
+   "name": "bgl",
+   "value": "250",
+   "time": "20:28:22"
+  },
+  {
+   "name": "etco2",
+   "value": "18",
+   "time": "20:29:09"
+  },
+  {
+   "name": "bp",
+   "value": "135/60",
+   "time": "20:29:09"
+  }
+ ],
+ "diagnosis_traps": [
+  "CVA",
+  "TIA"
+ ]
+}

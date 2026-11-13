@@ -1,0 +1,19 @@
+RD: Medic 52, respond to palpitations, 44 year old male.
+M2: Medic 52 arriving on scene.
+M1: Do you take any medications?
+PT: My heart won't slow down.
+M2: Small poke.
+M1: Are you having any trouble breathing?
+PT: I had something like this last year.
+M1: Repeat, heart rate at 131, resp rate at 34.
+M1: Any medical history I should know about?
+M1: BP's 193 over 120, pulse ox at 85 percent, pain is 2 out of 10.
+M1: Vitals, pain is 7 out of 10.
+M1: Drawing up 12 migs of Adenocard IV push.
+M1: Leaving scene to General.
+M1: Who's your doctor?
+PT: It's getting worse.
+M2: Pushing normal saline, 10 cc's through the line.
+M1: Got transmit the 12.
+M1: Arriving at Mercy.
+M1: Giving report complete.

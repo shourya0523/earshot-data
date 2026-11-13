@@ -1,0 +1,24 @@
+RD: Medic 35, you have a psychiatric emergency, 49 year old female.
+M1: Medic 35 arriving on scene.
+M1: Let's move on three. One, two, three.
+BY: Please don't cut my shirt.
+PT: Get away from me.
+M1: Can you squeeze my fingers?
+M1: Drawing up 5 of versed in the deltoid.
+M1: Doing soft restraints.
+M1: I gave ket 4 intramuscular.
+M1: Watch the step.
+M1: 5 migs Haldol, it's in.
+M1: Are you having any trouble breathing?
+PT: I feel sick.
+M2: On a scale of zero to ten, how bad is it?
+BY: Can somebody call my wife?
+M1: Transporting to Saint Vincent's.
+M1: Vitals, 105 over 51.
+M2: Can you squeeze my fingers?
+PT: Please don't cut my shirt.
+M1: capno's 40, resps's 24, GCS is 8.
+M2: Are you having any trouble breathing?
+PT: I feel sick.
+M1: Arriving at Good Sam.
+M1: Giving report to the nurse.

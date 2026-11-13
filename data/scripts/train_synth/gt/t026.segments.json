@@ -1,0 +1,146 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4215,
+  "speaker": "RD",
+  "text": "Ambulance 7, you have a seizure, 64 year old female."
+ },
+ {
+  "start_ms": 8875,
+  "end_ms": 10357,
+  "speaker": "M2",
+  "text": "Ambulance 7 we're on scene."
+ },
+ {
+  "start_ms": 11039,
+  "end_ms": 12479,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 13263,
+  "end_ms": 15084,
+  "speaker": "PT",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 17979,
+  "end_ms": 20147,
+  "speaker": "PT",
+  "text": "I'm tired, my tongue hurts."
+ },
+ {
+  "start_ms": 23515,
+  "end_ms": 25001,
+  "speaker": "M1",
+  "text": "Stay with me, keep your eyes open."
+ },
+ {
+  "start_ms": 28577,
+  "end_ms": 30976,
+  "speaker": "M1",
+  "text": "I gave midazolam 5 milligrams in the deltoid."
+ },
+ {
+  "start_ms": 37296,
+  "end_ms": 38596,
+  "speaker": "M1",
+  "text": "Can you squeeze my fingers?"
+ },
+ {
+  "start_ms": 39194,
+  "end_ms": 41054,
+  "speaker": "PT",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 44919,
+  "end_ms": 46923,
+  "speaker": "M2",
+  "text": "Giving 10 mg of diazepam rectal."
+ },
+ {
+  "start_ms": 51442,
+  "end_ms": 52290,
+  "speaker": "M1",
+  "text": "Watch the step."
+ },
+ {
+  "start_ms": 52619,
+  "end_ms": 53636,
+  "speaker": "BY",
+  "text": "It's about an eight."
+ },
+ {
+  "start_ms": 57626,
+  "end_ms": 62839,
+  "speaker": "M1",
+  "text": "Vitals, blood sugar at 190, sat is 88 on room air, pain is 5 out of 10."
+ },
+ {
+  "start_ms": 93134,
+  "end_ms": 94941,
+  "speaker": "M2",
+  "text": "I gave lorazepam 2 IV push."
+ },
+ {
+  "start_ms": 103688,
+  "end_ms": 104849,
+  "speaker": "M1",
+  "text": "breathing's 36."
+ },
+ {
+  "start_ms": 111205,
+  "end_ms": 112226,
+  "speaker": "M1",
+  "text": "We need check a sugar."
+ },
+ {
+  "start_ms": 113974,
+  "end_ms": 115510,
+  "speaker": "M1",
+  "text": "Leaving scene to Saint Joseph's."
+ },
+ {
+  "start_ms": 119126,
+  "end_ms": 120008,
+  "speaker": "M1",
+  "text": "Let's do suction."
+ },
+ {
+  "start_ms": 128511,
+  "end_ms": 130410,
+  "speaker": "M2",
+  "text": "Any medical history I should know about?"
+ },
+ {
+  "start_ms": 131146,
+  "end_ms": 132105,
+  "speaker": "BY",
+  "text": "I feel sick."
+ },
+ {
+  "start_ms": 133693,
+  "end_ms": 134385,
+  "speaker": "M2",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 135194,
+  "end_ms": 136746,
+  "speaker": "BY",
+  "text": "I don't know, it just started."
+ },
+ {
+  "start_ms": 143250,
+  "end_ms": 144079,
+  "speaker": "M1",
+  "text": "Who's your doctor?"
+ },
+ {
+  "start_ms": 146958,
+  "end_ms": 148188,
+  "speaker": "M1",
+  "text": "Arrived at Saint Joseph's."
+ }
+]

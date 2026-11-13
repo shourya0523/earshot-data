@@ -1,0 +1,170 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex"
+ ],
+ "patient": {
+  "age": "75",
+  "sex": "male",
+  "weight_kg": "112",
+  "complaint": "MVC rollover",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "MVC rollover",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "99",
+    "gcs": "9",
+    "bgl": "437",
+    "etco2": "27",
+    "bp": "113/81",
+    "hr": "77",
+    "rr": "29"
+   },
+   "last_vitals": {
+    "spo2": "99",
+    "gcs": "10",
+    "bgl": "437",
+    "etco2": "27",
+    "bp": "113/81",
+    "hr": "77",
+    "rr": "29"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "ketamine 0.3 IV",
+    "normal saline 250 mL IV",
+    "fentanyl 100 mcg IV",
+    "morphine 4 mg IV"
+   ],
+   "procedures": [
+    "splinting"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "75",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "pedestrian struck",
+  "I_injuries_or_information": "MVC rollover",
+  "S_signs": {
+   "spo2": "99",
+   "gcs": "9",
+   "bgl": "437",
+   "etco2": "27",
+   "bp": "113/81",
+   "hr": "77",
+   "rr": "29"
+  },
+  "T_treatment": [
+   "ketamine 0.3 IV",
+   "normal saline 250 mL IV",
+   "fentanyl 100 mcg IV",
+   "morphine 4 mg IV",
+   "splinting"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "12:09:35",
+  "eTimes.09": "12:10:48",
+  "eTimes.11": "12:11:48",
+  "eTimes.12": "12:12:04"
+ },
+ "wall_time_seconds": 16,
+ "dispatch_reason": "pedestrian struck",
+ "medications": [
+  {
+   "drug": "ketamine",
+   "dose": "0.3",
+   "route": "IV"
+  },
+  {
+   "drug": "normal saline",
+   "dose": "250",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "100",
+   "unit": "mcg",
+   "route": "IV"
+  },
+  {
+   "drug": "morphine",
+   "dose": "4",
+   "unit": "mg",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "99",
+   "time": "12:09:51"
+  },
+  {
+   "name": "gcs",
+   "value": "9",
+   "time": "12:09:51"
+  },
+  {
+   "name": "bgl",
+   "value": "437",
+   "time": "12:10:03"
+  },
+  {
+   "name": "etco2",
+   "value": "27",
+   "time": "12:10:03"
+  },
+  {
+   "name": "bp",
+   "value": "113/81",
+   "time": "12:10:03"
+  },
+  {
+   "name": "hr",
+   "value": "77",
+   "time": "12:11:39"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "12:11:39"
+  },
+  {
+   "name": "rr",
+   "value": "29",
+   "time": "12:11:39"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

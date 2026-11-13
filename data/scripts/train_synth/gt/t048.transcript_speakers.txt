@@ -1,0 +1,22 @@
+RD: Medic 29, priority two, shortness of breath, 54 year old female.
+M2: Medic 29 arriving on scene.
+M2: Hang tight, partner.
+PT: I can't get my air.
+M1: solumedrol 125 migs through the line.
+M1: Okay, sugar at 204, resps's 18.
+M1: Hang tight, partner.
+BY: No allergies.
+M1: Small poke.
+PT: It's getting worse.
+M1: 4 L non-rebreather, it's in.
+M1: Okay, pulse's 106.
+M1: Any allergies?
+PT: I had something like this last year.
+M1: Leaving scene to Valley.
+M1: Watch the step.
+PT: Am I going to be okay?
+M1: 3 cc's duo neb, it's in.
+M1: We need nebulizer treatment.
+M2: Got CPAP.
+M1: Arriving at Valley.
+M1: Handing off complete.

@@ -1,0 +1,16 @@
+RD: Medic 10, priority two, fainting, 24 year old male.
+M1: Medic 10 on scene.
+M1: Okay, we're going to take care of you.
+PT: I don't know, it just started.
+PT: Everything went grey.
+M2: I gave saline 500 cc's intravenous.
+M2: On a scale of zero to ten, how bad is it?
+BY: Please don't cut my shirt.
+M1: Giving 2 L of non-rebreather nasal cannula.
+M1: Watch the step.
+M2: Vitals, GCS's 13.
+M1: Did you pass out at all?
+M1: We're transporting to Memorial.
+M2: Okay, SpO2's 93, capno's 31.
+M2: Get 12-lead.
+M1: We're at County.

@@ -1,0 +1,20 @@
+RD: Ambulance 27, you have a difficulty breathing, 46 year old male.
+M1: Ambulance 27 on scene.
+M2: When did you last eat?
+PT: I've been sleeping in the recliner.
+M2: Stay with me, keep your eyes open.
+M1: Lasix 40 migs IV push.
+M1: pulse ox at 82, end tidal 28.
+M2: How long has this been going on?
+M1: Get the cot.
+M1: pain is 4 out of 10, end tidal's 18.
+M2: Grab the stair chair.
+M2: We need 12-lead.
+M1: Pushing Nitrostat, 0.8 migs.
+M1: Leaving scene to Riverside.
+M1: 0.4 nitroglycerin SL, it's in.
+M1: Grab the stair chair.
+M1: Did you pass out at all?
+PT: Can somebody call my wife?
+M2: We need c pap.
+M1: Arrived at University.

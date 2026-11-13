@@ -1,0 +1,110 @@
+[
+ {
+  "start_ms": 500,
+  "end_ms": 4296,
+  "speaker": "RD",
+  "text": "Squad 45, you have a fever, 39 year old male."
+ },
+ {
+  "start_ms": 7075,
+  "end_ms": 8823,
+  "speaker": "M2",
+  "text": "Squad 45 on scene."
+ },
+ {
+  "start_ms": 9249,
+  "end_ms": 10803,
+  "speaker": "M1",
+  "text": "How long has this been going on?"
+ },
+ {
+  "start_ms": 11338,
+  "end_ms": 13737,
+  "speaker": "PT",
+  "text": "I had something like this last year."
+ },
+ {
+  "start_ms": 20184,
+  "end_ms": 22447,
+  "speaker": "PT",
+  "text": "I've had a fever for three days."
+ },
+ {
+  "start_ms": 25317,
+  "end_ms": 26327,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 34839,
+  "end_ms": 35942,
+  "speaker": "M1",
+  "text": "Hang tight, partner."
+ },
+ {
+  "start_ms": 36732,
+  "end_ms": 40272,
+  "speaker": "PT",
+  "text": "Yeah, I take a bunch of pills, my daughter knows."
+ },
+ {
+  "start_ms": 47119,
+  "end_ms": 49832,
+  "speaker": "M2",
+  "text": "end tidal is 33, pain is 7 out of 10."
+ },
+ {
+  "start_ms": 60075,
+  "end_ms": 61882,
+  "speaker": "M2",
+  "text": "Repeat, pain is 9 out of 10."
+ },
+ {
+  "start_ms": 89532,
+  "end_ms": 92117,
+  "speaker": "M2",
+  "text": "1000 cc's saline intravenous, it's in."
+ },
+ {
+  "start_ms": 102543,
+  "end_ms": 105324,
+  "speaker": "M1",
+  "text": "I gave lactated ringers 500 cc's."
+ },
+ {
+  "start_ms": 107014,
+  "end_ms": 108590,
+  "speaker": "M1",
+  "text": "Leaving scene to Saint Joseph's."
+ },
+ {
+  "start_ms": 112471,
+  "end_ms": 113499,
+  "speaker": "M2",
+  "text": "Doing 20 gauge."
+ },
+ {
+  "start_ms": 121816,
+  "end_ms": 122617,
+  "speaker": "M1",
+  "text": "Small poke."
+ },
+ {
+  "start_ms": 122993,
+  "end_ms": 124393,
+  "speaker": "BY",
+  "text": "Can somebody call my wife?"
+ },
+ {
+  "start_ms": 128537,
+  "end_ms": 130311,
+  "speaker": "M1",
+  "text": "Tylenol 1000 by mouth."
+ },
+ {
+  "start_ms": 134756,
+  "end_ms": 136082,
+  "speaker": "M1",
+  "text": "Arriving at Saint Joseph's."
+ }
+]

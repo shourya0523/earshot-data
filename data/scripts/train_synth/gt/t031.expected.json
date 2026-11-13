@@ -1,0 +1,141 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "83",
+  "sex": "female",
+  "weight_kg": "99",
+  "complaint": "fall",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "fall",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "83",
+    "spo2": "92",
+    "bgl": "374",
+    "bp": "167/128",
+    "rr": "13"
+   },
+   "last_vitals": {
+    "hr": "83",
+    "spo2": "92",
+    "bgl": "374",
+    "bp": "167/128",
+    "rr": "13"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "fracture",
+    "head injury"
+   ]
+  },
+  "P": {
+   "medications": [
+    "normal saline 250 IV",
+    "fentanyl 100 mcg IV",
+    "tranexamic acid 1 g IV"
+   ],
+   "procedures": [
+    "wound packing"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "83",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "fall",
+  "I_injuries_or_information": "fall",
+  "S_signs": {
+   "hr": "83",
+   "spo2": "92",
+   "bgl": "374",
+   "bp": "167/128",
+   "rr": "13"
+  },
+  "T_treatment": [
+   "normal saline 250 IV",
+   "fentanyl 100 mcg IV",
+   "tranexamic acid 1 g IV",
+   "wound packing"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "16:41:46",
+  "eTimes.09": "16:43:35",
+  "eTimes.11": "16:44:19"
+ },
+ "wall_time_seconds": null,
+ "dispatch_reason": "fall",
+ "medications": [
+  {
+   "drug": "normal saline",
+   "dose": "250",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "100",
+   "unit": "mcg",
+   "route": "IV"
+  },
+  {
+   "drug": "tranexamic acid",
+   "dose": "1",
+   "unit": "g",
+   "route": "IV"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "83",
+   "time": "16:41:59"
+  },
+  {
+   "name": "spo2",
+   "value": "92",
+   "time": "16:41:59"
+  },
+  {
+   "name": "bgl",
+   "value": "374",
+   "time": "16:42:57"
+  },
+  {
+   "name": "bp",
+   "value": "167/128",
+   "time": "16:43:04"
+  },
+  {
+   "name": "rr",
+   "value": "13",
+   "time": "16:43:04"
+  }
+ ],
+ "diagnosis_traps": [
+  "fracture",
+  "head injury"
+ ]
+}

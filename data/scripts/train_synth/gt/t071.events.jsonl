@@ -1,0 +1,14 @@
+{"id": "e1", "call_id": "t071", "time": "06:35:39", "clip_ms": 500, "type": "dispatch", "fields": {"text": "weakness"}, "source": "heard", "quote": "weakness", "segment_start_ms": 500}
+{"id": "e2", "call_id": "t071", "time": "06:35:48", "clip_ms": 9899, "type": "time", "fields": {"etime": "eTimes.06"}, "source": "heard", "quote": "we're on scene", "segment_start_ms": 9899}
+{"id": "e3", "call_id": "t071", "time": "06:36:08", "clip_ms": 29043, "type": "medication", "fields": {"drug": "normal saline", "dose": "500", "unit": "mL", "route": "IV"}, "source": "tap+heard", "quote": "saline 500 mils intravenous", "segment_start_ms": 30043, "tap_id": "t1"}
+{"id": "e4", "call_id": "t071", "time": "06:36:13", "clip_ms": 34669, "type": "medication", "fields": {"drug": "atropine", "dose": "1", "unit": "mg", "route": "IV"}, "source": "heard", "quote": "1 mg atropine through the line", "segment_start_ms": 34669}
+{"id": "e5", "call_id": "t071", "time": "06:36:26", "clip_ms": 47255, "type": "procedure", "fields": {"name": "IV access"}, "source": "heard", "quote": "18 gauge", "segment_start_ms": 47255}
+{"id": "mt2", "call_id": "t071", "time": "06:36:47", "clip_ms": 68730, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t2"}
+{"id": "e6", "call_id": "t071", "time": "06:37:03", "clip_ms": 84599, "type": "vital", "fields": {"name": "bp", "value": "85/40", "unit": "mmHg"}, "source": "heard", "quote": "blood pressure at 85 over 40", "segment_start_ms": 84599}
+{"id": "mt3", "call_id": "t071", "time": "06:37:21", "clip_ms": 102199, "type": "marker", "fields": {}, "source": "tap", "quote": null, "label": "marked, no label", "tap_id": "t3"}
+{"id": "e7", "call_id": "t071", "time": "06:37:33", "clip_ms": 114564, "type": "time", "fields": {"etime": "eTimes.09"}, "source": "heard", "quote": "Leaving scene", "segment_start_ms": 114564}
+{"id": "e8", "call_id": "t071", "time": "06:37:47", "clip_ms": 128860, "type": "vital", "fields": {"name": "spo2", "value": "94", "unit": "%"}, "source": "heard", "quote": "SpO2 94 percent", "segment_start_ms": 128860}
+{"id": "e9", "call_id": "t071", "time": "06:37:47", "clip_ms": 128860, "type": "vital", "fields": {"name": "hr", "value": "146", "unit": "bpm"}, "source": "heard", "quote": "heart rate is 146", "segment_start_ms": 128860}
+{"id": "e10", "call_id": "t071", "time": "06:37:47", "clip_ms": 128860, "type": "vital", "fields": {"name": "gcs", "value": "8", "unit": ""}, "source": "heard", "quote": "GCS is 8", "segment_start_ms": 128860}
+{"id": "e11", "call_id": "t071", "time": "06:38:04", "clip_ms": 145510, "type": "time", "fields": {"etime": "eTimes.11"}, "source": "heard", "quote": "Arriving at", "segment_start_ms": 145510}
+{"id": "e12", "call_id": "t071", "time": "06:38:11", "clip_ms": 152720, "type": "time", "fields": {"etime": "eTimes.12"}, "source": "tap+heard", "quote": "Handing off", "segment_start_ms": 153720, "tap_id": "t4"}

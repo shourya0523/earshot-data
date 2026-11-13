@@ -1,0 +1,143 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "86",
+  "sex": "male",
+  "weight_kg": "127",
+  "complaint": "burns",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "burns",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "hr": "108",
+    "bgl": "173",
+    "gcs": "12",
+    "bp": "120/73"
+   },
+   "last_vitals": {
+    "hr": "108",
+    "bgl": "401",
+    "gcs": "10",
+    "bp": "120/73"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "smoke inhalation"
+   ]
+  },
+  "P": {
+   "medications": [
+    "lactated Ringer's 1000 mL IV",
+    "hydroxocobalamin 5 g IV",
+    "fentanyl 1 mcg/kg IN"
+   ],
+   "procedures": [
+    "bandaging"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "86",
+   "sex": "male"
+  },
+  "M_mechanism_or_complaint": "burns",
+  "I_injuries_or_information": "burns",
+  "S_signs": {
+   "hr": "108",
+   "bgl": "173",
+   "gcs": "12",
+   "bp": "120/73"
+  },
+  "T_treatment": [
+   "lactated Ringer's 1000 mL IV",
+   "hydroxocobalamin 5 g IV",
+   "fentanyl 1 mcg/kg IN",
+   "bandaging"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "22:58:41",
+  "eTimes.09": "23:00:23",
+  "eTimes.11": "23:00:56",
+  "eTimes.12": "23:01:13"
+ },
+ "wall_time_seconds": 17,
+ "dispatch_reason": "burns",
+ "medications": [
+  {
+   "drug": "lactated Ringer's",
+   "dose": "1000",
+   "unit": "mL",
+   "route": "IV"
+  },
+  {
+   "drug": "hydroxocobalamin",
+   "dose": "5",
+   "unit": "g",
+   "route": "IV"
+  },
+  {
+   "drug": "fentanyl",
+   "dose": "1",
+   "unit": "mcg/kg",
+   "route": "IN"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "hr",
+   "value": "108",
+   "time": "22:59:54"
+  },
+  {
+   "name": "bgl",
+   "value": "173",
+   "time": "23:00:08"
+  },
+  {
+   "name": "gcs",
+   "value": "12",
+   "time": "23:00:08"
+  },
+  {
+   "name": "bgl",
+   "value": "401",
+   "time": "23:00:41"
+  },
+  {
+   "name": "bp",
+   "value": "120/73",
+   "time": "23:00:41"
+  },
+  {
+   "name": "gcs",
+   "value": "10",
+   "time": "23:00:41"
+  }
+ ],
+ "diagnosis_traps": [
+  "smoke inhalation"
+ ]
+}

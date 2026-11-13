@@ -1,0 +1,105 @@
+{
+ "note": "Patient-block values are scenario metadata. Only fields actually spoken in the transcript are scoreable; 'spoken_patient_fields' lists those. Unspoken ones must render as 'not heard'.",
+ "spoken_patient_fields": [
+  "age",
+  "sex",
+  "complaint"
+ ],
+ "patient": {
+  "age": "18",
+  "sex": "female",
+  "weight_kg": "116",
+  "complaint": "stroke",
+  "allergies": "unknown",
+  "home_meds": "unknown",
+  "history": "unknown"
+ },
+ "soap": {
+  "S": {
+   "chief_complaint_symptom": "stroke",
+   "allergies": "unknown",
+   "medications": "unknown",
+   "history": "unknown"
+  },
+  "O": {
+   "first_vitals": {
+    "spo2": "82",
+    "etco2": "53"
+   },
+   "last_vitals": {
+    "spo2": "82",
+    "etco2": "53"
+   },
+   "status": [],
+   "found": null
+  },
+  "A": {
+   "must_not_contain": [
+    "CVA",
+    "TIA"
+   ]
+  },
+  "P": {
+   "medications": [
+    "oxygen 2 L/min NC"
+   ],
+   "procedures": [
+    "IV access",
+    "glucose check"
+   ]
+  }
+ },
+ "imist_ambo": {
+  "I_identification": {
+   "age": "18",
+   "sex": "female"
+  },
+  "M_mechanism_or_complaint": "stroke",
+  "I_injuries_or_information": "stroke",
+  "S_signs": {
+   "spo2": "82",
+   "etco2": "53"
+  },
+  "T_treatment": [
+   "oxygen 2 L/min NC",
+   "IV access",
+   "glucose check"
+  ],
+  "A_allergies": "unknown",
+  "M_medications": "unknown",
+  "B_background": "unknown",
+  "O_other": null
+ },
+ "nemsis_etimes": {
+  "eTimes.06": "04:14:36",
+  "eTimes.09": "04:15:51",
+  "eTimes.11": "04:16:32",
+  "eTimes.12": "04:16:49"
+ },
+ "wall_time_seconds": 17,
+ "dispatch_reason": "stroke",
+ "medications": [
+  {
+   "drug": "oxygen",
+   "dose": "2",
+   "unit": "L/min",
+   "route": "NC"
+  }
+ ],
+ "vitals": [
+  {
+   "name": "spo2",
+   "value": "82",
+   "time": "04:15:14"
+  },
+  {
+   "name": "etco2",
+   "value": "53",
+   "time": "04:15:44"
+  }
+ ],
+ "diagnosis_traps": [
+  "CVA",
+  "TIA"
+ ]
+}
