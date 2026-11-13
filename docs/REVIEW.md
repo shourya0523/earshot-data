@@ -180,3 +180,17 @@ Full scores: `eval/results/pipe_stock_test_tts_{snr15,snr10,snr5}.txt` and `pipe
 | R3-5 | **DONE** | Your seed prompt is now the default (`shared/ems_terms.json` → `initial_prompt`; `--prompt-file` to A/B others). |
 
 Not changed: "R6" / "Resc" alone are not read as RR (too ambiguous without a number next to a resp word).
+
+## Data agent, round 4: re-run on overnight @ 5f434ae (beam 5 + fallback, seed prompt, token timestamps), TTS test calls @10 dB
+| | WER | drug WER | unsupported | tap labelling | drug P/R | dose R | route R | SpO2 R | RR R | NEMSIS | leaks |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| @ da52ea6 | 23.3% | 34.6% | 3.7% | 0.64 | .95/.86 | .82 | .79 | .93 | .29 | 10/10 | 0 |
+| **@ 5f434ae** | **14.7%** | **30.8%** | **0 ✅** | **0.70** | .94/.77 | .73 | .68 | **.50** | .43 | 10/10 | 0 |
+
+R3-1 (receipts) is confirmed fixed. WER is down 8.6 points. Recall dropped on some fields; traced to the ASR output:
+
+| # | Sev | Finding | Repro | Fix |
+|---|---|---|---|---|
+| R4-1 | high | **"sat NN" is now heard as "set NN"** (5 of 7 SpO2 misses). Likely the new prompt's "SpO2 94%" phrasing. | c01 "set 95 when we're in air"; c03 "Set 96"; c07 "ress 24, set 97"; c09 "SAC's coming up, 95" | Accept `set\|sac'?s\|sats?\|satz\|zen` + 2-digit value 50–100 as SpO2 *only right after another vital or in a vitals run*. Also add "sats 94" to the prompt. |
+| R4-2 | high | **Music-note hallucinations replace speech** (temperature fallback in noise). | c03 "Second dose, 2 milligrams IV" → `♪♪♪♪` (the second Narcan dose is lost); c08 two segments → `♪♪♪` | Strip `♪`/`🎵` as non-speech tags. When a segment decodes to only non-speech, re-decode it with beam 5 at temperature 0 (no fallback) and keep the result if non-empty. Or raise `no_speech_thold`. |
+| R4-3 | medium | Spoken-form drift: "Non-rebreather" → "Now we're breather"; "a liter" → "a leader". | c08 | Add `now we're breather`, `non rib breather` → NRB and `a leader of` → "a liter of" as ASR variants (cleanup rules). |
