@@ -32,7 +32,7 @@ Demo: `$B run mocks/demo_call/transcript.truth.json --taps mocks/demo_call/taps.
 | replay | `.replay`/`.bin` — length-prefixed packets (`docs/WIRE_FORMAT.md`) |
 | transcript | `.json` — `[{"start_ms":0,"end_ms":2000,"text":"..."}]` or a previous `transcript.raw.json` |
 | taps | `[{"clip_ms":52500,"source":"button","gesture":"mark"}]`; source `button|knock|snap|tablet`; gesture `mark` (default) `yes|no|arrival|handoff`. `clip_ms` = ms from audio start (wav/json) or clip-boot ms (replay) |
-| config (`--config`) | `{"call_id":"c1","start_time":"2026-11-15T14:00:00-05:00","asr":{"model":"...","threads":4,"use_initial_prompt":true},"tagger":null,"vad":{...},"merge":{"windowMs":3000,"extendedMs":10000},"pii_scrub":true}` — all optional |
+| config (`--config`) | `{"call_id":"c1","start_time":"2026-11-15T14:00:00-05:00","asr":{"model":"...","threads":4,"use_initial_prompt":true},"tagger":null,"vad":{"mode":"energy"\|"fixed","startDb":6,"hangoverMs":700,"maxSegmentMs":25000},"merge":{"windowMs":3000,"extendedMs":10000},"pii_scrub":false,"agency":{"stateId":"…","number":"…","stateCode":"25","vehicle":"…","callSign":"…"}}` — all optional |
 
 Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Linux it's ignored with a note in timing.json), `--threads`, `--call-id`, `--start`, `--dict <dir>` (default: finds `shared/`), `--no-prompt`, `--pii-scrub` (off by default: PII is kept).
 
@@ -43,7 +43,7 @@ Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Lin
 | `transcript.clean.json` | `{segments:[{raw_span,text}], corrections:[{id,raw_span,raw_range:[a,b],original,replacement,rule}]}` |
 | `events.json` | event list (format below) |
 | `soap.md`, `chart.md`, `imist_ambo.md` | rendered by code; every line cites `[eN]`; missing = "not heard" |
-| `nemsis.xml` | NEMSIS v3.5.1 EMSDataSet, **UNVALIDATED**; eTimes.11/12, eVitals, eMedications (RxNorm + route/unit codes), eProcedures (no SNOMED yet) |
+| `nemsis.xml` | NEMSIS v3.5.1 EMSDataSet, **passes the XSD** (xmllint); eTimes.11/12, eVitals, eMedications (RxNorm + route/unit codes), eProcedures (no SNOMED yet); schema-required unknowns listed in a `REQUIRES CREW ENTRY` comment |
 | `timing.json` | seconds per stage (vad, asr_total, cleanup, extract_rules, merge, pii, render), stats, model names |
 
 Event: `{"id","call_id","time"(ISO),"t_ms","type","fields","source","quote","raw_span","confidence","models":{"asr","extract"},"receipts":{field:{"raw_span","quote","raw_range","inferred"?}},"flags":["confirm"|"inferred"|"unlabeled"],"tap_source","tap_clip_ms"}`.
@@ -52,10 +52,16 @@ Vitals field names: `bp_systolic bp_diastolic bp_method heart_rate resp_rate spo
 
 Determinism: same input + config + threads ⇒ same files, except `timing.json`.
 
+Clock: `--start` wins; else a replay's clock-sync packet; else an assumed start of 2026-11-15T14:00:00-05:00 that is flagged at the top of every output and as `clock: assumed` in `timing.json` notes. **Pass `--start` for scoring times.**
+
+Consent: if the tap file has `yes`/`no`/`stop` gestures, only audio from a `yes` to the next `stop` is transcribed and a `no` captures nothing. With no consent gestures, everything counts.
+
+Changes since first hand-off (review fixes): unit never filled when unspoken (`unit_suggested` instead); `route_as_heard` when the route came from a word like "chewed"; diagnosis terms never become field values; NEMSIS validates against the v3.5.1 XSD; VAD is noise-adaptive (`vad.mode: "fixed"` to skip VAD); PII kept by default (`--pii-scrub` to tokenize).
+
 ## Known gaps
 - Word times inside a segment are proportional estimates (no token timestamps yet).
 - Free-text fields (dispatch, chief complaint, destination, allergy, history) are raw quotes ≤5 words.
-- Procedures have no SNOMED codes; NEMSIS XML not schema-validated.
+- Procedures have no SNOMED codes (eProcedures.03 = Not Recorded). NEMSIS passes the XSD, not Schematron/state rules.
 - `mocks/demo_call/demo_call.replay` is not in git (binary); regenerate: `python3 core/tools/make_demo_call.py /tmp/demo.wav mocks/demo_call && $B make-replay /tmp/demo.wav mocks/demo_call/demo_call.replay --taps mocks/demo_call/taps.json` (needs espeak-ng, ffmpeg).
 - Performance: 166 s demo audio → 51 s ASR on 4 x86 threads (small.en, CPU).
 
