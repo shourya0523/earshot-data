@@ -86,7 +86,7 @@ public struct ChartModel: Sendable {
                 let neg = e.fields["negated"] == "true"
                 switch e.fields["kind"] ?? "" {
                 case "patient":
-                    if let a = e.fields["age"], age == nil { age = s(a) }
+                    if let a = e.fields["age"], age == nil { age = s(a + (e.fields["age_units"] == "months" ? " months" : "")) }
                     if let x = e.fields["sex"], sex == nil { sex = s(x) }
                     if let w = e.fields["weight_kg"], weight == nil {
                         weight = s("\(w) kg" + (e.fields["weight_estimated"] == "true" ? " (estimated)" : ""))

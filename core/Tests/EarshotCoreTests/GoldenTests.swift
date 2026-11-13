@@ -31,7 +31,7 @@ final class GoldenTests: XCTestCase {
         for d in r.docs where d.name.hasSuffix(".md") {
             XCTAssertFalse(d.text.lowercased().contains("diagnos") && !d.text.contains("does not diagnose"), d.name)
         }
-        XCTAssertTrue(r.docs.last!.text.contains("UNVALIDATED"))
+        XCTAssertTrue(r.docs.last!.text.contains("Schema-checked against NEMSIS v3.5.1 XSD"))
         XCTAssertTrue(r.docs.last!.text.contains("<eTimes.11>2026-11-15T14:02:40-05:00</eTimes.11>"))
         XCTAssertTrue(r.docs.last!.text.contains("<eTimes.12>2026-11-15T14:22:40-05:00</eTimes.12>"))
     }

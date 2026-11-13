@@ -56,6 +56,7 @@ public struct PipelineConfig: Codable, Sendable {
     public var tagger: String? = nil
     public var vad = VADConfig()
     public var merge = MergeConfig()
+    public var agency = NEMSISAgency()
     public var piiScrub: Bool = false   // PII kept by default (ePCR needs it); scrub is opt-in
     public init() {}
     enum CodingKeys: String, CodingKey { case callId = "call_id", startTime = "start_time", asr, tagger, vad, merge, piiScrub = "pii_scrub" }
@@ -68,6 +69,7 @@ public struct PipelineConfig: Codable, Sendable {
         vad = try c.decodeIfPresent(VADConfig.self, forKey: .vad) ?? VADConfig()
         merge = try c.decodeIfPresent(MergeConfig.self, forKey: .merge) ?? MergeConfig()
         piiScrub = try c.decodeIfPresent(Bool.self, forKey: .piiScrub) ?? false
+        agency = try c.decodeIfPresent(NEMSISAgency.self, forKey: .agency) ?? NEMSISAgency()
     }
 }
 
@@ -202,7 +204,7 @@ public final class EarshotPipeline {
         var docs: [RenderedDoc] = []
         timed("render") {
             let m = ChartModel(events: events, callId: config.callId, clock: clock)
-            docs = [Renderers.soap(m), Renderers.chart(m), Renderers.imistAmbo(m), NEMSISExport.render(m, events: events, dict: dict)]
+            docs = [Renderers.soap(m), Renderers.chart(m), Renderers.imistAmbo(m), NEMSISExport.render(m, events: events, dict: dict, agency: config.agency)]
         }
         if clockSource == "assumed" {
             let note = "> Clock: no start time given and no clip clock sync, so wall-clock times assume a start of \(PipelineConfig.assumedStart). Elapsed times are real.\n\n"
