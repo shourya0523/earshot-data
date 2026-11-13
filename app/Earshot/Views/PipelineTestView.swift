@@ -92,7 +92,7 @@ struct ThroughputTestView: View {
                 Text("Link: \(detail)")
                 Text(String(format: "%.1f kbps · loss %.2f%% · latency %.0f ms (max %.0f)", source.meter.kbps, source.meter.lossPct,
                             source.meter.latencyMs, source.meter.maxLatencyMs)).id(tick)
-                Text("Pass: ≥ 80 kbps sustained and < 1 % loss for 2 min while LISTENING. Otherwise build firmware with -DAUDIO_RATE_8K and retest.").font(.footnote)
+                Text("Pass: ≥ 80 kbps sustained and < 1 % loss for 2 min while LISTENING. Otherwise the clip needs 8 kHz audio or stronger compression.").font(.footnote)
             }
             .navigationTitle("BLE throughput")
             .task {

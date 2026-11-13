@@ -19,3 +19,4 @@
 | 15 | Whisper non-speech tags inside a segment (`[beep]`, `(siren)`) are dropped in cleanup as a logged correction; whole-segment tags are dropped before segment ids are assigned | keep | data agent finding (stock small.en emits them in siren noise) |
 | 16 | Sound-alike (phonetic) drug matches need a unit, route or give-verb within 3 tokens and are always "please confirm" | number nearby | "lights", "General" falsely matched in golden test |
 | 17 | The 1.4 MB demo replay file is not in git; regenerate with `earshot-eval make-replay` | commit binary | repo size; history rewritten before first push |
+| 18 | Board firmware (VoiceS3R, Feather) removed at user request; only `firmware/common` (wire format, ADPCM, consent state machine, tap detection) kept, with host tests | keep board code | someone else owns the clip firmware |
