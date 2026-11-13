@@ -35,14 +35,14 @@ Demo replay (contract-conformant stream; arrival/handoff are tablet taps): `$B r
 | replay | `.replay`/`.bin` — length-prefixed packets (`docs/WIRE_FORMAT.md`) |
 | transcript | `.json` — `[{"start_ms":0,"end_ms":2000,"text":"..."}]` or a previous `transcript.raw.json` |
 | taps | `[{"clip_ms":52500,"source":"button","gesture":"mark"}]`; source `button|knock|snap|tablet`; gesture `mark` (default) `yes|no|arrival|handoff`. `clip_ms` = ms from audio start (wav/json) or clip-boot ms (replay) |
-| config (`--config`) | `{"call_id":"c1","start_time":"2026-11-15T14:00:00-05:00","asr":{"model":"...","threads":4,"use_initial_prompt":true},"tagger":null,"vad":{"mode":"energy"\|"fixed","startDb":6,"hangoverMs":700,"maxSegmentMs":25000},"merge":{"windowMs":3000,"extendedMs":10000},"pii_scrub":false,"agency":{"stateId":"…","number":"…","stateCode":"25","vehicle":"…","callSign":"…"}}` — all optional |
+| config (`--config`) | `{"call_id":"c1","start_time":"2026-11-15T14:00:00-05:00","asr":{"model":"...","threads":4,"use_initial_prompt":true,"prompt":null,"beam_size":5,"temperature_fallback":true},"tagger":null,"vad":{"mode":"energy"\|"fixed","startDb":6,"hangoverMs":700,"maxSegmentMs":25000},"merge":{"windowMs":3000,"extendedMs":10000},"pii_scrub":false,"agency":{"stateId":"…","number":"…","stateCode":"25","vehicle":"…","callSign":"…"}}` — all optional |
 
-Flags: `--asr-model <path>`, `--tagger <path|none>` (Core ML, macOS only; on Linux it's ignored with a note in timing.json), `--threads`, `--call-id`, `--start`, `--dict <dir>` (default: finds `shared/`), `--no-prompt`, `--pii-scrub` (off by default: PII is kept).
+Flags: `--asr-model <path>`, `--beam <n>` (default 5, with temperature fallback), `--greedy` (beam 1, no fallback: fastest), `--prompt-file <f>` (override the initial prompt; default is the sentence-style prompt in `shared/ems_terms.json` → `initial_prompt`), `--tagger <path|none>` (Core ML, macOS only; on Linux it's ignored with a note in timing.json), `--threads`, `--call-id`, `--start`, `--dict <dir>` (default: finds `shared/`), `--no-prompt`, `--pii-scrub` (off by default: PII is kept).
 
 ## Outputs (in `--out`)
 | File | Contents |
 |---|---|
-| `transcript.raw.json` | `{call_id, asr_model, initial_prompt, segments:[{id:"s1",start_ms,end_ms,text,avg_logprob}]}` — never edited |
+| `transcript.raw.json` | `{call_id, asr_model, initial_prompt, segments:[{id:"s1",start_ms,end_ms,text,avg_logprob,word_times:[[char_offset, ms], …]}]}` — never edited. `start_ms`/`end_ms` come from whisper token timestamps (first/last token), not the VAD chunk; finding times use `word_times`. |
 | `transcript.clean.json` | `{segments:[{raw_span,text}], corrections:[{id,raw_span,raw_range:[a,b],original,replacement,rule}]}` |
 | `events.json` | event list (format below) |
 | `soap.md`, `chart.md`, `imist_ambo.md` | rendered by code; every line cites `[eN]`; missing = "not heard" |
