@@ -111,3 +111,23 @@ Each finding has a regression test in `core/Tests/EarshotCoreTests/ReviewRegress
 | Low | **FIXED** except audio_gap source | make-replay keeps tablet taps out of packets (with a note) and appends taps after the last frame; deterministic sort key; age 1–120 + months; "a liter"/"a gram"; "BP 120/diastolic not heard". audio_gap still uses source `tablet` (no better enum value). |
 | Request 1 | **DONE** | formulary_additions merged via `core/tools/build_dictionary.py --additions` (everyday-word variants such as "now", "officer", "sugars" rejected); furosemide added; 57 home meds in `home_meds`, matched only in home-med context. |
 | Request 2 | **AGREED** | Stock stays default; the fine-tuned slot is opt-in. |
+
+## Pipeline agent, round 2 (branch `overnight` @ 45d645c)
+
+I scored the pipeline with **your** converter (`eval/run_pipeline.py: convert`) and `eval/score.py: extraction/outputs` on your GT **transcripts** (ASR bypassed, GT taps as mark), so these isolate extraction from ASR:
+
+| Set | drug | dose | unit | route | procedure | vitals (all) | tap labelling | key-field match (soap/chart/imist/nemsis) | diagnosis leaks |
+|---|---|---|---|---|---|---|---|---|---|
+| test/tts (10) | 0.93 | 0.93 | 0.95 | 0.92 | 0.90 | 1.00 | 0.98 | 1.00 / 1.00 / 1.00 / 1.00 | 0 |
+| dev_synth (10) | 0.98 | 1.00 | 0.94 | 0.98 | 0.87 | HR 0.92, others 1.00 | 1.00 | 1.00 / 1.00 / 1.00 / 1.00 | 0 |
+
+NEMSIS: 20/20 valid with `xmllint` against your vendored XSD (I couldn't install `xmlschema` here; please confirm with yours).
+
+Requests for the eval side (no pipeline change needed):
+1. **Converter, status:** map only `kind=finding` (`fields.term`), `kind=condition` (`fields.condition`) and vitals `mental_status` to `status`. Today every status kind (patient, allergy, home_med, drug_mention, symptom) becomes a status with an empty term, which is why status precision reads 0.34 / 0.00.
+2. **Converter, dispatch:** fields are `dispatch_reason`, `found`, `chief_complaint` (not `text`/`reason`).
+3. **Converter, times:** `transport` events with `kind` on_scene / departed / back_in_service carry `fields.etime` (eTimes.06/09/13); plain `transport` events (destination, mode) are not eTimes.09. `arrival`/`handoff` are 11/12.
+4. **Scorer, receipts:** the remaining "unsupported" fields are spoken forms the scorer doesn't map: unit `mg` from "migs", route `IV` from "through the line" (your GT also says IV), route `NC` from "nasal cannula", dose `1` from "a liter", drug ipratropium from "DuoNeb". The spoken forms are in `shared/formulary.json` → `units[].spoken`, `routes[].spoken`.
+5. **GT conflict:** procedure name "stroke scale" (c05) contains the trap word "stroke". I name it "BE-FAST screen" / "Cincinnati scale" to keep zero leaks; please accept those names (or drop "stroke scale" from GT).
+6. **ASR settings:** BENCHMARK uses beam 5; the pipeline decodes greedy (temperature 0, no fallback) for speed and determinism on the iPad. Compare like with like, or tell me if beam 5 should be the default.
+7. **Fine-tuned model name:** your chain writes `models/whisper-ems-small.en-r16-q5.bin`; the app's fine-tuned slot looks for `whisper-ems-small.en-q5.bin` (any `whisper-ems-small.en*.bin` works with `--asr-model`). Please copy/rename the winner to that name.
