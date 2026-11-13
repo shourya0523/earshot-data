@@ -1,12 +1,11 @@
-# Earshot iPad app
+# Earshot iPad app (pipeline test harness)
 
-Thin SwiftUI layer over `EarshotCore` (../core). All pipeline logic lives in the package and is tested on Linux.
+Barebones UI to exercise `EarshotCore` end to end; the real screens come later. All pipeline logic lives in ../core (tested on Linux).
 
 ```bash
 app/scripts/fetch_deps.sh      # whisper.xcframework + models + xcodegen
 open app/Earshot.xcodeproj
 ```
-- Simulator: Settings → Transport is "Replay (demo)" by default; Connect → Start call plays `mocks/demo_call/demo_call.replay` through the real pipeline (whisper.cpp on CPU; tiny.en is faster there).
-- iPad: Transport "Bluetooth LE"; pair with the clip on first connect. Use Connect → Bluetooth throughput test first.
-
-Screens: Connect/status · Live timeline (dispatch-vs-found flag, vitals-due reminder) · Recall (unlabeled taps, please-confirm, not heard) · Draft (SOAP / CHART / IMIST-AMBO / NEMSIS tabs, tap a line for its receipt, share-sheet export, sign & wipe) · Handoff (nurse accept = eTimes.12, wall-time clock, arrival geofence + button) · Ledger (audio sent: 0 bytes) · Settings (stock vs fine-tuned A/B, tagger, Apple Intelligence).
+- One screen: transport picker (Replay / BLE / Wi-Fi), ASR slot (stock / fine-tuned), Start/Stop/Mark/Arrived/Nurse accept, link status, event list (tap → receipt), the four outputs, export via share sheet, sign & wipe, BLE throughput test.
+- Simulator: Replay plays `mocks/demo_call/demo_call.replay` through the real pipeline (CPU whisper; tiny.en is faster there).
+- Kept for the real UI: `AppModel` (call lifecycle, model slots, export, ledger), `Transport/` (BLE, Wi-Fi, throughput meter), `Services/` (encrypted CallStore, arrival Geofence, Foundation Models tap suggestions with span-citation check).
