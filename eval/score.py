@@ -61,14 +61,20 @@ def transcription(gt, run, ids):
         ref = tn.normalize((gt / f"{gt_id(uid)}.transcript.txt").read_text())
         hyp = tn.normalize(hp.read_text())
         w = jiwer.process_words(ref, hyp)
-        dn, de = align_counts(ref, hyp, lambda t: t in DRUGS)
+        extra = set()
+        dt = gt / f"{gt_id(uid)}.drug_terms.json"
+        if dt.exists():   # per-clip drug spans from the source dataset (e.g. Eka)
+            for term in json.loads(dt.read_text()):
+                extra |= {w for w in tn.normalize(term).split() if len(w) > 2 and not re.fullmatch(r"[\d.]+", w) and w not in UNITS}
+        isdrug = lambda t, extra=extra: t in DRUGS or t in extra
+        dn, de = align_counts(ref, hyp, isdrug)
         nn, ne = align_counts(ref, hyp, lambda t: bool(re.fullmatch(r"\d+(\.\d+)?", t)))
         un, ue = align_counts(ref, hyp, lambda t: t in UNITS)
         jr = [j for j in JARGON if re.search(rf"(?<![a-z0-9]){re.escape(j)}(?![a-z0-9])", ref)]
         jh = [j for j in jr if re.search(rf"(?<![a-z0-9]){re.escape(j)}(?![a-z0-9])", hyp)]
         rows.append(dict(id=uid, ref_words=len(ref.split()), errors=w.substitutions + w.deletions + w.insertions, wer=w.wer,
                          drug_n=dn, drug_err=de, num_n=nn, num_err=ne, unit_n=un, unit_err=ue, jargon_n=len(jr), jargon_hit=len(jh),
-                         drug_misses=_misses(ref, hyp, lambda t: t in DRUGS)))
+                         drug_misses=_misses(ref, hyp, isdrug)))
     if not rows:
         return None
     S = lambda k: sum(r[k] for r in rows)
@@ -112,7 +118,7 @@ def norm_unit(u):
 def extraction(gt, run, ids, time_tol_ms=15000):
     C = collections.defaultdict(lambda: [0, 0, 0])  # field -> [tp, n_pred, n_gt]
     ts_err = []; unsupported = 0; pred_fields = 0; unsup_examples = []
-    tap_lab = [0, 0]; tap_unl = [0, 0]
+    tap_lab = [0, 0]; tap_unl = [0, 0]; inferred_n = [0]
     for uid in ids:
         pe = load_events(run / f"{uid}.events.jsonl")
         if not (run / f"{uid}.events.jsonl").exists():
@@ -134,7 +140,9 @@ def extraction(gt, run, ids, time_tol_ms=15000):
                 if e.get("type") in ("dispatch", "found", "time"):
                     continue
                 pred_fields += 1
-                ok = bool(q) and q in hyp and _value_in_quote(k, v, q, e)
+                if k in (e.get("inferred_fields") or []):
+                    unsupported += 1; inferred_n[0] += 1; unsup_examples.append((uid, e.get("id"), f"{k}={v} INFERRED (not heard)")); continue
+                ok = bool(q) and q in hyp and _value_in_quote(k, v, _window(hyp, q) if k == "route" else q, e)
                 if not ok:
                     unsupported += 1; unsup_examples.append((uid, e.get("id"), f"{k}={v} quote={e.get('quote')!r}"))
         # medications: greedy match by drug then time
@@ -184,7 +192,8 @@ def extraction(gt, run, ids, time_tol_ms=15000):
         pr[k] = dict(tp=tp, pred=np_, gt=ng, precision=p, recall=r, f1=f1)
     q = lambda xs, f: (sorted(xs)[min(len(xs) - 1, int(f * len(xs)))] if xs else None)
     return dict(fields=pr, unsupported_field_rate=(unsupported / pred_fields) if pred_fields else 0.0, unsupported=unsupported, pred_fields=pred_fields,
-                unsupported_examples=unsup_examples[:15], timestamp_error_ms=dict(median=statistics.median(ts_err) if ts_err else None, p90=q(ts_err, 0.9), n=len(ts_err)),
+                unsupported_examples=unsup_examples[:25], unsupported_inferred=inferred_n[0],
+                unsupported_field_rate_excl_flagged_inferred=((unsupported - inferred_n[0]) / pred_fields) if pred_fields else 0.0, timestamp_error_ms=dict(median=statistics.median(ts_err) if ts_err else None, p90=q(ts_err, 0.9), n=len(ts_err)),
                 tap_labelling=dict(labelled_correct=tap_lab[0], labelled_total=tap_lab[1], unlabelled_correct=tap_unl[0], unlabelled_total=tap_unl[1],
                                    accuracy=(tap_lab[0] + tap_unl[0]) / max(1, tap_lab[1] + tap_unl[1])))
 
@@ -201,8 +210,18 @@ def _value_in_quote(k, v, q, e):
         u = norm_unit(v)
         return any(x in q.split() for x in {"mg": ["mg"], "mcg": ["mcg"], "g": ["g"], "ml": ["ml"], "l": ["l"], "l/min": ["l", "lpm"], "units": ["units"], "meq": ["meq"]}.get(u, [u]))
     if k == "route":
-        return True if e.get("route_quote") is None else tn.normalize(e["route_quote"]) in q
+        al = {tn.normalize(v)} | {tn.normalize(a) for a in DICT["routes"].get(v, [])} | {tn.normalize(x) for x in ROUTE_EXTRA.get(v.upper(), [])}
+        return any(a and re.search(rf"(?<![a-z0-9]){re.escape(a)}(?![a-z0-9])", q) for a in al)
     return True
+
+
+ROUTE_EXTRA = {"PO": ["chewed", "by mouth"], "SL": ["under the tongue", "sublingual"], "NEB": ["neb", "nebulizer", "nebulized"], "IN": ["intranasal", "nasal"],
+               "NRB": ["non rebreather", "nrb"], "IV": ["iv"], "IM": ["im"], "IO": ["io"]}
+
+
+def _window(hyp, q, w=60):
+    i = hyp.find(q)
+    return hyp[max(0, i - w): i + len(q) + w] if i >= 0 else q
 
 
 def _ngrams(q, n=3):

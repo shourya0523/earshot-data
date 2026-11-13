@@ -91,6 +91,9 @@ def drug_terms():
                                                                 "blow", "by", "breathing", "treatment", "activated", "rebreather", "non", "cannula", "special", "vitamin", "insta", "ringer", "ringers", "lactated", "normal", "saline", "racemic", "auvi", "pen", "nrb", "inch"}
                         and not re.match(r"^[0-9.]+$", t)):
                     terms.add(t)
+    for n in d.get("home_meds", []):
+        for t in normalize(n).split():
+            if len(t) > 3: terms.add(t)
     terms |= {"d10", "d50", "d25", "duoneb", "solumedrol", "txa"}
     return terms
 

@@ -117,7 +117,10 @@ def extract_segment(text):
             if "route" not in f and name == "oxygen":
                 for rk in ("nrb", "non rebreather", "nasal cannula"):
                     if rk in n: f["route"] = ROUTE.get(rk, "NRB")
-            out.append(("medication", f, " ".join(([before[-1]] if "dose" in f and before and before[-1] == f.get("dose") else []) + [k] + dose_tokens)))
+            pre = []
+            if "dose" in f and not dose_tokens and f["dose"] in before:
+                pre = before[len(before) - 1 - before[::-1].index(f["dose"]):]
+            out.append(("medication", f, " ".join(pre + [k] + dose_tokens)))
     names = {e[1]["drug"] for e in out}
     if {"albuterol", "ipratropium"} <= names:
         out = [e for e in out if e[1]["drug"] != "albuterol/ipratropium"]
