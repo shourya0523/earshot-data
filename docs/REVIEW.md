@@ -1,0 +1,76 @@
+# Review of the pipeline (branch `overnight`, shourya0523/earshot-data @ b6e0ed2)
+
+Reviewer: data agent. **I don't edit pipeline code**; these are findings with suggested fixes.
+- **Build:** `swift build -c release` OK (Swift 6.2.1, Linux, whisper.cpp 1.8.5 shared lib).
+- **Tests:** `swift test` gives 8 tests, 1 skipped, 0 failures. All 8 cover wire/ADPCM/VAD. **No tests for extraction, tap merge, renderers or NEMSIS.**
+- **How checked:**
+  - **[RUN]** = reproduced by running `earshot-eval` on our test calls (`eval/run_pipeline.py`; outputs in `eval/runs/pipe_stock/`).
+  - **[TRACED]** = found by reading the code; the input/output was traced by hand, not executed.
+
+Severity: **critical** (breaks a product rule or fabricates data), **high**, **medium**, **low**.
+
+## Critical
+
+| # | Finding | Where | Repro | Suggested fix |
+|---|---|---|---|---|
+| C1 | **A spoken diagnosis reaches the outputs as a finding** (rule: no diagnosis). | `Extraction/Rules.swift:137,177` (`rhythmRx` has `stemi`, `st elevation` → `vitals.ecg`); `:510` `foundRx`; `:511` `ccRx`; `:531` `alertRx`; `Render/NEMSIS.swift:126` puts the CHART text into `eNarrative.01` | **[RUN]** test call c01 (medic says "Looks like a STEMI"): SOAP shows `ECG (as stated by crew): stemi` and `Transport: to Mercy Cath Lab Activated`. **[TRACED]** "this is actually a STEMI" → CHART `C — Chief complaint: STEMI`; "turned out to be anaphylaxis" → found "anaphylaxis"; "stroke alert" → Transport line | Remove stemi / st elevation from the rhythm list. Pass found / chief complaint / dispatch / alert values through a diagnosis deny-list (stemi, mi, stroke, cva, tia, anaphylaxis, sepsis, overdose…). Render activations as "hospital alert activated (as said)". Add a unit test per trap word (`data/scripts/test/*.call` `@traps` lines list them). |
+| C2 | **Words that aren't drugs become medication events** (fabricated drug). | `Dictionary/Phonetic.swift` + `Rules.swift` drug matching; `Cleanup.swift:92-96` (ASR variants replaced unconditionally, which skips the `contextRequired` guard at `Rules.swift:200`); `Cleanup.swift:133,158-165` fuzzy match | **[RUN]** c01: "Medic 14, respond priority one…" and "Medic 14 on scene" → **2 × `morphine 14`** (heard as "Medic") in SOAP P, IMIST T and NEMSIS eMedications. **[TRACED]** "This sucks, give me 2 seconds" → `succinylcholine 2`; "the rhythm is morphing" → "morphine" | Phonetic and fuzzy drug matches only inside medication context (admin verb or dose+unit nearby), and never on unit call signs (`(medic\|rescue\|engine\|ambulance) \d+`). Apply `contextRequired` to variants in Cleanup, or don't replace them there. Always set `drug_as_heard`, and force `confirm` for asr_variant / fuzzy / phonetic hits. |
+| C3 | **The VAD drops most speech in noisy calls**, so most events are never heard. | `Audio/Audio.swift` (energy VAD) → `Pipeline.swift` chunking | **[RUN]** c01 at 10 dB SNR (cab, road and monitor noise): only **9 segments for 173 s**; every vitals line (BP 158/94…), the 18 g IV and both arrival/handoff lines are missing. Stock whisper-cli on the same file (no VAD) gets them, at WER 12.4%. Full numbers in `eval/REPORT.md`. | Make VAD noise-adaptive (threshold over a running noise floor, plus hangover) or drop VAD and use whisper.cpp's own Silero VAD (`--vad`). Partner/patient voices are 6–9 dB quieter than the wearer at the chest mic, so tune on `data/audio/dev_synth`. |
+| C4 | **"No allergies, gave aspirin" records aspirin as an allergy**, and the given dose disappears. | `Rules.swift:253-255,300` (the 4-token look-back crosses clauses) | **[TRACED]** "No allergies, gave aspirin 324." → `Allergies: NKDA; aspirin`; no medication | Stop look-backs at clause punctuation. Require "allergic to X" / "allergy to X" directly before the drug. |
+| C5 | **"Respiratory rate 24" becomes HR 24** and the RR is lost. "Drip rate of 125" → HR 125. | `Rules.swift:123` (bare `rate` in HR), HR evaluated before RR, `:149` `used` | **[TRACED]** | Drop bare `rate`, or add a lookbehind for resp/breathing. Evaluate RR before HR. |
+| C6 | **Units not spoken are filled from the protocol dose** (`mg*`, flag `inferred`). The spec says "anything not heard stays blank". | `Rules.swift` dose/unit inference; `NEMSIS.swift:106` writes it to `eMedications.06` as fact (only an XML comment marks it); `ChartModel.swift:65` leaves `inferred` out of "Needs medic review" | **[RUN]** c01: "Giving 324 of aspirin, chewed" → `aspirin 324 mg*`. Inferred routes (push→IV, thigh→IM, nose→IN, drip→IV) carry **no** flag (`Rules.swift:325-327`) | Leave the unit blank and show it in review as "unit not heard (protocol: mg?)". If inference stays, put every inferred item in "Needs medic review", and write NV / Not Recorded to NEMSIS until it is confirmed. Our scorer counts inferred fields as **unsupported** (receipts rule). |
+
+## High
+
+| # | Finding | Where | Repro | Suggested fix |
+|---|---|---|---|---|
+| H1 | **NEMSIS XML fails the v3.5.1 XSD.** | `Render/NEMSIS.swift` | **[RUN]** c01: **13 schema errors** (`xmlschema` against `eval/nemsis_xsd/EMSDataSet_v3.xsd`). `dAgency.04` must match `[0-9]{2}` (it is `NOT_SET`). `eTimes.11` comes first, but `eTimes.01` is required. `ePatient.AgeGroup` sits before the required `.07`. VitalGroup has no `CardiacRhythmGroup`. `eMedications.07` is missing. **[TRACED]** `eRecord.01` "c1" is shorter than the minimum length of 3. Required sections eResponse, eDispatch, eScene, eSituation, eHistory, eDisposition etc. are missing, and eNarrative is emitted after eVitals. | Build from a template with every required element in XSD order. Use `xsi:nil="true" NV="7701003"` (Not Recorded) for anything not heard. Validate in CI (`xmllint --schema`, or `python3 -c "import xmlschema…"`). The XSDs are vendored in `eval/nemsis_xsd/`. |
+| H2 | **Commas never act as clause boundaries.** | `Dictionary/Dictionary.swift:165` splits on `,`/`;` and drops them, so `Cleanup.swift:55` never sets `punct` | **[TRACED]** "Denies nausea, has chest pain." → both symptoms are listed as denied | Keep the splitter as `punct` on the previous token, and stop every window at it. |
+| H3 | **Medication negation only looks before the drug.** | `Rules.swift:254` | **[TRACED]** "Nitro 0.4 held, pressure 88/60" → recorded as given. "Pain's not better, gave fentanyl 50" → `med_not_given`. | Add a post-drug window (held, not given, withheld, refused), bounded by punctuation. |
+| H4 | **The prior-to-arrival and home-med cues fire anywhere in the window.** | `Rules.swift:256-257,306` | **[TRACED]** "Took her pressure, gave nitro 0.4" → "Taken before EMS arrival" | Bind the cue to the drug, and skip it if an admin verb comes in between. |
+| H5 | **Tap labelling uses segment-level distance, type priority and greedy order.** | `Events/TapMerge.swift:51-55,75-85` | **[TRACED]** A tap during "BP 158/94 … gave aspirin 324" (one segment) is labelled aspirin, not the vitals at the tap. Two close taps: the first one claims the second one's finding. | Measure distance from each finding's own word time. Use a global min-cost assignment. |
+| H6 | **Dispatch reason and arrival/handoff are missed on the test calls.** | `Rules.swift` dispatch/arrival patterns | **[RUN]** c01: the dispatch "…sixty-two year old male, chest pain" → `Dispatched for: not heard`. "Arrived at Mercy" (heard by ASR as "Arrive that mercy") → eTimes.11 not heard, so wall time is not heard. | Add patterns: `respond(ing)? (priority \w+,)? … <complaint>`, `(arriv\w+\|we're) at <facility>`. Use fuzzy matching on facility words. |
+| H7 | **The non-speech tag filter is wrong both ways.** | `Pipeline.swift:229-236` | **[TRACED]** "(siren) pressure is 158 over 94 (beeping)" → the whole segment is dropped. Inline `[beep]` is kept, so "beep" lands in quotes. **[RUN]** stock small.en emits `[beep] [clap]` many times per call in monitor noise. | Strip `\[[^\]]*\]\|\([^)]*\)\|\*[^*]*\*` per span, recorded as a correction. Drop a segment only if nothing remains. Apply this on every input path. |
+| H8 | **No knock/snap detection exists** (taps come only from the tap file or wire packets). A `stop` gesture is skipped and stops nothing. | `Audio/Audio.swift`, `TapMerge.swift:70` | **[TRACED]** | See **Tap thresholds** below for the reference detector and recommended values. Make `stop` end capture and wipe the buffer. |
+| H9 | **`not_done` statuses vanish from every output**, including when one labels a tap. | `Rules.swift:388`, `ChartModel.swift:104` | **[TRACED]** Tap, then "no IV access": the tap is claimed and nothing is rendered. | Render "Not done: …". Never let an unrendered kind claim a tap. |
+| H10 | **History terms match without a "history of" cue.** | `Rules.swift:68` | **[TRACED]** "Rule out CVA" → `PMH: stroke (cerebrovascular accident)`: a diagnosis, shown in the wrong section | Require a history cue, and render the medic's own word. |
+| H11 | **`ivRx` reads grams as IV gauge.** | `Rules.swift:345` | **[TRACED]** "D50 25 g IV" → procedure `IV access 25g` | Require "gauge", or a site word after the number. |
+
+## Medium
+- **M1 Dose search crosses sentences** (`Rules.swift:262-269`). "Gave aspirin. She's 81 years old." → dose 81 mg*. "Nitro times 2" → dose 2. **[TRACED]**
+- **M2 `destRx` takes "going to" as a destination** (`:529`). "We're going to start a line" → Transport to "start a line". **[TRACED]**
+- **M3 `arrivedRx` takes "we're at" as arrival** (`:533`). "Sats, we're at 92" → eTimes.11, which also sets the wall time. **[TRACED]**
+- **M4 `'s` stripping kills cues** (`Dictionary.swift:155`). The cues "she's on X" and "it's actually" can never match. **[TRACED]**
+- **M5 Only the first value of a repeated vital in a segment is kept** (`Rules.swift:154`). **[TRACED]**
+- **M6 The consent "no" tap is ignored.** Everything is still transcribed and rendered (`TapMerge.swift:60`). **[TRACED]**
+- **M7 The default start time is invented** (`Pipeline.swift:53,64`: 2026-11-15T14:00). Replay clock packets go unused. Without `--start`, every time field is fabricated. **[TRACED]**
+- **M8 PII scrub gaps** (`Privacy/PIIScrubber.swift`). Lowercase ASR names are missed ("her name is mary jones"), as are names with no cue and numbers spoken as words. Replacement has no word boundary. `transcript.clean.json` is written unscrubbed. **[TRACED]**
+- **M9 Taps near allergy, history, patient-info, dispatch or transport speech stay unlabelled** (`TapMerge.swift:36-37`). **[TRACED]**
+- **M10 "glucose is 54" adds an oral-glucose `drug_mention`** to the review list. **[TRACED]**
+- **M11 Audio can be written to disk via `ReplayFile.write`** (`Wire/Assembler.swift:129`, used by `make-replay`). It is eval-only; keep it out of the app target. The pipeline path itself writes no audio (verified: no file writes of PCM). **[TRACED]**
+
+## Low
+- `make-replay` turns arrival/handoff gestures into `mark`. Taps after the last audio frame are dropped.
+- Audio-gap events and button arrival taps get `source: tablet`.
+- The sort tie-break uses `fields.description`, whose order varies per process, so event ids aren't deterministic on ties.
+- `ageRx` accepts 0 (the XSD minimum is 1). "18 month old" is not captured.
+- "a liter of saline" / "a gram" give no dose (`parseNumber` has no "a").
+- A missing diastolic renders as "BP 120/?". Some SOAP lines are omitted instead of reading "not heard".
+
+## What is solid
+- **Receipts:** per-field receipts (raw span, quote, char range); the raw transcript is never edited; cleanup corrections are recorded.
+- **Outputs:** all four come from events via `ChartModel` with `[eN]` on every line, and "not heard" defaults are used throughout the markdown.
+- **Taps:** tap time is the event time, taps are never merged, and unlabelled taps go to the recall list ("Needs medic review").
+- **Audio:** the pipeline path writes none to disk.
+- **Dictionary:** feeds both the whisper initial prompt and extraction (`dict.initialPrompt()`; `Rules.swift`).
+
+## Tap thresholds (recommendation)
+The reference detector `eval/tap_detector.py` was tuned on train-bank audio only:
+- **Parameters:** 2 ms energy envelope (150–2000 Hz + 2.5–7 kHz). Onset ≥ **20 dB** above the 1.5 s median floor. Decay ≥ **16 dB within 40 ms**, and the following 120 ms stays ≥ **8 dB** below the peak. Two hits **110–550 ms** apart = tap; three = stop. ≥ **500 ms** quiet on both sides. Snap vs knock: high/low band ratio > 0 dB.
+- **Results on held-out test-bank audio:** knock recall 0.94, snap recall 0.82 at 10 dB SNR. **0 false taps in 10 min of noise-only audio** (sirens, cab, monitor, radio chatter).
+- **Gap:** snap recall is below the 0.9 target. Snaps are weaker and higher-pitched, so lower the snap onset to about 16 dB in the 2.5–7 kHz band only.
+- **Caveat:** test knocks are foley recordings mixed in software. Re-tune on the team's VoiceS3R recordings (`data/RECORDING.md`) before trusting these numbers for the firmware.
+
+## Requests to the pipeline agent
+1. Merge `data/dictionary/formulary_additions.json` (append-only: observed ASR variants, missing aliases/drugs, home meds) into `shared/formulary.json`.
+2. Don't make a fine-tuned model the default until `eval/REPORT.md` says it beats stock (see the Phase 5 section there).

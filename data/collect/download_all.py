@@ -245,7 +245,27 @@ def whisper_models():
         hf_file("ggerganov/whisper.cpp", m, d / m, f"whisper.cpp {m}", "MIT", "no", kind="models")
 
 
-STEPS = dict(real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
+def more_speech():
+    """Expansion round (owner asked for more training data before fine-tuning)."""
+    d = RAW / "eka"
+    for i in range(4, 8):
+        hf_file("ekacare/eka-medical-asr-evaluation-dataset", f"en/test-0000{i}.parquet", d / f"test-{i}.parquet", "Eka Care medical ASR eval (en)", "MIT", "de-identified")
+    d = RAW / "primock57"
+    for f in ["data/train-00000-of-00002.parquet", "data/train-00001-of-00002.parquet"]:
+        hf_file("macabdul9/Primock57", f, d / pathlib.Path(f).name, "PriMock57 mock GP consultations (utterances)", "CC-BY-4.0", "no (actors)")
+    d = RAW / "ems_synth_saahith"
+    for f in ["data/train-00000-of-00001-8cc622404e34766d.parquet", "data/validation-00000-of-00001-abf7d4ec65e51b60.parquet"]:
+        hf_file("saahith/synthetic_with_val", f, d / pathlib.Path(f).name.split("-")[0].__add__(".parquet"), "saahith/synthetic_with_val (EMS utterances, synthetic voices)", "unknown (no card)", "no")
+    d = RAW / "dispatcher_ambulance"
+    hf_file("ahmedelsayed/dispatcher-ambulance", "data/train-00000-of-00001.parquet", d / "train.parquet", "ahmedelsayed/dispatcher-ambulance (dispatch-crew dialogs, synthetic voices)", "unknown (no card)", "synthetic addresses")
+    d = RAW / "modulate_dictation"
+    hf_file("modulate/synthetic-medical-dictation", "data/dev-00000-of-00003.parquet", d / "dev-0.parquet", "modulate/synthetic-medical-dictation", "CC-BY-4.0", "no (TTS)")
+    d = RAW / "emsassist2"
+    hf_file("saahith/EMSAssist-2", "data/train-00000-of-00002-b50edc4e2587ffd7.parquet", d / "train-0.parquet", "saahith/EMSAssist-2 (EMS condition phrases)", "unknown (no card)", "no")
+    medspeech_wavs(1800)
+
+
+STEPS = dict(more=more_speech, real=real_speech, medwav=medspeech_wavs, fsd=fsd50k, esc=esc50, zenodo=zenodo, ev=emergency_vehicle,
              dispatch=dispatch_radio, text=text, yt=youtube_captions, piper=piper_voices, whisper=whisper_models)
 
 if __name__ == "__main__":
