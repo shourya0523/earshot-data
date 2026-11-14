@@ -14,8 +14,8 @@ base = render.available_voices()
 info = []
 for i, f in enumerate(sorted((ROOT / f"data/scripts/{split}_synth").glob("*.call"))):
     cid = f.stem
-    if (GT / f"{cid}.expected.json").exists():
-        continue
+    if (GT / f"{cid}.expected.json").exists() and list(AUD.glob(f"{cid}.snr*.wav")):
+        continue   # GT is in git, audio is not: render whenever the audio is missing
     call = calldsl.parse(f.read_text())
     pool = base + [(render.LIBRITTS, rng.randrange(904)) for _ in range(8)]
     snr = rng.choice([0, 5, 10, 15, 20])
