@@ -111,7 +111,7 @@ Scores are F1 (a balance of "found it" and "got it right").
 | Suite | Result |
 |---|---|
 | Pipeline (`swift test`) | **77 / 77 pass**: wire format, audio, noise detection, extraction, tap merging, outputs, NEMSIS schema, live session, and one test per issue found in review |
-| Clip shared code (`make -C firmware/common/test`) | **248 / 248 pass**: consent rules, knock/snap detection (0 false taps on bumps, door slams, sirens and speech), audio compression matching the iPad byte for byte |
+| Clip shared code (`make -C firmware/common/test`) | **231 / 231 pass**: consent rules and button gestures, tap resend until acknowledged, audio compression matching the iPad byte for byte |
 
 ## Product rules: are they kept?
 

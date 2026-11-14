@@ -32,7 +32,7 @@ Each frame decodes on its own (state is in its header), so a lost frame never co
 | Offset | Size | Field | Values |
 |---|---|---|---|
 | 0 | 1 | gesture | 0 mark · 1 start · 2 stop · 3 yes · 4 no |
-| 1 | 1 | source | 0 button · 1 knock · 2 snap (3 tablet is iPad-only, never sent by a clip) |
+| 1 | 1 | source | 0 button (the only tap input). 1 and 2 (knock, snap) are retired and rejected. 3 tablet is iPad-only and never sent by a clip |
 | 2 | 4 | press_clip_ms | clip time of the press / first hit (≤ header `clip_ms`) |
 
 Resent every 500 ms with the **same `seq`** until acked.
@@ -40,14 +40,7 @@ Resent every 500 ms with the **same `seq`** until acked.
 ### state `0x03`
 clip → iPad, 3 bytes: `state` u8 (0 OFF · 1 ASKING · 2 LISTENING · 3 REFUSED), `flags` u8 (bit0 USB power, bit1 battery low, bit2 tone playing / mic muted), `proto_version` u8 (= 1).
 
-iPad → clip write, 2 or 10 bytes: `state` u8 (**only 0 OFF is honoured**: force stop), `flags` u8 (ignored), then optional tap-detector tuning:
-
-| Offset | Size | Field | Default |
-|---|---|---|---|
-| 2 | 2 | knock onset above noise floor, dB × 10 | 200 |
-| 4 | 2 | min gap between hits, ms | 110 |
-| 6 | 2 | max gap between hits, ms | 550 |
-| 8 | 2 | snap onset above high-band floor, dB × 10 | 160 |
+iPad → clip write, 2 bytes: `state` u8 (**only 0 OFF is honoured**: force stop), `flags` u8 (ignored).
 
 ### clock `0x04` — iPad → clip, 8 bytes
 `epoch_ms` u64: iPad wall clock (Unix ms) when written. The clip keeps `offset = epoch_ms − millis()`; the iPad maps tap `press_clip_ms` to wall time with the same pair.
@@ -64,7 +57,7 @@ GATT service `E5A1D000-0B5E-4C6B-9C5E-EA5407000000`, advertised; device name `Ea
 |---|---|---|---|
 | audio | `…D001…` | notify (encrypted) | one audio packet per notification |
 | tap | `…D002…` | notify (encrypted) | one tap packet per notification |
-| state | `…D003…` | read, notify, write (encrypted) | clip state packet / iPad force-off + tuning |
+| state | `…D003…` | read, notify, write (encrypted) | clip state packet / iPad force-off |
 | clock | `…D004…` | write (encrypted) | clock packet |
 | ack | `…D005…` | write without response (encrypted) | ack packet |
 

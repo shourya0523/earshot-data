@@ -3,8 +3,8 @@
 ```
  clip (ESP32-S3)                         iPad (EarshotCore + thin SwiftUI)
  ───────────────                         ──────────────────────────────────────────────────────────
- mic ─► tap detector ─► state machine    PacketSource (BLE | Wi-Fi | Replay)
-   │        (knock/snap)   (consent)          │
+ mic ────────────────► state machine    PacketSource (BLE | Wi-Fi | Replay)
+   │                     (consent)            │
    └► ADPCM ─► [LISTENING only] ─────────►  AudioAssembler: reorder by seq, dedupe, gaps → audio_gap
  button ─► gestures ─► tap packets ──────►    │ taps → PlacedTap (clip time → call time)
                        resent until ack ◄─ ack │

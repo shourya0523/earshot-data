@@ -21,7 +21,7 @@
   - Both rebuild offline with `core/tools/build_dictionary.py --offline`.
 - **Firmware contract:**
   - Specs: `docs/WIRE_FORMAT.md` and `docs/FIRMWARE_CONTRACT.md` (MUST/SHOULD ids, bring-up checklist).
-  - Portable reference C in `firmware/common`: wire helpers, tap resend queue, 3 s RAM resend ring, consent state machine, and a knock/snap detector using the data agent's tuned parameters. `make -C firmware/common/test` passes 248 checks with 0 false taps.
+  - Portable reference C in `firmware/common`: wire helpers, tap resend queue, 3 s RAM resend ring, and the consent state machine (button-only taps). `make -C firmware/common/test` passes 231 checks.
   - Swift ↔ C ADPCM match bit for bit.
 - **Contract tooling:**
   - `earshot-eval check-stream` validates a clip capture against the contract.
@@ -42,7 +42,6 @@
 2. **iPad:** `app/scripts/fetch_deps.sh` → open `app/Earshot.xcodeproj` → set Signing team → run.
    - Simulator: Replay transport plays `mocks/demo_call/demo_call.replay`; tiny.en is faster there.
    - iPad: BLE throughput test for 2 min (pass: ≥ 80 kbps, < 1 % loss).
-3. **Knock/snap thresholds:** re-tune on real case recordings (`data/RECORDING.md` on the data branch).
 
 ## Next steps per person
 - **Firmware owner:** compile `firmware/common/*.c` into the board build, implement the GATT/Wi-Fi glue per WIRE_FORMAT, and pass `check-stream`.

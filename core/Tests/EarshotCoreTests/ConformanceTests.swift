@@ -3,7 +3,7 @@ import XCTest
 
 final class ConformanceTests: XCTestCase {
     func stream() -> [Packet] {
-        ReplayFile.packets(fromPCM: burstPCM(seconds: 6, bursts: [(1, 2)]), taps: [TapInput(clipMs: 3000, source: "knock")], startClipMs: 1000)
+        ReplayFile.packets(fromPCM: burstPCM(seconds: 6, bursts: [(1, 2)]), taps: [TapInput(clipMs: 3000, source: "button")], startClipMs: 1000)
     }
     func failing(_ r: ConformanceReport) -> [String] { r.checks.filter { !$0.pass }.map(\.id) }
 

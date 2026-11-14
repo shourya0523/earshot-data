@@ -10,11 +10,11 @@
  },
  {
   "clip_ms": 73000,
-  "source": "knock"
+  "source": "button"
  },
  {
   "clip_ms": 86200,
-  "source": "snap"
+  "source": "button"
  },
  {
   "clip_ms": 100000,

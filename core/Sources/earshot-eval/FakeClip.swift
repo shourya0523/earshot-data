@@ -77,7 +77,6 @@ final class FakeClip {
                     case .ack(_, let s): if pendingTaps.removeValue(forKey: s) != nil { log("tap \(s) acked") }
                     case .clock(_, let e): log("clock sync: iPad epoch \(e)")
                     case .state(_, let st) where st.state == .off: log("iPad forced OFF"); forcedOff = true
-                    case .state(_, let st): if let t = st.tuning { log("tuning: \(t)") }
                     default: break
                     }
                 }

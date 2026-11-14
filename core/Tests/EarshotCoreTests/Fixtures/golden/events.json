@@ -543,7 +543,7 @@
     "source" : "tap+heard",
     "t_ms" : 73000,
     "tap_clip_ms" : 73000,
-    "tap_source" : "knock",
+    "tap_source" : "button",
     "time" : "2026-11-15T14:01:13-05:00",
     "type" : "procedure"
   },
@@ -594,7 +594,7 @@
     "source" : "tap+heard",
     "t_ms" : 86200,
     "tap_clip_ms" : 86200,
-    "tap_source" : "snap",
+    "tap_source" : "button",
     "time" : "2026-11-15T14:01:26-05:00",
     "type" : "medication"
   },

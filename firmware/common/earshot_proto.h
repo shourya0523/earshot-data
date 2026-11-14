@@ -9,7 +9,7 @@ extern "C" {
 
 enum { ES_PKT_AUDIO = 0x01, ES_PKT_TAP = 0x02, ES_PKT_STATE = 0x03, ES_PKT_CLOCK = 0x04, ES_PKT_ACK = 0x05 };
 enum { ES_GESTURE_MARK = 0, ES_GESTURE_START = 1, ES_GESTURE_STOP = 2, ES_GESTURE_YES = 3, ES_GESTURE_NO = 4 };
-enum { ES_SRC_BUTTON = 0, ES_SRC_KNOCK = 1, ES_SRC_SNAP = 2 };
+enum { ES_SRC_BUTTON = 0 };   /* the clip button is the only tap input (values 1, 2 were knock/snap: retired) */
 enum { ES_STATE_OFF = 0, ES_STATE_ASKING = 1, ES_STATE_LISTENING = 2, ES_STATE_REFUSED = 3 };
 enum { ES_FLAG_USB = 0x01, ES_FLAG_BATT_LOW = 0x02, ES_FLAG_TONE = 0x04 };
 

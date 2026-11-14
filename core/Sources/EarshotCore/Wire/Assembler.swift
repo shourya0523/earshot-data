@@ -3,7 +3,7 @@ import Foundation
 /// A tap as seen by the pipeline (from the clip, the tablet, or a tap file).
 public struct TapInput: Codable, Equatable, Sendable {
     public var clipMs: Int64
-    public var source: String          // button | knock | snap | tablet
+    public var source: String          // button | tablet (older tap files may say knock/snap: treated like any tap)
     public var gesture: String         // mark | start | stop | yes | no | arrival | handoff
     public var seq: Int?
     public init(clipMs: Int64, source: String, gesture: String = "mark", seq: Int? = nil) {

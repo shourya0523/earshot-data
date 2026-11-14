@@ -26,8 +26,8 @@ LINES = [  # (start_s, text)
 TAPS = [
     {"clip_ms": 500, "source": "button", "gesture": "yes"},
     {"clip_ms": 52500, "source": "button"},
-    {"clip_ms": 73000, "source": "knock"},
-    {"clip_ms": 86200, "source": "snap"},
+    {"clip_ms": 73000, "source": "button"},
+    {"clip_ms": 86200, "source": "button"},
     {"clip_ms": 100000, "source": "button"},          # nothing said near it -> unlabeled
     {"clip_ms": 137000, "source": "button"},
     {"clip_ms": 160000, "source": "tablet", "gesture": "arrival"},

@@ -30,11 +30,9 @@ What any Earshot clip (Atom VoiceS3R, Feather fallback, or anything else) must d
 | ASKING | long press ≥ 1.5 s (patient said no) | OFF (log refusal) | `no` | one low tone |
 | LISTENING | single press | LISTENING | `mark` (source button) | short click |
 | LISTENING | long press ≥ 1.5 s | OFF, clear buffers | `stop` | falling two-tone |
-| LISTENING | double knock / snap | LISTENING | `mark` (source knock/snap) | short click |
-| LISTENING | triple knock / snap | OFF, clear buffers | `stop` | falling two-tone |
 | any | iPad writes state OFF | OFF, clear buffers | — | falling two-tone |
 
-Knock-only build (no button): triple = start (OFF) / no (ASKING) / stop (LISTENING); double = yes (ASKING) / mark (LISTENING). `es_sm_init(&sm, true)`.
+The button is the only input. There is no knock/snap detection: a clip without a working button cannot be used.
 Single press = release before 1.5 s (debounce 30 ms); the tap's `press_clip_ms` is the press-down time. Long press fires while still held.
 
 ## 2. Audio
@@ -44,7 +42,7 @@ Single press = release before 1.5 s (debounce 30 ms); the tap's `press_clip_ms` 
 | FW-A1 | **MUST** send 16 kHz mono, 20 ms frames, IMA ADPCM per WIRE_FORMAT (164-byte payload, per-frame state header). | `es_audio_packet()`, `adpcm.c` | check-stream **W1**, Swift↔C vector test |
 | FW-A2 | **MUST** increment audio `seq` by exactly 1 per frame and stamp `clip_ms` 20 ms apart (±5 ms). | `es_audio_packet()` | check-stream **A2** |
 | FW-A3 | **MUST** sustain < 1 % frame loss over 2 min at the bench (iPad 1 m away). | — | check-stream **A1**, app throughput test |
-| FW-A4 | **MUST** mute the mic while a tone plays and for 200 ms after: send silence frames (keep `seq` running), and feed the tap detector nothing. | `es_tap_mute()` | — |
+| FW-A4 | **MUST** mute the mic while a tone plays and for 200 ms after: send silence frames (keep `seq` running). | — | — |
 | FW-A5 | **SHOULD** keep the last 3 s of encoded frames in RAM and, after a link drop of < 3 s, resend frames captured since 500 ms before the drop (same `seq`; the iPad drops duplicates). | `es_ring_*` | host tests |
 | FW-A6 | **SHOULD** read audio before encoding at a gain where normal speech at 30 cm peaks around −12 dBFS (VoiceS3R ES8311: PGA ≈ 24 dB). | — | bench |
 
@@ -52,14 +50,11 @@ Single press = release before 1.5 s (debounce 30 ms); the tap's `press_clip_ms` 
 
 | ID | Requirement | Reference | Checked by |
 |---|---|---|---|
-| FW-T1 | **MUST** send every gesture as a tap packet with its source (button / knock / snap). | `es_tapq_push()` | check-stream **W1** |
+| FW-T1 | **MUST** send every gesture as a tap packet with source `button` (0). Sources 1/2 (knock/snap) are retired and rejected by the iPad. | `es_tapq_push()` | check-stream **W1** |
 | FW-T2 | **MUST** resend each tap every 500 ms (same `seq`) until acked; queue ≥ 16 taps; if full, drop the oldest and count it. | `es_tap_queue` | host tests, check-stream `taps_resent` |
-| FW-T3 | **MUST** set `press_clip_ms` to the press-down time / first hit, never after the packet's `clip_ms`, at most 3 s before it. | — | check-stream **T2** |
+| FW-T3 | **MUST** set `press_clip_ms` to the press-down time, never after the packet's `clip_ms`, at most 3 s before it. | — | check-stream **T2** |
 | FW-T4 | **MUST NOT** send `mark` outside LISTENING. | state machine | check-stream **T1** |
-| FW-T5 | **MUST** detect knocks/snaps from the **raw** mic signal (before ADPCM), only while LISTENING (or OFF/ASKING on the knock-only build). Single hits are ignored. | `tap_detect.c` | host tests (false-tap clips) |
-| FW-T6 | **SHOULD** use the default detector parameters (below) and accept tuning via the state characteristic. | `es_tap_default_cfg()` | — |
 
-Detector defaults (from the data agent's tuned reference, `docs/REVIEW.md` → *Tap thresholds*): 2 ms energy envelope in 150–2000 Hz + 2.5–7 kHz; onset ≥ 20 dB above the 1.5 s median floor (snaps ≥ 16 dB in the high band); decay ≥ 16 dB within 40 ms and the next 120 ms ≥ 8 dB below the peak; hits 110–550 ms apart; ≥ 500 ms with no other transient before the first and after the last hit; snap if high/low band ratio > 0 dB at the peak. Reference result on their held-out bank: knock recall 0.94, snap 0.82, 0 false taps / 10 min noise. **Re-tune on real VoiceS3R recordings** (`data/RECORDING.md` on the data branch).
 
 ## 4. Link
 
@@ -82,10 +77,9 @@ No screen is needed. VoiceS3R: short distinct tones on the speaker (rising two-t
 2. Serial log shows `proto_version 1`, state changes and refusals.
 3. **Wi-Fi first** (easiest to capture): join `Earshot-XXXX`, then
    `python3 core/tools/capture_clip.py 192.168.4.1 7070 capture.replay --seconds 120`
-   while you do: press (ASKING) → press (yes) → talk, press, double-knock, double-snap → long press (stop).
+   while you do: press (ASKING) → press (yes) → talk, press a few times → long press (stop).
 4. `earshot-eval check-stream capture.replay` → every line PASS, `audio_kbps ≈ 68`, `loss_pct < 1`.
 5. `earshot-eval run capture.replay --asr-model models/ggml-small.en.bin` → your speech appears in `transcript.raw.json`, taps in `events.json` with the right `tap_source`.
 6. BLE: app → *BLE throughput test* for 2 minutes: ≥ 80 kbps, < 1 % loss.
-7. Re-tune knock/snap thresholds on recordings from the real case (bumps, door slams, siren chirps) and log the false-tap rate.
 
 Use test speech for captures (they contain audio). Never capture a patient.

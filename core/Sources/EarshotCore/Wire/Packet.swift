@@ -20,8 +20,10 @@ public enum TapGesture: UInt8, Codable, Sendable, CaseIterable {
 }
 
 public enum TapSource: UInt8, Codable, Sendable, CaseIterable {
-    case button = 0, knock = 1, snap = 2, tablet = 3
-    public var name: String { ["button", "knock", "snap", "tablet"][Int(rawValue)] }
+    /// The clip button is the only tap input on the wire. Raw values 1 and 2
+    /// (knock, snap) are retired and decode as invalid. `tablet` never travels on the wire.
+    case button = 0, tablet = 3
+    public var name: String { self == .button ? "button" : "tablet" }
     public init?(name: String) {
         guard let s = TapSource.allCases.first(where: { $0.name == name.lowercased() }) else { return nil }
         self = s
@@ -57,30 +59,16 @@ public struct TapPayload: Equatable, Sendable {
 /// State payload.
 /// clip -> iPad (3 bytes): state u8, flags u8, proto_version u8.
 ///   Flags bit0 = USB power, bit1 = battery low, bit2 = tone playing (mic muted).
-/// iPad -> clip write (2 or 10 bytes): state u8 (only OFF is honoured), flags u8
-///   (ignored), then optional tuning: onset dB x10 u16, min_gap_ms u16,
-///   window_ms u16, snap onset dB x10 u16.
+/// iPad -> clip write (2 bytes): state u8 (only OFF is honoured), flags u8 (ignored).
 public struct StatePayload: Equatable, Sendable {
     public var state: ClipState
     public var flags: UInt8
-    public var tuning: AcousticTuning?
     public var version: UInt8?
-    public init(state: ClipState, flags: UInt8 = 0, tuning: AcousticTuning? = nil, version: UInt8? = nil) {
-        self.state = state; self.flags = flags; self.tuning = tuning; self.version = version
+    public init(state: ClipState, flags: UInt8 = 0, version: UInt8? = nil) {
+        self.state = state; self.flags = flags; self.version = version
     }
     public var usbPower: Bool { flags & 0x01 != 0 }
     public var batteryLow: Bool { flags & 0x02 != 0 }
-}
-
-/// Knock/snap detector tuning (firmware/common/tap_detect.h).
-public struct AcousticTuning: Equatable, Sendable, Codable {
-    public var knockThreshold: UInt16   // onset above the noise floor, dB x10 (200 = 20 dB)
-    public var minGapMs: UInt16         // min spacing between hits (110)
-    public var windowMs: UInt16         // max spacing between hits (550)
-    public var snapThreshold: UInt16    // snap onset above the high-band floor, dB x10 (160)
-    public init(knockThreshold: UInt16 = 200, minGapMs: UInt16 = 110, windowMs: UInt16 = 550, snapThreshold: UInt16 = 160) {
-        self.knockThreshold = knockThreshold; self.minGapMs = minGapMs; self.windowMs = windowMs; self.snapThreshold = snapThreshold
-    }
 }
 
 public enum Packet: Equatable, Sendable {
@@ -122,10 +110,7 @@ public enum Wire {
             out.append(t.gesture.rawValue); out.append(t.source.rawValue); out.appendLE(t.pressClipMs)
         case .state(_, let s):
             out.append(s.state.rawValue); out.append(s.flags)
-            if let v = s.version, s.tuning == nil { out.append(v) }
-            if let t = s.tuning {
-                out.appendLE(t.knockThreshold); out.appendLE(t.minGapMs); out.appendLE(t.windowMs); out.appendLE(t.snapThreshold)
-            }
+            if let v = s.version { out.append(v) }
         case .clock(_, let e): out.appendLE(e)
         case .ack(_, let s): out.appendLE(s)
         }
@@ -147,12 +132,7 @@ public enum Wire {
             return .tap(h, TapPayload(gesture: g, source: s, pressClipMs: p.readLE(UInt32.self, at: 2)))
         case .state:
             guard p.count >= 2, let st = ClipState(rawValue: p[0]) else { throw WireError.badPayload(type) }
-            var tuning: AcousticTuning? = nil
-            if p.count >= 10 {
-                tuning = AcousticTuning(knockThreshold: p.readLE(UInt16.self, at: 2), minGapMs: p.readLE(UInt16.self, at: 4),
-                                        windowMs: p.readLE(UInt16.self, at: 6), snapThreshold: p.readLE(UInt16.self, at: 8))
-            }
-            return .state(h, StatePayload(state: st, flags: p[1], tuning: tuning, version: p.count == 3 ? p[2] : nil))
+            return .state(h, StatePayload(state: st, flags: p[1], version: p.count >= 3 ? p[2] : nil))
         case .clock:
             guard p.count >= 8 else { throw WireError.badPayload(type) }
             return .clock(h, epochMs: p.readLE(UInt64.self, at: 0))

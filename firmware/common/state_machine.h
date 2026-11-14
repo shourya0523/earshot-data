@@ -8,7 +8,7 @@ extern "C" {
 #endif
 
 typedef enum { ES_TONE_NONE = 0, ES_TONE_RISING, ES_TONE_HIGH, ES_TONE_LOW, ES_TONE_CLICK, ES_TONE_FALLING } es_tone;
-typedef enum { ES_IN_SINGLE = 0, ES_IN_LONG, ES_IN_DOUBLE, ES_IN_TRIPLE, ES_IN_FORCE_OFF } es_input_kind;
+typedef enum { ES_IN_SINGLE = 0, ES_IN_LONG, ES_IN_FORCE_OFF } es_input_kind;
 
 typedef struct {
     bool state_changed;      // send a state packet
@@ -24,7 +24,6 @@ typedef struct {
 
 typedef struct {
     uint8_t state;
-    bool acoustic_consent;   // Feather build: knocks also drive consent (no button)
     uint32_t refusals;       // count of logged refusals
     // button gesture tracking
     bool btn_down;
@@ -33,8 +32,8 @@ typedef struct {
     uint32_t long_press_ms;  // default 1500
 } es_sm;
 
-void es_sm_init(es_sm *sm, bool acoustic_consent);
-// Feed a high-level input (button single/long, acoustic double/triple, iPad force-off).
+void es_sm_init(es_sm *sm);
+// Feed a high-level input (button single/long press, iPad force-off).
 es_action es_sm_input(es_sm *sm, es_input_kind kind, uint8_t source, uint32_t now_ms);
 // Raw button edges + periodic tick -> single/long detection. Returns an action if one fired.
 bool es_sm_button(es_sm *sm, bool pressed, uint32_t now_ms, es_action *out);

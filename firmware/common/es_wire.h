@@ -10,12 +10,11 @@ extern "C" {
 #endif
 
 /* ---------- iPad -> clip messages ---------- */
-typedef enum { ES_IN_NONE = 0, ES_IN_ACK, ES_IN_CLOCK, ES_IN_FORCE_OFF_MSG, ES_IN_TUNING, ES_IN_BAD } es_in_kind;
+typedef enum { ES_IN_NONE = 0, ES_IN_ACK, ES_IN_CLOCK, ES_IN_FORCE_OFF_MSG, ES_IN_BAD } es_in_kind;
 typedef struct {
     es_in_kind kind;
     uint16_t acked_seq;        /* ES_IN_ACK */
     uint64_t epoch_ms;         /* ES_IN_CLOCK: iPad epoch ms at the moment of writing */
-    uint16_t knock_threshold, min_gap_ms, window_ms, snap_threshold;   /* ES_IN_TUNING */
 } es_incoming;
 /* Parse one packet written by the iPad (BLE write, or one TCP frame body). */
 es_incoming es_parse_incoming(const uint8_t *p, size_t len);
