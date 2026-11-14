@@ -24,7 +24,7 @@ INPUT (by extension)
 
 OPTIONS
   --out <dir>             output folder (default: ./out/<input name>)
-  --taps <file.json>      taps: [{"clip_ms": 12000, "source": "button"|"knock"|"snap"|"tablet",
+  --taps <file.json>      taps: [{"clip_ms": 12000, "source": "button"|"tablet",
                           "gesture": "mark"|"yes"|"no"|"arrival"|"handoff"}]  (gesture optional, default mark)
                           clip_ms = ms from audio start (wav/json) or clip-boot ms (replay)
   --config <file.json>    pipeline config (see docs/PIPELINE_READY.md)

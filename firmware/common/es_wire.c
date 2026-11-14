@@ -14,13 +14,7 @@ es_incoming es_parse_incoming(const uint8_t *p, size_t len) {
         m.kind = ES_IN_CLOCK; m.epoch_ms = es_get64(p + 7); break;
     case ES_PKT_STATE:
         if (len < ES_HDR_SIZE + 2) { m.kind = ES_IN_BAD; break; }
-        if (len >= ES_HDR_SIZE + 10) {
-            m.kind = ES_IN_TUNING;
-            m.knock_threshold = es_get16(p + 9); m.min_gap_ms = es_get16(p + 11);
-            m.window_ms = es_get16(p + 13); m.snap_threshold = es_get16(p + 15);
-        }
-        if (p[7] == ES_STATE_OFF) m.kind = ES_IN_FORCE_OFF_MSG;   /* force-off wins over tuning */
-        else if (m.kind != ES_IN_TUNING) m.kind = ES_IN_NONE;     /* iPad may only force OFF */
+        m.kind = (p[7] == ES_STATE_OFF) ? ES_IN_FORCE_OFF_MSG : ES_IN_NONE;   /* iPad may only force OFF */
         break;
     default: m.kind = ES_IN_BAD;
     }

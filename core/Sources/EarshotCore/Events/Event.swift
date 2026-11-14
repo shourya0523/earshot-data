@@ -44,7 +44,7 @@ public struct EarshotEvent: Codable, Equatable, Sendable {
     public var receipts: [String: FieldReceipt]?
     /// "confirm" = heard, please confirm; "unlabeled" = tap with no label.
     public var flags: [String]?
-    public var tapSource: String?       // button | knock | snap | tablet
+    public var tapSource: String?       // button | tablet
     public var tapClipMs: Int64?
     public var enteredBy: String?       // "medic" / "nurse" when typed on the tablet
 

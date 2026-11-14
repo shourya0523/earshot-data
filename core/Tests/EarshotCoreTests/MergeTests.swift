@@ -54,14 +54,14 @@ final class MergeTests: XCTestCase {
 
     func testPipelineOnPacketsWithGapAndScriptedASR() throws {
         let pcm = burstPCM(seconds: 8, bursts: [(1, 2.5), (5, 6.5)])
-        var packets = ReplayFile.packets(fromPCM: pcm, taps: [TapInput(clipMs: 1000 + 5200, source: "knock")], startClipMs: 1000)
+        var packets = ReplayFile.packets(fromPCM: pcm, taps: [TapInput(clipMs: 1000 + 5200, source: "button")], startClipMs: 1000)
         if let i = packets.firstIndex(where: { if case .audio(let h, _) = $0 { return h.seq == 300 }; return false }) { packets.remove(at: i) }
         let asr = ScriptedTranscriber(["BP 120 over 80, pulse 88.", "gave 4 milligrams zofran IV"])
         let r = try EarshotPipeline(dict: TestEnv.dict, config: PipelineConfig(), transcriber: asr).run(.packets(packets, extraTaps: []))
         XCTAssertEqual(r.raw.segments.count, 2)
         XCTAssertEqual(r.events.filter { $0.type == .audioGap }.count, 1)
         let med = r.events.first { $0.type == .medication }!
-        XCTAssertEqual(med.source, .tapHeard); XCTAssertEqual(med.tapSource, "knock")
+        XCTAssertEqual(med.source, .tapHeard); XCTAssertEqual(med.tapSource, "button")
         XCTAssertEqual(r.docs.map(\.name), ["soap.md", "chart.md", "imist_ambo.md", "nemsis.xml"])
     }
 }

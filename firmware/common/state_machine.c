@@ -2,10 +2,9 @@
 #include "earshot_proto.h"
 #include <string.h>
 
-void es_sm_init(es_sm *sm, bool acoustic_consent) {
+void es_sm_init(es_sm *sm) {
     memset(sm, 0, sizeof(*sm));
     sm->state = ES_STATE_OFF;
-    sm->acoustic_consent = acoustic_consent;
     sm->long_press_ms = 1500;
 }
 
@@ -22,30 +21,17 @@ static void tap(es_action *a, uint8_t gesture, uint8_t source, uint32_t t) {
 
 es_action es_sm_input(es_sm *sm, es_input_kind kind, uint8_t source, uint32_t now) {
     es_action a; memset(&a, 0, sizeof(a)); a.new_state = sm->state;
-    bool acoustic = (kind == ES_IN_DOUBLE || kind == ES_IN_TRIPLE);
-    // map acoustic gestures onto button meaning
-    es_input_kind k = kind;
-    if (acoustic) {
-        if (sm->state == ES_STATE_LISTENING) k = (kind == ES_IN_DOUBLE) ? ES_IN_SINGLE : ES_IN_LONG;
-        else if (sm->acoustic_consent) {
-            // Feather: triple = start (OFF) / no (ASKING); double = yes (ASKING)
-            if (sm->state == ES_STATE_OFF) { if (kind != ES_IN_TRIPLE) return a; k = ES_IN_SINGLE; }
-            else if (sm->state == ES_STATE_ASKING) k = (kind == ES_IN_DOUBLE) ? ES_IN_SINGLE : ES_IN_LONG;
-        } else {
-            return a;  // VoiceS3R: knocks/snaps only count while LISTENING
-        }
-    }
     if (kind == ES_IN_FORCE_OFF) {
         if (sm->state == ES_STATE_OFF) return a;
         a = go(sm, ES_STATE_OFF); a.clear_buffers = true; a.tone = ES_TONE_FALLING; return a;
     }
     switch (sm->state) {
     case ES_STATE_OFF:
-        if (k == ES_IN_SINGLE) { a = go(sm, ES_STATE_ASKING); a.tone = ES_TONE_RISING; tap(&a, ES_GESTURE_START, source, now); }
+        if (kind == ES_IN_SINGLE) { a = go(sm, ES_STATE_ASKING); a.tone = ES_TONE_RISING; tap(&a, ES_GESTURE_START, source, now); }
         break;
     case ES_STATE_ASKING:
-        if (k == ES_IN_SINGLE) { a = go(sm, ES_STATE_LISTENING); a.tone = ES_TONE_HIGH; tap(&a, ES_GESTURE_YES, source, now); }
-        else if (k == ES_IN_LONG) {
+        if (kind == ES_IN_SINGLE) { a = go(sm, ES_STATE_LISTENING); a.tone = ES_TONE_HIGH; tap(&a, ES_GESTURE_YES, source, now); }
+        else if (kind == ES_IN_LONG) {
             // refusal: logged, then OFF. Nothing was captured.
             sm->refusals++;
             a = go(sm, ES_STATE_OFF); a.tone = ES_TONE_LOW; a.clear_buffers = true; a.log_refusal = true;
@@ -53,8 +39,8 @@ es_action es_sm_input(es_sm *sm, es_input_kind kind, uint8_t source, uint32_t no
         }
         break;
     case ES_STATE_LISTENING:
-        if (k == ES_IN_SINGLE) { tap(&a, ES_GESTURE_MARK, source, now); a.tone = ES_TONE_CLICK; }
-        else if (k == ES_IN_LONG) { a = go(sm, ES_STATE_OFF); a.tone = ES_TONE_FALLING; a.clear_buffers = true; tap(&a, ES_GESTURE_STOP, source, now); }
+        if (kind == ES_IN_SINGLE) { tap(&a, ES_GESTURE_MARK, source, now); a.tone = ES_TONE_CLICK; }
+        else if (kind == ES_IN_LONG) { a = go(sm, ES_STATE_OFF); a.tone = ES_TONE_FALLING; a.clear_buffers = true; tap(&a, ES_GESTURE_STOP, source, now); }
         break;
     default:
         a = go(sm, ES_STATE_OFF);

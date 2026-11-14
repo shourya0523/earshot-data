@@ -5,15 +5,19 @@ final class WireTests: XCTestCase {
     func testRoundTripAllPacketTypes() throws {
         let ps: [Packet] = [
             .audio(PacketHeader(type: .audio, seq: 7, clipMs: 123456), adpcm: [UInt8](repeating: 0x5A, count: Wire.audioPayloadSize)),
-            .tap(PacketHeader(type: .tap, seq: 2, clipMs: 99), TapPayload(gesture: .mark, source: .knock, pressClipMs: 95)),
+            .tap(PacketHeader(type: .tap, seq: 2, clipMs: 99), TapPayload(gesture: .mark, source: .button, pressClipMs: 95)),
             .state(PacketHeader(type: .state, seq: 1, clipMs: 5), StatePayload(state: .listening, flags: 1)),
-            .state(PacketHeader(type: .state, seq: 1, clipMs: 5), StatePayload(state: .off, flags: 0, tuning: AcousticTuning())),
+            .state(PacketHeader(type: .state, seq: 1, clipMs: 5), StatePayload(state: .listening, flags: 1, version: 1)),
             .clock(PacketHeader(type: .clock, seq: 0, clipMs: 0), epochMs: 1_763_233_200_000),
             .ack(PacketHeader(type: .ack, seq: 0, clipMs: 0), ackedSeq: 65535),
         ]
         for p in ps { XCTAssertEqual(try Wire.decode(Wire.encode(p)), p) }
         XCTAssertEqual(Wire.encode(ps[0]).count, 7 + 164)
-        XCTAssertEqual(Wire.encode(ps[1]), [0x02, 2, 0, 99, 0, 0, 0, 0, 1, 95, 0, 0, 0])
+        XCTAssertEqual(Wire.encode(ps[1]), [0x02, 2, 0, 99, 0, 0, 0, 0, 0, 95, 0, 0, 0])
+        // knock (1) and snap (2) tap sources are retired: the button is the only tap input
+        for retired: UInt8 in [1, 2] {
+            XCTAssertThrowsError(try Wire.decode([0x02, 2, 0, 99, 0, 0, 0, 0, retired, 95, 0, 0, 0]))
+        }
     }
 
     func testDeframerHandlesPartialChunks() {
