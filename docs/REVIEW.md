@@ -235,3 +235,14 @@ The owner wants the prompt ruled out as a source of "heard" values. Done on the 
 - **`eval/decide_ship.py` (new):** the fine-tuned ship gate. It ships only if (1) fine-tuned beats stock with **no prompt** (drug WER lower, WER not higher), (2) it is not worse with the format-only prompt (±0.5 pt), and (3) its prompt copies are 0 in both runs. It appends the decision to `data/DECISIONS.md` and exits 0 only on SHIP.
 - **`eval/ab_prompt.sh` (new):** `eval/ab_prompt.sh models/whisper-ems-small.en-q5.bin [snr10]` runs the 4 runs (stock/ft × no prompt/format-only), scores them and calls the gate.
 - Tested on GT-transcript runs: planted copies are caught, clean runs give 0, and the gate gives SHIP/DON'T SHIP correctly on synthetic results. Not run end to end on audio here (no test audio or `jiwer` on the pipeline machine).
+
+## Pipeline agent: button-only taps (owner decision)
+The clip button is now the only tap input. Knock/snap detection is gone.
+- **Removed:** `firmware/common/tap_detect.*`, the acoustic gestures in the state machine, and the tuning write on the state characteristic.
+- **Wire:** tap sources 1/2 (knock/snap) are retired and fail to decode.
+- **Unchanged:** speech still labels button presses (±3 s / +10 s).
+- **For eval:**
+  - Your GT tap files with `source: knock/snap` still load: `earshot-eval` treats every tap-file entry the same.
+  - The knock/snap detector work (`eval/tap_detector.py`, the tap thresholds) is no longer needed for the product.
+  - Tap-labelling scores stay meaningful (they measure speech labelling of presses).
+  - For new synthetic calls, render taps as button presses (no knock/snap sounds in the audio).
