@@ -3,7 +3,7 @@
 # Kaggle Secrets needed: HF_TOKEN (write access, to push the model), GITHUB_TOKEN (read access to shourya0523/earshot-data, if private).
 # Output: a private HF model repo <HF_USER>/whisper-ems-small.en-ft-<TAG> (HF format). The data agent converts it to ggml + q5 and evaluates it.
 # Runtime: ~85 min data prep (skipped when a prepared earshot_train_data.tar is attached) + ~45-90 min training.
-# Version: 2026-11-14 v5 (settings block, faster training, reusable prepared data).
+# Version: 2026-11-14 v5.1 (v5 + fits T4 memory: batch 4 x accum 4; resumes after prep in the same session).
 import os, subprocess, sys, json, pathlib, glob
 
 # ---------------- SETTINGS (edit these) ----------------
@@ -30,8 +30,8 @@ except Exception:
 
 # 1) code
 repo = f"https://{GH + '@' if GH else ''}github.com/shourya0523/earshot-data.git"
-sh(f"git clone --depth 1 -b claude/eager-volta-za1pmi {repo} /tmp/earshot")   # /tmp: big local disk; /kaggle/working is ~20 GB
-sh("git clone --depth 1 -b overnight " + repo + " /tmp/pipeline")   # shared/formulary.json lives on the pipeline branch
+if not os.path.exists("/tmp/earshot"): sh(f"git clone --depth 1 -b claude/eager-volta-za1pmi {repo} /tmp/earshot")   # /tmp: big local disk; /kaggle/working is ~20 GB
+if not os.path.exists("/tmp/pipeline"): sh("git clone --depth 1 -b overnight " + repo + " /tmp/pipeline")   # shared/formulary.json lives on the pipeline branch
 os.chdir("/tmp/earshot")
 sh("pip -q install piper-tts==1.8.0 jiwer soundfile librosa peft 'transformers>=4.45' accelerate huggingface_hub")
 sh("apt-get -qq install -y ffmpeg > /dev/null || true")
@@ -40,7 +40,10 @@ sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/tmp/pipeline/shared/for
 
 # 2) data (same scripts and splits as the overnight run; test sets are never used for training)
 cached = sorted(glob.glob("/kaggle/input/**/earshot_train_data.tar", recursive=True))
-if cached:
+if os.path.exists("/tmp/earshot/train/whisper/data/train.jsonl"):   # same session, prep already done -> resume at training
+    print("prepared data already in /tmp/earshot; skipping prep", flush=True)
+    SAVE_DATA = SAVE_DATA and not os.path.exists("/kaggle/working/earshot_train_data.tar")
+elif cached:
     print("re-using prepared data from", cached[0], flush=True)
     sh(f"tar -xf '{cached[0]}' -C /tmp/earshot")
     SAVE_DATA = False
@@ -67,6 +70,7 @@ if SAVE_DATA:
     sh("tar -cf /kaggle/working/earshot_train_data.tar -T /tmp/tarlist.txt && ls -la /kaggle/working/earshot_train_data.tar")
 
 # 3) fine-tune, low LR, few epochs to keep general English
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 import torch, numpy as np, soundfile as sf, random
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, Seq2SeqTrainer, Seq2SeqTrainingArguments
 BASE = "openai/whisper-small.en"
@@ -108,7 +112,7 @@ def collate(b):
         di[k, :len(x["decoder_input_ids"])] = torch.tensor(x["decoder_input_ids"]); lab[k, :len(x["labels"])] = torch.tensor(x["labels"])
     return dict(input_features=torch.tensor(np.stack([x["input_features"] for x in b])), decoder_input_ids=di, labels=lab)
 
-args = Seq2SeqTrainingArguments(output_dir="/tmp/ft", per_device_train_batch_size=8, gradient_accumulation_steps=2, learning_rate=LR,
+args = Seq2SeqTrainingArguments(output_dir="/tmp/ft", per_device_train_batch_size=4, gradient_accumulation_steps=4, learning_rate=LR,
                                 warmup_steps=50, num_train_epochs=EPOCHS, fp16=True, eval_strategy="epoch", save_strategy="epoch", save_total_limit=1,
                                 load_best_model_at_end=True, metric_for_best_model="eval_loss", logging_steps=25, report_to=[], dataloader_num_workers=4,
                                 remove_unused_columns=False, gradient_checkpointing=False, dataloader_persistent_workers=True)
