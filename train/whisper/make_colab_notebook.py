@@ -39,7 +39,7 @@ if os.path.exists(MARK):
     print("data already extracted")
 elif os.path.exists(tar):
     sh(f"tar -xf '{tar}' -C /content/earshot")          # ~5-10 min for 6 GB from Drive
-    open(MARK, "w").write("from tar\n")
+    open(MARK, "w").write("from tar\\n")
 else:
     os.environ["EARSHOT_SKIP_MEDWAV"] = "1"; os.environ["PYTHONUNBUFFERED"] = "1"
     for step in ["piper", "real", "more", "round2", "round3", "fsd", "zenodo", "ev"]:
@@ -55,7 +55,7 @@ else:
         for l in open(f"train/whisper/data/{n}.jsonl"): files.add(json.loads(l)["wav"])
     open("/content/tarlist.txt", "w").write("\\n".join(sorted(files)) + "\\n")
     sh(f"tar -cf '{tar}' -T /content/tarlist.txt")
-    open(MARK, "w").write("rebuilt\n")
+    open(MARK, "w").write("rebuilt\\n")
 mix = json.load(open("train/whisper/data/mix.json"))
 assert mix["train"]["real_hours"] > 20, f"training mix looks wrong (only {mix['train']['real_hours']} h real); expected ~45 h"
 print(open("train/whisper/data/mix.json").read())""",
