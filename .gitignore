@@ -19,3 +19,4 @@ eval/runs/
 models/**/*.bin
 models/**/*.safetensors
 .extra_human_done
+train/whisper/data/

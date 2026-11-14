@@ -9,7 +9,7 @@ CELLS = [
 # 1) Runtime -> Change runtime type -> T4 GPU (or better).  2) Secrets (key icon, left bar): add HF_TOKEN (HF *write* token), toggle 'Notebook access' on.
 # 3) Put earshot_train_data.tar (from the Kaggle output) in Google Drive at MyDrive/earshot/earshot_train_data.tar  (optional: without it, cell 3 rebuilds the data, ~1.5 h)
 # 4) Runtime -> Run all. If Colab disconnects: reconnect and Run all again; training resumes from the last checkpoint on Drive.
-# Version: 2026-11-14 colab v1
+# Version: 2026-11-14 colab v1.1 (fix: stale train lists in git were mistaken for prepared data)
 TAG = "fmt"             # model is pushed to <hf-user>/whisper-ems-small.en-ft-<TAG>
 LR = 1e-5
 EPOCHS = 2
@@ -34,10 +34,12 @@ sh("nvidia-smi --query-gpu=name,memory.total --format=csv")""",
 
 """# data: re-use the prepared tar from Drive (fast) or rebuild (~1.5 h, then saved to Drive for next time)
 tar = f"{DRIVE_DIR}/earshot_train_data.tar"
-if os.path.exists("/content/earshot/train/whisper/data/train.jsonl"):
+MARK = "/content/earshot/train/whisper/data/.prepared"
+if os.path.exists(MARK):
     print("data already extracted")
 elif os.path.exists(tar):
     sh(f"tar -xf '{tar}' -C /content/earshot")          # ~5-10 min for 6 GB from Drive
+    open(MARK, "w").write("from tar\n")
 else:
     os.environ["EARSHOT_SKIP_MEDWAV"] = "1"; os.environ["PYTHONUNBUFFERED"] = "1"
     for step in ["piper", "real", "more", "round2", "round3", "fsd", "zenodo", "ev"]:
@@ -53,6 +55,9 @@ else:
         for l in open(f"train/whisper/data/{n}.jsonl"): files.add(json.loads(l)["wav"])
     open("/content/tarlist.txt", "w").write("\\n".join(sorted(files)) + "\\n")
     sh(f"tar -cf '{tar}' -T /content/tarlist.txt")
+    open(MARK, "w").write("rebuilt\n")
+mix = json.load(open("train/whisper/data/mix.json"))
+assert mix["train"]["real_hours"] > 20, f"training mix looks wrong (only {mix['train']['real_hours']} h real); expected ~45 h"
 print(open("train/whisper/data/mix.json").read())""",
 
 """# model + data loaders (same recipe as the Kaggle notebook)

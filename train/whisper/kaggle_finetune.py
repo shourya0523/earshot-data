@@ -3,7 +3,7 @@
 # Kaggle Secrets needed: HF_TOKEN (write access, to push the model), GITHUB_TOKEN (read access to shourya0523/earshot-data, if private).
 # Output: a private HF model repo <HF_USER>/whisper-ems-small.en-ft-<TAG> (HF format). The data agent converts it to ggml + q5 and evaluates it.
 # Runtime: ~85 min data prep (skipped when a prepared earshot_train_data.tar is attached) + ~45-90 min training.
-# Version: 2026-11-14 v5.1 (v5 + fits T4 memory: batch 4 x accum 4; resumes after prep in the same session).
+# Version: 2026-11-14 v5.2 (v5.1 + fix: stale train lists in git were mistaken for prepared data; mix size check).
 import os, subprocess, sys, json, pathlib, glob
 
 # ---------------- SETTINGS (edit these) ----------------
@@ -40,12 +40,14 @@ sh("sed -i 's#/home/user/pipeline/shared/formulary.json#/tmp/pipeline/shared/for
 
 # 2) data (same scripts and splits as the overnight run; test sets are never used for training)
 cached = sorted(glob.glob("/kaggle/input/**/earshot_train_data.tar", recursive=True))
-if os.path.exists("/tmp/earshot/train/whisper/data/train.jsonl"):   # same session, prep already done -> resume at training
+MARK = "/tmp/earshot/train/whisper/data/.prepared"
+if os.path.exists(MARK):   # same session, prep already done -> resume at training
     print("prepared data already in /tmp/earshot; skipping prep", flush=True)
     SAVE_DATA = SAVE_DATA and not os.path.exists("/kaggle/working/earshot_train_data.tar")
 elif cached:
     print("re-using prepared data from", cached[0], flush=True)
     sh(f"tar -xf '{cached[0]}' -C /tmp/earshot")
+    open(MARK, "w").write("from tar\n")
     SAVE_DATA = False
 else:
   if True:  # (indent block for the full prep)
@@ -60,6 +62,9 @@ else:
     sh("python3 data/synth/gen_calls.py --n 80 --split train --seed 1 && python3 data/synth/gen_calls.py --n 10 --split dev --seed 2")
     sh("python3 data/synth/build_synth_set.py train && python3 data/synth/build_synth_set.py dev")
     sh("python3 train/whisper/prepare_data.py")
+    open(MARK, "w").write("rebuilt\n")
+mix = json.load(open("train/whisper/data/mix.json")); print("training mix:", mix["train"])
+assert mix["train"]["real_hours"] > 20, f"training mix looks wrong (only {mix['train']['real_hours']} h real); expected ~45 h"
 
 if SAVE_DATA:
     files = {"train/whisper/data/train.jsonl", "train/whisper/data/dev.jsonl", "train/whisper/data/mix.json"}
