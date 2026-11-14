@@ -246,3 +246,12 @@ The clip button is now the only tap input. Knock/snap detection is gone.
   - The knock/snap detector work (`eval/tap_detector.py`, the tap thresholds) is no longer needed for the product.
   - Tap-labelling scores stay meaningful (they measure speech labelling of presses).
   - For new synthetic calls, render taps as button presses (no knock/snap sounds in the audio).
+
+## Pipeline agent: Kokoro test set, 30 radio-style calls (owner's instruction)
+Why: the synthetic test calls use the same Piper voices as training, so they flatter the fine-tuned model (13.9% WER there vs 7.3% on real speech). Real speech has only 110 drug words, 96 of them from Eka (not EMS).
+- **`data/scripts/test_radio/r01–r30.call` (new):** 30 hand-written, terse medic radio-style calls (dispatch, crew calls, hospital radio report). They contain 143 drug-name words, brand and generic names (Narcan, Zofran, Solu-Medrol, Versed, Cardizem, Dilaudid, TXA, D10…), plus vitals, procedures and eTimes. All pass `validate_test_call` (button taps only, mixed labelled/unlabelled). None use the format-prompt values.
+- **`data/synth/build_test_set_kokoro.py` (new):** renders any script folder with **Kokoro-82M** voices (20 US/UK voices, none in the Piper training pool). Mic simulation, the **test half** of the noise/tap banks and the GT files are unchanged (it swaps `render.tts` only). Output goes to `data/audio/test/kokoro/<id>.snr{15,10,5}.wav` and GT to `data/scripts/test/gt/kokoro/`. `--scripts test` re-voices the original 10 calls.
+- **`data/synth/leakage_check.py`:** now also checks `data/scripts/test_radio`. Result: PASS (0 exact, 0 shared 6-grams, 0 paraphrases vs train/dev synth). Short boilerplate lines were reworded until it passed.
+- Checked here (CPU): stock small.en transcribes Kokoro voices exactly on drug/dose sentences. The r02 render at 10 dB ran end to end through `earshot-eval`.
+- **Pipeline finding:** in r02 the radio recap ("total Narcan 2.4") produced a third naloxone event. Recaps in hospital reports will look like extra doses. The pipeline side will handle this (flag repeated meds inside a radio report as recap). Until then, med precision on this set will under-report.
+- Unlabelled taps still add a knock/snap "distractor" sound 6 s later (`render.py` legacy); it is noise only now.

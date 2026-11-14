@@ -1,0 +1,22 @@
+@call r25 flank_pain_radio start=10:50:00
+@patient age=44 sex=male weight_kg=86 complaint="flank pain" allergies=none home_meds=none history="kidney stones"
+@traps kidney stone
+RD: Medic 27, back pain, 44 male, severe.  >> dispatch:back pain "back pain"
+M1: Medic 27 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Pain 10, left flank, vomiting.  >> vital:pain=10 "Pain 10"
+TAP button +label
+M1: Pressure 156 over 96, pulse 104.  >> vital:bp=156/96 "Pressure 156 over 96"; vital:hr=104 "pulse 104"
+TAP button +label
+M2: Line in.  >> proc:IV access "Line in"
+TAP button +label
+M1: Toradol 15 IV.  >> med:ketorolac,15,,IV "Toradol 15 IV"
+M1: Ondansetron 4 slow push for the nausea.  >> med:ondansetron,4,, "Ondansetron 4 slow push"
+TAP button -
+GAP 10
+M1: Dilaudid 0.5 IV.  >> med:hydromorphone,0.5,,IV "Dilaudid 0.5 IV"
+GAP 10
+M2: Pain 4.  >> vital:pain=4 "Pain 4"
+TAP button -
+M1: Medic 27 transporting to General, priority one.  >> time:eTimes.09 "transporting"
+M1: General, Medic 27, 44 male, left flank pain, history of stones, Toradol 15, Zofran 4, Dilaudid 0.5, pain 4.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

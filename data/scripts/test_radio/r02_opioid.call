@@ -1,0 +1,28 @@
+@call r02 opioid_radio start=01:40:00
+@patient age=31 sex=female weight_kg=60 complaint="unresponsive" allergies=unknown home_meds=unknown history=unknown
+@traps opioid overdose
+RD: Medic 7, unresponsive female, 31, bus shelter at Grand and Pine.  >> dispatch:unresponsive female "unresponsive female"
+GAP 3
+M1: Medic 7, on location.  >> time:eTimes.06 "on location"
+M1: Resps 4, pinpoint, sats 78.  >> vital:rr=4 "Resps 4"; status:pinpoint pupils "pinpoint"; vital:spo2=78 "sats 78"
+TAP button +label
+M2: Bagging, OPA in.  >> proc:BVM ventilation "Bagging"; proc:OPA "OPA in"
+GAP 4
+TAP button +label
+M1: Narcan 2 milligrams intranasal.  >> med:naloxone,2,mg,IN "Narcan 2 milligrams intranasal"
+GAP 12
+TAP button -
+GAP 10
+M2: Still 6 a minute.  >> vital:rr=6 "6 a minute"
+TAP button +label
+M1: Naloxone 0.4 IV, titrating.  >> med:naloxone,0.4,,IV "Naloxone 0.4 IV"
+GAP 10
+M2: She's breathing, resps 14, sat 97, ETCO2 38.  >> vital:rr=14 "resps 14"; vital:spo2=97 "sat 97"; vital:etco2=38 "ETCO2 38"
+PT: Get off me. I'm fine.
+M1: Glucose 104.  >> vital:bgl=104 "Glucose 104"
+TAP button -
+M1: Medic 7 transporting to County, priority two.  >> time:eTimes.09 "transporting"
+GAP 6
+M1: County, Medic 7, 31 female, found apneic, total Narcan 2.4, now spontaneous, A and O times three. Five out.  >> status:A&O×3 "A and O times three"
+RD: Copy Medic 7, room 4.
+M1: At County.  >> time:eTimes.11 "At County"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Prove test scripts (and paraphrases) are not in training material.
-Checks every training/dev text source against the 10 test scripts:
+Checks every training/dev text source against the test scripts (data/scripts/test and data/scripts/test_radio):
   1. exact line matches (normalised)            -> must be 0
   2. shared word 6-grams (normalised)           -> listed; must be 0 for synthetic scripts
   3. per-line max token Jaccard vs any test line -> lines >= 0.6 flagged as possible paraphrases
@@ -20,7 +20,8 @@ def ngrams(t, n=6):
     w = t.split(); return {" ".join(w[i:i + n]) for i in range(len(w) - n + 1)}
 
 
-test_lines = [tn.normalize(l) for p in sorted((ROOT / "data/scripts/test").glob("*.call")) for l in lines_of_call(p)]
+TEST_DIRS = ["test", "test_radio"]   # test_radio: 30 terse radio-style calls rendered with Kokoro (build_test_set_kokoro.py)
+test_lines = [tn.normalize(l) for d in TEST_DIRS for p in sorted((ROOT / "data/scripts" / d).glob("*.call")) for l in lines_of_call(p)]
 test_set = set(test_lines); test_ng = set().union(*[ngrams(l) for l in test_lines])
 test_tok = [set(l.split()) for l in test_lines]
 sources = {}

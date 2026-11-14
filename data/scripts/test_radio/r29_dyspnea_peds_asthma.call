@@ -1,0 +1,20 @@
+@call r29 peds_wheeze_radio start=15:30:00
+@patient age=8 sex=female weight_kg=26 complaint="wheezing" allergies=amoxicillin home_meds="albuterol inhaler, Singulair" history=asthma
+@traps asthma exacerbation
+RD: Medic 31, difficulty breathing, 8 year old female, school nurse on scene.  >> dispatch:difficulty breathing "difficulty breathing"
+M1: Medic 31 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Sats 90, resps 36, rate 140.  >> vital:spo2=90 "Sats 90"; vital:rr=36 "resps 36"; vital:hr=140 "rate 140"
+TAP button +label
+M1: Albuterol 2.5 neb with Atrovent 0.5.  >> med:albuterol,2.5,,neb "Albuterol 2.5"; med:ipratropium,0.5,,neb "Atrovent 0.5"
+TAP button -
+GAP 12
+M1: Decadron 16 PO.  >> med:dexamethasone,16,,PO "Decadron 16 PO"
+TAP button +label
+M2: Sats 94, resps 28.  >> vital:spo2=94 "Sats 94"; vital:rr=28 "resps 28"
+TAP button +label
+M1: Second albuterol 2.5.  >> med:albuterol,2.5,, "Second albuterol 2.5"
+TAP button -
+M2: Allergic to amoxicillin, takes Singulair.
+M1: Medic 31 transporting to Children's, priority two.  >> time:eTimes.09 "transporting"
+M1: Children's, Medic 31, 8 year old, 26 kilos, albuterol times two, Atrovent 0.5, Decadron 16 PO, sats 94.
+M1: Arriving Children's.  >> time:eTimes.11 "Arriving Children's"

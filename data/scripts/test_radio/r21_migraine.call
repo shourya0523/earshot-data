@@ -1,0 +1,23 @@
+@call r21 headache_radio start=17:55:00
+@patient age=36 sex=female weight_kg=62 complaint="headache" allergies="Compazine" home_meds="sumatriptan" history="migraines"
+@traps migraine
+RD: Medic 23, headache, 36 female, vomiting.  >> dispatch:headache "headache"
+M1: Medic 23 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Pain 9, photophobic, GCS 15.  >> vital:pain=9 "Pain 9"; vital:gcs=15 "GCS 15"
+TAP button +label
+M1: Pressure 132 over 82, pulse 78.  >> vital:bp=132/82 "Pressure 132 over 82"; vital:hr=78 "pulse 78"
+M2: Allergic to Compazine.
+TAP button +label
+M2: Line in left AC.  >> proc:IV access "Line in left AC"
+TAP button +label
+M1: Zofran 4 IV.  >> med:ondansetron,4,,IV "Zofran 4 IV"
+TAP button -
+GAP 10
+M1: Toradol 15 IV.  >> med:ketorolac,15,,IV "Toradol 15 IV"
+M2: Saline 500.  >> med:normal saline,500,, "Saline 500"
+GAP 10
+M2: Pain 4.  >> vital:pain=4 "Pain 4"
+TAP button -
+M1: Medic 23 transporting to Saint Mary's, priority three.  >> time:eTimes.09 "transporting"
+M1: Saint Mary's, Medic 23, 36 female, headache, Zofran 4, Toradol 15, 500 of saline, pain 4.
+M1: Arriving Saint Mary's.  >> time:eTimes.11 "Arriving Saint Mary's"

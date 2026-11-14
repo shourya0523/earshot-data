@@ -1,0 +1,24 @@
+@call r07 mvc_trauma_radio start=22:05:00
+@patient age=45 sex=male weight_kg=88 complaint="leg injury" allergies=none home_meds=none history=none
+@traps femur fracture; hemorrhagic shock
+RD: Medic 11, MVC with entrapment, Route 9 at mile 14.  >> dispatch:MVC with entrapment "MVC with entrapment"
+M1: Medic 11 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Driver, 45 male, GCS 14, open deformity left thigh, bleeding.  >> vital:gcs=14 "GCS 14"
+TAP button +label
+M1: Tourniquet high and tight, left leg.  >> proc:tourniquet "Tourniquet high and tight"
+GAP 4
+M2: Pressure 96 over 60, pulse 124.  >> vital:bp=96/60 "Pressure 96 over 60"; vital:hr=124 "pulse 124"
+TAP button +label
+M2: C-collar on.  >> proc:c-collar "C-collar on"
+TAP button -
+GAP 12
+M1: Two large bores, both ACs.  >> proc:IV access "Two large bores"
+TAP button +label
+M1: TXA 1 gram IV.  >> med:tranexamic acid,1,g,IV "TXA 1 gram IV"
+M1: Fentanyl 100 mics IV.  >> med:fentanyl,100,mcg,IV "Fentanyl 100 mics IV"
+GAP 8
+M2: Pain 6, pressure 104 over 66.  >> vital:pain=6 "Pain 6"; vital:bp=104/66 "pressure 104 over 66"
+TAP button -
+M1: Medic 11 transporting to Regional Trauma, priority one.  >> time:eTimes.09 "transporting"
+M1: Regional, Medic 11, 45 male MVC, open left femur deformity, tourniquet at 22:10, TXA 1 gram, fentanyl 100, pressure 104 over 66.
+M1: Arriving Regional.  >> time:eTimes.11 "Arriving Regional"

@@ -1,0 +1,21 @@
+@call r09 stroke_radio start=10:02:00
+@patient age=77 sex=female weight_kg=64 complaint="slurred speech" allergies=codeine home_meds="Eliquis, lisinopril" history="atrial fibrillation"
+@traps stroke; CVA
+RD: Medic 3, possible stroke, 77 female, slurred speech.  >> dispatch:possible stroke "possible stroke"
+M1: Medic 3 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Last known well 09:20.  >> status:last known well 09:20 "Last known well 09:20"
+TAP button +label
+M1: Right facial droop, right arm drift.  >> status:facial droop "facial droop"; status:arm drift "arm drift"
+M2: BE-FAST positive.  >> proc:stroke scale "BE-FAST"
+TAP button +label
+M1: Pressure 192 over 104, pulse 98 irregular, sugar 132.  >> vital:bp=192/104 "Pressure 192 over 104"; vital:hr=98 "pulse 98"; vital:bgl=132 "sugar 132"
+TAP button -
+GAP 8
+M2: On Eliquis and lisinopril. Allergic to codeine.
+TAP button +label
+M2: Line in left AC.  >> proc:IV access "Line in left AC"
+TAP button -
+M1: Medic 3 transporting to University, stroke center, priority three.  >> time:eTimes.09 "transporting"
+M1: University, Medic 3, stroke alert, 77 female, last known well 09:20, right sided deficits, on Eliquis, sugar 132. ETA twelve.
+RD: University copies, CT on standby.
+M1: Arriving University.  >> time:eTimes.11 "Arriving University"

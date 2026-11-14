@@ -1,0 +1,23 @@
+@call r16 fall_hip_radio start=14:20:00
+@patient age=86 sex=female weight_kg=52 complaint="hip pain after fall" allergies=none home_meds="Coumadin" history="osteoporosis"
+@traps hip fracture
+RD: Medic 18, fall, 86 female, can't get up.  >> dispatch:fall "fall"
+M1: Medic 18, on location.  >> time:eTimes.06 "on location"
+M2: Left leg shortened and rotated. Pain 9.  >> vital:pain=9 "Pain 9"
+TAP button +label
+M1: Pressure 134 over 70, pulse 92, sats 96.  >> vital:bp=134/70 "Pressure 134 over 70"; vital:hr=92 "pulse 92"; vital:spo2=96 "sats 96"
+M2: She's on Coumadin, hit her head too.
+TAP button +label
+M2: Twenty-two right hand.  >> proc:IV access "Twenty-two right hand"
+TAP button +label
+M1: Fentanyl 25 mics IV.  >> med:fentanyl,25,mcg,IV "Fentanyl 25 mics IV"
+TAP button -
+GAP 10
+M1: Another 25 of fentanyl.  >> med:fentanyl,25,, "Another 25 of fentanyl"
+GAP 8
+M2: Pain 5, GCS 15.  >> vital:pain=5 "Pain 5"; vital:gcs=15 "GCS 15"
+M1: Scoop and pad.  >> proc:splinting "Scoop and pad"
+TAP button -
+M1: Medic 18 transporting to Regional, priority one.  >> time:eTimes.09 "transporting"
+M1: Regional, Medic 18, 86 female fall, left hip shortened, on Coumadin, head strike, fentanyl 50 total, GCS 15.
+M1: Arriving Regional.  >> time:eTimes.11 "Arriving Regional"

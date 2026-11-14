@@ -1,0 +1,20 @@
+@call r24 peds_febrile_radio start=04:05:00
+@patient age=2 sex=female weight_kg=12 complaint="seizure" allergies=none home_meds=none history=none
+@traps febrile seizure
+RD: Medic 26, seizure, 2 year old female, fever.  >> dispatch:seizure "seizure"
+M1: Medic 26, on location.  >> time:eTimes.06 "on location"
+M2: Still seizing, sats 88.  >> status:actively seizing "Still seizing"; vital:spo2=88 "sats 88"
+TAP button +label
+M1: Midazolam 2.4 intranasal.  >> med:midazolam,2.4,,IN "Midazolam 2.4 intranasal"
+TAP button +label
+M2: Blow-by oxygen.  >> med:oxygen,,,BLOWBY "Blow-by oxygen"
+TAP button -
+GAP 12
+M2: Stopped, postictal.  >> status:postictal "postictal"
+TAP button +label
+M1: Temp 103.4, rate 164, sugar 92.  >> vital:temp=103.4 "Temp 103.4"; vital:hr=164 "rate 164"; vital:bgl=92 "sugar 92"
+M1: Tylenol 180 PO when she's awake.  >> med:acetaminophen,180,,PO "Tylenol 180 PO"
+TAP button -
+M1: Medic 26 transporting to Children's, priority three.  >> time:eTimes.09 "transporting"
+M1: Children's, Medic 26, 2 year old, 12 kilos, febrile, seizure stopped after Versed 2.4 IN, temp 103.4.
+M1: Arriving Children's.  >> time:eTimes.11 "Arriving Children's"

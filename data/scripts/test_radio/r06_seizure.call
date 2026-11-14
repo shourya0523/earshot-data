@@ -1,0 +1,26 @@
+@call r06 seizure_radio start=11:30:00
+@patient age=38 sex=female weight_kg=70 complaint="seizure" allergies=none home_meds="Keppra" history="epilepsy"
+@traps status epilepticus
+RD: Medic 5, seizure, 38 female, still seizing per caller.  >> dispatch:seizure "seizure"
+M1: Medic 5, on location.  >> time:eTimes.06 "on location"
+M2: Actively seizing, sats 84.  >> status:actively seizing "Actively seizing"; vital:spo2=84 "sats 84"
+TAP button +label
+M1: Versed 10 IM, left deltoid.  >> med:midazolam,10,,IM "Versed 10 IM"
+GAP 4
+M2: NPA and nasal cannula 4 liters.  >> proc:NPA "NPA"; med:oxygen,4,L/min,NC "nasal cannula 4 liters"
+TAP button -
+GAP 12
+M2: Seizure stopped, postictal.  >> status:postictal "postictal"
+TAP button +label
+M1: Glucose 96, pressure 148 over 88, pulse 110.  >> vital:bgl=96 "Glucose 96"; vital:bp=148/88 "pressure 148 over 88"; vital:hr=110 "pulse 110"
+M2: Line in right forearm.  >> proc:IV access "Line in right forearm"
+GAP 10
+M2: She's seizing again.  >> status:actively seizing "seizing again"
+TAP button +label
+M1: Ativan 2 milligrams IV.  >> med:lorazepam,2,mg,IV "Ativan 2 milligrams IV"
+GAP 12
+TAP button -
+M2: Stopped. Sats 95 on the cannula.  >> vital:spo2=95 "Sats 95"
+M1: Medic 5 transporting to General, priority three.  >> time:eTimes.09 "transporting"
+M1: General, Medic 5, 38 female, known seizures on Keppra, two seizures, Versed 10 IM, Ativan 2 IV, postictal now.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

@@ -1,0 +1,21 @@
+@call r27 cold_exposure_radio start=06:20:00
+@patient age=55 sex=male weight_kg=68 complaint="found outside, cold" allergies=unknown home_meds=unknown history="alcohol use"
+@traps hypothermia
+RD: Medic 29, man down, 55 male, outside overnight.  >> dispatch:man down "man down"
+M1: Medic 29 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Temp 91.2, GCS 12, shivering stopped.  >> vital:temp=91.2 "Temp 91.2"; vital:gcs=12 "GCS 12"
+TAP button +label
+M1: Rate 52, pressure 104 over 64, sugar 58.  >> vital:hr=52 "Rate 52"; vital:bp=104/64 "pressure 104 over 64"; vital:bgl=58 "sugar 58"
+TAP button +label
+M2: Line in, warm saline.  >> proc:IV access "Line in"; med:normal saline,,, "warm saline"
+TAP button +label
+M1: Thiamine 100 IV.  >> med:thiamine,100,,IV "Thiamine 100 IV"
+TAP button -
+GAP 10
+M1: D10 250 mLs.  >> med:dextrose,250,mL, "D10 250 mLs"
+GAP 12
+M2: Sugar 112, GCS 14.  >> vital:bgl=112 "Sugar 112"; vital:gcs=14 "GCS 14"
+TAP button -
+M1: Medic 29 transporting to County, priority three.  >> time:eTimes.09 "transporting"
+M1: County, Medic 29, 55 male found outside, temp 91.2, sugar 58, thiamine 100, D10 250, warming, GCS 14.
+M1: Arriving County.  >> time:eTimes.11 "Arriving County"

@@ -1,0 +1,24 @@
+@call r18 dialysis_radio start=12:45:00
+@patient age=63 sex=male weight_kg=84 complaint="weak" allergies=none home_meds="sevelamer" history="dialysis"
+@traps hyperkalemia
+RD: Medic 20, weakness, 63 male, missed dialysis.  >> dispatch:weakness "weakness"
+M1: Medic 20, on location.  >> time:eTimes.06 "on location"
+M2: Rate 44, wide, peaked T's.  >> vital:hr=44 "Rate 44"
+TAP button +label
+M1: Twelve lead.  >> proc:12-lead ECG "Twelve lead"
+TAP button +label
+M1: Pressure 100 over 62.  >> vital:bp=100/62 "Pressure 100 over 62"
+M2: Line in right forearm, fistula left.  >> proc:IV access "Line in right forearm"
+TAP button +label
+M1: Calcium chloride 1 gram slow IV.  >> med:calcium chloride,1,g,IV "Calcium chloride 1 gram slow IV"
+TAP button -
+GAP 10
+M1: Bicarb 50 milliequivalents IV.  >> med:sodium bicarbonate,50,mEq,IV "Bicarb 50 milliequivalents IV"
+GAP 6
+M1: Albuterol 10 milligrams neb.  >> med:albuterol,10,mg,neb "Albuterol 10 milligrams neb"
+GAP 10
+M2: Rate 68, narrower.  >> vital:hr=68 "Rate 68"
+TAP button -
+M1: Medic 20 transporting to University, priority three.  >> time:eTimes.09 "transporting"
+M1: University, Medic 20, 63 male, missed dialysis, wide and slow, calcium chloride 1 gram, bicarb 50, albuterol 10, rate 68.
+M1: Arriving University.  >> time:eTimes.11 "Arriving University"

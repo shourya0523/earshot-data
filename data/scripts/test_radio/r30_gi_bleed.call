@@ -1,0 +1,20 @@
+@call r30 vomiting_blood_radio start=08:55:00
+@patient age=61 sex=male weight_kg=79 complaint="vomiting blood" allergies=none home_meds="aspirin, ibuprofen" history="alcohol use"
+@traps GI bleed
+RD: Medic 32, vomiting blood, 61 male.  >> dispatch:vomiting blood "vomiting blood"
+M1: Medic 32, on location.  >> time:eTimes.06 "on location"
+M2: Pale, cool and diaphoretic. Pressure 86 over 54, rate 126.  >> status:pale, cool and diaphoretic "Pale, cool and diaphoretic"; vital:bp=86/54 "Pressure 86 over 54"; vital:hr=126 "rate 126"
+TAP button +label
+M1: Two large bores.  >> proc:IV access "Two large bores"
+TAP button +label
+M1: Saline 500 bolus.  >> med:normal saline,500,, "Saline 500 bolus"
+TAP button -
+GAP 10
+M1: Zofran 4 IV.  >> med:ondansetron,4,,IV "Zofran 4 IV"
+TAP button +label
+M2: Pressure 98 over 60, sats 95, sugar 140.  >> vital:bp=98/60 "Pressure 98 over 60"; vital:spo2=95 "sats 95"; vital:bgl=140 "sugar 140"
+M2: Takes aspirin and ibuprofen daily.
+TAP button -
+M1: Medic 32 transporting to General, priority three.  >> time:eTimes.09 "transporting"
+M1: General, Medic 32, 61 male, hematemesis, pressure 86 over 54, 500 saline, Zofran 4, now 98 over 60.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

@@ -1,0 +1,23 @@
+@call r15 copd_radio start=07:10:00
+@patient age=73 sex=male weight_kg=70 complaint="short of breath" allergies=none home_meds="Spiriva, home oxygen" history="COPD"
+@traps COPD exacerbation
+RD: Medic 16, short of breath, 73 male, on home O2.  >> dispatch:short of breath "short of breath"
+M1: Medic 16 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Sats 82 on 2 liters, resps 30, wheezes all fields.  >> vital:spo2=82 "Sats 82"; vital:rr=30 "resps 30"
+TAP button +label
+M1: DuoNeb.  >> med:ipratropium,,,neb "DuoNeb"; med:albuterol,,,neb "DuoNeb"
+TAP button -
+GAP 12
+M2: Pressure 158 over 92, rate 112, ETCO2 52.  >> vital:bp=158/92 "Pressure 158 over 92"; vital:hr=112 "rate 112"; vital:etco2=52 "ETCO2 52"
+TAP button +label
+M1: CPAP at 5.  >> proc:CPAP "CPAP at 5"
+TAP button +label
+M1: Solu-Medrol 125 IV.  >> med:methylprednisolone,125,,IV "Solu-Medrol 125 IV"
+TAP button -
+GAP 10
+M2: Albuterol 2.5 in line with the CPAP.  >> med:albuterol,2.5,,neb "Albuterol 2.5"
+GAP 10
+M2: Sats 90.  >> vital:spo2=90 "Sats 90"
+M1: Medic 16 transporting to General, priority three.  >> time:eTimes.09 "transporting"
+M1: General, Medic 16, 73 male COPD, DuoNeb, Solu-Medrol 125, CPAP 5, extra albuterol, sats 90.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

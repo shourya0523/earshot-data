@@ -1,0 +1,30 @@
+@call r01 chest_pain_radio start=08:12:00
+@patient age=64 sex=male weight_kg=92 complaint="chest pressure" allergies=none home_meds="metoprolol, atorvastatin" history="hypertension"
+@traps STEMI; myocardial infarction
+RD: Medic 12, chest pain, 64 male, 410 Elm Street.  >> dispatch:chest pain "chest pain"
+GAP 3
+M1: Medic 12 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+GAP 4
+M1: Pressure 168 over 94, pulse 88, sats 95 room air.  >> vital:bp=168/94 "Pressure 168 over 94"; vital:hr=88 "pulse 88"; vital:spo2=95 "sats 95"
+TAP button +label
+M2: Twelve lead up.  >> proc:12-lead ECG "Twelve lead"
+GAP 5
+M2: ST elevation two, three, aVF. Calling a STEMI alert.
+TAP button +label
+M1: Aspirin 324 PO, chewed.  >> med:aspirin,324,,PO "Aspirin 324 PO"
+GAP 4
+M2: Eighteen left AC.  >> proc:IV access "Eighteen left AC"
+TAP button -
+GAP 10
+TAP button +label
+M1: Nitro 0.4 SL.  >> med:nitroglycerin,0.4,,SL "Nitro 0.4 SL"
+GAP 8
+M1: Pain 7 of 10, down from 9.  >> vital:pain=7 "Pain 7 of 10"
+M1: Medic 12 transporting to Mercy, priority one.  >> time:eTimes.09 "transporting"
+GAP 6
+M1: Mercy, Medic 12. 64 male, chest pressure, inferior changes on the twelve lead. Aspirin 324 and nitro 0.4 on board. Holding second nitro for pressure. ETA eight.
+RD: Medic 12, Mercy copies, cath lab activated.
+TAP button -
+GAP 8
+M2: Recheck, pressure 142 over 86, rate 84.  >> vital:bp=142/86 "pressure 142 over 86"; vital:hr=84 "rate 84"
+M1: Arriving Mercy.  >> time:eTimes.11 "Arriving Mercy"

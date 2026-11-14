@@ -1,0 +1,26 @@
+@call r04 anaphylaxis_radio start=19:22:00
+@patient age=24 sex=female weight_kg=58 complaint="allergic reaction" allergies="peanuts" home_meds="EpiPen" history="asthma"
+@traps anaphylaxis
+RD: Medic 9, allergic reaction, 24 female, restaurant on Main.  >> dispatch:allergic reaction "allergic reaction"
+M1: Medic 9, on location.  >> time:eTimes.06 "on location"
+M2: Hives, stridor, pressure 84 over 50, rate 128.  >> vital:bp=84/50 "pressure 84 over 50"; vital:hr=128 "rate 128"
+TAP button +label
+M1: Epi 0.3 IM, right thigh.  >> med:epinephrine,0.3,,IM "Epi 0.3 IM"
+GAP 4
+M2: Sats 89.  >> vital:spo2=89 "Sats 89"
+TAP button +label
+M1: Non-rebreather 15 liters.  >> med:oxygen,15,L/min,NRB "Non-rebreather 15 liters"
+TAP button -
+GAP 8
+M2: Line in, left AC.  >> proc:IV access "Line in, left AC"
+TAP button +label
+M1: Benadryl 50 IV.  >> med:diphenhydramine,50,,IV "Benadryl 50 IV"
+GAP 4
+M1: Solu-Medrol 125 IV, Pepcid 20 IV.  >> med:methylprednisolone,125,,IV "Solu-Medrol 125 IV"; med:famotidine,20,,IV "Pepcid 20 IV"
+M2: Saline wide open.  >> med:normal saline,,,IV "Saline wide open"
+GAP 10
+M2: Pressure 102 over 64, rate 112, sats 96.  >> vital:bp=102/64 "Pressure 102 over 64"; vital:hr=112 "rate 112"; vital:spo2=96 "sats 96"
+TAP button -
+M1: Medic 9 transporting to Saint Mary's, priority one.  >> time:eTimes.09 "transporting"
+M1: Saint Mary's, Medic 9, 24 female, peanut exposure, epi 0.3 IM, Benadryl 50, Solu-Medrol 125, Pepcid 20, improving. Six out.
+M1: At Saint Mary's.  >> time:eTimes.11 "At Saint Mary's"

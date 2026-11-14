@@ -1,0 +1,23 @@
+@call r10 chf_radio start=03:25:00
+@patient age=81 sex=male weight_kg=95 complaint="can't breathe" allergies=none home_meds="Lasix, carvedilol" history="heart failure"
+@traps CHF exacerbation; pulmonary edema
+RD: Medic 6, difficulty breathing, 81 male, woke up short of breath.  >> dispatch:difficulty breathing "difficulty breathing"
+M1: Medic 6, on location.  >> time:eTimes.06 "on location"
+M2: Crackles to the apices, sats 84, resps 32.  >> vital:spo2=84 "sats 84"; vital:rr=32 "resps 32"
+TAP button +label
+M1: Pressure 204 over 112, rate 108.  >> vital:bp=204/112 "Pressure 204 over 112"; vital:hr=108 "rate 108"
+TAP button +label
+M1: CPAP at 10.  >> proc:CPAP "CPAP at 10"
+GAP 4
+TAP button +label
+M1: Nitro 0.4 SL.  >> med:nitroglycerin,0.4,,SL "Nitro 0.4 SL"
+TAP button -
+GAP 10
+M2: Twelve lead, no acute changes.  >> proc:12-lead ECG "Twelve lead"
+M1: Second nitro, 0.4.  >> med:nitroglycerin,0.4,, "Second nitro, 0.4"
+GAP 10
+M2: Sats 92, pressure 166 over 94.  >> vital:spo2=92 "Sats 92"; vital:bp=166/94 "pressure 166 over 94"
+TAP button -
+M1: Medic 6 transporting to General, priority one.  >> time:eTimes.09 "transporting"
+M1: General, Medic 6, 81 male, history of heart failure on Lasix, CPAP 10, nitro times two, sats 92.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

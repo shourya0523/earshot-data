@@ -1,0 +1,22 @@
+@call r11 abdominal_pain_radio start=16:40:00
+@patient age=52 sex=female weight_kg=77 complaint="abdominal pain, vomiting" allergies="morphine" home_meds=omeprazole history=gallstones
+@traps cholecystitis
+RD: Medic 10, abdominal pain, 52 female, vomiting.  >> dispatch:abdominal pain "abdominal pain"
+M1: Medic 10 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Pain 8, right upper quadrant.  >> vital:pain=8 "Pain 8"
+TAP button +label
+M1: Pressure 138 over 84, pulse 102, temp 100.9.  >> vital:bp=138/84 "Pressure 138 over 84"; vital:hr=102 "pulse 102"; vital:temp=100.9 "temp 100.9"
+M2: Allergic to morphine.
+TAP button +label
+M2: Line in, left hand.  >> proc:IV access "Line in"
+TAP button +label
+M1: Zofran 4 IV.  >> med:ondansetron,4,,IV "Zofran 4 IV"
+TAP button -
+GAP 10
+M1: Fentanyl 50 mics IV.  >> med:fentanyl,50,mcg,IV "Fentanyl 50 mics IV"
+GAP 10
+M2: Pain 5.  >> vital:pain=5 "Pain 5"
+TAP button -
+M1: Medic 10 transporting to Saint Mary's, priority two.  >> time:eTimes.09 "transporting"
+M1: Saint Mary's, Medic 10, 52 female, RUQ pain, febrile, Zofran 4, fentanyl 50, pain 5 of 10.
+M1: At Saint Mary's.  >> time:eTimes.11 "At Saint Mary's"

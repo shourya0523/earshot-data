@@ -1,0 +1,20 @@
+@call r28 ingestion_radio start=00:35:00
+@patient age=19 sex=female weight_kg=56 complaint="took pills" allergies=none home_meds="sertraline" history=depression
+@traps overdose; suicide attempt
+RD: Medic 30, ingestion, 19 female, unknown pills.  >> dispatch:ingestion "ingestion"
+M1: Medic 30, on location.  >> time:eTimes.06 "on location"
+M2: GCS 9, resps 10, sats 92.  >> vital:gcs=9 "GCS 9"; vital:rr=10 "resps 10"; vital:spo2=92 "sats 92"
+TAP button +label
+M1: Pupils normal. Narcan 0.5 IV, no change.  >> med:naloxone,0.5,,IV "Narcan 0.5 IV"
+TAP button +label
+M1: Rate 104, pressure 112 over 70, sugar 98.  >> vital:hr=104 "Rate 104"; vital:bp=112/70 "pressure 112 over 70"; vital:bgl=98 "sugar 98"
+TAP button +label
+M2: Nasal cannula 2 liters, ETCO2 46.  >> med:oxygen,2,L/min,NC "Nasal cannula 2 liters"; vital:etco2=46 "ETCO2 46"
+TAP button -
+GAP 10
+M2: Bottles are Xanax and sertraline.
+M1: Twelve lead, QRS narrow.  >> proc:12-lead ECG "Twelve lead"
+TAP button -
+M1: Medic 30 transporting to County, priority one.  >> time:eTimes.09 "transporting"
+M1: County, Medic 30, 19 female, possible Xanax and sertraline, GCS 9, Narcan 0.5 no response, ETCO2 46.
+M1: Arriving County.  >> time:eTimes.11 "Arriving County"

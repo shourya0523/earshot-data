@@ -1,0 +1,21 @@
+@call r23 peds_stridor_radio start=02:50:00
+@patient age=3 sex=male weight_kg=15 complaint="barking cough" allergies=none home_meds=none history=none
+@traps croup
+RD: Medic 25, child with difficulty breathing, 3 year old male.  >> dispatch:child with difficulty breathing "child with difficulty breathing"
+M1: Medic 25 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Stridor at rest, sats 92, resps 40.  >> vital:spo2=92 "sats 92"; vital:rr=40 "resps 40"
+TAP button +label
+M1: Rate 150.  >> vital:hr=150 "Rate 150"
+TAP button +label
+M1: Racemic epi 0.5 mLs neb.  >> med:racemic epinephrine,0.5,mL,neb "Racemic epi 0.5 mLs neb"
+TAP button -
+GAP 12
+M1: Decadron 9 milligrams PO.  >> med:dexamethasone,9,mg,PO "Decadron 9 milligrams PO"
+TAP button +label
+M2: Blow-by O2.  >> med:oxygen,,,BLOWBY "Blow-by O2"
+GAP 10
+M2: Sats 97, stridor improved.  >> vital:spo2=97 "Sats 97"
+TAP button -
+M1: Medic 25 transporting to Children's, priority two.  >> time:eTimes.09 "transporting"
+M1: Children's, Medic 25, 3 year old, 15 kilos, stridor at rest, racemic epi 0.5, Decadron 9 PO, sats 97.
+M1: Arriving Children's.  >> time:eTimes.11 "Arriving Children's"

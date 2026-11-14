@@ -1,0 +1,24 @@
+@call r08 svt_radio start=13:15:00
+@patient age=29 sex=female weight_kg=55 complaint="palpitations" allergies=sulfa home_meds=none history=none
+@traps SVT; supraventricular tachycardia
+RD: Medic 8, palpitations, 29 female, office building, 3rd floor.  >> dispatch:palpitations "palpitations"
+M1: Medic 8, on location.  >> time:eTimes.06 "on location"
+M2: Rate 212, narrow, regular. Pressure 118 over 76.  >> vital:hr=212 "Rate 212"; vital:bp=118/76 "Pressure 118 over 76"
+TAP button +label
+M1: Twelve lead.  >> proc:12-lead ECG "Twelve lead"
+M2: Twenty, right AC.  >> proc:IV access "Twenty, right AC"
+TAP button -
+GAP 10
+M1: Vagal, no change.  >> proc:vagal maneuver "Vagal"
+TAP button +label
+M1: Adenosine 6 rapid IV push.  >> med:adenosine,6,,IV "Adenosine 6 rapid IV push"
+GAP 8
+M2: Still 208.  >> vital:hr=208 "Still 208"
+TAP button +label
+M1: Adenosine 12 rapid push.  >> med:adenosine,12,, "Adenosine 12 rapid push"
+GAP 8
+M2: Converted, rate 92.  >> vital:hr=92 "rate 92"
+TAP button -
+M1: Medic 8 transporting to Mercy, priority two.  >> time:eTimes.09 "transporting"
+M1: Mercy, Medic 8, 29 female, narrow complex 212, adenosine 6 then 12, converted to 92, stable.
+M1: At Mercy.  >> time:eTimes.11 "At Mercy"

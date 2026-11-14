@@ -1,0 +1,23 @@
+@call r17 sepsis_radio start=18:05:00
+@patient age=79 sex=male weight_kg=73 complaint="weak, fever" allergies="sulfa" home_meds="tamsulosin" history="urinary catheter"
+@traps sepsis; septic shock
+RD: Medic 19, sick person, 79 male, nursing home, fever.  >> dispatch:sick person "sick person"
+M1: Medic 19 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Temp 103.1, pressure 82 over 46, rate 118.  >> vital:temp=103.1 "Temp 103.1"; vital:bp=82/46 "pressure 82 over 46"; vital:hr=118 "rate 118"
+TAP button +label
+M1: Resps 26, sats 91, ETCO2 24.  >> vital:rr=26 "Resps 26"; vital:spo2=91 "sats 91"; vital:etco2=24 "ETCO2 24"
+TAP button +label
+M2: Two lines in.  >> proc:IV access "Two lines in"
+TAP button +label
+M1: LR 500 bolus.  >> med:lactated ringers,500,, "LR 500 bolus"
+TAP button -
+GAP 10
+M1: O2 by cannula, 4 liters a minute.  >> med:oxygen,4,L/min,NC "cannula, 4 liters"
+M1: Tylenol 1 gram IV.  >> med:acetaminophen,1,g,IV "Tylenol 1 gram IV"
+GAP 10
+M2: Sugar 146, pressure 94 over 54.  >> vital:bgl=146 "Sugar 146"; vital:bp=94/54 "pressure 94 over 54"
+M1: Second 500 of LR.  >> med:lactated ringers,500,, "Second 500 of LR"
+TAP button -
+M1: Medic 19 transporting to General, priority two.  >> time:eTimes.09 "transporting"
+M1: General, Medic 19, sepsis alert, 79 male, temp 103.1, pressure 94 over 54 after a liter of LR, Tylenol 1 gram.
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

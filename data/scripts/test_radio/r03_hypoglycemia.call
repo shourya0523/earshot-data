@@ -1,0 +1,26 @@
+@call r03 hypoglycemia_radio start=15:05:00
+@patient age=72 sex=male weight_kg=80 complaint="altered" allergies=penicillin home_meds="insulin glargine, metformin" history="diabetes"
+@traps hypoglycemia
+RD: Medic 4, altered mental status, 72 male, diabetic per caller.  >> dispatch:altered mental status "altered mental status"
+GAP 2
+M1: Medic 4 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Sugar 38.  >> vital:bgl=38 "Sugar 38"
+TAP button +label
+M1: GCS 11, pressure 150 over 80, pulse 96.  >> vital:gcs=11 "GCS 11"; vital:bp=150/80 "pressure 150 over 80"; vital:hr=96 "pulse 96"
+M2: Twenty in the right hand.  >> proc:IV access "Twenty in the right hand"
+TAP button +label
+M1: D10, 100 mLs IV, running.  >> med:dextrose,100,mL,IV "D10, 100 mLs IV"
+GAP 12
+TAP button -
+GAP 10
+M2: Recheck sugar 64.  >> vital:bgl=64 "sugar 64"
+TAP button +label
+M1: Another 100 of D10.  >> med:dextrose,100,, "Another 100 of D10"
+GAP 12
+M2: Sugar 118, he's talking.  >> vital:bgl=118 "Sugar 118"
+PT: Did I pass out again?
+M1: Allergic to penicillin, on Lantus and metformin.
+TAP button -
+M1: Medic 4 transporting to General, priority three.  >> time:eTimes.09 "transporting"
+M1: General, Medic 4, 72 male hypoglycemic, sugar 38, 200 of D10, now 118, A and O times four.  >> status:A&O×4 "A and O times four"
+M1: Arriving General.  >> time:eTimes.11 "Arriving General"

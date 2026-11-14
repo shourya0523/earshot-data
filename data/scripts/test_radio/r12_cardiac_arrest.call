@@ -1,0 +1,28 @@
+@call r12 arrest_radio start=05:10:00
+@patient age=58 sex=male weight_kg=100 complaint="cardiac arrest" allergies=unknown home_meds=unknown history=unknown
+@traps ventricular fibrillation
+RD: Medic 1, CPR in progress, 58 male, 22 Oak Lane.  >> dispatch:CPR in progress "CPR in progress"
+M1: Medic 1, on location.  >> time:eTimes.06 "on location"
+M2: Pulseless, pads on, shockable.  >> proc:defibrillation pads "pads on"
+TAP button +label
+M1: Shock 200 joules.  >> proc:defibrillation "Shock 200 joules"
+M2: Compressions resumed.  >> proc:CPR "Compressions"
+TAP button +label
+M1: IO right tibia.  >> proc:IO access "IO right tibia"
+TAP button +label
+M1: Epi 1 milligram IO.  >> med:epinephrine,1,mg,IO "Epi 1 milligram IO"
+TAP button -
+GAP 10
+M2: Still shockable, shocking.  >> proc:defibrillation "shocking"
+TAP button +label
+M1: Amiodarone 300 IO.  >> med:amiodarone,300,,IO "Amiodarone 300 IO"
+GAP 10
+M2: I-gel in, ETCO2 22.  >> proc:supraglottic airway "I-gel"; vital:etco2=22 "ETCO2 22"
+GAP 10
+M1: Second epi, 1 milligram.  >> med:epinephrine,1,mg, "Second epi, 1 milligram"
+GAP 10
+M2: Pulse check. We have a pulse, rate 104, ETCO2 41.  >> vital:hr=104 "rate 104"; vital:etco2=41 "ETCO2 41"
+TAP button -
+M1: Medic 1 transporting to Mercy, priority three.  >> time:eTimes.09 "transporting"
+M1: Mercy, Medic 1, ROSC, 58 male, two shocks, epi times two, amiodarone 300, I-gel, ETCO2 41.
+M1: Arriving Mercy.  >> time:eTimes.11 "Arriving Mercy"

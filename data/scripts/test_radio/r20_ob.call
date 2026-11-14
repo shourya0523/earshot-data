@@ -1,0 +1,22 @@
+@call r20 postpartum_radio start=02:15:00
+@patient age=27 sex=female weight_kg=72 complaint="bleeding after delivery" allergies=none home_meds="prenatal vitamins" history="G2P2"
+@traps postpartum hemorrhage
+RD: Medic 22, childbirth, 27 female, baby delivered at home.  >> dispatch:childbirth "childbirth"
+M1: Medic 22, on location.  >> time:eTimes.06 "on location"
+M2: Heavy bleeding, pressure 88 over 52, rate 122.  >> vital:bp=88/52 "pressure 88 over 52"; vital:hr=122 "rate 122"
+TAP button +label
+M1: Fundal massage.  >> proc:fundal massage "Fundal massage"
+TAP button +label
+M2: Two large bores.  >> proc:IV access "Two large bores"
+TAP button +label
+M1: TXA 1 gram IV over ten.  >> med:tranexamic acid,1,g,IV "TXA 1 gram IV"
+TAP button -
+GAP 10
+M1: Oxytocin 10 units IM.  >> med:oxytocin,10,units,IM "Oxytocin 10 units IM"
+M2: Saline 1 liter wide open.  >> med:normal saline,1,L, "Saline 1 liter"
+GAP 10
+M2: Bleeding slowing, pressure 102 over 60.  >> vital:bp=102/60 "pressure 102 over 60"
+TAP button -
+M1: Medic 22 transporting mom and baby to Women's, priority one.  >> time:eTimes.09 "transporting"
+M1: Women's, Medic 22, 27 female postpartum, heavy bleeding, TXA 1 gram, oxytocin 10 IM, liter of saline, pressure 102 over 60.
+M1: Arriving Women's.  >> time:eTimes.11 "Arriving Women's"

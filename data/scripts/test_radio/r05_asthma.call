@@ -1,0 +1,25 @@
+@call r05 asthma_radio start=06:48:00
+@patient age=17 sex=male weight_kg=65 complaint="shortness of breath" allergies=none home_meds="albuterol inhaler" history="asthma"
+@traps status asthmaticus
+RD: Medic 2, difficulty breathing, 17 male, Lincoln High gym.  >> dispatch:difficulty breathing "difficulty breathing"
+M1: Medic 2 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Tripoding, sats 86, resps 34.  >> vital:spo2=86 "sats 86"; vital:rr=34 "resps 34"
+TAP button +label
+M1: DuoNeb going.  >> med:ipratropium,,,neb "DuoNeb"; med:albuterol,,,neb "DuoNeb"
+GAP 10
+TAP button -
+GAP 10
+M2: Rate 132, pressure 136 over 78.  >> vital:hr=132 "Rate 132"; vital:bp=136/78 "pressure 136 over 78"
+TAP button +label
+M1: Second albuterol, 5 milligrams neb.  >> med:albuterol,5,mg,neb "albuterol, 5 milligrams neb"
+GAP 6
+M2: Line in.  >> proc:IV access "Line in"
+TAP button +label
+M1: Mag 2 grams IV over ten.  >> med:magnesium sulfate,2,g,IV "Mag 2 grams IV"
+M1: Solu-Medrol 125.  >> med:methylprednisolone,125,, "Solu-Medrol 125"
+GAP 10
+M2: Sats 93, resps 24.  >> vital:spo2=93 "Sats 93"; vital:rr=24 "resps 24"
+TAP button -
+M1: Medic 2 transporting to Children's, priority two.  >> time:eTimes.09 "transporting"
+M1: Children's, Medic 2, 17 male, asthma, DuoNeb, albuterol times two, mag 2 grams, Solu-Medrol 125. Sats 93.
+M1: Arriving Children's.  >> time:eTimes.11 "Arriving Children's"

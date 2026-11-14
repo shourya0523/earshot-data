@@ -1,0 +1,24 @@
+@call r14 bradycardia_radio start=09:35:00
+@patient age=69 sex=female weight_kg=68 complaint="dizzy" allergies=none home_meds="metoprolol, digoxin" history="atrial fibrillation"
+@traps heart block
+RD: Medic 15, dizziness, 69 female, near syncope.  >> dispatch:dizziness "dizziness"
+M1: Medic 15, on location.  >> time:eTimes.06 "on location"
+M2: Rate 38, pressure 78 over 44.  >> vital:hr=38 "Rate 38"; vital:bp=78/44 "pressure 78 over 44"
+TAP button +label
+M1: Twelve lead.  >> proc:12-lead ECG "Twelve lead"
+TAP button +label
+M2: Twenty left AC.  >> proc:IV access "Twenty left AC"
+TAP button +label
+M1: Atropine 1 milligram IV.  >> med:atropine,1,mg,IV "Atropine 1 milligram IV"
+TAP button -
+GAP 10
+M2: No change, rate 40.  >> vital:hr=40 "rate 40"
+M1: Pads on, pacing at 70, 80 milliamps.  >> proc:transcutaneous pacing "pacing at 70"
+GAP 6
+M1: Fentanyl 25 mics for pacing.  >> med:fentanyl,25,mcg, "Fentanyl 25 mics"
+GAP 6
+M2: Capture, pressure 98 over 58.  >> vital:bp=98/58 "pressure 98 over 58"
+TAP button -
+M1: Medic 15 transporting to University, priority two.  >> time:eTimes.09 "transporting"
+M1: University, Medic 15, 69 female on metoprolol and digoxin, rate 38, atropine 1 no response, pacing 70 with capture, fentanyl 25.
+M1: Arriving University.  >> time:eTimes.11 "Arriving University"

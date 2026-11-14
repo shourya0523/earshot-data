@@ -1,0 +1,21 @@
+@call r13 agitation_radio start=23:50:00
+@patient age=34 sex=male weight_kg=90 complaint="combative" allergies=unknown home_meds=unknown history=unknown
+@traps excited delirium; psychosis
+RD: Medic 14, combative male, 34, PD on scene.  >> dispatch:combative male "combative male"
+M1: Medic 14 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Diaphoretic, rate 138.  >> vital:hr=138 "rate 138"
+TAP button +label
+M1: Ketamine 400 IM.  >> med:ketamine,400,,IM "Ketamine 400 IM"
+GAP 10
+TAP button -
+GAP 10
+M2: Sedated, sats 94, resps 18.  >> vital:spo2=94 "sats 94"; vital:rr=18 "resps 18"
+TAP button +label
+M1: Sugar 112, temp 101.8.  >> vital:bgl=112 "Sugar 112"; vital:temp=101.8 "temp 101.8"
+TAP button +label
+M2: Line in, saline bolus 1 liter.  >> proc:IV access "Line in"; med:normal saline,1,L, "saline bolus 1 liter"
+TAP button -
+M1: Pressure 152 over 90.  >> vital:bp=152/90 "Pressure 152 over 90"
+M1: Medic 14 transporting to County, priority one.  >> time:eTimes.09 "transporting"
+M1: County, Medic 14, 34 male, agitated, ketamine 400 IM, sedated, temp 101.8, liter of saline.
+M1: Arriving County.  >> time:eTimes.11 "Arriving County"

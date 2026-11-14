@@ -1,0 +1,24 @@
+@call r19 burn_radio start=20:30:00
+@patient age=42 sex=male weight_kg=85 complaint="burns" allergies=none home_meds=none history=none
+@traps smoke inhalation
+RD: Medic 21, house fire, one patient with burns.  >> dispatch:house fire "house fire"
+M1: Medic 21 on scene, staging the stretcher.  >> time:eTimes.06 "on scene"
+M2: Burns both forearms and chest, about 18 percent. Pain 10.  >> vital:pain=10 "Pain 10"
+TAP button +label
+M1: Sats 94, rate 116, pressure 146 over 90.  >> vital:spo2=94 "Sats 94"; vital:hr=116 "rate 116"; vital:bp=146/90 "pressure 146 over 90"
+TAP button +label
+M1: Non-rebreather 15.  >> med:oxygen,15,,NRB "Non-rebreather 15"
+TAP button +label
+M2: IV right hand through unburned skin.  >> proc:IV access "IV right hand"
+TAP button -
+GAP 10
+M1: Fentanyl 100 mics IV.  >> med:fentanyl,100,mcg,IV "Fentanyl 100 mics IV"
+M2: LR at 500 an hour.  >> med:lactated ringers,500,, "LR at 500"
+GAP 10
+M1: Ketamine 25 IV for pain.  >> med:ketamine,25,,IV "Ketamine 25 IV"
+GAP 8
+M2: Pain 6.  >> vital:pain=6 "Pain 6"
+TAP button -
+M1: Medic 21 transporting to the burn center, priority one.  >> time:eTimes.09 "transporting"
+M1: Burn center, Medic 21, 42 male, 18 percent partial thickness, fentanyl 100, ketamine 25, LR running, pain 6.
+M1: Arriving burn center.  >> time:eTimes.11 "Arriving burn center"

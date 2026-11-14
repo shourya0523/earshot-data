@@ -1,0 +1,23 @@
+@call r22 rapid_irregular_radio start=21:10:00
+@patient age=66 sex=male weight_kg=97 complaint="racing heart" allergies=none home_meds="Xarelto" history="atrial fibrillation"
+@traps atrial fibrillation with RVR
+RD: Medic 24, palpitations, 66 male.  >> dispatch:palpitations "palpitations"
+M1: Medic 24, on location.  >> time:eTimes.06 "on location"
+M2: Rate 164, irregular, pressure 128 over 84.  >> vital:hr=164 "Rate 164"; vital:bp=128/84 "pressure 128 over 84"
+TAP button +label
+M1: Twelve lead.  >> proc:12-lead ECG "Twelve lead"
+TAP button +label
+M2: Twenty right AC.  >> proc:IV access "Twenty right AC"
+TAP button +label
+M1: Cardizem 20 slow IV.  >> med:diltiazem,20,,IV "Cardizem 20 slow IV"
+TAP button -
+GAP 12
+M2: Rate 118, pressure 116 over 76.  >> vital:hr=118 "Rate 118"; vital:bp=116/76 "pressure 116 over 76"
+GAP 6
+M1: Diltiazem 10 more.  >> med:diltiazem,10,, "Diltiazem 10 more"
+GAP 10
+M2: Rate 96.  >> vital:hr=96 "Rate 96"
+TAP button -
+M1: Medic 24 transporting to Mercy, priority one.  >> time:eTimes.09 "transporting"
+M1: Mercy, Medic 24, 66 male, known A-fib on Xarelto, rate 164, Cardizem 20 then 10, rate 96.
+M1: Arriving Mercy.  >> time:eTimes.11 "Arriving Mercy"

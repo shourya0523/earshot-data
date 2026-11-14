@@ -1,0 +1,22 @@
+@call r26 high_pressure_radio start=13:40:00
+@patient age=58 sex=female weight_kg=81 complaint="headache, blurred vision" allergies=none home_meds="amlodipine" history="hypertension"
+@traps hypertensive emergency
+RD: Medic 28, headache, 58 female, blurred vision.  >> dispatch:headache "headache"
+M1: Medic 28, on location.  >> time:eTimes.06 "on location"
+M2: Pressure 228 over 126, pulse 88.  >> vital:bp=228/126 "Pressure 228 over 126"; vital:hr=88 "pulse 88"
+TAP button +label
+M1: Twelve lead, no changes.  >> proc:12-lead ECG "Twelve lead"
+TAP button +label
+M1: Stroke scale negative, sugar 124.  >> proc:stroke scale "Stroke scale"; vital:bgl=124 "sugar 124"
+TAP button +label
+M2: Line in.  >> proc:IV access "Line in"
+TAP button -
+GAP 10
+M1: Labetalol 10 IV per medical control.  >> med:labetalol,10,,IV "Labetalol 10 IV"
+GAP 12
+M2: Pressure 196 over 110.  >> vital:bp=196/110 "Pressure 196 over 110"
+M1: Zofran 4 IV.  >> med:ondansetron,4,,IV "Zofran 4 IV"
+TAP button -
+M1: Medic 28 transporting to University, priority two.  >> time:eTimes.09 "transporting"
+M1: University, Medic 28, 58 female, pressure 228 over 126, headache, labetalol 10, now 196 over 110.
+M1: Arriving University.  >> time:eTimes.11 "Arriving University"
