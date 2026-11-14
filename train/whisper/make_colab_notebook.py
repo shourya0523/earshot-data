@@ -25,6 +25,9 @@ drive.mount("/content/drive")
 os.makedirs(DRIVE_DIR, exist_ok=True)
 HF_TOKEN = userdata.get("HF_TOKEN"); os.environ["HF_TOKEN"] = HF_TOKEN
 repo = "https://github.com/shourya0523/earshot-data.git"
+os.chdir("/content")   # never clone from inside a deleted folder
+if not os.path.exists("/content/earshot/.git"): sh("rm -rf /content/earshot")
+if not os.path.exists("/content/pipeline/.git"): sh("rm -rf /content/pipeline")
 if not os.path.exists("/content/earshot"): sh(f"git clone --depth 1 -b claude/eager-volta-za1pmi {repo} /content/earshot")
 if not os.path.exists("/content/pipeline"): sh(f"git clone --depth 1 -b overnight {repo} /content/pipeline")
 os.chdir("/content/earshot")
